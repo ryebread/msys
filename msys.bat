@@ -61,6 +61,9 @@ if "%1" == "MSYS" set MSYSTEM=MSYS
 
 if NOT "x%DISPLAY%" == "x" set DISPLAY=
 
+rem  π”√Console
+if EXIST bin\nul cd bin
+if EXIST ..\opt\Console2\Console.exe goto startconsole 
 if "x%MSYSCON%" == "xrxvt.exe" goto startrxvt
 if "x%MSYSCON%" == "xsh.exe" goto startsh
 
@@ -89,7 +92,8 @@ if "%MSYSTEM%" == "MSYS" set FGCOLOR=%MSYSFGCOLOR%
 if "%MSYSTEM%" == "MINGW32" set BGCOLOR=%MINGW32BGCOLOR%
 if "%MSYSTEM%" == "MINGW32" set FGCOLOR=%MINGW32FGCOLOR%
 
-start %WD%rxvt -backspacekey  -sl 2500 -fg %FGCOLOR% -bg %BGCOLOR% -sr -fn Courier-12 -tn msys -geometry 80x25 -e /bin/sh --login -i
+rem start %WD%rxvt -backspacekey  -sl 2500 -fg %FGCOLOR% -bg %BGCOLOR% -sr -fn Courier-12 -tn msys -geometry 80x25 -e /bin/sh --login -i
+start %WD%rxvt -backspacekey  -sl 2500 -fg white -bg black -sr -fn Courier-14 -tn msys -geometry 100x40 -e /bin/sh --login -i
 exit
 
 :startsh
@@ -97,6 +101,10 @@ if NOT EXIST %WD%sh.exe goto notfound
 start %WD%sh --login -i
 exit
 
+:startconsole
+if NOT EXIST ..\opt\Console2\Console.exe goto notfound
+start ..\opt\Console2\Console.exe -w MSYS -c ..\opt\Console2\console.xml -t bash 
+exit
 :EOF
 
 rem ChangeLog:

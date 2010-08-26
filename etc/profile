@@ -28,8 +28,10 @@ else
 fi
 
 # Set up USER's home directory
+# Use a single home,not user native
 if [ -z "$HOME" ]; then
-  HOME="/home/$LOGNAME"
+#  HOME="/home/$LOGNAME"
+  HOME="/home"
 fi
 
 if [ ! -d "$HOME" ]; then
@@ -55,6 +57,6 @@ export PS1='\[\033]0;$MSYSTEM:\w\007
 $ '
 
 alias clear=clsb
-
+alias ls="ls --color=tty --show-control-chars"  
 cd "$HOME"
 
