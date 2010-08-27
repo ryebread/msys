@@ -1,4 +1,4 @@
-[msys] (http://www.mingw.org/)
+[msys](http://www.mingw.org/)
 ===============
 
 How to install msys
@@ -18,6 +18,7 @@ The components of this distro fall into five categories:
 
 Package list:
 -------------
+
 binutils 2.20.1 	
 Boost 1.44.0 	
 coreutils 8.5* 	
@@ -47,7 +48,7 @@ zlib 1.2.5
 sed 4.2.1
 tar 1.23
 vorbis-tools 1.4.0 	
-wget 1.12 	
+wget 1.12
 openssh 5.4p1
 vim 7.2.2
 libopenssl 1.0.0-1
