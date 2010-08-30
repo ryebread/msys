@@ -16,7 +16,7 @@ fi
 # I filter the PATH value setting in order to get ready for self hosting the
 # MSYS runtime and wanting different paths searched first for files.
 if [ $MSYSTEM == MINGW32 ]; then
-  export PATH=".:/usr/local/bin:/mingw/bin:/bin:$PATH"
+  export PATH=".:/usr/local/bin:/mingw/bin:/bin:/Git/bin:/Luw/emacs/bin:$PATH"
 else
   export PATH=".:/usr/local/bin:/bin:/mingw/bin:$PATH"
 fi
@@ -57,6 +57,7 @@ export PS1='\[\033]0;$MSYSTEM:\w\007
 $ '
 
 alias clear=clsb
+alias e="runemacs.exe"
 alias ls="ls --color=tty --show-control-chars"  
 cd "$HOME"
 
