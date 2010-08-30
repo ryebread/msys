@@ -21,7 +21,7 @@
 		</colors>
 	</console>
 	<appearance>
-		<font name="Monaco" size="11" bold="0" italic="0" smoothing="2">
+		<font name="Monaco" size="12" bold="0" italic="0" smoothing="2">
 			<color use="0" r="0" g="0" b="0"/>
 		</font>
 		<window title="Console" icon="" use_tab_icon="1" use_console_title="0" show_cmd="1" show_cmd_tabs="1" use_tab_title="1" trim_tab_titles="20"/>
@@ -91,6 +91,15 @@
 	</mouse>
 	<tabs>
 		<tab title="bash">
+			<console shell="bash.exe --login -i" init_dir="/home"/>
+			<cursor style="0" r="255" g="255" b="255"/>
+			<background type="0" r="0" g="0" b="0">
+				<image file="" relative="0" extend="0" position="0">
+					<tint opacity="0" r="0" g="0" b="0"/>
+				</image>
+			</background>
+		</tab>
+		<tab title="sh">
 			<console shell="sh.exe --login -i" init_dir="/home"/>
 			<cursor style="0" r="255" g="255" b="255"/>
 			<background type="0" r="0" g="0" b="0">
