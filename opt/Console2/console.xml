@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <settings>
-	<console change_refresh="10" refresh="100" rows="25" columns="80" buffer_rows="500" buffer_columns="0" shell="" init_dir="" start_hidden="0" save_size="1">
+	<console change_refresh="10" refresh="100" rows="25" columns="80" buffer_rows="500" buffer_columns="0" shell="" init_dir="" start_hidden="0" save_size="0">
 		<colors>
 			<color id="0" r="0" g="0" b="0"/>
 			<color id="1" r="0" g="0" b="128"/>
@@ -29,8 +29,8 @@
 		<styles caption="1" resizable="1" taskbar_button="1" border="1" inside_border="2" tray_icon="1">
 			<selection_color r="255" g="255" b="255"/>
 		</styles>
-		<position x="192" y="173" dock="-1" snap="0" z_order="0" save_position="1"/>
-		<transparency type="1" active_alpha="230" inactive_alpha="206" r="0" g="0" b="0"/>
+		<position x="194" y="43" dock="-1" snap="-1" z_order="0" save_position="0"/>
+		<transparency type="1" active_alpha="240" inactive_alpha="215" r="0" g="0" b="0"/>
 	</appearance>
 	<behavior>
 		<copy_paste copy_on_select="1" clear_on_copy="1" no_wrap="1" trim_spaces="1" copy_newline_char="0"/>
@@ -91,6 +91,15 @@
 	</mouse>
 	<tabs>
 		<tab title="bash">
+			<console shell="bash.exe --login -i" init_dir="/home"/>
+			<cursor style="0" r="255" g="255" b="255"/>
+			<background type="0" r="0" g="0" b="0">
+				<image file="" relative="0" extend="0" position="0">
+					<tint opacity="0" r="0" g="0" b="0"/>
+				</image>
+			</background>
+		</tab>
+		<tab title="sh">
 			<console shell="sh.exe --login -i" init_dir="/home"/>
 			<cursor style="0" r="255" g="255" b="255"/>
 			<background type="0" r="0" g="0" b="0">
