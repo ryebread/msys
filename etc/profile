@@ -16,7 +16,7 @@ fi
 # I filter the PATH value setting in order to get ready for self hosting the
 # MSYS runtime and wanting different paths searched first for files.
 if [ $MSYSTEM == MINGW32 ]; then
-  export PATH=".:/usr/local/bin:/mingw/bin:/bin:/Git/bin:/Luw/emacs/bin:$PATH"
+  export PATH=".:/usr/local/bin:/mingw/bin:/bin:/Luw/Vim/vim73:/Git/bin:/Luw/emacs/bin:$PATH"
 else
   export PATH=".:/usr/local/bin:/bin:/mingw/bin:$PATH"
 fi
@@ -53,7 +53,7 @@ done
 
 export MAKE_MODE=unix
 export PS1='\[\033]0;$MSYSTEM:\w\007
-\033[32m\]\u@\h \[\033[33m\w\033[0m\]
+\033[32m\]\u@\h \[\033[33m\w$(__git_ps1)\033[0m\]
 $ '
 
 alias clear=clsb
