@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: ActiveRecord::AttributeMethods::Dirty</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/active_record/attribute_methods/dirty_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_record/attribute_methods/dirty.rb">lib/active_record/attribute_methods/dirty.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-clone_with_time_zone_conversion_attribute%3F">#clone_with_time_zone_conversion_attribute?</a></li>
+					
+					<li><a href="#method-i-field_changed%3F">#field_changed?</a></li>
+					
+					<li><a href="#method-i-update">#update</a></li>
+					
+					<li><a href="#method-i-write_attribute">#write_attribute</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><span class="include">ActiveModel::Dirty</span></li>
+				
+				
+				
+					<li><span class="include">AttributeMethods::Write</span></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+				
+					<li><a href="../../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ClassMethods/o.html">ActiveRecord::Associations::ClassMethods::o</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+				
+					<li><a href="../../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+				
+					<li><a href="../../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators.html">ActiveRecord::Generators</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/MigrationGenerator.html">ActiveRecord::Generators::MigrationGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/ModelGenerator.html">ActiveRecord::Generators::ModelGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/ObserverGenerator.html">ActiveRecord::Generators::ObserverGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/SessionMigrationGenerator.html">ActiveRecord::Generators::SessionMigrationGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+				
+					<li><a href="../../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+				
+					<li><a href="../../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+				
+					<li><a href="../../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+				
+					<li><a href="../../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+				
+					<li><a href="../../ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+				
+					<li><a href="../../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+				
+					<li><a href="../../ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+				
+					<li><a href="../../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+				
+					<li><a href="../../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+				
+					<li><a href="../../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+				
+					<li><a href="../../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+				
+					<li><a href="../../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+				
+					<li><a href="../../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+				
+					<li><a href="../../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+				
+					<li><a href="../../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+				
+					<li><a href="../../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+				
+					<li><a href="../../Fixtures.html">Fixtures</a></li>
+				
+					<li><a href="../../FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">ActiveRecord::AttributeMethods::Dirty</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="clone-with-time-zone-conversion-attribute--method" class="method-detail ">
+				<a name="method-i-clone_with_time_zone_conversion_attribute%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">clone_with_time_zone_conversion_attribute?</span><span
+						class="method-args">(attr, old)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="clone-with-time-zone-conversion-attribute--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/attribute_methods/dirty.rb, line 90</span>
+90:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clone_with_time_zone_conversion_attribute?</span>(<span class="ruby-identifier">attr</span>, <span class="ruby-identifier">old</span>)
+91:         <span class="ruby-identifier">old</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;Time&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">time_zone_aware_attributes</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">skip_time_zone_conversion_for_attributes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">attr</span>.<span class="ruby-identifier">to_sym</span>)
+92:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="field-changed--method" class="method-detail ">
+				<a name="method-i-field_changed%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">field_changed?</span><span
+						class="method-args">(attr, old, value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="field-changed--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/attribute_methods/dirty.rb, line 74</span>
+74:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">field_changed?</span>(<span class="ruby-identifier">attr</span>, <span class="ruby-identifier">old</span>, <span class="ruby-identifier">value</span>)
+75:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">column</span> = <span class="ruby-identifier">column_for_attribute</span>(<span class="ruby-identifier">attr</span>)
+76:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">column</span>.<span class="ruby-identifier">number?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">column</span>.<span class="ruby-identifier">null</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">old</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">old</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">blank?</span>
+77:             <span class="ruby-comment cmt"># For nullable numeric columns, NULL gets stored in database for blank (i.e. '') values.</span>
+78:             <span class="ruby-comment cmt"># Hence we don't record it as a change if the value changes from nil to ''.</span>
+79:             <span class="ruby-comment cmt"># If an old value of 0 is set to '' we want this to get changed to nil as otherwise it'll</span>
+80:             <span class="ruby-comment cmt"># be typecast back to 0 (''.to_i =&gt; 0)</span>
+81:             <span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">nil</span>
+82:           <span class="ruby-keyword kw">else</span>
+83:             <span class="ruby-identifier">value</span> = <span class="ruby-identifier">column</span>.<span class="ruby-identifier">type_cast</span>(<span class="ruby-identifier">value</span>)
+84:           <span class="ruby-keyword kw">end</span>
+85:         <span class="ruby-keyword kw">end</span>
+86: 
+87:         <span class="ruby-identifier">old</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">value</span>
+88:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="update-method" class="method-detail ">
+				<a name="method-i-update"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">update</span><span
+						class="method-args">(*)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="update-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/attribute_methods/dirty.rb, line 64</span>
+64:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>(*)
+65:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">partial_updates?</span>
+66:           <span class="ruby-comment cmt"># Serialized attributes should always be written in case they've been</span>
+67:           <span class="ruby-comment cmt"># changed in place.</span>
+68:           <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">changed</span> <span class="ruby-operator">|</span> (<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">keys</span> &amp; <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">serialized_attributes</span>.<span class="ruby-identifier">keys</span>))
+69:         <span class="ruby-keyword kw">else</span>
+70:           <span class="ruby-keyword kw">super</span>
+71:         <span class="ruby-keyword kw">end</span>
+72:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="write-attribute-method" class="method-detail ">
+				<a name="method-i-write_attribute"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">write_attribute</span><span
+						class="method-args">(attr, value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Wrap <a href="Dirty.html#method-i-write_attribute">write_attribute</a> to
+remember original attribute value.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="write-attribute-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/attribute_methods/dirty.rb, line 46</span>
+46:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">write_attribute</span>(<span class="ruby-identifier">attr</span>, <span class="ruby-identifier">value</span>)
+47:         <span class="ruby-identifier">attr</span> = <span class="ruby-identifier">attr</span>.<span class="ruby-identifier">to_s</span>
+48: 
+49:         <span class="ruby-comment cmt"># The attribute already has an unsaved change.</span>
+50:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">attribute_changed?</span>(<span class="ruby-identifier">attr</span>)
+51:           <span class="ruby-identifier">old</span> = <span class="ruby-ivar">@changed_attributes</span>[<span class="ruby-identifier">attr</span>]
+52:           <span class="ruby-ivar">@changed_attributes</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">attr</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">field_changed?</span>(<span class="ruby-identifier">attr</span>, <span class="ruby-identifier">old</span>, <span class="ruby-identifier">value</span>)
+53:         <span class="ruby-keyword kw">else</span>
+54:           <span class="ruby-identifier">old</span> = <span class="ruby-identifier">clone_attribute_value</span>(<span class="ruby-value">:read_attribute</span>, <span class="ruby-identifier">attr</span>)
+55:           <span class="ruby-comment cmt"># Save Time objects as TimeWithZone if time_zone_aware_attributes == true</span>
+56:           <span class="ruby-identifier">old</span> = <span class="ruby-identifier">old</span>.<span class="ruby-identifier">in_time_zone</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">clone_with_time_zone_conversion_attribute?</span>(<span class="ruby-identifier">attr</span>, <span class="ruby-identifier">old</span>)
+57:           <span class="ruby-ivar">@changed_attributes</span>[<span class="ruby-identifier">attr</span>] = <span class="ruby-identifier">old</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">field_changed?</span>(<span class="ruby-identifier">attr</span>, <span class="ruby-identifier">old</span>, <span class="ruby-identifier">value</span>)
+58:         <span class="ruby-keyword kw">end</span>
+59: 
+60:         <span class="ruby-comment cmt"># Carry on.</span>
+61:         <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">attr</span>, <span class="ruby-identifier">value</span>)
+62:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

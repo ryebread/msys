@@ -1,0 +1,1860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Mail::Address</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/mail/elements/address_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/mail/elements/address.rb">lib/mail/elements/address.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-address">#address</a></li>
+					
+					<li><a href="#method-i-address%3D">#address=</a></li>
+					
+					<li><a href="#method-i-comments">#comments</a></li>
+					
+					<li><a href="#method-i-decoded">#decoded</a></li>
+					
+					<li><a href="#method-i-display_name">#display_name</a></li>
+					
+					<li><a href="#method-i-display_name%3D">#display_name=</a></li>
+					
+					<li><a href="#method-i-domain">#domain</a></li>
+					
+					<li><a href="#method-i-encoded">#encoded</a></li>
+					
+					<li><a href="#method-i-format">#format</a></li>
+					
+					<li><a href="#method-i-format_comments">#format_comments</a></li>
+					
+					<li><a href="#method-i-get_comments">#get_comments</a></li>
+					
+					<li><a href="#method-i-get_display_name">#get_display_name</a></li>
+					
+					<li><a href="#method-i-get_domain">#get_domain</a></li>
+					
+					<li><a href="#method-i-get_local">#get_local</a></li>
+					
+					<li><a href="#method-i-get_name">#get_name</a></li>
+					
+					<li><a href="#method-i-inspect">#inspect</a></li>
+					
+					<li><a href="#method-i-local">#local</a></li>
+					
+					<li><a href="#method-i-name">#name</a></li>
+					
+					<li><a href="#method-i-obs_domain_list">#obs_domain_list</a></li>
+					
+					<li><a href="#method-i-parse">#parse</a></li>
+					
+					<li><a href="#method-i-raw">#raw</a></li>
+					
+					<li><a href="#method-i-strip_all_comments">#strip_all_comments</a></li>
+					
+					<li><a href="#method-i-strip_domain_comments">#strip_domain_comments</a></li>
+					
+					<li><a href="#method-i-to_s">#to_s</a></li>
+					
+					<li><a href="#method-i-tree">#tree</a></li>
+					
+					<li><a href="#method-i-tree%3D">#tree=</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><a class="include" href="Utilities.html">Mail::Utilities</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../CHANGELOG_rdoc.html">CHANGELOG.rdoc</a></li>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../TODO_rdoc.html">TODO.rdoc</a></li>
+				
+					<li class="file"><a href="../lib/VERSION.html">VERSION</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Mail.html">Mail</a></li>
+				
+					<li><a href="../Mail/Address.html">Mail::Address</a></li>
+				
+					<li><a href="../Mail/AddressContainer.html">Mail::AddressContainer</a></li>
+				
+					<li><a href="../Mail/AddressLists.html">Mail::AddressLists</a></li>
+				
+					<li><a href="../Mail/AddressLists/PrimaryAddress0.html">Mail::AddressLists::PrimaryAddress0</a></li>
+				
+					<li><a href="../Mail/AddressLists/PrimaryAddress1.html">Mail::AddressLists::PrimaryAddress1</a></li>
+				
+					<li><a href="../Mail/AddressListsParser.html">Mail::AddressListsParser</a></li>
+				
+					<li><a href="../Mail/AttachmentsList.html">Mail::AttachmentsList</a></li>
+				
+					<li><a href="../Mail/BccField.html">Mail::BccField</a></li>
+				
+					<li><a href="../Mail/Body.html">Mail::Body</a></li>
+				
+					<li><a href="../Mail/CcField.html">Mail::CcField</a></li>
+				
+					<li><a href="../Mail/CommentsField.html">Mail::CommentsField</a></li>
+				
+					<li><a href="../Mail/Configuration.html">Mail::Configuration</a></li>
+				
+					<li><a href="../Mail/ContentDescriptionField.html">Mail::ContentDescriptionField</a></li>
+				
+					<li><a href="../Mail/ContentDisposition.html">Mail::ContentDisposition</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/ContentDisposition0.html">Mail::ContentDisposition::ContentDisposition0</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/ContentDisposition1.html">Mail::ContentDisposition::ContentDisposition1</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/ContentDisposition2.html">Mail::ContentDisposition::ContentDisposition2</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/Parameter0.html">Mail::ContentDisposition::Parameter0</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/Parameter1.html">Mail::ContentDisposition::Parameter1</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/Value0.html">Mail::ContentDisposition::Value0</a></li>
+				
+					<li><a href="../Mail/ContentDispositionField.html">Mail::ContentDispositionField</a></li>
+				
+					<li><a href="../Mail/ContentDispositionParser.html">Mail::ContentDispositionParser</a></li>
+				
+					<li><a href="../Mail/ContentIdField.html">Mail::ContentIdField</a></li>
+				
+					<li><a href="../Mail/ContentLocation.html">Mail::ContentLocation</a></li>
+				
+					<li><a href="../Mail/ContentLocation/Location0.html">Mail::ContentLocation::Location0</a></li>
+				
+					<li><a href="../Mail/ContentLocation/Primary0.html">Mail::ContentLocation::Primary0</a></li>
+				
+					<li><a href="../Mail/ContentLocationField.html">Mail::ContentLocationField</a></li>
+				
+					<li><a href="../Mail/ContentLocationParser.html">Mail::ContentLocationParser</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncoding.html">Mail::ContentTransferEncoding</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncoding/Encoding0.html">Mail::ContentTransferEncoding::Encoding0</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncoding/Encoding1.html">Mail::ContentTransferEncoding::Encoding1</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncoding/Primary0.html">Mail::ContentTransferEncoding::Primary0</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncodingElement.html">Mail::ContentTransferEncodingElement</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncodingField.html">Mail::ContentTransferEncodingField</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncodingParser.html">Mail::ContentTransferEncodingParser</a></li>
+				
+					<li><a href="../Mail/ContentType.html">Mail::ContentType</a></li>
+				
+					<li><a href="../Mail/ContentType/ContentType0.html">Mail::ContentType::ContentType0</a></li>
+				
+					<li><a href="../Mail/ContentType/ContentType1.html">Mail::ContentType::ContentType1</a></li>
+				
+					<li><a href="../Mail/ContentType/ContentType2.html">Mail::ContentType::ContentType2</a></li>
+				
+					<li><a href="../Mail/ContentType/Parameter0.html">Mail::ContentType::Parameter0</a></li>
+				
+					<li><a href="../Mail/ContentType/Parameter1.html">Mail::ContentType::Parameter1</a></li>
+				
+					<li><a href="../Mail/ContentType/Value0.html">Mail::ContentType::Value0</a></li>
+				
+					<li><a href="../Mail/ContentTypeField.html">Mail::ContentTypeField</a></li>
+				
+					<li><a href="../Mail/ContentTypeParser.html">Mail::ContentTypeParser</a></li>
+				
+					<li><a href="../Mail/DateField.html">Mail::DateField</a></li>
+				
+					<li><a href="../Mail/DateTime.html">Mail::DateTime</a></li>
+				
+					<li><a href="../Mail/DateTime/Primary0.html">Mail::DateTime::Primary0</a></li>
+				
+					<li><a href="../Mail/DateTime/Primary1.html">Mail::DateTime::Primary1</a></li>
+				
+					<li><a href="../Mail/DateTimeParser.html">Mail::DateTimeParser</a></li>
+				
+					<li><a href="../Mail/Encodings.html">Mail::Encodings</a></li>
+				
+					<li><a href="../Mail/Encodings/Base64.html">Mail::Encodings::Base64</a></li>
+				
+					<li><a href="../Mail/Encodings/Binary.html">Mail::Encodings::Binary</a></li>
+				
+					<li><a href="../Mail/Encodings/EightBit.html">Mail::Encodings::EightBit</a></li>
+				
+					<li><a href="../Mail/Encodings/QuotedPrintable.html">Mail::Encodings::QuotedPrintable</a></li>
+				
+					<li><a href="../Mail/Encodings/SevenBit.html">Mail::Encodings::SevenBit</a></li>
+				
+					<li><a href="../Mail/Encodings/TransferEncoding.html">Mail::Encodings::TransferEncoding</a></li>
+				
+					<li><a href="../Mail/Envelope.html">Mail::Envelope</a></li>
+				
+					<li><a href="../Mail/EnvelopeFrom.html">Mail::EnvelopeFrom</a></li>
+				
+					<li><a href="../Mail/EnvelopeFrom/CtimeDate0.html">Mail::EnvelopeFrom::CtimeDate0</a></li>
+				
+					<li><a href="../Mail/EnvelopeFrom/Primary0.html">Mail::EnvelopeFrom::Primary0</a></li>
+				
+					<li><a href="../Mail/EnvelopeFromElement.html">Mail::EnvelopeFromElement</a></li>
+				
+					<li><a href="../Mail/EnvelopeFromParser.html">Mail::EnvelopeFromParser</a></li>
+				
+					<li><a href="../Mail/Field.html">Mail::Field</a></li>
+				
+					<li><a href="../Mail/Field/FieldError.html">Mail::Field::FieldError</a></li>
+				
+					<li><a href="../Mail/FieldList.html">Mail::FieldList</a></li>
+				
+					<li><a href="../Mail/FileDelivery.html">Mail::FileDelivery</a></li>
+				
+					<li><a href="../Mail/FromField.html">Mail::FromField</a></li>
+				
+					<li><a href="../Mail/Header.html">Mail::Header</a></li>
+				
+					<li><a href="../Mail/IMAP.html">Mail::IMAP</a></li>
+				
+					<li><a href="../Mail/InReplyToField.html">Mail::InReplyToField</a></li>
+				
+					<li><a href="../Mail/KeywordsField.html">Mail::KeywordsField</a></li>
+				
+					<li><a href="../Mail/Message.html">Mail::Message</a></li>
+				
+					<li><a href="../Mail/MessageIdField.html">Mail::MessageIdField</a></li>
+				
+					<li><a href="../Mail/MessageIds.html">Mail::MessageIds</a></li>
+				
+					<li><a href="../Mail/MessageIds/Primary0.html">Mail::MessageIds::Primary0</a></li>
+				
+					<li><a href="../Mail/MessageIdsElement.html">Mail::MessageIdsElement</a></li>
+				
+					<li><a href="../Mail/MessageIdsParser.html">Mail::MessageIdsParser</a></li>
+				
+					<li><a href="../Mail/MimeVersion.html">Mail::MimeVersion</a></li>
+				
+					<li><a href="../Mail/MimeVersion/Version0.html">Mail::MimeVersion::Version0</a></li>
+				
+					<li><a href="../Mail/MimeVersion/Version1.html">Mail::MimeVersion::Version1</a></li>
+				
+					<li><a href="../Mail/MimeVersionElement.html">Mail::MimeVersionElement</a></li>
+				
+					<li><a href="../Mail/MimeVersionField.html">Mail::MimeVersionField</a></li>
+				
+					<li><a href="../Mail/MimeVersionParser.html">Mail::MimeVersionParser</a></li>
+				
+					<li><a href="../Mail/OptionalField.html">Mail::OptionalField</a></li>
+				
+					<li><a href="../Mail/POP3.html">Mail::POP3</a></li>
+				
+					<li><a href="../Mail/ParameterHash.html">Mail::ParameterHash</a></li>
+				
+					<li><a href="../Mail/Part.html">Mail::Part</a></li>
+				
+					<li><a href="../Mail/PartsList.html">Mail::PartsList</a></li>
+				
+					<li><a href="../Mail/Patterns.html">Mail::Patterns</a></li>
+				
+					<li><a href="../Mail/PhraseList.html">Mail::PhraseList</a></li>
+				
+					<li><a href="../Mail/PhraseLists.html">Mail::PhraseLists</a></li>
+				
+					<li><a href="../Mail/PhraseLists/PrimaryPhrase0.html">Mail::PhraseLists::PrimaryPhrase0</a></li>
+				
+					<li><a href="../Mail/PhraseListsParser.html">Mail::PhraseListsParser</a></li>
+				
+					<li><a href="../Mail/RFC2045.html">Mail::RFC2045</a></li>
+				
+					<li><a href="../Mail/RFC2045/CustomXToken0.html">Mail::RFC2045::CustomXToken0</a></li>
+				
+					<li><a href="../Mail/RFC2045Parser.html">Mail::RFC2045Parser</a></li>
+				
+					<li><a href="../Mail/RFC2822.html">Mail::RFC2822</a></li>
+				
+					<li><a href="../Mail/RFC2822/AddrSpec0.html">Mail::RFC2822::AddrSpec0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Address0.html">Mail::RFC2822::Address0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Address1.html">Mail::RFC2822::Address1</a></li>
+				
+					<li><a href="../Mail/RFC2822/AddressList0.html">Mail::RFC2822::AddressList0</a></li>
+				
+					<li><a href="../Mail/RFC2822/AddressList1.html">Mail::RFC2822::AddressList1</a></li>
+				
+					<li><a href="../Mail/RFC2822/AngleAddr0.html">Mail::RFC2822::AngleAddr0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Atom0.html">Mail::RFC2822::Atom0</a></li>
+				
+					<li><a href="../Mail/RFC2822/CFWS0.html">Mail::RFC2822::CFWS0</a></li>
+				
+					<li><a href="../Mail/RFC2822/CFWS1.html">Mail::RFC2822::CFWS1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Comment0.html">Mail::RFC2822::Comment0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Comment1.html">Mail::RFC2822::Comment1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Date0.html">Mail::RFC2822::Date0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DateTime0.html">Mail::RFC2822::DateTime0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DateTime1.html">Mail::RFC2822::DateTime1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Day0.html">Mail::RFC2822::Day0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DayOfWeek0.html">Mail::RFC2822::DayOfWeek0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DomainLiteral0.html">Mail::RFC2822::DomainLiteral0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DomainLiteral1.html">Mail::RFC2822::DomainLiteral1</a></li>
+				
+					<li><a href="../Mail/RFC2822/DomainText0.html">Mail::RFC2822::DomainText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DomainText1.html">Mail::RFC2822::DomainText1</a></li>
+				
+					<li><a href="../Mail/RFC2822/DotAtom0.html">Mail::RFC2822::DotAtom0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DotAtomText0.html">Mail::RFC2822::DotAtomText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/FWS0.html">Mail::RFC2822::FWS0</a></li>
+				
+					<li><a href="../Mail/RFC2822/FWS1.html">Mail::RFC2822::FWS1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Group0.html">Mail::RFC2822::Group0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Hour0.html">Mail::RFC2822::Hour0</a></li>
+				
+					<li><a href="../Mail/RFC2822/ItemName0.html">Mail::RFC2822::ItemName0</a></li>
+				
+					<li><a href="../Mail/RFC2822/ItemName1.html">Mail::RFC2822::ItemName1</a></li>
+				
+					<li><a href="../Mail/RFC2822/LocalDotAtom0.html">Mail::RFC2822::LocalDotAtom0</a></li>
+				
+					<li><a href="../Mail/RFC2822/LocalDotAtomText0.html">Mail::RFC2822::LocalDotAtomText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MailboxList0.html">Mail::RFC2822::MailboxList0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MailboxList1.html">Mail::RFC2822::MailboxList1</a></li>
+				
+					<li><a href="../Mail/RFC2822/MailboxListGroup0.html">Mail::RFC2822::MailboxListGroup0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MessageIds0.html">Mail::RFC2822::MessageIds0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MessageIds1.html">Mail::RFC2822::MessageIds1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Minute0.html">Mail::RFC2822::Minute0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Month0.html">Mail::RFC2822::Month0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgId0.html">Mail::RFC2822::MsgId0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgIdDomainText0.html">Mail::RFC2822::MsgIdDomainText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgIdDomainText1.html">Mail::RFC2822::MsgIdDomainText1</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgIdDotAtomText0.html">Mail::RFC2822::MsgIdDotAtomText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgIdValue0.html">Mail::RFC2822::MsgIdValue0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameAddr0.html">Mail::RFC2822::NameAddr0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameValList0.html">Mail::RFC2822::NameValList0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameValList1.html">Mail::RFC2822::NameValList1</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameValList2.html">Mail::RFC2822::NameValList2</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameValPair0.html">Mail::RFC2822::NameValPair0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NoFoldLiteral0.html">Mail::RFC2822::NoFoldLiteral0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NoFoldQuote0.html">Mail::RFC2822::NoFoldQuote0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Path0.html">Mail::RFC2822::Path0</a></li>
+				
+					<li><a href="../Mail/RFC2822/PhraseList0.html">Mail::RFC2822::PhraseList0</a></li>
+				
+					<li><a href="../Mail/RFC2822/PhraseList1.html">Mail::RFC2822::PhraseList1</a></li>
+				
+					<li><a href="../Mail/RFC2822/QuotedDomain0.html">Mail::RFC2822::QuotedDomain0</a></li>
+				
+					<li><a href="../Mail/RFC2822/QuotedPair0.html">Mail::RFC2822::QuotedPair0</a></li>
+				
+					<li><a href="../Mail/RFC2822/QuotedString0.html">Mail::RFC2822::QuotedString0</a></li>
+				
+					<li><a href="../Mail/RFC2822/QuotedString1.html">Mail::RFC2822::QuotedString1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Received0.html">Mail::RFC2822::Received0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Return0.html">Mail::RFC2822::Return0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Second0.html">Mail::RFC2822::Second0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Time0.html">Mail::RFC2822::Time0</a></li>
+				
+					<li><a href="../Mail/RFC2822/TimeOfDay0.html">Mail::RFC2822::TimeOfDay0</a></li>
+				
+					<li><a href="../Mail/RFC2822/TimeOfDay1.html">Mail::RFC2822::TimeOfDay1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Year0.html">Mail::RFC2822::Year0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Zone0.html">Mail::RFC2822::Zone0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete.html">Mail::RFC2822Obsolete</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsAddrList0.html">Mail::RFC2822Obsolete::ObsAddrList0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsAddrList1.html">Mail::RFC2822Obsolete::ObsAddrList1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsAngleAddr0.html">Mail::RFC2822Obsolete::ObsAngleAddr0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsBcc0.html">Mail::RFC2822Obsolete::ObsBcc0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsCc0.html">Mail::RFC2822Obsolete::ObsCc0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsComments0.html">Mail::RFC2822Obsolete::ObsComments0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDay0.html">Mail::RFC2822Obsolete::ObsDay0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDay1.html">Mail::RFC2822Obsolete::ObsDay1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDayOfWeek0.html">Mail::RFC2822Obsolete::ObsDayOfWeek0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDomain0.html">Mail::RFC2822Obsolete::ObsDomain0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDomain1.html">Mail::RFC2822Obsolete::ObsDomain1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDomainList0.html">Mail::RFC2822Obsolete::ObsDomainList0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDomainList1.html">Mail::RFC2822Obsolete::ObsDomainList1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsFWS0.html">Mail::RFC2822Obsolete::ObsFWS0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsFWS1.html">Mail::RFC2822Obsolete::ObsFWS1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsFrom0.html">Mail::RFC2822Obsolete::ObsFrom0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsHour0.html">Mail::RFC2822Obsolete::ObsHour0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsHour1.html">Mail::RFC2822Obsolete::ObsHour1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsInReplyTo0.html">Mail::RFC2822Obsolete::ObsInReplyTo0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsKeywords0.html">Mail::RFC2822Obsolete::ObsKeywords0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsLocalPart0.html">Mail::RFC2822Obsolete::ObsLocalPart0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsLocalPart1.html">Mail::RFC2822Obsolete::ObsLocalPart1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMboxList0.html">Mail::RFC2822Obsolete::ObsMboxList0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMboxList1.html">Mail::RFC2822Obsolete::ObsMboxList1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMessageId0.html">Mail::RFC2822Obsolete::ObsMessageId0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMinute0.html">Mail::RFC2822Obsolete::ObsMinute0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMinute1.html">Mail::RFC2822Obsolete::ObsMinute1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMonth0.html">Mail::RFC2822Obsolete::ObsMonth0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsOptional0.html">Mail::RFC2822Obsolete::ObsOptional0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsOrigDate0.html">Mail::RFC2822Obsolete::ObsOrigDate0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsPhraseList0.html">Mail::RFC2822Obsolete::ObsPhraseList0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsPhraseList1.html">Mail::RFC2822Obsolete::ObsPhraseList1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsQp0.html">Mail::RFC2822Obsolete::ObsQp0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsReceived0.html">Mail::RFC2822Obsolete::ObsReceived0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsReferences0.html">Mail::RFC2822Obsolete::ObsReferences0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsReplyTo0.html">Mail::RFC2822Obsolete::ObsReplyTo0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentBcc0.html">Mail::RFC2822Obsolete::ObsResentBcc0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentCc0.html">Mail::RFC2822Obsolete::ObsResentCc0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentDate0.html">Mail::RFC2822Obsolete::ObsResentDate0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentFrom0.html">Mail::RFC2822Obsolete::ObsResentFrom0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentMid0.html">Mail::RFC2822Obsolete::ObsResentMid0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentRply0.html">Mail::RFC2822Obsolete::ObsResentRply0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentSend0.html">Mail::RFC2822Obsolete::ObsResentSend0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentTo0.html">Mail::RFC2822Obsolete::ObsResentTo0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsReturn0.html">Mail::RFC2822Obsolete::ObsReturn0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsRoute0.html">Mail::RFC2822Obsolete::ObsRoute0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsSecond0.html">Mail::RFC2822Obsolete::ObsSecond0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsSecond1.html">Mail::RFC2822Obsolete::ObsSecond1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsSender0.html">Mail::RFC2822Obsolete::ObsSender0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsSubject0.html">Mail::RFC2822Obsolete::ObsSubject0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsText0.html">Mail::RFC2822Obsolete::ObsText0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsText1.html">Mail::RFC2822Obsolete::ObsText1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsTo0.html">Mail::RFC2822Obsolete::ObsTo0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsYear0.html">Mail::RFC2822Obsolete::ObsYear0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsYear1.html">Mail::RFC2822Obsolete::ObsYear1</a></li>
+				
+					<li><a href="../Mail/RFC2822ObsoleteParser.html">Mail::RFC2822ObsoleteParser</a></li>
+				
+					<li><a href="../Mail/RFC2822Parser.html">Mail::RFC2822Parser</a></li>
+				
+					<li><a href="../Mail/Received.html">Mail::Received</a></li>
+				
+					<li><a href="../Mail/Received/Primary0.html">Mail::Received::Primary0</a></li>
+				
+					<li><a href="../Mail/ReceivedElement.html">Mail::ReceivedElement</a></li>
+				
+					<li><a href="../Mail/ReceivedField.html">Mail::ReceivedField</a></li>
+				
+					<li><a href="../Mail/ReceivedParser.html">Mail::ReceivedParser</a></li>
+				
+					<li><a href="../Mail/ReferencesField.html">Mail::ReferencesField</a></li>
+				
+					<li><a href="../Mail/ReplyToField.html">Mail::ReplyToField</a></li>
+				
+					<li><a href="../Mail/ResentBccField.html">Mail::ResentBccField</a></li>
+				
+					<li><a href="../Mail/ResentCcField.html">Mail::ResentCcField</a></li>
+				
+					<li><a href="../Mail/ResentDateField.html">Mail::ResentDateField</a></li>
+				
+					<li><a href="../Mail/ResentFromField.html">Mail::ResentFromField</a></li>
+				
+					<li><a href="../Mail/ResentMessageIdField.html">Mail::ResentMessageIdField</a></li>
+				
+					<li><a href="../Mail/ResentSenderField.html">Mail::ResentSenderField</a></li>
+				
+					<li><a href="../Mail/ResentToField.html">Mail::ResentToField</a></li>
+				
+					<li><a href="../Mail/ReturnPathField.html">Mail::ReturnPathField</a></li>
+				
+					<li><a href="../Mail/Ruby18.html">Mail::Ruby18</a></li>
+				
+					<li><a href="../Mail/Ruby18.html">Mail::Ruby18</a></li>
+				
+					<li><a href="../Mail/Ruby19.html">Mail::Ruby19</a></li>
+				
+					<li><a href="../Mail/SMTP.html">Mail::SMTP</a></li>
+				
+					<li><a href="../Mail/SenderField.html">Mail::SenderField</a></li>
+				
+					<li><a href="../Mail/Sendmail.html">Mail::Sendmail</a></li>
+				
+					<li><a href="../Mail/StructuredField.html">Mail::StructuredField</a></li>
+				
+					<li><a href="../Mail/SubjectField.html">Mail::SubjectField</a></li>
+				
+					<li><a href="../Mail/TestMailer.html">Mail::TestMailer</a></li>
+				
+					<li><a href="../Mail/ToField.html">Mail::ToField</a></li>
+				
+					<li><a href="../Mail/UnstructuredField.html">Mail::UnstructuredField</a></li>
+				
+					<li><a href="../Mail/Utilities.html">Mail::Utilities</a></li>
+				
+					<li><a href="../Mail/VERSION.html">Mail::VERSION</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Mail::Address</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(value = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Address.html">Mail::Address</a> handles all email addresses in <a
+href="../Mail.html">Mail</a>.  It takes an email address string and parses
+it, breaking it down into it&#8217;s component parts and allowing you to
+get the address, comments, display name, name, local part, domain part and
+fully formatted address.
+</p>
+<p>
+<a href="Address.html">Mail::Address</a> requires a correctly formatted
+email address per <a href="RFC2822.html">RFC2822</a> or RFC822.  It handles
+all obsolete versions including obsolete domain routing on the local part.
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.format       #=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'
+ a.address      #=&gt; 'mikel@test.lindsaar.net'
+ a.display_name #=&gt; 'Mikel Lindsaar'
+ a.local        #=&gt; 'mikel'
+ a.domain       #=&gt; 'test.lindsaar.net'
+ a.comments     #=&gt; ['My email address']
+ a.to_s         #=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 23</span>
+23:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">nil</span>)
+24:       <span class="ruby-ivar">@output_type</span> = <span class="ruby-keyword kw">nil</span>
+25:       <span class="ruby-ivar">@tree</span> = <span class="ruby-keyword kw">nil</span>
+26:       <span class="ruby-ivar">@raw_text</span> = <span class="ruby-identifier">value</span>
+27:       <span class="ruby-keyword kw">case</span>
+28:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+29:         <span class="ruby-ivar">@parsed</span> = <span class="ruby-keyword kw">false</span>
+30:         <span class="ruby-keyword kw">return</span>
+31:       <span class="ruby-keyword kw">else</span>
+32:         <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span>)
+33:       <span class="ruby-keyword kw">end</span>
+34:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="address-method" class="method-detail ">
+				<a name="method-i-address"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">address</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the address that is in the address itself.  That is, the 
+local@domain string, without any angle brackets or the like.
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.address #=&gt; 'mikel@test.lindsaar.net'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="address-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 66</span>
+66:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">address</span>
+67:       <span class="ruby-identifier">parse</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@parsed</span>
+68:       <span class="ruby-identifier">domain</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{local}@#{domain}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">local</span>
+69:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="address--method" class="method-detail ">
+				<a name="method-i-address%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">address=</span><span
+						class="method-args">(value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Provides a way to assign an address to an already made <a
+href="Address.html">Mail::Address</a> object.
+</p>
+<pre>
+ a = Address.new
+ a.address = 'Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;'
+ a.address #=&gt; 'mikel@test.lindsaar.net'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="address--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 76</span>
+76:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">address=</span>(<span class="ruby-identifier">value</span>)
+77:       <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span>)
+78:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="comments-method" class="method-detail ">
+				<a name="method-i-comments"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">comments</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns an array of comments that are in the email, or an empty array if
+there are no comments
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.comments #=&gt; ['My email address']</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="comments-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 125</span>
+125:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">comments</span>
+126:       <span class="ruby-identifier">parse</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@parsed</span>
+127:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">get_comments</span>.<span class="ruby-identifier">empty?</span>
+128:         <span class="ruby-keyword kw">nil</span>
+129:       <span class="ruby-keyword kw">else</span>
+130:         <span class="ruby-identifier">get_comments</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">squeeze</span>(<span class="ruby-value str">&quot; &quot;</span>) }
+131:       <span class="ruby-keyword kw">end</span>
+132:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="decoded-method" class="method-detail ">
+				<a name="method-i-decoded"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decoded</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="decoded-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 166</span>
+166:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">decoded</span>
+167:       <span class="ruby-ivar">@output_type</span> = <span class="ruby-value">:decode</span>
+168:       <span class="ruby-identifier">format</span>
+169:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="display-name-method" class="method-detail ">
+				<a name="method-i-display_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">display_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the display name of the email address passed in.
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.display_name #=&gt; 'Mikel Lindsaar'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="display-name-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 84</span>
+84:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">display_name</span>
+85:       <span class="ruby-identifier">parse</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@parsed</span>
+86:       <span class="ruby-ivar">@display_name</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">get_display_name</span>
+87:       <span class="ruby-constant">Encodings</span>.<span class="ruby-identifier">decode_encode</span>(<span class="ruby-ivar">@display_name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-ivar">@output_type</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@display_name</span>
+88:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="display-name--method" class="method-detail ">
+				<a name="method-i-display_name%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">display_name=</span><span
+						class="method-args">( str )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Provides a way to assign a display name to an already made <a
+href="Address.html">Mail::Address</a> object.
+</p>
+<pre>
+ a = Address.new
+ a.address = 'mikel@test.lindsaar.net'
+ a.display_name = 'Mikel Lindsaar'
+ a.format #=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt;'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="display-name--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 96</span>
+96:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">display_name=</span>( <span class="ruby-identifier">str</span> )
+97:       <span class="ruby-ivar">@display_name</span> = <span class="ruby-identifier">str</span>
+98:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="domain-method" class="method-detail ">
+				<a name="method-i-domain"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">domain</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the domain part (the right hand side of the @ sign in the email
+address) of the address
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.domain #=&gt; 'test.lindsaar.net'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="domain-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 115</span>
+115:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">domain</span>
+116:       <span class="ruby-identifier">parse</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@parsed</span>
+117:       <span class="ruby-identifier">strip_all_comments</span>(<span class="ruby-identifier">get_domain</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">get_domain</span>
+118:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="encoded-method" class="method-detail ">
+				<a name="method-i-encoded"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">encoded</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="encoded-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 161</span>
+161:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">encoded</span>
+162:       <span class="ruby-ivar">@output_type</span> = <span class="ruby-value">:encode</span>
+163:       <span class="ruby-identifier">format</span>
+164:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="format-method" class="method-detail ">
+				<a name="method-i-format"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">format</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a correctly formatted address for the email going out.  If given an
+incorrectly formatted address as input, <a
+href="Address.html">Mail::Address</a> will do it&#8217;s best to format it
+correctly.  This includes quoting display names as needed and putting the
+address in angle brackets etc.
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.format #=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="format-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 49</span>
+49:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">format</span>
+50:       <span class="ruby-identifier">parse</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@parsed</span>
+51:       <span class="ruby-keyword kw">case</span>
+52:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">nil?</span>
+53:         <span class="ruby-value str">''</span>
+54:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">display_name</span>
+55:         [<span class="ruby-identifier">quote_phrase</span>(<span class="ruby-identifier">display_name</span>), <span class="ruby-node">&quot;&lt;#{address}&gt;&quot;</span>, <span class="ruby-identifier">format_comments</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot; &quot;</span>)
+56:       <span class="ruby-keyword kw">else</span>
+57:         [<span class="ruby-identifier">address</span>, <span class="ruby-identifier">format_comments</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot; &quot;</span>)
+58:       <span class="ruby-keyword kw">end</span>
+59:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="inspect-method" class="method-detail ">
+				<a name="method-i-inspect"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">inspect</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Shows the <a href="Address.html">Address</a> object basic details,
+including the <a href="Address.html">Address</a>
+</p>
+<pre>
+ a = Address.new('Mikel (My email) &lt;mikel@test.lindsaar.net&gt;')
+ a.inspect #=&gt; &quot;#&lt;Mail::Address:14184910 Address: |Mikel &lt;mikel@test.lindsaar.net&gt; (My email)| &gt;&quot;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="inspect-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 156</span>
+156:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>
+157:       <span class="ruby-identifier">parse</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@parsed</span>
+158:       <span class="ruby-node">&quot;#&lt;#{self.class}:#{self.object_id} Address: |#{to_s}| &gt;&quot;</span>
+159:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="local-method" class="method-detail ">
+				<a name="method-i-local"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">local</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the local part (the left hand side of the @ sign in the email
+address) of the address
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.local #=&gt; 'mikel'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="local-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 105</span>
+105:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">local</span>
+106:       <span class="ruby-identifier">parse</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@parsed</span>
+107:       <span class="ruby-node">&quot;#{obs_domain_list}#{get_local.strip}&quot;</span>
+108:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="name-method" class="method-detail ">
+				<a name="method-i-name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sometimes an address will not have a display name, but might have the name
+as a comment field after the address.  This returns that name if it exists.
+</p>
+<pre>
+ a = Address.new('mikel@test.lindsaar.net (Mikel Lindsaar)')
+ a.name #=&gt; 'Mikel Lindsaar'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 139</span>
+139:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">name</span>
+140:       <span class="ruby-identifier">parse</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@parsed</span>
+141:       <span class="ruby-identifier">get_name</span>
+142:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="raw-method" class="method-detail ">
+				<a name="method-i-raw"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">raw</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the raw imput of the passed in string, this is before it is passed
+by the parser.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="raw-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 38</span>
+38:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">raw</span>
+39:       <span class="ruby-ivar">@raw_text</span>
+40:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="to-s-method" class="method-detail ">
+				<a name="method-i-to_s"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_s</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the format of the address, or returns nothing
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.format #=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="to-s-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 148</span>
+148:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+149:       <span class="ruby-identifier">parse</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@parsed</span>
+150:       <span class="ruby-identifier">format</span>
+151:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="format-comments-method" class="method-detail ">
+				<a name="method-i-format_comments"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">format_comments</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="format-comments-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 273</span>
+273:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">format_comments</span>
+274:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">comments</span>
+275:         <span class="ruby-identifier">comment_text</span> = <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">escape_paren</span>(<span class="ruby-identifier">c</span>) }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>).<span class="ruby-identifier">squeeze</span>(<span class="ruby-value str">&quot; &quot;</span>)
+276:         <span class="ruby-ivar">@format_comments</span> <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;(#{comment_text})&quot;</span>
+277:       <span class="ruby-keyword kw">else</span>
+278:         <span class="ruby-keyword kw">nil</span>
+279:       <span class="ruby-keyword kw">end</span>
+280:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-comments-method" class="method-detail ">
+				<a name="method-i-get_comments"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_comments</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="get-comments-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 218</span>
+218:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_comments</span>
+219:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:comments</span>)
+220:         <span class="ruby-ivar">@comments</span> = <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">unparen</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">text_value</span>.<span class="ruby-identifier">to_str</span>) } 
+221:       <span class="ruby-keyword kw">else</span>
+222:         <span class="ruby-ivar">@comments</span> = []
+223:       <span class="ruby-keyword kw">end</span>
+224:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-display-name-method" class="method-detail ">
+				<a name="method-i-get_display_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_display_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="get-display-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 226</span>
+226:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_display_name</span>
+227:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:display_name</span>)
+228:         <span class="ruby-identifier">name</span> = <span class="ruby-identifier">unquote</span>(<span class="ruby-identifier">tree</span>.<span class="ruby-identifier">display_name</span>.<span class="ruby-identifier">text_value</span>.<span class="ruby-identifier">strip</span>)
+229:         <span class="ruby-identifier">str</span> = <span class="ruby-identifier">strip_all_comments</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>)
+230:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">comments</span>
+231:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">domain</span>
+232:           <span class="ruby-identifier">str</span> = <span class="ruby-identifier">strip_domain_comments</span>(<span class="ruby-identifier">format_comments</span>)
+233:         <span class="ruby-keyword kw">else</span>
+234:           <span class="ruby-identifier">str</span> = <span class="ruby-keyword kw">nil</span>
+235:         <span class="ruby-keyword kw">end</span>
+236:       <span class="ruby-keyword kw">else</span>
+237:         <span class="ruby-keyword kw">nil</span>
+238:       <span class="ruby-keyword kw">end</span>
+239:       
+240:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">blank?</span>
+241:         <span class="ruby-keyword kw">nil</span>
+242:       <span class="ruby-keyword kw">else</span>
+243:         <span class="ruby-identifier">str</span>
+244:       <span class="ruby-keyword kw">end</span>
+245:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-domain-method" class="method-detail ">
+				<a name="method-i-get_domain"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_domain</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="get-domain-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 186</span>
+186:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_domain</span>
+187:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:angle_addr</span>)
+188:         <span class="ruby-ivar">@domain_text</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">angle_addr</span>.<span class="ruby-identifier">addr_spec</span>.<span class="ruby-identifier">domain</span>.<span class="ruby-identifier">text_value</span>.<span class="ruby-identifier">strip</span>
+189:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:domain</span>)
+190:         <span class="ruby-ivar">@domain_text</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">domain</span>.<span class="ruby-identifier">text_value</span>.<span class="ruby-identifier">strip</span>
+191:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:addr_spec</span>)
+192:         <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">addr_spec</span>.<span class="ruby-identifier">domain</span>.<span class="ruby-identifier">text_value</span>.<span class="ruby-identifier">strip</span>
+193:       <span class="ruby-keyword kw">else</span>
+194:         <span class="ruby-keyword kw">nil</span>
+195:       <span class="ruby-keyword kw">end</span>
+196:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-local-method" class="method-detail ">
+				<a name="method-i-get_local"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_local</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="get-local-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 291</span>
+291:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_local</span>
+292:       <span class="ruby-keyword kw">case</span>
+293:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:local_dot_atom_text</span>)
+294:         <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">local_dot_atom_text</span>.<span class="ruby-identifier">text_value</span>
+295:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:angle_addr</span>)
+296:         <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">angle_addr</span>.<span class="ruby-identifier">addr_spec</span>.<span class="ruby-identifier">local_part</span>.<span class="ruby-identifier">text_value</span>
+297:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:addr_spec</span>)
+298:         <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">addr_spec</span>.<span class="ruby-identifier">local_part</span>.<span class="ruby-identifier">text_value</span>
+299:       <span class="ruby-keyword kw">else</span>
+300:         <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">local_part</span>.<span class="ruby-identifier">text_value</span>
+301:       <span class="ruby-keyword kw">end</span>
+302:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-name-method" class="method-detail ">
+				<a name="method-i-get_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="get-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 247</span>
+247:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_name</span>
+248:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">display_name</span>
+249:         <span class="ruby-identifier">str</span> = <span class="ruby-identifier">display_name</span>
+250:       <span class="ruby-keyword kw">else</span>
+251:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">comments</span>
+252:           <span class="ruby-identifier">comment_text</span> = <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>).<span class="ruby-identifier">squeeze</span>(<span class="ruby-value str">&quot; &quot;</span>)
+253:           <span class="ruby-identifier">str</span> = <span class="ruby-node">&quot;(#{comment_text})&quot;</span>
+254:         <span class="ruby-keyword kw">end</span>
+255:       <span class="ruby-keyword kw">end</span>
+256: 
+257:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">blank?</span>
+258:         <span class="ruby-keyword kw">nil</span>
+259:       <span class="ruby-keyword kw">else</span>
+260:         <span class="ruby-identifier">unparen</span>(<span class="ruby-identifier">str</span>)
+261:       <span class="ruby-keyword kw">end</span>
+262:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="obs-domain-list-method" class="method-detail ">
+				<a name="method-i-obs_domain_list"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">obs_domain_list</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="obs-domain-list-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 282</span>
+282:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">obs_domain_list</span>
+283:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:angle_addr</span>)
+284:         <span class="ruby-identifier">obs</span> = <span class="ruby-identifier">tree</span>.<span class="ruby-identifier">angle_addr</span>.<span class="ruby-identifier">elements</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:obs_domain_list</span>) }
+285:         <span class="ruby-operator">!</span><span class="ruby-identifier">obs</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">obs</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">text_value</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
+286:       <span class="ruby-keyword kw">else</span>
+287:         <span class="ruby-keyword kw">nil</span>
+288:       <span class="ruby-keyword kw">end</span>
+289:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="parse-method" class="method-detail ">
+				<a name="method-i-parse"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parse</span><span
+						class="method-args">(value = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="parse-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 173</span>
+173:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">nil</span>)
+174:       <span class="ruby-ivar">@parsed</span> = <span class="ruby-keyword kw">true</span>
+175:       <span class="ruby-keyword kw">case</span>
+176:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+177:         <span class="ruby-keyword kw">nil</span>
+178:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+179:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">tree</span> = <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">AddressList</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>).<span class="ruby-identifier">address_nodes</span>.<span class="ruby-identifier">first</span>
+180:       <span class="ruby-keyword kw">else</span>
+181:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">tree</span> = <span class="ruby-identifier">value</span>
+182:       <span class="ruby-keyword kw">end</span>
+183:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="strip-all-comments-method" class="method-detail ">
+				<a name="method-i-strip_all_comments"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">strip_all_comments</span><span
+						class="method-args">(string)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="strip-all-comments-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 198</span>
+198:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">strip_all_comments</span>(<span class="ruby-identifier">string</span>)
+199:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">blank?</span>
+200:         <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">comment</span><span class="ruby-operator">|</span>
+201:           <span class="ruby-identifier">string</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">&quot;(#{comment})&quot;</span>, <span class="ruby-value str">''</span>)
+202:         <span class="ruby-keyword kw">end</span>
+203:       <span class="ruby-keyword kw">end</span>
+204:       <span class="ruby-identifier">string</span>.<span class="ruby-identifier">strip</span>
+205:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="strip-domain-comments-method" class="method-detail ">
+				<a name="method-i-strip_domain_comments"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">strip_domain_comments</span><span
+						class="method-args">(value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="strip-domain-comments-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 207</span>
+207:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">strip_domain_comments</span>(<span class="ruby-identifier">value</span>)
+208:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">blank?</span>
+209:         <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">comment</span><span class="ruby-operator">|</span>
+210:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">get_domain</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">get_domain</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-node">&quot;(#{comment})&quot;</span>)
+211:             <span class="ruby-identifier">value</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">&quot;(#{comment})&quot;</span>, <span class="ruby-value str">''</span>)
+212:           <span class="ruby-keyword kw">end</span>
+213:         <span class="ruby-keyword kw">end</span>
+214:       <span class="ruby-keyword kw">end</span>
+215:       <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">strip</span>
+216:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="tree-method" class="method-detail ">
+				<a name="method-i-tree"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">tree</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Provides access to the Treetop parse tree for this address
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="tree-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 265</span>
+265:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tree</span>
+266:       <span class="ruby-ivar">@tree</span>
+267:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="tree--method" class="method-detail ">
+				<a name="method-i-tree%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">tree=</span><span
+						class="method-args">(value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="tree--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/elements/address.rb, line 269</span>
+269:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tree=</span>(<span class="ruby-identifier">value</span>)
+270:       <span class="ruby-ivar">@tree</span> = <span class="ruby-identifier">value</span>
+271:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

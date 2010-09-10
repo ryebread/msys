@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: ActiveSupport::Cache::MemoryStore</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/active_support/cache/memory_store_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_support/cache/memory_store.rb">lib/active_support/cache/memory_store.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="Store.html">ActiveSupport::Cache::Store</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-cleanup">#cleanup</a></li>
+					
+					<li><a href="#method-i-clear">#clear</a></li>
+					
+					<li><a href="#method-i-decrement">#decrement</a></li>
+					
+					<li><a href="#method-i-delete_matched">#delete_matched</a></li>
+					
+					<li><a href="#method-i-increment">#increment</a></li>
+					
+					<li><a href="#method-i-prune">#prune</a></li>
+					
+					<li><a href="#method-i-pruning%3F">#pruning?</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../ActiveSupport/Autoload.html">ActiveSupport::Autoload</a></li>
+				
+					<li><a href="../../ActiveSupport/BacktraceCleaner.html">ActiveSupport::BacktraceCleaner</a></li>
+				
+					<li><a href="../../ActiveSupport/Base64.html">ActiveSupport::Base64</a></li>
+				
+					<li><a href="../../ActiveSupport/BufferedLogger.html">ActiveSupport::BufferedLogger</a></li>
+				
+					<li><a href="../../ActiveSupport/BufferedLogger/Severity.html">ActiveSupport::BufferedLogger::Severity</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache.html">ActiveSupport::Cache</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/CompressedMemCacheStore.html">ActiveSupport::Cache::CompressedMemCacheStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Entry.html">ActiveSupport::Cache::Entry</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/FileStore.html">ActiveSupport::Cache::FileStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/MemCacheStore.html">ActiveSupport::Cache::MemCacheStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/MemoryStore.html">ActiveSupport::Cache::MemoryStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Store.html">ActiveSupport::Cache::Store</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Strategy.html">ActiveSupport::Cache::Strategy</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Strategy/LocalCache.html">ActiveSupport::Cache::Strategy::LocalCache</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Strategy/LocalCache/LocalStore.html">ActiveSupport::Cache::Strategy::LocalCache::LocalStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/SynchronizedMemoryStore.html">ActiveSupport::Cache::SynchronizedMemoryStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Callbacks.html">ActiveSupport::Callbacks</a></li>
+				
+					<li><a href="../../ActiveSupport/Callbacks/Callback.html">ActiveSupport::Callbacks::Callback</a></li>
+				
+					<li><a href="../../ActiveSupport/Callbacks/CallbackChain.html">ActiveSupport::Callbacks::CallbackChain</a></li>
+				
+					<li><a href="../../ActiveSupport/Callbacks/ClassMethods.html">ActiveSupport::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/Concern.html">ActiveSupport::Concern</a></li>
+				
+					<li><a href="../../ActiveSupport/Configurable.html">ActiveSupport::Configurable</a></li>
+				
+					<li><a href="../../ActiveSupport/Configurable/ClassMethods.html">ActiveSupport::Configurable::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/Dependencies/Reference.html">ActiveSupport::Dependencies::Reference</a></li>
+				
+					<li><a href="../../ActiveSupport/Dependencies/WatchStack.html">ActiveSupport::Dependencies::WatchStack</a></li>
+				
+					<li><a href="../../ActiveSupport/DescendantsTracker.html">ActiveSupport::DescendantsTracker</a></li>
+				
+					<li><a href="../../ActiveSupport/Duration.html">ActiveSupport::Duration</a></li>
+				
+					<li><a href="../../ActiveSupport/FileUpdateChecker.html">ActiveSupport::FileUpdateChecker</a></li>
+				
+					<li><a href="../../ActiveSupport/Gzip.html">ActiveSupport::Gzip</a></li>
+				
+					<li><a href="../../ActiveSupport/Gzip/Stream.html">ActiveSupport::Gzip::Stream</a></li>
+				
+					<li><a href="../../ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a></li>
+				
+					<li><a href="../../ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a></li>
+				
+					<li><a href="../../ActiveSupport/Inflector.html">ActiveSupport::Inflector</a></li>
+				
+					<li><a href="../../ActiveSupport/Inflector/Inflections.html">ActiveSupport::Inflector::Inflections</a></li>
+				
+					<li><a href="../../ActiveSupport/InheritableOptions.html">ActiveSupport::InheritableOptions</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON.html">ActiveSupport::JSON</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Backends.html">ActiveSupport::JSON::Backends</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Backends/JSONGem.html">ActiveSupport::JSON::Backends::JSONGem</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Backends/Yajl.html">ActiveSupport::JSON::Backends::Yajl</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Backends/Yaml.html">ActiveSupport::JSON::Backends::Yaml</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Encoding/CircularReferenceError.html">ActiveSupport::JSON::Encoding::CircularReferenceError</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Encoding/Encoder.html">ActiveSupport::JSON::Encoding::Encoder</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Variable.html">ActiveSupport::JSON::Variable</a></li>
+				
+					<li><a href="../../ActiveSupport/LogSubscriber.html">ActiveSupport::LogSubscriber</a></li>
+				
+					<li><a href="../../ActiveSupport/LogSubscriber/TestHelper.html">ActiveSupport::LogSubscriber::TestHelper</a></li>
+				
+					<li><a href="../../ActiveSupport/LogSubscriber/TestHelper/MockLogger.html">ActiveSupport::LogSubscriber::TestHelper::MockLogger</a></li>
+				
+					<li><a href="../../ActiveSupport/Memoizable.html">ActiveSupport::Memoizable</a></li>
+				
+					<li><a href="../../ActiveSupport/Memoizable/InstanceMethods.html">ActiveSupport::Memoizable::InstanceMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/MessageEncryptor.html">ActiveSupport::MessageEncryptor</a></li>
+				
+					<li><a href="../../ActiveSupport/MessageEncryptor/InvalidMessage.html">ActiveSupport::MessageEncryptor::InvalidMessage</a></li>
+				
+					<li><a href="../../ActiveSupport/MessageVerifier.html">ActiveSupport::MessageVerifier</a></li>
+				
+					<li><a href="../../ActiveSupport/MessageVerifier/InvalidSignature.html">ActiveSupport::MessageVerifier::InvalidSignature</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/Chars.html">ActiveSupport::Multibyte::Chars</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/EncodingError.html">ActiveSupport::Multibyte::EncodingError</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/Unicode.html">ActiveSupport::Multibyte::Unicode</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/Unicode/Codepoint.html">ActiveSupport::Multibyte::Unicode::Codepoint</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/Unicode/UnicodeDatabase.html">ActiveSupport::Multibyte::Unicode::UnicodeDatabase</a></li>
+				
+					<li><a href="../../ActiveSupport/Notifications.html">ActiveSupport::Notifications</a></li>
+				
+					<li><a href="../../ActiveSupport/Notifications/Event.html">ActiveSupport::Notifications::Event</a></li>
+				
+					<li><a href="../../ActiveSupport/Notifications/Fanout.html">ActiveSupport::Notifications::Fanout</a></li>
+				
+					<li><a href="../../ActiveSupport/Notifications/Instrumenter.html">ActiveSupport::Notifications::Instrumenter</a></li>
+				
+					<li><a href="../../ActiveSupport/OrderedOptions.html">ActiveSupport::OrderedOptions</a></li>
+				
+					<li><a href="../../ActiveSupport/Railtie.html">ActiveSupport::Railtie</a></li>
+				
+					<li><a href="../../ActiveSupport/Rescuable.html">ActiveSupport::Rescuable</a></li>
+				
+					<li><a href="../../ActiveSupport/Rescuable/ClassMethods.html">ActiveSupport::Rescuable::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/SafeBuffer.html">ActiveSupport::SafeBuffer</a></li>
+				
+					<li><a href="../../ActiveSupport/SecureRandom.html">ActiveSupport::SecureRandom</a></li>
+				
+					<li><a href="../../ActiveSupport/StringInquirer.html">ActiveSupport::StringInquirer</a></li>
+				
+					<li><a href="../../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing.html">ActiveSupport::Testing</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Assertions.html">ActiveSupport::Testing::Assertions</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Declarative.html">ActiveSupport::Testing::Declarative</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation.html">ActiveSupport::Testing::Isolation</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation/Forking.html">ActiveSupport::Testing::Isolation::Forking</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation/MiniTest.html">ActiveSupport::Testing::Isolation::MiniTest</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation/Subprocess.html">ActiveSupport::Testing::Isolation::Subprocess</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation/TestUnit.html">ActiveSupport::Testing::Isolation::TestUnit</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Pending.html">ActiveSupport::Testing::Pending</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance.html">ActiveSupport::Testing::Performance</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Benchmarker.html">ActiveSupport::Testing::Performance::Benchmarker</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics.html">ActiveSupport::Testing::Performance::Metrics</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/Base.html">ActiveSupport::Testing::Performance::Metrics::Base</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/CpuTime.html">ActiveSupport::Testing::Performance::Metrics::CpuTime</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/GcRuns.html">ActiveSupport::Testing::Performance::Metrics::GcRuns</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/GcTime.html">ActiveSupport::Testing::Performance::Metrics::GcTime</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/Memory.html">ActiveSupport::Testing::Performance::Metrics::Memory</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/Objects.html">ActiveSupport::Testing::Performance::Metrics::Objects</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/ProcessTime.html">ActiveSupport::Testing::Performance::Metrics::ProcessTime</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/Time.html">ActiveSupport::Testing::Performance::Metrics::Time</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/WallTime.html">ActiveSupport::Testing::Performance::Metrics::WallTime</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Performer.html">ActiveSupport::Testing::Performance::Performer</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Profiler.html">ActiveSupport::Testing::Performance::Profiler</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/ProxyTestResult.html">ActiveSupport::Testing::ProxyTestResult</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/RemoteError.html">ActiveSupport::Testing::RemoteError</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/SetupAndTeardown.html">ActiveSupport::Testing::SetupAndTeardown</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/SetupAndTeardown/ClassMethods.html">ActiveSupport::Testing::SetupAndTeardown::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/SetupAndTeardown/ForClassicTestUnit.html">ActiveSupport::Testing::SetupAndTeardown::ForClassicTestUnit</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/SetupAndTeardown/ForMiniTest.html">ActiveSupport::Testing::SetupAndTeardown::ForMiniTest</a></li>
+				
+					<li><a href="../../ActiveSupport/TimeWithZone.html">ActiveSupport::TimeWithZone</a></li>
+				
+					<li><a href="../../ActiveSupport/TimeZone.html">ActiveSupport::TimeZone</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini.html">ActiveSupport::XmlMini</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini_LibXMLSAX.html">ActiveSupport::XmlMini_LibXMLSAX</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini_LibXMLSAX/HashBuilder.html">ActiveSupport::XmlMini_LibXMLSAX::HashBuilder</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini_NokogiriSAX.html">ActiveSupport::XmlMini_NokogiriSAX</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini_NokogiriSAX/HashBuilder.html">ActiveSupport::XmlMini_NokogiriSAX::HashBuilder</a></li>
+				
+					<li><a href="../../Test.html">Test</a></li>
+				
+					<li><a href="../../Test/Unit.html">Test::Unit</a></li>
+				
+					<li><a href="../../Test/Unit/Collector.html">Test::Unit::Collector</a></li>
+				
+					<li><a href="../../Test/Unit/Collector/ObjectSpace.html">Test::Unit::Collector::ObjectSpace</a></li>
+				
+					<li><a href="../../ERB.html">ERB</a></li>
+				
+					<li><a href="../../ERB/Util.html">ERB::Util</a></li>
+				
+					<li><a href="../../I18n.html">I18n</a></li>
+				
+					<li><a href="../../I18n/Railtie.html">I18n::Railtie</a></li>
+				
+					<li><a href="../../LoadError.html">LoadError</a></li>
+				
+					<li><a href="../../LoadError.html">LoadError</a></li>
+				
+					<li><a href="../../Logger/SimpleFormatter.html">Logger::SimpleFormatter</a></li>
+				
+					<li><a href="../../Benchmark.html">Benchmark</a></li>
+				
+					<li><a href="../../BigDecimal.html">BigDecimal</a></li>
+				
+					<li><a href="../../DateTime.html">DateTime</a></li>
+				
+					<li><a href="../../Enumerable.html">Enumerable</a></li>
+				
+					<li><a href="../../File.html">File</a></li>
+				
+					<li><a href="../../Fixnum.html">Fixnum</a></li>
+				
+					<li><a href="../../Float.html">Float</a></li>
+				
+					<li><a href="../../Integer.html">Integer</a></li>
+				
+					<li><a href="../../Kernel.html">Kernel</a></li>
+				
+					<li><a href="../../NameError.html">NameError</a></li>
+				
+					<li><a href="../../Object.html">Object</a></li>
+				
+					<li><a href="../../Process.html">Process</a></li>
+				
+					<li><a href="../../Time.html">Time</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">ActiveSupport::Cache::MemoryStore</h1>
+
+		<div id="description">
+			<p>
+A cache store implementation which stores everything into memory in the
+same process. If you&#8217;re running multiple Ruby on Rails server
+processes (which is the case if you&#8217;re using mongrel_cluster or
+Phusion Passenger), then this means that Rails server process instances
+won&#8217;t be able to share cache data with each other and this may not be
+the most appropriate cache in that scenario.
+</p>
+<p>
+This cache has a bounded size specified by the :size options to the
+initializer (default is 32Mb). When the cache exceeds the allotted size, a
+cleanup will occur which tries to prune the cache down to three quarters of
+the maximum size by removing the least recently used entries.
+</p>
+<p>
+<a href="MemoryStore.html">MemoryStore</a> is thread-safe.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(options = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/cache/memory_store.rb, line 19</span>
+19:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span> = <span class="ruby-keyword kw">nil</span>)
+20:         <span class="ruby-identifier">options</span> <span class="ruby-operator">||=</span> {}
+21:         <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">options</span>)
+22:         <span class="ruby-ivar">@data</span> = {}
+23:         <span class="ruby-ivar">@key_access</span> = {}
+24:         <span class="ruby-ivar">@max_size</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:size</span>] <span class="ruby-operator">||</span> <span class="ruby-value">32</span>.<span class="ruby-identifier">megabytes</span>
+25:         <span class="ruby-ivar">@max_prune_time</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:max_prune_time</span>] <span class="ruby-operator">||</span> <span class="ruby-value">2</span>
+26:         <span class="ruby-ivar">@cache_size</span> = <span class="ruby-value">0</span>
+27:         <span class="ruby-ivar">@monitor</span> = <span class="ruby-constant">Monitor</span>.<span class="ruby-identifier">new</span>
+28:         <span class="ruby-ivar">@pruning</span> = <span class="ruby-keyword kw">false</span>
+29:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="cleanup-method" class="method-detail ">
+				<a name="method-i-cleanup"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cleanup</span><span
+						class="method-args">(options = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cleanup-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/cache/memory_store.rb, line 39</span>
+39:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cleanup</span>(<span class="ruby-identifier">options</span> = <span class="ruby-keyword kw">nil</span>)
+40:         <span class="ruby-identifier">options</span> = <span class="ruby-identifier">merged_options</span>(<span class="ruby-identifier">options</span>)
+41:         <span class="ruby-identifier">instrument</span>(<span class="ruby-value">:cleanup</span>, <span class="ruby-value">:size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">size</span>) <span class="ruby-keyword kw">do</span>
+42:           <span class="ruby-identifier">keys</span> = <span class="ruby-identifier">synchronize</span>{ <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">keys</span> }
+43:           <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+44:             <span class="ruby-identifier">entry</span> = <span class="ruby-ivar">@data</span>[<span class="ruby-identifier">key</span>]
+45:             <span class="ruby-identifier">delete_entry</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">entry</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">expired?</span>
+46:           <span class="ruby-keyword kw">end</span>
+47:         <span class="ruby-keyword kw">end</span>
+48:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="clear-method" class="method-detail ">
+				<a name="method-i-clear"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">clear</span><span
+						class="method-args">(options = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="clear-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/cache/memory_store.rb, line 31</span>
+31:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear</span>(<span class="ruby-identifier">options</span> = <span class="ruby-keyword kw">nil</span>)
+32:         <span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+33:           <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">clear</span>
+34:           <span class="ruby-ivar">@key_access</span>.<span class="ruby-identifier">clear</span>
+35:           <span class="ruby-ivar">@cache_size</span> = <span class="ruby-value">0</span>
+36:         <span class="ruby-keyword kw">end</span>
+37:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="decrement-method" class="method-detail ">
+				<a name="method-i-decrement"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decrement</span><span
+						class="method-args">(name, amount = 1, options = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Decrement an integer value in the cache.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="decrement-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/cache/memory_store.rb, line 90</span>
+ 90:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">decrement</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">amount</span> = <span class="ruby-value">1</span>, <span class="ruby-identifier">options</span> = <span class="ruby-keyword kw">nil</span>)
+ 91:         <span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+ 92:           <span class="ruby-identifier">options</span> = <span class="ruby-identifier">merged_options</span>(<span class="ruby-identifier">options</span>)
+ 93:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">num</span> = <span class="ruby-identifier">read</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
+ 94:             <span class="ruby-identifier">num</span> = <span class="ruby-identifier">num</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">amount</span>
+ 95:             <span class="ruby-identifier">write</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">num</span>, <span class="ruby-identifier">options</span>)
+ 96:             <span class="ruby-identifier">num</span>
+ 97:           <span class="ruby-keyword kw">else</span>
+ 98:             <span class="ruby-keyword kw">nil</span>
+ 99:           <span class="ruby-keyword kw">end</span>
+100:         <span class="ruby-keyword kw">end</span>
+101:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="delete-matched-method" class="method-detail ">
+				<a name="method-i-delete_matched"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">delete_matched</span><span
+						class="method-args">(matcher, options = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="delete-matched-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/cache/memory_store.rb, line 103</span>
+103:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_matched</span>(<span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">options</span> = <span class="ruby-keyword kw">nil</span>)
+104:         <span class="ruby-identifier">options</span> = <span class="ruby-identifier">merged_options</span>(<span class="ruby-identifier">options</span>)
+105:         <span class="ruby-identifier">instrument</span>(<span class="ruby-value">:delete_matched</span>, <span class="ruby-identifier">matcher</span>.<span class="ruby-identifier">inspect</span>) <span class="ruby-keyword kw">do</span>
+106:           <span class="ruby-identifier">matcher</span> = <span class="ruby-identifier">key_matcher</span>(<span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">options</span>)
+107:           <span class="ruby-identifier">keys</span> = <span class="ruby-identifier">synchronize</span> { <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">keys</span> }
+108:           <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+109:             <span class="ruby-identifier">delete_entry</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">matcher</span>)
+110:           <span class="ruby-keyword kw">end</span>
+111:         <span class="ruby-keyword kw">end</span>
+112:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="increment-method" class="method-detail ">
+				<a name="method-i-increment"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">increment</span><span
+						class="method-args">(name, amount = 1, options = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Increment an integer value in the cache.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="increment-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/cache/memory_store.rb, line 76</span>
+76:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">increment</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">amount</span> = <span class="ruby-value">1</span>, <span class="ruby-identifier">options</span> = <span class="ruby-keyword kw">nil</span>)
+77:         <span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+78:           <span class="ruby-identifier">options</span> = <span class="ruby-identifier">merged_options</span>(<span class="ruby-identifier">options</span>)
+79:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">num</span> = <span class="ruby-identifier">read</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
+80:             <span class="ruby-identifier">num</span> = <span class="ruby-identifier">num</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">amount</span>
+81:             <span class="ruby-identifier">write</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">num</span>, <span class="ruby-identifier">options</span>)
+82:             <span class="ruby-identifier">num</span>
+83:           <span class="ruby-keyword kw">else</span>
+84:             <span class="ruby-keyword kw">nil</span>
+85:           <span class="ruby-keyword kw">end</span>
+86:         <span class="ruby-keyword kw">end</span>
+87:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="prune-method" class="method-detail ">
+				<a name="method-i-prune"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">prune</span><span
+						class="method-args">(target_size, max_time = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+To ensure entries fit within the specified memory prune the cache by
+removing the least recently accessed entries.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="prune-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/cache/memory_store.rb, line 52</span>
+52:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prune</span>(<span class="ruby-identifier">target_size</span>, <span class="ruby-identifier">max_time</span> = <span class="ruby-keyword kw">nil</span>)
+53:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pruning?</span>
+54:         <span class="ruby-ivar">@pruning</span> = <span class="ruby-keyword kw">true</span>
+55:         <span class="ruby-keyword kw">begin</span>
+56:           <span class="ruby-identifier">start_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+57:           <span class="ruby-identifier">cleanup</span>
+58:           <span class="ruby-identifier">instrument</span>(<span class="ruby-value">:prune</span>, <span class="ruby-identifier">target_size</span>, <span class="ruby-value">:from</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@cache_size</span>) <span class="ruby-keyword kw">do</span>
+59:             <span class="ruby-identifier">keys</span> = <span class="ruby-identifier">synchronize</span>{ <span class="ruby-ivar">@key_access</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@key_access</span>[<span class="ruby-identifier">a</span>].<span class="ruby-identifier">to_f</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-ivar">@key_access</span>[<span class="ruby-identifier">b</span>].<span class="ruby-identifier">to_f</span>} }
+60:             <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+61:               <span class="ruby-identifier">delete_entry</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">options</span>)
+62:               <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@cache_size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">target_size</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">max_time</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">start_time</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">max_time</span>)
+63:             <span class="ruby-keyword kw">end</span>
+64:           <span class="ruby-keyword kw">end</span>
+65:         <span class="ruby-keyword kw">ensure</span>
+66:           <span class="ruby-ivar">@pruning</span> = <span class="ruby-keyword kw">false</span>
+67:         <span class="ruby-keyword kw">end</span>
+68:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="pruning--method" class="method-detail ">
+				<a name="method-i-pruning%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">pruning?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if the cache is currently being pruned.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="pruning--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/cache/memory_store.rb, line 71</span>
+71:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pruning?</span>
+72:         <span class="ruby-ivar">@pruning</span>
+73:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

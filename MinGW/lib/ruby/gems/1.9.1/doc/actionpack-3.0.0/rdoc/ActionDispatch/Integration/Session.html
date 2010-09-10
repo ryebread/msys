@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: ActionDispatch::Integration::Session</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/action_dispatch/testing/integration_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_dispatch/testing/integration.rb">lib/action_dispatch/testing/integration.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-_mock_session">#_mock_session</a></li>
+					
+					<li><a href="#method-i-cookies">#cookies</a></li>
+					
+					<li><a href="#method-i-default_url_options">#default_url_options</a></li>
+					
+					<li><a href="#method-i-host">#host</a></li>
+					
+					<li><a href="#method-i-host%21">#host!</a></li>
+					
+					<li><a href="#method-i-https%21">#https!</a></li>
+					
+					<li><a href="#method-i-https%3F">#https?</a></li>
+					
+					<li><a href="#method-i-process">#process</a></li>
+					
+					<li><a href="#method-i-reset%21">#reset!</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><span class="include">Test::Unit::Assertions</span></li>
+				
+				
+				
+					<li><span class="include">TestProcess</span></li>
+				
+				
+				
+					<li><span class="include">RequestHelpers</span></li>
+				
+				
+				
+					<li><span class="include">Assertions</span></li>
+				
+				
+				
+					<li><a class="include" href="../Routing/UrlFor.html">ActionDispatch::Routing::UrlFor</a></li>
+				
+				
+				
+					<li><a class="include" href="../../ActionController/Testing.html">ActionController::Testing</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../ActionController/Base.html">ActionController::Base</a></li>
+				
+					<li><a href="../../ActionController/Caching.html">ActionController::Caching</a></li>
+				
+					<li><a href="../../ActionController/Caching/Actions.html">ActionController::Caching::Actions</a></li>
+				
+					<li><a href="../../ActionController/Caching/Actions/ActionCachePath.html">ActionController::Caching::Actions::ActionCachePath</a></li>
+				
+					<li><a href="../../ActionController/Caching/Actions/ClassMethods.html">ActionController::Caching::Actions::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Caching/ConfigMethods.html">ActionController::Caching::ConfigMethods</a></li>
+				
+					<li><a href="../../ActionController/Caching/Pages.html">ActionController::Caching::Pages</a></li>
+				
+					<li><a href="../../ActionController/Caching/Pages/ClassMethods.html">ActionController::Caching::Pages::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Caching/Sweeping.html">ActionController::Caching::Sweeping</a></li>
+				
+					<li><a href="../../ActionController/Compatibility.html">ActionController::Compatibility</a></li>
+				
+					<li><a href="../../ActionController/Compatibility/ClassMethods.html">ActionController::Compatibility::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/ConditionalGet.html">ActionController::ConditionalGet</a></li>
+				
+					<li><a href="../../ActionController/Cookies.html">ActionController::Cookies</a></li>
+				
+					<li><a href="../../ActionController/Dispatcher.html">ActionController::Dispatcher</a></li>
+				
+					<li><a href="../../ActionController/Flash.html">ActionController::Flash</a></li>
+				
+					<li><a href="../../ActionController/Head.html">ActionController::Head</a></li>
+				
+					<li><a href="../../ActionController/Helpers.html">ActionController::Helpers</a></li>
+				
+					<li><a href="../../ActionController/Helpers/ClassMethods.html">ActionController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/HideActions.html">ActionController::HideActions</a></li>
+				
+					<li><a href="../../ActionController/HideActions/ClassMethods.html">ActionController::HideActions::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication.html">ActionController::HttpAuthentication</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Basic.html">ActionController::HttpAuthentication::Basic</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Basic/ControllerMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Digest.html">ActionController::HttpAuthentication::Digest</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Digest/ControllerMethods.html">ActionController::HttpAuthentication::Digest::ControllerMethods</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Token.html">ActionController::HttpAuthentication::Token</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Token/ControllerMethods.html">ActionController::HttpAuthentication::Token::ControllerMethods</a></li>
+				
+					<li><a href="../../ActionController/ImplicitRender.html">ActionController::ImplicitRender</a></li>
+				
+					<li><a href="../../ActionController/Instrumentation.html">ActionController::Instrumentation</a></li>
+				
+					<li><a href="../../ActionController/Instrumentation/ClassMethods.html">ActionController::Instrumentation::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/LogSubscriber.html">ActionController::LogSubscriber</a></li>
+				
+					<li><a href="../../ActionController/Metal.html">ActionController::Metal</a></li>
+				
+					<li><a href="../../ActionController/Middleware.html">ActionController::Middleware</a></li>
+				
+					<li><a href="../../ActionController/Middleware/ActionMiddleware.html">ActionController::Middleware::ActionMiddleware</a></li>
+				
+					<li><a href="../../ActionController/MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/RackDelegation.html">ActionController::RackDelegation</a></li>
+				
+					<li><a href="../../ActionController/Railtie.html">ActionController::Railtie</a></li>
+				
+					<li><a href="../../ActionController/Redirecting.html">ActionController::Redirecting</a></li>
+				
+					<li><a href="../../ActionController/Renderers.html">ActionController::Renderers</a></li>
+				
+					<li><a href="../../ActionController/Renderers/All.html">ActionController::Renderers::All</a></li>
+				
+					<li><a href="../../ActionController/Renderers/ClassMethods.html">ActionController::Renderers::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Rendering.html">ActionController::Rendering</a></li>
+				
+					<li><a href="../../ActionController/RequestForgeryProtection.html">ActionController::RequestForgeryProtection</a></li>
+				
+					<li><a href="../../ActionController/RequestForgeryProtection/ClassMethods.html">ActionController::RequestForgeryProtection::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Rescue.html">ActionController::Rescue</a></li>
+				
+					<li><a href="../../ActionController/Responder.html">ActionController::Responder</a></li>
+				
+					<li><a href="../../ActionController/SessionManagement/ClassMethods.html">ActionController::SessionManagement::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Streaming.html">ActionController::Streaming</a></li>
+				
+					<li><a href="../../ActionController/TemplateAssertions.html">ActionController::TemplateAssertions</a></li>
+				
+					<li><a href="../../ActionController/TestCase.html">ActionController::TestCase</a></li>
+				
+					<li><a href="../../ActionController/TestCase/Behavior.html">ActionController::TestCase::Behavior</a></li>
+				
+					<li><a href="../../ActionController/TestCase/Behavior/ClassMethods.html">ActionController::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/TestCase/RaiseActionExceptions.html">ActionController::TestCase::RaiseActionExceptions</a></li>
+				
+					<li><a href="../../ActionController/TestResponse.html">ActionController::TestResponse</a></li>
+				
+					<li><a href="../../ActionController/Testing.html">ActionController::Testing</a></li>
+				
+					<li><a href="../../ActionController/Testing/ClassMethods.html">ActionController::Testing::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/UrlFor.html">ActionController::UrlFor</a></li>
+				
+					<li><a href="../../ActionController/UrlFor/ClassMethods.html">ActionController::UrlFor::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/UrlRewriter.html">ActionController::UrlRewriter</a></li>
+				
+					<li><a href="../../ActionController/UrlWriter.html">ActionController::UrlWriter</a></li>
+				
+					<li><a href="../../ActionDispatch/Assertions.html">ActionDispatch::Assertions</a></li>
+				
+					<li><a href="../../ActionDispatch/Assertions/DomAssertions.html">ActionDispatch::Assertions::DomAssertions</a></li>
+				
+					<li><a href="../../ActionDispatch/Assertions/ResponseAssertions.html">ActionDispatch::Assertions::ResponseAssertions</a></li>
+				
+					<li><a href="../../ActionDispatch/Assertions/RoutingAssertions.html">ActionDispatch::Assertions::RoutingAssertions</a></li>
+				
+					<li><a href="../../ActionDispatch/Assertions/SelectorAssertions.html">ActionDispatch::Assertions::SelectorAssertions</a></li>
+				
+					<li><a href="../../ActionDispatch/Assertions/TagAssertions.html">ActionDispatch::Assertions::TagAssertions</a></li>
+				
+					<li><a href="../../ActionDispatch/BestStandardsSupport.html">ActionDispatch::BestStandardsSupport</a></li>
+				
+					<li><a href="../../ActionDispatch/Callbacks.html">ActionDispatch::Callbacks</a></li>
+				
+					<li><a href="../../ActionDispatch/Cookies.html">ActionDispatch::Cookies</a></li>
+				
+					<li><a href="../../ActionDispatch/Cookies/CookieOverflow.html">ActionDispatch::Cookies::CookieOverflow</a></li>
+				
+					<li><a href="../../ActionDispatch/Flash.html">ActionDispatch::Flash</a></li>
+				
+					<li><a href="../../ActionDispatch/Flash/FlashHash.html">ActionDispatch::Flash::FlashHash</a></li>
+				
+					<li><a href="../../ActionDispatch/Head.html">ActionDispatch::Head</a></li>
+				
+					<li><a href="../../ActionDispatch/Http.html">ActionDispatch::Http</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/Cache.html">ActionDispatch::Http::Cache</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/Cache/Request.html">ActionDispatch::Http::Cache::Request</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/Cache/Response.html">ActionDispatch::Http::Cache::Response</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/FilterParameters.html">ActionDispatch::Http::FilterParameters</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/Headers.html">ActionDispatch::Http::Headers</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/MimeNegotiation.html">ActionDispatch::Http::MimeNegotiation</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/ParameterFilter.html">ActionDispatch::Http::ParameterFilter</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/Parameters.html">ActionDispatch::Http::Parameters</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/URL.html">ActionDispatch::Http::URL</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/Upload.html">ActionDispatch::Http::Upload</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/UploadedFile.html">ActionDispatch::Http::UploadedFile</a></li>
+				
+					<li><a href="../../ActionDispatch/Integration/RequestHelpers.html">ActionDispatch::Integration::RequestHelpers</a></li>
+				
+					<li><a href="../../ActionDispatch/Integration/Runner.html">ActionDispatch::Integration::Runner</a></li>
+				
+					<li><a href="../../ActionDispatch/Integration/Session.html">ActionDispatch::Integration::Session</a></li>
+				
+					<li><a href="../../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a></li>
+				
+					<li><a href="../../ActionDispatch/MiddlewareStack.html">ActionDispatch::MiddlewareStack</a></li>
+				
+					<li><a href="../../ActionDispatch/MiddlewareStack/Middleware.html">ActionDispatch::MiddlewareStack::Middleware</a></li>
+				
+					<li><a href="../../ActionDispatch/ParamsParser.html">ActionDispatch::ParamsParser</a></li>
+				
+					<li><a href="../../ActionDispatch/PerformanceTest.html">ActionDispatch::PerformanceTest</a></li>
+				
+					<li><a href="../../ActionDispatch/Railtie.html">ActionDispatch::Railtie</a></li>
+				
+					<li><a href="../../ActionDispatch/RemoteIp.html">ActionDispatch::RemoteIp</a></li>
+				
+					<li><a href="../../ActionDispatch/RemoteIp/IpSpoofAttackError.html">ActionDispatch::RemoteIp::IpSpoofAttackError</a></li>
+				
+					<li><a href="../../ActionDispatch/RemoteIp/RemoteIpGetter.html">ActionDispatch::RemoteIp::RemoteIpGetter</a></li>
+				
+					<li><a href="../../ActionDispatch/Request.html">ActionDispatch::Request</a></li>
+				
+					<li><a href="../../ActionDispatch/Rescue.html">ActionDispatch::Rescue</a></li>
+				
+					<li><a href="../../ActionDispatch/Response.html">ActionDispatch::Response</a></li>
+				
+					<li><a href="../../ActionDispatch/Response/Setup.html">ActionDispatch::Response::Setup</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing.html">ActionDispatch::Routing</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/Mapper.html">ActionDispatch::Routing::Mapper</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/Mapper/Base.html">ActionDispatch::Routing::Mapper::Base</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/Mapper/HttpHelpers.html">ActionDispatch::Routing::Mapper::HttpHelpers</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/Mapper/Resources.html">ActionDispatch::Routing::Mapper::Resources</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/Mapper/Scoping.html">ActionDispatch::Routing::Mapper::Scoping</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/Mapper/Shorthand.html">ActionDispatch::Routing::Mapper::Shorthand</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/PolymorphicRoutes.html">ActionDispatch::Routing::PolymorphicRoutes</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/UrlFor.html">ActionDispatch::Routing::UrlFor</a></li>
+				
+					<li><a href="../../ActionDispatch/Session.html">ActionDispatch::Session</a></li>
+				
+					<li><a href="../../ActionDispatch/Session/AbstractStore.html">ActionDispatch::Session::AbstractStore</a></li>
+				
+					<li><a href="../../ActionDispatch/Session/AbstractStore/OptionsHash.html">ActionDispatch::Session::AbstractStore::OptionsHash</a></li>
+				
+					<li><a href="../../ActionDispatch/Session/AbstractStore/SessionHash.html">ActionDispatch::Session::AbstractStore::SessionHash</a></li>
+				
+					<li><a href="../../ActionDispatch/Session/CookieStore.html">ActionDispatch::Session::CookieStore</a></li>
+				
+					<li><a href="../../ActionDispatch/Session/MemCacheStore.html">ActionDispatch::Session::MemCacheStore</a></li>
+				
+					<li><a href="../../ActionDispatch/ShowExceptions.html">ActionDispatch::ShowExceptions</a></li>
+				
+					<li><a href="../../ActionDispatch/Static.html">ActionDispatch::Static</a></li>
+				
+					<li><a href="../../ActionDispatch/TestProcess.html">ActionDispatch::TestProcess</a></li>
+				
+					<li><a href="../../ActionDispatch/TestRequest.html">ActionDispatch::TestRequest</a></li>
+				
+					<li><a href="../../ActionDispatch/TestResponse.html">ActionDispatch::TestResponse</a></li>
+				
+					<li><a href="../../ActionDispatch/TestResponse/DeprecatedHelpers.html">ActionDispatch::TestResponse::DeprecatedHelpers</a></li>
+				
+					<li><a href="../../ActionView/Base.html">ActionView::Base</a></li>
+				
+					<li><a href="../../ActionView/Context.html">ActionView::Context</a></li>
+				
+					<li><a href="../../ActionView/FileSystemResolver.html">ActionView::FileSystemResolver</a></li>
+				
+					<li><a href="../../ActionView/FixtureResolver.html">ActionView::FixtureResolver</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ActiveModelFormBuilder.html">ActionView::Helpers::ActiveModelFormBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ActiveModelHelper.html">ActionView::Helpers::ActiveModelHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ActiveModelInstanceTag.html">ActionView::Helpers::ActiveModelInstanceTag</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AssetTagHelper.html">ActionView::Helpers::AssetTagHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AtomFeedHelper.html">ActionView::Helpers::AtomFeedHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AtomFeedHelper/AtomBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/CsrfHelper.html">ActionView::Helpers::CsrfHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/DateHelper.html">ActionView::Helpers::DateHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/DebugHelper.html">ActionView::Helpers::DebugHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormHelper.html">ActionView::Helpers::FormHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormOptionsHelper.html">ActionView::Helpers::FormOptionsHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormTagHelper.html">ActionView::Helpers::FormTagHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/InstanceTagMethods/ClassMethods.html">ActionView::Helpers::InstanceTagMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActionView/Helpers/JavaScriptHelper.html">ActionView::Helpers::JavaScriptHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/NumberHelper.html">ActionView::Helpers::NumberHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/NumberHelper/InvalidNumberError.html">ActionView::Helpers::NumberHelper::InvalidNumberError</a></li>
+				
+					<li><a href="../../ActionView/Helpers/PrototypeHelper.html">ActionView::Helpers::PrototypeHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.html">ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods</a></li>
+				
+					<li><a href="../../ActionView/Helpers/RawOutputHelper.html">ActionView::Helpers::RawOutputHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/SanitizeHelper.html">ActionView::Helpers::SanitizeHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/TranslationHelper.html">ActionView::Helpers::TranslationHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/UrlHelper.html">ActionView::Helpers::UrlHelper</a></li>
+				
+					<li><a href="../../ActionView/LogSubscriber.html">ActionView::LogSubscriber</a></li>
+				
+					<li><a href="../../ActionView/LookupContext/Details.html">ActionView::LookupContext::Details</a></li>
+				
+					<li><a href="../../ActionView/LookupContext/ViewPaths.html">ActionView::LookupContext::ViewPaths</a></li>
+				
+					<li><a href="../../ActionView/NullResolver.html">ActionView::NullResolver</a></li>
+				
+					<li><a href="../../ActionView/OutputBuffer.html">ActionView::OutputBuffer</a></li>
+				
+					<li><a href="../../ActionView/PathResolver.html">ActionView::PathResolver</a></li>
+				
+					<li><a href="../../ActionView/Railtie.html">ActionView::Railtie</a></li>
+				
+					<li><a href="../../ActionView/Rendering.html">ActionView::Rendering</a></li>
+				
+					<li><a href="../../ActionView/Resolver.html">ActionView::Resolver</a></li>
+				
+					<li><a href="../../ActionView/Template.html">ActionView::Template</a></li>
+				
+					<li><a href="../../ActionView/Template/Handler.html">ActionView::Template::Handler</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Builder.html">ActionView::Template::Handlers::Builder</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Compilable.html">ActionView::Template::Handlers::Compilable</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Compilable/ClassMethods.html">ActionView::Template::Handlers::Compilable::ClassMethods</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/ERB.html">ActionView::Template::Handlers::ERB</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Erubis.html">ActionView::Template::Handlers::Erubis</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/RJS.html">ActionView::Template::Handlers::RJS</a></li>
+				
+					<li><a href="../../ActionView/TestCase.html">ActionView::TestCase</a></li>
+				
+					<li><a href="../../ActionView/TestCase/Behavior.html">ActionView::TestCase::Behavior</a></li>
+				
+					<li><a href="../../ActionView/TestCase/Behavior/ClassMethods.html">ActionView::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../ActionView/TestCase/Behavior/Locals.html">ActionView::TestCase::Behavior::Locals</a></li>
+				
+					<li><a href="../../ActionView/TestCase/TestController.html">ActionView::TestCase::TestController</a></li>
+				
+					<li><a href="../../AbstractController.html">AbstractController</a></li>
+				
+					<li><a href="../../AbstractController/ActionNotFound.html">AbstractController::ActionNotFound</a></li>
+				
+					<li><a href="../../AbstractController/ActionNotFound.html">AbstractController::ActionNotFound</a></li>
+				
+					<li><a href="../../AbstractController/AssetPaths.html">AbstractController::AssetPaths</a></li>
+				
+					<li><a href="../../AbstractController/Base.html">AbstractController::Base</a></li>
+				
+					<li><a href="../../AbstractController/Callbacks.html">AbstractController::Callbacks</a></li>
+				
+					<li><a href="../../AbstractController/Callbacks/ClassMethods.html">AbstractController::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../AbstractController/Collector.html">AbstractController::Collector</a></li>
+				
+					<li><a href="../../AbstractController/DoubleRenderError.html">AbstractController::DoubleRenderError</a></li>
+				
+					<li><a href="../../AbstractController/DoubleRenderError.html">AbstractController::DoubleRenderError</a></li>
+				
+					<li><a href="../../AbstractController/Error.html">AbstractController::Error</a></li>
+				
+					<li><a href="../../AbstractController/Helpers.html">AbstractController::Helpers</a></li>
+				
+					<li><a href="../../AbstractController/Helpers/ClassMethods.html">AbstractController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../../AbstractController/Logger.html">AbstractController::Logger</a></li>
+				
+					<li><a href="../../AbstractController/Rendering.html">AbstractController::Rendering</a></li>
+				
+					<li><a href="../../AbstractController/Rendering/ClassMethods.html">AbstractController::Rendering::ClassMethods</a></li>
+				
+					<li><a href="../../AbstractController/Translation.html">AbstractController::Translation</a></li>
+				
+					<li><a href="../../AbstractController/ViewPaths.html">AbstractController::ViewPaths</a></li>
+				
+					<li><a href="../../AbstractController/ViewPaths/ClassMethods.html">AbstractController::ViewPaths::ClassMethods</a></li>
+				
+					<li><a href="../../HTML/FullSanitizer.html">HTML::FullSanitizer</a></li>
+				
+					<li><a href="../../HTML/LinkSanitizer.html">HTML::LinkSanitizer</a></li>
+				
+					<li><a href="../../HTML/Sanitizer.html">HTML::Sanitizer</a></li>
+				
+					<li><a href="../../HTML/Selector.html">HTML::Selector</a></li>
+				
+					<li><a href="../../HTML/WhiteListSanitizer.html">HTML::WhiteListSanitizer</a></li>
+				
+					<li><a href="../../Mime.html">Mime</a></li>
+				
+					<li><a href="../../Mime/Mimes.html">Mime::Mimes</a></li>
+				
+					<li><a href="../../Mime/Type.html">Mime::Type</a></li>
+				
+					<li><a href="../../ActionPack.html">ActionPack</a></li>
+				
+					<li><a href="../../Rack.html">Rack</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">ActionDispatch::Integration::Session</h1>
+
+		<div id="description">
+			<p>
+An integration <a href="Session.html">Session</a> instance represents a set
+of requests and responses performed sequentially by some virtual user.
+Because you can instantiate multiple sessions and run them side-by-side,
+you can also mimic (to some limited extent) multiple simultaneous users
+interacting with your system.
+</p>
+<p>
+Typically, you will instantiate a new session using
+IntegrationTest#open_session, rather than instantiating <a
+href="Session.html">Integration::Session</a> directly.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="DEFAULT_HOST">DEFAULT_HOST</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="host-attribute-method" class="method-detail">
+				<a name="host"></a>
+				
+				<a name="host="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">host</span><span
+						class="attribute-access-type">[W]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="remote-addr-attribute-method" class="method-detail">
+				<a name="remote_addr"></a>
+				
+				<a name="remote_addr="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">remote_addr</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The <a href="Session.html#remote_addr">remote_addr</a> used in the last
+request.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="accept-attribute-method" class="method-detail">
+				<a name="accept"></a>
+				
+				<a name="accept="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">accept</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The Accept header to send.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="controller-attribute-method" class="method-detail">
+				<a name="controller"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">controller</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+A reference to the controller instance used by the last request.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="request-attribute-method" class="method-detail">
+				<a name="request"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">request</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+A reference to the request instance used by the last request.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="response-attribute-method" class="method-detail">
+				<a name="response"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">response</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+A reference to the response instance used by the last request.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="request-count-attribute-method" class="method-detail">
+				<a name="request_count"></a>
+				
+				<a name="request_count="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">request_count</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+A running counter of the number of requests processed.
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(app)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Create and initialize a new <a href="Session.html">Session</a> instance.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/testing/integration.rb, line 173</span>
+173:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">app</span>)
+174:         <span class="ruby-ivar">@app</span> = <span class="ruby-identifier">app</span>
+175: 
+176:         <span class="ruby-comment cmt"># If the app is a Rails app, make url_helpers available on the session</span>
+177:         <span class="ruby-comment cmt"># This makes app.url_for and app.foo_path available in the console</span>
+178:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">app</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:routes</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">app</span>.<span class="ruby-identifier">routes</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:url_helpers</span>)
+179:           <span class="ruby-identifier">singleton_class</span>.<span class="ruby-identifier">class_eval</span> { <span class="ruby-identifier">include</span> <span class="ruby-identifier">app</span>.<span class="ruby-identifier">routes</span>.<span class="ruby-identifier">url_helpers</span> }
+180:         <span class="ruby-keyword kw">end</span>
+181: 
+182:         <span class="ruby-identifier">reset!</span>
+183:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="cookies-method" class="method-detail ">
+				<a name="method-i-cookies"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cookies</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+A map of the cookies returned by the last response, and which will be sent
+with the next request.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="cookies-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/testing/integration.rb, line 154</span>
+154:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cookies</span>
+155:         <span class="ruby-identifier">_mock_session</span>.<span class="ruby-identifier">cookie_jar</span>
+156:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-url-options-method" class="method-detail ">
+				<a name="method-i-default_url_options"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_url_options</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="default-url-options-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/testing/integration.rb, line 185</span>
+185:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_url_options</span>
+186:         { <span class="ruby-value">:host</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">host</span>, <span class="ruby-value">:protocol</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">https?</span> <span class="ruby-operator">?</span> <span class="ruby-value str">&quot;https&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;http&quot;</span> }
+187:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="host-method" class="method-detail ">
+				<a name="method-i-host"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">host</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The hostname used in the last request.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="host-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/testing/integration.rb, line 141</span>
+141:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">host</span>
+142:         <span class="ruby-ivar">@host</span> <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT_HOST</span>
+143:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="host--method" class="method-detail ">
+				<a name="method-i-host%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">host!</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Set the host name to use in the next request.
+</p>
+<pre>
+  session.host! &quot;www.example.com&quot;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="host--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/testing/integration.rb, line 236</span>
+236:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">host!</span>(<span class="ruby-identifier">name</span>)
+237:         <span class="ruby-ivar">@host</span> = <span class="ruby-identifier">name</span>
+238:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="https--method" class="method-detail ">
+				<a name="method-i-https%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">https!</span><span
+						class="method-args">(flag = true)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Specify whether or not the session should mimic a secure HTTPS request.
+</p>
+<pre>
+  session.https!
+  session.https!(false)</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="https--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/testing/integration.rb, line 220</span>
+220:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">https!</span>(<span class="ruby-identifier">flag</span> = <span class="ruby-keyword kw">true</span>)
+221:         <span class="ruby-ivar">@https</span> = <span class="ruby-identifier">flag</span>
+222:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="https--method" class="method-detail ">
+				<a name="method-i-https%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">https?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Return <tt>true</tt> if the session is mimicking a secure HTTPS request.
+</p>
+<pre>
+  if session.https?
+    ...
+  end</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="https--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/testing/integration.rb, line 229</span>
+229:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">https?</span>
+230:         <span class="ruby-ivar">@https</span>
+231:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="reset--method" class="method-detail ">
+				<a name="method-i-reset%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">reset!</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Resets the instance. This can be used to reset the state information in an
+existing session instance, so it can be used from a clean-slate condition.
+</p>
+<pre>
+  session.reset!</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="reset--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/testing/integration.rb, line 194</span>
+194:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset!</span>
+195:         <span class="ruby-ivar">@https</span> = <span class="ruby-keyword kw">false</span>
+196:         <span class="ruby-ivar">@controller</span> = <span class="ruby-ivar">@request</span> = <span class="ruby-ivar">@response</span> = <span class="ruby-keyword kw">nil</span>
+197:         <span class="ruby-ivar">@_mock_session</span> = <span class="ruby-keyword kw">nil</span>
+198:         <span class="ruby-ivar">@request_count</span> = <span class="ruby-value">0</span>
+199: 
+200:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">host</span>        = <span class="ruby-constant">DEFAULT_HOST</span>
+201:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">remote_addr</span> = <span class="ruby-value str">&quot;127.0.0.1&quot;</span>
+202:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">accept</span>      = <span class="ruby-value str">&quot;text/xml,application/xml,application/xhtml+xml,&quot;</span> <span class="ruby-operator">+</span>
+203:                            <span class="ruby-value str">&quot;text/html;q=0.9,text/plain;q=0.8,image/png,&quot;</span> <span class="ruby-operator">+</span>
+204:                            <span class="ruby-value str">&quot;*/*;q=0.5&quot;</span>
+205: 
+206:         <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-ivar">@named_routes_configured</span>
+207:           <span class="ruby-comment cmt"># install the named routes in this session instance.</span>
+208:           <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">singleton_class</span>
+209: 
+210:           <span class="ruby-comment cmt"># the helpers are made protected by default--we make them public for</span>
+211:           <span class="ruby-comment cmt"># easier access during testing and troubleshooting.</span>
+212:           <span class="ruby-ivar">@named_routes_configured</span> = <span class="ruby-keyword kw">true</span>
+213:         <span class="ruby-keyword kw">end</span>
+214:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="-mock-session-method" class="method-detail ">
+				<a name="method-i-_mock_session"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_mock_session</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-mock-session-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/testing/integration.rb, line 241</span>
+241:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_mock_session</span>
+242:           <span class="ruby-ivar">@_mock_session</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">MockSession</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@app</span>, <span class="ruby-identifier">host</span>)
+243:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="process-method" class="method-detail ">
+				<a name="method-i-process"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">process</span><span
+						class="method-args">(method, path, parameters = nil, rack_environment = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Performs the actual request.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="process-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/testing/integration.rb, line 246</span>
+246:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">parameters</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">rack_environment</span> = <span class="ruby-keyword kw">nil</span>)
+247:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">%{://}</span>
+248:             <span class="ruby-identifier">location</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">path</span>)
+249:             <span class="ruby-identifier">https!</span> <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPS</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">location</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">scheme</span>
+250:             <span class="ruby-identifier">host!</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">host</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">host</span>
+251:             <span class="ruby-identifier">path</span> = <span class="ruby-identifier">location</span>.<span class="ruby-identifier">query</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{location.path}?#{location.query}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">path</span>
+252:           <span class="ruby-keyword kw">end</span>
+253: 
+254:           <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Testing</span>
+255:             <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
+256:               <span class="ruby-identifier">include</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Testing</span>
+257:             <span class="ruby-keyword kw">end</span>
+258:           <span class="ruby-keyword kw">end</span>
+259: 
+260:           <span class="ruby-identifier">env</span> = {
+261:             <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span>,
+262:             <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">parameters</span>,
+263: 
+264:             <span class="ruby-value str">&quot;SERVER_NAME&quot;</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">':'</span>)[<span class="ruby-value">0</span>],
+265:             <span class="ruby-value str">&quot;SERVER_PORT&quot;</span>     =<span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">https?</span> <span class="ruby-operator">?</span> <span class="ruby-value str">&quot;443&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;80&quot;</span>),
+266:             <span class="ruby-value str">&quot;HTTPS&quot;</span>           =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">https?</span> <span class="ruby-operator">?</span> <span class="ruby-value str">&quot;on&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;off&quot;</span>,
+267:             <span class="ruby-value str">&quot;rack.url_scheme&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">https?</span> <span class="ruby-operator">?</span> <span class="ruby-value str">&quot;https&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;http&quot;</span>,
+268: 
+269:             <span class="ruby-value str">&quot;REQUEST_URI&quot;</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span>,
+270:             <span class="ruby-value str">&quot;HTTP_HOST&quot;</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">host</span>,
+271:             <span class="ruby-value str">&quot;REMOTE_ADDR&quot;</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">remote_addr</span>,
+272:             <span class="ruby-value str">&quot;CONTENT_TYPE&quot;</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;application/x-www-form-urlencoded&quot;</span>,
+273:             <span class="ruby-value str">&quot;HTTP_ACCEPT&quot;</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">accept</span>
+274:           }
+275: 
+276:           <span class="ruby-identifier">session</span> = <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">_mock_session</span>)
+277: 
+278:           (<span class="ruby-identifier">rack_environment</span> <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+279:             <span class="ruby-identifier">env</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+280:           <span class="ruby-keyword kw">end</span>
+281: 
+282:           <span class="ruby-comment cmt"># NOTE: rack-test v0.5 doesn't build a default uri correctly</span>
+283:           <span class="ruby-comment cmt"># Make sure requested path is always a full uri</span>
+284:           <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">'/'</span>)
+285:           <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">scheme</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">env</span>[<span class="ruby-value str">'rack.url_scheme'</span>]
+286:           <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">host</span>   <span class="ruby-operator">||=</span> <span class="ruby-identifier">env</span>[<span class="ruby-value str">'SERVER_NAME'</span>]
+287:           <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">port</span>   <span class="ruby-operator">||=</span> <span class="ruby-identifier">env</span>[<span class="ruby-value str">'SERVER_PORT'</span>].<span class="ruby-identifier">try</span>(<span class="ruby-value">:to_i</span>)
+288:           <span class="ruby-identifier">uri</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">path</span>
+289: 
+290:           <span class="ruby-identifier">session</span>.<span class="ruby-identifier">request</span>(<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">env</span>)
+291: 
+292:           <span class="ruby-ivar">@request_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+293:           <span class="ruby-ivar">@request</span>  = <span class="ruby-constant">ActionDispatch</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">session</span>.<span class="ruby-identifier">last_request</span>.<span class="ruby-identifier">env</span>)
+294:           <span class="ruby-identifier">response</span> = <span class="ruby-identifier">_mock_session</span>.<span class="ruby-identifier">last_response</span>
+295:           <span class="ruby-ivar">@response</span> = <span class="ruby-constant">ActionDispatch</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>.<span class="ruby-identifier">status</span>, <span class="ruby-identifier">response</span>.<span class="ruby-identifier">headers</span>, <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>)
+296:           <span class="ruby-ivar">@html_document</span> = <span class="ruby-keyword kw">nil</span>
+297: 
+298:           <span class="ruby-ivar">@controller</span> = <span class="ruby-identifier">session</span>.<span class="ruby-identifier">last_request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-value str">'action_controller.instance'</span>]
+299: 
+300:           <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">status</span>
+301:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,1700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Mail::Header</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/mail/header_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/mail/header.rb">lib/mail/header.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-%5B%5D">#[]</a></li>
+					
+					<li><a href="#method-i-%5B%5D%3D">#[]=</a></li>
+					
+					<li><a href="#method-i-charset">#charset</a></li>
+					
+					<li><a href="#method-i-charset%3D">#charset=</a></li>
+					
+					<li><a href="#method-i-decoded">#decoded</a></li>
+					
+					<li><a href="#method-i-encoded">#encoded</a></li>
+					
+					<li><a href="#method-i-errors">#errors</a></li>
+					
+					<li><a href="#method-i-field_summary">#field_summary</a></li>
+					
+					<li><a href="#method-i-fields">#fields</a></li>
+					
+					<li><a href="#method-i-fields%3D">#fields=</a></li>
+					
+					<li><a href="#method-i-has_content_id%3F">#has_content_id?</a></li>
+					
+					<li><a href="#method-i-has_date%3F">#has_date?</a></li>
+					
+					<li><a href="#method-i-has_message_id%3F">#has_message_id?</a></li>
+					
+					<li><a href="#method-i-has_mime_version%3F">#has_mime_version?</a></li>
+					
+					<li><a href="#method-i-limited_field%3F">#limited_field?</a></li>
+					
+					<li><a href="#method-i-raw_source">#raw_source</a></li>
+					
+					<li><a href="#method-i-raw_source%3D">#raw_source=</a></li>
+					
+					<li><a href="#method-i-select_field_for">#select_field_for</a></li>
+					
+					<li><a href="#method-i-split_header">#split_header</a></li>
+					
+					<li><a href="#method-i-to_s">#to_s</a></li>
+					
+					<li><a href="#method-i-unfold">#unfold</a></li>
+					
+					<li><a href="#method-i-unfolded_header">#unfolded_header</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><span class="include">Patterns</span></li>
+				
+				
+				
+					<li><span class="include">Utilities</span></li>
+				
+				
+				
+					<li><span class="include">Enumerable</span></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../CHANGELOG_rdoc.html">CHANGELOG.rdoc</a></li>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../TODO_rdoc.html">TODO.rdoc</a></li>
+				
+					<li class="file"><a href="../lib/VERSION.html">VERSION</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Mail.html">Mail</a></li>
+				
+					<li><a href="../Mail/Address.html">Mail::Address</a></li>
+				
+					<li><a href="../Mail/AddressContainer.html">Mail::AddressContainer</a></li>
+				
+					<li><a href="../Mail/AddressLists.html">Mail::AddressLists</a></li>
+				
+					<li><a href="../Mail/AddressLists/PrimaryAddress0.html">Mail::AddressLists::PrimaryAddress0</a></li>
+				
+					<li><a href="../Mail/AddressLists/PrimaryAddress1.html">Mail::AddressLists::PrimaryAddress1</a></li>
+				
+					<li><a href="../Mail/AddressListsParser.html">Mail::AddressListsParser</a></li>
+				
+					<li><a href="../Mail/AttachmentsList.html">Mail::AttachmentsList</a></li>
+				
+					<li><a href="../Mail/BccField.html">Mail::BccField</a></li>
+				
+					<li><a href="../Mail/Body.html">Mail::Body</a></li>
+				
+					<li><a href="../Mail/CcField.html">Mail::CcField</a></li>
+				
+					<li><a href="../Mail/CommentsField.html">Mail::CommentsField</a></li>
+				
+					<li><a href="../Mail/Configuration.html">Mail::Configuration</a></li>
+				
+					<li><a href="../Mail/ContentDescriptionField.html">Mail::ContentDescriptionField</a></li>
+				
+					<li><a href="../Mail/ContentDisposition.html">Mail::ContentDisposition</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/ContentDisposition0.html">Mail::ContentDisposition::ContentDisposition0</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/ContentDisposition1.html">Mail::ContentDisposition::ContentDisposition1</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/ContentDisposition2.html">Mail::ContentDisposition::ContentDisposition2</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/Parameter0.html">Mail::ContentDisposition::Parameter0</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/Parameter1.html">Mail::ContentDisposition::Parameter1</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/Value0.html">Mail::ContentDisposition::Value0</a></li>
+				
+					<li><a href="../Mail/ContentDispositionField.html">Mail::ContentDispositionField</a></li>
+				
+					<li><a href="../Mail/ContentDispositionParser.html">Mail::ContentDispositionParser</a></li>
+				
+					<li><a href="../Mail/ContentIdField.html">Mail::ContentIdField</a></li>
+				
+					<li><a href="../Mail/ContentLocation.html">Mail::ContentLocation</a></li>
+				
+					<li><a href="../Mail/ContentLocation/Location0.html">Mail::ContentLocation::Location0</a></li>
+				
+					<li><a href="../Mail/ContentLocation/Primary0.html">Mail::ContentLocation::Primary0</a></li>
+				
+					<li><a href="../Mail/ContentLocationField.html">Mail::ContentLocationField</a></li>
+				
+					<li><a href="../Mail/ContentLocationParser.html">Mail::ContentLocationParser</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncoding.html">Mail::ContentTransferEncoding</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncoding/Encoding0.html">Mail::ContentTransferEncoding::Encoding0</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncoding/Encoding1.html">Mail::ContentTransferEncoding::Encoding1</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncoding/Primary0.html">Mail::ContentTransferEncoding::Primary0</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncodingElement.html">Mail::ContentTransferEncodingElement</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncodingField.html">Mail::ContentTransferEncodingField</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncodingParser.html">Mail::ContentTransferEncodingParser</a></li>
+				
+					<li><a href="../Mail/ContentType.html">Mail::ContentType</a></li>
+				
+					<li><a href="../Mail/ContentType/ContentType0.html">Mail::ContentType::ContentType0</a></li>
+				
+					<li><a href="../Mail/ContentType/ContentType1.html">Mail::ContentType::ContentType1</a></li>
+				
+					<li><a href="../Mail/ContentType/ContentType2.html">Mail::ContentType::ContentType2</a></li>
+				
+					<li><a href="../Mail/ContentType/Parameter0.html">Mail::ContentType::Parameter0</a></li>
+				
+					<li><a href="../Mail/ContentType/Parameter1.html">Mail::ContentType::Parameter1</a></li>
+				
+					<li><a href="../Mail/ContentType/Value0.html">Mail::ContentType::Value0</a></li>
+				
+					<li><a href="../Mail/ContentTypeField.html">Mail::ContentTypeField</a></li>
+				
+					<li><a href="../Mail/ContentTypeParser.html">Mail::ContentTypeParser</a></li>
+				
+					<li><a href="../Mail/DateField.html">Mail::DateField</a></li>
+				
+					<li><a href="../Mail/DateTime.html">Mail::DateTime</a></li>
+				
+					<li><a href="../Mail/DateTime/Primary0.html">Mail::DateTime::Primary0</a></li>
+				
+					<li><a href="../Mail/DateTime/Primary1.html">Mail::DateTime::Primary1</a></li>
+				
+					<li><a href="../Mail/DateTimeParser.html">Mail::DateTimeParser</a></li>
+				
+					<li><a href="../Mail/Encodings.html">Mail::Encodings</a></li>
+				
+					<li><a href="../Mail/Encodings/Base64.html">Mail::Encodings::Base64</a></li>
+				
+					<li><a href="../Mail/Encodings/Binary.html">Mail::Encodings::Binary</a></li>
+				
+					<li><a href="../Mail/Encodings/EightBit.html">Mail::Encodings::EightBit</a></li>
+				
+					<li><a href="../Mail/Encodings/QuotedPrintable.html">Mail::Encodings::QuotedPrintable</a></li>
+				
+					<li><a href="../Mail/Encodings/SevenBit.html">Mail::Encodings::SevenBit</a></li>
+				
+					<li><a href="../Mail/Encodings/TransferEncoding.html">Mail::Encodings::TransferEncoding</a></li>
+				
+					<li><a href="../Mail/Envelope.html">Mail::Envelope</a></li>
+				
+					<li><a href="../Mail/EnvelopeFrom.html">Mail::EnvelopeFrom</a></li>
+				
+					<li><a href="../Mail/EnvelopeFrom/CtimeDate0.html">Mail::EnvelopeFrom::CtimeDate0</a></li>
+				
+					<li><a href="../Mail/EnvelopeFrom/Primary0.html">Mail::EnvelopeFrom::Primary0</a></li>
+				
+					<li><a href="../Mail/EnvelopeFromElement.html">Mail::EnvelopeFromElement</a></li>
+				
+					<li><a href="../Mail/EnvelopeFromParser.html">Mail::EnvelopeFromParser</a></li>
+				
+					<li><a href="../Mail/Field.html">Mail::Field</a></li>
+				
+					<li><a href="../Mail/Field/FieldError.html">Mail::Field::FieldError</a></li>
+				
+					<li><a href="../Mail/FieldList.html">Mail::FieldList</a></li>
+				
+					<li><a href="../Mail/FileDelivery.html">Mail::FileDelivery</a></li>
+				
+					<li><a href="../Mail/FromField.html">Mail::FromField</a></li>
+				
+					<li><a href="../Mail/Header.html">Mail::Header</a></li>
+				
+					<li><a href="../Mail/IMAP.html">Mail::IMAP</a></li>
+				
+					<li><a href="../Mail/InReplyToField.html">Mail::InReplyToField</a></li>
+				
+					<li><a href="../Mail/KeywordsField.html">Mail::KeywordsField</a></li>
+				
+					<li><a href="../Mail/Message.html">Mail::Message</a></li>
+				
+					<li><a href="../Mail/MessageIdField.html">Mail::MessageIdField</a></li>
+				
+					<li><a href="../Mail/MessageIds.html">Mail::MessageIds</a></li>
+				
+					<li><a href="../Mail/MessageIds/Primary0.html">Mail::MessageIds::Primary0</a></li>
+				
+					<li><a href="../Mail/MessageIdsElement.html">Mail::MessageIdsElement</a></li>
+				
+					<li><a href="../Mail/MessageIdsParser.html">Mail::MessageIdsParser</a></li>
+				
+					<li><a href="../Mail/MimeVersion.html">Mail::MimeVersion</a></li>
+				
+					<li><a href="../Mail/MimeVersion/Version0.html">Mail::MimeVersion::Version0</a></li>
+				
+					<li><a href="../Mail/MimeVersion/Version1.html">Mail::MimeVersion::Version1</a></li>
+				
+					<li><a href="../Mail/MimeVersionElement.html">Mail::MimeVersionElement</a></li>
+				
+					<li><a href="../Mail/MimeVersionField.html">Mail::MimeVersionField</a></li>
+				
+					<li><a href="../Mail/MimeVersionParser.html">Mail::MimeVersionParser</a></li>
+				
+					<li><a href="../Mail/OptionalField.html">Mail::OptionalField</a></li>
+				
+					<li><a href="../Mail/POP3.html">Mail::POP3</a></li>
+				
+					<li><a href="../Mail/ParameterHash.html">Mail::ParameterHash</a></li>
+				
+					<li><a href="../Mail/Part.html">Mail::Part</a></li>
+				
+					<li><a href="../Mail/PartsList.html">Mail::PartsList</a></li>
+				
+					<li><a href="../Mail/Patterns.html">Mail::Patterns</a></li>
+				
+					<li><a href="../Mail/PhraseList.html">Mail::PhraseList</a></li>
+				
+					<li><a href="../Mail/PhraseLists.html">Mail::PhraseLists</a></li>
+				
+					<li><a href="../Mail/PhraseLists/PrimaryPhrase0.html">Mail::PhraseLists::PrimaryPhrase0</a></li>
+				
+					<li><a href="../Mail/PhraseListsParser.html">Mail::PhraseListsParser</a></li>
+				
+					<li><a href="../Mail/RFC2045.html">Mail::RFC2045</a></li>
+				
+					<li><a href="../Mail/RFC2045/CustomXToken0.html">Mail::RFC2045::CustomXToken0</a></li>
+				
+					<li><a href="../Mail/RFC2045Parser.html">Mail::RFC2045Parser</a></li>
+				
+					<li><a href="../Mail/RFC2822.html">Mail::RFC2822</a></li>
+				
+					<li><a href="../Mail/RFC2822/AddrSpec0.html">Mail::RFC2822::AddrSpec0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Address0.html">Mail::RFC2822::Address0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Address1.html">Mail::RFC2822::Address1</a></li>
+				
+					<li><a href="../Mail/RFC2822/AddressList0.html">Mail::RFC2822::AddressList0</a></li>
+				
+					<li><a href="../Mail/RFC2822/AddressList1.html">Mail::RFC2822::AddressList1</a></li>
+				
+					<li><a href="../Mail/RFC2822/AngleAddr0.html">Mail::RFC2822::AngleAddr0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Atom0.html">Mail::RFC2822::Atom0</a></li>
+				
+					<li><a href="../Mail/RFC2822/CFWS0.html">Mail::RFC2822::CFWS0</a></li>
+				
+					<li><a href="../Mail/RFC2822/CFWS1.html">Mail::RFC2822::CFWS1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Comment0.html">Mail::RFC2822::Comment0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Comment1.html">Mail::RFC2822::Comment1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Date0.html">Mail::RFC2822::Date0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DateTime0.html">Mail::RFC2822::DateTime0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DateTime1.html">Mail::RFC2822::DateTime1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Day0.html">Mail::RFC2822::Day0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DayOfWeek0.html">Mail::RFC2822::DayOfWeek0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DomainLiteral0.html">Mail::RFC2822::DomainLiteral0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DomainLiteral1.html">Mail::RFC2822::DomainLiteral1</a></li>
+				
+					<li><a href="../Mail/RFC2822/DomainText0.html">Mail::RFC2822::DomainText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DomainText1.html">Mail::RFC2822::DomainText1</a></li>
+				
+					<li><a href="../Mail/RFC2822/DotAtom0.html">Mail::RFC2822::DotAtom0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DotAtomText0.html">Mail::RFC2822::DotAtomText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/FWS0.html">Mail::RFC2822::FWS0</a></li>
+				
+					<li><a href="../Mail/RFC2822/FWS1.html">Mail::RFC2822::FWS1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Group0.html">Mail::RFC2822::Group0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Hour0.html">Mail::RFC2822::Hour0</a></li>
+				
+					<li><a href="../Mail/RFC2822/ItemName0.html">Mail::RFC2822::ItemName0</a></li>
+				
+					<li><a href="../Mail/RFC2822/ItemName1.html">Mail::RFC2822::ItemName1</a></li>
+				
+					<li><a href="../Mail/RFC2822/LocalDotAtom0.html">Mail::RFC2822::LocalDotAtom0</a></li>
+				
+					<li><a href="../Mail/RFC2822/LocalDotAtomText0.html">Mail::RFC2822::LocalDotAtomText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MailboxList0.html">Mail::RFC2822::MailboxList0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MailboxList1.html">Mail::RFC2822::MailboxList1</a></li>
+				
+					<li><a href="../Mail/RFC2822/MailboxListGroup0.html">Mail::RFC2822::MailboxListGroup0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MessageIds0.html">Mail::RFC2822::MessageIds0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MessageIds1.html">Mail::RFC2822::MessageIds1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Minute0.html">Mail::RFC2822::Minute0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Month0.html">Mail::RFC2822::Month0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgId0.html">Mail::RFC2822::MsgId0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgIdDomainText0.html">Mail::RFC2822::MsgIdDomainText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgIdDomainText1.html">Mail::RFC2822::MsgIdDomainText1</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgIdDotAtomText0.html">Mail::RFC2822::MsgIdDotAtomText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgIdValue0.html">Mail::RFC2822::MsgIdValue0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameAddr0.html">Mail::RFC2822::NameAddr0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameValList0.html">Mail::RFC2822::NameValList0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameValList1.html">Mail::RFC2822::NameValList1</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameValList2.html">Mail::RFC2822::NameValList2</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameValPair0.html">Mail::RFC2822::NameValPair0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NoFoldLiteral0.html">Mail::RFC2822::NoFoldLiteral0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NoFoldQuote0.html">Mail::RFC2822::NoFoldQuote0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Path0.html">Mail::RFC2822::Path0</a></li>
+				
+					<li><a href="../Mail/RFC2822/PhraseList0.html">Mail::RFC2822::PhraseList0</a></li>
+				
+					<li><a href="../Mail/RFC2822/PhraseList1.html">Mail::RFC2822::PhraseList1</a></li>
+				
+					<li><a href="../Mail/RFC2822/QuotedDomain0.html">Mail::RFC2822::QuotedDomain0</a></li>
+				
+					<li><a href="../Mail/RFC2822/QuotedPair0.html">Mail::RFC2822::QuotedPair0</a></li>
+				
+					<li><a href="../Mail/RFC2822/QuotedString0.html">Mail::RFC2822::QuotedString0</a></li>
+				
+					<li><a href="../Mail/RFC2822/QuotedString1.html">Mail::RFC2822::QuotedString1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Received0.html">Mail::RFC2822::Received0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Return0.html">Mail::RFC2822::Return0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Second0.html">Mail::RFC2822::Second0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Time0.html">Mail::RFC2822::Time0</a></li>
+				
+					<li><a href="../Mail/RFC2822/TimeOfDay0.html">Mail::RFC2822::TimeOfDay0</a></li>
+				
+					<li><a href="../Mail/RFC2822/TimeOfDay1.html">Mail::RFC2822::TimeOfDay1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Year0.html">Mail::RFC2822::Year0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Zone0.html">Mail::RFC2822::Zone0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete.html">Mail::RFC2822Obsolete</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsAddrList0.html">Mail::RFC2822Obsolete::ObsAddrList0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsAddrList1.html">Mail::RFC2822Obsolete::ObsAddrList1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsAngleAddr0.html">Mail::RFC2822Obsolete::ObsAngleAddr0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsBcc0.html">Mail::RFC2822Obsolete::ObsBcc0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsCc0.html">Mail::RFC2822Obsolete::ObsCc0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsComments0.html">Mail::RFC2822Obsolete::ObsComments0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDay0.html">Mail::RFC2822Obsolete::ObsDay0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDay1.html">Mail::RFC2822Obsolete::ObsDay1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDayOfWeek0.html">Mail::RFC2822Obsolete::ObsDayOfWeek0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDomain0.html">Mail::RFC2822Obsolete::ObsDomain0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDomain1.html">Mail::RFC2822Obsolete::ObsDomain1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDomainList0.html">Mail::RFC2822Obsolete::ObsDomainList0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDomainList1.html">Mail::RFC2822Obsolete::ObsDomainList1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsFWS0.html">Mail::RFC2822Obsolete::ObsFWS0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsFWS1.html">Mail::RFC2822Obsolete::ObsFWS1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsFrom0.html">Mail::RFC2822Obsolete::ObsFrom0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsHour0.html">Mail::RFC2822Obsolete::ObsHour0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsHour1.html">Mail::RFC2822Obsolete::ObsHour1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsInReplyTo0.html">Mail::RFC2822Obsolete::ObsInReplyTo0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsKeywords0.html">Mail::RFC2822Obsolete::ObsKeywords0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsLocalPart0.html">Mail::RFC2822Obsolete::ObsLocalPart0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsLocalPart1.html">Mail::RFC2822Obsolete::ObsLocalPart1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMboxList0.html">Mail::RFC2822Obsolete::ObsMboxList0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMboxList1.html">Mail::RFC2822Obsolete::ObsMboxList1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMessageId0.html">Mail::RFC2822Obsolete::ObsMessageId0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMinute0.html">Mail::RFC2822Obsolete::ObsMinute0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMinute1.html">Mail::RFC2822Obsolete::ObsMinute1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMonth0.html">Mail::RFC2822Obsolete::ObsMonth0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsOptional0.html">Mail::RFC2822Obsolete::ObsOptional0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsOrigDate0.html">Mail::RFC2822Obsolete::ObsOrigDate0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsPhraseList0.html">Mail::RFC2822Obsolete::ObsPhraseList0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsPhraseList1.html">Mail::RFC2822Obsolete::ObsPhraseList1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsQp0.html">Mail::RFC2822Obsolete::ObsQp0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsReceived0.html">Mail::RFC2822Obsolete::ObsReceived0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsReferences0.html">Mail::RFC2822Obsolete::ObsReferences0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsReplyTo0.html">Mail::RFC2822Obsolete::ObsReplyTo0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentBcc0.html">Mail::RFC2822Obsolete::ObsResentBcc0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentCc0.html">Mail::RFC2822Obsolete::ObsResentCc0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentDate0.html">Mail::RFC2822Obsolete::ObsResentDate0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentFrom0.html">Mail::RFC2822Obsolete::ObsResentFrom0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentMid0.html">Mail::RFC2822Obsolete::ObsResentMid0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentRply0.html">Mail::RFC2822Obsolete::ObsResentRply0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentSend0.html">Mail::RFC2822Obsolete::ObsResentSend0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentTo0.html">Mail::RFC2822Obsolete::ObsResentTo0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsReturn0.html">Mail::RFC2822Obsolete::ObsReturn0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsRoute0.html">Mail::RFC2822Obsolete::ObsRoute0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsSecond0.html">Mail::RFC2822Obsolete::ObsSecond0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsSecond1.html">Mail::RFC2822Obsolete::ObsSecond1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsSender0.html">Mail::RFC2822Obsolete::ObsSender0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsSubject0.html">Mail::RFC2822Obsolete::ObsSubject0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsText0.html">Mail::RFC2822Obsolete::ObsText0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsText1.html">Mail::RFC2822Obsolete::ObsText1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsTo0.html">Mail::RFC2822Obsolete::ObsTo0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsYear0.html">Mail::RFC2822Obsolete::ObsYear0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsYear1.html">Mail::RFC2822Obsolete::ObsYear1</a></li>
+				
+					<li><a href="../Mail/RFC2822ObsoleteParser.html">Mail::RFC2822ObsoleteParser</a></li>
+				
+					<li><a href="../Mail/RFC2822Parser.html">Mail::RFC2822Parser</a></li>
+				
+					<li><a href="../Mail/Received.html">Mail::Received</a></li>
+				
+					<li><a href="../Mail/Received/Primary0.html">Mail::Received::Primary0</a></li>
+				
+					<li><a href="../Mail/ReceivedElement.html">Mail::ReceivedElement</a></li>
+				
+					<li><a href="../Mail/ReceivedField.html">Mail::ReceivedField</a></li>
+				
+					<li><a href="../Mail/ReceivedParser.html">Mail::ReceivedParser</a></li>
+				
+					<li><a href="../Mail/ReferencesField.html">Mail::ReferencesField</a></li>
+				
+					<li><a href="../Mail/ReplyToField.html">Mail::ReplyToField</a></li>
+				
+					<li><a href="../Mail/ResentBccField.html">Mail::ResentBccField</a></li>
+				
+					<li><a href="../Mail/ResentCcField.html">Mail::ResentCcField</a></li>
+				
+					<li><a href="../Mail/ResentDateField.html">Mail::ResentDateField</a></li>
+				
+					<li><a href="../Mail/ResentFromField.html">Mail::ResentFromField</a></li>
+				
+					<li><a href="../Mail/ResentMessageIdField.html">Mail::ResentMessageIdField</a></li>
+				
+					<li><a href="../Mail/ResentSenderField.html">Mail::ResentSenderField</a></li>
+				
+					<li><a href="../Mail/ResentToField.html">Mail::ResentToField</a></li>
+				
+					<li><a href="../Mail/ReturnPathField.html">Mail::ReturnPathField</a></li>
+				
+					<li><a href="../Mail/Ruby18.html">Mail::Ruby18</a></li>
+				
+					<li><a href="../Mail/Ruby18.html">Mail::Ruby18</a></li>
+				
+					<li><a href="../Mail/Ruby19.html">Mail::Ruby19</a></li>
+				
+					<li><a href="../Mail/SMTP.html">Mail::SMTP</a></li>
+				
+					<li><a href="../Mail/SenderField.html">Mail::SenderField</a></li>
+				
+					<li><a href="../Mail/Sendmail.html">Mail::Sendmail</a></li>
+				
+					<li><a href="../Mail/StructuredField.html">Mail::StructuredField</a></li>
+				
+					<li><a href="../Mail/SubjectField.html">Mail::SubjectField</a></li>
+				
+					<li><a href="../Mail/TestMailer.html">Mail::TestMailer</a></li>
+				
+					<li><a href="../Mail/ToField.html">Mail::ToField</a></li>
+				
+					<li><a href="../Mail/UnstructuredField.html">Mail::UnstructuredField</a></li>
+				
+					<li><a href="../Mail/Utilities.html">Mail::Utilities</a></li>
+				
+					<li><a href="../Mail/VERSION.html">Mail::VERSION</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Mail::Header</h1>
+
+		<div id="description">
+			<p>
+Provides access to a header object.
+</p>
+<h3>Per <a href="RFC2822.html">RFC2822</a></h3>
+<pre>
+ 2.2. Header Fields
+
+  Header fields are lines composed of a field name, followed by a colon
+  (&quot;:&quot;), followed by a field body, and terminated by CRLF.  A field
+  name MUST be composed of printable US-ASCII characters (i.e.,
+  characters that have values between 33 and 126, inclusive), except
+  colon.  A field body may be composed of any US-ASCII characters,
+  except for CR and LF.  However, a field body may contain CRLF when
+  used in header &quot;folding&quot; and  &quot;unfolding&quot; as described in section
+  2.2.3.  All field bodies MUST conform to the syntax described in
+  sections 3 and 4 of this standard.</pre>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="LIMITED_FIELDS">LIMITED_FIELDS</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(header_text = nil, charset = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Creates a new header object.
+</p>
+<p>
+Accepts raw text or nothing.  If given raw text will attempt to parse it
+and split it into the various fields, instantiating each field as it goes.
+</p>
+<p>
+If it finds a field that should be a structured field (such as content
+type), but it fails to parse it, it will simply make it an unstructured
+field and leave it alone.  This will mean that the data is preserved but no
+automatic processing of that field will happen.  If you find one of these
+cases, please make a patch and send it in, or at the least, send me the
+example so we can fix it.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/header.rb, line 36</span>
+36:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">header_text</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">charset</span> = <span class="ruby-keyword kw">nil</span>)
+37:       <span class="ruby-ivar">@errors</span> = []
+38:       <span class="ruby-ivar">@charset</span> = <span class="ruby-identifier">charset</span>
+39:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">raw_source</span> = <span class="ruby-identifier">header_text</span>.<span class="ruby-identifier">to_crlf</span>
+40:       <span class="ruby-identifier">split_header</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">header_text</span>
+41:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%5B%5D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">[]</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+ 3.6. Field definitions
+ 
+  The following table indicates limits on the number of times each
+  field may occur in a message header as well as any special
+  limitations on the use of those fields.  An asterisk next to a value
+  in the minimum or maximum column indicates that a special restriction
+  appears in the Notes column.
+
+  &lt;snip table from 3.6&gt;
+</pre>
+<p>
+As per RFC, many fields can appear more than once, we will return a string
+of the value if there is only one header, or if there is more than one 
+matching header, will return an array of values in order that they appear
+in the header ordered from top to bottom.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ h = Header.new
+ h.fields = ['To: mikel@me.com', 'X-Mail-SPAM: 15', 'X-Mail-SPAM: 20']
+ h['To']          #=&gt; 'mikel@me.com'
+ h['X-Mail-SPAM'] #=&gt; ['15', '20']</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 116</span>
+116:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">name</span>)
+117:       <span class="ruby-identifier">name</span> = <span class="ruby-identifier">dasherize</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">downcase</span>
+118:       <span class="ruby-identifier">selected</span> = <span class="ruby-identifier">select_field_for</span>(<span class="ruby-identifier">name</span>)
+119:       <span class="ruby-keyword kw">case</span>
+120:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">selected</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+121:         <span class="ruby-identifier">selected</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> }
+122:       <span class="ruby-keyword kw">when</span> <span class="ruby-operator">!</span><span class="ruby-identifier">selected</span>.<span class="ruby-identifier">blank?</span>
+123:         <span class="ruby-identifier">selected</span>.<span class="ruby-identifier">first</span>
+124:       <span class="ruby-keyword kw">else</span>
+125:         <span class="ruby-keyword kw">nil</span>
+126:       <span class="ruby-keyword kw">end</span>
+127:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%5B%5D%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">[]=</span><span
+						class="method-args">(name, value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the FIRST matching field in the header to passed value, or deletes the
+FIRST field matched from the header if passed nil
+</p>
+<p>
+Example:
+</p>
+<pre>
+ h = Header.new
+ h.fields = ['To: mikel@me.com', 'X-Mail-SPAM: 15', 'X-Mail-SPAM: 20']
+ h['To'] = 'bob@you.com'
+ h['To']    #=&gt; 'bob@you.com'
+ h['X-Mail-SPAM'] = '10000'
+ h['X-Mail-SPAM'] # =&gt; ['15', '20', '10000']
+ h['X-Mail-SPAM'] = nil
+ h['X-Mail-SPAM'] # =&gt; nil</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 142</span>
+142:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
+143:       <span class="ruby-identifier">name</span> = <span class="ruby-identifier">dasherize</span>(<span class="ruby-identifier">name</span>)
+144:       <span class="ruby-identifier">fn</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span>
+145:       <span class="ruby-identifier">selected</span> = <span class="ruby-identifier">select_field_for</span>(<span class="ruby-identifier">fn</span>)
+146:       
+147:       <span class="ruby-keyword kw">case</span>
+148:       <span class="ruby-comment cmt"># User wants to delete the field</span>
+149:       <span class="ruby-keyword kw">when</span> <span class="ruby-operator">!</span><span class="ruby-identifier">selected</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+150:         <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">selected</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">f</span>) }
+151:         
+152:       <span class="ruby-comment cmt"># User wants to change the field</span>
+153:       <span class="ruby-keyword kw">when</span> <span class="ruby-operator">!</span><span class="ruby-identifier">selected</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">limited_field?</span>(<span class="ruby-identifier">fn</span>)
+154:         <span class="ruby-identifier">selected</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">fn</span>, <span class="ruby-identifier">value</span>)
+155:         
+156:       <span class="ruby-comment cmt"># User wants to create the field</span>
+157:       <span class="ruby-keyword kw">else</span>
+158:         <span class="ruby-comment cmt"># Need to insert in correct order for trace fields</span>
+159:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">fields</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Field</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">charset</span>)
+160:       <span class="ruby-keyword kw">end</span>
+161:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="charset-method" class="method-detail ">
+				<a name="method-i-charset"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">charset</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="charset-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 163</span>
+163:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">charset</span>
+164:       <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value">:content_type</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value">:content_type</span>].<span class="ruby-identifier">parameters</span>
+165:         <span class="ruby-keyword kw">self</span>[<span class="ruby-value">:content_type</span>].<span class="ruby-identifier">parameters</span>[<span class="ruby-value">:charset</span>]
+166:       <span class="ruby-keyword kw">else</span>
+167:         <span class="ruby-ivar">@charset</span>
+168:       <span class="ruby-keyword kw">end</span>
+169:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="charset--method" class="method-detail ">
+				<a name="method-i-charset%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">charset=</span><span
+						class="method-args">(val)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="charset--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 171</span>
+171:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">charset=</span>(<span class="ruby-identifier">val</span>)
+172:       <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value">:content_type</span>]
+173:         <span class="ruby-keyword kw">self</span>[<span class="ruby-value">:content_type</span>].<span class="ruby-identifier">parameters</span>[<span class="ruby-value">:charset</span>] = <span class="ruby-identifier">val</span>
+174:       <span class="ruby-keyword kw">end</span>
+175:       <span class="ruby-ivar">@charset</span> = <span class="ruby-identifier">val</span>
+176:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="decoded-method" class="method-detail ">
+				<a name="method-i-decoded"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decoded</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="decoded-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 196</span>
+196:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">decoded</span>
+197:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMethodError</span>, <span class="ruby-value str">'Can not decode an entire header as there could be character set conflicts, try calling #decoded on the various fields.'</span>
+198:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="encoded-method" class="method-detail ">
+				<a name="method-i-encoded"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">encoded</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="encoded-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 184</span>
+184:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">encoded</span>
+185:       <span class="ruby-identifier">buffer</span> = <span class="ruby-value str">''</span>
+186:       <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+187:         <span class="ruby-identifier">buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">field</span>.<span class="ruby-identifier">encoded</span>
+188:       <span class="ruby-keyword kw">end</span>
+189:       <span class="ruby-identifier">buffer</span>
+190:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="errors-method" class="method-detail ">
+				<a name="method-i-errors"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">errors</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="errors-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/header.rb, line 91</span>
+91:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">errors</span>
+92:       <span class="ruby-ivar">@errors</span>
+93:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="field-summary-method" class="method-detail ">
+				<a name="method-i-field_summary"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">field_summary</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="field-summary-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 200</span>
+200:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">field_summary</span>
+201:       <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;&lt;#{f.name}: #{f.value}&gt;&quot;</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;, &quot;</span>)
+202:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="fields-method" class="method-detail ">
+				<a name="method-i-fields"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">fields</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns an array of all the fields in the header in order that they were
+read in.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="fields-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/header.rb, line 51</span>
+51:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fields</span>
+52:       <span class="ruby-ivar">@fields</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">FieldList</span>.<span class="ruby-identifier">new</span>
+53:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="fields--method" class="method-detail ">
+				<a name="method-i-fields%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">fields=</span><span
+						class="method-args">(unfolded_fields)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+ 3.6. Field definitions
+ 
+  It is important to note that the header fields are not guaranteed to
+  be in a particular order.  They may appear in any order, and they
+  have been known to be reordered occasionally when transported over
+  the Internet.  However, for the purposes of this standard, header
+  fields SHOULD NOT be reordered when a message is transported or
+  transformed.  More importantly, the trace header fields and resent
+  header fields MUST NOT be reordered, and SHOULD be kept in blocks
+  prepended to the message.  See sections 3.6.6 and 3.6.7 for more
+  information.
+</pre>
+<p>
+Populates the fields container with <a href="Field.html">Field</a> objects
+in the order it receives them in.
+</p>
+<p>
+Acceps an array of field string values, for example:
+</p>
+<pre>
+ h = Header.new
+ h.fields = ['From: mikel@me.com', 'To: bob@you.com']</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="fields--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/header.rb, line 74</span>
+74:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fields=</span>(<span class="ruby-identifier">unfolded_fields</span>)
+75:       <span class="ruby-ivar">@fields</span> = <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">FieldList</span>.<span class="ruby-identifier">new</span>
+76:       <span class="ruby-identifier">unfolded_fields</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+77: 
+78:         <span class="ruby-identifier">field</span> = <span class="ruby-constant">Field</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">field</span>, <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">charset</span>)
+79:         <span class="ruby-identifier">field</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">error</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">errors</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">error</span> }
+80:         <span class="ruby-identifier">selected</span> = <span class="ruby-identifier">select_field_for</span>(<span class="ruby-identifier">field</span>.<span class="ruby-identifier">name</span>)
+81: 
+82:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">selected</span>.<span class="ruby-identifier">any?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">limited_field?</span>(<span class="ruby-identifier">field</span>.<span class="ruby-identifier">name</span>)
+83:           <span class="ruby-identifier">selected</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">field</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">field</span>.<span class="ruby-identifier">value</span>)
+84:         <span class="ruby-keyword kw">else</span>
+85:           <span class="ruby-ivar">@fields</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">field</span>
+86:         <span class="ruby-keyword kw">end</span>
+87:       <span class="ruby-keyword kw">end</span>
+88: 
+89:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="has-content-id--method" class="method-detail ">
+				<a name="method-i-has_content_id%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">has_content_id?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if the header has a Content-ID defined (empty or not)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="has-content-id--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 210</span>
+210:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_content_id?</span>
+211:       <span class="ruby-operator">!</span><span class="ruby-identifier">fields</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">responsible_for?</span>(<span class="ruby-value str">'Content-ID'</span>) }.<span class="ruby-identifier">empty?</span>
+212:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="has-date--method" class="method-detail ">
+				<a name="method-i-has_date%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">has_date?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if the header has a Date defined (empty or not)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="has-date--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 215</span>
+215:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_date?</span>
+216:       <span class="ruby-operator">!</span><span class="ruby-identifier">fields</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">responsible_for?</span>(<span class="ruby-value str">'Date'</span>) }.<span class="ruby-identifier">empty?</span>
+217:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="has-message-id--method" class="method-detail ">
+				<a name="method-i-has_message_id%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">has_message_id?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if the header has a Message-ID defined (empty or not)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="has-message-id--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 205</span>
+205:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_message_id?</span>
+206:       <span class="ruby-operator">!</span><span class="ruby-identifier">fields</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">responsible_for?</span>(<span class="ruby-value str">'Message-ID'</span>) }.<span class="ruby-identifier">empty?</span>
+207:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="has-mime-version--method" class="method-detail ">
+				<a name="method-i-has_mime_version%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">has_mime_version?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if the header has a MIME version defined (empty or not)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="has-mime-version--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 220</span>
+220:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_mime_version?</span>
+221:       <span class="ruby-operator">!</span><span class="ruby-identifier">fields</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">responsible_for?</span>(<span class="ruby-value str">'Mime-Version'</span>) }.<span class="ruby-identifier">empty?</span>
+222:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="raw-source-method" class="method-detail ">
+				<a name="method-i-raw_source"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">raw_source</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The preserved raw source of the header as you passed it in, untouched for
+your Regexing glory.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="raw-source-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/header.rb, line 45</span>
+45:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">raw_source</span>
+46:       <span class="ruby-ivar">@raw_source</span>
+47:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="to-s-method" class="method-detail ">
+				<a name="method-i-to_s"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_s</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="to-s-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 192</span>
+192:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+193:       <span class="ruby-identifier">encoded</span>
+194:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="limited-field--method" class="method-detail ">
+				<a name="method-i-limited_field%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">limited_field?</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="limited-field--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 257</span>
+257:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">limited_field?</span>(<span class="ruby-identifier">name</span>)
+258:       <span class="ruby-constant">LIMITED_FIELDS</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>)
+259:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="raw-source--method" class="method-detail ">
+				<a name="method-i-raw_source%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">raw_source=</span><span
+						class="method-args">(val)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="raw-source--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 226</span>
+226:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">raw_source=</span>(<span class="ruby-identifier">val</span>)
+227:       <span class="ruby-ivar">@raw_source</span> = <span class="ruby-identifier">val</span>
+228:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="select-field-for-method" class="method-detail ">
+				<a name="method-i-select_field_for"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">select_field_for</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="select-field-for-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 253</span>
+253:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">select_field_for</span>(<span class="ruby-identifier">name</span>)
+254:       <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">responsible_for?</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>) }
+255:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="split-header-method" class="method-detail ">
+				<a name="method-i-split_header"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">split_header</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Splits an unfolded and line break cleaned header into individual field
+strings.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="split-header-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 249</span>
+249:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">split_header</span>
+250:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">fields</span> = <span class="ruby-identifier">unfolded_header</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">CRLF</span>)
+251:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="unfold-method" class="method-detail ">
+				<a name="method-i-unfold"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">unfold</span><span
+						class="method-args">(string)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+2.2.3. Long <a href="Header.html">Header</a> Fields
+</p>
+<pre>
+ The process of moving from this folded multiple-line representation
+ of a header field to its single line representation is called
+ &quot;unfolding&quot;. Unfolding is accomplished by simply removing any CRLF
+ that is immediately followed by WSP.  Each header field should be
+ treated in its unfolded form for further syntactic and semantic
+ evaluation.</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="unfold-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 238</span>
+238:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unfold</span>(<span class="ruby-identifier">string</span>)
+239:       <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">/#{CRLF}#{WSP}+/</span>, <span class="ruby-value str">' '</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-node">/#{WSP}+/</span>, <span class="ruby-value str">' '</span>)
+240:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="unfolded-header-method" class="method-detail ">
+				<a name="method-i-unfolded_header"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">unfolded_header</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the header with all the folds removed
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="unfolded-header-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/header.rb, line 243</span>
+243:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unfolded_header</span>
+244:       <span class="ruby-ivar">@unfolded_header</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">unfold</span>(<span class="ruby-identifier">raw_source</span>)
+245:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: TZInfo::TZDataParser</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/tzinfo/tzdataparser_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/tzinfo/tzdataparser.rb">lib/tzinfo/tzdataparser.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-c-parse_month">::parse_month</a></li>
+					
+					<li><a href="#method-c-parse_offset">::parse_offset</a></li>
+					
+					<li><a href="#method-c-quote_str">::quote_str</a></li>
+					
+					<li><a href="#method-i-execute">#execute</a></li>
+					
+					<li><a href="#method-i-get_rules">#get_rules</a></li>
+					
+					<li><a href="#method-i-load_countries">#load_countries</a></li>
+					
+					<li><a href="#method-i-load_links">#load_links</a></li>
+					
+					<li><a href="#method-i-load_rules">#load_rules</a></li>
+					
+					<li><a href="#method-i-load_zones">#load_zones</a></li>
+					
+					<li><a href="#method-i-write_countries_index">#write_countries_index</a></li>
+					
+					<li><a href="#method-i-write_timezones_index">#write_timezones_index</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../CHANGES.html">CHANGES</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../TZInfo.html">TZInfo</a></li>
+				
+					<li><a href="../TZInfo/AmbiguousTime.html">TZInfo::AmbiguousTime</a></li>
+				
+					<li><a href="../TZInfo/Country.html">TZInfo::Country</a></li>
+				
+					<li><a href="../TZInfo/CountryTimezone.html">TZInfo::CountryTimezone</a></li>
+				
+					<li><a href="../TZInfo/InvalidCountryCode.html">TZInfo::InvalidCountryCode</a></li>
+				
+					<li><a href="../TZInfo/InvalidTimezoneIdentifier.html">TZInfo::InvalidTimezoneIdentifier</a></li>
+				
+					<li><a href="../TZInfo/NoOffsetsDefined.html">TZInfo::NoOffsetsDefined</a></li>
+				
+					<li><a href="../TZInfo/PeriodNotFound.html">TZInfo::PeriodNotFound</a></li>
+				
+					<li><a href="../TZInfo/TZDataParser.html">TZInfo::TZDataParser</a></li>
+				
+					<li><a href="../TZInfo/Timezone.html">TZInfo::Timezone</a></li>
+				
+					<li><a href="../TZInfo/TimezonePeriod.html">TZInfo::TimezonePeriod</a></li>
+				
+					<li><a href="../TZInfo/TimezoneProxy.html">TZInfo::TimezoneProxy</a></li>
+				
+					<li><a href="../TZInfo/UnknownTimezone.html">TZInfo::UnknownTimezone</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">TZInfo::TZDataParser</h1>
+
+		<div id="description">
+			<p>
+Parses tzdata from <a
+href="ftp://elsie.nci.nih.gov/pub/">elsie.nci.nih.gov/pub/</a> and
+transforms it into  a set of Ruby modules that can be used through <a
+href="Timezone.html">Timezone</a> and <a href="Country.html">Country</a>.
+</p>
+<p>
+Normally, this class wouldn&#8217;t be used. It is only run to update the 
+timezone data and index modules.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="MIN_YEAR">MIN_YEAR</a></dt>
+				
+				<dd class="description"><p>
+Minimum year that will be considered.
+</p></dd>
+				
+			
+				<dt><a name="MAX_YEAR">MAX_YEAR</a></dt>
+				
+				<dd class="description"><p>
+Maximum year that will be considered.
+</p></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="generate-zones-attribute-method" class="method-detail">
+				<a name="generate_zones"></a>
+				
+				<a name="generate_zones="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">generate_zones</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Whether to generate zone definitions (set to false to stop zones being
+generated).    
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="generate-countries-attribute-method" class="method-detail">
+				<a name="generate_countries"></a>
+				
+				<a name="generate_countries="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">generate_countries</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Whether to generate country definitions (set to false to stop countries
+being generated).
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="only-zones-attribute-method" class="method-detail">
+				<a name="only_zones"></a>
+				
+				<a name="only_zones="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">only_zones</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Limit the set of zones to generate (set to an array containing zone
+identifiers).
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="exclude-zones-attribute-method" class="method-detail">
+				<a name="exclude_zones"></a>
+				
+				<a name="exclude_zones="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">exclude_zones</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Zones to exclude from generation when not using <a
+href="TZDataParser.html#only_zones">only_zones</a> (set to an array
+containing zone identifiers).
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(input_dir, output_dir)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Initializes a new <a href="TZDataParser.html">TZDataParser</a>. input_dir
+must contain the extracted tzdata tarball. output_dir is the location to
+output the modules (in definitions and indexes directories).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/tzinfo/tzdataparser.rb, line 59</span>
+59:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">input_dir</span>, <span class="ruby-identifier">output_dir</span>)
+60:       <span class="ruby-keyword kw">super</span>()
+61:       <span class="ruby-ivar">@input_dir</span> = <span class="ruby-identifier">input_dir</span>
+62:       <span class="ruby-ivar">@output_dir</span> = <span class="ruby-identifier">output_dir</span>      
+63:       <span class="ruby-ivar">@rule_sets</span> = {}
+64:       <span class="ruby-ivar">@zones</span> = {}
+65:       <span class="ruby-ivar">@countries</span> = {}
+66:       <span class="ruby-ivar">@no_rules</span> = <span class="ruby-constant">TZDataNoRules</span>.<span class="ruby-identifier">new</span>
+67:       <span class="ruby-ivar">@generate_zones</span> = <span class="ruby-keyword kw">true</span>
+68:       <span class="ruby-ivar">@generate_countries</span> = <span class="ruby-keyword kw">true</span>
+69:       <span class="ruby-ivar">@only_zones</span> = []      
+70:       <span class="ruby-ivar">@exclude_zones</span> = []      
+71:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="parse-month-method" class="method-detail ">
+				<a name="method-c-parse_month"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parse_month</span><span
+						class="method-args">(month)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Parses a month specified in the tz data and converts it to a number between
+1 and 12 representing January to December.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parse-month-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/tzinfo/tzdataparser.rb, line 114</span>
+114:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse_month</span>(<span class="ruby-identifier">month</span>)
+115:       <span class="ruby-identifier">lower</span> = <span class="ruby-identifier">month</span>.<span class="ruby-identifier">downcase</span>
+116:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">lower</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^jan/</span>
+117:         <span class="ruby-ivar">@month</span> = <span class="ruby-value">1</span>
+118:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">lower</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^feb/</span>
+119:         <span class="ruby-ivar">@month</span> = <span class="ruby-value">2</span>
+120:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">lower</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^mar/</span>
+121:         <span class="ruby-ivar">@month</span> = <span class="ruby-value">3</span>
+122:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">lower</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^apr/</span>
+123:         <span class="ruby-ivar">@month</span> = <span class="ruby-value">4</span>
+124:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">lower</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^may/</span>
+125:         <span class="ruby-ivar">@month</span> = <span class="ruby-value">5</span>
+126:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">lower</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^jun/</span>
+127:         <span class="ruby-ivar">@month</span> = <span class="ruby-value">6</span>
+128:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">lower</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^jul/</span>
+129:         <span class="ruby-ivar">@month</span> = <span class="ruby-value">7</span>
+130:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">lower</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^aug/</span>
+131:         <span class="ruby-ivar">@month</span> = <span class="ruby-value">8</span>
+132:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">lower</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^sep/</span>
+133:         <span class="ruby-ivar">@month</span> = <span class="ruby-value">9</span>
+134:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">lower</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^oct/</span>
+135:         <span class="ruby-ivar">@month</span> = <span class="ruby-value">10</span>
+136:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">lower</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^nov/</span>
+137:         <span class="ruby-ivar">@month</span> = <span class="ruby-value">11</span>
+138:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">lower</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^dec/</span>
+139:         <span class="ruby-ivar">@month</span> = <span class="ruby-value">12</span>
+140:       <span class="ruby-keyword kw">else</span>
+141:         <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Invalid month: #{month}&quot;</span>
+142:       <span class="ruby-keyword kw">end</span>
+143:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="parse-offset-method" class="method-detail ">
+				<a name="method-c-parse_offset"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parse_offset</span><span
+						class="method-args">(offset)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Parses an offset string [-]h:m:s (minutes and seconds are optional).
+Returns the offset in seconds.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parse-offset-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/tzinfo/tzdataparser.rb, line 147</span>
+147:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse_offset</span>(<span class="ruby-identifier">offset</span>)
+148:       <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Invalid time: #{offset}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">offset</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp re">/^(-)?(?:([0-9]+)(?::([0-9]+)(?::([0-9]+))?)?)?$/</span>
+149:       
+150:       <span class="ruby-identifier">negative</span> = <span class="ruby-operator">!</span><span class="ruby-node">$1</span>.<span class="ruby-identifier">nil?</span>      
+151:       <span class="ruby-identifier">hour</span> = <span class="ruby-node">$2</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-node">$2</span>.<span class="ruby-identifier">to_i</span>
+152:       <span class="ruby-identifier">minute</span> = <span class="ruby-node">$3</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-node">$3</span>.<span class="ruby-identifier">to_i</span>
+153:       <span class="ruby-identifier">second</span> = <span class="ruby-node">$4</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-node">$4</span>.<span class="ruby-identifier">to_i</span>
+154:       
+155:       <span class="ruby-identifier">seconds</span> = <span class="ruby-identifier">hour</span>
+156:       <span class="ruby-identifier">seconds</span> = <span class="ruby-identifier">seconds</span> * <span class="ruby-value">60</span>
+157:       <span class="ruby-identifier">seconds</span> = <span class="ruby-identifier">seconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">minute</span>
+158:       <span class="ruby-identifier">seconds</span> = <span class="ruby-identifier">seconds</span> * <span class="ruby-value">60</span>
+159:       <span class="ruby-identifier">seconds</span> = <span class="ruby-identifier">seconds</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">second</span>
+160:       <span class="ruby-identifier">seconds</span> = <span class="ruby-operator">-</span><span class="ruby-identifier">seconds</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">negative</span>
+161:       <span class="ruby-identifier">seconds</span>
+162:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="quote-str-method" class="method-detail ">
+				<a name="method-c-quote_str"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">quote_str</span><span
+						class="method-args">(str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Encloses the string in single quotes and escapes any single quotes in the
+content.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="quote-str-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/tzinfo/tzdataparser.rb, line 166</span>
+166:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">quote_str</span>(<span class="ruby-identifier">str</span>)
+167:       <span class="ruby-node">&quot;'#{str.gsub('\'', '\\\\\'')}'&quot;</span>
+168:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="execute-method" class="method-detail ">
+				<a name="method-i-execute"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">execute</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Reads the tzdata source and generates the classes. Takes a long time to
+run. Currently outputs debugging information to standard out.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="execute-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/tzinfo/tzdataparser.rb, line 75</span>
+ 75:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">execute</span>
+ 76:       <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-ivar">@input_dir</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+ 77:         <span class="ruby-identifier">load_rules</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^[^\.]+$/</span>        
+ 78:       }  
+ 79:       
+ 80:       <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-ivar">@input_dir</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+ 81:         <span class="ruby-identifier">load_zones</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^[^\.]+$/</span>        
+ 82:       }
+ 83:       
+ 84:       <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-ivar">@input_dir</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+ 85:         <span class="ruby-identifier">load_links</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^[^\.]+$/</span>        
+ 86:       }
+ 87:       
+ 88:       <span class="ruby-identifier">load_countries</span>
+ 89:       
+ 90:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@generate_zones</span>
+ 91:         <span class="ruby-identifier">modules</span> = []
+ 92:         
+ 93:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@only_zones</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@only_zones</span>.<span class="ruby-identifier">empty?</span>
+ 94:           <span class="ruby-ivar">@zones</span>.<span class="ruby-identifier">each_value</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">zone</span><span class="ruby-operator">|</span>
+ 95:             <span class="ruby-identifier">zone</span>.<span class="ruby-identifier">write_module</span>(<span class="ruby-ivar">@output_dir</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@exclude_zones</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">zone</span>.<span class="ruby-identifier">name</span>)
+ 96:           }
+ 97:         <span class="ruby-keyword kw">else</span>
+ 98:           <span class="ruby-ivar">@only_zones</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span>
+ 99:             <span class="ruby-identifier">zone</span> = <span class="ruby-ivar">@zones</span>[<span class="ruby-identifier">id</span>]
+100:             <span class="ruby-identifier">zone</span>.<span class="ruby-identifier">write_module</span>(<span class="ruby-ivar">@output_dir</span>)            
+101:           }          
+102:         <span class="ruby-keyword kw">end</span>
+103:         
+104:         <span class="ruby-identifier">write_timezones_index</span>
+105:       <span class="ruby-keyword kw">end</span>
+106:       
+107:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@generate_countries</span>        
+108:         <span class="ruby-identifier">write_countries_index</span>
+109:       <span class="ruby-keyword kw">end</span>
+110:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="get-rules-method" class="method-detail ">
+				<a name="method-i-get_rules"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_rules</span><span
+						class="method-args">(ref)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Gets a rules object for the given reference. Might be a named rule set, a
+fixed offset or an empty ruleset.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="get-rules-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/tzinfo/tzdataparser.rb, line 195</span>
+195:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_rules</span>(<span class="ruby-identifier">ref</span>)
+196:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">ref</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'-'</span>
+197:           <span class="ruby-ivar">@no_rules</span>
+198:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">ref</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^[0-9]+:[0-9]+$/</span>
+199:           <span class="ruby-constant">TZDataFixedOffsetRules</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">TZDataParser</span>.<span class="ruby-identifier">parse_offset</span>(<span class="ruby-identifier">ref</span>))
+200:         <span class="ruby-keyword kw">else</span>
+201:           <span class="ruby-identifier">rule_set</span> = <span class="ruby-ivar">@rule_sets</span>[<span class="ruby-identifier">ref</span>]
+202:           <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Ruleset not found: #{ref}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rule_set</span>.<span class="ruby-identifier">nil?</span>    
+203:           <span class="ruby-identifier">rule_set</span>
+204:         <span class="ruby-keyword kw">end</span>  
+205:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="load-countries-method" class="method-detail ">
+				<a name="method-i-load_countries"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_countries</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Loads countries from iso3166.tab and zone.tab and stores the result in
+@countries.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="load-countries-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/tzinfo/tzdataparser.rb, line 260</span>
+260:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_countries</span>
+261:         <span class="ruby-identifier">puts</span> <span class="ruby-value str">'load_countries'</span>
+262:         
+263:         <span class="ruby-constant">IO</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-ivar">@input_dir</span> <span class="ruby-operator">+</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'iso3166.tab'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>          
+264:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^([A-Z]{2})\t(.*)$/</span>
+265:             <span class="ruby-identifier">code</span> = <span class="ruby-node">$1</span>
+266:             <span class="ruby-identifier">name</span> = <span class="ruby-node">$2</span>
+267:             <span class="ruby-ivar">@countries</span>[<span class="ruby-identifier">code</span>] = <span class="ruby-constant">TZDataCountry</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">code</span>, <span class="ruby-identifier">name</span>)
+268:           <span class="ruby-keyword kw">end</span>
+269:         }
+270:         
+271:         <span class="ruby-constant">IO</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-ivar">@input_dir</span> <span class="ruby-operator">+</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'zone.tab'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>          
+272:           <span class="ruby-identifier">line</span>.<span class="ruby-identifier">chomp!</span>          
+273: 
+274:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^([A-Z]{2})\t([^\t]+)\t([^\t]+)(\t(.*))?$/</span>
+275:             <span class="ruby-identifier">code</span> = <span class="ruby-node">$1</span>
+276:             <span class="ruby-identifier">location_str</span> = <span class="ruby-node">$2</span>
+277:             <span class="ruby-identifier">zone_name</span> = <span class="ruby-node">$3</span>
+278:             <span class="ruby-identifier">description</span> = <span class="ruby-node">$5</span>
+279: 
+280:             <span class="ruby-identifier">country</span> = <span class="ruby-ivar">@countries</span>[<span class="ruby-identifier">code</span>]
+281:             <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Country not found: #{code}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">country</span>.<span class="ruby-identifier">nil?</span>
+282:             
+283:             <span class="ruby-identifier">location</span> = <span class="ruby-constant">TZDataLocation</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">location_str</span>)
+284:             
+285:             <span class="ruby-identifier">zone</span> = <span class="ruby-ivar">@zones</span>[<span class="ruby-identifier">zone_name</span>]
+286:             <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Zone not found: #{zone_name}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">zone</span>.<span class="ruby-identifier">nil?</span>                        
+287:             
+288:             <span class="ruby-identifier">description</span> = <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">description</span> <span class="ruby-operator">==</span> <span class="ruby-value str">''</span>
+289:             
+290:             <span class="ruby-identifier">country</span>.<span class="ruby-identifier">add_zone</span>(<span class="ruby-constant">TZDataCountryTimezone</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">zone</span>, <span class="ruby-identifier">description</span>, <span class="ruby-identifier">location</span>))
+291:           <span class="ruby-keyword kw">end</span>
+292:         }
+293:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="load-links-method" class="method-detail ">
+				<a name="method-i-load_links"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_links</span><span
+						class="method-args">(file)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Loads in the links and stores them in @zones.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="load-links-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/tzinfo/tzdataparser.rb, line 241</span>
+241:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_links</span>(<span class="ruby-identifier">file</span>)
+242:         <span class="ruby-identifier">puts</span> <span class="ruby-value str">'load_links: '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">file</span>
+243:         
+244:         <span class="ruby-constant">IO</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-ivar">@input_dir</span> <span class="ruby-operator">+</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">file</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+245:           <span class="ruby-identifier">line</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">/#.*$/</span>, <span class="ruby-value str">''</span>)
+246:           <span class="ruby-identifier">line</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\s+$/</span>, <span class="ruby-value str">''</span>)
+247:         
+248:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^Link\s+([^\s]+)\s+([^\s]+)/</span>            
+249:             <span class="ruby-identifier">name</span> = <span class="ruby-node">$2</span>           
+250:             <span class="ruby-identifier">link_to</span> = <span class="ruby-ivar">@zones</span>[<span class="ruby-node">$1</span>]
+251:             <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Link to zone not found (#{name}-&gt;#{link_to})&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">link_to</span>.<span class="ruby-identifier">nil?</span>
+252:             <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Zone already defined: #{name}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@zones</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">nil?</span>
+253:             <span class="ruby-ivar">@zones</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-constant">TZDataLink</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">link_to</span>)
+254:           <span class="ruby-keyword kw">end</span>          
+255:         }
+256:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="load-rules-method" class="method-detail ">
+				<a name="method-i-load_rules"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_rules</span><span
+						class="method-args">(file)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Loads all the Rule definitions from the tz data and stores them in
+@rule_sets.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="load-rules-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/tzinfo/tzdataparser.rb, line 173</span>
+173:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_rules</span>(<span class="ruby-identifier">file</span>)
+174:         <span class="ruby-identifier">puts</span> <span class="ruby-value str">'load_rules: '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">file</span>
+175:         
+176:         <span class="ruby-constant">IO</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-ivar">@input_dir</span> <span class="ruby-operator">+</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">file</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+177:           <span class="ruby-identifier">line</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">/#.*$/</span>, <span class="ruby-value str">''</span>)
+178:           <span class="ruby-identifier">line</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\s+$/</span>, <span class="ruby-value str">''</span>)
+179:         
+180:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^Rule\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)/</span>
+181:             
+182:             <span class="ruby-identifier">name</span> = <span class="ruby-node">$1</span>    
+183:             
+184:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@rule_sets</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">nil?</span> 
+185:               <span class="ruby-ivar">@rule_sets</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-constant">TZDataRuleSet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>) 
+186:             <span class="ruby-keyword kw">end</span>
+187:             
+188:             <span class="ruby-ivar">@rule_sets</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">add_rule</span>(<span class="ruby-constant">TZDataRule</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$2</span>, <span class="ruby-node">$3</span>, <span class="ruby-node">$4</span>, <span class="ruby-node">$5</span>, <span class="ruby-node">$6</span>, <span class="ruby-node">$7</span>, <span class="ruby-node">$8</span>, <span class="ruby-node">$9</span>))
+189:           <span class="ruby-keyword kw">end</span>          
+190:         }                
+191:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="load-zones-method" class="method-detail ">
+				<a name="method-i-load_zones"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_zones</span><span
+						class="method-args">(file)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Loads in the Zone definitions from the tz data and stores them in @zones.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="load-zones-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/tzinfo/tzdataparser.rb, line 208</span>
+208:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_zones</span>(<span class="ruby-identifier">file</span>)
+209:         <span class="ruby-identifier">puts</span> <span class="ruby-value str">'load_zones: '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">file</span>
+210:         
+211:         <span class="ruby-identifier">in_zone</span> = <span class="ruby-keyword kw">nil</span>
+212:         
+213:         <span class="ruby-constant">IO</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-ivar">@input_dir</span> <span class="ruby-operator">+</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">file</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+214:           <span class="ruby-identifier">line</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">/#.*$/</span>, <span class="ruby-value str">''</span>)
+215:           <span class="ruby-identifier">line</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\s+$/</span>, <span class="ruby-value str">''</span>)
+216:         
+217:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">in_zone</span>
+218:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)(\s+([0-9]+(\s+.*)?))?$/</span>              
+219:               
+220:               <span class="ruby-identifier">in_zone</span>.<span class="ruby-identifier">add_observance</span>(<span class="ruby-constant">TZDataObservance</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$1</span>, <span class="ruby-identifier">get_rules</span>(<span class="ruby-node">$2</span>), <span class="ruby-node">$3</span>, <span class="ruby-node">$5</span>))
+221:               
+222:               <span class="ruby-identifier">in_zone</span> = <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-node">$4</span>.<span class="ruby-identifier">nil?</span> 
+223:             <span class="ruby-keyword kw">end</span>
+224:           <span class="ruby-keyword kw">else</span>
+225:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^Zone\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)(\s+([0-9]+(\s+.*)?))?$/</span>              
+226:               <span class="ruby-identifier">name</span> = <span class="ruby-node">$1</span>
+227:               
+228:               <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@zones</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">nil?</span> 
+229:                 <span class="ruby-ivar">@zones</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-constant">TZDataZone</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>)
+230:               <span class="ruby-keyword kw">end</span>                            
+231:               
+232:               <span class="ruby-ivar">@zones</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">add_observance</span>(<span class="ruby-constant">TZDataObservance</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$2</span>, <span class="ruby-identifier">get_rules</span>(<span class="ruby-node">$3</span>), <span class="ruby-node">$4</span>, <span class="ruby-node">$6</span>))
+233:               
+234:               <span class="ruby-identifier">in_zone</span> = <span class="ruby-ivar">@zones</span>[<span class="ruby-identifier">name</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-node">$5</span>.<span class="ruby-identifier">nil?</span>
+235:             <span class="ruby-keyword kw">end</span>
+236:           <span class="ruby-keyword kw">end</span>
+237:         }
+238:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="write-countries-index-method" class="method-detail ">
+				<a name="method-i-write_countries_index"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">write_countries_index</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Writes a country index file.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="write-countries-index-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/tzinfo/tzdataparser.rb, line 296</span>
+296:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">write_countries_index</span>
+297:         <span class="ruby-identifier">dir</span> = <span class="ruby-ivar">@output_dir</span> <span class="ruby-operator">+</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'indexes'</span>      
+298:         <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-identifier">dir</span>)
+299:         
+300:         <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">dir</span> <span class="ruby-operator">+</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'countries.rb'</span>, <span class="ruby-value str">'w'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+301:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">binmode</span>
+302:           
+303:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'module TZInfo'</span>)
+304:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'  module Indexes'</span>)
+305:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'    module Countries'</span>)
+306:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'      include CountryIndexDefinition'</span>)
+307:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">''</span>)
+308:           
+309:           <span class="ruby-identifier">countries</span> = <span class="ruby-ivar">@countries</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">sort</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c1</span>,<span class="ruby-identifier">c2</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c1</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">c2</span>.<span class="ruby-identifier">code</span>}  
+310:           <span class="ruby-identifier">countries</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">country</span><span class="ruby-operator">|</span> <span class="ruby-identifier">country</span>.<span class="ruby-identifier">write_index_record</span>(<span class="ruby-identifier">file</span>)}
+311:                     
+312:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'    end'</span>) <span class="ruby-comment cmt"># end module Countries                    </span>
+313:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'  end'</span>) <span class="ruby-comment cmt"># end module Indexes</span>
+314:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'end'</span>) <span class="ruby-comment cmt"># end module TZInfo</span>
+315:         }                      
+316:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="write-timezones-index-method" class="method-detail ">
+				<a name="method-i-write_timezones_index"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">write_timezones_index</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Writes a timezone index file.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="write-timezones-index-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/tzinfo/tzdataparser.rb, line 319</span>
+319:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">write_timezones_index</span>
+320:         <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@output_dir</span>, <span class="ruby-value str">'indexes'</span>)
+321:         <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-identifier">dir</span>)
+322:         
+323:         <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-value str">'timezones.rb'</span>), <span class="ruby-value str">'w'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+324:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">binmode</span>
+325:           
+326:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'module TZInfo'</span>)
+327:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'  module Indexes'</span>)
+328:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'    module Timezones'</span>)
+329:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'      include TimezoneIndexDefinition'</span>)
+330:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">''</span>)
+331:           
+332:           <span class="ruby-identifier">zones</span> = <span class="ruby-ivar">@zones</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">sort</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">t1</span>,<span class="ruby-identifier">t2</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t1</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">t2</span>.<span class="ruby-identifier">name</span>}
+333:           <span class="ruby-identifier">zones</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">zone</span><span class="ruby-operator">|</span> <span class="ruby-identifier">zone</span>.<span class="ruby-identifier">write_index_record</span>(<span class="ruby-identifier">file</span>)}
+334:           
+335:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'    end'</span>) <span class="ruby-comment cmt"># end module Timezones</span>
+336:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'  end'</span>) <span class="ruby-comment cmt"># end module Indexes</span>
+337:           <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-value str">'end'</span>) <span class="ruby-comment cmt"># end module TZInfo</span>
+338:         <span class="ruby-keyword kw">end</span>
+339:         
+340:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

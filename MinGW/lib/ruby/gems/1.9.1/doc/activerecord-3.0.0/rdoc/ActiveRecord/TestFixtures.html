@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: ActiveRecord::TestFixtures</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/active_record/fixtures_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_record/fixtures.rb">lib/active_record/fixtures.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">MODULE</span> <a href="TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-instantiate_fixtures">#instantiate_fixtures</a></li>
+					
+					<li><a href="#method-i-load_fixtures">#load_fixtures</a></li>
+					
+					<li><a href="#method-i-load_instances%3F">#load_instances?</a></li>
+					
+					<li><a href="#method-i-run_in_transaction%3F">#run_in_transaction?</a></li>
+					
+					<li><a href="#method-i-setup_fixtures">#setup_fixtures</a></li>
+					
+					<li><a href="#method-i-teardown_fixtures">#teardown_fixtures</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+				
+					<li><a href="../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+				
+					<li><a href="../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+				
+					<li><a href="../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ClassMethods/o.html">ActiveRecord::Associations::ClassMethods::o</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+				
+					<li><a href="../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+				
+					<li><a href="../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+				
+					<li><a href="../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+				
+					<li><a href="../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+				
+					<li><a href="../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+				
+					<li><a href="../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+				
+					<li><a href="../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+				
+					<li><a href="../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Generators.html">ActiveRecord::Generators</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/MigrationGenerator.html">ActiveRecord::Generators::MigrationGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/ModelGenerator.html">ActiveRecord::Generators::ModelGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/ObserverGenerator.html">ActiveRecord::Generators::ObserverGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/SessionMigrationGenerator.html">ActiveRecord::Generators::SessionMigrationGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+				
+					<li><a href="../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+				
+					<li><a href="../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+				
+					<li><a href="../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+				
+					<li><a href="../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+				
+					<li><a href="../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+				
+					<li><a href="../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+				
+					<li><a href="../ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+				
+					<li><a href="../ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+				
+					<li><a href="../ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+				
+					<li><a href="../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+				
+					<li><a href="../ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+				
+					<li><a href="../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+				
+					<li><a href="../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+				
+					<li><a href="../ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+				
+					<li><a href="../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+				
+					<li><a href="../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+				
+					<li><a href="../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+				
+					<li><a href="../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+				
+					<li><a href="../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+				
+					<li><a href="../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+				
+					<li><a href="../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+				
+					<li><a href="../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+				
+					<li><a href="../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+				
+					<li><a href="../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+				
+					<li><a href="../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+				
+					<li><a href="../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+				
+					<li><a href="../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+				
+					<li><a href="../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+				
+					<li><a href="../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+				
+					<li><a href="../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+				
+					<li><a href="../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+				
+					<li><a href="../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+				
+					<li><a href="../Fixtures.html">Fixtures</a></li>
+				
+					<li><a href="../FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">ActiveRecord::TestFixtures</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="run-in-transaction--method" class="method-detail ">
+				<a name="method-i-run_in_transaction%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">run_in_transaction?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="run-in-transaction--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/fixtures.rb, line 920</span>
+920:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run_in_transaction?</span>
+921:       <span class="ruby-identifier">use_transactional_fixtures</span> <span class="ruby-operator">&amp;&amp;</span>
+922:         <span class="ruby-operator">!</span><span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">uses_transaction?</span>(<span class="ruby-identifier">method_name</span>)
+923:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="setup-fixtures-method" class="method-detail ">
+				<a name="method-i-setup_fixtures"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">setup_fixtures</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="setup-fixtures-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/fixtures.rb, line 925</span>
+925:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">setup_fixtures</span>
+926:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ActiveRecord</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">configurations</span>.<span class="ruby-identifier">blank?</span>
+927: 
+928:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pre_loaded_fixtures</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">use_transactional_fixtures</span>
+929:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">RuntimeError</span>, <span class="ruby-value str">'pre_loaded_fixtures requires use_transactional_fixtures'</span>
+930:       <span class="ruby-keyword kw">end</span>
+931: 
+932:       <span class="ruby-ivar">@fixture_cache</span> = {}
+933:       <span class="ruby-identifier">@@already_loaded_fixtures</span> <span class="ruby-operator">||=</span> {}
+934: 
+935:       <span class="ruby-comment cmt"># Load fixtures once and begin transaction.</span>
+936:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">run_in_transaction?</span>
+937:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">@@already_loaded_fixtures</span>[<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>]
+938:           <span class="ruby-ivar">@loaded_fixtures</span> = <span class="ruby-identifier">@@already_loaded_fixtures</span>[<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>]
+939:         <span class="ruby-keyword kw">else</span>
+940:           <span class="ruby-identifier">load_fixtures</span>
+941:           <span class="ruby-identifier">@@already_loaded_fixtures</span>[<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>] = <span class="ruby-ivar">@loaded_fixtures</span>
+942:         <span class="ruby-keyword kw">end</span>
+943:         <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">increment_open_transactions</span>
+944:         <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">transaction_joinable</span> = <span class="ruby-keyword kw">false</span>
+945:         <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">begin_db_transaction</span>
+946:       <span class="ruby-comment cmt"># Load fixtures for every test.</span>
+947:       <span class="ruby-keyword kw">else</span>
+948:         <span class="ruby-constant">Fixtures</span>.<span class="ruby-identifier">reset_cache</span>
+949:         <span class="ruby-identifier">@@already_loaded_fixtures</span>[<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>] = <span class="ruby-keyword kw">nil</span>
+950:         <span class="ruby-identifier">load_fixtures</span>
+951:       <span class="ruby-keyword kw">end</span>
+952: 
+953:       <span class="ruby-comment cmt"># Instantiate fixtures for every test if requested.</span>
+954:       <span class="ruby-identifier">instantiate_fixtures</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">use_instantiated_fixtures</span>
+955:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="teardown-fixtures-method" class="method-detail ">
+				<a name="method-i-teardown_fixtures"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">teardown_fixtures</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="teardown-fixtures-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/fixtures.rb, line 957</span>
+957:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">teardown_fixtures</span>
+958:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ActiveRecord</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">configurations</span>.<span class="ruby-identifier">blank?</span>
+959: 
+960:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">run_in_transaction?</span>
+961:         <span class="ruby-constant">Fixtures</span>.<span class="ruby-identifier">reset_cache</span>
+962:       <span class="ruby-keyword kw">end</span>
+963: 
+964:       <span class="ruby-comment cmt"># Rollback changes if a transaction is active.</span>
+965:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">run_in_transaction?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">open_transactions</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+966:         <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">rollback_db_transaction</span>
+967:         <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">decrement_open_transactions</span>
+968:       <span class="ruby-keyword kw">end</span>
+969:       <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">clear_active_connections!</span>
+970:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="instantiate-fixtures-method" class="method-detail ">
+				<a name="method-i-instantiate_fixtures"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">instantiate_fixtures</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="instantiate-fixtures-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/active_record/fixtures.rb, line 988</span>
+ 988:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">instantiate_fixtures</span>
+ 989:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pre_loaded_fixtures</span>
+ 990:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">RuntimeError</span>, <span class="ruby-value str">'Load fixtures before instantiating them.'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Fixtures</span>.<span class="ruby-identifier">all_loaded_fixtures</span>.<span class="ruby-identifier">empty?</span>
+ 991:           <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">@@required_fixture_classes</span>
+ 992:             <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">require_fixture_classes</span> <span class="ruby-constant">Fixtures</span>.<span class="ruby-identifier">all_loaded_fixtures</span>.<span class="ruby-identifier">keys</span>
+ 993:             <span class="ruby-identifier">@@required_fixture_classes</span> = <span class="ruby-keyword kw">true</span>
+ 994:           <span class="ruby-keyword kw">end</span>
+ 995:           <span class="ruby-constant">Fixtures</span>.<span class="ruby-identifier">instantiate_all_loaded_fixtures</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">load_instances?</span>)
+ 996:         <span class="ruby-keyword kw">else</span>
+ 997:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">RuntimeError</span>, <span class="ruby-value str">'Load fixtures before instantiating them.'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@loaded_fixtures</span>.<span class="ruby-identifier">nil?</span>
+ 998:           <span class="ruby-ivar">@loaded_fixtures</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">fixtures</span><span class="ruby-operator">|</span>
+ 999:             <span class="ruby-constant">Fixtures</span>.<span class="ruby-identifier">instantiate_fixtures</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">fixtures</span>, <span class="ruby-identifier">load_instances?</span>)
+1000:           <span class="ruby-keyword kw">end</span>
+1001:         <span class="ruby-keyword kw">end</span>
+1002:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="load-fixtures-method" class="method-detail ">
+				<a name="method-i-load_fixtures"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_fixtures</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="load-fixtures-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/fixtures.rb, line 973</span>
+973:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_fixtures</span>
+974:         <span class="ruby-ivar">@loaded_fixtures</span> = {}
+975:         <span class="ruby-identifier">fixtures</span> = <span class="ruby-constant">Fixtures</span>.<span class="ruby-identifier">create_fixtures</span>(<span class="ruby-identifier">fixture_path</span>, <span class="ruby-identifier">fixture_table_names</span>, <span class="ruby-identifier">fixture_class_names</span>)
+976:         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">fixtures</span>.<span class="ruby-identifier">nil?</span>
+977:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">fixtures</span>.<span class="ruby-identifier">instance_of?</span>(<span class="ruby-constant">Fixtures</span>)
+978:             <span class="ruby-ivar">@loaded_fixtures</span>[<span class="ruby-identifier">fixtures</span>.<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">fixtures</span>
+979:           <span class="ruby-keyword kw">else</span>
+980:             <span class="ruby-identifier">fixtures</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@loaded_fixtures</span>[<span class="ruby-identifier">f</span>.<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">f</span> }
+981:           <span class="ruby-keyword kw">end</span>
+982:         <span class="ruby-keyword kw">end</span>
+983:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="load-instances--method" class="method-detail ">
+				<a name="method-i-load_instances%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_instances?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="load-instances--source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/active_record/fixtures.rb, line 1004</span>
+1004:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_instances?</span>
+1005:         <span class="ruby-identifier">use_instantiated_fixtures</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:no_instances</span>
+1006:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>activeresource-3.0.0 Documentation</title>
+
+	<link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+	
+	<h1>activeresource-3.0.0 Documentation</h1>
+
+	
+	<div id="main">
+		
+<p>
+Active Resource (ARes) connects business objects and Representational State
+Transfer (REST) web services.  It implements object-relational mapping for
+REST web services to provide transparent proxying capabilities between a
+client (ActiveResource) and a RESTful service (which is provided by Simply
+RESTful routing in ActionController::Resources).
+</p>
+<h2>Philosophy</h2>
+<p>
+Active Resource attempts to provide a coherent wrapper object-relational
+mapping for REST web services. It follows the same philosophy as Active
+Record, in that one of its prime aims is to reduce the amount of code
+needed to map to these resources.  This is made possible by relying on a
+number of code- and protocol-based conventions that make it easy for Active
+Resource to infer complex relations and structures.  These conventions are
+outlined in detail in the documentation for <a
+href="ActiveResource/Base.html">ActiveResource::Base</a>.
+</p>
+<h2>Overview</h2>
+<p>
+Model classes are mapped to remote REST resources by Active Resource much
+the same way Active Record maps model classes to database tables.  When a
+request is made to a remote resource, a REST XML request is generated,
+transmitted, and the result received and serialized into a usable Ruby
+object.
+</p>
+<h3>Configuration and Usage</h3>
+<p>
+Putting Active Resource to use is very similar to Active Record. 
+It&#8217;s as simple as creating a model class that inherits from <a
+href="ActiveResource/Base.html">ActiveResource::Base</a> and providing a
+<tt>site</tt> class variable to it:
+</p>
+<pre>
+   class Person &lt; ActiveResource::Base
+     self.site = &quot;http://api.people.com:3000/&quot;
+   end
+</pre>
+<p>
+Now the Person class is REST enabled and can invoke REST services very
+similarly to how Active Record invokes life cycle methods that operate
+against a persistent store.
+</p>
+<pre>
+   # Find a person with id = 1
+   ryan = Person.find(1)
+   Person.exists?(1)  # =&gt; true
+</pre>
+<p>
+As you can see, the methods are quite similar to Active Record&#8217;s
+methods for dealing with database records.  But rather than dealing
+directly with a database record, you&#8217;re dealing with HTTP resources
+(which may or may not be database records).
+</p>
+<h4>Protocol</h4>
+<p>
+Active Resource is built on a standard XML format for requesting and
+submitting resources over HTTP.  It mirrors the RESTful routing built into
+Action Controller but will also work with any other REST service that
+properly implements the protocol. REST uses HTTP, but unlike
+&#8220;typical&#8221; web applications, it makes use of all the verbs
+available in the HTTP specification:
+</p>
+<ul>
+<li><p>
+GET requests are used for finding and retrieving resources.
+</p>
+</li>
+<li><p>
+POST requests are used to create new resources.
+</p>
+</li>
+<li><p>
+PUT requests are used to update existing resources.
+</p>
+</li>
+<li><p>
+DELETE requests are used to delete resources.
+</p>
+</li>
+</ul>
+<p>
+For more information on how this protocol works with Active Resource, see
+the <a href="ActiveResource/Base.html">ActiveResource::Base</a>
+documentation; for more general information on REST web services, see the
+article <a
+href="http://en.wikipedia.org/wiki/Representational_State_Transfer">here</a>.
+</p>
+<h4>Find</h4>
+<p>
+Find requests use the GET method and expect the XML form of whatever
+resource/resources is/are being requested.  So, for a request for a single
+element, the XML of that item is expected in response:
+</p>
+<pre>
+   # Expects a response of
+   #
+   # &lt;person&gt;&lt;id type=&quot;integer&quot;&gt;1&lt;/id&gt;&lt;attribute1&gt;value1&lt;/attribute1&gt;&lt;attribute2&gt;..&lt;/attribute2&gt;&lt;/person&gt;
+   #
+   # for GET http://api.people.com:3000/people/1.xml
+   #
+   ryan = Person.find(1)
+</pre>
+<p>
+The XML document that is received is used to build a new object of type
+Person, with each XML element becoming an attribute on the object.
+</p>
+<pre>
+   ryan.is_a? Person  # =&gt; true
+   ryan.attribute1  # =&gt; 'value1'
+</pre>
+<p>
+Any complex element (one that contains other elements) becomes its own
+object:
+</p>
+<pre>
+   # With this response:
+   #
+   # &lt;person&gt;&lt;id&gt;1&lt;/id&gt;&lt;attribute1&gt;value1&lt;/attribute1&gt;&lt;complex&gt;&lt;attribute2&gt;value2&lt;/attribute2&gt;&lt;/complex&gt;&lt;/person&gt;
+   #
+   # for GET http://api.people.com:3000/people/1.xml
+   #
+   ryan = Person.find(1)
+   ryan.complex  # =&gt; &lt;Person::Complex::xxxxx&gt;
+   ryan.complex.attribute2  # =&gt; 'value2'
+</pre>
+<p>
+Collections can also be requested in a similar fashion
+</p>
+<pre>
+   # Expects a response of
+   #
+   # &lt;people type=&quot;array&quot;&gt;
+   #  &lt;person&gt;&lt;id type=&quot;integer&quot;&gt;1&lt;/id&gt;&lt;first&gt;Ryan&lt;/first&gt;&lt;/person&gt;
+   #  &lt;person&gt;&lt;id type=&quot;integer&quot;&gt;2&lt;/id&gt;&lt;first&gt;Jim&lt;/first&gt;&lt;/person&gt;
+   # &lt;/people&gt;
+   #
+   # for GET http://api.people.com:3000/people.xml
+   #
+   people = Person.find(:all)
+   people.first  # =&gt; &lt;Person::xxx 'first' =&gt; 'Ryan' ...&gt;
+   people.last  # =&gt; &lt;Person::xxx 'first' =&gt; 'Jim' ...&gt;
+</pre>
+<h4>Create</h4>
+<p>
+Creating a new resource submits the XML form of the resource as the body of
+the request and expects a &#8216;Location&#8217; header in the response
+with the RESTful URL location of the newly created resource.  The id of the
+newly created resource is parsed out of the Location response header and
+automatically set as the id of the ARes object.
+</p>
+<pre>
+  # &lt;person&gt;&lt;first&gt;Ryan&lt;/first&gt;&lt;/person&gt;
+  #
+  # is submitted as the body on
+  #
+  # POST http://api.people.com:3000/people.xml
+  #
+  # when save is called on a new Person object.  An empty response is
+  # is expected with a 'Location' header value:
+  #
+  # Response (201): Location: http://api.people.com:3000/people/2
+  #
+  ryan = Person.new(:first =&gt; 'Ryan')
+  ryan.new?  # =&gt; true
+  ryan.save  # =&gt; true
+  ryan.new?  # =&gt; false
+  ryan.id    # =&gt; 2
+</pre>
+<h4>Update</h4>
+<p>
+&#8216;save&#8217; is also used to update an existing resource - and
+follows the same protocol as creating a resource with the exception that no
+response headers are needed - just an empty response when the update on the
+server side was successful.
+</p>
+<pre>
+  # &lt;person&gt;&lt;first&gt;Ryan&lt;/first&gt;&lt;/person&gt;
+  #
+  # is submitted as the body on
+  #
+  # PUT http://api.people.com:3000/people/1.xml
+  #
+  # when save is called on an existing Person object.  An empty response is
+  # is expected with code (204)
+  #
+  ryan = Person.find(1)
+  ryan.first # =&gt; 'Ryan'
+  ryan.first = 'Rizzle'
+  ryan.save  # =&gt; true
+</pre>
+<h4>Delete</h4>
+<p>
+Destruction of a resource can be invoked as a class and instance method of
+the resource.
+</p>
+<pre>
+  # A request is made to
+  #
+  # DELETE http://api.people.com:3000/people/1.xml
+  #
+  # for both of these forms.  An empty response with
+  # is expected with response code (200)
+  #
+  ryan = Person.find(1)
+  ryan.destroy  # =&gt; true
+  ryan.exists?  # =&gt; false
+  Person.delete(2)  # =&gt; true
+  Person.exists?(2) # =&gt; false
+</pre>
+<p>
+You can find more usage information in the <a
+href="ActiveResource/Base.html">ActiveResource::Base</a> documentation.
+</p>
+
+	</div>
+	
+
+	
+	
+	<h2>Files</h2>
+	<ul>
+		
+			<li class="file"><a href="README_rdoc.html">README.rdoc</a></li>
+		
+	</ul>
+	
+
+	<h2 id="classes">Classes/Modules</h2>
+	<ul>
+		
+		<li class="class"><a href="ActiveResource/BadRequest.html">ActiveResource::BadRequest</a></li>
+		
+		<li class="class"><a href="ActiveResource/Base.html">ActiveResource::Base</a></li>
+		
+		<li class="class"><a href="ActiveResource/ClientError.html">ActiveResource::ClientError</a></li>
+		
+		<li class="class"><a href="ActiveResource/Connection.html">ActiveResource::Connection</a></li>
+		
+		<li class="module"><a href="ActiveResource/CustomMethods.html">ActiveResource::CustomMethods</a></li>
+		
+		<li class="module"><a href="ActiveResource/CustomMethods/ClassMethods.html">ActiveResource::CustomMethods::ClassMethods</a></li>
+		
+		<li class="module"><a href="ActiveResource/CustomMethods/InstanceMethods.html">ActiveResource::CustomMethods::InstanceMethods</a></li>
+		
+		<li class="class"><a href="ActiveResource/Errors.html">ActiveResource::Errors</a></li>
+		
+		<li class="class"><a href="ActiveResource/ForbiddenAccess.html">ActiveResource::ForbiddenAccess</a></li>
+		
+		<li class="module"><a href="ActiveResource/Formats.html">ActiveResource::Formats</a></li>
+		
+		<li class="module"><a href="ActiveResource/Formats/JsonFormat.html">ActiveResource::Formats::JsonFormat</a></li>
+		
+		<li class="module"><a href="ActiveResource/Formats/XmlFormat.html">ActiveResource::Formats::XmlFormat</a></li>
+		
+		<li class="class"><a href="ActiveResource/HttpMock.html">ActiveResource::HttpMock</a></li>
+		
+		<li class="class"><a href="ActiveResource/InvalidRequestError.html">ActiveResource::InvalidRequestError</a></li>
+		
+		<li class="class"><a href="ActiveResource/LogSubscriber.html">ActiveResource::LogSubscriber</a></li>
+		
+		<li class="module"><a href="ActiveResource/Observing.html">ActiveResource::Observing</a></li>
+		
+		<li class="class"><a href="ActiveResource/Railtie.html">ActiveResource::Railtie</a></li>
+		
+		<li class="class"><a href="ActiveResource/Request.html">ActiveResource::Request</a></li>
+		
+		<li class="class"><a href="ActiveResource/ResourceConflict.html">ActiveResource::ResourceConflict</a></li>
+		
+		<li class="class"><a href="ActiveResource/ResourceGone.html">ActiveResource::ResourceGone</a></li>
+		
+		<li class="class"><a href="ActiveResource/ResourceNotFound.html">ActiveResource::ResourceNotFound</a></li>
+		
+		<li class="class"><a href="ActiveResource/Response.html">ActiveResource::Response</a></li>
+		
+		<li class="class"><a href="ActiveResource/SSLError.html">ActiveResource::SSLError</a></li>
+		
+		<li class="class"><a href="ActiveResource/ServerError.html">ActiveResource::ServerError</a></li>
+		
+		<li class="class"><a href="ActiveResource/TimeoutError.html">ActiveResource::TimeoutError</a></li>
+		
+		<li class="class"><a href="ActiveResource/UnauthorizedAccess.html">ActiveResource::UnauthorizedAccess</a></li>
+		
+		<li class="module"><a href="ActiveResource/Validations.html">ActiveResource::Validations</a></li>
+		
+	</ul>
+
+	<h2 id="methods">Methods</h2>
+	<ul>
+		
+			<li><a href="ActiveResource/Formats.html#method-c-%5B%5D">::[] &mdash; ActiveResource::Formats</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-all">::all &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-auth_type">::auth_type &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-auth_type%3D">::auth_type= &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-build">::build &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-collection_path">::collection_path &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-connection">::connection &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-create">::create &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-create_proxy_uri_from">::create_proxy_uri_from &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-create_site_uri_from">::create_site_uri_from &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-delete">::delete &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/CustomMethods.html#method-c-delete">::delete &mdash; ActiveResource::CustomMethods</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-element_path">::element_path &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-exists%3F">::exists? &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-find">::find &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-find_every">::find_every &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-find_one">::find_one &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-find_single">::find_single &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-first">::first &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-format">::format &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-format%3D">::format= &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/CustomMethods.html#method-c-get">::get &mdash; ActiveResource::CustomMethods</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-headers">::headers &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-instantiate_collection">::instantiate_collection &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-instantiate_record">::instantiate_record &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-known_attributes">::known_attributes &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-last">::last &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-logger">::logger &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-new">::new &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-c-new">::new &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/TimeoutError.html#method-c-new">::new &mdash; ActiveResource::TimeoutError</a></li>
+		
+			<li><a href="ActiveResource/SSLError.html#method-c-new">::new &mdash; ActiveResource::SSLError</a></li>
+		
+			<li><a href="ActiveResource/Request.html#method-c-new">::new &mdash; ActiveResource::Request</a></li>
+		
+			<li><a href="ActiveResource/Response.html#method-c-new">::new &mdash; ActiveResource::Response</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-new_element_path">::new_element_path &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/CustomMethods.html#method-c-orig_delete">::orig_delete &mdash; ActiveResource::CustomMethods</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-password">::password &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-password%3D">::password= &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/CustomMethods.html#method-c-post">::post &mdash; ActiveResource::CustomMethods</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-prefix">::prefix &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-prefix%3D">::prefix= &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-prefix_parameters">::prefix_parameters &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-prefix_source">::prefix_source &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-proxy">::proxy &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-proxy%3D">::proxy= &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/CustomMethods.html#method-c-put">::put &mdash; ActiveResource::CustomMethods</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-query_string">::query_string &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/HttpMock.html#method-c-requests">::requests &mdash; ActiveResource::HttpMock</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-c-requests">::requests &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/HttpMock.html#method-c-reset%21">::reset! &mdash; ActiveResource::HttpMock</a></li>
+		
+			<li><a href="ActiveResource/HttpMock.html#method-c-respond_to">::respond_to &mdash; ActiveResource::HttpMock</a></li>
+		
+			<li><a href="ActiveResource/HttpMock.html#method-c-responses">::responses &mdash; ActiveResource::HttpMock</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-schema">::schema &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-schema%3D">::schema= &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-site">::site &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-site%3D">::site= &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-split_options">::split_options &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-ssl_options">::ssl_options &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-ssl_options%3D">::ssl_options= &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-timeout">::timeout &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-timeout%3D">::timeout= &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-uri_parser">::uri_parser &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-user">::user &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-c-user%3D">::user= &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-%3D%3D">#== &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Request.html#method-i-%3D%3D">#== &mdash; ActiveResource::Request</a></li>
+		
+			<li><a href="ActiveResource/Response.html#method-i-%3D%3D">#== &mdash; ActiveResource::Response</a></li>
+		
+			<li><a href="ActiveResource/Response.html#method-i-%5B%5D">#[] &mdash; ActiveResource::Response</a></li>
+		
+			<li><a href="ActiveResource/Response.html#method-i-%5B%5D%3D">#[]= &mdash; ActiveResource::Response</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-apply_ssl_options">#apply_ssl_options &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-auth_attributes_for">#auth_attributes_for &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-auth_type%3D">#auth_type= &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-authorization_header">#authorization_header &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-build_request_headers">#build_request_headers &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-client_nonce">#client_nonce &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-clone">#clone &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-collection_path">#collection_path &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-configure_http">#configure_http &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-connection">#connection &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-create">#create &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/CustomMethods/ClassMethods.html#method-i-custom_method_collection_url">#custom_method_collection_url &mdash; ActiveResource::CustomMethods::ClassMethods</a></li>
+		
+			<li><a href="ActiveResource/CustomMethods/InstanceMethods.html#method-i-custom_method_element_url">#custom_method_element_url &mdash; ActiveResource::CustomMethods::InstanceMethods</a></li>
+		
+			<li><a href="ActiveResource/CustomMethods/InstanceMethods.html#method-i-custom_method_new_element_url">#custom_method_new_element_url &mdash; ActiveResource::CustomMethods::InstanceMethods</a></li>
+		
+			<li><a href="ActiveResource/Formats/JsonFormat.html#method-i-decode">#decode &mdash; ActiveResource::Formats::JsonFormat</a></li>
+		
+			<li><a href="ActiveResource/Formats/XmlFormat.html#method-i-decode">#decode &mdash; ActiveResource::Formats::XmlFormat</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-default_header">#default_header &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/CustomMethods/InstanceMethods.html#method-i-delete">#delete &mdash; ActiveResource::CustomMethods::InstanceMethods</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-delete">#delete &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-destroy">#destroy &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-digest_auth_header">#digest_auth_header &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-dup">#dup &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-element_path">#element_path &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Formats/XmlFormat.html#method-i-encode">#encode &mdash; ActiveResource::Formats::XmlFormat</a></li>
+		
+			<li><a href="ActiveResource/Formats/JsonFormat.html#method-i-encode">#encode &mdash; ActiveResource::Formats::JsonFormat</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-encode">#encode &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-eql%3F">#eql? &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Validations.html#method-i-errors">#errors &mdash; ActiveResource::Validations</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-exists%3F">#exists? &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Formats/JsonFormat.html#method-i-extension">#extension &mdash; ActiveResource::Formats::JsonFormat</a></li>
+		
+			<li><a href="ActiveResource/Formats/XmlFormat.html#method-i-extension">#extension &mdash; ActiveResource::Formats::XmlFormat</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-extract_params_from_response">#extract_params_from_response &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-find_or_create_resource_for">#find_or_create_resource_for &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-find_or_create_resource_for_collection">#find_or_create_resource_for_collection &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-find_resource_in_modules">#find_resource_in_modules &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Errors.html#method-i-from_array">#from_array &mdash; ActiveResource::Errors</a></li>
+		
+			<li><a href="ActiveResource/Errors.html#method-i-from_json">#from_json &mdash; ActiveResource::Errors</a></li>
+		
+			<li><a href="ActiveResource/Errors.html#method-i-from_xml">#from_xml &mdash; ActiveResource::Errors</a></li>
+		
+			<li><a href="ActiveResource/Formats/XmlFormat.html#method-i-from_xml_data">#from_xml_data &mdash; ActiveResource::Formats::XmlFormat</a></li>
+		
+			<li><a href="ActiveResource/CustomMethods/InstanceMethods.html#method-i-get">#get &mdash; ActiveResource::CustomMethods::InstanceMethods</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-get">#get &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-handle_response">#handle_response &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-hash">#hash &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-head">#head &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Request.html#method-i-headers_match%3F">#headers_match? &mdash; ActiveResource::Request</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-http">#http &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-http">#http &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-http_format_header">#http_format_header &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-id">#id &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-id%3D">#id= &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-id_from_response">#id_from_response &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-known_attributes">#known_attributes &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-legitimize_auth_type">#legitimize_auth_type &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-load">#load &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-load_attributes_from_response">#load_attributes_from_response &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/LogSubscriber.html#method-i-logger">#logger &mdash; ActiveResource::LogSubscriber</a></li>
+		
+			<li><a href="ActiveResource/Formats/XmlFormat.html#method-i-mime_type">#mime_type &mdash; ActiveResource::Formats::XmlFormat</a></li>
+		
+			<li><a href="ActiveResource/Formats/JsonFormat.html#method-i-mime_type">#mime_type &mdash; ActiveResource::Formats::JsonFormat</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-new%3F">#new? &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-new_element_path">#new_element_path &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-new_http">#new_http &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-new_record%3F">#new_record? &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-password%3D">#password= &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-persisted%3F">#persisted? &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-post">#post &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/CustomMethods/InstanceMethods.html#method-i-post">#post &mdash; ActiveResource::CustomMethods::InstanceMethods</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-proxy%3D">#proxy= &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-put">#put &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/CustomMethods/InstanceMethods.html#method-i-put">#put &mdash; ActiveResource::CustomMethods::InstanceMethods</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-reload">#reload &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/LogSubscriber.html#method-i-request">#request &mdash; ActiveResource::LogSubscriber</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-request">#request &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-respond_to%3F">#respond_to? &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-respond_to_without_attributes%3F">#respond_to_without_attributes? &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-response_auth_header">#response_auth_header &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-save">#save &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-save%21">#save! &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Validations.html#method-i-save_with_validation">#save_with_validation &mdash; ActiveResource::Validations</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-schema">#schema &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-site%3D">#site= &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-split_options">#split_options &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-ssl_options%3D">#ssl_options= &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Response.html#method-i-success%3F">#success? &mdash; ActiveResource::Response</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-timeout%3D">#timeout= &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-to_json">#to_json &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/SSLError.html#method-i-to_s">#to_s &mdash; ActiveResource::SSLError</a></li>
+		
+			<li><a href="ActiveResource/TimeoutError.html#method-i-to_s">#to_s &mdash; ActiveResource::TimeoutError</a></li>
+		
+			<li><a href="ActiveResource/Request.html#method-i-to_s">#to_s &mdash; ActiveResource::Request</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-to_xml">#to_xml &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-update">#update &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-update_attribute">#update_attribute &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Base.html#method-i-update_attributes">#update_attributes &mdash; ActiveResource::Base</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-user%3D">#user= &mdash; ActiveResource::Connection</a></li>
+		
+			<li><a href="ActiveResource/Validations.html#method-i-valid%3F">#valid? &mdash; ActiveResource::Validations</a></li>
+		
+			<li><a href="ActiveResource/Connection.html#method-i-with_auth">#with_auth &mdash; ActiveResource::Connection</a></li>
+		
+	</ul>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>

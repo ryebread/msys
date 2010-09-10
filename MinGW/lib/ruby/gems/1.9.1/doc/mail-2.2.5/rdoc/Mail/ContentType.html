@@ -1,0 +1,1470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: Mail::ContentType</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/mail/parsers/content_type_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/mail/parsers/content_type.rb">lib/mail/parsers/content_type.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">MODULE</span> <a href="ContentType/ContentType0.html">Mail::ContentType::ContentType0</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="ContentType/ContentType1.html">Mail::ContentType::ContentType1</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="ContentType/ContentType2.html">Mail::ContentType::ContentType2</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="ContentType/Parameter0.html">Mail::ContentType::Parameter0</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="ContentType/Parameter1.html">Mail::ContentType::Parameter1</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="ContentType/Value0.html">Mail::ContentType::Value0</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-_nt_attribute">#_nt_attribute</a></li>
+					
+					<li><a href="#method-i-_nt_composite_type">#_nt_composite_type</a></li>
+					
+					<li><a href="#method-i-_nt_content_type">#_nt_content_type</a></li>
+					
+					<li><a href="#method-i-_nt_discrete_type">#_nt_discrete_type</a></li>
+					
+					<li><a href="#method-i-_nt_extension_token">#_nt_extension_token</a></li>
+					
+					<li><a href="#method-i-_nt_main_type">#_nt_main_type</a></li>
+					
+					<li><a href="#method-i-_nt_parameter">#_nt_parameter</a></li>
+					
+					<li><a href="#method-i-_nt_sub_type">#_nt_sub_type</a></li>
+					
+					<li><a href="#method-i-_nt_value">#_nt_value</a></li>
+					
+					<li><a href="#method-i-root">#root</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><span class="include">Treetop::Runtime</span></li>
+				
+				
+				
+					<li><span class="include">RFC2822</span></li>
+				
+				
+				
+					<li><span class="include">RFC2045</span></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../CHANGELOG_rdoc.html">CHANGELOG.rdoc</a></li>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../TODO_rdoc.html">TODO.rdoc</a></li>
+				
+					<li class="file"><a href="../lib/VERSION.html">VERSION</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Mail.html">Mail</a></li>
+				
+					<li><a href="../Mail/Address.html">Mail::Address</a></li>
+				
+					<li><a href="../Mail/AddressContainer.html">Mail::AddressContainer</a></li>
+				
+					<li><a href="../Mail/AddressLists.html">Mail::AddressLists</a></li>
+				
+					<li><a href="../Mail/AddressLists/PrimaryAddress0.html">Mail::AddressLists::PrimaryAddress0</a></li>
+				
+					<li><a href="../Mail/AddressLists/PrimaryAddress1.html">Mail::AddressLists::PrimaryAddress1</a></li>
+				
+					<li><a href="../Mail/AddressListsParser.html">Mail::AddressListsParser</a></li>
+				
+					<li><a href="../Mail/AttachmentsList.html">Mail::AttachmentsList</a></li>
+				
+					<li><a href="../Mail/BccField.html">Mail::BccField</a></li>
+				
+					<li><a href="../Mail/Body.html">Mail::Body</a></li>
+				
+					<li><a href="../Mail/CcField.html">Mail::CcField</a></li>
+				
+					<li><a href="../Mail/CommentsField.html">Mail::CommentsField</a></li>
+				
+					<li><a href="../Mail/Configuration.html">Mail::Configuration</a></li>
+				
+					<li><a href="../Mail/ContentDescriptionField.html">Mail::ContentDescriptionField</a></li>
+				
+					<li><a href="../Mail/ContentDisposition.html">Mail::ContentDisposition</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/ContentDisposition0.html">Mail::ContentDisposition::ContentDisposition0</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/ContentDisposition1.html">Mail::ContentDisposition::ContentDisposition1</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/ContentDisposition2.html">Mail::ContentDisposition::ContentDisposition2</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/Parameter0.html">Mail::ContentDisposition::Parameter0</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/Parameter1.html">Mail::ContentDisposition::Parameter1</a></li>
+				
+					<li><a href="../Mail/ContentDisposition/Value0.html">Mail::ContentDisposition::Value0</a></li>
+				
+					<li><a href="../Mail/ContentDispositionField.html">Mail::ContentDispositionField</a></li>
+				
+					<li><a href="../Mail/ContentDispositionParser.html">Mail::ContentDispositionParser</a></li>
+				
+					<li><a href="../Mail/ContentIdField.html">Mail::ContentIdField</a></li>
+				
+					<li><a href="../Mail/ContentLocation.html">Mail::ContentLocation</a></li>
+				
+					<li><a href="../Mail/ContentLocation/Location0.html">Mail::ContentLocation::Location0</a></li>
+				
+					<li><a href="../Mail/ContentLocation/Primary0.html">Mail::ContentLocation::Primary0</a></li>
+				
+					<li><a href="../Mail/ContentLocationField.html">Mail::ContentLocationField</a></li>
+				
+					<li><a href="../Mail/ContentLocationParser.html">Mail::ContentLocationParser</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncoding.html">Mail::ContentTransferEncoding</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncoding/Encoding0.html">Mail::ContentTransferEncoding::Encoding0</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncoding/Encoding1.html">Mail::ContentTransferEncoding::Encoding1</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncoding/Primary0.html">Mail::ContentTransferEncoding::Primary0</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncodingElement.html">Mail::ContentTransferEncodingElement</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncodingField.html">Mail::ContentTransferEncodingField</a></li>
+				
+					<li><a href="../Mail/ContentTransferEncodingParser.html">Mail::ContentTransferEncodingParser</a></li>
+				
+					<li><a href="../Mail/ContentType.html">Mail::ContentType</a></li>
+				
+					<li><a href="../Mail/ContentType/ContentType0.html">Mail::ContentType::ContentType0</a></li>
+				
+					<li><a href="../Mail/ContentType/ContentType1.html">Mail::ContentType::ContentType1</a></li>
+				
+					<li><a href="../Mail/ContentType/ContentType2.html">Mail::ContentType::ContentType2</a></li>
+				
+					<li><a href="../Mail/ContentType/Parameter0.html">Mail::ContentType::Parameter0</a></li>
+				
+					<li><a href="../Mail/ContentType/Parameter1.html">Mail::ContentType::Parameter1</a></li>
+				
+					<li><a href="../Mail/ContentType/Value0.html">Mail::ContentType::Value0</a></li>
+				
+					<li><a href="../Mail/ContentTypeField.html">Mail::ContentTypeField</a></li>
+				
+					<li><a href="../Mail/ContentTypeParser.html">Mail::ContentTypeParser</a></li>
+				
+					<li><a href="../Mail/DateField.html">Mail::DateField</a></li>
+				
+					<li><a href="../Mail/DateTime.html">Mail::DateTime</a></li>
+				
+					<li><a href="../Mail/DateTime/Primary0.html">Mail::DateTime::Primary0</a></li>
+				
+					<li><a href="../Mail/DateTime/Primary1.html">Mail::DateTime::Primary1</a></li>
+				
+					<li><a href="../Mail/DateTimeParser.html">Mail::DateTimeParser</a></li>
+				
+					<li><a href="../Mail/Encodings.html">Mail::Encodings</a></li>
+				
+					<li><a href="../Mail/Encodings/Base64.html">Mail::Encodings::Base64</a></li>
+				
+					<li><a href="../Mail/Encodings/Binary.html">Mail::Encodings::Binary</a></li>
+				
+					<li><a href="../Mail/Encodings/EightBit.html">Mail::Encodings::EightBit</a></li>
+				
+					<li><a href="../Mail/Encodings/QuotedPrintable.html">Mail::Encodings::QuotedPrintable</a></li>
+				
+					<li><a href="../Mail/Encodings/SevenBit.html">Mail::Encodings::SevenBit</a></li>
+				
+					<li><a href="../Mail/Encodings/TransferEncoding.html">Mail::Encodings::TransferEncoding</a></li>
+				
+					<li><a href="../Mail/Envelope.html">Mail::Envelope</a></li>
+				
+					<li><a href="../Mail/EnvelopeFrom.html">Mail::EnvelopeFrom</a></li>
+				
+					<li><a href="../Mail/EnvelopeFrom/CtimeDate0.html">Mail::EnvelopeFrom::CtimeDate0</a></li>
+				
+					<li><a href="../Mail/EnvelopeFrom/Primary0.html">Mail::EnvelopeFrom::Primary0</a></li>
+				
+					<li><a href="../Mail/EnvelopeFromElement.html">Mail::EnvelopeFromElement</a></li>
+				
+					<li><a href="../Mail/EnvelopeFromParser.html">Mail::EnvelopeFromParser</a></li>
+				
+					<li><a href="../Mail/Field.html">Mail::Field</a></li>
+				
+					<li><a href="../Mail/Field/FieldError.html">Mail::Field::FieldError</a></li>
+				
+					<li><a href="../Mail/FieldList.html">Mail::FieldList</a></li>
+				
+					<li><a href="../Mail/FileDelivery.html">Mail::FileDelivery</a></li>
+				
+					<li><a href="../Mail/FromField.html">Mail::FromField</a></li>
+				
+					<li><a href="../Mail/Header.html">Mail::Header</a></li>
+				
+					<li><a href="../Mail/IMAP.html">Mail::IMAP</a></li>
+				
+					<li><a href="../Mail/InReplyToField.html">Mail::InReplyToField</a></li>
+				
+					<li><a href="../Mail/KeywordsField.html">Mail::KeywordsField</a></li>
+				
+					<li><a href="../Mail/Message.html">Mail::Message</a></li>
+				
+					<li><a href="../Mail/MessageIdField.html">Mail::MessageIdField</a></li>
+				
+					<li><a href="../Mail/MessageIds.html">Mail::MessageIds</a></li>
+				
+					<li><a href="../Mail/MessageIds/Primary0.html">Mail::MessageIds::Primary0</a></li>
+				
+					<li><a href="../Mail/MessageIdsElement.html">Mail::MessageIdsElement</a></li>
+				
+					<li><a href="../Mail/MessageIdsParser.html">Mail::MessageIdsParser</a></li>
+				
+					<li><a href="../Mail/MimeVersion.html">Mail::MimeVersion</a></li>
+				
+					<li><a href="../Mail/MimeVersion/Version0.html">Mail::MimeVersion::Version0</a></li>
+				
+					<li><a href="../Mail/MimeVersion/Version1.html">Mail::MimeVersion::Version1</a></li>
+				
+					<li><a href="../Mail/MimeVersionElement.html">Mail::MimeVersionElement</a></li>
+				
+					<li><a href="../Mail/MimeVersionField.html">Mail::MimeVersionField</a></li>
+				
+					<li><a href="../Mail/MimeVersionParser.html">Mail::MimeVersionParser</a></li>
+				
+					<li><a href="../Mail/OptionalField.html">Mail::OptionalField</a></li>
+				
+					<li><a href="../Mail/POP3.html">Mail::POP3</a></li>
+				
+					<li><a href="../Mail/ParameterHash.html">Mail::ParameterHash</a></li>
+				
+					<li><a href="../Mail/Part.html">Mail::Part</a></li>
+				
+					<li><a href="../Mail/PartsList.html">Mail::PartsList</a></li>
+				
+					<li><a href="../Mail/Patterns.html">Mail::Patterns</a></li>
+				
+					<li><a href="../Mail/PhraseList.html">Mail::PhraseList</a></li>
+				
+					<li><a href="../Mail/PhraseLists.html">Mail::PhraseLists</a></li>
+				
+					<li><a href="../Mail/PhraseLists/PrimaryPhrase0.html">Mail::PhraseLists::PrimaryPhrase0</a></li>
+				
+					<li><a href="../Mail/PhraseListsParser.html">Mail::PhraseListsParser</a></li>
+				
+					<li><a href="../Mail/RFC2045.html">Mail::RFC2045</a></li>
+				
+					<li><a href="../Mail/RFC2045/CustomXToken0.html">Mail::RFC2045::CustomXToken0</a></li>
+				
+					<li><a href="../Mail/RFC2045Parser.html">Mail::RFC2045Parser</a></li>
+				
+					<li><a href="../Mail/RFC2822.html">Mail::RFC2822</a></li>
+				
+					<li><a href="../Mail/RFC2822/AddrSpec0.html">Mail::RFC2822::AddrSpec0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Address0.html">Mail::RFC2822::Address0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Address1.html">Mail::RFC2822::Address1</a></li>
+				
+					<li><a href="../Mail/RFC2822/AddressList0.html">Mail::RFC2822::AddressList0</a></li>
+				
+					<li><a href="../Mail/RFC2822/AddressList1.html">Mail::RFC2822::AddressList1</a></li>
+				
+					<li><a href="../Mail/RFC2822/AngleAddr0.html">Mail::RFC2822::AngleAddr0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Atom0.html">Mail::RFC2822::Atom0</a></li>
+				
+					<li><a href="../Mail/RFC2822/CFWS0.html">Mail::RFC2822::CFWS0</a></li>
+				
+					<li><a href="../Mail/RFC2822/CFWS1.html">Mail::RFC2822::CFWS1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Comment0.html">Mail::RFC2822::Comment0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Comment1.html">Mail::RFC2822::Comment1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Date0.html">Mail::RFC2822::Date0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DateTime0.html">Mail::RFC2822::DateTime0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DateTime1.html">Mail::RFC2822::DateTime1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Day0.html">Mail::RFC2822::Day0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DayOfWeek0.html">Mail::RFC2822::DayOfWeek0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DomainLiteral0.html">Mail::RFC2822::DomainLiteral0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DomainLiteral1.html">Mail::RFC2822::DomainLiteral1</a></li>
+				
+					<li><a href="../Mail/RFC2822/DomainText0.html">Mail::RFC2822::DomainText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DomainText1.html">Mail::RFC2822::DomainText1</a></li>
+				
+					<li><a href="../Mail/RFC2822/DotAtom0.html">Mail::RFC2822::DotAtom0</a></li>
+				
+					<li><a href="../Mail/RFC2822/DotAtomText0.html">Mail::RFC2822::DotAtomText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/FWS0.html">Mail::RFC2822::FWS0</a></li>
+				
+					<li><a href="../Mail/RFC2822/FWS1.html">Mail::RFC2822::FWS1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Group0.html">Mail::RFC2822::Group0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Hour0.html">Mail::RFC2822::Hour0</a></li>
+				
+					<li><a href="../Mail/RFC2822/ItemName0.html">Mail::RFC2822::ItemName0</a></li>
+				
+					<li><a href="../Mail/RFC2822/ItemName1.html">Mail::RFC2822::ItemName1</a></li>
+				
+					<li><a href="../Mail/RFC2822/LocalDotAtom0.html">Mail::RFC2822::LocalDotAtom0</a></li>
+				
+					<li><a href="../Mail/RFC2822/LocalDotAtomText0.html">Mail::RFC2822::LocalDotAtomText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MailboxList0.html">Mail::RFC2822::MailboxList0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MailboxList1.html">Mail::RFC2822::MailboxList1</a></li>
+				
+					<li><a href="../Mail/RFC2822/MailboxListGroup0.html">Mail::RFC2822::MailboxListGroup0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MessageIds0.html">Mail::RFC2822::MessageIds0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MessageIds1.html">Mail::RFC2822::MessageIds1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Minute0.html">Mail::RFC2822::Minute0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Month0.html">Mail::RFC2822::Month0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgId0.html">Mail::RFC2822::MsgId0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgIdDomainText0.html">Mail::RFC2822::MsgIdDomainText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgIdDomainText1.html">Mail::RFC2822::MsgIdDomainText1</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgIdDotAtomText0.html">Mail::RFC2822::MsgIdDotAtomText0</a></li>
+				
+					<li><a href="../Mail/RFC2822/MsgIdValue0.html">Mail::RFC2822::MsgIdValue0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameAddr0.html">Mail::RFC2822::NameAddr0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameValList0.html">Mail::RFC2822::NameValList0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameValList1.html">Mail::RFC2822::NameValList1</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameValList2.html">Mail::RFC2822::NameValList2</a></li>
+				
+					<li><a href="../Mail/RFC2822/NameValPair0.html">Mail::RFC2822::NameValPair0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NoFoldLiteral0.html">Mail::RFC2822::NoFoldLiteral0</a></li>
+				
+					<li><a href="../Mail/RFC2822/NoFoldQuote0.html">Mail::RFC2822::NoFoldQuote0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Path0.html">Mail::RFC2822::Path0</a></li>
+				
+					<li><a href="../Mail/RFC2822/PhraseList0.html">Mail::RFC2822::PhraseList0</a></li>
+				
+					<li><a href="../Mail/RFC2822/PhraseList1.html">Mail::RFC2822::PhraseList1</a></li>
+				
+					<li><a href="../Mail/RFC2822/QuotedDomain0.html">Mail::RFC2822::QuotedDomain0</a></li>
+				
+					<li><a href="../Mail/RFC2822/QuotedPair0.html">Mail::RFC2822::QuotedPair0</a></li>
+				
+					<li><a href="../Mail/RFC2822/QuotedString0.html">Mail::RFC2822::QuotedString0</a></li>
+				
+					<li><a href="../Mail/RFC2822/QuotedString1.html">Mail::RFC2822::QuotedString1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Received0.html">Mail::RFC2822::Received0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Return0.html">Mail::RFC2822::Return0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Second0.html">Mail::RFC2822::Second0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Time0.html">Mail::RFC2822::Time0</a></li>
+				
+					<li><a href="../Mail/RFC2822/TimeOfDay0.html">Mail::RFC2822::TimeOfDay0</a></li>
+				
+					<li><a href="../Mail/RFC2822/TimeOfDay1.html">Mail::RFC2822::TimeOfDay1</a></li>
+				
+					<li><a href="../Mail/RFC2822/Year0.html">Mail::RFC2822::Year0</a></li>
+				
+					<li><a href="../Mail/RFC2822/Zone0.html">Mail::RFC2822::Zone0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete.html">Mail::RFC2822Obsolete</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsAddrList0.html">Mail::RFC2822Obsolete::ObsAddrList0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsAddrList1.html">Mail::RFC2822Obsolete::ObsAddrList1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsAngleAddr0.html">Mail::RFC2822Obsolete::ObsAngleAddr0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsBcc0.html">Mail::RFC2822Obsolete::ObsBcc0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsCc0.html">Mail::RFC2822Obsolete::ObsCc0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsComments0.html">Mail::RFC2822Obsolete::ObsComments0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDay0.html">Mail::RFC2822Obsolete::ObsDay0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDay1.html">Mail::RFC2822Obsolete::ObsDay1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDayOfWeek0.html">Mail::RFC2822Obsolete::ObsDayOfWeek0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDomain0.html">Mail::RFC2822Obsolete::ObsDomain0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDomain1.html">Mail::RFC2822Obsolete::ObsDomain1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDomainList0.html">Mail::RFC2822Obsolete::ObsDomainList0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsDomainList1.html">Mail::RFC2822Obsolete::ObsDomainList1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsFWS0.html">Mail::RFC2822Obsolete::ObsFWS0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsFWS1.html">Mail::RFC2822Obsolete::ObsFWS1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsFrom0.html">Mail::RFC2822Obsolete::ObsFrom0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsHour0.html">Mail::RFC2822Obsolete::ObsHour0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsHour1.html">Mail::RFC2822Obsolete::ObsHour1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsInReplyTo0.html">Mail::RFC2822Obsolete::ObsInReplyTo0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsKeywords0.html">Mail::RFC2822Obsolete::ObsKeywords0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsLocalPart0.html">Mail::RFC2822Obsolete::ObsLocalPart0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsLocalPart1.html">Mail::RFC2822Obsolete::ObsLocalPart1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMboxList0.html">Mail::RFC2822Obsolete::ObsMboxList0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMboxList1.html">Mail::RFC2822Obsolete::ObsMboxList1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMessageId0.html">Mail::RFC2822Obsolete::ObsMessageId0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMinute0.html">Mail::RFC2822Obsolete::ObsMinute0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMinute1.html">Mail::RFC2822Obsolete::ObsMinute1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsMonth0.html">Mail::RFC2822Obsolete::ObsMonth0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsOptional0.html">Mail::RFC2822Obsolete::ObsOptional0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsOrigDate0.html">Mail::RFC2822Obsolete::ObsOrigDate0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsPhraseList0.html">Mail::RFC2822Obsolete::ObsPhraseList0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsPhraseList1.html">Mail::RFC2822Obsolete::ObsPhraseList1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsQp0.html">Mail::RFC2822Obsolete::ObsQp0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsReceived0.html">Mail::RFC2822Obsolete::ObsReceived0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsReferences0.html">Mail::RFC2822Obsolete::ObsReferences0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsReplyTo0.html">Mail::RFC2822Obsolete::ObsReplyTo0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentBcc0.html">Mail::RFC2822Obsolete::ObsResentBcc0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentCc0.html">Mail::RFC2822Obsolete::ObsResentCc0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentDate0.html">Mail::RFC2822Obsolete::ObsResentDate0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentFrom0.html">Mail::RFC2822Obsolete::ObsResentFrom0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentMid0.html">Mail::RFC2822Obsolete::ObsResentMid0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentRply0.html">Mail::RFC2822Obsolete::ObsResentRply0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentSend0.html">Mail::RFC2822Obsolete::ObsResentSend0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsResentTo0.html">Mail::RFC2822Obsolete::ObsResentTo0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsReturn0.html">Mail::RFC2822Obsolete::ObsReturn0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsRoute0.html">Mail::RFC2822Obsolete::ObsRoute0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsSecond0.html">Mail::RFC2822Obsolete::ObsSecond0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsSecond1.html">Mail::RFC2822Obsolete::ObsSecond1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsSender0.html">Mail::RFC2822Obsolete::ObsSender0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsSubject0.html">Mail::RFC2822Obsolete::ObsSubject0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsText0.html">Mail::RFC2822Obsolete::ObsText0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsText1.html">Mail::RFC2822Obsolete::ObsText1</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsTo0.html">Mail::RFC2822Obsolete::ObsTo0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsYear0.html">Mail::RFC2822Obsolete::ObsYear0</a></li>
+				
+					<li><a href="../Mail/RFC2822Obsolete/ObsYear1.html">Mail::RFC2822Obsolete::ObsYear1</a></li>
+				
+					<li><a href="../Mail/RFC2822ObsoleteParser.html">Mail::RFC2822ObsoleteParser</a></li>
+				
+					<li><a href="../Mail/RFC2822Parser.html">Mail::RFC2822Parser</a></li>
+				
+					<li><a href="../Mail/Received.html">Mail::Received</a></li>
+				
+					<li><a href="../Mail/Received/Primary0.html">Mail::Received::Primary0</a></li>
+				
+					<li><a href="../Mail/ReceivedElement.html">Mail::ReceivedElement</a></li>
+				
+					<li><a href="../Mail/ReceivedField.html">Mail::ReceivedField</a></li>
+				
+					<li><a href="../Mail/ReceivedParser.html">Mail::ReceivedParser</a></li>
+				
+					<li><a href="../Mail/ReferencesField.html">Mail::ReferencesField</a></li>
+				
+					<li><a href="../Mail/ReplyToField.html">Mail::ReplyToField</a></li>
+				
+					<li><a href="../Mail/ResentBccField.html">Mail::ResentBccField</a></li>
+				
+					<li><a href="../Mail/ResentCcField.html">Mail::ResentCcField</a></li>
+				
+					<li><a href="../Mail/ResentDateField.html">Mail::ResentDateField</a></li>
+				
+					<li><a href="../Mail/ResentFromField.html">Mail::ResentFromField</a></li>
+				
+					<li><a href="../Mail/ResentMessageIdField.html">Mail::ResentMessageIdField</a></li>
+				
+					<li><a href="../Mail/ResentSenderField.html">Mail::ResentSenderField</a></li>
+				
+					<li><a href="../Mail/ResentToField.html">Mail::ResentToField</a></li>
+				
+					<li><a href="../Mail/ReturnPathField.html">Mail::ReturnPathField</a></li>
+				
+					<li><a href="../Mail/Ruby18.html">Mail::Ruby18</a></li>
+				
+					<li><a href="../Mail/Ruby18.html">Mail::Ruby18</a></li>
+				
+					<li><a href="../Mail/Ruby19.html">Mail::Ruby19</a></li>
+				
+					<li><a href="../Mail/SMTP.html">Mail::SMTP</a></li>
+				
+					<li><a href="../Mail/SenderField.html">Mail::SenderField</a></li>
+				
+					<li><a href="../Mail/Sendmail.html">Mail::Sendmail</a></li>
+				
+					<li><a href="../Mail/StructuredField.html">Mail::StructuredField</a></li>
+				
+					<li><a href="../Mail/SubjectField.html">Mail::SubjectField</a></li>
+				
+					<li><a href="../Mail/TestMailer.html">Mail::TestMailer</a></li>
+				
+					<li><a href="../Mail/ToField.html">Mail::ToField</a></li>
+				
+					<li><a href="../Mail/UnstructuredField.html">Mail::UnstructuredField</a></li>
+				
+					<li><a href="../Mail/Utilities.html">Mail::Utilities</a></li>
+				
+					<li><a href="../Mail/VERSION.html">Mail::VERSION</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">Mail::ContentType</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="-nt-attribute-method" class="method-detail ">
+				<a name="method-i-_nt_attribute"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_nt_attribute</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-nt-attribute-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/parsers/content_type.rb, line 433</span>
+433:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_nt_attribute</span>
+434:       <span class="ruby-identifier">start_index</span> = <span class="ruby-identifier">index</span>
+435:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:attribute</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">index</span>)
+436:         <span class="ruby-identifier">cached</span> = <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:attribute</span>][<span class="ruby-identifier">index</span>]
+437:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span>
+438:           <span class="ruby-identifier">cached</span> = <span class="ruby-constant">SyntaxNode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+439:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">end</span>
+440:         <span class="ruby-keyword kw">end</span>
+441:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cached</span>
+442:       <span class="ruby-keyword kw">end</span>
+443: 
+444:       <span class="ruby-identifier">s0</span>, <span class="ruby-identifier">i0</span> = [], <span class="ruby-identifier">index</span>
+445:       <span class="ruby-identifier">loop</span> <span class="ruby-keyword kw">do</span>
+446:         <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">_nt_token</span>
+447:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r1</span>
+448:           <span class="ruby-identifier">s0</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r1</span>
+449:         <span class="ruby-keyword kw">else</span>
+450:           <span class="ruby-keyword kw">break</span>
+451:         <span class="ruby-keyword kw">end</span>
+452:       <span class="ruby-keyword kw">end</span>
+453:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s0</span>.<span class="ruby-identifier">empty?</span>
+454:         <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i0</span>
+455:         <span class="ruby-identifier">r0</span> = <span class="ruby-keyword kw">nil</span>
+456:       <span class="ruby-keyword kw">else</span>
+457:         <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">i0</span><span class="ruby-operator">...</span><span class="ruby-identifier">index</span>, <span class="ruby-identifier">s0</span>)
+458:       <span class="ruby-keyword kw">end</span>
+459: 
+460:       <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:attribute</span>][<span class="ruby-identifier">start_index</span>] = <span class="ruby-identifier">r0</span>
+461: 
+462:       <span class="ruby-identifier">r0</span>
+463:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-nt-composite-type-method" class="method-detail ">
+				<a name="method-i-_nt_composite_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_nt_composite_type</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-nt-composite-type-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/parsers/content_type.rb, line 249</span>
+249:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_nt_composite_type</span>
+250:       <span class="ruby-identifier">start_index</span> = <span class="ruby-identifier">index</span>
+251:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:composite_type</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">index</span>)
+252:         <span class="ruby-identifier">cached</span> = <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:composite_type</span>][<span class="ruby-identifier">index</span>]
+253:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span>
+254:           <span class="ruby-identifier">cached</span> = <span class="ruby-constant">SyntaxNode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+255:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">end</span>
+256:         <span class="ruby-keyword kw">end</span>
+257:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cached</span>
+258:       <span class="ruby-keyword kw">end</span>
+259: 
+260:       <span class="ruby-identifier">i0</span> = <span class="ruby-identifier">index</span>
+261:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">has_terminal?</span>(<span class="ruby-value str">&quot;message&quot;</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">index</span>)
+262:         <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">7</span>))
+263:         <span class="ruby-ivar">@index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">7</span>
+264:       <span class="ruby-keyword kw">else</span>
+265:         <span class="ruby-identifier">terminal_parse_failure</span>(<span class="ruby-value str">&quot;message&quot;</span>)
+266:         <span class="ruby-identifier">r1</span> = <span class="ruby-keyword kw">nil</span>
+267:       <span class="ruby-keyword kw">end</span>
+268:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r1</span>
+269:         <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r1</span>
+270:       <span class="ruby-keyword kw">else</span>
+271:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">has_terminal?</span>(<span class="ruby-value str">&quot;multipart&quot;</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">index</span>)
+272:           <span class="ruby-identifier">r2</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">9</span>))
+273:           <span class="ruby-ivar">@index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">9</span>
+274:         <span class="ruby-keyword kw">else</span>
+275:           <span class="ruby-identifier">terminal_parse_failure</span>(<span class="ruby-value str">&quot;multipart&quot;</span>)
+276:           <span class="ruby-identifier">r2</span> = <span class="ruby-keyword kw">nil</span>
+277:         <span class="ruby-keyword kw">end</span>
+278:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r2</span>
+279:           <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r2</span>
+280:         <span class="ruby-keyword kw">else</span>
+281:           <span class="ruby-identifier">r3</span> = <span class="ruby-identifier">_nt_extension_token</span>
+282:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r3</span>
+283:             <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r3</span>
+284:           <span class="ruby-keyword kw">else</span>
+285:             <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i0</span>
+286:             <span class="ruby-identifier">r0</span> = <span class="ruby-keyword kw">nil</span>
+287:           <span class="ruby-keyword kw">end</span>
+288:         <span class="ruby-keyword kw">end</span>
+289:       <span class="ruby-keyword kw">end</span>
+290: 
+291:       <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:composite_type</span>][<span class="ruby-identifier">start_index</span>] = <span class="ruby-identifier">r0</span>
+292: 
+293:       <span class="ruby-identifier">r0</span>
+294:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-nt-content-type-method" class="method-detail ">
+				<a name="method-i-_nt_content_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_nt_content_type</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-nt-content-type-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/parsers/content_type.rb, line 52</span>
+ 52:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_nt_content_type</span>
+ 53:       <span class="ruby-identifier">start_index</span> = <span class="ruby-identifier">index</span>
+ 54:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:content_type</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">index</span>)
+ 55:         <span class="ruby-identifier">cached</span> = <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:content_type</span>][<span class="ruby-identifier">index</span>]
+ 56:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span>
+ 57:           <span class="ruby-identifier">cached</span> = <span class="ruby-constant">SyntaxNode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+ 58:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">end</span>
+ 59:         <span class="ruby-keyword kw">end</span>
+ 60:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cached</span>
+ 61:       <span class="ruby-keyword kw">end</span>
+ 62: 
+ 63:       <span class="ruby-identifier">i0</span>, <span class="ruby-identifier">s0</span> = <span class="ruby-identifier">index</span>, []
+ 64:       <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">_nt_main_type</span>
+ 65:       <span class="ruby-identifier">s0</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r1</span>
+ 66:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r1</span>
+ 67:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">has_terminal?</span>(<span class="ruby-value str">&quot;/&quot;</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">index</span>)
+ 68:           <span class="ruby-identifier">r2</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>))
+ 69:           <span class="ruby-ivar">@index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+ 70:         <span class="ruby-keyword kw">else</span>
+ 71:           <span class="ruby-identifier">terminal_parse_failure</span>(<span class="ruby-value str">&quot;/&quot;</span>)
+ 72:           <span class="ruby-identifier">r2</span> = <span class="ruby-keyword kw">nil</span>
+ 73:         <span class="ruby-keyword kw">end</span>
+ 74:         <span class="ruby-identifier">s0</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r2</span>
+ 75:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r2</span>
+ 76:           <span class="ruby-identifier">r3</span> = <span class="ruby-identifier">_nt_sub_type</span>
+ 77:           <span class="ruby-identifier">s0</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r3</span>
+ 78:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r3</span>
+ 79:             <span class="ruby-identifier">s4</span>, <span class="ruby-identifier">i4</span> = [], <span class="ruby-identifier">index</span>
+ 80:             <span class="ruby-identifier">loop</span> <span class="ruby-keyword kw">do</span>
+ 81:               <span class="ruby-identifier">i5</span>, <span class="ruby-identifier">s5</span> = <span class="ruby-identifier">index</span>, []
+ 82:               <span class="ruby-identifier">r6</span> = <span class="ruby-identifier">_nt_CFWS</span>
+ 83:               <span class="ruby-identifier">s5</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r6</span>
+ 84:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r6</span>
+ 85:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">has_terminal?</span>(<span class="ruby-value str">&quot;;&quot;</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">index</span>)
+ 86:                   <span class="ruby-identifier">r8</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>))
+ 87:                   <span class="ruby-ivar">@index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+ 88:                 <span class="ruby-keyword kw">else</span>
+ 89:                   <span class="ruby-identifier">terminal_parse_failure</span>(<span class="ruby-value str">&quot;;&quot;</span>)
+ 90:                   <span class="ruby-identifier">r8</span> = <span class="ruby-keyword kw">nil</span>
+ 91:                 <span class="ruby-keyword kw">end</span>
+ 92:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r8</span>
+ 93:                   <span class="ruby-identifier">r7</span> = <span class="ruby-identifier">r8</span>
+ 94:                 <span class="ruby-keyword kw">else</span>
+ 95:                   <span class="ruby-identifier">r7</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span><span class="ruby-identifier">index</span>)
+ 96:                 <span class="ruby-keyword kw">end</span>
+ 97:                 <span class="ruby-identifier">s5</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r7</span>
+ 98:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r7</span>
+ 99:                   <span class="ruby-identifier">r9</span> = <span class="ruby-identifier">_nt_parameter</span>
+100:                   <span class="ruby-identifier">s5</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r9</span>
+101:                   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r9</span>
+102:                     <span class="ruby-identifier">r10</span> = <span class="ruby-identifier">_nt_CFWS</span>
+103:                     <span class="ruby-identifier">s5</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r10</span>
+104:                   <span class="ruby-keyword kw">end</span>
+105:                 <span class="ruby-keyword kw">end</span>
+106:               <span class="ruby-keyword kw">end</span>
+107:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s5</span>.<span class="ruby-identifier">last</span>
+108:                 <span class="ruby-identifier">r5</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">i5</span><span class="ruby-operator">...</span><span class="ruby-identifier">index</span>, <span class="ruby-identifier">s5</span>)
+109:                 <span class="ruby-identifier">r5</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">ContentType0</span>)
+110:               <span class="ruby-keyword kw">else</span>
+111:                 <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i5</span>
+112:                 <span class="ruby-identifier">r5</span> = <span class="ruby-keyword kw">nil</span>
+113:               <span class="ruby-keyword kw">end</span>
+114:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r5</span>
+115:                 <span class="ruby-identifier">s4</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r5</span>
+116:               <span class="ruby-keyword kw">else</span>
+117:                 <span class="ruby-keyword kw">break</span>
+118:               <span class="ruby-keyword kw">end</span>
+119:             <span class="ruby-keyword kw">end</span>
+120:             <span class="ruby-identifier">r4</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">i4</span><span class="ruby-operator">...</span><span class="ruby-identifier">index</span>, <span class="ruby-identifier">s4</span>)
+121:             <span class="ruby-identifier">s0</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r4</span>
+122:           <span class="ruby-keyword kw">end</span>
+123:         <span class="ruby-keyword kw">end</span>
+124:       <span class="ruby-keyword kw">end</span>
+125:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s0</span>.<span class="ruby-identifier">last</span>
+126:         <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">i0</span><span class="ruby-operator">...</span><span class="ruby-identifier">index</span>, <span class="ruby-identifier">s0</span>)
+127:         <span class="ruby-identifier">r0</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">ContentType1</span>)
+128:         <span class="ruby-identifier">r0</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">ContentType2</span>)
+129:       <span class="ruby-keyword kw">else</span>
+130:         <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i0</span>
+131:         <span class="ruby-identifier">r0</span> = <span class="ruby-keyword kw">nil</span>
+132:       <span class="ruby-keyword kw">end</span>
+133: 
+134:       <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:content_type</span>][<span class="ruby-identifier">start_index</span>] = <span class="ruby-identifier">r0</span>
+135: 
+136:       <span class="ruby-identifier">r0</span>
+137:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-nt-discrete-type-method" class="method-detail ">
+				<a name="method-i-_nt_discrete_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_nt_discrete_type</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-nt-discrete-type-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/parsers/content_type.rb, line 169</span>
+169:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_nt_discrete_type</span>
+170:       <span class="ruby-identifier">start_index</span> = <span class="ruby-identifier">index</span>
+171:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:discrete_type</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">index</span>)
+172:         <span class="ruby-identifier">cached</span> = <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:discrete_type</span>][<span class="ruby-identifier">index</span>]
+173:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span>
+174:           <span class="ruby-identifier">cached</span> = <span class="ruby-constant">SyntaxNode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+175:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">end</span>
+176:         <span class="ruby-keyword kw">end</span>
+177:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cached</span>
+178:       <span class="ruby-keyword kw">end</span>
+179: 
+180:       <span class="ruby-identifier">i0</span> = <span class="ruby-identifier">index</span>
+181:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">has_terminal?</span>(<span class="ruby-value str">&quot;text&quot;</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">index</span>)
+182:         <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">4</span>))
+183:         <span class="ruby-ivar">@index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">4</span>
+184:       <span class="ruby-keyword kw">else</span>
+185:         <span class="ruby-identifier">terminal_parse_failure</span>(<span class="ruby-value str">&quot;text&quot;</span>)
+186:         <span class="ruby-identifier">r1</span> = <span class="ruby-keyword kw">nil</span>
+187:       <span class="ruby-keyword kw">end</span>
+188:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r1</span>
+189:         <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r1</span>
+190:       <span class="ruby-keyword kw">else</span>
+191:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">has_terminal?</span>(<span class="ruby-value str">&quot;image&quot;</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">index</span>)
+192:           <span class="ruby-identifier">r2</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">5</span>))
+193:           <span class="ruby-ivar">@index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">5</span>
+194:         <span class="ruby-keyword kw">else</span>
+195:           <span class="ruby-identifier">terminal_parse_failure</span>(<span class="ruby-value str">&quot;image&quot;</span>)
+196:           <span class="ruby-identifier">r2</span> = <span class="ruby-keyword kw">nil</span>
+197:         <span class="ruby-keyword kw">end</span>
+198:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r2</span>
+199:           <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r2</span>
+200:         <span class="ruby-keyword kw">else</span>
+201:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">has_terminal?</span>(<span class="ruby-value str">&quot;audio&quot;</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">index</span>)
+202:             <span class="ruby-identifier">r3</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">5</span>))
+203:             <span class="ruby-ivar">@index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">5</span>
+204:           <span class="ruby-keyword kw">else</span>
+205:             <span class="ruby-identifier">terminal_parse_failure</span>(<span class="ruby-value str">&quot;audio&quot;</span>)
+206:             <span class="ruby-identifier">r3</span> = <span class="ruby-keyword kw">nil</span>
+207:           <span class="ruby-keyword kw">end</span>
+208:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r3</span>
+209:             <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r3</span>
+210:           <span class="ruby-keyword kw">else</span>
+211:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">has_terminal?</span>(<span class="ruby-value str">&quot;video&quot;</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">index</span>)
+212:               <span class="ruby-identifier">r4</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">5</span>))
+213:               <span class="ruby-ivar">@index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">5</span>
+214:             <span class="ruby-keyword kw">else</span>
+215:               <span class="ruby-identifier">terminal_parse_failure</span>(<span class="ruby-value str">&quot;video&quot;</span>)
+216:               <span class="ruby-identifier">r4</span> = <span class="ruby-keyword kw">nil</span>
+217:             <span class="ruby-keyword kw">end</span>
+218:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r4</span>
+219:               <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r4</span>
+220:             <span class="ruby-keyword kw">else</span>
+221:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">has_terminal?</span>(<span class="ruby-value str">&quot;application&quot;</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">index</span>)
+222:                 <span class="ruby-identifier">r5</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">11</span>))
+223:                 <span class="ruby-ivar">@index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">11</span>
+224:               <span class="ruby-keyword kw">else</span>
+225:                 <span class="ruby-identifier">terminal_parse_failure</span>(<span class="ruby-value str">&quot;application&quot;</span>)
+226:                 <span class="ruby-identifier">r5</span> = <span class="ruby-keyword kw">nil</span>
+227:               <span class="ruby-keyword kw">end</span>
+228:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r5</span>
+229:                 <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r5</span>
+230:               <span class="ruby-keyword kw">else</span>
+231:                 <span class="ruby-identifier">r6</span> = <span class="ruby-identifier">_nt_extension_token</span>
+232:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r6</span>
+233:                   <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r6</span>
+234:                 <span class="ruby-keyword kw">else</span>
+235:                   <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i0</span>
+236:                   <span class="ruby-identifier">r0</span> = <span class="ruby-keyword kw">nil</span>
+237:                 <span class="ruby-keyword kw">end</span>
+238:               <span class="ruby-keyword kw">end</span>
+239:             <span class="ruby-keyword kw">end</span>
+240:           <span class="ruby-keyword kw">end</span>
+241:         <span class="ruby-keyword kw">end</span>
+242:       <span class="ruby-keyword kw">end</span>
+243: 
+244:       <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:discrete_type</span>][<span class="ruby-identifier">start_index</span>] = <span class="ruby-identifier">r0</span>
+245: 
+246:       <span class="ruby-identifier">r0</span>
+247:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-nt-extension-token-method" class="method-detail ">
+				<a name="method-i-_nt_extension_token"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_nt_extension_token</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-nt-extension-token-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/parsers/content_type.rb, line 296</span>
+296:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_nt_extension_token</span>
+297:       <span class="ruby-identifier">start_index</span> = <span class="ruby-identifier">index</span>
+298:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:extension_token</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">index</span>)
+299:         <span class="ruby-identifier">cached</span> = <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:extension_token</span>][<span class="ruby-identifier">index</span>]
+300:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span>
+301:           <span class="ruby-identifier">cached</span> = <span class="ruby-constant">SyntaxNode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+302:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">end</span>
+303:         <span class="ruby-keyword kw">end</span>
+304:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cached</span>
+305:       <span class="ruby-keyword kw">end</span>
+306: 
+307:       <span class="ruby-identifier">i0</span> = <span class="ruby-identifier">index</span>
+308:       <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">_nt_ietf_token</span>
+309:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r1</span>
+310:         <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r1</span>
+311:       <span class="ruby-keyword kw">else</span>
+312:         <span class="ruby-identifier">r2</span> = <span class="ruby-identifier">_nt_custom_x_token</span>
+313:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r2</span>
+314:           <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r2</span>
+315:         <span class="ruby-keyword kw">else</span>
+316:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i0</span>
+317:           <span class="ruby-identifier">r0</span> = <span class="ruby-keyword kw">nil</span>
+318:         <span class="ruby-keyword kw">end</span>
+319:       <span class="ruby-keyword kw">end</span>
+320: 
+321:       <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:extension_token</span>][<span class="ruby-identifier">start_index</span>] = <span class="ruby-identifier">r0</span>
+322: 
+323:       <span class="ruby-identifier">r0</span>
+324:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-nt-main-type-method" class="method-detail ">
+				<a name="method-i-_nt_main_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_nt_main_type</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-nt-main-type-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/parsers/content_type.rb, line 139</span>
+139:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_nt_main_type</span>
+140:       <span class="ruby-identifier">start_index</span> = <span class="ruby-identifier">index</span>
+141:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:main_type</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">index</span>)
+142:         <span class="ruby-identifier">cached</span> = <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:main_type</span>][<span class="ruby-identifier">index</span>]
+143:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span>
+144:           <span class="ruby-identifier">cached</span> = <span class="ruby-constant">SyntaxNode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+145:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">end</span>
+146:         <span class="ruby-keyword kw">end</span>
+147:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cached</span>
+148:       <span class="ruby-keyword kw">end</span>
+149: 
+150:       <span class="ruby-identifier">i0</span> = <span class="ruby-identifier">index</span>
+151:       <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">_nt_discrete_type</span>
+152:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r1</span>
+153:         <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r1</span>
+154:       <span class="ruby-keyword kw">else</span>
+155:         <span class="ruby-identifier">r2</span> = <span class="ruby-identifier">_nt_composite_type</span>
+156:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r2</span>
+157:           <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r2</span>
+158:         <span class="ruby-keyword kw">else</span>
+159:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i0</span>
+160:           <span class="ruby-identifier">r0</span> = <span class="ruby-keyword kw">nil</span>
+161:         <span class="ruby-keyword kw">end</span>
+162:       <span class="ruby-keyword kw">end</span>
+163: 
+164:       <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:main_type</span>][<span class="ruby-identifier">start_index</span>] = <span class="ruby-identifier">r0</span>
+165: 
+166:       <span class="ruby-identifier">r0</span>
+167:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-nt-parameter-method" class="method-detail ">
+				<a name="method-i-_nt_parameter"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_nt_parameter</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-nt-parameter-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/parsers/content_type.rb, line 373</span>
+373:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_nt_parameter</span>
+374:       <span class="ruby-identifier">start_index</span> = <span class="ruby-identifier">index</span>
+375:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:parameter</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">index</span>)
+376:         <span class="ruby-identifier">cached</span> = <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:parameter</span>][<span class="ruby-identifier">index</span>]
+377:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span>
+378:           <span class="ruby-identifier">cached</span> = <span class="ruby-constant">SyntaxNode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+379:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">end</span>
+380:         <span class="ruby-keyword kw">end</span>
+381:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cached</span>
+382:       <span class="ruby-keyword kw">end</span>
+383: 
+384:       <span class="ruby-identifier">i0</span>, <span class="ruby-identifier">s0</span> = <span class="ruby-identifier">index</span>, []
+385:       <span class="ruby-identifier">r2</span> = <span class="ruby-identifier">_nt_CFWS</span>
+386:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r2</span>
+387:         <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r2</span>
+388:       <span class="ruby-keyword kw">else</span>
+389:         <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span><span class="ruby-identifier">index</span>)
+390:       <span class="ruby-keyword kw">end</span>
+391:       <span class="ruby-identifier">s0</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r1</span>
+392:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r1</span>
+393:         <span class="ruby-identifier">r3</span> = <span class="ruby-identifier">_nt_attribute</span>
+394:         <span class="ruby-identifier">s0</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r3</span>
+395:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r3</span>
+396:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">has_terminal?</span>(<span class="ruby-value str">&quot;=&quot;</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">index</span>)
+397:             <span class="ruby-identifier">r4</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>))
+398:             <span class="ruby-ivar">@index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+399:           <span class="ruby-keyword kw">else</span>
+400:             <span class="ruby-identifier">terminal_parse_failure</span>(<span class="ruby-value str">&quot;=&quot;</span>)
+401:             <span class="ruby-identifier">r4</span> = <span class="ruby-keyword kw">nil</span>
+402:           <span class="ruby-keyword kw">end</span>
+403:           <span class="ruby-identifier">s0</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r4</span>
+404:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r4</span>
+405:             <span class="ruby-identifier">r5</span> = <span class="ruby-identifier">_nt_value</span>
+406:             <span class="ruby-identifier">s0</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r5</span>
+407:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r5</span>
+408:               <span class="ruby-identifier">r7</span> = <span class="ruby-identifier">_nt_CFWS</span>
+409:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r7</span>
+410:                 <span class="ruby-identifier">r6</span> = <span class="ruby-identifier">r7</span>
+411:               <span class="ruby-keyword kw">else</span>
+412:                 <span class="ruby-identifier">r6</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span><span class="ruby-identifier">index</span>)
+413:               <span class="ruby-keyword kw">end</span>
+414:               <span class="ruby-identifier">s0</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r6</span>
+415:             <span class="ruby-keyword kw">end</span>
+416:           <span class="ruby-keyword kw">end</span>
+417:         <span class="ruby-keyword kw">end</span>
+418:       <span class="ruby-keyword kw">end</span>
+419:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s0</span>.<span class="ruby-identifier">last</span>
+420:         <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">i0</span><span class="ruby-operator">...</span><span class="ruby-identifier">index</span>, <span class="ruby-identifier">s0</span>)
+421:         <span class="ruby-identifier">r0</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">Parameter0</span>)
+422:         <span class="ruby-identifier">r0</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">Parameter1</span>)
+423:       <span class="ruby-keyword kw">else</span>
+424:         <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i0</span>
+425:         <span class="ruby-identifier">r0</span> = <span class="ruby-keyword kw">nil</span>
+426:       <span class="ruby-keyword kw">end</span>
+427: 
+428:       <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:parameter</span>][<span class="ruby-identifier">start_index</span>] = <span class="ruby-identifier">r0</span>
+429: 
+430:       <span class="ruby-identifier">r0</span>
+431:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-nt-sub-type-method" class="method-detail ">
+				<a name="method-i-_nt_sub_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_nt_sub_type</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-nt-sub-type-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/parsers/content_type.rb, line 326</span>
+326:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_nt_sub_type</span>
+327:       <span class="ruby-identifier">start_index</span> = <span class="ruby-identifier">index</span>
+328:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:sub_type</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">index</span>)
+329:         <span class="ruby-identifier">cached</span> = <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:sub_type</span>][<span class="ruby-identifier">index</span>]
+330:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span>
+331:           <span class="ruby-identifier">cached</span> = <span class="ruby-constant">SyntaxNode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+332:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">end</span>
+333:         <span class="ruby-keyword kw">end</span>
+334:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cached</span>
+335:       <span class="ruby-keyword kw">end</span>
+336: 
+337:       <span class="ruby-identifier">i0</span> = <span class="ruby-identifier">index</span>
+338:       <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">_nt_extension_token</span>
+339:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r1</span>
+340:         <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r1</span>
+341:       <span class="ruby-keyword kw">else</span>
+342:         <span class="ruby-identifier">r2</span> = <span class="ruby-identifier">_nt_iana_token</span>
+343:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r2</span>
+344:           <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r2</span>
+345:         <span class="ruby-keyword kw">else</span>
+346:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i0</span>
+347:           <span class="ruby-identifier">r0</span> = <span class="ruby-keyword kw">nil</span>
+348:         <span class="ruby-keyword kw">end</span>
+349:       <span class="ruby-keyword kw">end</span>
+350: 
+351:       <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:sub_type</span>][<span class="ruby-identifier">start_index</span>] = <span class="ruby-identifier">r0</span>
+352: 
+353:       <span class="ruby-identifier">r0</span>
+354:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-nt-value-method" class="method-detail ">
+				<a name="method-i-_nt_value"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_nt_value</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-nt-value-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mail/parsers/content_type.rb, line 471</span>
+471:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_nt_value</span>
+472:       <span class="ruby-identifier">start_index</span> = <span class="ruby-identifier">index</span>
+473:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:value</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">index</span>)
+474:         <span class="ruby-identifier">cached</span> = <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:value</span>][<span class="ruby-identifier">index</span>]
+475:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span>
+476:           <span class="ruby-identifier">cached</span> = <span class="ruby-constant">SyntaxNode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+477:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">end</span>
+478:         <span class="ruby-keyword kw">end</span>
+479:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cached</span>
+480:       <span class="ruby-keyword kw">end</span>
+481: 
+482:       <span class="ruby-identifier">i0</span> = <span class="ruby-identifier">index</span>
+483:       <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">_nt_quoted_string</span>
+484:       <span class="ruby-identifier">r1</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">Value0</span>)
+485:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r1</span>
+486:         <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r1</span>
+487:       <span class="ruby-keyword kw">else</span>
+488:         <span class="ruby-identifier">s2</span>, <span class="ruby-identifier">i2</span> = [], <span class="ruby-identifier">index</span>
+489:         <span class="ruby-identifier">loop</span> <span class="ruby-keyword kw">do</span>
+490:           <span class="ruby-identifier">i3</span> = <span class="ruby-identifier">index</span>
+491:           <span class="ruby-identifier">r4</span> = <span class="ruby-identifier">_nt_token</span>
+492:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r4</span>
+493:             <span class="ruby-identifier">r3</span> = <span class="ruby-identifier">r4</span>
+494:           <span class="ruby-keyword kw">else</span>
+495:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">has_terminal?</span>(<span class="ruby-value str">'\G[\x3d]'</span>, <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">index</span>)
+496:               <span class="ruby-identifier">r5</span> = <span class="ruby-keyword kw">true</span>
+497:               <span class="ruby-ivar">@index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+498:             <span class="ruby-keyword kw">else</span>
+499:               <span class="ruby-identifier">r5</span> = <span class="ruby-keyword kw">nil</span>
+500:             <span class="ruby-keyword kw">end</span>
+501:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r5</span>
+502:               <span class="ruby-identifier">r3</span> = <span class="ruby-identifier">r5</span>
+503:             <span class="ruby-keyword kw">else</span>
+504:               <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i3</span>
+505:               <span class="ruby-identifier">r3</span> = <span class="ruby-keyword kw">nil</span>
+506:             <span class="ruby-keyword kw">end</span>
+507:           <span class="ruby-keyword kw">end</span>
+508:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r3</span>
+509:             <span class="ruby-identifier">s2</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r3</span>
+510:           <span class="ruby-keyword kw">else</span>
+511:             <span class="ruby-keyword kw">break</span>
+512:           <span class="ruby-keyword kw">end</span>
+513:         <span class="ruby-keyword kw">end</span>
+514:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">empty?</span>
+515:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i2</span>
+516:           <span class="ruby-identifier">r2</span> = <span class="ruby-keyword kw">nil</span>
+517:         <span class="ruby-keyword kw">else</span>
+518:           <span class="ruby-identifier">r2</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">i2</span><span class="ruby-operator">...</span><span class="ruby-identifier">index</span>, <span class="ruby-identifier">s2</span>)
+519:         <span class="ruby-keyword kw">end</span>
+520:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r2</span>
+521:           <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">r2</span>
+522:         <span class="ruby-keyword kw">else</span>
+523:           <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i0</span>
+524:           <span class="ruby-identifier">r0</span> = <span class="ruby-keyword kw">nil</span>
+525:         <span class="ruby-keyword kw">end</span>
+526:       <span class="ruby-keyword kw">end</span>
+527: 
+528:       <span class="ruby-identifier">node_cache</span>[<span class="ruby-value">:value</span>][<span class="ruby-identifier">start_index</span>] = <span class="ruby-identifier">r0</span>
+529: 
+530:       <span class="ruby-identifier">r0</span>
+531:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="root-method" class="method-detail ">
+				<a name="method-i-root"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">root</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="root-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mail/parsers/content_type.rb, line 8</span>
+ 8:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">root</span>
+ 9:       <span class="ruby-ivar">@root</span> <span class="ruby-operator">||=</span> <span class="ruby-value">:content_type</span>
+10:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

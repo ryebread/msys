@@ -1,0 +1,1629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: CHANGELOG.rdoc [mail-2.2.5 Documentation]</title>
+
+	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./CHANGELOG_rdoc.html">CHANGELOG.rdoc</a></li>
+				
+					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="./TODO_rdoc.html">TODO.rdoc</a></li>
+				
+					<li class="file"><a href="./lib/VERSION.html">VERSION</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./Mail.html">Mail</a></li>
+				
+					<li><a href="./Mail/Address.html">Mail::Address</a></li>
+				
+					<li><a href="./Mail/AddressContainer.html">Mail::AddressContainer</a></li>
+				
+					<li><a href="./Mail/AddressLists.html">Mail::AddressLists</a></li>
+				
+					<li><a href="./Mail/AddressLists/PrimaryAddress0.html">Mail::AddressLists::PrimaryAddress0</a></li>
+				
+					<li><a href="./Mail/AddressLists/PrimaryAddress1.html">Mail::AddressLists::PrimaryAddress1</a></li>
+				
+					<li><a href="./Mail/AddressListsParser.html">Mail::AddressListsParser</a></li>
+				
+					<li><a href="./Mail/AttachmentsList.html">Mail::AttachmentsList</a></li>
+				
+					<li><a href="./Mail/BccField.html">Mail::BccField</a></li>
+				
+					<li><a href="./Mail/Body.html">Mail::Body</a></li>
+				
+					<li><a href="./Mail/CcField.html">Mail::CcField</a></li>
+				
+					<li><a href="./Mail/CommentsField.html">Mail::CommentsField</a></li>
+				
+					<li><a href="./Mail/Configuration.html">Mail::Configuration</a></li>
+				
+					<li><a href="./Mail/ContentDescriptionField.html">Mail::ContentDescriptionField</a></li>
+				
+					<li><a href="./Mail/ContentDisposition.html">Mail::ContentDisposition</a></li>
+				
+					<li><a href="./Mail/ContentDisposition/ContentDisposition0.html">Mail::ContentDisposition::ContentDisposition0</a></li>
+				
+					<li><a href="./Mail/ContentDisposition/ContentDisposition1.html">Mail::ContentDisposition::ContentDisposition1</a></li>
+				
+					<li><a href="./Mail/ContentDisposition/ContentDisposition2.html">Mail::ContentDisposition::ContentDisposition2</a></li>
+				
+					<li><a href="./Mail/ContentDisposition/Parameter0.html">Mail::ContentDisposition::Parameter0</a></li>
+				
+					<li><a href="./Mail/ContentDisposition/Parameter1.html">Mail::ContentDisposition::Parameter1</a></li>
+				
+					<li><a href="./Mail/ContentDisposition/Value0.html">Mail::ContentDisposition::Value0</a></li>
+				
+					<li><a href="./Mail/ContentDispositionField.html">Mail::ContentDispositionField</a></li>
+				
+					<li><a href="./Mail/ContentDispositionParser.html">Mail::ContentDispositionParser</a></li>
+				
+					<li><a href="./Mail/ContentIdField.html">Mail::ContentIdField</a></li>
+				
+					<li><a href="./Mail/ContentLocation.html">Mail::ContentLocation</a></li>
+				
+					<li><a href="./Mail/ContentLocation/Location0.html">Mail::ContentLocation::Location0</a></li>
+				
+					<li><a href="./Mail/ContentLocation/Primary0.html">Mail::ContentLocation::Primary0</a></li>
+				
+					<li><a href="./Mail/ContentLocationField.html">Mail::ContentLocationField</a></li>
+				
+					<li><a href="./Mail/ContentLocationParser.html">Mail::ContentLocationParser</a></li>
+				
+					<li><a href="./Mail/ContentTransferEncoding.html">Mail::ContentTransferEncoding</a></li>
+				
+					<li><a href="./Mail/ContentTransferEncoding/Encoding0.html">Mail::ContentTransferEncoding::Encoding0</a></li>
+				
+					<li><a href="./Mail/ContentTransferEncoding/Encoding1.html">Mail::ContentTransferEncoding::Encoding1</a></li>
+				
+					<li><a href="./Mail/ContentTransferEncoding/Primary0.html">Mail::ContentTransferEncoding::Primary0</a></li>
+				
+					<li><a href="./Mail/ContentTransferEncodingElement.html">Mail::ContentTransferEncodingElement</a></li>
+				
+					<li><a href="./Mail/ContentTransferEncodingField.html">Mail::ContentTransferEncodingField</a></li>
+				
+					<li><a href="./Mail/ContentTransferEncodingParser.html">Mail::ContentTransferEncodingParser</a></li>
+				
+					<li><a href="./Mail/ContentType.html">Mail::ContentType</a></li>
+				
+					<li><a href="./Mail/ContentType/ContentType0.html">Mail::ContentType::ContentType0</a></li>
+				
+					<li><a href="./Mail/ContentType/ContentType1.html">Mail::ContentType::ContentType1</a></li>
+				
+					<li><a href="./Mail/ContentType/ContentType2.html">Mail::ContentType::ContentType2</a></li>
+				
+					<li><a href="./Mail/ContentType/Parameter0.html">Mail::ContentType::Parameter0</a></li>
+				
+					<li><a href="./Mail/ContentType/Parameter1.html">Mail::ContentType::Parameter1</a></li>
+				
+					<li><a href="./Mail/ContentType/Value0.html">Mail::ContentType::Value0</a></li>
+				
+					<li><a href="./Mail/ContentTypeField.html">Mail::ContentTypeField</a></li>
+				
+					<li><a href="./Mail/ContentTypeParser.html">Mail::ContentTypeParser</a></li>
+				
+					<li><a href="./Mail/DateField.html">Mail::DateField</a></li>
+				
+					<li><a href="./Mail/DateTime.html">Mail::DateTime</a></li>
+				
+					<li><a href="./Mail/DateTime/Primary0.html">Mail::DateTime::Primary0</a></li>
+				
+					<li><a href="./Mail/DateTime/Primary1.html">Mail::DateTime::Primary1</a></li>
+				
+					<li><a href="./Mail/DateTimeParser.html">Mail::DateTimeParser</a></li>
+				
+					<li><a href="./Mail/Encodings.html">Mail::Encodings</a></li>
+				
+					<li><a href="./Mail/Encodings/Base64.html">Mail::Encodings::Base64</a></li>
+				
+					<li><a href="./Mail/Encodings/Binary.html">Mail::Encodings::Binary</a></li>
+				
+					<li><a href="./Mail/Encodings/EightBit.html">Mail::Encodings::EightBit</a></li>
+				
+					<li><a href="./Mail/Encodings/QuotedPrintable.html">Mail::Encodings::QuotedPrintable</a></li>
+				
+					<li><a href="./Mail/Encodings/SevenBit.html">Mail::Encodings::SevenBit</a></li>
+				
+					<li><a href="./Mail/Encodings/TransferEncoding.html">Mail::Encodings::TransferEncoding</a></li>
+				
+					<li><a href="./Mail/Envelope.html">Mail::Envelope</a></li>
+				
+					<li><a href="./Mail/EnvelopeFrom.html">Mail::EnvelopeFrom</a></li>
+				
+					<li><a href="./Mail/EnvelopeFrom/CtimeDate0.html">Mail::EnvelopeFrom::CtimeDate0</a></li>
+				
+					<li><a href="./Mail/EnvelopeFrom/Primary0.html">Mail::EnvelopeFrom::Primary0</a></li>
+				
+					<li><a href="./Mail/EnvelopeFromElement.html">Mail::EnvelopeFromElement</a></li>
+				
+					<li><a href="./Mail/EnvelopeFromParser.html">Mail::EnvelopeFromParser</a></li>
+				
+					<li><a href="./Mail/Field.html">Mail::Field</a></li>
+				
+					<li><a href="./Mail/Field/FieldError.html">Mail::Field::FieldError</a></li>
+				
+					<li><a href="./Mail/FieldList.html">Mail::FieldList</a></li>
+				
+					<li><a href="./Mail/FileDelivery.html">Mail::FileDelivery</a></li>
+				
+					<li><a href="./Mail/FromField.html">Mail::FromField</a></li>
+				
+					<li><a href="./Mail/Header.html">Mail::Header</a></li>
+				
+					<li><a href="./Mail/IMAP.html">Mail::IMAP</a></li>
+				
+					<li><a href="./Mail/InReplyToField.html">Mail::InReplyToField</a></li>
+				
+					<li><a href="./Mail/KeywordsField.html">Mail::KeywordsField</a></li>
+				
+					<li><a href="./Mail/Message.html">Mail::Message</a></li>
+				
+					<li><a href="./Mail/MessageIdField.html">Mail::MessageIdField</a></li>
+				
+					<li><a href="./Mail/MessageIds.html">Mail::MessageIds</a></li>
+				
+					<li><a href="./Mail/MessageIds/Primary0.html">Mail::MessageIds::Primary0</a></li>
+				
+					<li><a href="./Mail/MessageIdsElement.html">Mail::MessageIdsElement</a></li>
+				
+					<li><a href="./Mail/MessageIdsParser.html">Mail::MessageIdsParser</a></li>
+				
+					<li><a href="./Mail/MimeVersion.html">Mail::MimeVersion</a></li>
+				
+					<li><a href="./Mail/MimeVersion/Version0.html">Mail::MimeVersion::Version0</a></li>
+				
+					<li><a href="./Mail/MimeVersion/Version1.html">Mail::MimeVersion::Version1</a></li>
+				
+					<li><a href="./Mail/MimeVersionElement.html">Mail::MimeVersionElement</a></li>
+				
+					<li><a href="./Mail/MimeVersionField.html">Mail::MimeVersionField</a></li>
+				
+					<li><a href="./Mail/MimeVersionParser.html">Mail::MimeVersionParser</a></li>
+				
+					<li><a href="./Mail/OptionalField.html">Mail::OptionalField</a></li>
+				
+					<li><a href="./Mail/POP3.html">Mail::POP3</a></li>
+				
+					<li><a href="./Mail/ParameterHash.html">Mail::ParameterHash</a></li>
+				
+					<li><a href="./Mail/Part.html">Mail::Part</a></li>
+				
+					<li><a href="./Mail/PartsList.html">Mail::PartsList</a></li>
+				
+					<li><a href="./Mail/Patterns.html">Mail::Patterns</a></li>
+				
+					<li><a href="./Mail/PhraseList.html">Mail::PhraseList</a></li>
+				
+					<li><a href="./Mail/PhraseLists.html">Mail::PhraseLists</a></li>
+				
+					<li><a href="./Mail/PhraseLists/PrimaryPhrase0.html">Mail::PhraseLists::PrimaryPhrase0</a></li>
+				
+					<li><a href="./Mail/PhraseListsParser.html">Mail::PhraseListsParser</a></li>
+				
+					<li><a href="./Mail/RFC2045.html">Mail::RFC2045</a></li>
+				
+					<li><a href="./Mail/RFC2045/CustomXToken0.html">Mail::RFC2045::CustomXToken0</a></li>
+				
+					<li><a href="./Mail/RFC2045Parser.html">Mail::RFC2045Parser</a></li>
+				
+					<li><a href="./Mail/RFC2822.html">Mail::RFC2822</a></li>
+				
+					<li><a href="./Mail/RFC2822/AddrSpec0.html">Mail::RFC2822::AddrSpec0</a></li>
+				
+					<li><a href="./Mail/RFC2822/Address0.html">Mail::RFC2822::Address0</a></li>
+				
+					<li><a href="./Mail/RFC2822/Address1.html">Mail::RFC2822::Address1</a></li>
+				
+					<li><a href="./Mail/RFC2822/AddressList0.html">Mail::RFC2822::AddressList0</a></li>
+				
+					<li><a href="./Mail/RFC2822/AddressList1.html">Mail::RFC2822::AddressList1</a></li>
+				
+					<li><a href="./Mail/RFC2822/AngleAddr0.html">Mail::RFC2822::AngleAddr0</a></li>
+				
+					<li><a href="./Mail/RFC2822/Atom0.html">Mail::RFC2822::Atom0</a></li>
+				
+					<li><a href="./Mail/RFC2822/CFWS0.html">Mail::RFC2822::CFWS0</a></li>
+				
+					<li><a href="./Mail/RFC2822/CFWS1.html">Mail::RFC2822::CFWS1</a></li>
+				
+					<li><a href="./Mail/RFC2822/Comment0.html">Mail::RFC2822::Comment0</a></li>
+				
+					<li><a href="./Mail/RFC2822/Comment1.html">Mail::RFC2822::Comment1</a></li>
+				
+					<li><a href="./Mail/RFC2822/Date0.html">Mail::RFC2822::Date0</a></li>
+				
+					<li><a href="./Mail/RFC2822/DateTime0.html">Mail::RFC2822::DateTime0</a></li>
+				
+					<li><a href="./Mail/RFC2822/DateTime1.html">Mail::RFC2822::DateTime1</a></li>
+				
+					<li><a href="./Mail/RFC2822/Day0.html">Mail::RFC2822::Day0</a></li>
+				
+					<li><a href="./Mail/RFC2822/DayOfWeek0.html">Mail::RFC2822::DayOfWeek0</a></li>
+				
+					<li><a href="./Mail/RFC2822/DomainLiteral0.html">Mail::RFC2822::DomainLiteral0</a></li>
+				
+					<li><a href="./Mail/RFC2822/DomainLiteral1.html">Mail::RFC2822::DomainLiteral1</a></li>
+				
+					<li><a href="./Mail/RFC2822/DomainText0.html">Mail::RFC2822::DomainText0</a></li>
+				
+					<li><a href="./Mail/RFC2822/DomainText1.html">Mail::RFC2822::DomainText1</a></li>
+				
+					<li><a href="./Mail/RFC2822/DotAtom0.html">Mail::RFC2822::DotAtom0</a></li>
+				
+					<li><a href="./Mail/RFC2822/DotAtomText0.html">Mail::RFC2822::DotAtomText0</a></li>
+				
+					<li><a href="./Mail/RFC2822/FWS0.html">Mail::RFC2822::FWS0</a></li>
+				
+					<li><a href="./Mail/RFC2822/FWS1.html">Mail::RFC2822::FWS1</a></li>
+				
+					<li><a href="./Mail/RFC2822/Group0.html">Mail::RFC2822::Group0</a></li>
+				
+					<li><a href="./Mail/RFC2822/Hour0.html">Mail::RFC2822::Hour0</a></li>
+				
+					<li><a href="./Mail/RFC2822/ItemName0.html">Mail::RFC2822::ItemName0</a></li>
+				
+					<li><a href="./Mail/RFC2822/ItemName1.html">Mail::RFC2822::ItemName1</a></li>
+				
+					<li><a href="./Mail/RFC2822/LocalDotAtom0.html">Mail::RFC2822::LocalDotAtom0</a></li>
+				
+					<li><a href="./Mail/RFC2822/LocalDotAtomText0.html">Mail::RFC2822::LocalDotAtomText0</a></li>
+				
+					<li><a href="./Mail/RFC2822/MailboxList0.html">Mail::RFC2822::MailboxList0</a></li>
+				
+					<li><a href="./Mail/RFC2822/MailboxList1.html">Mail::RFC2822::MailboxList1</a></li>
+				
+					<li><a href="./Mail/RFC2822/MailboxListGroup0.html">Mail::RFC2822::MailboxListGroup0</a></li>
+				
+					<li><a href="./Mail/RFC2822/MessageIds0.html">Mail::RFC2822::MessageIds0</a></li>
+				
+					<li><a href="./Mail/RFC2822/MessageIds1.html">Mail::RFC2822::MessageIds1</a></li>
+				
+					<li><a href="./Mail/RFC2822/Minute0.html">Mail::RFC2822::Minute0</a></li>
+				
+					<li><a href="./Mail/RFC2822/Month0.html">Mail::RFC2822::Month0</a></li>
+				
+					<li><a href="./Mail/RFC2822/MsgId0.html">Mail::RFC2822::MsgId0</a></li>
+				
+					<li><a href="./Mail/RFC2822/MsgIdDomainText0.html">Mail::RFC2822::MsgIdDomainText0</a></li>
+				
+					<li><a href="./Mail/RFC2822/MsgIdDomainText1.html">Mail::RFC2822::MsgIdDomainText1</a></li>
+				
+					<li><a href="./Mail/RFC2822/MsgIdDotAtomText0.html">Mail::RFC2822::MsgIdDotAtomText0</a></li>
+				
+					<li><a href="./Mail/RFC2822/MsgIdValue0.html">Mail::RFC2822::MsgIdValue0</a></li>
+				
+					<li><a href="./Mail/RFC2822/NameAddr0.html">Mail::RFC2822::NameAddr0</a></li>
+				
+					<li><a href="./Mail/RFC2822/NameValList0.html">Mail::RFC2822::NameValList0</a></li>
+				
+					<li><a href="./Mail/RFC2822/NameValList1.html">Mail::RFC2822::NameValList1</a></li>
+				
+					<li><a href="./Mail/RFC2822/NameValList2.html">Mail::RFC2822::NameValList2</a></li>
+				
+					<li><a href="./Mail/RFC2822/NameValPair0.html">Mail::RFC2822::NameValPair0</a></li>
+				
+					<li><a href="./Mail/RFC2822/NoFoldLiteral0.html">Mail::RFC2822::NoFoldLiteral0</a></li>
+				
+					<li><a href="./Mail/RFC2822/NoFoldQuote0.html">Mail::RFC2822::NoFoldQuote0</a></li>
+				
+					<li><a href="./Mail/RFC2822/Path0.html">Mail::RFC2822::Path0</a></li>
+				
+					<li><a href="./Mail/RFC2822/PhraseList0.html">Mail::RFC2822::PhraseList0</a></li>
+				
+					<li><a href="./Mail/RFC2822/PhraseList1.html">Mail::RFC2822::PhraseList1</a></li>
+				
+					<li><a href="./Mail/RFC2822/QuotedDomain0.html">Mail::RFC2822::QuotedDomain0</a></li>
+				
+					<li><a href="./Mail/RFC2822/QuotedPair0.html">Mail::RFC2822::QuotedPair0</a></li>
+				
+					<li><a href="./Mail/RFC2822/QuotedString0.html">Mail::RFC2822::QuotedString0</a></li>
+				
+					<li><a href="./Mail/RFC2822/QuotedString1.html">Mail::RFC2822::QuotedString1</a></li>
+				
+					<li><a href="./Mail/RFC2822/Received0.html">Mail::RFC2822::Received0</a></li>
+				
+					<li><a href="./Mail/RFC2822/Return0.html">Mail::RFC2822::Return0</a></li>
+				
+					<li><a href="./Mail/RFC2822/Second0.html">Mail::RFC2822::Second0</a></li>
+				
+					<li><a href="./Mail/RFC2822/Time0.html">Mail::RFC2822::Time0</a></li>
+				
+					<li><a href="./Mail/RFC2822/TimeOfDay0.html">Mail::RFC2822::TimeOfDay0</a></li>
+				
+					<li><a href="./Mail/RFC2822/TimeOfDay1.html">Mail::RFC2822::TimeOfDay1</a></li>
+				
+					<li><a href="./Mail/RFC2822/Year0.html">Mail::RFC2822::Year0</a></li>
+				
+					<li><a href="./Mail/RFC2822/Zone0.html">Mail::RFC2822::Zone0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete.html">Mail::RFC2822Obsolete</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsAddrList0.html">Mail::RFC2822Obsolete::ObsAddrList0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsAddrList1.html">Mail::RFC2822Obsolete::ObsAddrList1</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsAngleAddr0.html">Mail::RFC2822Obsolete::ObsAngleAddr0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsBcc0.html">Mail::RFC2822Obsolete::ObsBcc0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsCc0.html">Mail::RFC2822Obsolete::ObsCc0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsComments0.html">Mail::RFC2822Obsolete::ObsComments0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsDay0.html">Mail::RFC2822Obsolete::ObsDay0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsDay1.html">Mail::RFC2822Obsolete::ObsDay1</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsDayOfWeek0.html">Mail::RFC2822Obsolete::ObsDayOfWeek0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsDomain0.html">Mail::RFC2822Obsolete::ObsDomain0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsDomain1.html">Mail::RFC2822Obsolete::ObsDomain1</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsDomainList0.html">Mail::RFC2822Obsolete::ObsDomainList0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsDomainList1.html">Mail::RFC2822Obsolete::ObsDomainList1</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsFWS0.html">Mail::RFC2822Obsolete::ObsFWS0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsFWS1.html">Mail::RFC2822Obsolete::ObsFWS1</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsFrom0.html">Mail::RFC2822Obsolete::ObsFrom0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsHour0.html">Mail::RFC2822Obsolete::ObsHour0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsHour1.html">Mail::RFC2822Obsolete::ObsHour1</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsInReplyTo0.html">Mail::RFC2822Obsolete::ObsInReplyTo0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsKeywords0.html">Mail::RFC2822Obsolete::ObsKeywords0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsLocalPart0.html">Mail::RFC2822Obsolete::ObsLocalPart0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsLocalPart1.html">Mail::RFC2822Obsolete::ObsLocalPart1</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsMboxList0.html">Mail::RFC2822Obsolete::ObsMboxList0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsMboxList1.html">Mail::RFC2822Obsolete::ObsMboxList1</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsMessageId0.html">Mail::RFC2822Obsolete::ObsMessageId0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsMinute0.html">Mail::RFC2822Obsolete::ObsMinute0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsMinute1.html">Mail::RFC2822Obsolete::ObsMinute1</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsMonth0.html">Mail::RFC2822Obsolete::ObsMonth0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsOptional0.html">Mail::RFC2822Obsolete::ObsOptional0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsOrigDate0.html">Mail::RFC2822Obsolete::ObsOrigDate0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsPhraseList0.html">Mail::RFC2822Obsolete::ObsPhraseList0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsPhraseList1.html">Mail::RFC2822Obsolete::ObsPhraseList1</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsQp0.html">Mail::RFC2822Obsolete::ObsQp0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsReceived0.html">Mail::RFC2822Obsolete::ObsReceived0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsReferences0.html">Mail::RFC2822Obsolete::ObsReferences0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsReplyTo0.html">Mail::RFC2822Obsolete::ObsReplyTo0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsResentBcc0.html">Mail::RFC2822Obsolete::ObsResentBcc0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsResentCc0.html">Mail::RFC2822Obsolete::ObsResentCc0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsResentDate0.html">Mail::RFC2822Obsolete::ObsResentDate0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsResentFrom0.html">Mail::RFC2822Obsolete::ObsResentFrom0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsResentMid0.html">Mail::RFC2822Obsolete::ObsResentMid0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsResentRply0.html">Mail::RFC2822Obsolete::ObsResentRply0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsResentSend0.html">Mail::RFC2822Obsolete::ObsResentSend0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsResentTo0.html">Mail::RFC2822Obsolete::ObsResentTo0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsReturn0.html">Mail::RFC2822Obsolete::ObsReturn0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsRoute0.html">Mail::RFC2822Obsolete::ObsRoute0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsSecond0.html">Mail::RFC2822Obsolete::ObsSecond0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsSecond1.html">Mail::RFC2822Obsolete::ObsSecond1</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsSender0.html">Mail::RFC2822Obsolete::ObsSender0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsSubject0.html">Mail::RFC2822Obsolete::ObsSubject0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsText0.html">Mail::RFC2822Obsolete::ObsText0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsText1.html">Mail::RFC2822Obsolete::ObsText1</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsTo0.html">Mail::RFC2822Obsolete::ObsTo0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsYear0.html">Mail::RFC2822Obsolete::ObsYear0</a></li>
+				
+					<li><a href="./Mail/RFC2822Obsolete/ObsYear1.html">Mail::RFC2822Obsolete::ObsYear1</a></li>
+				
+					<li><a href="./Mail/RFC2822ObsoleteParser.html">Mail::RFC2822ObsoleteParser</a></li>
+				
+					<li><a href="./Mail/RFC2822Parser.html">Mail::RFC2822Parser</a></li>
+				
+					<li><a href="./Mail/Received.html">Mail::Received</a></li>
+				
+					<li><a href="./Mail/Received/Primary0.html">Mail::Received::Primary0</a></li>
+				
+					<li><a href="./Mail/ReceivedElement.html">Mail::ReceivedElement</a></li>
+				
+					<li><a href="./Mail/ReceivedField.html">Mail::ReceivedField</a></li>
+				
+					<li><a href="./Mail/ReceivedParser.html">Mail::ReceivedParser</a></li>
+				
+					<li><a href="./Mail/ReferencesField.html">Mail::ReferencesField</a></li>
+				
+					<li><a href="./Mail/ReplyToField.html">Mail::ReplyToField</a></li>
+				
+					<li><a href="./Mail/ResentBccField.html">Mail::ResentBccField</a></li>
+				
+					<li><a href="./Mail/ResentCcField.html">Mail::ResentCcField</a></li>
+				
+					<li><a href="./Mail/ResentDateField.html">Mail::ResentDateField</a></li>
+				
+					<li><a href="./Mail/ResentFromField.html">Mail::ResentFromField</a></li>
+				
+					<li><a href="./Mail/ResentMessageIdField.html">Mail::ResentMessageIdField</a></li>
+				
+					<li><a href="./Mail/ResentSenderField.html">Mail::ResentSenderField</a></li>
+				
+					<li><a href="./Mail/ResentToField.html">Mail::ResentToField</a></li>
+				
+					<li><a href="./Mail/ReturnPathField.html">Mail::ReturnPathField</a></li>
+				
+					<li><a href="./Mail/Ruby18.html">Mail::Ruby18</a></li>
+				
+					<li><a href="./Mail/Ruby18.html">Mail::Ruby18</a></li>
+				
+					<li><a href="./Mail/Ruby19.html">Mail::Ruby19</a></li>
+				
+					<li><a href="./Mail/SMTP.html">Mail::SMTP</a></li>
+				
+					<li><a href="./Mail/SenderField.html">Mail::SenderField</a></li>
+				
+					<li><a href="./Mail/Sendmail.html">Mail::Sendmail</a></li>
+				
+					<li><a href="./Mail/StructuredField.html">Mail::StructuredField</a></li>
+				
+					<li><a href="./Mail/SubjectField.html">Mail::SubjectField</a></li>
+				
+					<li><a href="./Mail/TestMailer.html">Mail::TestMailer</a></li>
+				
+					<li><a href="./Mail/ToField.html">Mail::ToField</a></li>
+				
+					<li><a href="./Mail/UnstructuredField.html">Mail::UnstructuredField</a></li>
+				
+					<li><a href="./Mail/Utilities.html">Mail::Utilities</a></li>
+				
+					<li><a href="./Mail/VERSION.html">Mail::VERSION</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h2>Thu 17 Jun 2010 22:13:18 UTC Mikel Lindsaar <mikel@rubyx.com></h2>
+<ul>
+<li><p>
+Added <a
+href="Mail/POP3.html#method-i-delete_all">Mail::POP3.delete_all</a>,
+including specs (Martijn Storck)
+</p>
+</li>
+<li><p>
+Lars Pind updates on header folding
+</p>
+</li>
+<li><p>
+Version bump to 2.2.5
+</p>
+</li>
+</ul>
+<h2>Tue Jun  8 01:55:21 UTC 2010 Mikel Lindsaar <mikel@rubyx.com></h2>
+<ul>
+<li><p>
+Added inline attachment support to mail (mikel)
+</p>
+</li>
+</ul>
+<h2>Mon Jun  7 18:00:39 UTC 2010 Mikel Lindsaar <mikel@rubyx.com></h2>
+<ul>
+<li><p>
+Updating versioning so we only have one source, VERSION.yml (mikel)
+</p>
+</li>
+<li><p>
+Changed activesupport dependency to 2.3.6 to fix #53, #64, and def #67.
+(Artem Titoulenko)
+</p>
+</li>
+<li><p>
+Fixing typo in break_down_to.rb. (mikel)
+</p>
+</li>
+</ul>
+<h2>Mon Jun  7 18:07:16 UTC 2010 Mikel Lindsaar <mikel@rubyx.com></h2>
+<ul>
+<li><p>
+fixing a typo when generating docs. (Andrew Bloom)
+</p>
+</li>
+<li><p>
+Changing r\n\t to r\n\s throughout mail (mikel)
+</p>
+</li>
+<li><p>
+Handle multiple quoted words in Encodings.unquote_and_convert_to (Eric
+Kidd)
+</p>
+</li>
+<li><p>
+Ruby 1.9: mark source encoding so it&#8217;s usable with -Ks, -Ke, etc
+(Jeremy Kemper)
+</p>
+</li>
+<li><p>
+Add # to mail body for convenience (Maxim Chernyak)
+</p>
+</li>
+<li><p>
+Use Mail::TestMailer.deliveries in README example (John Trupiano)
+</p>
+</li>
+<li><p>
+Allow bundler to automatically build a gem directly from git (Eric Kidd)
+</p>
+</li>
+</ul>
+<h2>Sun Apr 11 07:49:15 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Lots of updates on encoding and decoding of headers and unstructured
+fields.  This is now a lot cleaner and nicer.  Also more predictable.
+</p>
+</li>
+<li><p>
+Merged encoding branch back into head
+</p>
+</li>
+<li><p>
+Version bump to 2.2.0
+</p>
+</li>
+<li><p>
+Tagged 2.2.0
+</p>
+</li>
+</ul>
+<h2>Sun Apr  4 06:41:46 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Created non-ascii header auto encoding for address fields and unstructured
+fields
+</p>
+</li>
+<li><p>
+Changed default behaviour of mail, if you specify a charset, it will use
+that charset regardless of what is in the body.  Previously, if the body
+was all US-ASCII, it would set the charset to US-ASCII in preference.
+</p>
+</li>
+<li><p>
+Many internal version jumps from 2.1.5.3 => 2.1.5.8 - unreleased
+development versions
+</p>
+</li>
+</ul>
+<h2>Mon 29 Mar 2010 07:04:34 UTC Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version bump to 2.1.5.3
+</p>
+</li>
+<li><p>
+No longer depend on vendor&#8217;d treetop as treetop now has optional
+loading of parts of the library
+</p>
+</li>
+<li><p>
+Change treetop dependency to 1.4.5
+</p>
+</li>
+</ul>
+<h2>Sun 28 Mar 2010 10:31:33 UTC Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version bump to 2.1.5.2
+</p>
+</li>
+<li><p>
+Fixed up preserve case in header fields when assigned from a message closes
+issue #46
+</p>
+</li>
+</ul>
+<h2>Sun 28 Mar 2010 09:02:20 UTC Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version bump to 2.1.5.1
+</p>
+</li>
+<li><p>
+Fixed net/pop3.rb regression for Ruby 1.8.6
+</p>
+</li>
+<li><p>
+Merged in Jeremy Kemper&#8217;s updates:
+</p>
+<ul>
+<li><p>
+Bump vendored treetop to 1.4.4
+</p>
+</li>
+</ul>
+<ul>
+<li><p>
+Use Mikel&#8217;s treetop for cucumber workaround
+</p>
+</li>
+</ul>
+<ul>
+<li><p>
+Use LOAD_PATH for spec_helper instead of relative requires
+</p>
+</li>
+</ul>
+<ul>
+<li><p>
+Force treetop from git so cucumber doesn&#8217;t pull in old version
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Sun Mar 28 07:01:07 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version bump to 2.1.5
+</p>
+</li>
+<li><p>
+Changed guess encoding to short circuit to binary if the mime type is
+unknown, should be safe
+</p>
+</li>
+<li><p>
+Renaming spec to match the file for attachment_lists.rb
+</p>
+</li>
+<li><p>
+Adding Message#decoded returns Message#body#decoded if the message is not
+multipart
+</p>
+</li>
+</ul>
+<h2>Sun Mar 28 02:55:42 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version bump to 2.1.4
+</p>
+</li>
+</ul>
+<h2>Sun Mar 28 00:26:27 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Merged in Jeremy/treetop to vendored treetop
+</p>
+</li>
+<li><p>
+Merged in nathansobo/treetop to vendored treetop
+</p>
+</li>
+<li><p>
+Merged in pzbowen/mail into mail - Adds body auto encoding - awesome work
+</p>
+</li>
+<li><p>
+Fixed content-transfer-encoding parser to be more compliant per RFC, also
+now handles trailing semi-colons correctly
+</p>
+</li>
+<li><p>
+Fixed content-transfer-encoding parser to handle weird &#8220;from the
+wild&#8221; misspellings
+</p>
+</li>
+<li><p>
+Added message.errors, header.errors arrays, returns array of [field_name,
+value, error_object] for each field that failed to parse
+</p>
+</li>
+<li><p>
+Removed bundler require from Rakefile
+</p>
+</li>
+</ul>
+<h2>Sun Mar 17 03:03:03 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Keep header name case when failing to unstructured field
+</p>
+</li>
+</ul>
+<h2>Wed Feb 24 09:14:56 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Fixed multiaddress bounce messages crashing when calling .bounced?  Now
+just take the first report and return that.
+</p>
+</li>
+<li><p>
+Closes issue 38 - final_recipient method give problem when one bounce email
+for multiple email ids
+</p>
+</li>
+<li><p>
+Fixing up TODO and Docs
+</p>
+</li>
+</ul>
+<h2>Sun Mar 22 03:24:15 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version bump to 2.1.3
+</p>
+</li>
+</ul>
+<h2>Thu Jan 28 00:25:02 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Added TMM1&#8217;s patch to not raise errors if a email is not
+multipart/report
+</p>
+</li>
+<li><p>
+Added html_part and text_part now return the first text/html or text/plain
+part they find. Order is from top to bottom of the email, all parts,
+flattened.
+</p>
+</li>
+<li><p>
+Cleaning up register_interceptor and register_observer including
+documentation
+</p>
+</li>
+<li><p>
+Renamed # to #
+</p>
+</li>
+<li><p>
+Renamed # to #
+</p>
+</li>
+<li><p>
+Adding spec to check for folding of non ASCII words that have been encoded
+</p>
+</li>
+<li><p>
+Updating Message#inspect to be a bit more friendly... it is for us mere
+mortals after all
+</p>
+</li>
+<li><p>
+Version bump to 2.1.2
+</p>
+</li>
+</ul>
+<h2>Sun Jan 28 02:59:34 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Removed old method of setting delivery_method 
+</p>
+</li>
+</ul>
+<h2>Mon Jan 25 11:36:13 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Added ability for address fields to init on an array instead of just a
+string.
+</p>
+</li>
+<li><p>
+Version bump to 2.1.1
+</p>
+</li>
+</ul>
+<h2>Mon Jan 25 10:36:33 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Now passes a block to the delivery handler, which can just call yield if it
+want&#8217;s <a href="Mail.html">Mail</a> to just do it&#8217;s normal
+delivery method
+</p>
+</li>
+<li><p>
+Moved Mail.deliveries into Mail::TestMailer.deliveries. Now only gets mail
+appended to it if you are sending with the :test delivery_method (only for
+testing)
+</p>
+</li>
+<li><p>
+Version bump to 2.1.0
+</p>
+</li>
+</ul>
+<h2>Mon Jan 25 01:44:13 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Change :deliver! to deliver a mail object, bypassing the
+:perform_deliveries and :raise_delivery_errors flags, also does not append
+the mail object to Mail.deliveries, thus the ! (dangerous).  The intended
+use for :deliver! is for people wanting to have their own delivery_handler
+(like ActionMailer uses) to track and handle delivery failures.
+</p>
+</li>
+<li><p>
+Added :delivery_handler to Message.  Allows you to pass an object that will
+be sent :deliver_mail(self) by the <a
+href="Mail/Message.html">Mail::Message</a> instance when it is sent
+:deliver and bypasses the usual delivery method.
+</p>
+</li>
+<li><p>
+Changed :perform_deliveries flag to be more consistent with it&#8217;s
+name, mail will not append itself to the Mail.deliveries collection if
+:perform_deliveries is false
+</p>
+</li>
+</ul>
+<h2>Sat Jan 23 23:49:50 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version bump to 2.0.5
+</p>
+</li>
+<li><p>
+Added :raise_delivery_errors to <a
+href="Mail/Message.html">Mail::Message</a>, if set to false will silently
+rescue all errors raised by the delivery methods, set to true by default
+</p>
+</li>
+</ul>
+<h2>Sat Jan 23 23:28:42 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version bump to 2.0.4
+</p>
+</li>
+<li><p>
+Added :perform_deliveries to mail, will not actually call deliver on the
+delivery method if this is set to false, set to true by default.
+</p>
+</li>
+<li><p>
+Added @delivery_notification_observers to mail messages, you can register
+an observer with mail by calling
+mail.register_for_delivery_notification(observer) and then when mail is
+told to :deliver it will call your observer with
+observer.delivered_email(self).  It will call your observer if it actually
+performed the delivery or not (that is, irregardless of the
+:perform_deliveries flag)
+</p>
+</li>
+<li><p>
+Added ability to overwrite the Mail.deliveries store with an object of your
+choice instead of just an array, this is a good way to find out if
+something actually got delivered as if :perform_deliveries is false, this
+collection will not get the mail message appended
+</p>
+</li>
+</ul>
+<h2>Sat Jan 23 05:32:53 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version bump to 2.0.3
+</p>
+</li>
+<li><p>
+Made body.sort_parts! recursive, to do the entire body
+</p>
+</li>
+<li><p>
+Added ability to use << on the results returned by the various address
+fields, ie, mail.to << &#8216;new@address&#8217; now works
+</p>
+</li>
+<li><p>
+Message now adds multipart/mixed as the content type if nothing is set and
+there are parts to the message
+</p>
+</li>
+<li><p>
+Added # and # to all address fields.  # returns the actual <a
+href="Mail/Address.html">Mail::Address</a> object for each address in the
+field.
+</p>
+</li>
+<li><p>
+Body should call to_s on given input... incase someone gave it an
+IO.readlines result (Array)
+</p>
+</li>
+<li><h2>Thu Jan 21 05:27:17 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+</li>
+<li><p>
+Version bump to 2.0.2
+</p>
+</li>
+<li><p>
+Major change to attachments, add_file now only accepts {:filename =>
+&#8216;full/path/to/file.png&#8217;} or  {:filename =>
+&#8216;file.png&#8217;, :content => &#8216;string of file content&#8217;}
+you can also now do <a href="http://'filename.png'">mail.attachments</a> =
+File.read(&#8216;path/to/file.png&#8217;) which is nice too!
+</p>
+</li>
+</ul>
+<h2>Fri Jan 15 09:20:51 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Rewrote all network classes to not use singletons.  Means different <a
+href="Mail/Message.html">Mail::Message</a> objects can have different
+delivery methods.
+</p>
+</li>
+<li><p>
+Added examples for how to send via GMail, MobileMe, Sendmail, File etc.
+</p>
+</li>
+<li><p>
+Version bump to 2.0.0 as Network API changed drastically, now not a
+singleton class.
+</p>
+</li>
+<li><p>
+Fixed that return-path should only return one address
+</p>
+</li>
+</ul>
+<h2>Thu Jan 14 10:41:22 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version update to 1.6.0 - API change on mail.address_fields to always
+return arrays
+</p>
+</li>
+<li><p>
+Updated all message.address_field methods to always return arrays, so
+mail.from #=> [&#8216;one@address.com&#8217;] now, is least surprise
+</p>
+</li>
+<li><p>
+Updated handling of empty group lists so it didn&#8217;t crash
+</p>
+</li>
+</ul>
+<h2>Thu Jan 12 10:41:47 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version 1.5.3, handling invalid input on fields.  Highly recommended update
+</p>
+</li>
+<li><p>
+Updated fields to always try parsing the given data (unless blank). This
+allows mail to catch invalid input and return UnstructuredFields. Makes
+mail a lot more resistant to invalid input.
+</p>
+</li>
+</ul>
+<h2>Fri  8 Jan 2010 00:00:08 UTC Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version bump to 1.5.2
+</p>
+</li>
+</ul>
+<h2>Fri  8 Jan 8:55:49 2010 +1100 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Updated Sendmail and SMTP delivery methods to use return-path if present
+</p>
+</li>
+<li><p>
+Fix up a lot of content-type parsing problems
+</p>
+</li>
+<li><p>
+Updating compat listing
+</p>
+</li>
+<li><p>
+Moving error emails into one directory
+</p>
+</li>
+<li><p>
+Moving error emails into one directory
+</p>
+</li>
+<li><p>
+Initializing @tls variable to remove warnings
+</p>
+</li>
+<li><p>
+Moved default corpus directory
+</p>
+</li>
+<li><p>
+Fixed up git ignore file
+</p>
+</li>
+</ul>
+<h2>Thu  6 Jan 2010 23:59:29 UTC Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Added compatibility list to Readme.rdoc
+</p>
+</li>
+<li><p>
+Fixing encoding of return path to be per RFC 2822, adding angle brackets
+around the addr_spec
+</p>
+</li>
+<li><p>
+Specs covering return path setting and preserving
+</p>
+</li>
+</ul>
+<h2>Thu  5 Jan 2010 23:59:48 UTC Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Moving the require for tlsmail for Ruby 1.8.6 into mail.rb
+</p>
+</li>
+</ul>
+<h2>Sun Jan  3 00:08:06 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version bump to 1.5.0
+</p>
+</li>
+<li><p>
+Major API change in Message#field_name.  This WILL break your applications
+that use <a href="Mail.html">Mail</a>.  Message#field_name now returns
+good, intelligent, default values.  You can still access the field object
+by calling Message#[:field_name] or Message#[&#8216;field_name&#8217;].
+</p>
+</li>
+</ul>
+<h2>Sat Jan  2 04:12:53 UTC 2010 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Message-ID, Content-ID, References et al, now return the default value of
+the message ID without the angle brackets, as per RFC 2822,
+&#8220;Semantically, the angle bracket characters are not part of the
+msg-id; the msg-id is what is contained between the two angle bracket
+characters.&#8220;
+</p>
+</li>
+<li><p>
+Message class now has getter and setter methods for all the supported field
+types explicitly.  This allows us to return a &#8220;default&#8221; value
+for all fields.
+</p>
+</li>
+<li><p>
+All address fields, when called from Message#to or Message#from or the
+like, return either a string of the address spec (mikel@test.lindsaar.net)
+if it is a single entry, or an array of address specs if there is more than
+one [&#8216;mikel@test.lindsaar.net&#8217;,
+&#8216;ada@test.lindsaar.net&#8217;]
+</p>
+</li>
+</ul>
+<h2>Mon 28 Dec 2009 01:21:52 UTC Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Added sorting of parts, default is text/plain, then text/enriched and
+text/html.  Access through  Body#set_sort_order and Body#sort_parts!
+(called from Body#encode automatically)
+</p>
+</li>
+<li><p>
+Version bump to 1.4.2
+</p>
+</li>
+</ul>
+<h2>Sun Dec 27 10:38:24 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Updating treetop and mail to initialize uninitialized instance variables to
+nil
+</p>
+</li>
+<li><p>
+Version bump to 1.4.1
+</p>
+</li>
+</ul>
+<h2>Sun Dec 27 09:51:27 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version bump to 1.4 because now :to_s calls :decoded for all fields and
+body  while :to_s calls :encoded for Message and Header containers.  Makes
+sense...  really.
+</p>
+</li>
+</ul>
+<h2>Sun Dec 27 07:30:02 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Changed fields to default to :decoded on :to_s, all container objects
+retain :encoded as the default for :to_s
+</p>
+</li>
+</ul>
+<h2>Thu Dec 17 06:35:05 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Fixed parsing error &#8216;Subject: =?ISO-8859-1?Q?Re=3A_ol=E1?=&#8217;
+(has a new line embedded)
+</p>
+</li>
+</ul>
+<h2>Thu Dec 17 02:14:23 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version 1.3.4
+</p>
+</li>
+<li><p>
+Vendor&#8217;d treetop
+</p>
+</li>
+</ul>
+<h2>Thu Dec 17 01:32:00 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version 1.3.3
+</p>
+</li>
+<li><p>
+Removed dependency on treetop, don&#8217;t need it at runtime
+</p>
+</li>
+</ul>
+<h2>Wed Dec 16 23:48:46 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version 1.3.2
+</p>
+</li>
+<li><p>
+Resolved Ruby 1.9.1-head not working because File.basename only accepts
+US-ASCII or 8Bit
+</p>
+</li>
+</ul>
+<h2>Sun Dec 13 01:06:17 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Version 1.3.1
+</p>
+</li>
+<li><p>
+Resolved Issue #18 - Wrong instance variable name
+</p>
+</li>
+<li><p>
+Resolved Issue #15 - Duplicate block call
+</p>
+</li>
+</ul>
+<h2>Thu Dec 10 21:25:37 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Resolved Issue #13 - replacing From field results in from field becoming
+optional field.
+</p>
+</li>
+</ul>
+<h2>Thu  3 Dec 2009 00:52:12 UTC Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Added POP upgrades from Nicolas Fouché
+</p>
+</li>
+<li><p>
+Added patch to handle multiple from lines in email from Luke Grimstrup
+</p>
+</li>
+</ul>
+<h2>Mon Nov 23 23:34:22 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Resolved Issue #12 - Wrong comment in smtp.rb
+</p>
+</li>
+</ul>
+<h2>Mon Nov 23 22:35:50 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Changed the way attachments are added so that it does not break depending
+on the order of the Hash passed in.
+</p>
+</li>
+<li><p>
+Version bump to 1.3.0 - Now works with Edge ActionMailer, MRI 1.8.6, 1.8.7,
+1.9.1, all tests passing
+</p>
+</li>
+</ul>
+<h2>Sun Nov 22 12:19:44 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Added check on add_part to make sure if there is already a body, and if so,
+make a text_part of the body
+</p>
+</li>
+<li><p>
+Fixing up attachment adding and making sure multipart emails always have
+boundaries
+</p>
+</li>
+<li><p>
+Change Message#attachments to now recursively return all attachments in the
+email in an ordered flattened array
+</p>
+</li>
+<li><p>
+Added ability for <a href="Mail/Message.html">Mail::Message</a> to accept
+{:headers => {&#8216;custom-header&#8217; => &#8216;value&#8217;,
+&#8216;another-custom-header&#8217; => &#8216;value&#8217;}} as a param on
+init
+</p>
+</li>
+<li><p>
+Adding ability to <a href="Mail/Message.html">Mail::Message</a> to add a
+part via :part(params) with optional block
+</p>
+</li>
+<li><p>
+Fixed up QP encoding forcing underscores into everything with a space
+</p>
+</li>
+<li><p>
+Added ReturnPathField#address
+</p>
+</li>
+<li><p>
+Updating gem loads and active support loads
+</p>
+</li>
+</ul>
+<h2>Sat Nov 21 12:52:46 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Changed <a href="Mail/Encodings.html">Mail::Encodings</a> to clean it up,
+added in unquote_and_convert_to as well as refactor in this area
+</p>
+</li>
+</ul>
+<h2>Thu Nov 19 04:16:10 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Added sendmail support from (Simon Rozet)
+</p>
+</li>
+<li><p>
+Changed to bundler for gem dependancies and moved gem generation into
+rakefile (Simon Rozet)
+</p>
+</li>
+<li><p>
+Bumped to 1.2.6 for sendmail support
+</p>
+</li>
+</ul>
+<h2>Wed Nov 18 04:26:21 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Changed Encodings.param_encode(string) so it intelligently encodes and
+quotes needed items and leaves plain, no special char, US-ASCII alone
+unquoted.
+</p>
+</li>
+</ul>
+<h2>Sat Nov 14 08:20:21 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Resolved Issue #10 - empty/nil cc/bcc field causes exception
+(Mail::Field::ParseError)
+</p>
+</li>
+</ul>
+<h2>Fri Nov 13 00:31:04 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Hacked and mutilated the network section, made it easier to extend out with
+other delivery and retriever methods.  API changed SLIGHTLY with this. 
+Please check the readme
+</p>
+</li>
+<li><p>
+Resolved Issue #8 - <a href="Mail/SMTP.html">Mail::SMTP</a> now delivers to
+all mail.destinations
+</p>
+</li>
+<li><p>
+Version bump to 1.2.5
+</p>
+</li>
+</ul>
+<h2>Thu Nov 12 02:58:01 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Resolved Issue #5 - Message ID not handling multiple periods in left hand
+side
+</p>
+</li>
+<li><p>
+Resolved Issue #6 - Ordering of add_file and body items causes invalid
+emails
+</p>
+</li>
+</ul>
+<h2>Tue Nov 10 08:15:14 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Resolved Issue #5 - Message ID generation issue
+</p>
+</li>
+<li><p>
+Resolved Issue #7 - README add_file examples don&#8217;t seem to work -
+Updated readme and rdoc in Message#add_file
+</p>
+</li>
+</ul>
+<h2>Mon Nov  9 23:38:33 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Added ability to create new email via a hash or hash-like object. <mikel>
+</p>
+</li>
+<li><p>
+Moved all of the Part init into the Message class.  Part now just uses
+Message&#8217;s init, also moved all the attachment related functions into
+Message.  As Part is a subclass of message, you shouldn&#8217;t see any
+interface changes here.
+</p>
+</li>
+</ul>
+<h2>Fri Nov  6 22:52:10 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+a6ef2b4: Fixed Issue #4 - Can&#8217;t call encoding on non existant 
+content-transer-encoding header
+</p>
+</li>
+</ul>
+<h2>Fri Nov  6 00:51:55 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Handled unstructured field folding &#8220;blank&#8221; lines
+</p>
+</li>
+<li><p>
+Fixed error in header.rb that created fields into an array, instead of a
+FieldList, resulting in mail.encode returning a random sort order on the
+header.
+</p>
+</li>
+<li><p>
+Made unstructured fields attempt to decode their values on :decode
+</p>
+</li>
+</ul>
+<h2>Thu Nov  5 04:45:31 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+2acb70a: Closes Issue #1 - Handling badly formatted content-type fields
+<mikel>
+</p>
+</li>
+</ul>
+<h2>Wed Nov  4 23:24:32 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+2b5d608: Closes Issue #2 - Empty header field values not parsing <mikel>
+</p>
+</li>
+<li><p>
+Version bumb to 1.2.1
+</p>
+</li>
+</ul>
+<h2>Wed Nov  4 12:54:43 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Renamed <a
+href="Mail/Message.html#method-i-encode%21">Mail::Message.encode!</a> to <a
+href="Mail/Message.html#method-i-ready_to_send%21">Mail::Message.ready_to_send!</a>,
+deprecated :encode! <mikel>
+</p>
+</li>
+<li><p>
+Rewrote encoding and decoding methods on all classes.  Adds a lot of boiler
+plate code, but allows us to be really precise in each field type that
+needs custom encoding.  Now all encoding is done by the field_type itself. 
+Need to follow through on the body. <mikel>
+</p>
+</li>
+<li><p>
+Bump version to 1.2.0 due to changes of :encoded, :decoded behaviour
+<mikel>
+</p>
+</li>
+</ul>
+<h2>Tue Nov  3 00:59:45 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Tested mail against entire Enron set (2.3gb) and the Trec 2005 set (0.5gb),
+~ half a million emails without crashing <jlindley>
+</p>
+</li>
+<li><p>
+Some headers only can appear once, enforce during header parse assignment.
+<jlindley>
+</p>
+</li>
+<li><p>
+Convert empty bodies into empty arrays instead of nil. <jlindley>
+</p>
+</li>
+<li><p>
+Handle blank content dispositions. <jlindley>
+</p>
+</li>
+<li><p>
+Mention Trec 2005 Spam Corpus in readme <jlindley>
+</p>
+</li>
+<li><p>
+Add &#8216;rake corpus:verify_all&#8217; to allow parse checks in bulk.
+<jlindley>
+</p>
+</li>
+<li><p>
+Added handling of multi value parameters, like
+filename*1*=&#8220;us-ascii&#8217;en&#8217;blah&#8221;
+filename*2=&#8220;bleh&#8221; <mikel>
+</p>
+</li>
+<li><p>
+Added dependency on ActiveSupport 2.3 or higher <mikel>
+</p>
+</li>
+</ul>
+<h2>Sun Nov  1 12:00:00 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+handle OpenSSL::SSL::VERIFY_NONE returning 0 <jlindley>
+</p>
+</li>
+<li><p>
+doing Mail.new { content_type [text, plain, { charset => UTF-8 }] } is now 
+possible (content type accepts an array) <mikel>
+</p>
+</li>
+</ul>
+<h2>Sat Oct 31 11:00:41 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Fixed attachment handling, so mail can find attachment from a content-type,
+</p>
+</li>
+</ul>
+<p>
+content-disposition or content-location
+</p>
+<ul>
+<li><p>
+Added content-location field and parser
+</p>
+</li>
+<li><p>
+Added message.has_attachments? for ActionMailer friendliness
+</p>
+</li>
+<li><p>
+Added attachment.original_filename for ActionMailer friendliness
+</p>
+</li>
+</ul>
+<h2>Sat Oct 25 13:38:01 UTC 2009 Mikel Lindsaar <raasdnil@gmail.com></h2>
+<ul>
+<li><p>
+Birthday, <a href="Mail.html">Mail</a> released as a gem... phew
+</p>
+</li>
+</ul>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

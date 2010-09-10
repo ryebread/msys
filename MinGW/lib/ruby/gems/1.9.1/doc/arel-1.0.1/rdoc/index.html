@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>arel-1.0.1 Documentation</title>
+
+	<link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+	
+	<h1>arel-1.0.1 Documentation</h1>
+
+	
+	<p>This is the API documentation for 'arel-1.0.1 Documentation'.</p>
+	
+
+	
+	
+	<h2>Files</h2>
+	<ul>
+		
+			<li class="file"><a href="History_txt.html">History.txt</a></li>
+		
+	</ul>
+	
+
+	<h2 id="classes">Classes/Modules</h2>
+	<ul>
+		
+		<li class="module"><a href="Arel.html">Arel</a></li>
+		
+		<li class="class"><a href="Arel/Action.html">Arel::Action</a></li>
+		
+		<li class="class"><a href="Arel/Alias.html">Arel::Alias</a></li>
+		
+		<li class="class"><a href="Arel/Array.html">Arel::Array</a></li>
+		
+		<li class="class"><a href="Arel/Ascending.html">Arel::Ascending</a></li>
+		
+		<li class="class"><a href="Arel/Attribute.html">Arel::Attribute</a></li>
+		
+		<li class="module"><a href="Arel/Attributes.html">Arel::Attributes</a></li>
+		
+		<li class="class"><a href="Arel/Attributes/Boolean.html">Arel::Attributes::Boolean</a></li>
+		
+		<li class="class"><a href="Arel/Attributes/Decimal.html">Arel::Attributes::Decimal</a></li>
+		
+		<li class="class"><a href="Arel/Attributes/Float.html">Arel::Attributes::Float</a></li>
+		
+		<li class="class"><a href="Arel/Attributes/Integer.html">Arel::Attributes::Integer</a></li>
+		
+		<li class="class"><a href="Arel/Attributes/String.html">Arel::Attributes::String</a></li>
+		
+		<li class="class"><a href="Arel/Attributes/Time.html">Arel::Attributes::Time</a></li>
+		
+		<li class="class"><a href="Arel/Average.html">Arel::Average</a></li>
+		
+		<li class="class"><a href="Arel/Compound.html">Arel::Compound</a></li>
+		
+		<li class="class"><a href="Arel/Count.html">Arel::Count</a></li>
+		
+		<li class="class"><a href="Arel/Deletion.html">Arel::Deletion</a></li>
+		
+		<li class="class"><a href="Arel/Descending.html">Arel::Descending</a></li>
+		
+		<li class="class"><a href="Arel/Distinct.html">Arel::Distinct</a></li>
+		
+		<li class="class"><a href="Arel/Expression.html">Arel::Expression</a></li>
+		
+		<li class="module"><a href="Arel/Expressions.html">Arel::Expressions</a></li>
+		
+		<li class="class"><a href="Arel/Externalization.html">Arel::Externalization</a></li>
+		
+		<li class="class"><a href="Arel/From.html">Arel::From</a></li>
+		
+		<li class="class"><a href="Arel/Group.html">Arel::Group</a></li>
+		
+		<li class="class"><a href="Arel/Having.html">Arel::Having</a></li>
+		
+		<li class="class"><a href="Arel/Header.html">Arel::Header</a></li>
+		
+		<li class="class"><a href="Arel/InnerJoin.html">Arel::InnerJoin</a></li>
+		
+		<li class="class"><a href="Arel/Insert.html">Arel::Insert</a></li>
+		
+		<li class="class"><a href="Arel/Join.html">Arel::Join</a></li>
+		
+		<li class="class"><a href="Arel/Lock.html">Arel::Lock</a></li>
+		
+		<li class="class"><a href="Arel/Maximum.html">Arel::Maximum</a></li>
+		
+		<li class="module"><a href="Arel/Memory.html">Arel::Memory</a></li>
+		
+		<li class="class"><a href="Arel/Memory/Engine.html">Arel::Memory::Engine</a></li>
+		
+		<li class="class"><a href="Arel/Minimum.html">Arel::Minimum</a></li>
+		
+		<li class="class"><a href="Arel/Nil.html">Arel::Nil</a></li>
+		
+		<li class="module"><a href="Arel/ObjectExtensions.html">Arel::ObjectExtensions</a></li>
+		
+		<li class="class"><a href="Arel/Order.html">Arel::Order</a></li>
+		
+		<li class="class"><a href="Arel/Ordering.html">Arel::Ordering</a></li>
+		
+		<li class="module"><a href="Arel/Orderings.html">Arel::Orderings</a></li>
+		
+		<li class="class"><a href="Arel/OuterJoin.html">Arel::OuterJoin</a></li>
+		
+		<li class="module"><a href="Arel/Predicates.html">Arel::Predicates</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/All.html">Arel::Predicates::All</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/And.html">Arel::Predicates::And</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/Any.html">Arel::Predicates::Any</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/Binary.html">Arel::Predicates::Binary</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/CompoundPredicate.html">Arel::Predicates::CompoundPredicate</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/Equality.html">Arel::Predicates::Equality</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/GreaterThan.html">Arel::Predicates::GreaterThan</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/GreaterThanOrEqualTo.html">Arel::Predicates::GreaterThanOrEqualTo</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/In.html">Arel::Predicates::In</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/Inequality.html">Arel::Predicates::Inequality</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/LessThan.html">Arel::Predicates::LessThan</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/LessThanOrEqualTo.html">Arel::Predicates::LessThanOrEqualTo</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/Match.html">Arel::Predicates::Match</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/Not.html">Arel::Predicates::Not</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/NotIn.html">Arel::Predicates::NotIn</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/NotMatch.html">Arel::Predicates::NotMatch</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/Or.html">Arel::Predicates::Or</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/Polyadic.html">Arel::Predicates::Polyadic</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/Predicate.html">Arel::Predicates::Predicate</a></li>
+		
+		<li class="class"><a href="Arel/Predicates/Unary.html">Arel::Predicates::Unary</a></li>
+		
+		<li class="class"><a href="Arel/Project.html">Arel::Project</a></li>
+		
+		<li class="module"><a href="Arel/Recursion.html">Arel::Recursion</a></li>
+		
+		<li class="module"><a href="Arel/Recursion/BaseCase.html">Arel::Recursion::BaseCase</a></li>
+		
+		<li class="module"><a href="Arel/Relation.html">Arel::Relation</a></li>
+		
+		<li class="class"><a href="Arel/Row.html">Arel::Row</a></li>
+		
+		<li class="class"><a href="Arel/Session.html">Arel::Session</a></li>
+		
+		<li class="class"><a href="Arel/Skip.html">Arel::Skip</a></li>
+		
+		<li class="module"><a href="Arel/Sql.html">Arel::Sql</a></li>
+		
+		<li class="module"><a href="Arel/Sql/ArrayExtensions.html">Arel::Sql::ArrayExtensions</a></li>
+		
+		<li class="class"><a href="Arel/Sql/Attribute.html">Arel::Sql::Attribute</a></li>
+		
+		<li class="module"><a href="Arel/Sql/Attributes.html">Arel::Sql::Attributes</a></li>
+		
+		<li class="class"><a href="Arel/Sql/Attributes/Undefined.html">Arel::Sql::Attributes::Undefined</a></li>
+		
+		<li class="class"><a href="Arel/Sql/Christener.html">Arel::Sql::Christener</a></li>
+		
+		<li class="class"><a href="Arel/Sql/Engine.html">Arel::Sql::Engine</a></li>
+		
+		<li class="class"><a href="Arel/Sql/Formatter.html">Arel::Sql::Formatter</a></li>
+		
+		<li class="class"><a href="Arel/Sql/GroupClause.html">Arel::Sql::GroupClause</a></li>
+		
+		<li class="class"><a href="Arel/Sql/HavingClause.html">Arel::Sql::HavingClause</a></li>
+		
+		<li class="module"><a href="Arel/Sql/NilClassExtensions.html">Arel::Sql::NilClassExtensions</a></li>
+		
+		<li class="module"><a href="Arel/Sql/ObjectExtensions.html">Arel::Sql::ObjectExtensions</a></li>
+		
+		<li class="class"><a href="Arel/Sql/OrderClause.html">Arel::Sql::OrderClause</a></li>
+		
+		<li class="class"><a href="Arel/Sql/PassThrough.html">Arel::Sql::PassThrough</a></li>
+		
+		<li class="module"><a href="Arel/Sql/RangeExtensions.html">Arel::Sql::RangeExtensions</a></li>
+		
+		<li class="class"><a href="Arel/Sql/SelectClause.html">Arel::Sql::SelectClause</a></li>
+		
+		<li class="class"><a href="Arel/Sql/SelectStatement.html">Arel::Sql::SelectStatement</a></li>
+		
+		<li class="class"><a href="Arel/Sql/TableReference.html">Arel::Sql::TableReference</a></li>
+		
+		<li class="class"><a href="Arel/Sql/Value.html">Arel::Sql::Value</a></li>
+		
+		<li class="class"><a href="Arel/Sql/WhereClause.html">Arel::Sql::WhereClause</a></li>
+		
+		<li class="class"><a href="Arel/Sql/WhereCondition.html">Arel::Sql::WhereCondition</a></li>
+		
+		<li class="module"><a href="Arel/SqlCompiler.html">Arel::SqlCompiler</a></li>
+		
+		<li class="class"><a href="Arel/SqlCompiler/GenericCompiler.html">Arel::SqlCompiler::GenericCompiler</a></li>
+		
+		<li class="class"><a href="Arel/SqlCompiler/IBM_DBCompiler.html">Arel::SqlCompiler::IBM_DBCompiler</a></li>
+		
+		<li class="class"><a href="Arel/SqlCompiler/MySQLCompiler.html">Arel::SqlCompiler::MySQLCompiler</a></li>
+		
+		<li class="class"><a href="Arel/SqlCompiler/OracleCompiler.html">Arel::SqlCompiler::OracleCompiler</a></li>
+		
+		<li class="class"><a href="Arel/SqlCompiler/PostgreSQLCompiler.html">Arel::SqlCompiler::PostgreSQLCompiler</a></li>
+		
+		<li class="class"><a href="Arel/SqlCompiler/SQLiteCompiler.html">Arel::SqlCompiler::SQLiteCompiler</a></li>
+		
+		<li class="class"><a href="Arel/SqlLiteral.html">Arel::SqlLiteral</a></li>
+		
+		<li class="class"><a href="Arel/StringJoin.html">Arel::StringJoin</a></li>
+		
+		<li class="class"><a href="Arel/Sum.html">Arel::Sum</a></li>
+		
+		<li class="module"><a href="Arel/SymbolExtensions.html">Arel::SymbolExtensions</a></li>
+		
+		<li class="class"><a href="Arel/Table.html">Arel::Table</a></li>
+		
+		<li class="class"><a href="Arel/Take.html">Arel::Take</a></li>
+		
+		<li class="class"><a href="Arel/TypecastError.html">Arel::TypecastError</a></li>
+		
+		<li class="module"><a href="Arel/Types.html">Arel::Types</a></li>
+		
+		<li class="class"><a href="Arel/Update.html">Arel::Update</a></li>
+		
+		<li class="class"><a href="Arel/Value.html">Arel::Value</a></li>
+		
+		<li class="class"><a href="Arel/Where.html">Arel::Where</a></li>
+		
+		<li class="class"><a href="Hash.html">Hash</a></li>
+		
+		<li class="class"><a href="Object.html">Object</a></li>
+		
+	</ul>
+
+	<h2 id="methods">Methods</h2>
+	<ul>
+		
+			<li><a href="Arel/Predicates/Polyadic.html#method-c-build">::build &mdash; Arel::Predicates::Polyadic</a></li>
+		
+			<li><a href="Arel/Table.html#method-c-engine">::engine &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Table.html#method-c-engine%3D">::engine= &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Sql/Attributes.html#method-c-for">::for &mdash; Arel::Sql::Attributes</a></li>
+		
+			<li><a href="Arel/Session.html#method-c-instance">::instance &mdash; Arel::Session</a></li>
+		
+			<li><a href="Arel/Project.html#method-c-new">::new &mdash; Arel::Project</a></li>
+		
+			<li><a href="Arel/Compound.html#method-c-new">::new &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel/Predicates/Polyadic.html#method-c-new">::new &mdash; Arel::Predicates::Polyadic</a></li>
+		
+			<li><a href="Arel/Table.html#method-c-new">::new &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Take.html#method-c-new">::new &mdash; Arel::Take</a></li>
+		
+			<li><a href="Arel/Skip.html#method-c-new">::new &mdash; Arel::Skip</a></li>
+		
+			<li><a href="Arel/Sql/Attributes.html#method-c-new">::new &mdash; Arel::Sql::Attributes</a></li>
+		
+			<li><a href="Arel/Predicates/Binary.html#method-c-new">::new &mdash; Arel::Predicates::Binary</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-c-new">::new &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel/Sql/Formatter.html#method-c-new">::new &mdash; Arel::Sql::Formatter</a></li>
+		
+			<li><a href="Arel/Where.html#method-c-new">::new &mdash; Arel::Where</a></li>
+		
+			<li><a href="Arel/Row.html#method-c-new">::new &mdash; Arel::Row</a></li>
+		
+			<li><a href="Arel/Having.html#method-c-new">::new &mdash; Arel::Having</a></li>
+		
+			<li><a href="Arel/Order.html#method-c-new">::new &mdash; Arel::Order</a></li>
+		
+			<li><a href="Arel/Lock.html#method-c-new">::new &mdash; Arel::Lock</a></li>
+		
+			<li><a href="Arel/Sql/Engine.html#method-c-new">::new &mdash; Arel::Sql::Engine</a></li>
+		
+			<li><a href="Arel/Insert.html#method-c-new">::new &mdash; Arel::Insert</a></li>
+		
+			<li><a href="Arel/Value.html#method-c-new">::new &mdash; Arel::Value</a></li>
+		
+			<li><a href="Arel/Sql/Christener.html#method-c-new">::new &mdash; Arel::Sql::Christener</a></li>
+		
+			<li><a href="Arel/Expression.html#method-c-new">::new &mdash; Arel::Expression</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-c-new">::new &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Header.html#method-c-new">::new &mdash; Arel::Header</a></li>
+		
+			<li><a href="Arel/From.html#method-c-new">::new &mdash; Arel::From</a></li>
+		
+			<li><a href="Arel/Array.html#method-c-new">::new &mdash; Arel::Array</a></li>
+		
+			<li><a href="Arel/Group.html#method-c-new">::new &mdash; Arel::Group</a></li>
+		
+			<li><a href="Arel/Join.html#method-c-new">::new &mdash; Arel::Join</a></li>
+		
+			<li><a href="Arel/Predicates/Unary.html#method-c-new">::new &mdash; Arel::Predicates::Unary</a></li>
+		
+			<li><a href="Arel/Session.html#method-c-start">::start &mdash; Arel::Session</a></li>
+		
+			<li><a href="Arel/Table.html#method-c-tables">::tables &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Table.html#method-c-tables%3D">::tables= &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-%2F">#/ &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Header.html#method-i-%3D%3D">#== &mdash; Arel::Header</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-%3D%3D">#== &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Predicates/Binary.html#method-i-%3D%3D">#== &mdash; Arel::Predicates::Binary</a></li>
+		
+			<li><a href="Arel/Externalization.html#method-i-%3D%3D">#== &mdash; Arel::Externalization</a></li>
+		
+			<li><a href="Arel/Value.html#method-i-%3D%3D">#== &mdash; Arel::Value</a></li>
+		
+			<li><a href="Arel/Predicates/Unary.html#method-i-%3D%3D">#== &mdash; Arel::Predicates::Unary</a></li>
+		
+			<li><a href="Arel/Predicates/Equality.html#method-i-%3D%3D">#== &mdash; Arel::Predicates::Equality</a></li>
+		
+			<li><a href="Arel/Predicates/Polyadic.html#method-i-%3D%3D">#== &mdash; Arel::Predicates::Polyadic</a></li>
+		
+			<li><a href="Object.html#method-i-Table">#Table &mdash; Object</a></li>
+		
+			<li><a href="Arel/Header.html#method-i-%5B%5D">#[] &mdash; Arel::Header</a></li>
+		
+			<li><a href="Arel/Row.html#method-i-%5B%5D">#[] &mdash; Arel::Row</a></li>
+		
+			<li><a href="Arel.html#method-i-%5B%5D">#[] &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Sql/Engine.html#method-i-adapter_name">#adapter_name &mdash; Arel::Sql::Engine</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-add_limit_on_delete">#add_limit_on_delete &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/IBM_DBCompiler.html#method-i-add_limit_on_delete">#add_limit_on_delete &mdash; Arel::SqlCompiler::IBM_DBCompiler</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-aggregation%3F">#aggregation? &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Expression.html#method-i-aggregation%3F">#aggregation? &mdash; Arel::Expression</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-alias">#alias &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/SqlCompiler/PostgreSQLCompiler.html#method-i-aliased_orders">#aliased_orders &mdash; Arel::SqlCompiler::PostgreSQLCompiler</a></li>
+		
+			<li><a href="Arel/Predicates/Predicate.html#method-i-and">#and &mdash; Arel::Predicates::Predicate</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-as">#as &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Expression.html#method-i-as">#as &mdash; Arel::Expression</a></li>
+		
+			<li><a href="Arel/Table.html#method-i-as">#as &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Orderings.html#method-i-asc">#asc &mdash; Arel::Orderings</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-assignment_sql">#assignment_sql &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel/Sql/SelectClause.html#method-i-attribute">#attribute &mdash; Arel::Sql::SelectClause</a></li>
+		
+			<li><a href="Arel/Sql/GroupClause.html#method-i-attribute">#attribute &mdash; Arel::Sql::GroupClause</a></li>
+		
+			<li><a href="Arel/Sql/WhereCondition.html#method-i-attribute">#attribute &mdash; Arel::Sql::WhereCondition</a></li>
+		
+			<li><a href="Arel/Sql/HavingClause.html#method-i-attribute">#attribute &mdash; Arel::Sql::HavingClause</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-attributes">#attributes &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel/Table.html#method-i-attributes">#attributes &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Externalization.html#method-i-attributes">#attributes &mdash; Arel::Externalization</a></li>
+		
+			<li><a href="Arel/StringJoin.html#method-i-attributes">#attributes &mdash; Arel::StringJoin</a></li>
+		
+			<li><a href="Arel/Join.html#method-i-attributes">#attributes &mdash; Arel::Join</a></li>
+		
+			<li><a href="Arel.html#method-i-attributes">#attributes &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Array.html#method-i-attributes">#attributes &mdash; Arel::Array</a></li>
+		
+			<li><a href="Arel/Expressions.html#method-i-average">#average &mdash; Arel::Expressions</a></li>
+		
+			<li><a href="Hash.html#method-i-bind">#bind &mdash; Hash</a></li>
+		
+			<li><a href="Arel/Predicates/Unary.html#method-i-bind">#bind &mdash; Arel::Predicates::Unary</a></li>
+		
+			<li><a href="Arel/Row.html#method-i-bind">#bind &mdash; Arel::Row</a></li>
+		
+			<li><a href="Arel/ObjectExtensions.html#method-i-bind">#bind &mdash; Arel::ObjectExtensions</a></li>
+		
+			<li><a href="Arel/Header.html#method-i-bind">#bind &mdash; Arel::Header</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-bind">#bind &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Value.html#method-i-bind">#bind &mdash; Arel::Value</a></li>
+		
+			<li><a href="Arel/Expression.html#method-i-bind">#bind &mdash; Arel::Expression</a></li>
+		
+			<li><a href="Arel/Ordering.html#method-i-bind">#bind &mdash; Arel::Ordering</a></li>
+		
+			<li><a href="Arel/Predicates/Polyadic.html#method-i-bind">#bind &mdash; Arel::Predicates::Polyadic</a></li>
+		
+			<li><a href="Arel/Predicates/Binary.html#method-i-bind">#bind &mdash; Arel::Predicates::Binary</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-bind">#bind &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-build_clauses">#build_clauses &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-build_query">#build_query &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/OracleCompiler.html#method-i-build_update_conditions_sql">#build_update_conditions_sql &mdash; Arel::SqlCompiler::OracleCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-build_update_conditions_sql">#build_update_conditions_sql &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel/Insert.html#method-i-call">#call &mdash; Arel::Insert</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-call">#call &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Deletion.html#method-i-call">#call &mdash; Arel::Deletion</a></li>
+		
+			<li><a href="Arel/Update.html#method-i-call">#call &mdash; Arel::Update</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-christener">#christener &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-christener">#christener &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-christener">#christener &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel.html#method-i-column">#column &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-column_for">#column_for &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel/Table.html#method-i-column_for">#column_for &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Table.html#method-i-columns">#columns &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Row.html#method-i-combine">#combine &mdash; Arel::Row</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-compiler">#compiler &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Predicates/LessThanOrEqualTo.html#method-i-complement">#complement &mdash; Arel::Predicates::LessThanOrEqualTo</a></li>
+		
+			<li><a href="Arel/Predicates/GreaterThanOrEqualTo.html#method-i-complement">#complement &mdash; Arel::Predicates::GreaterThanOrEqualTo</a></li>
+		
+			<li><a href="Arel/Predicates/Or.html#method-i-complement">#complement &mdash; Arel::Predicates::Or</a></li>
+		
+			<li><a href="Arel/Predicates/And.html#method-i-complement">#complement &mdash; Arel::Predicates::And</a></li>
+		
+			<li><a href="Arel/Predicates/GreaterThan.html#method-i-complement">#complement &mdash; Arel::Predicates::GreaterThan</a></li>
+		
+			<li><a href="Arel/Predicates/Predicate.html#method-i-complement">#complement &mdash; Arel::Predicates::Predicate</a></li>
+		
+			<li><a href="Arel/Predicates/Equality.html#method-i-complement">#complement &mdash; Arel::Predicates::Equality</a></li>
+		
+			<li><a href="Arel/Predicates/Inequality.html#method-i-complement">#complement &mdash; Arel::Predicates::Inequality</a></li>
+		
+			<li><a href="Arel/Predicates/Not.html#method-i-complement">#complement &mdash; Arel::Predicates::Not</a></li>
+		
+			<li><a href="Arel/Predicates/Any.html#method-i-complement">#complement &mdash; Arel::Predicates::Any</a></li>
+		
+			<li><a href="Arel/Predicates/LessThan.html#method-i-complement">#complement &mdash; Arel::Predicates::LessThan</a></li>
+		
+			<li><a href="Arel/Predicates/NotIn.html#method-i-complement">#complement &mdash; Arel::Predicates::NotIn</a></li>
+		
+			<li><a href="Arel/Predicates/All.html#method-i-complement">#complement &mdash; Arel::Predicates::All</a></li>
+		
+			<li><a href="Arel/Predicates/Match.html#method-i-complement">#complement &mdash; Arel::Predicates::Match</a></li>
+		
+			<li><a href="Arel/Predicates/NotMatch.html#method-i-complement">#complement &mdash; Arel::Predicates::NotMatch</a></li>
+		
+			<li><a href="Arel/Predicates/In.html#method-i-complement">#complement &mdash; Arel::Predicates::In</a></li>
+		
+			<li><a href="Arel/Predicates/All.html#method-i-compounder">#compounder &mdash; Arel::Predicates::All</a></li>
+		
+			<li><a href="Arel/Predicates/Any.html#method-i-compounder">#compounder &mdash; Arel::Predicates::Any</a></li>
+		
+			<li><a href="Arel/Sql/Engine.html#method-i-connection">#connection &mdash; Arel::Sql::Engine</a></li>
+		
+			<li><a href="Arel/Expressions.html#method-i-count">#count &mdash; Arel::Expressions</a></li>
+		
+			<li><a href="Arel/Memory/Engine.html#method-i-create">#create &mdash; Arel::Memory::Engine</a></li>
+		
+			<li><a href="Arel/Session.html#method-i-create">#create &mdash; Arel::Session</a></li>
+		
+			<li><a href="Arel/Sql/Engine.html#method-i-create">#create &mdash; Arel::Sql::Engine</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-delete">#delete &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Sql/Engine.html#method-i-delete">#delete &mdash; Arel::Sql::Engine</a></li>
+		
+			<li><a href="Arel/Session.html#method-i-delete">#delete &mdash; Arel::Session</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-delete_sql">#delete_sql &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/OracleCompiler.html#method-i-delete_sql">#delete_sql &mdash; Arel::SqlCompiler::OracleCompiler</a></li>
+		
+			<li><a href="Arel/Orderings.html#method-i-desc">#desc &mdash; Arel::Orderings</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-descends_from%3F">#descends_from? &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Descending.html#method-i-direction">#direction &mdash; Arel::Descending</a></li>
+		
+			<li><a href="Arel/Ascending.html#method-i-direction">#direction &mdash; Arel::Ascending</a></li>
+		
+			<li><a href="Arel/Ascending.html#method-i-direction_sql">#direction_sql &mdash; Arel::Ascending</a></li>
+		
+			<li><a href="Arel/Descending.html#method-i-direction_sql">#direction_sql &mdash; Arel::Descending</a></li>
+		
+			<li><a href="Arel/Header.html#method-i-each">#each &mdash; Arel::Header</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-each">#each &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/StringJoin.html#method-i-engine">#engine &mdash; Arel::StringJoin</a></li>
+		
+			<li><a href="Arel/Array.html#method-i-engine">#engine &mdash; Arel::Array</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-engine">#engine &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Join.html#method-i-engine">#engine &mdash; Arel::Join</a></li>
+		
+			<li><a href="Arel.html#method-i-eq">#eq &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-eq_all">#eq_all &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-eq_any">#eq_any &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-eql%3F">#eql? &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Sql/ObjectExtensions.html#method-i-equality_predicate_sql">#equality_predicate_sql &mdash; Arel::Sql::ObjectExtensions</a></li>
+		
+			<li><a href="Arel/Sql/NilClassExtensions.html#method-i-equality_predicate_sql">#equality_predicate_sql &mdash; Arel::Sql::NilClassExtensions</a></li>
+		
+			<li><a href="Arel/Value.html#method-i-equality_predicate_sql">#equality_predicate_sql &mdash; Arel::Value</a></li>
+		
+			<li><a href="Arel/Predicates/In.html#method-i-eval">#eval &mdash; Arel::Predicates::In</a></li>
+		
+			<li><a href="Arel/Predicates/CompoundPredicate.html#method-i-eval">#eval &mdash; Arel::Predicates::CompoundPredicate</a></li>
+		
+			<li><a href="Arel/Predicates/NotIn.html#method-i-eval">#eval &mdash; Arel::Predicates::NotIn</a></li>
+		
+			<li><a href="Arel/Predicates/Binary.html#method-i-eval">#eval &mdash; Arel::Predicates::Binary</a></li>
+		
+			<li><a href="Arel/Predicates/Polyadic.html#method-i-eval">#eval &mdash; Arel::Predicates::Polyadic</a></li>
+		
+			<li><a href="Arel/Array.html#method-i-eval">#eval &mdash; Arel::Array</a></li>
+		
+			<li><a href="Arel/Order.html#method-i-eval">#eval &mdash; Arel::Order</a></li>
+		
+			<li><a href="Arel/Alias.html#method-i-eval">#eval &mdash; Arel::Alias</a></li>
+		
+			<li><a href="Arel/From.html#method-i-eval">#eval &mdash; Arel::From</a></li>
+		
+			<li><a href="Arel/Project.html#method-i-eval">#eval &mdash; Arel::Project</a></li>
+		
+			<li><a href="Arel/Group.html#method-i-eval">#eval &mdash; Arel::Group</a></li>
+		
+			<li><a href="Arel/Skip.html#method-i-eval">#eval &mdash; Arel::Skip</a></li>
+		
+			<li><a href="Arel/Predicates/Not.html#method-i-eval">#eval &mdash; Arel::Predicates::Not</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-eval">#eval &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Take.html#method-i-eval">#eval &mdash; Arel::Take</a></li>
+		
+			<li><a href="Arel/Insert.html#method-i-eval">#eval &mdash; Arel::Insert</a></li>
+		
+			<li><a href="Arel/Predicates/Unary.html#method-i-eval">#eval &mdash; Arel::Predicates::Unary</a></li>
+		
+			<li><a href="Arel/Where.html#method-i-eval">#eval &mdash; Arel::Where</a></li>
+		
+			<li><a href="Arel/Predicates/Inequality.html#method-i-eval">#eval &mdash; Arel::Predicates::Inequality</a></li>
+		
+			<li><a href="Arel/Value.html#method-i-eval">#eval &mdash; Arel::Value</a></li>
+		
+			<li><a href="Arel/Predicates/NotMatch.html#method-i-eval">#eval &mdash; Arel::Predicates::NotMatch</a></li>
+		
+			<li><a href="Arel/Join.html#method-i-eval">#eval &mdash; Arel::Join</a></li>
+		
+			<li><a href="Arel/Ordering.html#method-i-eval">#eval &mdash; Arel::Ordering</a></li>
+		
+			<li><a href="Arel/Value.html#method-i-exclusion_predicate_sql">#exclusion_predicate_sql &mdash; Arel::Value</a></li>
+		
+			<li><a href="Arel/Sql/RangeExtensions.html#method-i-exclusion_predicate_sql">#exclusion_predicate_sql &mdash; Arel::Sql::RangeExtensions</a></li>
+		
+			<li><a href="Arel/Sql/ArrayExtensions.html#method-i-exclusion_predicate_sql">#exclusion_predicate_sql &mdash; Arel::Sql::ArrayExtensions</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-exclusion_predicate_sql">#exclusion_predicate_sql &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Sql/SelectClause.html#method-i-expression">#expression &mdash; Arel::Sql::SelectClause</a></li>
+		
+			<li><a href="Arel/Sql/WhereCondition.html#method-i-expression">#expression &mdash; Arel::Sql::WhereCondition</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-externalizable%3F">#externalizable? &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Join.html#method-i-externalizable%3F">#externalizable? &mdash; Arel::Join</a></li>
+		
+			<li><a href="Arel/Take.html#method-i-externalizable%3F">#externalizable? &mdash; Arel::Take</a></li>
+		
+			<li><a href="Arel/Project.html#method-i-externalizable%3F">#externalizable? &mdash; Arel::Project</a></li>
+		
+			<li><a href="Arel/StringJoin.html#method-i-externalizable%3F">#externalizable? &mdash; Arel::StringJoin</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-externalizable%3F">#externalizable? &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-externalize">#externalize &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel.html#method-i-find_attribute_matching_name">#find_attribute_matching_name &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Header.html#method-i-find_by_attribute">#find_by_attribute &mdash; Arel::Header</a></li>
+		
+			<li><a href="Arel/Header.html#method-i-find_by_name">#find_by_name &mdash; Arel::Header</a></li>
+		
+			<li><a href="Arel/ObjectExtensions.html#method-i-find_correlate_in">#find_correlate_in &mdash; Arel::ObjectExtensions</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-find_correlate_in">#find_correlate_in &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Array.html#method-i-format">#format &mdash; Arel::Array</a></li>
+		
+			<li><a href="Arel.html#method-i-format">#format &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Value.html#method-i-format">#format &mdash; Arel::Value</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-from">#from &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-from_clauses">#from_clauses &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Average.html#method-i-function_sql">#function_sql &mdash; Arel::Average</a></li>
+		
+			<li><a href="Arel/Count.html#method-i-function_sql">#function_sql &mdash; Arel::Count</a></li>
+		
+			<li><a href="Arel/Minimum.html#method-i-function_sql">#function_sql &mdash; Arel::Minimum</a></li>
+		
+			<li><a href="Arel/Maximum.html#method-i-function_sql">#function_sql &mdash; Arel::Maximum</a></li>
+		
+			<li><a href="Arel/Distinct.html#method-i-function_sql">#function_sql &mdash; Arel::Distinct</a></li>
+		
+			<li><a href="Arel/Sum.html#method-i-function_sql">#function_sql &mdash; Arel::Sum</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-group_clauses">#group_clauses &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel.html#method-i-groupings">#groupings &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-gt">#gt &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-gt_all">#gt_all &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-gt_any">#gt_any &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-gteq">#gteq &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-gteq_all">#gteq_all &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-gteq_any">#gteq_any &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Table.html#method-i-has_attribute%3F">#has_attribute? &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-having_clauses">#having_clauses &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Having.html#method-i-havings">#havings &mdash; Arel::Having</a></li>
+		
+			<li><a href="Arel.html#method-i-havings">#havings &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-in">#in &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-in_all">#in_all &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-in_any">#in_any &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Sql/ArrayExtensions.html#method-i-inclusion_predicate_sql">#inclusion_predicate_sql &mdash; Arel::Sql::ArrayExtensions</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-inclusion_predicate_sql">#inclusion_predicate_sql &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Value.html#method-i-inclusion_predicate_sql">#inclusion_predicate_sql &mdash; Arel::Value</a></li>
+		
+			<li><a href="Arel/Sql/RangeExtensions.html#method-i-inclusion_predicate_sql">#inclusion_predicate_sql &mdash; Arel::Sql::RangeExtensions</a></li>
+		
+			<li><a href="Arel/Header.html#method-i-index">#index &mdash; Arel::Header</a></li>
+		
+			<li><a href="Arel/Sql/ObjectExtensions.html#method-i-inequality_predicate_sql">#inequality_predicate_sql &mdash; Arel::Sql::ObjectExtensions</a></li>
+		
+			<li><a href="Arel/Sql/NilClassExtensions.html#method-i-inequality_predicate_sql">#inequality_predicate_sql &mdash; Arel::Sql::NilClassExtensions</a></li>
+		
+			<li><a href="Arel/Value.html#method-i-inequality_predicate_sql">#inequality_predicate_sql &mdash; Arel::Value</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-insert">#insert &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-insert_sql">#insert_sql &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel.html#method-i-inserts">#inserts &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-join">#join &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-join%3F">#join? &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-join%3F">#join? &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel/Join.html#method-i-join%3F">#join? &mdash; Arel::Join</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-join%3F">#join? &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/InnerJoin.html#method-i-join_sql">#join_sql &mdash; Arel::InnerJoin</a></li>
+		
+			<li><a href="Arel/OuterJoin.html#method-i-join_sql">#join_sql &mdash; Arel::OuterJoin</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-joins">#joins &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel.html#method-i-joins">#joins &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Join.html#method-i-joins">#joins &mdash; Arel::Join</a></li>
+		
+			<li><a href="Arel/StringJoin.html#method-i-joins">#joins &mdash; Arel::StringJoin</a></li>
+		
+			<li><a href="Arel/SqlCompiler/OracleCompiler.html#method-i-limited_update_conditions">#limited_update_conditions &mdash; Arel::SqlCompiler::OracleCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-limited_update_conditions">#limited_update_conditions &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/IBM_DBCompiler.html#method-i-limited_update_conditions">#limited_update_conditions &mdash; Arel::SqlCompiler::IBM_DBCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/MySQLCompiler.html#method-i-limited_update_conditions">#limited_update_conditions &mdash; Arel::SqlCompiler::MySQLCompiler</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-lock">#lock &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/SqlCompiler/SQLiteCompiler.html#method-i-locked">#locked &mdash; Arel::SqlCompiler::SQLiteCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-locked">#locked &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel.html#method-i-locked">#locked &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-lt">#lt &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-lt_all">#lt_all &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-lt_any">#lt_any &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-lteq">#lteq &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-lteq_all">#lteq_all &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-lteq_any">#lteq_any &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-matches">#matches &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-matches_all">#matches_all &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-matches_any">#matches_any &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Header.html#method-i-matching">#matching &mdash; Arel::Header</a></li>
+		
+			<li><a href="Arel/Table.html#method-i-matching_attributes">#matching_attributes &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Expressions.html#method-i-maximum">#maximum &mdash; Arel::Expressions</a></li>
+		
+			<li><a href="Arel/Expressions.html#method-i-minimum">#minimum &mdash; Arel::Expressions</a></li>
+		
+			<li><a href="Arel/Externalization.html#method-i-name">#name &mdash; Arel::Externalization</a></li>
+		
+			<li><a href="Arel/Join.html#method-i-name">#name &mdash; Arel::Join</a></li>
+		
+			<li><a href="Arel/Nil.html#method-i-name">#name &mdash; Arel::Nil</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-name">#name &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel/Sql/Formatter.html#method-i-name_for">#name_for &mdash; Arel::Sql::Formatter</a></li>
+		
+			<li><a href="Arel/Sql/Christener.html#method-i-name_for">#name_for &mdash; Arel::Sql::Christener</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-named%3F">#named? &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Header.html#method-i-new">#new &mdash; Arel::Header</a></li>
+		
+			<li><a href="Arel/Predicates/Predicate.html#method-i-not">#not &mdash; Arel::Predicates::Predicate</a></li>
+		
+			<li><a href="Arel.html#method-i-not_eq">#not_eq &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-not_eq_all">#not_eq_all &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-not_eq_any">#not_eq_any &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-not_in">#not_in &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-not_in_all">#not_in_all &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-not_in_any">#not_in_any &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-not_matches">#not_matches &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-not_matches_all">#not_matches_all &mdash; Arel</a></li>
+		
+			<li><a href="Arel.html#method-i-not_matches_any">#not_matches_any &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Join.html#method-i-ons">#ons &mdash; Arel::Join</a></li>
+		
+			<li><a href="Arel/Predicates/Equality.html#method-i-operator">#operator &mdash; Arel::Predicates::Equality</a></li>
+		
+			<li><a href="Arel/Predicates/Match.html#method-i-operator">#operator &mdash; Arel::Predicates::Match</a></li>
+		
+			<li><a href="Arel/Predicates/Or.html#method-i-operator">#operator &mdash; Arel::Predicates::Or</a></li>
+		
+			<li><a href="Arel/Predicates/Inequality.html#method-i-operator">#operator &mdash; Arel::Predicates::Inequality</a></li>
+		
+			<li><a href="Arel/Predicates/GreaterThan.html#method-i-operator">#operator &mdash; Arel::Predicates::GreaterThan</a></li>
+		
+			<li><a href="Arel/Predicates/LessThanOrEqualTo.html#method-i-operator">#operator &mdash; Arel::Predicates::LessThanOrEqualTo</a></li>
+		
+			<li><a href="Arel/Predicates/GreaterThanOrEqualTo.html#method-i-operator">#operator &mdash; Arel::Predicates::GreaterThanOrEqualTo</a></li>
+		
+			<li><a href="Arel/Predicates/And.html#method-i-operator">#operator &mdash; Arel::Predicates::And</a></li>
+		
+			<li><a href="Arel/Predicates/LessThan.html#method-i-operator">#operator &mdash; Arel::Predicates::LessThan</a></li>
+		
+			<li><a href="Arel/Predicates/Predicate.html#method-i-or">#or &mdash; Arel::Predicates::Predicate</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-order_clauses">#order_clauses &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Sql/OrderClause.html#method-i-ordering">#ordering &mdash; Arel::Sql::OrderClause</a></li>
+		
+			<li><a href="Arel.html#method-i-orders">#orders &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Order.html#method-i-orders">#orders &mdash; Arel::Order</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-original_attribute">#original_attribute &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-original_relation">#original_relation &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-outer_join">#outer_join &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel.html#method-i-position_of">#position_of &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Predicates/LessThanOrEqualTo.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::LessThanOrEqualTo</a></li>
+		
+			<li><a href="Arel/Predicates/NotIn.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::NotIn</a></li>
+		
+			<li><a href="Arel/Predicates/All.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::All</a></li>
+		
+			<li><a href="Arel/Predicates/NotMatch.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::NotMatch</a></li>
+		
+			<li><a href="Arel/Predicates/Any.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::Any</a></li>
+		
+			<li><a href="Arel/Predicates/Or.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::Or</a></li>
+		
+			<li><a href="Arel/Predicates/Equality.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::Equality</a></li>
+		
+			<li><a href="Arel/Predicates/Match.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::Match</a></li>
+		
+			<li><a href="Arel/Predicates/LessThan.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::LessThan</a></li>
+		
+			<li><a href="Arel/Predicates/Not.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::Not</a></li>
+		
+			<li><a href="Arel/Predicates/And.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::And</a></li>
+		
+			<li><a href="Arel/Predicates/GreaterThan.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::GreaterThan</a></li>
+		
+			<li><a href="Arel/Predicates/GreaterThanOrEqualTo.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::GreaterThanOrEqualTo</a></li>
+		
+			<li><a href="Arel/Predicates/Inequality.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::Inequality</a></li>
+		
+			<li><a href="Arel/Predicates/In.html#method-i-predicate_sql">#predicate_sql &mdash; Arel::Predicates::In</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-primary_key">#primary_key &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-project">#project &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel.html#method-i-projections">#projections &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Sql/Formatter.html#method-i-quote">#quote &mdash; Arel::Sql::Formatter</a></li>
+		
+			<li><a href="Arel/Sql/Formatter.html#method-i-quote_column_name">#quote_column_name &mdash; Arel::Sql::Formatter</a></li>
+		
+			<li><a href="Arel/Sql/Formatter.html#method-i-quote_table_name">#quote_table_name &mdash; Arel::Sql::Formatter</a></li>
+		
+			<li><a href="Arel/Sql/Attribute.html#method-i-range">#range &mdash; Arel::Sql::Attribute</a></li>
+		
+			<li><a href="Arel/Memory/Engine.html#method-i-read">#read &mdash; Arel::Memory::Engine</a></li>
+		
+			<li><a href="Arel/Sql/Engine.html#method-i-read">#read &mdash; Arel::Sql::Engine</a></li>
+		
+			<li><a href="Arel/Session.html#method-i-read">#read &mdash; Arel::Session</a></li>
+		
+			<li><a href="Arel/SqlLiteral.html#method-i-relation">#relation &mdash; Arel::SqlLiteral</a></li>
+		
+			<li><a href="Arel/Table.html#method-i-reset">#reset &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-root">#root &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/Sql/Attribute.html#method-i-scalar">#scalar &mdash; Arel::Sql::Attribute</a></li>
+		
+			<li><a href="Arel/Sql/WhereCondition.html#method-i-scalar">#scalar &mdash; Arel::Sql::WhereCondition</a></li>
+		
+			<li><a href="Arel/Sql/SelectClause.html#method-i-select">#select &mdash; Arel::Sql::SelectClause</a></li>
+		
+			<li><a href="Arel/Sql/TableReference.html#method-i-select">#select &mdash; Arel::Sql::TableReference</a></li>
+		
+			<li><a href="Arel/Sql/WhereCondition.html#method-i-select">#select &mdash; Arel::Sql::WhereCondition</a></li>
+		
+			<li><a href="Arel/Sql/SelectStatement.html#method-i-select">#select &mdash; Arel::Sql::SelectStatement</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-select_clauses">#select_clauses &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/SqlCompiler/OracleCompiler.html#method-i-select_sql">#select_sql &mdash; Arel::SqlCompiler::OracleCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-select_sql">#select_sql &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/PostgreSQLCompiler.html#method-i-select_sql">#select_sql &mdash; Arel::SqlCompiler::PostgreSQLCompiler</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-session">#session &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-skip">#skip &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel.html#method-i-skipped">#skipped &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-skipped">#skipped &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel/Row.html#method-i-slice">#slice &mdash; Arel::Row</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-sources">#sources &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel.html#method-i-sources">#sources &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Expressions.html#method-i-sum">#sum &mdash; Arel::Expressions</a></li>
+		
+			<li><a href="Arel/SqlCompiler/PostgreSQLCompiler.html#method-i-supports_insert_with_returning%3F">#supports_insert_with_returning? &mdash; Arel::SqlCompiler::PostgreSQLCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-supports_insert_with_returning%3F">#supports_insert_with_returning? &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel/Recursion/BaseCase.html#method-i-table">#table &mdash; Arel::Recursion::BaseCase</a></li>
+		
+			<li><a href="Arel/Sql/TableReference.html#method-i-table">#table &mdash; Arel::Sql::TableReference</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-table">#table &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-table_alias">#table_alias &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel/Table.html#method-i-table_exists%3F">#table_exists? &mdash; Arel::Table</a></li>
+		
+			<li><a href="Arel/Recursion/BaseCase.html#method-i-table_sql">#table_sql &mdash; Arel::Recursion::BaseCase</a></li>
+		
+			<li><a href="Arel/Nil.html#method-i-table_sql">#table_sql &mdash; Arel::Nil</a></li>
+		
+			<li><a href="Arel/Join.html#method-i-table_sql">#table_sql &mdash; Arel::Join</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-table_sql">#table_sql &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel/Externalization.html#method-i-table_sql">#table_sql &mdash; Arel::Externalization</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-take">#take &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-taken">#taken &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel.html#method-i-taken">#taken &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Header.html#method-i-to_ary">#to_ary &mdash; Arel::Header</a></li>
+		
+			<li><a href="Arel/Attribute.html#method-i-to_attribute">#to_attribute &mdash; Arel::Attribute</a></li>
+		
+			<li><a href="Arel/SymbolExtensions.html#method-i-to_attribute">#to_attribute &mdash; Arel::SymbolExtensions</a></li>
+		
+			<li><a href="Arel/Expression.html#method-i-to_attribute">#to_attribute &mdash; Arel::Expression</a></li>
+		
+			<li><a href="Arel/Ordering.html#method-i-to_ordering">#to_ordering &mdash; Arel::Ordering</a></li>
+		
+			<li><a href="Arel/Value.html#method-i-to_ordering">#to_ordering &mdash; Arel::Value</a></li>
+		
+			<li><a href="Arel/Orderings.html#method-i-to_ordering">#to_ordering &mdash; Arel::Orderings</a></li>
+		
+			<li><a href="Arel/Predicates/In.html#method-i-to_sql">#to_sql &mdash; Arel::Predicates::In</a></li>
+		
+			<li><a href="Arel/Sql/ArrayExtensions.html#method-i-to_sql">#to_sql &mdash; Arel::Sql::ArrayExtensions</a></li>
+		
+			<li><a href="Arel/Predicates/Unary.html#method-i-to_sql">#to_sql &mdash; Arel::Predicates::Unary</a></li>
+		
+			<li><a href="Arel/Expression.html#method-i-to_sql">#to_sql &mdash; Arel::Expression</a></li>
+		
+			<li><a href="Arel/Predicates/CompoundPredicate.html#method-i-to_sql">#to_sql &mdash; Arel::Predicates::CompoundPredicate</a></li>
+		
+			<li><a href="Arel/Deletion.html#method-i-to_sql">#to_sql &mdash; Arel::Deletion</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-to_sql">#to_sql &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Insert.html#method-i-to_sql">#to_sql &mdash; Arel::Insert</a></li>
+		
+			<li><a href="Arel/Predicates/Binary.html#method-i-to_sql">#to_sql &mdash; Arel::Predicates::Binary</a></li>
+		
+			<li><a href="Arel/Where.html#method-i-to_sql">#to_sql &mdash; Arel::Where</a></li>
+		
+			<li><a href="Arel/Sql/RangeExtensions.html#method-i-to_sql">#to_sql &mdash; Arel::Sql::RangeExtensions</a></li>
+		
+			<li><a href="Arel/SqlLiteral.html#method-i-to_sql">#to_sql &mdash; Arel::SqlLiteral</a></li>
+		
+			<li><a href="Arel/Join.html#method-i-to_sql">#to_sql &mdash; Arel::Join</a></li>
+		
+			<li><a href="Arel/Sql/ObjectExtensions.html#method-i-to_sql">#to_sql &mdash; Arel::Sql::ObjectExtensions</a></li>
+		
+			<li><a href="Arel/Predicates/Polyadic.html#method-i-to_sql">#to_sql &mdash; Arel::Predicates::Polyadic</a></li>
+		
+			<li><a href="Arel/Update.html#method-i-to_sql">#to_sql &mdash; Arel::Update</a></li>
+		
+			<li><a href="Arel/Ordering.html#method-i-to_sql">#to_sql &mdash; Arel::Ordering</a></li>
+		
+			<li><a href="Arel.html#method-i-to_sql">#to_sql &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Value.html#method-i-to_sql">#to_sql &mdash; Arel::Value</a></li>
+		
+			<li><a href="Arel/Types.html#method-i-type_cast">#type_cast &mdash; Arel::Types</a></li>
+		
+			<li><a href="Arel/Sql/Attributes.html#method-i-type_cast">#type_cast &mdash; Arel::Sql::Attributes</a></li>
+		
+			<li><a href="Arel/Attributes/Integer.html#method-i-type_cast">#type_cast &mdash; Arel::Attributes::Integer</a></li>
+		
+			<li><a href="Arel/Attributes/Float.html#method-i-type_cast">#type_cast &mdash; Arel::Attributes::Float</a></li>
+		
+			<li><a href="Arel/Attributes/String.html#method-i-type_cast">#type_cast &mdash; Arel::Attributes::String</a></li>
+		
+			<li><a href="Arel/Attributes/Boolean.html#method-i-type_cast">#type_cast &mdash; Arel::Attributes::Boolean</a></li>
+		
+			<li><a href="Arel/Attributes/Decimal.html#method-i-type_cast">#type_cast &mdash; Arel::Attributes::Decimal</a></li>
+		
+			<li><a href="Arel/Types.html#method-i-type_cast_to_numeric">#type_cast_to_numeric &mdash; Arel::Types</a></li>
+		
+			<li><a href="Arel/Types.html#method-i-typecast_error">#typecast_error &mdash; Arel::Types</a></li>
+		
+			<li><a href="Arel/Header.html#method-i-union">#union &mdash; Arel::Header</a></li>
+		
+			<li><a href="Arel/Compound.html#method-i-unoperated_rows">#unoperated_rows &mdash; Arel::Compound</a></li>
+		
+			<li><a href="Arel/Session.html#method-i-update">#update &mdash; Arel::Session</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-update">#update &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Sql/Engine.html#method-i-update">#update &mdash; Arel::Sql::Engine</a></li>
+		
+			<li><a href="Arel/SqlCompiler/GenericCompiler.html#method-i-update_sql">#update_sql &mdash; Arel::SqlCompiler::GenericCompiler</a></li>
+		
+			<li><a href="Arel/SqlCompiler/PostgreSQLCompiler.html#method-i-using_distinct_on%3F">#using_distinct_on? &mdash; Arel::SqlCompiler::PostgreSQLCompiler</a></li>
+		
+			<li><a href="Arel/Sql/SelectClause.html#method-i-value">#value &mdash; Arel::Sql::SelectClause</a></li>
+		
+			<li><a href="Arel/Predicates/Binary.html#method-i-value">#value &mdash; Arel::Predicates::Binary</a></li>
+		
+			<li><a href="Arel/Sql/WhereCondition.html#method-i-value">#value &mdash; Arel::Sql::WhereCondition</a></li>
+		
+			<li><a href="Arel/Sql/PassThrough.html#method-i-value">#value &mdash; Arel::Sql::PassThrough</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-where">#where &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Relation.html#method-i-where_clauses">#where_clauses &mdash; Arel::Relation</a></li>
+		
+			<li><a href="Arel/Externalization.html#method-i-wheres">#wheres &mdash; Arel::Externalization</a></li>
+		
+			<li><a href="Arel.html#method-i-wheres">#wheres &mdash; Arel</a></li>
+		
+			<li><a href="Arel/Where.html#method-i-wheres">#wheres &mdash; Arel::Where</a></li>
+		
+			<li><a href="Arel/Join.html#method-i-wheres">#wheres &mdash; Arel::Join</a></li>
+		
+			<li><a href="Arel/Header.html#method-i-%7C">#| &mdash; Arel::Header</a></li>
+		
+	</ul>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,2378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: Arel</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./lib/arel/algebra/attributes/attribute_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/attributes/attribute.rb">lib/arel/algebra/attributes/attribute.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/attributes/boolean_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/attributes/boolean.rb">lib/arel/algebra/attributes/boolean.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/attributes/decimal_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/attributes/decimal.rb">lib/arel/algebra/attributes/decimal.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/attributes/float_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/attributes/float.rb">lib/arel/algebra/attributes/float.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/attributes/integer_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/attributes/integer.rb">lib/arel/algebra/attributes/integer.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/attributes/string_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/attributes/string.rb">lib/arel/algebra/attributes/string.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/attributes/time_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/attributes/time.rb">lib/arel/algebra/attributes/time.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/core_extensions/object_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/core_extensions/object.rb">lib/arel/algebra/core_extensions/object.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/core_extensions/symbol_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/core_extensions/symbol.rb">lib/arel/algebra/core_extensions/symbol.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/expression_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/expression.rb">lib/arel/algebra/expression.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/header_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/header.rb">lib/arel/algebra/header.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/ordering_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/ordering.rb">lib/arel/algebra/ordering.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/predicates_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/predicates.rb">lib/arel/algebra/predicates.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/operations/from_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/operations/from.rb">lib/arel/algebra/relations/operations/from.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/operations/group_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/operations/group.rb">lib/arel/algebra/relations/operations/group.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/operations/having_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/operations/having.rb">lib/arel/algebra/relations/operations/having.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/operations/join_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/operations/join.rb">lib/arel/algebra/relations/operations/join.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/operations/lock_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/operations/lock.rb">lib/arel/algebra/relations/operations/lock.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/operations/order_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/operations/order.rb">lib/arel/algebra/relations/operations/order.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/operations/project_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/operations/project.rb">lib/arel/algebra/relations/operations/project.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/operations/skip_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/operations/skip.rb">lib/arel/algebra/relations/operations/skip.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/operations/take_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/operations/take.rb">lib/arel/algebra/relations/operations/take.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/operations/where_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/operations/where.rb">lib/arel/algebra/relations/operations/where.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/relation_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/relation.rb">lib/arel/algebra/relations/relation.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/row_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/row.rb">lib/arel/algebra/relations/row.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/utilities/compound_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/utilities/compound.rb">lib/arel/algebra/relations/utilities/compound.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/utilities/externalization_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/utilities/externalization.rb">lib/arel/algebra/relations/utilities/externalization.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/utilities/nil_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/utilities/nil.rb">lib/arel/algebra/relations/utilities/nil.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/relations/writes_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/relations/writes.rb">lib/arel/algebra/relations/writes.rb</a></li>
+					
+						<li><a href="./lib/arel/algebra/value_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/algebra/value.rb">lib/arel/algebra/value.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/memory/engine_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/memory/engine.rb">lib/arel/engines/memory/engine.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/memory/relations/array_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/memory/relations/array.rb">lib/arel/engines/memory/relations/array.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/memory/relations/operations_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/memory/relations/operations.rb">lib/arel/engines/memory/relations/operations.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/attributes_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/attributes.rb">lib/arel/engines/sql/attributes.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/christener_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/christener.rb">lib/arel/engines/sql/christener.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/compilers/ibm_db_compiler_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/compilers/ibm_db_compiler.rb">lib/arel/engines/sql/compilers/ibm_db_compiler.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/compilers/mysql_compiler_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/compilers/mysql_compiler.rb">lib/arel/engines/sql/compilers/mysql_compiler.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/compilers/oracle_compiler_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/compilers/oracle_compiler.rb">lib/arel/engines/sql/compilers/oracle_compiler.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/compilers/postgresql_compiler_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/compilers/postgresql_compiler.rb">lib/arel/engines/sql/compilers/postgresql_compiler.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/compilers/sqlite_compiler_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/compilers/sqlite_compiler.rb">lib/arel/engines/sql/compilers/sqlite_compiler.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/core_extensions/array_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/core_extensions/array.rb">lib/arel/engines/sql/core_extensions/array.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/core_extensions/nil_class_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/core_extensions/nil_class.rb">lib/arel/engines/sql/core_extensions/nil_class.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/core_extensions/object_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/core_extensions/object.rb">lib/arel/engines/sql/core_extensions/object.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/core_extensions/range_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/core_extensions/range.rb">lib/arel/engines/sql/core_extensions/range.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/engine_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/engine.rb">lib/arel/engines/sql/engine.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/formatters_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/formatters.rb">lib/arel/engines/sql/formatters.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/relations/compiler_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/relations/compiler.rb">lib/arel/engines/sql/relations/compiler.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/relations/table_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/relations/table.rb">lib/arel/engines/sql/relations/table.rb</a></li>
+					
+						<li><a href="./lib/arel/engines/sql/relations/utilities/nil_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/engines/sql/relations/utilities/nil.rb">lib/arel/engines/sql/relations/utilities/nil.rb</a></li>
+					
+						<li><a href="./lib/arel/recursion/base_case_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/recursion/base_case.rb">lib/arel/recursion/base_case.rb</a></li>
+					
+						<li><a href="./lib/arel/session_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/session.rb">lib/arel/session.rb</a></li>
+					
+						<li><a href="./lib/arel/sql_literal_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/sql_literal.rb">lib/arel/sql_literal.rb</a></li>
+					
+						<li><a href="./lib/arel/version_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/version.rb">lib/arel/version.rb</a></li>
+					
+						<li><a href="./lib/arel_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel.rb">lib/arel.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">MODULE</span> <a href="Arel/Attributes.html">Arel::Attributes</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Arel/Expressions.html">Arel::Expressions</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Arel/Memory.html">Arel::Memory</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Arel/ObjectExtensions.html">Arel::ObjectExtensions</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Arel/Orderings.html">Arel::Orderings</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Arel/Predicates.html">Arel::Predicates</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Arel/Recursion.html">Arel::Recursion</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Arel/Relation.html">Arel::Relation</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Arel/Sql.html">Arel::Sql</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Arel/SqlCompiler.html">Arel::SqlCompiler</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Arel/SymbolExtensions.html">Arel::SymbolExtensions</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Arel/Types.html">Arel::Types</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Action.html">Arel::Action</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Alias.html">Arel::Alias</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Array.html">Arel::Array</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Ascending.html">Arel::Ascending</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Attribute.html">Arel::Attribute</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Average.html">Arel::Average</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Compound.html">Arel::Compound</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Count.html">Arel::Count</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Deletion.html">Arel::Deletion</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Descending.html">Arel::Descending</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Distinct.html">Arel::Distinct</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Expression.html">Arel::Expression</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Externalization.html">Arel::Externalization</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/From.html">Arel::From</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Group.html">Arel::Group</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Having.html">Arel::Having</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Header.html">Arel::Header</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/InnerJoin.html">Arel::InnerJoin</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Insert.html">Arel::Insert</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Join.html">Arel::Join</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Lock.html">Arel::Lock</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Maximum.html">Arel::Maximum</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Minimum.html">Arel::Minimum</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Nil.html">Arel::Nil</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Order.html">Arel::Order</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Ordering.html">Arel::Ordering</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/OuterJoin.html">Arel::OuterJoin</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Project.html">Arel::Project</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Row.html">Arel::Row</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Session.html">Arel::Session</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Skip.html">Arel::Skip</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/SqlLiteral.html">Arel::SqlLiteral</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/StringJoin.html">Arel::StringJoin</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Sum.html">Arel::Sum</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Table.html">Arel::Table</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Take.html">Arel::Take</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/TypecastError.html">Arel::TypecastError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Update.html">Arel::Update</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Value.html">Arel::Value</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Arel/Where.html">Arel::Where</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-%5B%5D">#[]</a></li>
+					
+					<li><a href="#method-i-attributes">#attributes</a></li>
+					
+					<li><a href="#method-i-column">#column</a></li>
+					
+					<li><a href="#method-i-eq">#eq</a></li>
+					
+					<li><a href="#method-i-eq_all">#eq_all</a></li>
+					
+					<li><a href="#method-i-eq_any">#eq_any</a></li>
+					
+					<li><a href="#method-i-find_attribute_matching_name">#find_attribute_matching_name</a></li>
+					
+					<li><a href="#method-i-format">#format</a></li>
+					
+					<li><a href="#method-i-groupings">#groupings</a></li>
+					
+					<li><a href="#method-i-gt">#gt</a></li>
+					
+					<li><a href="#method-i-gt_all">#gt_all</a></li>
+					
+					<li><a href="#method-i-gt_any">#gt_any</a></li>
+					
+					<li><a href="#method-i-gteq">#gteq</a></li>
+					
+					<li><a href="#method-i-gteq_all">#gteq_all</a></li>
+					
+					<li><a href="#method-i-gteq_any">#gteq_any</a></li>
+					
+					<li><a href="#method-i-havings">#havings</a></li>
+					
+					<li><a href="#method-i-in">#in</a></li>
+					
+					<li><a href="#method-i-in_all">#in_all</a></li>
+					
+					<li><a href="#method-i-in_any">#in_any</a></li>
+					
+					<li><a href="#method-i-inserts">#inserts</a></li>
+					
+					<li><a href="#method-i-joins">#joins</a></li>
+					
+					<li><a href="#method-i-locked">#locked</a></li>
+					
+					<li><a href="#method-i-lt">#lt</a></li>
+					
+					<li><a href="#method-i-lt_all">#lt_all</a></li>
+					
+					<li><a href="#method-i-lt_any">#lt_any</a></li>
+					
+					<li><a href="#method-i-lteq">#lteq</a></li>
+					
+					<li><a href="#method-i-lteq_all">#lteq_all</a></li>
+					
+					<li><a href="#method-i-lteq_any">#lteq_any</a></li>
+					
+					<li><a href="#method-i-matches">#matches</a></li>
+					
+					<li><a href="#method-i-matches_all">#matches_all</a></li>
+					
+					<li><a href="#method-i-matches_any">#matches_any</a></li>
+					
+					<li><a href="#method-i-not_eq">#not_eq</a></li>
+					
+					<li><a href="#method-i-not_eq_all">#not_eq_all</a></li>
+					
+					<li><a href="#method-i-not_eq_any">#not_eq_any</a></li>
+					
+					<li><a href="#method-i-not_in">#not_in</a></li>
+					
+					<li><a href="#method-i-not_in_all">#not_in_all</a></li>
+					
+					<li><a href="#method-i-not_in_any">#not_in_any</a></li>
+					
+					<li><a href="#method-i-not_matches">#not_matches</a></li>
+					
+					<li><a href="#method-i-not_matches_all">#not_matches_all</a></li>
+					
+					<li><a href="#method-i-not_matches_any">#not_matches_any</a></li>
+					
+					<li><a href="#method-i-orders">#orders</a></li>
+					
+					<li><a href="#method-i-position_of">#position_of</a></li>
+					
+					<li><a href="#method-i-projections">#projections</a></li>
+					
+					<li><a href="#method-i-skipped">#skipped</a></li>
+					
+					<li><a href="#method-i-sources">#sources</a></li>
+					
+					<li><a href="#method-i-taken">#taken</a></li>
+					
+					<li><a href="#method-i-to_sql">#to_sql</a></li>
+					
+					<li><a href="#method-i-wheres">#wheres</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><span class="include">Expressions</span></li>
+				
+				
+				
+					<li><span class="include">Orderings</span></li>
+				
+				
+				
+					<li><span class="include">Types</span></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./History_txt.html">History.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./Arel.html">Arel</a></li>
+				
+					<li><a href="./Arel/Action.html">Arel::Action</a></li>
+				
+					<li><a href="./Arel/Alias.html">Arel::Alias</a></li>
+				
+					<li><a href="./Arel/Array.html">Arel::Array</a></li>
+				
+					<li><a href="./Arel/Ascending.html">Arel::Ascending</a></li>
+				
+					<li><a href="./Arel/Attribute.html">Arel::Attribute</a></li>
+				
+					<li><a href="./Arel/Attributes.html">Arel::Attributes</a></li>
+				
+					<li><a href="./Arel/Attributes/Boolean.html">Arel::Attributes::Boolean</a></li>
+				
+					<li><a href="./Arel/Attributes/Decimal.html">Arel::Attributes::Decimal</a></li>
+				
+					<li><a href="./Arel/Attributes/Float.html">Arel::Attributes::Float</a></li>
+				
+					<li><a href="./Arel/Attributes/Integer.html">Arel::Attributes::Integer</a></li>
+				
+					<li><a href="./Arel/Attributes/String.html">Arel::Attributes::String</a></li>
+				
+					<li><a href="./Arel/Attributes/Time.html">Arel::Attributes::Time</a></li>
+				
+					<li><a href="./Arel/Average.html">Arel::Average</a></li>
+				
+					<li><a href="./Arel/Compound.html">Arel::Compound</a></li>
+				
+					<li><a href="./Arel/Count.html">Arel::Count</a></li>
+				
+					<li><a href="./Arel/Deletion.html">Arel::Deletion</a></li>
+				
+					<li><a href="./Arel/Descending.html">Arel::Descending</a></li>
+				
+					<li><a href="./Arel/Distinct.html">Arel::Distinct</a></li>
+				
+					<li><a href="./Arel/Expression.html">Arel::Expression</a></li>
+				
+					<li><a href="./Arel/Expressions.html">Arel::Expressions</a></li>
+				
+					<li><a href="./Arel/Externalization.html">Arel::Externalization</a></li>
+				
+					<li><a href="./Arel/From.html">Arel::From</a></li>
+				
+					<li><a href="./Arel/Group.html">Arel::Group</a></li>
+				
+					<li><a href="./Arel/Having.html">Arel::Having</a></li>
+				
+					<li><a href="./Arel/Header.html">Arel::Header</a></li>
+				
+					<li><a href="./Arel/InnerJoin.html">Arel::InnerJoin</a></li>
+				
+					<li><a href="./Arel/Insert.html">Arel::Insert</a></li>
+				
+					<li><a href="./Arel/Join.html">Arel::Join</a></li>
+				
+					<li><a href="./Arel/Lock.html">Arel::Lock</a></li>
+				
+					<li><a href="./Arel/Maximum.html">Arel::Maximum</a></li>
+				
+					<li><a href="./Arel/Memory.html">Arel::Memory</a></li>
+				
+					<li><a href="./Arel/Memory/Engine.html">Arel::Memory::Engine</a></li>
+				
+					<li><a href="./Arel/Minimum.html">Arel::Minimum</a></li>
+				
+					<li><a href="./Arel/Nil.html">Arel::Nil</a></li>
+				
+					<li><a href="./Arel/ObjectExtensions.html">Arel::ObjectExtensions</a></li>
+				
+					<li><a href="./Arel/Order.html">Arel::Order</a></li>
+				
+					<li><a href="./Arel/Ordering.html">Arel::Ordering</a></li>
+				
+					<li><a href="./Arel/Orderings.html">Arel::Orderings</a></li>
+				
+					<li><a href="./Arel/OuterJoin.html">Arel::OuterJoin</a></li>
+				
+					<li><a href="./Arel/Predicates.html">Arel::Predicates</a></li>
+				
+					<li><a href="./Arel/Predicates/All.html">Arel::Predicates::All</a></li>
+				
+					<li><a href="./Arel/Predicates/And.html">Arel::Predicates::And</a></li>
+				
+					<li><a href="./Arel/Predicates/Any.html">Arel::Predicates::Any</a></li>
+				
+					<li><a href="./Arel/Predicates/Binary.html">Arel::Predicates::Binary</a></li>
+				
+					<li><a href="./Arel/Predicates/CompoundPredicate.html">Arel::Predicates::CompoundPredicate</a></li>
+				
+					<li><a href="./Arel/Predicates/Equality.html">Arel::Predicates::Equality</a></li>
+				
+					<li><a href="./Arel/Predicates/GreaterThan.html">Arel::Predicates::GreaterThan</a></li>
+				
+					<li><a href="./Arel/Predicates/GreaterThanOrEqualTo.html">Arel::Predicates::GreaterThanOrEqualTo</a></li>
+				
+					<li><a href="./Arel/Predicates/In.html">Arel::Predicates::In</a></li>
+				
+					<li><a href="./Arel/Predicates/Inequality.html">Arel::Predicates::Inequality</a></li>
+				
+					<li><a href="./Arel/Predicates/LessThan.html">Arel::Predicates::LessThan</a></li>
+				
+					<li><a href="./Arel/Predicates/LessThanOrEqualTo.html">Arel::Predicates::LessThanOrEqualTo</a></li>
+				
+					<li><a href="./Arel/Predicates/Match.html">Arel::Predicates::Match</a></li>
+				
+					<li><a href="./Arel/Predicates/Not.html">Arel::Predicates::Not</a></li>
+				
+					<li><a href="./Arel/Predicates/NotIn.html">Arel::Predicates::NotIn</a></li>
+				
+					<li><a href="./Arel/Predicates/NotMatch.html">Arel::Predicates::NotMatch</a></li>
+				
+					<li><a href="./Arel/Predicates/Or.html">Arel::Predicates::Or</a></li>
+				
+					<li><a href="./Arel/Predicates/Polyadic.html">Arel::Predicates::Polyadic</a></li>
+				
+					<li><a href="./Arel/Predicates/Predicate.html">Arel::Predicates::Predicate</a></li>
+				
+					<li><a href="./Arel/Predicates/Unary.html">Arel::Predicates::Unary</a></li>
+				
+					<li><a href="./Arel/Project.html">Arel::Project</a></li>
+				
+					<li><a href="./Arel/Recursion.html">Arel::Recursion</a></li>
+				
+					<li><a href="./Arel/Recursion/BaseCase.html">Arel::Recursion::BaseCase</a></li>
+				
+					<li><a href="./Arel/Relation.html">Arel::Relation</a></li>
+				
+					<li><a href="./Arel/Row.html">Arel::Row</a></li>
+				
+					<li><a href="./Arel/Session.html">Arel::Session</a></li>
+				
+					<li><a href="./Arel/Skip.html">Arel::Skip</a></li>
+				
+					<li><a href="./Arel/Sql.html">Arel::Sql</a></li>
+				
+					<li><a href="./Arel/Sql/ArrayExtensions.html">Arel::Sql::ArrayExtensions</a></li>
+				
+					<li><a href="./Arel/Sql/Attribute.html">Arel::Sql::Attribute</a></li>
+				
+					<li><a href="./Arel/Sql/Attributes.html">Arel::Sql::Attributes</a></li>
+				
+					<li><a href="./Arel/Sql/Attributes/Undefined.html">Arel::Sql::Attributes::Undefined</a></li>
+				
+					<li><a href="./Arel/Sql/Christener.html">Arel::Sql::Christener</a></li>
+				
+					<li><a href="./Arel/Sql/Engine.html">Arel::Sql::Engine</a></li>
+				
+					<li><a href="./Arel/Sql/Formatter.html">Arel::Sql::Formatter</a></li>
+				
+					<li><a href="./Arel/Sql/GroupClause.html">Arel::Sql::GroupClause</a></li>
+				
+					<li><a href="./Arel/Sql/HavingClause.html">Arel::Sql::HavingClause</a></li>
+				
+					<li><a href="./Arel/Sql/NilClassExtensions.html">Arel::Sql::NilClassExtensions</a></li>
+				
+					<li><a href="./Arel/Sql/ObjectExtensions.html">Arel::Sql::ObjectExtensions</a></li>
+				
+					<li><a href="./Arel/Sql/OrderClause.html">Arel::Sql::OrderClause</a></li>
+				
+					<li><a href="./Arel/Sql/PassThrough.html">Arel::Sql::PassThrough</a></li>
+				
+					<li><a href="./Arel/Sql/RangeExtensions.html">Arel::Sql::RangeExtensions</a></li>
+				
+					<li><a href="./Arel/Sql/SelectClause.html">Arel::Sql::SelectClause</a></li>
+				
+					<li><a href="./Arel/Sql/SelectStatement.html">Arel::Sql::SelectStatement</a></li>
+				
+					<li><a href="./Arel/Sql/TableReference.html">Arel::Sql::TableReference</a></li>
+				
+					<li><a href="./Arel/Sql/Value.html">Arel::Sql::Value</a></li>
+				
+					<li><a href="./Arel/Sql/WhereClause.html">Arel::Sql::WhereClause</a></li>
+				
+					<li><a href="./Arel/Sql/WhereCondition.html">Arel::Sql::WhereCondition</a></li>
+				
+					<li><a href="./Arel/SqlCompiler.html">Arel::SqlCompiler</a></li>
+				
+					<li><a href="./Arel/SqlCompiler/GenericCompiler.html">Arel::SqlCompiler::GenericCompiler</a></li>
+				
+					<li><a href="./Arel/SqlCompiler/IBM_DBCompiler.html">Arel::SqlCompiler::IBM_DBCompiler</a></li>
+				
+					<li><a href="./Arel/SqlCompiler/MySQLCompiler.html">Arel::SqlCompiler::MySQLCompiler</a></li>
+				
+					<li><a href="./Arel/SqlCompiler/OracleCompiler.html">Arel::SqlCompiler::OracleCompiler</a></li>
+				
+					<li><a href="./Arel/SqlCompiler/PostgreSQLCompiler.html">Arel::SqlCompiler::PostgreSQLCompiler</a></li>
+				
+					<li><a href="./Arel/SqlCompiler/SQLiteCompiler.html">Arel::SqlCompiler::SQLiteCompiler</a></li>
+				
+					<li><a href="./Arel/SqlLiteral.html">Arel::SqlLiteral</a></li>
+				
+					<li><a href="./Arel/StringJoin.html">Arel::StringJoin</a></li>
+				
+					<li><a href="./Arel/Sum.html">Arel::Sum</a></li>
+				
+					<li><a href="./Arel/SymbolExtensions.html">Arel::SymbolExtensions</a></li>
+				
+					<li><a href="./Arel/Table.html">Arel::Table</a></li>
+				
+					<li><a href="./Arel/Take.html">Arel::Take</a></li>
+				
+					<li><a href="./Arel/TypecastError.html">Arel::TypecastError</a></li>
+				
+					<li><a href="./Arel/Types.html">Arel::Types</a></li>
+				
+					<li><a href="./Arel/Update.html">Arel::Update</a></li>
+				
+					<li><a href="./Arel/Value.html">Arel::Value</a></li>
+				
+					<li><a href="./Arel/Where.html">Arel::Where</a></li>
+				
+					<li><a href="./Hash.html">Hash</a></li>
+				
+					<li><a href="./Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">Arel</h1>
+
+		<div id="description">
+			<p>
+Author: Praveen Devarao <praveendrl@in.ibm.com>
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="VERSION">VERSION</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%5B%5D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">[]</span><span
+						class="method-args">(index)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 176</span>
+176:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">index</span>)
+177:       <span class="ruby-identifier">attributes</span>[<span class="ruby-identifier">index</span>]
+178:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="attributes-method" class="method-detail ">
+				<a name="method-i-attributes"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">attributes</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="attributes-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 192</span>
+192:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attributes</span>;             <span class="ruby-constant">Header</span>.<span class="ruby-identifier">new</span>  <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="column-method" class="method-detail ">
+				<a name="method-i-column"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">column</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="column-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 292</span>
+292:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">column</span>
+293:       <span class="ruby-identifier">original_relation</span>.<span class="ruby-identifier">column_for</span>(<span class="ruby-keyword kw">self</span>)
+294:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="eq-method" class="method-detail ">
+				<a name="method-i-eq"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">eq</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="eq-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 109</span>
+109:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eq</span>(<span class="ruby-identifier">other</span>)
+110:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Equality</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">other</span>)
+111:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="eq-all-method" class="method-detail ">
+				<a name="method-i-eq_all"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">eq_all</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="eq-all-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 117</span>
+117:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eq_all</span>(*<span class="ruby-identifier">others</span>)
+118:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">All</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Equality</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+119:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="eq-any-method" class="method-detail ">
+				<a name="method-i-eq_any"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">eq_any</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="eq-any-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 113</span>
+113:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eq_any</span>(*<span class="ruby-identifier">others</span>)
+114:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Any</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Equality</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+115:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="find-attribute-matching-name-method" class="method-detail ">
+				<a name="method-i-find_attribute_matching_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">find_attribute_matching_name</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="find-attribute-matching-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 180</span>
+180:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_attribute_matching_name</span>(<span class="ruby-identifier">name</span>)
+181:       <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">named?</span>(<span class="ruby-identifier">name</span>) } <span class="ruby-operator">||</span> <span class="ruby-constant">Attribute</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">name</span>)
+182:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="format-method" class="method-detail ">
+				<a name="method-i-format"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">format</span><span
+						class="method-args">(object)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="format-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 296</span>
+296:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">format</span>(<span class="ruby-identifier">object</span>)
+297:       <span class="ruby-identifier">object</span>.<span class="ruby-identifier">to_sql</span>(<span class="ruby-constant">Sql</span><span class="ruby-operator">::</span><span class="ruby-constant">Attribute</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>))
+298:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="groupings-method" class="method-detail ">
+				<a name="method-i-groupings"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">groupings</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="groupings-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 197</span>
+197:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">groupings</span>;              []          <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="gt-method" class="method-detail ">
+				<a name="method-i-gt"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">gt</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="gt-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 157</span>
+157:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gt</span>(<span class="ruby-identifier">other</span>)
+158:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">GreaterThan</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">other</span>)
+159:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="gt-all-method" class="method-detail ">
+				<a name="method-i-gt_all"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">gt_all</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="gt-all-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 165</span>
+165:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gt_all</span>(*<span class="ruby-identifier">others</span>)
+166:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">All</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">GreaterThan</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+167:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="gt-any-method" class="method-detail ">
+				<a name="method-i-gt_any"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">gt_any</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="gt-any-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 161</span>
+161:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gt_any</span>(*<span class="ruby-identifier">others</span>)
+162:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Any</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">GreaterThan</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+163:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="gteq-method" class="method-detail ">
+				<a name="method-i-gteq"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">gteq</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="gteq-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 169</span>
+169:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gteq</span>(<span class="ruby-identifier">other</span>)
+170:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">GreaterThanOrEqualTo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">other</span>)
+171:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="gteq-all-method" class="method-detail ">
+				<a name="method-i-gteq_all"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">gteq_all</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="gteq-all-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 177</span>
+177:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gteq_all</span>(*<span class="ruby-identifier">others</span>)
+178:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">All</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">GreaterThanOrEqualTo</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+179:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="gteq-any-method" class="method-detail ">
+				<a name="method-i-gteq_any"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">gteq_any</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="gteq-any-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 173</span>
+173:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gteq_any</span>(*<span class="ruby-identifier">others</span>)
+174:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Any</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">GreaterThanOrEqualTo</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+175:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="havings-method" class="method-detail ">
+				<a name="method-i-havings"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">havings</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="havings-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 198</span>
+198:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">havings</span>;                []          <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="in-method" class="method-detail ">
+				<a name="method-i-in"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">in</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="in-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 205</span>
+205:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">in</span>(<span class="ruby-identifier">other</span>)
+206:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">In</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">other</span>)
+207:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="in-all-method" class="method-detail ">
+				<a name="method-i-in_all"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">in_all</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="in-all-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 213</span>
+213:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">in_all</span>(*<span class="ruby-identifier">others</span>)
+214:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">All</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">In</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+215:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="in-any-method" class="method-detail ">
+				<a name="method-i-in_any"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">in_any</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="in-any-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 209</span>
+209:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">in_any</span>(*<span class="ruby-identifier">others</span>)
+210:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Any</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">In</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+211:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="inserts-method" class="method-detail ">
+				<a name="method-i-inserts"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">inserts</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="inserts-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 196</span>
+196:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inserts</span>;                []          <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="joins-method" class="method-detail ">
+				<a name="method-i-joins"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">joins</span><span
+						class="method-args">(formatter = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="joins-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 199</span>
+199:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">joins</span>(<span class="ruby-identifier">formatter</span> = <span class="ruby-keyword kw">nil</span>); <span class="ruby-keyword kw">nil</span>         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="locked-method" class="method-detail ">
+				<a name="method-i-locked"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">locked</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="locked-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 203</span>
+203:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">locked</span>;                 []          <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="lt-method" class="method-detail ">
+				<a name="method-i-lt"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">lt</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="lt-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 133</span>
+133:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lt</span>(<span class="ruby-identifier">other</span>)
+134:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">LessThan</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">other</span>)
+135:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="lt-all-method" class="method-detail ">
+				<a name="method-i-lt_all"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">lt_all</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="lt-all-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 141</span>
+141:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lt_all</span>(*<span class="ruby-identifier">others</span>)
+142:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">All</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">LessThan</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+143:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="lt-any-method" class="method-detail ">
+				<a name="method-i-lt_any"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">lt_any</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="lt-any-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 137</span>
+137:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lt_any</span>(*<span class="ruby-identifier">others</span>)
+138:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Any</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">LessThan</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+139:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="lteq-method" class="method-detail ">
+				<a name="method-i-lteq"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">lteq</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="lteq-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 145</span>
+145:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lteq</span>(<span class="ruby-identifier">other</span>)
+146:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">LessThanOrEqualTo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">other</span>)
+147:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="lteq-all-method" class="method-detail ">
+				<a name="method-i-lteq_all"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">lteq_all</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="lteq-all-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 153</span>
+153:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lteq_all</span>(*<span class="ruby-identifier">others</span>)
+154:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">All</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">LessThanOrEqualTo</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+155:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="lteq-any-method" class="method-detail ">
+				<a name="method-i-lteq_any"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">lteq_any</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="lteq-any-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 149</span>
+149:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lteq_any</span>(*<span class="ruby-identifier">others</span>)
+150:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Any</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">LessThanOrEqualTo</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+151:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="matches-method" class="method-detail ">
+				<a name="method-i-matches"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">matches</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="matches-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 181</span>
+181:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">matches</span>(<span class="ruby-identifier">other</span>)
+182:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Match</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">other</span>)
+183:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="matches-all-method" class="method-detail ">
+				<a name="method-i-matches_all"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">matches_all</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="matches-all-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 189</span>
+189:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">matches_all</span>(*<span class="ruby-identifier">others</span>)
+190:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">All</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Match</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+191:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="matches-any-method" class="method-detail ">
+				<a name="method-i-matches_any"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">matches_any</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="matches-any-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 185</span>
+185:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">matches_any</span>(*<span class="ruby-identifier">others</span>)
+186:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Any</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Match</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+187:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="not-eq-method" class="method-detail ">
+				<a name="method-i-not_eq"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">not_eq</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="not-eq-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 121</span>
+121:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_eq</span>(<span class="ruby-identifier">other</span>)
+122:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Inequality</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">other</span>)
+123:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="not-eq-all-method" class="method-detail ">
+				<a name="method-i-not_eq_all"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">not_eq_all</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="not-eq-all-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 129</span>
+129:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_eq_all</span>(*<span class="ruby-identifier">others</span>)
+130:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">All</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Inequality</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+131:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="not-eq-any-method" class="method-detail ">
+				<a name="method-i-not_eq_any"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">not_eq_any</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="not-eq-any-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 125</span>
+125:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_eq_any</span>(*<span class="ruby-identifier">others</span>)
+126:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Any</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Inequality</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+127:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="not-in-method" class="method-detail ">
+				<a name="method-i-not_in"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">not_in</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="not-in-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 217</span>
+217:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_in</span>(<span class="ruby-identifier">other</span>)
+218:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">NotIn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">other</span>)
+219:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="not-in-all-method" class="method-detail ">
+				<a name="method-i-not_in_all"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">not_in_all</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="not-in-all-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 225</span>
+225:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_in_all</span>(*<span class="ruby-identifier">others</span>)
+226:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">All</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">NotIn</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+227:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="not-in-any-method" class="method-detail ">
+				<a name="method-i-not_in_any"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">not_in_any</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="not-in-any-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 221</span>
+221:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_in_any</span>(*<span class="ruby-identifier">others</span>)
+222:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Any</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">NotIn</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+223:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="not-matches-method" class="method-detail ">
+				<a name="method-i-not_matches"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">not_matches</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="not-matches-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 193</span>
+193:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_matches</span>(<span class="ruby-identifier">other</span>)
+194:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">NotMatch</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">other</span>)
+195:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="not-matches-all-method" class="method-detail ">
+				<a name="method-i-not_matches_all"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">not_matches_all</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="not-matches-all-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 201</span>
+201:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_matches_all</span>(*<span class="ruby-identifier">others</span>)
+202:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">All</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">NotMatch</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+203:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="not-matches-any-method" class="method-detail ">
+				<a name="method-i-not_matches_any"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">not_matches_any</span><span
+						class="method-args">(*others)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="not-matches-any-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 197</span>
+197:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_matches_any</span>(*<span class="ruby-identifier">others</span>)
+198:       <span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">Any</span>.<span class="ruby-identifier">build</span>(<span class="ruby-constant">Predicates</span><span class="ruby-operator">::</span><span class="ruby-constant">NotMatch</span>, <span class="ruby-keyword kw">self</span>, *<span class="ruby-identifier">others</span>)
+199:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="orders-method" class="method-detail ">
+				<a name="method-i-orders"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">orders</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="orders-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 195</span>
+195:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">orders</span>;                 []          <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="position-of-method" class="method-detail ">
+				<a name="method-i-position_of"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">position_of</span><span
+						class="method-args">(attribute)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="position-of-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 184</span>
+184:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">position_of</span>(<span class="ruby-identifier">attribute</span>)
+185:       <span class="ruby-ivar">@position_of</span> <span class="ruby-operator">||=</span> {}
+186: 
+187:       <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@position_of</span>[<span class="ruby-identifier">attribute</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@position_of</span>.<span class="ruby-identifier">key?</span> <span class="ruby-identifier">attribute</span>
+188: 
+189:       <span class="ruby-ivar">@position_of</span>[<span class="ruby-identifier">attribute</span>] = <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">attributes</span>[<span class="ruby-identifier">attribute</span>])
+190:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="projections-method" class="method-detail ">
+				<a name="method-i-projections"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">projections</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="projections-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 193</span>
+193:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">projections</span>;            []          <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="skipped-method" class="method-detail ">
+				<a name="method-i-skipped"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">skipped</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="skipped-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 201</span>
+201:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">skipped</span>;                <span class="ruby-keyword kw">nil</span>         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="sources-method" class="method-detail ">
+				<a name="method-i-sources"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sources</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="sources-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 202</span>
+202:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sources</span>;                []          <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="taken-method" class="method-detail ">
+				<a name="method-i-taken"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">taken</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="taken-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 200</span>
+200:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">taken</span>;                  <span class="ruby-keyword kw">nil</span>         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="to-sql-method" class="method-detail ">
+				<a name="method-i-to_sql"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_sql</span><span
+						class="method-args">(formatter = Sql::WhereCondition.new(relation))</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="to-sql-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/attributes/attribute.rb, line 300</span>
+300:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_sql</span>(<span class="ruby-identifier">formatter</span> = <span class="ruby-constant">Sql</span><span class="ruby-operator">::</span><span class="ruby-constant">WhereCondition</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">relation</span>))
+301:       <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">attribute</span> <span class="ruby-keyword kw">self</span>
+302:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="wheres-method" class="method-detail ">
+				<a name="method-i-wheres"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">wheres</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="wheres-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/algebra/relations/relation.rb, line 194</span>
+194:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wheres</span>;                 []          <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

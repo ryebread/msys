@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: README.rdoc [rack-test-0.5.4 Documentation]</title>
+
+	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./MIT-LICENSE_txt.html">MIT-LICENSE.txt</a></li>
+				
+					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./Rack.html">Rack</a></li>
+				
+					<li><a href="./Rack/Test.html">Rack::Test</a></li>
+				
+					<li><a href="./Rack/Test/Error.html">Rack::Test::Error</a></li>
+				
+					<li><a href="./Rack/Test/Methods.html">Rack::Test::Methods</a></li>
+				
+					<li><a href="./Rack/Test/Session.html">Rack::Test::Session</a></li>
+				
+					<li><a href="./Rack/Test/UploadedFile.html">Rack::Test::UploadedFile</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1><a href="Rack/Test.html">Rack::Test</a></h1>
+<ul>
+<li><p>
+Code: <a
+href="http://github.com/brynary/rack-test">github.com/brynary/rack-test</a>
+</p>
+</li>
+<li><p>
+Build: <a
+href="http://runcoderun.com/brynary/rack-test">runcoderun.com/brynary/rack-test</a>
+</p>
+</li>
+</ul>
+<h2>Description</h2>
+<p>
+<a href="Rack/Test.html">Rack::Test</a> is a small, simple testing API for
+<a href="Rack.html">Rack</a> apps. It can be used on its own or as a
+reusable starting point for Web frameworks and testing libraries to build
+on. Most of its initial functionality is an extraction of Merb 1.0&#8217;s
+request helpers feature.
+</p>
+<h2>Features</h2>
+<ul>
+<li><p>
+Maintains a cookie jar across requests
+</p>
+</li>
+<li><p>
+Easily follow redirects when desired
+</p>
+</li>
+<li><p>
+Set request headers to be used by all subsequent requests
+</p>
+</li>
+<li><p>
+Small footprint. Approximately 200 LOC
+</p>
+</li>
+</ul>
+<h2>Example</h2>
+<pre>
+  require &quot;rack/test&quot;
+
+  class HomepageTest &lt; Test::Unit::TestCase
+    include Rack::Test::Methods
+
+    def app
+      MyApp.new
+    end
+
+    def test_redirect_logged_in_users_to_dashboard
+      authorize &quot;bryan&quot;, &quot;secret&quot;
+      get &quot;/&quot;
+      follow_redirect!
+
+      assert_equal &quot;http://example.org/redirected&quot;, last_request.url
+      assert last_response.ok?
+    end
+
+  end
+</pre>
+<h2>Install</h2>
+<p>
+To install the latest release as a gem:
+</p>
+<pre>
+  sudo gem install rack-test
+</pre>
+<h2>Authors</h2>
+<ul>
+<li><p>
+Maintained by <a href="mailto:bryan@brynary.com">Bryan Helmkamp</a>
+</p>
+</li>
+<li><p>
+Contributions from Simon Rozet and Pat Nakajima
+</p>
+</li>
+<li><p>
+Much of the original code was extracted from Merb 1.0&#8217;s request
+helper
+</p>
+</li>
+</ul>
+<h2>License</h2>
+<p>
+Copyright &#169; 2008-2009 Bryan Helmkamp, Engine Yard Inc. See <a
+href="MIT-LICENSE_txt.html">MIT-LICENSE.txt</a> in this directory.
+</p>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

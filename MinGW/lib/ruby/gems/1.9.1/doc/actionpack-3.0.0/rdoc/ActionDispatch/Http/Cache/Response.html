@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: ActionDispatch::Http::Cache::Response</title>
+
+	<link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../../lib/action_dispatch/http/cache_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_dispatch/http/cache.rb">lib/action_dispatch/http/cache.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-etag">#etag</a></li>
+					
+					<li><a href="#method-i-etag%3D">#etag=</a></li>
+					
+					<li><a href="#method-i-etag%3F">#etag?</a></li>
+					
+					<li><a href="#method-i-handle_conditional_get%21">#handle_conditional_get!</a></li>
+					
+					<li><a href="#method-i-last_modified">#last_modified</a></li>
+					
+					<li><a href="#method-i-last_modified%3D">#last_modified=</a></li>
+					
+					<li><a href="#method-i-last_modified%3F">#last_modified?</a></li>
+					
+					<li><a href="#method-i-nonempty_ok_response%3F">#nonempty_ok_response?</a></li>
+					
+					<li><a href="#method-i-set_conditional_cache_control%21">#set_conditional_cache_control!</a></li>
+					
+					<li><a href="#method-i-string_body%3F">#string_body?</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../../ActionController/Base.html">ActionController::Base</a></li>
+				
+					<li><a href="../../../ActionController/Caching.html">ActionController::Caching</a></li>
+				
+					<li><a href="../../../ActionController/Caching/Actions.html">ActionController::Caching::Actions</a></li>
+				
+					<li><a href="../../../ActionController/Caching/Actions/ActionCachePath.html">ActionController::Caching::Actions::ActionCachePath</a></li>
+				
+					<li><a href="../../../ActionController/Caching/Actions/ClassMethods.html">ActionController::Caching::Actions::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/Caching/ConfigMethods.html">ActionController::Caching::ConfigMethods</a></li>
+				
+					<li><a href="../../../ActionController/Caching/Pages.html">ActionController::Caching::Pages</a></li>
+				
+					<li><a href="../../../ActionController/Caching/Pages/ClassMethods.html">ActionController::Caching::Pages::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/Caching/Sweeping.html">ActionController::Caching::Sweeping</a></li>
+				
+					<li><a href="../../../ActionController/Compatibility.html">ActionController::Compatibility</a></li>
+				
+					<li><a href="../../../ActionController/Compatibility/ClassMethods.html">ActionController::Compatibility::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/ConditionalGet.html">ActionController::ConditionalGet</a></li>
+				
+					<li><a href="../../../ActionController/Cookies.html">ActionController::Cookies</a></li>
+				
+					<li><a href="../../../ActionController/Dispatcher.html">ActionController::Dispatcher</a></li>
+				
+					<li><a href="../../../ActionController/Flash.html">ActionController::Flash</a></li>
+				
+					<li><a href="../../../ActionController/Head.html">ActionController::Head</a></li>
+				
+					<li><a href="../../../ActionController/Helpers.html">ActionController::Helpers</a></li>
+				
+					<li><a href="../../../ActionController/Helpers/ClassMethods.html">ActionController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/HideActions.html">ActionController::HideActions</a></li>
+				
+					<li><a href="../../../ActionController/HideActions/ClassMethods.html">ActionController::HideActions::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication.html">ActionController::HttpAuthentication</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication/Basic.html">ActionController::HttpAuthentication::Basic</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication/Basic/ControllerMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication/Digest.html">ActionController::HttpAuthentication::Digest</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication/Digest/ControllerMethods.html">ActionController::HttpAuthentication::Digest::ControllerMethods</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication/Token.html">ActionController::HttpAuthentication::Token</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication/Token/ControllerMethods.html">ActionController::HttpAuthentication::Token::ControllerMethods</a></li>
+				
+					<li><a href="../../../ActionController/ImplicitRender.html">ActionController::ImplicitRender</a></li>
+				
+					<li><a href="../../../ActionController/Instrumentation.html">ActionController::Instrumentation</a></li>
+				
+					<li><a href="../../../ActionController/Instrumentation/ClassMethods.html">ActionController::Instrumentation::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/LogSubscriber.html">ActionController::LogSubscriber</a></li>
+				
+					<li><a href="../../../ActionController/Metal.html">ActionController::Metal</a></li>
+				
+					<li><a href="../../../ActionController/Middleware.html">ActionController::Middleware</a></li>
+				
+					<li><a href="../../../ActionController/Middleware/ActionMiddleware.html">ActionController::Middleware::ActionMiddleware</a></li>
+				
+					<li><a href="../../../ActionController/MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/RackDelegation.html">ActionController::RackDelegation</a></li>
+				
+					<li><a href="../../../ActionController/Railtie.html">ActionController::Railtie</a></li>
+				
+					<li><a href="../../../ActionController/Redirecting.html">ActionController::Redirecting</a></li>
+				
+					<li><a href="../../../ActionController/Renderers.html">ActionController::Renderers</a></li>
+				
+					<li><a href="../../../ActionController/Renderers/All.html">ActionController::Renderers::All</a></li>
+				
+					<li><a href="../../../ActionController/Renderers/ClassMethods.html">ActionController::Renderers::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/Rendering.html">ActionController::Rendering</a></li>
+				
+					<li><a href="../../../ActionController/RequestForgeryProtection.html">ActionController::RequestForgeryProtection</a></li>
+				
+					<li><a href="../../../ActionController/RequestForgeryProtection/ClassMethods.html">ActionController::RequestForgeryProtection::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/Rescue.html">ActionController::Rescue</a></li>
+				
+					<li><a href="../../../ActionController/Responder.html">ActionController::Responder</a></li>
+				
+					<li><a href="../../../ActionController/SessionManagement/ClassMethods.html">ActionController::SessionManagement::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/Streaming.html">ActionController::Streaming</a></li>
+				
+					<li><a href="../../../ActionController/TemplateAssertions.html">ActionController::TemplateAssertions</a></li>
+				
+					<li><a href="../../../ActionController/TestCase.html">ActionController::TestCase</a></li>
+				
+					<li><a href="../../../ActionController/TestCase/Behavior.html">ActionController::TestCase::Behavior</a></li>
+				
+					<li><a href="../../../ActionController/TestCase/Behavior/ClassMethods.html">ActionController::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/TestCase/RaiseActionExceptions.html">ActionController::TestCase::RaiseActionExceptions</a></li>
+				
+					<li><a href="../../../ActionController/TestResponse.html">ActionController::TestResponse</a></li>
+				
+					<li><a href="../../../ActionController/Testing.html">ActionController::Testing</a></li>
+				
+					<li><a href="../../../ActionController/Testing/ClassMethods.html">ActionController::Testing::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/UrlFor.html">ActionController::UrlFor</a></li>
+				
+					<li><a href="../../../ActionController/UrlFor/ClassMethods.html">ActionController::UrlFor::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/UrlRewriter.html">ActionController::UrlRewriter</a></li>
+				
+					<li><a href="../../../ActionController/UrlWriter.html">ActionController::UrlWriter</a></li>
+				
+					<li><a href="../../../ActionDispatch/Assertions.html">ActionDispatch::Assertions</a></li>
+				
+					<li><a href="../../../ActionDispatch/Assertions/DomAssertions.html">ActionDispatch::Assertions::DomAssertions</a></li>
+				
+					<li><a href="../../../ActionDispatch/Assertions/ResponseAssertions.html">ActionDispatch::Assertions::ResponseAssertions</a></li>
+				
+					<li><a href="../../../ActionDispatch/Assertions/RoutingAssertions.html">ActionDispatch::Assertions::RoutingAssertions</a></li>
+				
+					<li><a href="../../../ActionDispatch/Assertions/SelectorAssertions.html">ActionDispatch::Assertions::SelectorAssertions</a></li>
+				
+					<li><a href="../../../ActionDispatch/Assertions/TagAssertions.html">ActionDispatch::Assertions::TagAssertions</a></li>
+				
+					<li><a href="../../../ActionDispatch/BestStandardsSupport.html">ActionDispatch::BestStandardsSupport</a></li>
+				
+					<li><a href="../../../ActionDispatch/Callbacks.html">ActionDispatch::Callbacks</a></li>
+				
+					<li><a href="../../../ActionDispatch/Cookies.html">ActionDispatch::Cookies</a></li>
+				
+					<li><a href="../../../ActionDispatch/Cookies/CookieOverflow.html">ActionDispatch::Cookies::CookieOverflow</a></li>
+				
+					<li><a href="../../../ActionDispatch/Flash.html">ActionDispatch::Flash</a></li>
+				
+					<li><a href="../../../ActionDispatch/Flash/FlashHash.html">ActionDispatch::Flash::FlashHash</a></li>
+				
+					<li><a href="../../../ActionDispatch/Head.html">ActionDispatch::Head</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http.html">ActionDispatch::Http</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/Cache.html">ActionDispatch::Http::Cache</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/Cache/Request.html">ActionDispatch::Http::Cache::Request</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/Cache/Response.html">ActionDispatch::Http::Cache::Response</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/FilterParameters.html">ActionDispatch::Http::FilterParameters</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/Headers.html">ActionDispatch::Http::Headers</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/MimeNegotiation.html">ActionDispatch::Http::MimeNegotiation</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/ParameterFilter.html">ActionDispatch::Http::ParameterFilter</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/Parameters.html">ActionDispatch::Http::Parameters</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/URL.html">ActionDispatch::Http::URL</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/Upload.html">ActionDispatch::Http::Upload</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/UploadedFile.html">ActionDispatch::Http::UploadedFile</a></li>
+				
+					<li><a href="../../../ActionDispatch/Integration/RequestHelpers.html">ActionDispatch::Integration::RequestHelpers</a></li>
+				
+					<li><a href="../../../ActionDispatch/Integration/Runner.html">ActionDispatch::Integration::Runner</a></li>
+				
+					<li><a href="../../../ActionDispatch/Integration/Session.html">ActionDispatch::Integration::Session</a></li>
+				
+					<li><a href="../../../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a></li>
+				
+					<li><a href="../../../ActionDispatch/MiddlewareStack.html">ActionDispatch::MiddlewareStack</a></li>
+				
+					<li><a href="../../../ActionDispatch/MiddlewareStack/Middleware.html">ActionDispatch::MiddlewareStack::Middleware</a></li>
+				
+					<li><a href="../../../ActionDispatch/ParamsParser.html">ActionDispatch::ParamsParser</a></li>
+				
+					<li><a href="../../../ActionDispatch/PerformanceTest.html">ActionDispatch::PerformanceTest</a></li>
+				
+					<li><a href="../../../ActionDispatch/Railtie.html">ActionDispatch::Railtie</a></li>
+				
+					<li><a href="../../../ActionDispatch/RemoteIp.html">ActionDispatch::RemoteIp</a></li>
+				
+					<li><a href="../../../ActionDispatch/RemoteIp/IpSpoofAttackError.html">ActionDispatch::RemoteIp::IpSpoofAttackError</a></li>
+				
+					<li><a href="../../../ActionDispatch/RemoteIp/RemoteIpGetter.html">ActionDispatch::RemoteIp::RemoteIpGetter</a></li>
+				
+					<li><a href="../../../ActionDispatch/Request.html">ActionDispatch::Request</a></li>
+				
+					<li><a href="../../../ActionDispatch/Rescue.html">ActionDispatch::Rescue</a></li>
+				
+					<li><a href="../../../ActionDispatch/Response.html">ActionDispatch::Response</a></li>
+				
+					<li><a href="../../../ActionDispatch/Response/Setup.html">ActionDispatch::Response::Setup</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing.html">ActionDispatch::Routing</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/Mapper.html">ActionDispatch::Routing::Mapper</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/Mapper/Base.html">ActionDispatch::Routing::Mapper::Base</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/Mapper/HttpHelpers.html">ActionDispatch::Routing::Mapper::HttpHelpers</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/Mapper/Resources.html">ActionDispatch::Routing::Mapper::Resources</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/Mapper/Scoping.html">ActionDispatch::Routing::Mapper::Scoping</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/Mapper/Shorthand.html">ActionDispatch::Routing::Mapper::Shorthand</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/PolymorphicRoutes.html">ActionDispatch::Routing::PolymorphicRoutes</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/UrlFor.html">ActionDispatch::Routing::UrlFor</a></li>
+				
+					<li><a href="../../../ActionDispatch/Session.html">ActionDispatch::Session</a></li>
+				
+					<li><a href="../../../ActionDispatch/Session/AbstractStore.html">ActionDispatch::Session::AbstractStore</a></li>
+				
+					<li><a href="../../../ActionDispatch/Session/AbstractStore/OptionsHash.html">ActionDispatch::Session::AbstractStore::OptionsHash</a></li>
+				
+					<li><a href="../../../ActionDispatch/Session/AbstractStore/SessionHash.html">ActionDispatch::Session::AbstractStore::SessionHash</a></li>
+				
+					<li><a href="../../../ActionDispatch/Session/CookieStore.html">ActionDispatch::Session::CookieStore</a></li>
+				
+					<li><a href="../../../ActionDispatch/Session/MemCacheStore.html">ActionDispatch::Session::MemCacheStore</a></li>
+				
+					<li><a href="../../../ActionDispatch/ShowExceptions.html">ActionDispatch::ShowExceptions</a></li>
+				
+					<li><a href="../../../ActionDispatch/Static.html">ActionDispatch::Static</a></li>
+				
+					<li><a href="../../../ActionDispatch/TestProcess.html">ActionDispatch::TestProcess</a></li>
+				
+					<li><a href="../../../ActionDispatch/TestRequest.html">ActionDispatch::TestRequest</a></li>
+				
+					<li><a href="../../../ActionDispatch/TestResponse.html">ActionDispatch::TestResponse</a></li>
+				
+					<li><a href="../../../ActionDispatch/TestResponse/DeprecatedHelpers.html">ActionDispatch::TestResponse::DeprecatedHelpers</a></li>
+				
+					<li><a href="../../../ActionView/Base.html">ActionView::Base</a></li>
+				
+					<li><a href="../../../ActionView/Context.html">ActionView::Context</a></li>
+				
+					<li><a href="../../../ActionView/FileSystemResolver.html">ActionView::FileSystemResolver</a></li>
+				
+					<li><a href="../../../ActionView/FixtureResolver.html">ActionView::FixtureResolver</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/ActiveModelFormBuilder.html">ActionView::Helpers::ActiveModelFormBuilder</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/ActiveModelHelper.html">ActionView::Helpers::ActiveModelHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/ActiveModelInstanceTag.html">ActionView::Helpers::ActiveModelInstanceTag</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/AssetTagHelper.html">ActionView::Helpers::AssetTagHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/AtomFeedHelper.html">ActionView::Helpers::AtomFeedHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/AtomFeedHelper/AtomBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomBuilder</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/CsrfHelper.html">ActionView::Helpers::CsrfHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/DateHelper.html">ActionView::Helpers::DateHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/DebugHelper.html">ActionView::Helpers::DebugHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/FormHelper.html">ActionView::Helpers::FormHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/FormOptionsHelper.html">ActionView::Helpers::FormOptionsHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/FormTagHelper.html">ActionView::Helpers::FormTagHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/InstanceTagMethods/ClassMethods.html">ActionView::Helpers::InstanceTagMethods::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/JavaScriptHelper.html">ActionView::Helpers::JavaScriptHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/NumberHelper.html">ActionView::Helpers::NumberHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/NumberHelper/InvalidNumberError.html">ActionView::Helpers::NumberHelper::InvalidNumberError</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/PrototypeHelper.html">ActionView::Helpers::PrototypeHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.html">ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/RawOutputHelper.html">ActionView::Helpers::RawOutputHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/SanitizeHelper.html">ActionView::Helpers::SanitizeHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/TranslationHelper.html">ActionView::Helpers::TranslationHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/UrlHelper.html">ActionView::Helpers::UrlHelper</a></li>
+				
+					<li><a href="../../../ActionView/LogSubscriber.html">ActionView::LogSubscriber</a></li>
+				
+					<li><a href="../../../ActionView/LookupContext/Details.html">ActionView::LookupContext::Details</a></li>
+				
+					<li><a href="../../../ActionView/LookupContext/ViewPaths.html">ActionView::LookupContext::ViewPaths</a></li>
+				
+					<li><a href="../../../ActionView/NullResolver.html">ActionView::NullResolver</a></li>
+				
+					<li><a href="../../../ActionView/OutputBuffer.html">ActionView::OutputBuffer</a></li>
+				
+					<li><a href="../../../ActionView/PathResolver.html">ActionView::PathResolver</a></li>
+				
+					<li><a href="../../../ActionView/Railtie.html">ActionView::Railtie</a></li>
+				
+					<li><a href="../../../ActionView/Rendering.html">ActionView::Rendering</a></li>
+				
+					<li><a href="../../../ActionView/Resolver.html">ActionView::Resolver</a></li>
+				
+					<li><a href="../../../ActionView/Template.html">ActionView::Template</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handler.html">ActionView::Template::Handler</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handlers/Builder.html">ActionView::Template::Handlers::Builder</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handlers/Compilable.html">ActionView::Template::Handlers::Compilable</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handlers/Compilable/ClassMethods.html">ActionView::Template::Handlers::Compilable::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handlers/ERB.html">ActionView::Template::Handlers::ERB</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handlers/Erubis.html">ActionView::Template::Handlers::Erubis</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handlers/RJS.html">ActionView::Template::Handlers::RJS</a></li>
+				
+					<li><a href="../../../ActionView/TestCase.html">ActionView::TestCase</a></li>
+				
+					<li><a href="../../../ActionView/TestCase/Behavior.html">ActionView::TestCase::Behavior</a></li>
+				
+					<li><a href="../../../ActionView/TestCase/Behavior/ClassMethods.html">ActionView::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionView/TestCase/Behavior/Locals.html">ActionView::TestCase::Behavior::Locals</a></li>
+				
+					<li><a href="../../../ActionView/TestCase/TestController.html">ActionView::TestCase::TestController</a></li>
+				
+					<li><a href="../../../AbstractController.html">AbstractController</a></li>
+				
+					<li><a href="../../../AbstractController/ActionNotFound.html">AbstractController::ActionNotFound</a></li>
+				
+					<li><a href="../../../AbstractController/ActionNotFound.html">AbstractController::ActionNotFound</a></li>
+				
+					<li><a href="../../../AbstractController/AssetPaths.html">AbstractController::AssetPaths</a></li>
+				
+					<li><a href="../../../AbstractController/Base.html">AbstractController::Base</a></li>
+				
+					<li><a href="../../../AbstractController/Callbacks.html">AbstractController::Callbacks</a></li>
+				
+					<li><a href="../../../AbstractController/Callbacks/ClassMethods.html">AbstractController::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../../AbstractController/Collector.html">AbstractController::Collector</a></li>
+				
+					<li><a href="../../../AbstractController/DoubleRenderError.html">AbstractController::DoubleRenderError</a></li>
+				
+					<li><a href="../../../AbstractController/DoubleRenderError.html">AbstractController::DoubleRenderError</a></li>
+				
+					<li><a href="../../../AbstractController/Error.html">AbstractController::Error</a></li>
+				
+					<li><a href="../../../AbstractController/Helpers.html">AbstractController::Helpers</a></li>
+				
+					<li><a href="../../../AbstractController/Helpers/ClassMethods.html">AbstractController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../../../AbstractController/Logger.html">AbstractController::Logger</a></li>
+				
+					<li><a href="../../../AbstractController/Rendering.html">AbstractController::Rendering</a></li>
+				
+					<li><a href="../../../AbstractController/Rendering/ClassMethods.html">AbstractController::Rendering::ClassMethods</a></li>
+				
+					<li><a href="../../../AbstractController/Translation.html">AbstractController::Translation</a></li>
+				
+					<li><a href="../../../AbstractController/ViewPaths.html">AbstractController::ViewPaths</a></li>
+				
+					<li><a href="../../../AbstractController/ViewPaths/ClassMethods.html">AbstractController::ViewPaths::ClassMethods</a></li>
+				
+					<li><a href="../../../HTML/FullSanitizer.html">HTML::FullSanitizer</a></li>
+				
+					<li><a href="../../../HTML/LinkSanitizer.html">HTML::LinkSanitizer</a></li>
+				
+					<li><a href="../../../HTML/Sanitizer.html">HTML::Sanitizer</a></li>
+				
+					<li><a href="../../../HTML/Selector.html">HTML::Selector</a></li>
+				
+					<li><a href="../../../HTML/WhiteListSanitizer.html">HTML::WhiteListSanitizer</a></li>
+				
+					<li><a href="../../../Mime.html">Mime</a></li>
+				
+					<li><a href="../../../Mime/Mimes.html">Mime::Mimes</a></li>
+				
+					<li><a href="../../../Mime/Type.html">Mime::Type</a></li>
+				
+					<li><a href="../../../ActionPack.html">ActionPack</a></li>
+				
+					<li><a href="../../../Rack.html">Rack</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">ActionDispatch::Http::Cache::Response</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="DEFAULT_CACHE_CONTROL">DEFAULT_CACHE_CONTROL</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="cache-control-attribute-method" class="method-detail">
+				<a name="cache_control"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">cache_control</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(*)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_dispatch/http/cache.rb, line 44</span>
+44:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(*)
+45:           <span class="ruby-identifier">status</span>, <span class="ruby-identifier">header</span>, <span class="ruby-identifier">body</span> = <span class="ruby-keyword kw">super</span>
+46: 
+47:           <span class="ruby-ivar">@cache_control</span> = {}
+48:           <span class="ruby-ivar">@etag</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">&quot;ETag&quot;</span>]
+49: 
+50:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cache_control</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">&quot;Cache-Control&quot;</span>]
+51:             <span class="ruby-identifier">cache_control</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/,\s*/</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
+52:               <span class="ruby-identifier">first</span>, <span class="ruby-identifier">last</span> = <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;=&quot;</span>)
+53:               <span class="ruby-identifier">last</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">true</span>
+54:               <span class="ruby-ivar">@cache_control</span>[<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">last</span>
+55:             <span class="ruby-keyword kw">end</span>
+56:           <span class="ruby-keyword kw">end</span>
+57:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="etag-method" class="method-detail ">
+				<a name="method-i-etag"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">etag</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="etag-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_dispatch/http/cache.rb, line 73</span>
+73:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">etag</span>
+74:           <span class="ruby-ivar">@etag</span>
+75:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="etag--method" class="method-detail ">
+				<a name="method-i-etag%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">etag=</span><span
+						class="method-args">(etag)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="etag--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_dispatch/http/cache.rb, line 81</span>
+81:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">etag=</span>(<span class="ruby-identifier">etag</span>)
+82:           <span class="ruby-identifier">key</span> = <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Cache</span>.<span class="ruby-identifier">expand_cache_key</span>(<span class="ruby-identifier">etag</span>)
+83:           <span class="ruby-ivar">@etag</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">&quot;ETag&quot;</span>] = <span class="ruby-node">%(&quot;#{Digest::MD5.hexdigest(key)}&quot;)</span>
+84:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="etag--method" class="method-detail ">
+				<a name="method-i-etag%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">etag?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="etag--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_dispatch/http/cache.rb, line 77</span>
+77:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">etag?</span>
+78:           <span class="ruby-ivar">@etag</span>
+79:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="last-modified-method" class="method-detail ">
+				<a name="method-i-last_modified"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">last_modified</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="last-modified-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_dispatch/http/cache.rb, line 59</span>
+59:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">last_modified</span>
+60:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">last</span> = <span class="ruby-identifier">headers</span>[<span class="ruby-value str">'Last-Modified'</span>]
+61:             <span class="ruby-constant">Time</span>.<span class="ruby-identifier">httpdate</span>(<span class="ruby-identifier">last</span>)
+62:           <span class="ruby-keyword kw">end</span>
+63:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="last-modified--method" class="method-detail ">
+				<a name="method-i-last_modified%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">last_modified=</span><span
+						class="method-args">(utc_time)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="last-modified--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_dispatch/http/cache.rb, line 69</span>
+69:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">last_modified=</span>(<span class="ruby-identifier">utc_time</span>)
+70:           <span class="ruby-identifier">headers</span>[<span class="ruby-value str">'Last-Modified'</span>] = <span class="ruby-identifier">utc_time</span>.<span class="ruby-identifier">httpdate</span>
+71:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="last-modified--method" class="method-detail ">
+				<a name="method-i-last_modified%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">last_modified?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="last-modified--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_dispatch/http/cache.rb, line 65</span>
+65:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">last_modified?</span>
+66:           <span class="ruby-identifier">headers</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value str">'Last-Modified'</span>)
+67:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="handle-conditional-get--method" class="method-detail ">
+				<a name="method-i-handle_conditional_get%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handle_conditional_get!</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="handle-conditional-get--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/http/cache.rb, line 88</span>
+ 88:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handle_conditional_get!</span>
+ 89:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">etag?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">last_modified?</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@cache_control</span>.<span class="ruby-identifier">empty?</span>
+ 90:             <span class="ruby-identifier">set_conditional_cache_control!</span>
+ 91:           <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">nonempty_ok_response?</span>
+ 92:             <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">etag</span> = <span class="ruby-identifier">body</span>
+ 93: 
+ 94:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">request</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">etag_matches?</span>(<span class="ruby-identifier">etag</span>)
+ 95:               <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">status</span> = <span class="ruby-value">304</span>
+ 96:               <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">body</span> = []
+ 97:             <span class="ruby-keyword kw">end</span>
+ 98: 
+ 99:             <span class="ruby-identifier">set_conditional_cache_control!</span>
+100:           <span class="ruby-keyword kw">else</span>
+101:             <span class="ruby-identifier">headers</span>[<span class="ruby-value str">&quot;Cache-Control&quot;</span>] = <span class="ruby-value str">&quot;no-cache&quot;</span>
+102:           <span class="ruby-keyword kw">end</span>
+103:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="nonempty-ok-response--method" class="method-detail ">
+				<a name="method-i-nonempty_ok_response%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">nonempty_ok_response?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="nonempty-ok-response--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/http/cache.rb, line 105</span>
+105:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">nonempty_ok_response?</span>
+106:           <span class="ruby-ivar">@status</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">string_body?</span>
+107:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="set-conditional-cache-control--method" class="method-detail ">
+				<a name="method-i-set_conditional_cache_control%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">set_conditional_cache_control!</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="set-conditional-cache-control--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/http/cache.rb, line 115</span>
+115:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_conditional_cache_control!</span>
+116:           <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-value str">&quot;Cache-Control&quot;</span>].<span class="ruby-identifier">present?</span>
+117: 
+118:           <span class="ruby-identifier">control</span> = <span class="ruby-ivar">@cache_control</span>
+119: 
+120:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">control</span>.<span class="ruby-identifier">empty?</span>
+121:             <span class="ruby-identifier">headers</span>[<span class="ruby-value str">&quot;Cache-Control&quot;</span>] = <span class="ruby-constant">DEFAULT_CACHE_CONTROL</span>
+122:           <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@cache_control</span>[<span class="ruby-value">:no_cache</span>]
+123:             <span class="ruby-identifier">headers</span>[<span class="ruby-value str">&quot;Cache-Control&quot;</span>] = <span class="ruby-value str">&quot;no-cache&quot;</span>
+124:           <span class="ruby-keyword kw">else</span>
+125:             <span class="ruby-identifier">extras</span>  = <span class="ruby-identifier">control</span>[<span class="ruby-value">:extras</span>]
+126:             <span class="ruby-identifier">max_age</span> = <span class="ruby-identifier">control</span>[<span class="ruby-value">:max_age</span>]
+127: 
+128:             <span class="ruby-identifier">options</span> = []
+129:             <span class="ruby-identifier">options</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;max-age=#{max_age.to_i}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">max_age</span>
+130:             <span class="ruby-identifier">options</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">control</span>[<span class="ruby-value">:public</span>] <span class="ruby-operator">?</span> <span class="ruby-value str">&quot;public&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;private&quot;</span>)
+131:             <span class="ruby-identifier">options</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;must-revalidate&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">control</span>[<span class="ruby-value">:must_revalidate</span>]
+132:             <span class="ruby-identifier">options</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">extras</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">extras</span>
+133: 
+134:             <span class="ruby-identifier">headers</span>[<span class="ruby-value str">&quot;Cache-Control&quot;</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;, &quot;</span>)
+135:           <span class="ruby-keyword kw">end</span>
+136:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="string-body--method" class="method-detail ">
+				<a name="method-i-string_body%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">string_body?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="string-body--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/http/cache.rb, line 109</span>
+109:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">string_body?</span>
+110:           <span class="ruby-operator">!</span><span class="ruby-ivar">@blank</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@body</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:all?</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@body</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) }
+111:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

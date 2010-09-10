@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: I18n::Config</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/i18n/config_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/i18n/config.rb">lib/i18n/config.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-available_locales">#available_locales</a></li>
+					
+					<li><a href="#method-i-available_locales%3D">#available_locales=</a></li>
+					
+					<li><a href="#method-i-backend">#backend</a></li>
+					
+					<li><a href="#method-i-backend%3D">#backend=</a></li>
+					
+					<li><a href="#method-i-default_locale">#default_locale</a></li>
+					
+					<li><a href="#method-i-default_locale%3D">#default_locale=</a></li>
+					
+					<li><a href="#method-i-default_separator">#default_separator</a></li>
+					
+					<li><a href="#method-i-default_separator%3D">#default_separator=</a></li>
+					
+					<li><a href="#method-i-exception_handler">#exception_handler</a></li>
+					
+					<li><a href="#method-i-exception_handler%3D">#exception_handler=</a></li>
+					
+					<li><a href="#method-i-load_path">#load_path</a></li>
+					
+					<li><a href="#method-i-load_path%3D">#load_path=</a></li>
+					
+					<li><a href="#method-i-locale">#locale</a></li>
+					
+					<li><a href="#method-i-locale%3D">#locale=</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../I18n.html">I18n</a></li>
+				
+					<li><a href="../I18n/ArgumentError.html">I18n::ArgumentError</a></li>
+				
+					<li><a href="../I18n/Backend.html">I18n::Backend</a></li>
+				
+					<li><a href="../I18n/Backend/ActiveRecord.html">I18n::Backend::ActiveRecord</a></li>
+				
+					<li><a href="../I18n/Backend/ActiveRecord/Implementation.html">I18n::Backend::ActiveRecord::Implementation</a></li>
+				
+					<li><a href="../I18n/Backend/ActiveRecord/Missing.html">I18n::Backend::ActiveRecord::Missing</a></li>
+				
+					<li><a href="../I18n/Backend/ActiveRecord/StoreProcs.html">I18n::Backend::ActiveRecord::StoreProcs</a></li>
+				
+					<li><a href="../I18n/Backend/ActiveRecord/Translation.html">I18n::Backend::ActiveRecord::Translation</a></li>
+				
+					<li><a href="../I18n/Backend/Base.html">I18n::Backend::Base</a></li>
+				
+					<li><a href="../I18n/Backend/Cache.html">I18n::Backend::Cache</a></li>
+				
+					<li><a href="../I18n/Backend/Cascade.html">I18n::Backend::Cascade</a></li>
+				
+					<li><a href="../I18n/Backend/Chain.html">I18n::Backend::Chain</a></li>
+				
+					<li><a href="../I18n/Backend/Cldr.html">I18n::Backend::Cldr</a></li>
+				
+					<li><a href="../I18n/Backend/Fallbacks.html">I18n::Backend::Fallbacks</a></li>
+				
+					<li><a href="../I18n/Backend/Flatten.html">I18n::Backend::Flatten</a></li>
+				
+					<li><a href="../I18n/Backend/Gettext.html">I18n::Backend::Gettext</a></li>
+				
+					<li><a href="../I18n/Backend/Gettext/PoData.html">I18n::Backend::Gettext::PoData</a></li>
+				
+					<li><a href="../I18n/Backend/InterpolationCompiler.html">I18n::Backend::InterpolationCompiler</a></li>
+				
+					<li><a href="../I18n/Backend/InterpolationCompiler/Compiler.html">I18n::Backend::InterpolationCompiler::Compiler</a></li>
+				
+					<li><a href="../I18n/Backend/KeyValue.html">I18n::Backend::KeyValue</a></li>
+				
+					<li><a href="../I18n/Backend/KeyValue/Implementation.html">I18n::Backend::KeyValue::Implementation</a></li>
+				
+					<li><a href="../I18n/Backend/Memoize.html">I18n::Backend::Memoize</a></li>
+				
+					<li><a href="../I18n/Backend/Metadata.html">I18n::Backend::Metadata</a></li>
+				
+					<li><a href="../I18n/Backend/Pluralization.html">I18n::Backend::Pluralization</a></li>
+				
+					<li><a href="../I18n/Backend/Simple.html">I18n::Backend::Simple</a></li>
+				
+					<li><a href="../I18n/Backend/Simple/Implementation.html">I18n::Backend::Simple::Implementation</a></li>
+				
+					<li><a href="../I18n/Backend/Transliterator.html">I18n::Backend::Transliterator</a></li>
+				
+					<li><a href="../I18n/Backend/Transliterator/HashTransliterator.html">I18n::Backend::Transliterator::HashTransliterator</a></li>
+				
+					<li><a href="../I18n/Backend/Transliterator/ProcTransliterator.html">I18n::Backend::Transliterator::ProcTransliterator</a></li>
+				
+					<li><a href="../I18n/Config.html">I18n::Config</a></li>
+				
+					<li><a href="../I18n/Gettext.html">I18n::Gettext</a></li>
+				
+					<li><a href="../I18n/Gettext/Helpers.html">I18n::Gettext::Helpers</a></li>
+				
+					<li><a href="../I18n/InvalidLocale.html">I18n::InvalidLocale</a></li>
+				
+					<li><a href="../I18n/InvalidPluralizationData.html">I18n::InvalidPluralizationData</a></li>
+				
+					<li><a href="../I18n/Locale.html">I18n::Locale</a></li>
+				
+					<li><a href="../I18n/Locale/Fallbacks.html">I18n::Locale::Fallbacks</a></li>
+				
+					<li><a href="../I18n/Locale/Tag.html">I18n::Locale::Tag</a></li>
+				
+					<li><a href="../I18n/Locale/Tag/Parents.html">I18n::Locale::Tag::Parents</a></li>
+				
+					<li><a href="../I18n/Locale/Tag/Rfc4646.html">I18n::Locale::Tag::Rfc4646</a></li>
+				
+					<li><a href="../I18n/Locale/Tag/Rfc4646/Parser.html">I18n::Locale::Tag::Rfc4646::Parser</a></li>
+				
+					<li><a href="../I18n/Locale/Tag/Simple.html">I18n::Locale::Tag::Simple</a></li>
+				
+					<li><a href="../I18n/MissingInterpolationArgument.html">I18n::MissingInterpolationArgument</a></li>
+				
+					<li><a href="../I18n/MissingTranslationData.html">I18n::MissingTranslationData</a></li>
+				
+					<li><a href="../I18n/ReservedInterpolationKey.html">I18n::ReservedInterpolationKey</a></li>
+				
+					<li><a href="../I18n/UnknownFileType.html">I18n::UnknownFileType</a></li>
+				
+					<li><a href="../GetText.html">GetText</a></li>
+				
+					<li><a href="../GetText/PoParser.html">GetText::PoParser</a></li>
+				
+					<li><a href="../Hash.html">Hash</a></li>
+				
+					<li><a href="../KeyError.html">KeyError</a></li>
+				
+					<li><a href="../String.html">String</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">I18n::Config</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="available-locales-method" class="method-detail ">
+				<a name="method-i-available_locales"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">available_locales</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns an array of locales for which translations are available. Unless
+you explicitely set the these through I18n.available_locales= the call will
+be delegated to the backend and memoized on the <a
+href="../I18n.html">I18n</a> module.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="available-locales-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 37</span>
+37:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">available_locales</span>
+38:       <span class="ruby-identifier">@@available_locales</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">backend</span>.<span class="ruby-identifier">available_locales</span>
+39:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="available-locales--method" class="method-detail ">
+				<a name="method-i-available_locales%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">available_locales=</span><span
+						class="method-args">(locales)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the available locales.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="available-locales--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 42</span>
+42:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">available_locales=</span>(<span class="ruby-identifier">locales</span>)
+43:       <span class="ruby-identifier">@@available_locales</span> = <span class="ruby-identifier">locales</span>
+44:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="backend-method" class="method-detail ">
+				<a name="method-i-backend"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">backend</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the current backend. Defaults to +Backend::Simple+.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="backend-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 15</span>
+15:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">backend</span>
+16:       <span class="ruby-identifier">@@backend</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Backend</span><span class="ruby-operator">::</span><span class="ruby-constant">Simple</span>.<span class="ruby-identifier">new</span>
+17:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="backend--method" class="method-detail ">
+				<a name="method-i-backend%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">backend=</span><span
+						class="method-args">(backend)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the current backend. Used to set a custom backend.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="backend--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 20</span>
+20:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">backend=</span>(<span class="ruby-identifier">backend</span>)
+21:       <span class="ruby-identifier">@@backend</span> = <span class="ruby-identifier">backend</span>
+22:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-locale-method" class="method-detail ">
+				<a name="method-i-default_locale"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_locale</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the current default locale. Defaults to :&#8217;en&#8217;
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-locale-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 25</span>
+25:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_locale</span>
+26:       <span class="ruby-identifier">@@default_locale</span> <span class="ruby-operator">||=</span> <span class="ruby-value">:en</span>
+27:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-locale--method" class="method-detail ">
+				<a name="method-i-default_locale%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_locale=</span><span
+						class="method-args">(locale)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the current default locale. Used to set a custom default locale.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-locale--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 30</span>
+30:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_locale=</span>(<span class="ruby-identifier">locale</span>)
+31:       <span class="ruby-identifier">@@default_locale</span> = <span class="ruby-identifier">locale</span>.<span class="ruby-identifier">to_sym</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+32:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-separator-method" class="method-detail ">
+				<a name="method-i-default_separator"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_separator</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the current default scope separator. Defaults to &#8217;.&#8217;
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-separator-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 47</span>
+47:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_separator</span>
+48:       <span class="ruby-identifier">@@default_separator</span> <span class="ruby-operator">||=</span> <span class="ruby-value str">'.'</span>
+49:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-separator--method" class="method-detail ">
+				<a name="method-i-default_separator%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_separator=</span><span
+						class="method-args">(separator)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the current default scope separator.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-separator--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 52</span>
+52:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_separator=</span>(<span class="ruby-identifier">separator</span>)
+53:       <span class="ruby-identifier">@@default_separator</span> = <span class="ruby-identifier">separator</span>
+54:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="exception-handler-method" class="method-detail ">
+				<a name="method-i-exception_handler"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">exception_handler</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Return the current exception handler. Defaults to
+:default_exception_handler.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="exception-handler-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 57</span>
+57:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exception_handler</span>
+58:       <span class="ruby-identifier">@@exception_handler</span> <span class="ruby-operator">||=</span> <span class="ruby-value">:default_exception_handler</span>
+59:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="exception-handler--method" class="method-detail ">
+				<a name="method-i-exception_handler%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">exception_handler=</span><span
+						class="method-args">(exception_handler)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the exception handler.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="exception-handler--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 62</span>
+62:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exception_handler=</span>(<span class="ruby-identifier">exception_handler</span>)
+63:       <span class="ruby-identifier">@@exception_handler</span> = <span class="ruby-identifier">exception_handler</span>
+64:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="load-path-method" class="method-detail ">
+				<a name="method-i-load_path"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_path</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Allow clients to register paths providing translation data sources. The
+backend defines acceptable sources.
+</p>
+<p>
+E.g. the provided SimpleBackend accepts a list of paths to translation
+files which are either named *.rb and contain plain Ruby Hashes or are
+named *.yml and contain YAML data. So for the SimpleBackend clients may
+register translation files like this:
+</p>
+<pre>
+  I18n.load_path &lt;&lt; 'path/to/locale/en.yml'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="load-path-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 74</span>
+74:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_path</span>
+75:       <span class="ruby-identifier">@@load_path</span> <span class="ruby-operator">||=</span> []
+76:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="load-path--method" class="method-detail ">
+				<a name="method-i-load_path%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_path=</span><span
+						class="method-args">(load_path)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the load path instance. Custom implementations are expected to behave
+like a Ruby Array.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="load-path--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 80</span>
+80:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_path=</span>(<span class="ruby-identifier">load_path</span>)
+81:       <span class="ruby-identifier">@@load_path</span> = <span class="ruby-identifier">load_path</span>
+82:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="locale-method" class="method-detail ">
+				<a name="method-i-locale"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">locale</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The only configuration value that is not global and scoped to thread is
+:locale. It defaults to the default_locale.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="locale-source">
+<pre>
+   <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 5</span>
+5:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">locale</span>
+6:       <span class="ruby-ivar">@locale</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">default_locale</span>
+7:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="locale--method" class="method-detail ">
+				<a name="method-i-locale%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">locale=</span><span
+						class="method-args">(locale)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the current locale pseudo-globally, i.e. in the Thread.current hash.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="locale--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/i18n/config.rb, line 10</span>
+10:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">locale=</span>(<span class="ruby-identifier">locale</span>)
+11:       <span class="ruby-ivar">@locale</span> = <span class="ruby-identifier">locale</span>.<span class="ruby-identifier">to_sym</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+12:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

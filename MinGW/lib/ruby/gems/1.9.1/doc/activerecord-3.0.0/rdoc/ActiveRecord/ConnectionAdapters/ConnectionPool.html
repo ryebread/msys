@@ -1,0 +1,1160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: ActiveRecord::ConnectionAdapters::ConnectionPool</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/active_record/connection_adapters/abstract/connection_pool_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_record/connection_adapters/abstract/connection_pool.rb">lib/active_record/connection_adapters/abstract/connection_pool.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-checkin">#checkin</a></li>
+					
+					<li><a href="#method-i-checkout">#checkout</a></li>
+					
+					<li><a href="#method-i-checkout_and_verify">#checkout_and_verify</a></li>
+					
+					<li><a href="#method-i-checkout_existing_connection">#checkout_existing_connection</a></li>
+					
+					<li><a href="#method-i-checkout_new_connection">#checkout_new_connection</a></li>
+					
+					<li><a href="#method-i-clear_reloadable_connections%21">#clear_reloadable_connections!</a></li>
+					
+					<li><a href="#method-i-clear_stale_cached_connections%21">#clear_stale_cached_connections!</a></li>
+					
+					<li><a href="#method-i-connected%3F">#connected?</a></li>
+					
+					<li><a href="#method-i-connection">#connection</a></li>
+					
+					<li><a href="#method-i-disconnect%21">#disconnect!</a></li>
+					
+					<li><a href="#method-i-new_connection">#new_connection</a></li>
+					
+					<li><a href="#method-i-release_connection">#release_connection</a></li>
+					
+					<li><a href="#method-i-with_connection">#with_connection</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+				
+					<li><a href="../../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ClassMethods/o.html">ActiveRecord::Associations::ClassMethods::o</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+				
+					<li><a href="../../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+				
+					<li><a href="../../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators.html">ActiveRecord::Generators</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/MigrationGenerator.html">ActiveRecord::Generators::MigrationGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/ModelGenerator.html">ActiveRecord::Generators::ModelGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/ObserverGenerator.html">ActiveRecord::Generators::ObserverGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/SessionMigrationGenerator.html">ActiveRecord::Generators::SessionMigrationGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+				
+					<li><a href="../../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+				
+					<li><a href="../../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+				
+					<li><a href="../../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+				
+					<li><a href="../../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+				
+					<li><a href="../../ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+				
+					<li><a href="../../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+				
+					<li><a href="../../ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+				
+					<li><a href="../../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+				
+					<li><a href="../../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+				
+					<li><a href="../../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+				
+					<li><a href="../../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+				
+					<li><a href="../../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+				
+					<li><a href="../../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+				
+					<li><a href="../../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+				
+					<li><a href="../../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+				
+					<li><a href="../../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+				
+					<li><a href="../../Fixtures.html">Fixtures</a></li>
+				
+					<li><a href="../../FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">ActiveRecord::ConnectionAdapters::ConnectionPool</h1>
+
+		<div id="description">
+			<p>
+Connection pool base class for managing Active Record database connections.
+</p>
+<h2>Introduction</h2>
+<p>
+A connection pool synchronizes thread access to a limited number of
+database connections. The basic idea is that each thread checks out a
+database connection from the pool, uses that connection, and checks the
+connection back in. <a href="ConnectionPool.html">ConnectionPool</a> is
+completely thread-safe, and will ensure that a connection cannot be used by
+two threads at the same time, as long as ConnectionPool&#8217;s contract is
+correctly followed. It will also handle cases in which there are more
+threads than connections: if all connections have been checked out, and a
+thread tries to checkout a connection anyway, then <a
+href="ConnectionPool.html">ConnectionPool</a> will wait until some other
+thread has checked in a connection.
+</p>
+<h2>Obtaining (checking out) a connection</h2>
+<p>
+Connections can be obtained and used from a connection pool in several
+ways:
+</p>
+<ol>
+<li><p>
+Simply use <a
+href="../Base.html#method-i-connection">ActiveRecord::Base.connection</a>
+as with Active Record 2.1 and earlier (pre-connection-pooling). Eventually,
+when you&#8217;re done with the connection(s) and wish it to be returned to
+the pool, you call ActiveRecord::Base.clear_active_connections!. This will
+be the default behavior for Active Record when used in conjunction with
+Action Pack&#8217;s request handling cycle.
+</p>
+</li>
+<li><p>
+Manually check out a connection from the pool with
+ActiveRecord::Base.connection_pool.checkout. You are responsible for
+returning this connection to the pool when finished by calling
+ActiveRecord::Base.connection_pool.checkin(connection).
+</p>
+</li>
+<li><p>
+Use ActiveRecord::Base.connection_pool.<a
+href="ConnectionPool.html#method-i-with_connection">with_connection</a>(&amp;block),
+which obtains a connection, yields it as the sole argument to the block,
+and returns it to the pool after the block completes.
+</p>
+</li>
+</ol>
+<p>
+Connections in the pool are actually <a
+href="AbstractAdapter.html">AbstractAdapter</a> objects (or objects
+compatible with AbstractAdapter&#8217;s interface).
+</p>
+<h2>Options</h2>
+<p>
+There are two connection-pooling-related options that you can add to your
+database connection configuration:
+</p>
+<ul>
+<li><p>
+<tt>pool</tt>: number indicating size of connection pool (default 5)
+</p>
+</li>
+<li><p>
+<tt>wait_timeout</tt>: number of seconds to block and wait for a connection
+before giving up and raising a timeout error (default 5 seconds).
+</p>
+</li>
+</ul>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="spec-attribute-method" class="method-detail">
+				<a name="spec"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">spec</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="connections-attribute-method" class="method-detail">
+				<a name="connections"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">connections</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(spec)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Creates a new <a href="ConnectionPool.html">ConnectionPool</a> object.
+<tt>spec</tt> is a ConnectionSpecification object which describes database
+connection information (e.g. adapter, host name, username, password, etc),
+as well as the maximum size for this <a
+href="ConnectionPool.html">ConnectionPool</a>.
+</p>
+<p>
+The default <a href="ConnectionPool.html">ConnectionPool</a> maximum size
+is 5.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 67</span>
+67:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">spec</span>)
+68:         <span class="ruby-ivar">@spec</span> = <span class="ruby-identifier">spec</span>
+69: 
+70:         <span class="ruby-comment cmt"># The cache of reserved connections mapped to threads</span>
+71:         <span class="ruby-ivar">@reserved_connections</span> = {}
+72: 
+73:         <span class="ruby-comment cmt"># The mutex used to synchronize pool access</span>
+74:         <span class="ruby-ivar">@connection_mutex</span> = <span class="ruby-constant">Monitor</span>.<span class="ruby-identifier">new</span>
+75:         <span class="ruby-ivar">@queue</span> = <span class="ruby-ivar">@connection_mutex</span>.<span class="ruby-identifier">new_cond</span>
+76: 
+77:         <span class="ruby-comment cmt"># default 5 second timeout unless on ruby 1.9</span>
+78:         <span class="ruby-ivar">@timeout</span> =
+79:           <span class="ruby-keyword kw">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value str">'1.9'</span>
+80:             <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">config</span>[<span class="ruby-value">:wait_timeout</span>] <span class="ruby-operator">||</span> <span class="ruby-value">5</span>
+81:           <span class="ruby-keyword kw">end</span>
+82: 
+83:         <span class="ruby-comment cmt"># default max pool size to 5</span>
+84:         <span class="ruby-ivar">@size</span> = (<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">config</span>[<span class="ruby-value">:pool</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">config</span>[<span class="ruby-value">:pool</span>].<span class="ruby-identifier">to_i</span>) <span class="ruby-operator">||</span> <span class="ruby-value">5</span>
+85: 
+86:         <span class="ruby-ivar">@connections</span> = []
+87:         <span class="ruby-ivar">@checked_out</span> = []
+88:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="checkin-method" class="method-detail ">
+				<a name="method-i-checkin"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">checkin</span><span
+						class="method-args">(conn)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Check-in a database connection back into the pool, indicating that you no
+longer need this connection.
+</p>
+<p>
+<tt>conn</tt>: an <a href="AbstractAdapter.html">AbstractAdapter</a>
+object, which was obtained by earlier by calling <tt>checkout</tt> on this
+pool.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="checkin-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 216</span>
+216:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">checkin</span>(<span class="ruby-identifier">conn</span>)
+217:         <span class="ruby-ivar">@connection_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+218:           <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:_run_checkin_callbacks</span>) <span class="ruby-keyword kw">do</span>
+219:             <span class="ruby-ivar">@checked_out</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">conn</span>
+220:             <span class="ruby-ivar">@queue</span>.<span class="ruby-identifier">signal</span>
+221:           <span class="ruby-keyword kw">end</span>
+222:         <span class="ruby-keyword kw">end</span>
+223:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="checkout-method" class="method-detail ">
+				<a name="method-i-checkout"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">checkout</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Check-out a database connection from the pool, indicating that you want to
+use it. You should call <a
+href="ConnectionPool.html#method-i-checkin">#</a> when you no longer need
+this.
+</p>
+<p>
+This is done by either returning an existing connection, or by creating a
+new connection. If the maximum number of connections for this pool has
+already been reached, but the pool is empty (i.e. they&#8217;re all being
+used), then this method will wait until a thread has checked in a
+connection. The wait time is bounded however: if no connection can be
+checked out within the timeout specified for this pool, then a <a
+href="../ConnectionTimeoutError.html">ConnectionTimeoutError</a> exception
+will be raised.
+</p>
+<p>
+Returns: an <a href="AbstractAdapter.html">AbstractAdapter</a> object.
+</p>
+<p>
+Raises:
+</p>
+<ul>
+<li><p>
+ConnectionTimeoutError: no connection can be obtained from the pool within
+the timeout period.
+</p>
+</li>
+</ul>
+					
+
+					
+					<div class="method-source-code"
+						id="checkout-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 187</span>
+187:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">checkout</span>
+188:         <span class="ruby-comment cmt"># Checkout an available connection</span>
+189:         <span class="ruby-ivar">@connection_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+190:           <span class="ruby-identifier">loop</span> <span class="ruby-keyword kw">do</span>
+191:             <span class="ruby-identifier">conn</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@checked_out</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@connections</span>.<span class="ruby-identifier">size</span>
+192:                      <span class="ruby-identifier">checkout_existing_connection</span>
+193:                    <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@connections</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@size</span>
+194:                      <span class="ruby-identifier">checkout_new_connection</span>
+195:                    <span class="ruby-keyword kw">end</span>
+196:             <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">conn</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">conn</span>
+197:             <span class="ruby-comment cmt"># No connections available; wait for one</span>
+198:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@queue</span>.<span class="ruby-identifier">wait</span>(<span class="ruby-ivar">@timeout</span>)
+199:               <span class="ruby-keyword kw">next</span>
+200:             <span class="ruby-keyword kw">else</span>
+201:               <span class="ruby-comment cmt"># try looting dead threads</span>
+202:               <span class="ruby-identifier">clear_stale_cached_connections!</span>
+203:               <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@size</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@checked_out</span>.<span class="ruby-identifier">size</span>
+204:                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConnectionTimeoutError</span>, <span class="ruby-node">&quot;could not obtain a database connection#{&quot; within #{@timeout} seconds&quot; if @timeout}.  The max pool size is currently #{@size}; consider increasing it.&quot;</span>
+205:               <span class="ruby-keyword kw">end</span>
+206:             <span class="ruby-keyword kw">end</span>
+207:           <span class="ruby-keyword kw">end</span>
+208:         <span class="ruby-keyword kw">end</span>
+209:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="clear-reloadable-connections--method" class="method-detail ">
+				<a name="method-i-clear_reloadable_connections%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">clear_reloadable_connections!</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Clears the cache which maps classes
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="clear-reloadable-connections--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 136</span>
+136:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_reloadable_connections!</span>
+137:         <span class="ruby-ivar">@reserved_connections</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">conn</span><span class="ruby-operator">|</span>
+138:           <span class="ruby-identifier">checkin</span> <span class="ruby-identifier">conn</span>
+139:         <span class="ruby-keyword kw">end</span>
+140:         <span class="ruby-ivar">@reserved_connections</span> = {}
+141:         <span class="ruby-ivar">@connections</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">conn</span><span class="ruby-operator">|</span>
+142:           <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">disconnect!</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">requires_reloading?</span>
+143:         <span class="ruby-keyword kw">end</span>
+144:         <span class="ruby-ivar">@connections</span>.<span class="ruby-identifier">delete_if</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">conn</span><span class="ruby-operator">|</span>
+145:           <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">requires_reloading?</span>
+146:         <span class="ruby-keyword kw">end</span>
+147:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="clear-stale-cached-connections--method" class="method-detail ">
+				<a name="method-i-clear_stale_cached_connections%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">clear_stale_cached_connections!</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Return any checked-out connections back to the pool by threads that are no
+longer alive.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="clear-stale-cached-connections--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 160</span>
+160:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_stale_cached_connections!</span>
+161:         <span class="ruby-identifier">keys</span> = <span class="ruby-ivar">@reserved_connections</span>.<span class="ruby-identifier">keys</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">list</span>.<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+162:           <span class="ruby-identifier">t</span>.<span class="ruby-identifier">alive?</span>
+163:         }.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">thread</span><span class="ruby-operator">|</span> <span class="ruby-identifier">thread</span>.<span class="ruby-identifier">object_id</span> }
+164: 
+165:         <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+166:           <span class="ruby-identifier">checkin</span> <span class="ruby-ivar">@reserved_connections</span>[<span class="ruby-identifier">key</span>]
+167:           <span class="ruby-ivar">@reserved_connections</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>)
+168:         <span class="ruby-keyword kw">end</span>
+169:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="connected--method" class="method-detail ">
+				<a name="method-i-connected%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">connected?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if a connection has already been opened.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="connected--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 119</span>
+119:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">connected?</span>
+120:         <span class="ruby-operator">!</span><span class="ruby-ivar">@connections</span>.<span class="ruby-identifier">empty?</span>
+121:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="connection-method" class="method-detail ">
+				<a name="method-i-connection"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">connection</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Retrieve the connection associated with the current thread, or call <a
+href="ConnectionPool.html#method-i-checkout">#</a> to obtain one if
+necessary.
+</p>
+<p>
+<a href="ConnectionPool.html#method-i-connection">#</a> can be called any
+number of times; the connection is held in a hash keyed by the thread id.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="connection-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 95</span>
+95:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">connection</span>
+96:         <span class="ruby-ivar">@reserved_connections</span>[<span class="ruby-identifier">current_connection_id</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">checkout</span>
+97:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="disconnect--method" class="method-detail ">
+				<a name="method-i-disconnect%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">disconnect!</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Disconnects all connections in the pool, and clears the pool.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="disconnect--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 124</span>
+124:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disconnect!</span>
+125:         <span class="ruby-ivar">@reserved_connections</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>,<span class="ruby-identifier">conn</span><span class="ruby-operator">|</span>
+126:           <span class="ruby-identifier">checkin</span> <span class="ruby-identifier">conn</span>
+127:         <span class="ruby-keyword kw">end</span>
+128:         <span class="ruby-ivar">@reserved_connections</span> = {}
+129:         <span class="ruby-ivar">@connections</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">conn</span><span class="ruby-operator">|</span>
+130:           <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">disconnect!</span>
+131:         <span class="ruby-keyword kw">end</span>
+132:         <span class="ruby-ivar">@connections</span> = []
+133:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="release-connection-method" class="method-detail ">
+				<a name="method-i-release_connection"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">release_connection</span><span
+						class="method-args">(with_id = current_connection_id)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Signal that the thread is finished with the current connection. <a
+href="ConnectionPool.html#method-i-release_connection">#</a> releases the
+connection-thread association and returns the connection to the pool.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="release-connection-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 102</span>
+102:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">release_connection</span>(<span class="ruby-identifier">with_id</span> = <span class="ruby-identifier">current_connection_id</span>)
+103:         <span class="ruby-identifier">conn</span> = <span class="ruby-ivar">@reserved_connections</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">with_id</span>)
+104:         <span class="ruby-identifier">checkin</span> <span class="ruby-identifier">conn</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">conn</span>
+105:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="with-connection-method" class="method-detail ">
+				<a name="method-i-with_connection"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">with_connection</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+If a connection already exists yield it to the block.  If no connection
+exists checkout a connection, yield it to the block, and checkin the
+connection when finished.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="with-connection-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 110</span>
+110:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_connection</span>
+111:         <span class="ruby-identifier">connection_id</span> = <span class="ruby-identifier">current_connection_id</span>
+112:         <span class="ruby-identifier">fresh_connection</span> = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@reserved_connections</span>[<span class="ruby-identifier">connection_id</span>]
+113:         <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">connection</span>
+114:       <span class="ruby-keyword kw">ensure</span>
+115:         <span class="ruby-identifier">release_connection</span>(<span class="ruby-identifier">connection_id</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">fresh_connection</span>
+116:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="checkout-and-verify-method" class="method-detail ">
+				<a name="method-i-checkout_and_verify"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">checkout_and_verify</span><span
+						class="method-args">(c)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="checkout-and-verify-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 248</span>
+248:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">checkout_and_verify</span>(<span class="ruby-identifier">c</span>)
+249:         <span class="ruby-identifier">c</span>.<span class="ruby-identifier">run_callbacks</span> <span class="ruby-value">:checkout</span> <span class="ruby-keyword kw">do</span>
+250:           <span class="ruby-identifier">c</span>.<span class="ruby-identifier">verify!</span>
+251:           <span class="ruby-ivar">@checked_out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>
+252:         <span class="ruby-keyword kw">end</span>
+253:         <span class="ruby-identifier">c</span>
+254:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="checkout-existing-connection-method" class="method-detail ">
+				<a name="method-i-checkout_existing_connection"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">checkout_existing_connection</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="checkout-existing-connection-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 243</span>
+243:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">checkout_existing_connection</span>
+244:         <span class="ruby-identifier">c</span> = (<span class="ruby-ivar">@connections</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@checked_out</span>).<span class="ruby-identifier">first</span>
+245:         <span class="ruby-identifier">checkout_and_verify</span>(<span class="ruby-identifier">c</span>)
+246:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="checkout-new-connection-method" class="method-detail ">
+				<a name="method-i-checkout_new_connection"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">checkout_new_connection</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="checkout-new-connection-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 237</span>
+237:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">checkout_new_connection</span>
+238:         <span class="ruby-identifier">c</span> = <span class="ruby-identifier">new_connection</span>
+239:         <span class="ruby-ivar">@connections</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>
+240:         <span class="ruby-identifier">checkout_and_verify</span>(<span class="ruby-identifier">c</span>)
+241:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-connection-method" class="method-detail ">
+				<a name="method-i-new_connection"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new_connection</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-connection-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract/connection_pool.rb, line 229</span>
+229:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_connection</span>
+230:         <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">adapter_method</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">config</span>)
+231:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

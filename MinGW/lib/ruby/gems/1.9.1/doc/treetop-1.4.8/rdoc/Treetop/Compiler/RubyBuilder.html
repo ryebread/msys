@@ -1,0 +1,1188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Treetop::Compiler::RubyBuilder</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/treetop/compiler/ruby_builder_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/treetop/compiler/ruby_builder.rb">lib/treetop/compiler/ruby_builder.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-%3C%3C">#<<</a></li>
+					
+					<li><a href="#method-i-accumulate">#accumulate</a></li>
+					
+					<li><a href="#method-i-assign">#assign</a></li>
+					
+					<li><a href="#method-i-break">#break</a></li>
+					
+					<li><a href="#method-i-class_declaration">#class_declaration</a></li>
+					
+					<li><a href="#method-i-else_">#else_</a></li>
+					
+					<li><a href="#method-i-extend">#extend</a></li>
+					
+					<li><a href="#method-i-if_">#if_</a></li>
+					
+					<li><a href="#method-i-if__">#if__</a></li>
+					
+					<li><a href="#method-i-in">#in</a></li>
+					
+					<li><a href="#method-i-indent">#indent</a></li>
+					
+					<li><a href="#method-i-indented">#indented</a></li>
+					
+					<li><a href="#method-i-loop">#loop</a></li>
+					
+					<li><a href="#method-i-method_declaration">#method_declaration</a></li>
+					
+					<li><a href="#method-i-module_declaration">#module_declaration</a></li>
+					
+					<li><a href="#method-i-newline">#newline</a></li>
+					
+					<li><a href="#method-i-next_address">#next_address</a></li>
+					
+					<li><a href="#method-i-out">#out</a></li>
+					
+					<li><a href="#method-i-reset_addresses">#reset_addresses</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Treetop/Compiler.html">Treetop::Compiler</a></li>
+				
+					<li><a href="../../Treetop/Compiler/AndPredicate.html">Treetop::Compiler::AndPredicate</a></li>
+				
+					<li><a href="../../Treetop/Compiler/AnythingSymbol.html">Treetop::Compiler::AnythingSymbol</a></li>
+				
+					<li><a href="../../Treetop/Compiler/AtomicExpression.html">Treetop::Compiler::AtomicExpression</a></li>
+				
+					<li><a href="../../Treetop/Compiler/CharacterClass.html">Treetop::Compiler::CharacterClass</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Choice.html">Treetop::Compiler::Choice</a></li>
+				
+					<li><a href="../../Treetop/Compiler/DeclarationSequence.html">Treetop::Compiler::DeclarationSequence</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Grammar.html">Treetop::Compiler::Grammar</a></li>
+				
+					<li><a href="../../Treetop/Compiler/GrammarCompiler.html">Treetop::Compiler::GrammarCompiler</a></li>
+				
+					<li><a href="../../Treetop/Compiler/InlineModule.html">Treetop::Compiler::InlineModule</a></li>
+				
+					<li><a href="../../Treetop/Compiler/InlineModuleMixin.html">Treetop::Compiler::InlineModuleMixin</a></li>
+				
+					<li><a href="../../Treetop/Compiler/LexicalAddressSpace.html">Treetop::Compiler::LexicalAddressSpace</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar.html">Treetop::Compiler::Metagrammar</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/CharacterClass0.html">Treetop::Compiler::Metagrammar::CharacterClass0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/CharacterClass1.html">Treetop::Compiler::Metagrammar::CharacterClass1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/CharacterClass2.html">Treetop::Compiler::Metagrammar::CharacterClass2</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/CharacterClass3.html">Treetop::Compiler::Metagrammar::CharacterClass3</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/CharacterClass4.html">Treetop::Compiler::Metagrammar::CharacterClass4</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Choice0.html">Treetop::Compiler::Metagrammar::Choice0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Choice1.html">Treetop::Compiler::Metagrammar::Choice1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Choice2.html">Treetop::Compiler::Metagrammar::Choice2</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/CommentToEol0.html">Treetop::Compiler::Metagrammar::CommentToEol0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/CommentToEol1.html">Treetop::Compiler::Metagrammar::CommentToEol1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/DeclarationSequence0.html">Treetop::Compiler::Metagrammar::DeclarationSequence0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/DeclarationSequence1.html">Treetop::Compiler::Metagrammar::DeclarationSequence1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/DeclarationSequence2.html">Treetop::Compiler::Metagrammar::DeclarationSequence2</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/DeclarationSequence3.html">Treetop::Compiler::Metagrammar::DeclarationSequence3</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/DoubleQuotedString0.html">Treetop::Compiler::Metagrammar::DoubleQuotedString0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/DoubleQuotedString1.html">Treetop::Compiler::Metagrammar::DoubleQuotedString1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Grammar0.html">Treetop::Compiler::Metagrammar::Grammar0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Grammar1.html">Treetop::Compiler::Metagrammar::Grammar1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/GrammarName0.html">Treetop::Compiler::Metagrammar::GrammarName0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/IncludeDeclaration0.html">Treetop::Compiler::Metagrammar::IncludeDeclaration0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/IncludeDeclaration1.html">Treetop::Compiler::Metagrammar::IncludeDeclaration1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/InlineModule0.html">Treetop::Compiler::Metagrammar::InlineModule0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/InlineModule1.html">Treetop::Compiler::Metagrammar::InlineModule1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/KeywordInsideGrammar0.html">Treetop::Compiler::Metagrammar::KeywordInsideGrammar0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Label0.html">Treetop::Compiler::Metagrammar::Label0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Label1.html">Treetop::Compiler::Metagrammar::Label1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Label2.html">Treetop::Compiler::Metagrammar::Label2</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Label3.html">Treetop::Compiler::Metagrammar::Label3</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/LabeledSequencePrimary0.html">Treetop::Compiler::Metagrammar::LabeledSequencePrimary0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/LabeledSequencePrimary1.html">Treetop::Compiler::Metagrammar::LabeledSequencePrimary1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/ModuleDeclaration0.html">Treetop::Compiler::Metagrammar::ModuleDeclaration0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/ModuleDeclaration1.html">Treetop::Compiler::Metagrammar::ModuleDeclaration1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/ModuleDeclaration2.html">Treetop::Compiler::Metagrammar::ModuleDeclaration2</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/ModuleDeclaration3.html">Treetop::Compiler::Metagrammar::ModuleDeclaration3</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/NodeClassDeclarations0.html">Treetop::Compiler::Metagrammar::NodeClassDeclarations0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/NodeClassDeclarations1.html">Treetop::Compiler::Metagrammar::NodeClassDeclarations1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/NodeClassExpression0.html">Treetop::Compiler::Metagrammar::NodeClassExpression0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/NodeClassExpression1.html">Treetop::Compiler::Metagrammar::NodeClassExpression1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/NodeClassExpression2.html">Treetop::Compiler::Metagrammar::NodeClassExpression2</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/NodeClassExpression3.html">Treetop::Compiler::Metagrammar::NodeClassExpression3</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/NonSpaceChar0.html">Treetop::Compiler::Metagrammar::NonSpaceChar0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Nonterminal0.html">Treetop::Compiler::Metagrammar::Nonterminal0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Nonterminal1.html">Treetop::Compiler::Metagrammar::Nonterminal1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/OccurrenceRange0.html">Treetop::Compiler::Metagrammar::OccurrenceRange0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/ParenthesizedExpression0.html">Treetop::Compiler::Metagrammar::ParenthesizedExpression0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/ParenthesizedExpression1.html">Treetop::Compiler::Metagrammar::ParenthesizedExpression1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/ParsingRule0.html">Treetop::Compiler::Metagrammar::ParsingRule0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/ParsingRule1.html">Treetop::Compiler::Metagrammar::ParsingRule1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/PredicateBlock0.html">Treetop::Compiler::Metagrammar::PredicateBlock0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Primary0.html">Treetop::Compiler::Metagrammar::Primary0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Primary1.html">Treetop::Compiler::Metagrammar::Primary1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Primary2.html">Treetop::Compiler::Metagrammar::Primary2</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Primary3.html">Treetop::Compiler::Metagrammar::Primary3</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Primary4.html">Treetop::Compiler::Metagrammar::Primary4</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Primary5.html">Treetop::Compiler::Metagrammar::Primary5</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Primary6.html">Treetop::Compiler::Metagrammar::Primary6</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Primary7.html">Treetop::Compiler::Metagrammar::Primary7</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/QuotedString0.html">Treetop::Compiler::Metagrammar::QuotedString0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/RequireStatement0.html">Treetop::Compiler::Metagrammar::RequireStatement0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Sequence0.html">Treetop::Compiler::Metagrammar::Sequence0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Sequence1.html">Treetop::Compiler::Metagrammar::Sequence1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/Sequence2.html">Treetop::Compiler::Metagrammar::Sequence2</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/SequencePrimary0.html">Treetop::Compiler::Metagrammar::SequencePrimary0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/SequencePrimary1.html">Treetop::Compiler::Metagrammar::SequencePrimary1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/SequencePrimary2.html">Treetop::Compiler::Metagrammar::SequencePrimary2</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/SequencePrimary3.html">Treetop::Compiler::Metagrammar::SequencePrimary3</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/SequencePrimary4.html">Treetop::Compiler::Metagrammar::SequencePrimary4</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/SequencePrimary5.html">Treetop::Compiler::Metagrammar::SequencePrimary5</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/SingleQuotedString0.html">Treetop::Compiler::Metagrammar::SingleQuotedString0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/SingleQuotedString1.html">Treetop::Compiler::Metagrammar::SingleQuotedString1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/TrailingInlineModule0.html">Treetop::Compiler::Metagrammar::TrailingInlineModule0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/TrailingInlineModule1.html">Treetop::Compiler::Metagrammar::TrailingInlineModule1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/TrailingInlineModule2.html">Treetop::Compiler::Metagrammar::TrailingInlineModule2</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/TreetopFile0.html">Treetop::Compiler::Metagrammar::TreetopFile0</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/TreetopFile1.html">Treetop::Compiler::Metagrammar::TreetopFile1</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Metagrammar/TreetopFile2.html">Treetop::Compiler::Metagrammar::TreetopFile2</a></li>
+				
+					<li><a href="../../Treetop/Compiler/MetagrammarParser.html">Treetop::Compiler::MetagrammarParser</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Nonterminal.html">Treetop::Compiler::Nonterminal</a></li>
+				
+					<li><a href="../../Treetop/Compiler/NotPredicate.html">Treetop::Compiler::NotPredicate</a></li>
+				
+					<li><a href="../../Treetop/Compiler/OccurrenceRange.html">Treetop::Compiler::OccurrenceRange</a></li>
+				
+					<li><a href="../../Treetop/Compiler/OneOrMore.html">Treetop::Compiler::OneOrMore</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Optional.html">Treetop::Compiler::Optional</a></li>
+				
+					<li><a href="../../Treetop/Compiler/ParenthesizedExpression.html">Treetop::Compiler::ParenthesizedExpression</a></li>
+				
+					<li><a href="../../Treetop/Compiler/ParsingExpression.html">Treetop::Compiler::ParsingExpression</a></li>
+				
+					<li><a href="../../Treetop/Compiler/ParsingRule.html">Treetop::Compiler::ParsingRule</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Predicate.html">Treetop::Compiler::Predicate</a></li>
+				
+					<li><a href="../../Treetop/Compiler/PredicateBlock.html">Treetop::Compiler::PredicateBlock</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Repetition.html">Treetop::Compiler::Repetition</a></li>
+				
+					<li><a href="../../Treetop/Compiler/RubyBuilder.html">Treetop::Compiler::RubyBuilder</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Sequence.html">Treetop::Compiler::Sequence</a></li>
+				
+					<li><a href="../../Treetop/Compiler/SequenceElementAccessorModule.html">Treetop::Compiler::SequenceElementAccessorModule</a></li>
+				
+					<li><a href="../../Treetop/Compiler/Terminal.html">Treetop::Compiler::Terminal</a></li>
+				
+					<li><a href="../../Treetop/Compiler/TransientPrefix.html">Treetop::Compiler::TransientPrefix</a></li>
+				
+					<li><a href="../../Treetop/Compiler/TreetopFile.html">Treetop::Compiler::TreetopFile</a></li>
+				
+					<li><a href="../../Treetop/Compiler/ZeroOrMore.html">Treetop::Compiler::ZeroOrMore</a></li>
+				
+					<li><a href="../../Treetop/Polyglot.html">Treetop::Polyglot</a></li>
+				
+					<li><a href="../../Treetop/Runtime.html">Treetop::Runtime</a></li>
+				
+					<li><a href="../../Treetop/Runtime/CompiledParser.html">Treetop::Runtime::CompiledParser</a></li>
+				
+					<li><a href="../../Treetop/Runtime/SyntaxNode.html">Treetop::Runtime::SyntaxNode</a></li>
+				
+					<li><a href="../../Treetop/Runtime/TerminalParseFailure.html">Treetop::Runtime::TerminalParseFailure</a></li>
+				
+					<li><a href="../../Treetop/Runtime/TerminalSyntaxNode.html">Treetop::Runtime::TerminalSyntaxNode</a></li>
+				
+					<li><a href="../../IntervalSkipList.html">IntervalSkipList</a></li>
+				
+					<li><a href="../../IntervalSkipList/HeadNode.html">IntervalSkipList::HeadNode</a></li>
+				
+					<li><a href="../../IntervalSkipList/Node.html">IntervalSkipList::Node</a></li>
+				
+					<li><a href="../../String.html">String</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Treetop::Compiler::RubyBuilder</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="level-attribute-method" class="method-detail">
+				<a name="level"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">level</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="address-space-attribute-method" class="method-detail">
+				<a name="address_space"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">address_space</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="ruby-attribute-method" class="method-detail">
+				<a name="ruby"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">ruby</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 9</span>
+ 9:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+10:         <span class="ruby-ivar">@level</span> = <span class="ruby-value">0</span>
+11:         <span class="ruby-ivar">@address_space</span> = <span class="ruby-constant">LexicalAddressSpace</span>.<span class="ruby-identifier">new</span>
+12:         <span class="ruby-ivar">@ruby</span> = <span class="ruby-value str">&quot;&quot;</span>
+13:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%3C%3C"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">&lt;&lt;</span><span
+						class="method-args">(ruby_line)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 15</span>
+15:       <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">ruby_line</span>)              
+16:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">ruby_line</span>.<span class="ruby-identifier">blank?</span>
+17:         <span class="ruby-identifier">ruby</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">ruby_line</span>.<span class="ruby-identifier">tabto</span>(<span class="ruby-identifier">level</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;\n&quot;</span>
+18:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="accumulate-method" class="method-detail ">
+				<a name="method-i-accumulate"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">accumulate</span><span
+						class="method-args">(left, right)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="accumulate-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 60</span>
+60:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">accumulate</span>(<span class="ruby-identifier">left</span>, <span class="ruby-identifier">right</span>)
+61:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{left} &lt;&lt; #{right}&quot;</span>
+62:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="assign-method" class="method-detail ">
+				<a name="method-i-assign"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">assign</span><span
+						class="method-args">(left, right)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="assign-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 48</span>
+48:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">assign</span>(<span class="ruby-identifier">left</span>, <span class="ruby-identifier">right</span>)
+49:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">left</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Array</span>
+50:           <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{left.join(', ')} = #{right.join(', ')}&quot;</span>
+51:         <span class="ruby-keyword kw">else</span>
+52:           <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{left} = #{right}&quot;</span>
+53:         <span class="ruby-keyword kw">end</span>
+54:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="break-method" class="method-detail ">
+				<a name="method-i-break"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">break</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="break-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 86</span>
+86:       <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">break</span>
+87:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'break'</span>
+88:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="class-declaration-method" class="method-detail ">
+				<a name="method-i-class_declaration"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">class_declaration</span><span
+						class="method-args">(name, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="class-declaration-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 30</span>
+30:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">class_declaration</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+31:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;class #{name}&quot;</span>
+32:         <span class="ruby-identifier">indented</span>(&amp;<span class="ruby-identifier">block</span>)
+33:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;end&quot;</span>
+34:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="else--method" class="method-detail ">
+				<a name="method-i-else_"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">else_</span><span
+						class="method-args">(&block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="else--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 74</span>
+74:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">else_</span>(&amp;<span class="ruby-identifier">block</span>)
+75:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'else'</span>
+76:         <span class="ruby-identifier">indented</span>(&amp;<span class="ruby-identifier">block</span>)
+77:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'end'</span>
+78:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="extend-method" class="method-detail ">
+				<a name="method-i-extend"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">extend</span><span
+						class="method-args">(var, module_name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="extend-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 56</span>
+56:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extend</span>(<span class="ruby-identifier">var</span>, <span class="ruby-identifier">module_name</span>)
+57:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{var}.extend(#{module_name})&quot;</span>
+58:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="if--method" class="method-detail ">
+				<a name="method-i-if_"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">if_</span><span
+						class="method-args">(condition, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="if--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 69</span>
+69:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">if_</span>(<span class="ruby-identifier">condition</span>, &amp;<span class="ruby-identifier">block</span>)
+70:         <span class="ruby-identifier">if__</span>(<span class="ruby-identifier">condition</span>, &amp;<span class="ruby-identifier">block</span>)
+71:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'end'</span>
+72:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="if--method" class="method-detail ">
+				<a name="method-i-if__"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">if__</span><span
+						class="method-args">(condition, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="if--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 64</span>
+64:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">if__</span>(<span class="ruby-identifier">condition</span>, &amp;<span class="ruby-identifier">block</span>)
+65:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;if #{condition}&quot;</span>
+66:         <span class="ruby-identifier">indented</span>(&amp;<span class="ruby-identifier">block</span>)
+67:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="in-method" class="method-detail ">
+				<a name="method-i-in"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">in</span><span
+						class="method-args">(depth = 2)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="in-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 90</span>
+90:       <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">in</span>(<span class="ruby-identifier">depth</span> = <span class="ruby-value">2</span>)
+91:         <span class="ruby-ivar">@level</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">depth</span>
+92:         <span class="ruby-keyword kw">self</span>
+93:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="indented-method" class="method-detail ">
+				<a name="method-i-indented"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">indented</span><span
+						class="method-args">(depth = 2)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="indented-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 24</span>
+24:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">indented</span>(<span class="ruby-identifier">depth</span> = <span class="ruby-value">2</span>)
+25:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">in</span>(<span class="ruby-identifier">depth</span>)
+26:         <span class="ruby-keyword kw">yield</span>
+27:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">out</span>(<span class="ruby-identifier">depth</span>)
+28:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="loop-method" class="method-detail ">
+				<a name="method-i-loop"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">loop</span><span
+						class="method-args">(&block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="loop-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 80</span>
+80:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">loop</span>(&amp;<span class="ruby-identifier">block</span>)
+81:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'loop do'</span>
+82:         <span class="ruby-identifier">indented</span>(&amp;<span class="ruby-identifier">block</span>)
+83:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'end'</span>
+84:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="method-declaration-method" class="method-detail ">
+				<a name="method-i-method_declaration"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">method_declaration</span><span
+						class="method-args">(name, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="method-declaration-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 42</span>
+42:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_declaration</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+43:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;def #{name}&quot;</span>
+44:         <span class="ruby-identifier">indented</span>(&amp;<span class="ruby-identifier">block</span>)
+45:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;end&quot;</span>
+46:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="module-declaration-method" class="method-detail ">
+				<a name="method-i-module_declaration"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">module_declaration</span><span
+						class="method-args">(name, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="module-declaration-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 36</span>
+36:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">module_declaration</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+37:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;module #{name}&quot;</span>
+38:         <span class="ruby-identifier">indented</span>(&amp;<span class="ruby-identifier">block</span>)
+39:         <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;end&quot;</span>
+40:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="newline-method" class="method-detail ">
+				<a name="method-i-newline"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">newline</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="newline-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 20</span>
+20:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newline</span>
+21:         <span class="ruby-identifier">ruby</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;\n&quot;</span>
+22:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="next-address-method" class="method-detail ">
+				<a name="method-i-next_address"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">next_address</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="next-address-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 100</span>
+100:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">next_address</span>
+101:         <span class="ruby-identifier">address_space</span>.<span class="ruby-identifier">next_address</span>
+102:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="out-method" class="method-detail ">
+				<a name="method-i-out"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">out</span><span
+						class="method-args">(depth = 2)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="out-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 95</span>
+95:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">out</span>(<span class="ruby-identifier">depth</span> = <span class="ruby-value">2</span>)
+96:         <span class="ruby-ivar">@level</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">depth</span>
+97:         <span class="ruby-keyword kw">self</span>
+98:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="reset-addresses-method" class="method-detail ">
+				<a name="method-i-reset_addresses"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">reset_addresses</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="reset-addresses-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 104</span>
+104:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset_addresses</span>
+105:         <span class="ruby-identifier">address_space</span>.<span class="ruby-identifier">reset_addresses</span>
+106:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="indent-method" class="method-detail ">
+				<a name="method-i-indent"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">indent</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="indent-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/treetop/compiler/ruby_builder.rb, line 110</span>
+110:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">indent</span>
+111:         <span class="ruby-value str">&quot; &quot;</span> * <span class="ruby-identifier">level</span>
+112:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

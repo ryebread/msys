@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: whiny_nil.rb [activesupport-3.0.0 Documentation]</title>
+
+	<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+	<div id="metadata">
+		<dl>
+			<dt class="modified-date">Last Modified</dt>
+			<dd class="modified-date">2010-09-09 09:29:47 +0800</dd>
+
+			
+			<dt class="requires">Requires</dt>
+			<dd class="requires">
+				<ul>
+				
+				</ul>
+			</dd>
+			
+
+			
+		</dl>
+	</div>
+
+	<div id="documentation">
+		
+		<div class="description">
+			<h2>Description</h2>
+			<p>
+Extensions to <tt>nil</tt> which allow for more helpful error messages for
+people who are new to Rails.
+</p>
+<p>
+Ruby raises NoMethodError if you invoke a method on an object that does not
+respond to it:
+</p>
+<pre>
+  $ ruby -e nil.destroy
+  -e:1: undefined method `destroy' for nil:NilClass (NoMethodError)
+</pre>
+<p>
+With these extensions, if the method belongs to the public interface of the
+classes in NilClass::WHINERS the error message suggests which could be the
+actual intended class:
+</p>
+<pre>
+  $ rails runner nil.destroy
+  ...
+  You might have expected an instance of ActiveRecord::Base.
+  ...
+</pre>
+<p>
+NilClass#id exists in Ruby 1.8 (though it is deprecated). Since <tt>id</tt>
+is a fundamental method of Active Record models NilClass#id is redefined as
+well to raise a RuntimeError and warn the user. She probably wanted a model
+database identifier and the 4 returned by the original method could result
+in obscure bugs.
+</p>
+<p>
+The flag <tt>config.whiny_nils</tt> determines whether this feature is
+enabled. By default it is on in development and test modes, and it is off
+in production mode.
+</p>
+
+		</div>
+		
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Rack::Mount::RouteSet</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/rack/mount/route_set_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rack/mount/route_set.rb">lib/rack/mount/route_set.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-c-new_without_optimizations">::new_without_optimizations</a></li>
+					
+					<li><a href="#method-i-add_route">#add_route</a></li>
+					
+					<li><a href="#method-i-build_generation_graph">#build_generation_graph</a></li>
+					
+					<li><a href="#method-i-build_generation_keys">#build_generation_keys</a></li>
+					
+					<li><a href="#method-i-build_nested_route_set">#build_nested_route_set</a></li>
+					
+					<li><a href="#method-i-build_recognition_graph">#build_recognition_graph</a></li>
+					
+					<li><a href="#method-i-build_recognition_keys">#build_recognition_keys</a></li>
+					
+					<li><a href="#method-i-call">#call</a></li>
+					
+					<li><a href="#method-i-extract_params%21">#extract_params!</a></li>
+					
+					<li><a href="#method-i-freeze">#freeze</a></li>
+					
+					<li><a href="#method-i-instance_variables_to_serialize">#instance_variables_to_serialize</a></li>
+					
+					<li><a href="#method-i-length">#length</a></li>
+					
+					<li><a href="#method-i-recognition_stats">#recognition_stats</a></li>
+					
+					<li><a href="#method-i-recognize">#recognize</a></li>
+					
+					<li><a href="#method-i-stubbed_request_class">#stubbed_request_class</a></li>
+					
+					<li><a href="#method-i-url">#url</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Rack/Mount.html">Rack::Mount</a></li>
+				
+					<li><a href="../../Rack/Mount/Analysis/Splitting.html">Rack::Mount::Analysis::Splitting</a></li>
+				
+					<li><a href="../../Rack/Mount/Analysis/Splitting/Key.html">Rack::Mount::Analysis::Splitting::Key</a></li>
+				
+					<li><a href="../../Rack/Mount/GeneratableRegexp/InstanceMethods.html">Rack::Mount::GeneratableRegexp::InstanceMethods</a></li>
+				
+					<li><a href="../../Rack/Mount/RegexpWithNamedGroups.html">Rack::Mount::RegexpWithNamedGroups</a></li>
+				
+					<li><a href="../../Rack/Mount/Route.html">Rack::Mount::Route</a></li>
+				
+					<li><a href="../../Rack/Mount/RouteSet.html">Rack::Mount::RouteSet</a></li>
+				
+					<li><a href="../../Rack/Mount/RoutingError.html">Rack::Mount::RoutingError</a></li>
+				
+					<li><a href="../../Rack/Mount/Strexp.html">Rack::Mount::Strexp</a></li>
+				
+					<li><a href="../../Rack/Mount/StrexpParser.html">Rack::Mount::StrexpParser</a></li>
+				
+					<li><a href="../../Rack/Mount/StrexpParser/ScanError.html">Rack::Mount::StrexpParser::ScanError</a></li>
+				
+					<li><a href="../../Rack/Mount/Utils.html">Rack::Mount::Utils</a></li>
+				
+					<li><a href="../../Regin.html">Regin</a></li>
+				
+					<li><a href="../../Regin/Alternation.html">Regin::Alternation</a></li>
+				
+					<li><a href="../../Regin/Anchor.html">Regin::Anchor</a></li>
+				
+					<li><a href="../../Regin/Atom.html">Regin::Atom</a></li>
+				
+					<li><a href="../../Regin/Character.html">Regin::Character</a></li>
+				
+					<li><a href="../../Regin/CharacterClass.html">Regin::CharacterClass</a></li>
+				
+					<li><a href="../../Regin/Collection.html">Regin::Collection</a></li>
+				
+					<li><a href="../../Regin/Expression.html">Regin::Expression</a></li>
+				
+					<li><a href="../../Regin/Group.html">Regin::Group</a></li>
+				
+					<li><a href="../../Regin/Options.html">Regin::Options</a></li>
+				
+					<li><a href="../../Multimap.html">Multimap</a></li>
+				
+					<li><a href="../../Multiset.html">Multiset</a></li>
+				
+					<li><a href="../../NestedMultimap.html">NestedMultimap</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Rack::Mount::RouteSet</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="X_CASCADE">X_CASCADE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="PASS">PASS</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="PATH_INFO">PATH_INFO</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(options = {}, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Basic <a href="RouteSet.html">RouteSet</a> initializer.
+</p>
+<p>
+If a block is given, the set is yielded and finalized.
+</p>
+<p>
+See other aspects for other valid options:
+</p>
+<ul>
+<li><p>
+<tt>Generation::RouteSet.new</tt>
+</p>
+</li>
+<li><p>
+<tt>Recognition::RouteSet.new</tt>
+</p>
+</li>
+</ul>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 21</span>
+21:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+22:       <span class="ruby-ivar">@parameters_key</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:parameters_key</span>) <span class="ruby-operator">||</span> <span class="ruby-value str">'rack.routing_args'</span>
+23:       <span class="ruby-ivar">@parameters_key</span>.<span class="ruby-identifier">freeze</span>
+24: 
+25:       <span class="ruby-ivar">@named_routes</span> = {}
+26: 
+27:       <span class="ruby-ivar">@recognition_key_analyzer</span> = <span class="ruby-constant">Analysis</span><span class="ruby-operator">::</span><span class="ruby-constant">Splitting</span>.<span class="ruby-identifier">new</span>
+28:       <span class="ruby-ivar">@generation_key_analyzer</span>  = <span class="ruby-constant">Analysis</span><span class="ruby-operator">::</span><span class="ruby-constant">Frequency</span>.<span class="ruby-identifier">new</span>
+29: 
+30:       <span class="ruby-ivar">@request_class</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:request_class</span>) <span class="ruby-operator">||</span> <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>
+31:       <span class="ruby-ivar">@valid_conditions</span> = <span class="ruby-ivar">@request_class</span>.<span class="ruby-identifier">public_instance_methods</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_sym</span> }
+32: 
+33:       <span class="ruby-identifier">extend</span> <span class="ruby-constant">CodeGeneration</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:_optimize</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword kw">false</span>
+34:       <span class="ruby-ivar">@optimized_recognize_defined</span> = <span class="ruby-keyword kw">false</span>
+35: 
+36:       <span class="ruby-ivar">@routes</span> = []
+37:       <span class="ruby-identifier">expire!</span>
+38: 
+39:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+40:         <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">self</span>
+41:         <span class="ruby-identifier">rehash</span>
+42:       <span class="ruby-keyword kw">end</span>
+43:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-without-optimizations-method" class="method-detail ">
+				<a name="method-c-new_without_optimizations"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new_without_optimizations</span><span
+						class="method-args">(options = {}, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Initialize a new <a href="RouteSet.html">RouteSet</a> without optimizations
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-without-optimizations-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 10</span>
+10:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new_without_optimizations</span>(<span class="ruby-identifier">options</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+11:       <span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:_optimize</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>), &amp;<span class="ruby-identifier">block</span>)
+12:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="add-route-method" class="method-detail ">
+				<a name="method-i-add_route"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add_route</span><span
+						class="method-args">(app, conditions = {}, defaults = {}, name = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Builder method to add a route to the set
+</p>
+<table>
+<tr><td valign="top"><tt>app</tt></td><td><p>
+A valid Rack app to call if the conditions are met.
+</p>
+</td></tr>
+<tr><td valign="top"><tt>conditions</tt></td><td><p>
+A hash of conditions to match against. Conditions may be expressed as
+strings or regexps to match against.
+</p>
+</td></tr>
+<tr><td valign="top"><tt>defaults</tt></td><td><p>
+A hash of values that always gets merged in
+</p>
+</td></tr>
+<tr><td valign="top"><tt>name</tt></td><td><p>
+Symbol identifier for the route used with named route generations
+</p>
+</td></tr>
+</table>
+					
+
+					
+					<div class="method-source-code"
+						id="add-route-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 54</span>
+54:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_route</span>(<span class="ruby-identifier">app</span>, <span class="ruby-identifier">conditions</span> = {}, <span class="ruby-identifier">defaults</span> = {}, <span class="ruby-identifier">name</span> = <span class="ruby-keyword kw">nil</span>)
+55:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+56:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'conditions must be a Hash'</span>
+57:       <span class="ruby-keyword kw">end</span>
+58: 
+59:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">method</span>, <span class="ruby-identifier">pattern</span><span class="ruby-operator">|</span>
+60:           <span class="ruby-ivar">@valid_conditions</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">method</span>)
+61:         }
+62:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'conditions may only include '</span> <span class="ruby-operator">+</span>
+63:           <span class="ruby-ivar">@valid_conditions</span>.<span class="ruby-identifier">inspect</span>
+64:       <span class="ruby-keyword kw">end</span>
+65: 
+66:       <span class="ruby-identifier">route</span> = <span class="ruby-constant">Route</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">app</span>, <span class="ruby-identifier">conditions</span>, <span class="ruby-identifier">defaults</span>, <span class="ruby-identifier">name</span>)
+67:       <span class="ruby-ivar">@routes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">route</span>
+68: 
+69:       <span class="ruby-ivar">@recognition_key_analyzer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">route</span>.<span class="ruby-identifier">conditions</span>
+70: 
+71:       <span class="ruby-ivar">@named_routes</span>[<span class="ruby-identifier">route</span>.<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">route</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">route</span>.<span class="ruby-identifier">name</span>
+72:       <span class="ruby-ivar">@generation_key_analyzer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">route</span>.<span class="ruby-identifier">generation_keys</span>
+73: 
+74:       <span class="ruby-identifier">expire!</span>
+75:       <span class="ruby-identifier">route</span>
+76:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="call-method" class="method-detail ">
+				<a name="method-i-call"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">call</span><span
+						class="method-args">(env)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Rack compatible recognition and dispatching method. Routes are tried until
+one returns a non-catch status code. If no routes match, the catch status
+code is returned.
+</p>
+<p>
+This method can only be invoked after the <a
+href="RouteSet.html">RouteSet</a> has been finalized.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="call-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 132</span>
+132:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+133:       <span class="ruby-identifier">raise</span> <span class="ruby-value str">'route set not finalized'</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@recognition_graph</span>
+134: 
+135:       <span class="ruby-identifier">env</span>[<span class="ruby-constant">PATH_INFO</span>] = <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">normalize_path</span>(<span class="ruby-identifier">env</span>[<span class="ruby-constant">PATH_INFO</span>])
+136: 
+137:       <span class="ruby-identifier">request</span> = <span class="ruby-keyword kw">nil</span>
+138:       <span class="ruby-identifier">req</span> = <span class="ruby-ivar">@request_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">env</span>)
+139:       <span class="ruby-identifier">recognize</span>(<span class="ruby-identifier">req</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">route</span>, <span class="ruby-identifier">matches</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+140:         <span class="ruby-comment cmt"># TODO: We only want to unescape params from uri related methods</span>
+141:         <span class="ruby-identifier">params</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">unescape_uri</span>(<span class="ruby-identifier">v</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) }
+142: 
+143:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">route</span>.<span class="ruby-identifier">prefix?</span>
+144:           <span class="ruby-identifier">env</span>[<span class="ruby-constant">Prefix</span><span class="ruby-operator">::</span><span class="ruby-constant">KEY</span>] = <span class="ruby-identifier">matches</span>[<span class="ruby-value">:path_info</span>].<span class="ruby-identifier">to_s</span>
+145:         <span class="ruby-keyword kw">end</span>
+146: 
+147:         <span class="ruby-identifier">env</span>[<span class="ruby-ivar">@parameters_key</span>] = <span class="ruby-identifier">params</span>
+148:         <span class="ruby-identifier">result</span> = <span class="ruby-identifier">route</span>.<span class="ruby-identifier">app</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+149:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>][<span class="ruby-constant">X_CASCADE</span>] <span class="ruby-operator">==</span> <span class="ruby-constant">PASS</span>
+150:       <span class="ruby-keyword kw">end</span>
+151: 
+152:       <span class="ruby-identifier">request</span> <span class="ruby-operator">||</span> [<span class="ruby-value">404</span>, {<span class="ruby-value str">'Content-Type'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'text/html'</span>, <span class="ruby-value str">'X-Cascade'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'pass'</span>}, [<span class="ruby-value str">'Not Found'</span>]]
+153:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="freeze-method" class="method-detail ">
+				<a name="method-i-freeze"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">freeze</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Finalizes the set and builds optimized data structures. You <b>must</b>
+freeze the set before you can use <tt>call</tt> and <tt>url</tt>. So
+remember to call freeze after you are done adding routes.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="freeze-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 261</span>
+261:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">freeze</span>
+262:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">frozen?</span>
+263:         <span class="ruby-identifier">rehash</span>
+264: 
+265:         <span class="ruby-ivar">@recognition_key_analyzer</span> = <span class="ruby-keyword kw">nil</span>
+266:         <span class="ruby-ivar">@generation_key_analyzer</span>  = <span class="ruby-keyword kw">nil</span>
+267:         <span class="ruby-ivar">@valid_conditions</span>         = <span class="ruby-keyword kw">nil</span>
+268: 
+269:         <span class="ruby-ivar">@routes</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">route</span><span class="ruby-operator">|</span> <span class="ruby-identifier">route</span>.<span class="ruby-identifier">freeze</span> }
+270:         <span class="ruby-ivar">@routes</span>.<span class="ruby-identifier">freeze</span>
+271:       <span class="ruby-keyword kw">end</span>
+272: 
+273:       <span class="ruby-keyword kw">super</span>
+274:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="length-method" class="method-detail ">
+				<a name="method-i-length"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">length</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Number of routes in the set
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="length-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 243</span>
+243:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">length</span>
+244:       <span class="ruby-ivar">@routes</span>.<span class="ruby-identifier">length</span>
+245:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="recognize-method" class="method-detail ">
+				<a name="method-i-recognize"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">recognize</span><span
+						class="method-args">(obj)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="recognize-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 78</span>
+ 78:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recognize</span>(<span class="ruby-identifier">obj</span>)
+ 79:       <span class="ruby-identifier">raise</span> <span class="ruby-value str">'route set not finalized'</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@recognition_graph</span>
+ 80: 
+ 81:       <span class="ruby-identifier">cache</span> = {}
+ 82:       <span class="ruby-identifier">keys</span> = <span class="ruby-ivar">@recognition_keys</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+ 83:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:call</span>)
+ 84:           <span class="ruby-identifier">key</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">cache</span>, <span class="ruby-identifier">obj</span>)
+ 85:         <span class="ruby-keyword kw">else</span>
+ 86:           <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">key</span>)
+ 87:         <span class="ruby-keyword kw">end</span>
+ 88:       }
+ 89: 
+ 90:       <span class="ruby-ivar">@recognition_graph</span>[*<span class="ruby-identifier">keys</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">route</span><span class="ruby-operator">|</span>
+ 91:         <span class="ruby-identifier">matches</span> = {}
+ 92:         <span class="ruby-identifier">params</span>  = <span class="ruby-identifier">route</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">dup</span>
+ 93: 
+ 94:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">route</span>.<span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">method</span>, <span class="ruby-identifier">condition</span><span class="ruby-operator">|</span>
+ 95:             <span class="ruby-identifier">value</span> = <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>)
+ 96:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">condition</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">m</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">condition</span>))
+ 97:               <span class="ruby-identifier">matches</span>[<span class="ruby-identifier">method</span>] = <span class="ruby-identifier">m</span>
+ 98:               <span class="ruby-identifier">captures</span> = <span class="ruby-identifier">m</span>.<span class="ruby-identifier">captures</span>
+ 99:               <span class="ruby-identifier">route</span>.<span class="ruby-identifier">named_captures</span>[<span class="ruby-identifier">method</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+100:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">v</span> = <span class="ruby-identifier">captures</span>[<span class="ruby-identifier">i</span>]
+101:                   <span class="ruby-identifier">params</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+102:                 <span class="ruby-keyword kw">end</span>
+103:               <span class="ruby-keyword kw">end</span>
+104:               <span class="ruby-keyword kw">true</span>
+105:             <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">condition</span>
+106:               <span class="ruby-keyword kw">true</span>
+107:             <span class="ruby-keyword kw">else</span>
+108:               <span class="ruby-keyword kw">false</span>
+109:             <span class="ruby-keyword kw">end</span>
+110:           }
+111:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+112:             <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">route</span>, <span class="ruby-identifier">matches</span>, <span class="ruby-identifier">params</span>
+113:           <span class="ruby-keyword kw">else</span>
+114:             <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">route</span>, <span class="ruby-identifier">matches</span>, <span class="ruby-identifier">params</span>
+115:           <span class="ruby-keyword kw">end</span>
+116:         <span class="ruby-keyword kw">end</span>
+117:       <span class="ruby-keyword kw">end</span>
+118: 
+119:       <span class="ruby-keyword kw">nil</span>
+120:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="url-method" class="method-detail ">
+				<a name="method-i-url"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">url</span><span
+						class="method-args">(env, *args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Generates a url from Rack env and identifiers or significant keys.
+</p>
+<p>
+To generate a url by named route, pass the name in as a <tt>Symbol</tt>.
+</p>
+<pre>
+  url(env, :dashboard) # =&gt; &quot;/dashboard&quot;
+</pre>
+<p>
+Additional parameters can be passed in as a hash
+</p>
+<pre>
+  url(env, :people, :id =&gt; &quot;1&quot;) # =&gt; &quot;/people/1&quot;
+</pre>
+<p>
+If no name route is given, it will fall back to a slower generation search.
+</p>
+<pre>
+  url(env, :controller =&gt; &quot;people&quot;, :action =&gt; &quot;show&quot;, :id =&gt; &quot;1&quot;)
+    # =&gt; &quot;/people/1&quot;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="url-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 167</span>
+167:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url</span>(<span class="ruby-identifier">env</span>, *<span class="ruby-identifier">args</span>)
+168:       <span class="ruby-identifier">named_route</span>, <span class="ruby-identifier">params</span> = <span class="ruby-keyword kw">nil</span>, {}
+169: 
+170:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span>
+171:       <span class="ruby-keyword kw">when</span> <span class="ruby-value">2</span>
+172:         <span class="ruby-identifier">named_route</span>, <span class="ruby-identifier">params</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">dup</span>
+173:       <span class="ruby-keyword kw">when</span> <span class="ruby-value">1</span>
+174:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+175:           <span class="ruby-identifier">params</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">dup</span>
+176:         <span class="ruby-keyword kw">else</span>
+177:           <span class="ruby-identifier">named_route</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>]
+178:         <span class="ruby-keyword kw">end</span>
+179:       <span class="ruby-keyword kw">else</span>
+180:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>
+181:       <span class="ruby-keyword kw">end</span>
+182: 
+183:       <span class="ruby-identifier">only_path</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:only_path</span>)
+184:       <span class="ruby-identifier">recall</span> = <span class="ruby-identifier">env</span>[<span class="ruby-ivar">@parameters_key</span>] <span class="ruby-operator">||</span> {}
+185: 
+186:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">result</span> = <span class="ruby-identifier">generate</span>(<span class="ruby-value">:all</span>, <span class="ruby-identifier">named_route</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">recall</span>,
+187:           <span class="ruby-value">:parameterize</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">param</span><span class="ruby-operator">|</span> <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">escape_uri</span>(<span class="ruby-identifier">param</span>) })
+188:         <span class="ruby-keyword kw">return</span>
+189:       <span class="ruby-keyword kw">end</span>
+190: 
+191:       <span class="ruby-identifier">parts</span>, <span class="ruby-identifier">params</span> = <span class="ruby-identifier">result</span>
+192:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">parts</span>
+193: 
+194:       <span class="ruby-identifier">params</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+195:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">v</span>
+196:           <span class="ruby-identifier">params</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+197:         <span class="ruby-keyword kw">else</span>
+198:           <span class="ruby-identifier">params</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">k</span>)
+199:         <span class="ruby-keyword kw">end</span>
+200:       <span class="ruby-keyword kw">end</span>
+201: 
+202:       <span class="ruby-identifier">req</span> = <span class="ruby-identifier">stubbed_request_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">env</span>)
+203:       <span class="ruby-identifier">req</span>.<span class="ruby-identifier">_stubbed_values</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:query_string</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">build_nested_query</span>(<span class="ruby-identifier">params</span>))
+204:       <span class="ruby-identifier">only_path</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">req</span>.<span class="ruby-identifier">fullpath</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">req</span>.<span class="ruby-identifier">url</span>
+205:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="protected-instance-method-details" class="method-section section">
+			<h3 class="section-header">Protected Instance Methods</h3>
+
+		
+			<div id="recognition-stats-method" class="method-detail ">
+				<a name="method-i-recognition_stats"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">recognition_stats</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="recognition-stats-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 297</span>
+297:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recognition_stats</span>
+298:         { <span class="ruby-value">:keys</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@recognition_keys</span>,
+299:           <span class="ruby-value">:keys_size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@recognition_keys</span>.<span class="ruby-identifier">size</span>,
+300:           <span class="ruby-value">:graph_size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@recognition_graph</span>.<span class="ruby-identifier">size</span>,
+301:           <span class="ruby-value">:graph_height</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@recognition_graph</span>.<span class="ruby-identifier">height</span>,
+302:           <span class="ruby-value">:graph_average_height</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@recognition_graph</span>.<span class="ruby-identifier">average_height</span> }
+303:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="build-generation-graph-method" class="method-detail ">
+				<a name="method-i-build_generation_graph"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_generation_graph</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="build-generation-graph-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 349</span>
+349:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_generation_graph</span>
+350:         <span class="ruby-identifier">build_nested_route_set</span>(<span class="ruby-ivar">@generation_keys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+351:           <span class="ruby-identifier">throw</span> <span class="ruby-value">:skip</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@routes</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">significant_params?</span>
+352: 
+353:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">k</span> = <span class="ruby-ivar">@generation_key_analyzer</span>.<span class="ruby-identifier">possible_keys</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">k</span>]
+354:             <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>
+355:           <span class="ruby-keyword kw">else</span>
+356:             <span class="ruby-keyword kw">nil</span>
+357:           <span class="ruby-keyword kw">end</span>
+358:         }
+359:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-generation-keys-method" class="method-detail ">
+				<a name="method-i-build_generation_keys"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_generation_keys</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="build-generation-keys-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 361</span>
+361:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_generation_keys</span>
+362:         <span class="ruby-identifier">keys</span> = <span class="ruby-ivar">@generation_key_analyzer</span>.<span class="ruby-identifier">report</span>
+363:         <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;generation keys - #{keys.inspect}&quot;</span>
+364:         <span class="ruby-identifier">keys</span>
+365:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-nested-route-set-method" class="method-detail ">
+				<a name="method-i-build_nested_route_set"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_nested_route_set</span><span
+						class="method-args">(keys, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+An internal helper method for constructing a nested set from the linear
+route set.
+</p>
+<p>
+<a
+href="RouteSet.html#method-i-build_nested_route_set">build_nested_route_set</a>([:request_method,
+:path_info]) { |route, method|
+</p>
+<pre>
+  route.send(method)
+</pre>
+<p>
+}
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="build-nested-route-set-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 324</span>
+324:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_nested_route_set</span>(<span class="ruby-identifier">keys</span>, &amp;<span class="ruby-identifier">block</span>)
+325:         <span class="ruby-identifier">graph</span> = <span class="ruby-constant">Multimap</span>.<span class="ruby-identifier">new</span>
+326:         <span class="ruby-ivar">@routes</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">route</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+327:           <span class="ruby-identifier">catch</span>(<span class="ruby-value">:skip</span>) <span class="ruby-keyword kw">do</span>
+328:             <span class="ruby-identifier">k</span> = <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">index</span>) }
+329:             <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">pop_trailing_blanks!</span>(<span class="ruby-identifier">k</span>)
+330:             <span class="ruby-identifier">k</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span> <span class="ruby-operator">||</span> <span class="ruby-regexp re">/.*/</span> }
+331:             <span class="ruby-identifier">graph</span>[*<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">route</span>
+332:           <span class="ruby-keyword kw">end</span>
+333:         <span class="ruby-keyword kw">end</span>
+334:         <span class="ruby-identifier">graph</span>
+335:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-recognition-graph-method" class="method-detail ">
+				<a name="method-i-build_recognition_graph"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_recognition_graph</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="build-recognition-graph-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 337</span>
+337:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_recognition_graph</span>
+338:         <span class="ruby-identifier">build_nested_route_set</span>(<span class="ruby-ivar">@recognition_keys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+339:           <span class="ruby-ivar">@recognition_key_analyzer</span>.<span class="ruby-identifier">possible_keys</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">k</span>]
+340:         }
+341:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-recognition-keys-method" class="method-detail ">
+				<a name="method-i-build_recognition_keys"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_recognition_keys</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="build-recognition-keys-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 343</span>
+343:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_recognition_keys</span>
+344:         <span class="ruby-identifier">keys</span> = <span class="ruby-ivar">@recognition_key_analyzer</span>.<span class="ruby-identifier">report</span>
+345:         <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;recognition keys - #{keys.inspect}&quot;</span>
+346:         <span class="ruby-identifier">keys</span>
+347:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="extract-params--method" class="method-detail ">
+				<a name="method-i-extract_params%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">extract_params!</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="extract-params--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 367</span>
+367:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extract_params!</span>(*<span class="ruby-identifier">args</span>)
+368:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span>
+369:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">4</span>
+370:           <span class="ruby-identifier">named_route</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">recall</span>, <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>
+371:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">3</span>
+372:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+373:             <span class="ruby-identifier">params</span>, <span class="ruby-identifier">recall</span>, <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>
+374:           <span class="ruby-keyword kw">else</span>
+375:             <span class="ruby-identifier">named_route</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">recall</span> = <span class="ruby-identifier">args</span>
+376:           <span class="ruby-keyword kw">end</span>
+377:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">2</span>
+378:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+379:             <span class="ruby-identifier">params</span>, <span class="ruby-identifier">recall</span> = <span class="ruby-identifier">args</span>
+380:           <span class="ruby-keyword kw">else</span>
+381:             <span class="ruby-identifier">named_route</span>, <span class="ruby-identifier">params</span> = <span class="ruby-identifier">args</span>
+382:           <span class="ruby-keyword kw">end</span>
+383:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">1</span>
+384:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+385:             <span class="ruby-identifier">params</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>]
+386:           <span class="ruby-keyword kw">else</span>
+387:             <span class="ruby-identifier">named_route</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>]
+388:           <span class="ruby-keyword kw">end</span>
+389:         <span class="ruby-keyword kw">else</span>
+390:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>
+391:         <span class="ruby-keyword kw">end</span>
+392: 
+393:         <span class="ruby-identifier">named_route</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">nil</span>
+394:         <span class="ruby-identifier">params</span>  <span class="ruby-operator">||=</span> {}
+395:         <span class="ruby-identifier">recall</span>  <span class="ruby-operator">||=</span> {}
+396:         <span class="ruby-identifier">options</span> <span class="ruby-operator">||=</span> {}
+397: 
+398:         [<span class="ruby-identifier">named_route</span>, <span class="ruby-identifier">params</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-identifier">recall</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">dup</span>]
+399:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="instance-variables-to-serialize-method" class="method-detail ">
+				<a name="method-i-instance_variables_to_serialize"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">instance_variables_to_serialize</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="instance-variables-to-serialize-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 314</span>
+314:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">instance_variables_to_serialize</span>
+315:         <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ivar</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ivar</span>.<span class="ruby-identifier">to_sym</span> } <span class="ruby-operator">-</span> [<span class="ruby-value">:@stubbed_request_class</span>, <span class="ruby-value">:@optimized_recognize_defined</span>]
+316:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="stubbed-request-class-method" class="method-detail ">
+				<a name="method-i-stubbed_request_class"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">stubbed_request_class</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="stubbed-request-class-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/route_set.rb, line 401</span>
+401:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stubbed_request_class</span>
+402:         <span class="ruby-ivar">@stubbed_request_class</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">begin</span>
+403:           <span class="ruby-identifier">klass</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@request_class</span>)
+404:           <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">public_instance_methods</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+405:             <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^__|object_id/</span>
+406:             <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-value str">              def #{method}(*args, &amp;block)                @_stubbed_values[:#{method}] || super              end</span>
+407:           <span class="ruby-keyword kw">end</span>
+408:           <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">class_eval</span> { <span class="ruby-identifier">attr_accessor</span> <span class="ruby-value">:_stubbed_values</span> }
+409:           <span class="ruby-identifier">klass</span>
+410:         <span class="ruby-keyword kw">end</span>
+411:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

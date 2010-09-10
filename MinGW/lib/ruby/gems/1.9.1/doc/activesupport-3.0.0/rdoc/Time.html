@@ -1,0 +1,3497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Time</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./lib/active_support/core_ext/time/acts_like_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_support/core_ext/time/acts_like.rb">lib/active_support/core_ext/time/acts_like.rb</a></li>
+					
+						<li><a href="./lib/active_support/core_ext/time/calculations_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_support/core_ext/time/calculations.rb">lib/active_support/core_ext/time/calculations.rb</a></li>
+					
+						<li><a href="./lib/active_support/core_ext/time/conversions_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_support/core_ext/time/conversions.rb">lib/active_support/core_ext/time/conversions.rb</a></li>
+					
+						<li><a href="./lib/active_support/core_ext/time/marshal_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_support/core_ext/time/marshal.rb">lib/active_support/core_ext/time/marshal.rb</a></li>
+					
+						<li><a href="./lib/active_support/core_ext/time/publicize_conversion_methods_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_support/core_ext/time/publicize_conversion_methods.rb">lib/active_support/core_ext/time/publicize_conversion_methods.rb</a></li>
+					
+						<li><a href="./lib/active_support/core_ext/time/zones_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_support/core_ext/time/zones.rb">lib/active_support/core_ext/time/zones.rb</a></li>
+					
+						<li><a href="./lib/active_support/json/encoding_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_support/json/encoding.rb">lib/active_support/json/encoding.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-%3D%3D%3D">::===</a></li>
+					
+					<li><a href="#method-c-_load">::_load</a></li>
+					
+					<li><a href="#method-c-_load">::_load</a></li>
+					
+					<li><a href="#method-c-_load_without_utc_flag">::_load_without_utc_flag</a></li>
+					
+					<li><a href="#method-c-_load_without_zone">::_load_without_zone</a></li>
+					
+					<li><a href="#method-c-current">::current</a></li>
+					
+					<li><a href="#method-c-days_in_month">::days_in_month</a></li>
+					
+					<li><a href="#method-c-get_zone">::get_zone</a></li>
+					
+					<li><a href="#method-c-local_time">::local_time</a></li>
+					
+					<li><a href="#method-c-time_with_datetime_fallback">::time_with_datetime_fallback</a></li>
+					
+					<li><a href="#method-c-use_zone">::use_zone</a></li>
+					
+					<li><a href="#method-c-utc_time">::utc_time</a></li>
+					
+					<li><a href="#method-c-zone">::zone</a></li>
+					
+					<li><a href="#method-c-zone%3D">::zone=</a></li>
+					
+					<li><a href="#method-i--">#-</a></li>
+					
+					<li><a href="#method-i-%3C%3D%3E">#<=></a></li>
+					
+					<li><a href="#method-i-_dump">#_dump</a></li>
+					
+					<li><a href="#method-i-_dump">#_dump</a></li>
+					
+					<li><a href="#method-i-_dump_without_utc_flag">#_dump_without_utc_flag</a></li>
+					
+					<li><a href="#method-i-_dump_without_zone">#_dump_without_zone</a></li>
+					
+					<li><a href="#method-i-acts_like_time%3F">#acts_like_time?</a></li>
+					
+					<li><a href="#method-i-advance">#advance</a></li>
+					
+					<li><a href="#method-i-ago">#ago</a></li>
+					
+					<li><a href="#method-i-at_beginning_of_day">#at_beginning_of_day</a></li>
+					
+					<li><a href="#method-i-at_beginning_of_month">#at_beginning_of_month</a></li>
+					
+					<li><a href="#method-i-at_beginning_of_quarter">#at_beginning_of_quarter</a></li>
+					
+					<li><a href="#method-i-at_beginning_of_week">#at_beginning_of_week</a></li>
+					
+					<li><a href="#method-i-at_beginning_of_year">#at_beginning_of_year</a></li>
+					
+					<li><a href="#method-i-at_end_of_month">#at_end_of_month</a></li>
+					
+					<li><a href="#method-i-at_end_of_quarter">#at_end_of_quarter</a></li>
+					
+					<li><a href="#method-i-at_end_of_week">#at_end_of_week</a></li>
+					
+					<li><a href="#method-i-at_end_of_year">#at_end_of_year</a></li>
+					
+					<li><a href="#method-i-at_midnight">#at_midnight</a></li>
+					
+					<li><a href="#method-i-beginning_of_day">#beginning_of_day</a></li>
+					
+					<li><a href="#method-i-beginning_of_month">#beginning_of_month</a></li>
+					
+					<li><a href="#method-i-beginning_of_quarter">#beginning_of_quarter</a></li>
+					
+					<li><a href="#method-i-beginning_of_week">#beginning_of_week</a></li>
+					
+					<li><a href="#method-i-beginning_of_year">#beginning_of_year</a></li>
+					
+					<li><a href="#method-i-change">#change</a></li>
+					
+					<li><a href="#method-i-compare_with_coercion">#compare_with_coercion</a></li>
+					
+					<li><a href="#method-i-compare_without_coercion">#compare_without_coercion</a></li>
+					
+					<li><a href="#method-i-end_of_day">#end_of_day</a></li>
+					
+					<li><a href="#method-i-end_of_month">#end_of_month</a></li>
+					
+					<li><a href="#method-i-end_of_quarter">#end_of_quarter</a></li>
+					
+					<li><a href="#method-i-end_of_week">#end_of_week</a></li>
+					
+					<li><a href="#method-i-end_of_year">#end_of_year</a></li>
+					
+					<li><a href="#method-i-formatted_offset">#formatted_offset</a></li>
+					
+					<li><a href="#method-i-future%3F">#future?</a></li>
+					
+					<li><a href="#method-i-in">#in</a></li>
+					
+					<li><a href="#method-i-in_time_zone">#in_time_zone</a></li>
+					
+					<li><a href="#method-i-midnight">#midnight</a></li>
+					
+					<li><a href="#method-i-minus_with_coercion">#minus_with_coercion</a></li>
+					
+					<li><a href="#method-i-minus_without_coercion">#minus_without_coercion</a></li>
+					
+					<li><a href="#method-i-minus_without_duration">#minus_without_duration</a></li>
+					
+					<li><a href="#method-i-monday">#monday</a></li>
+					
+					<li><a href="#method-i-months_ago">#months_ago</a></li>
+					
+					<li><a href="#method-i-months_since">#months_since</a></li>
+					
+					<li><a href="#method-i-next_month">#next_month</a></li>
+					
+					<li><a href="#method-i-next_week">#next_week</a></li>
+					
+					<li><a href="#method-i-next_year">#next_year</a></li>
+					
+					<li><a href="#method-i-past%3F">#past?</a></li>
+					
+					<li><a href="#method-i-prev_month">#prev_month</a></li>
+					
+					<li><a href="#method-i-prev_year">#prev_year</a></li>
+					
+					<li><a href="#method-i-seconds_since_midnight">#seconds_since_midnight</a></li>
+					
+					<li><a href="#method-i-since">#since</a></li>
+					
+					<li><a href="#method-i-to_date">#to_date</a></li>
+					
+					<li><a href="#method-i-to_datetime">#to_datetime</a></li>
+					
+					<li><a href="#method-i-to_default_s">#to_default_s</a></li>
+					
+					<li><a href="#method-i-to_formatted_s">#to_formatted_s</a></li>
+					
+					<li><a href="#method-i-to_s">#to_s</a></li>
+					
+					<li><a href="#method-i-to_time">#to_time</a></li>
+					
+					<li><a href="#method-i-today%3F">#today?</a></li>
+					
+					<li><a href="#method-i-tomorrow">#tomorrow</a></li>
+					
+					<li><a href="#method-i-years_ago">#years_ago</a></li>
+					
+					<li><a href="#method-i-years_since">#years_since</a></li>
+					
+					<li><a href="#method-i-yesterday">#yesterday</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./ActiveSupport/Autoload.html">ActiveSupport::Autoload</a></li>
+				
+					<li><a href="./ActiveSupport/BacktraceCleaner.html">ActiveSupport::BacktraceCleaner</a></li>
+				
+					<li><a href="./ActiveSupport/Base64.html">ActiveSupport::Base64</a></li>
+				
+					<li><a href="./ActiveSupport/BufferedLogger.html">ActiveSupport::BufferedLogger</a></li>
+				
+					<li><a href="./ActiveSupport/BufferedLogger/Severity.html">ActiveSupport::BufferedLogger::Severity</a></li>
+				
+					<li><a href="./ActiveSupport/Cache.html">ActiveSupport::Cache</a></li>
+				
+					<li><a href="./ActiveSupport/Cache/CompressedMemCacheStore.html">ActiveSupport::Cache::CompressedMemCacheStore</a></li>
+				
+					<li><a href="./ActiveSupport/Cache/Entry.html">ActiveSupport::Cache::Entry</a></li>
+				
+					<li><a href="./ActiveSupport/Cache/FileStore.html">ActiveSupport::Cache::FileStore</a></li>
+				
+					<li><a href="./ActiveSupport/Cache/MemCacheStore.html">ActiveSupport::Cache::MemCacheStore</a></li>
+				
+					<li><a href="./ActiveSupport/Cache/MemoryStore.html">ActiveSupport::Cache::MemoryStore</a></li>
+				
+					<li><a href="./ActiveSupport/Cache/Store.html">ActiveSupport::Cache::Store</a></li>
+				
+					<li><a href="./ActiveSupport/Cache/Strategy.html">ActiveSupport::Cache::Strategy</a></li>
+				
+					<li><a href="./ActiveSupport/Cache/Strategy/LocalCache.html">ActiveSupport::Cache::Strategy::LocalCache</a></li>
+				
+					<li><a href="./ActiveSupport/Cache/Strategy/LocalCache/LocalStore.html">ActiveSupport::Cache::Strategy::LocalCache::LocalStore</a></li>
+				
+					<li><a href="./ActiveSupport/Cache/SynchronizedMemoryStore.html">ActiveSupport::Cache::SynchronizedMemoryStore</a></li>
+				
+					<li><a href="./ActiveSupport/Callbacks.html">ActiveSupport::Callbacks</a></li>
+				
+					<li><a href="./ActiveSupport/Callbacks/Callback.html">ActiveSupport::Callbacks::Callback</a></li>
+				
+					<li><a href="./ActiveSupport/Callbacks/CallbackChain.html">ActiveSupport::Callbacks::CallbackChain</a></li>
+				
+					<li><a href="./ActiveSupport/Callbacks/ClassMethods.html">ActiveSupport::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="./ActiveSupport/Concern.html">ActiveSupport::Concern</a></li>
+				
+					<li><a href="./ActiveSupport/Configurable.html">ActiveSupport::Configurable</a></li>
+				
+					<li><a href="./ActiveSupport/Configurable/ClassMethods.html">ActiveSupport::Configurable::ClassMethods</a></li>
+				
+					<li><a href="./ActiveSupport/Dependencies/Reference.html">ActiveSupport::Dependencies::Reference</a></li>
+				
+					<li><a href="./ActiveSupport/Dependencies/WatchStack.html">ActiveSupport::Dependencies::WatchStack</a></li>
+				
+					<li><a href="./ActiveSupport/DescendantsTracker.html">ActiveSupport::DescendantsTracker</a></li>
+				
+					<li><a href="./ActiveSupport/Duration.html">ActiveSupport::Duration</a></li>
+				
+					<li><a href="./ActiveSupport/FileUpdateChecker.html">ActiveSupport::FileUpdateChecker</a></li>
+				
+					<li><a href="./ActiveSupport/Gzip.html">ActiveSupport::Gzip</a></li>
+				
+					<li><a href="./ActiveSupport/Gzip/Stream.html">ActiveSupport::Gzip::Stream</a></li>
+				
+					<li><a href="./ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a></li>
+				
+					<li><a href="./ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a></li>
+				
+					<li><a href="./ActiveSupport/Inflector.html">ActiveSupport::Inflector</a></li>
+				
+					<li><a href="./ActiveSupport/Inflector/Inflections.html">ActiveSupport::Inflector::Inflections</a></li>
+				
+					<li><a href="./ActiveSupport/InheritableOptions.html">ActiveSupport::InheritableOptions</a></li>
+				
+					<li><a href="./ActiveSupport/JSON.html">ActiveSupport::JSON</a></li>
+				
+					<li><a href="./ActiveSupport/JSON/Backends.html">ActiveSupport::JSON::Backends</a></li>
+				
+					<li><a href="./ActiveSupport/JSON/Backends/JSONGem.html">ActiveSupport::JSON::Backends::JSONGem</a></li>
+				
+					<li><a href="./ActiveSupport/JSON/Backends/Yajl.html">ActiveSupport::JSON::Backends::Yajl</a></li>
+				
+					<li><a href="./ActiveSupport/JSON/Backends/Yaml.html">ActiveSupport::JSON::Backends::Yaml</a></li>
+				
+					<li><a href="./ActiveSupport/JSON/Encoding/CircularReferenceError.html">ActiveSupport::JSON::Encoding::CircularReferenceError</a></li>
+				
+					<li><a href="./ActiveSupport/JSON/Encoding/Encoder.html">ActiveSupport::JSON::Encoding::Encoder</a></li>
+				
+					<li><a href="./ActiveSupport/JSON/Variable.html">ActiveSupport::JSON::Variable</a></li>
+				
+					<li><a href="./ActiveSupport/LogSubscriber.html">ActiveSupport::LogSubscriber</a></li>
+				
+					<li><a href="./ActiveSupport/LogSubscriber/TestHelper.html">ActiveSupport::LogSubscriber::TestHelper</a></li>
+				
+					<li><a href="./ActiveSupport/LogSubscriber/TestHelper/MockLogger.html">ActiveSupport::LogSubscriber::TestHelper::MockLogger</a></li>
+				
+					<li><a href="./ActiveSupport/Memoizable.html">ActiveSupport::Memoizable</a></li>
+				
+					<li><a href="./ActiveSupport/Memoizable/InstanceMethods.html">ActiveSupport::Memoizable::InstanceMethods</a></li>
+				
+					<li><a href="./ActiveSupport/MessageEncryptor.html">ActiveSupport::MessageEncryptor</a></li>
+				
+					<li><a href="./ActiveSupport/MessageEncryptor/InvalidMessage.html">ActiveSupport::MessageEncryptor::InvalidMessage</a></li>
+				
+					<li><a href="./ActiveSupport/MessageVerifier.html">ActiveSupport::MessageVerifier</a></li>
+				
+					<li><a href="./ActiveSupport/MessageVerifier/InvalidSignature.html">ActiveSupport::MessageVerifier::InvalidSignature</a></li>
+				
+					<li><a href="./ActiveSupport/Multibyte/Chars.html">ActiveSupport::Multibyte::Chars</a></li>
+				
+					<li><a href="./ActiveSupport/Multibyte/EncodingError.html">ActiveSupport::Multibyte::EncodingError</a></li>
+				
+					<li><a href="./ActiveSupport/Multibyte/Unicode.html">ActiveSupport::Multibyte::Unicode</a></li>
+				
+					<li><a href="./ActiveSupport/Multibyte/Unicode/Codepoint.html">ActiveSupport::Multibyte::Unicode::Codepoint</a></li>
+				
+					<li><a href="./ActiveSupport/Multibyte/Unicode/UnicodeDatabase.html">ActiveSupport::Multibyte::Unicode::UnicodeDatabase</a></li>
+				
+					<li><a href="./ActiveSupport/Notifications.html">ActiveSupport::Notifications</a></li>
+				
+					<li><a href="./ActiveSupport/Notifications/Event.html">ActiveSupport::Notifications::Event</a></li>
+				
+					<li><a href="./ActiveSupport/Notifications/Fanout.html">ActiveSupport::Notifications::Fanout</a></li>
+				
+					<li><a href="./ActiveSupport/Notifications/Instrumenter.html">ActiveSupport::Notifications::Instrumenter</a></li>
+				
+					<li><a href="./ActiveSupport/OrderedOptions.html">ActiveSupport::OrderedOptions</a></li>
+				
+					<li><a href="./ActiveSupport/Railtie.html">ActiveSupport::Railtie</a></li>
+				
+					<li><a href="./ActiveSupport/Rescuable.html">ActiveSupport::Rescuable</a></li>
+				
+					<li><a href="./ActiveSupport/Rescuable/ClassMethods.html">ActiveSupport::Rescuable::ClassMethods</a></li>
+				
+					<li><a href="./ActiveSupport/SafeBuffer.html">ActiveSupport::SafeBuffer</a></li>
+				
+					<li><a href="./ActiveSupport/SecureRandom.html">ActiveSupport::SecureRandom</a></li>
+				
+					<li><a href="./ActiveSupport/StringInquirer.html">ActiveSupport::StringInquirer</a></li>
+				
+					<li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a></li>
+				
+					<li><a href="./ActiveSupport/Testing.html">ActiveSupport::Testing</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Assertions.html">ActiveSupport::Testing::Assertions</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Declarative.html">ActiveSupport::Testing::Declarative</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Isolation.html">ActiveSupport::Testing::Isolation</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Isolation/Forking.html">ActiveSupport::Testing::Isolation::Forking</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Isolation/MiniTest.html">ActiveSupport::Testing::Isolation::MiniTest</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Isolation/Subprocess.html">ActiveSupport::Testing::Isolation::Subprocess</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Isolation/TestUnit.html">ActiveSupport::Testing::Isolation::TestUnit</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Pending.html">ActiveSupport::Testing::Pending</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance.html">ActiveSupport::Testing::Performance</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Benchmarker.html">ActiveSupport::Testing::Performance::Benchmarker</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Metrics.html">ActiveSupport::Testing::Performance::Metrics</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Metrics/Base.html">ActiveSupport::Testing::Performance::Metrics::Base</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Metrics/CpuTime.html">ActiveSupport::Testing::Performance::Metrics::CpuTime</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Metrics/GcRuns.html">ActiveSupport::Testing::Performance::Metrics::GcRuns</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Metrics/GcTime.html">ActiveSupport::Testing::Performance::Metrics::GcTime</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Metrics/Memory.html">ActiveSupport::Testing::Performance::Metrics::Memory</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Metrics/Objects.html">ActiveSupport::Testing::Performance::Metrics::Objects</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Metrics/ProcessTime.html">ActiveSupport::Testing::Performance::Metrics::ProcessTime</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Metrics/Time.html">ActiveSupport::Testing::Performance::Metrics::Time</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Metrics/WallTime.html">ActiveSupport::Testing::Performance::Metrics::WallTime</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Performer.html">ActiveSupport::Testing::Performance::Performer</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/Performance/Profiler.html">ActiveSupport::Testing::Performance::Profiler</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/ProxyTestResult.html">ActiveSupport::Testing::ProxyTestResult</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/RemoteError.html">ActiveSupport::Testing::RemoteError</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/SetupAndTeardown.html">ActiveSupport::Testing::SetupAndTeardown</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/SetupAndTeardown/ClassMethods.html">ActiveSupport::Testing::SetupAndTeardown::ClassMethods</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/SetupAndTeardown/ForClassicTestUnit.html">ActiveSupport::Testing::SetupAndTeardown::ForClassicTestUnit</a></li>
+				
+					<li><a href="./ActiveSupport/Testing/SetupAndTeardown/ForMiniTest.html">ActiveSupport::Testing::SetupAndTeardown::ForMiniTest</a></li>
+				
+					<li><a href="./ActiveSupport/TimeWithZone.html">ActiveSupport::TimeWithZone</a></li>
+				
+					<li><a href="./ActiveSupport/TimeZone.html">ActiveSupport::TimeZone</a></li>
+				
+					<li><a href="./ActiveSupport/XmlMini.html">ActiveSupport::XmlMini</a></li>
+				
+					<li><a href="./ActiveSupport/XmlMini_LibXMLSAX.html">ActiveSupport::XmlMini_LibXMLSAX</a></li>
+				
+					<li><a href="./ActiveSupport/XmlMini_LibXMLSAX/HashBuilder.html">ActiveSupport::XmlMini_LibXMLSAX::HashBuilder</a></li>
+				
+					<li><a href="./ActiveSupport/XmlMini_NokogiriSAX.html">ActiveSupport::XmlMini_NokogiriSAX</a></li>
+				
+					<li><a href="./ActiveSupport/XmlMini_NokogiriSAX/HashBuilder.html">ActiveSupport::XmlMini_NokogiriSAX::HashBuilder</a></li>
+				
+					<li><a href="./Test.html">Test</a></li>
+				
+					<li><a href="./Test/Unit.html">Test::Unit</a></li>
+				
+					<li><a href="./Test/Unit/Collector.html">Test::Unit::Collector</a></li>
+				
+					<li><a href="./Test/Unit/Collector/ObjectSpace.html">Test::Unit::Collector::ObjectSpace</a></li>
+				
+					<li><a href="./ERB.html">ERB</a></li>
+				
+					<li><a href="./ERB/Util.html">ERB::Util</a></li>
+				
+					<li><a href="./I18n.html">I18n</a></li>
+				
+					<li><a href="./I18n/Railtie.html">I18n::Railtie</a></li>
+				
+					<li><a href="./LoadError.html">LoadError</a></li>
+				
+					<li><a href="./LoadError.html">LoadError</a></li>
+				
+					<li><a href="./Logger/SimpleFormatter.html">Logger::SimpleFormatter</a></li>
+				
+					<li><a href="./Benchmark.html">Benchmark</a></li>
+				
+					<li><a href="./BigDecimal.html">BigDecimal</a></li>
+				
+					<li><a href="./DateTime.html">DateTime</a></li>
+				
+					<li><a href="./Enumerable.html">Enumerable</a></li>
+				
+					<li><a href="./File.html">File</a></li>
+				
+					<li><a href="./Fixnum.html">Fixnum</a></li>
+				
+					<li><a href="./Float.html">Float</a></li>
+				
+					<li><a href="./Integer.html">Integer</a></li>
+				
+					<li><a href="./Kernel.html">Kernel</a></li>
+				
+					<li><a href="./NameError.html">NameError</a></li>
+				
+					<li><a href="./Object.html">Object</a></li>
+				
+					<li><a href="./Process.html">Process</a></li>
+				
+					<li><a href="./Time.html">Time</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Time</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="COMMON_YEAR_DAYS_IN_MONTH">COMMON_YEAR_DAYS_IN_MONTH</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="DAYS_INTO_WEEK">DAYS_INTO_WEEK</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="DATE_FORMATS">DATE_FORMATS</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="zone-default-attribute-method" class="method-detail">
+				<a name="zone_default"></a>
+				
+				<a name="zone_default="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">zone_default</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-c-%3D%3D%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">===</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Overriding case equality method so that it returns true for <a
+href="ActiveSupport/TimeWithZone.html">ActiveSupport::TimeWithZone</a>
+instances
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 12</span>
+12:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">===</span>(<span class="ruby-identifier">other</span>)
+13:       <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Time</span>)
+14:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-load-method" class="method-detail ">
+				<a name="method-c-_load"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_load</span><span
+						class="method-args">(marshaled_time)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-load-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/marshal.rb, line 35</span>
+35:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_load</span>(<span class="ruby-identifier">marshaled_time</span>)
+36:         <span class="ruby-identifier">time</span> = <span class="ruby-identifier">_load_without_zone</span>(<span class="ruby-identifier">marshaled_time</span>)
+37:         <span class="ruby-identifier">time</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword kw">do</span>
+38:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">zone</span> = <span class="ruby-keyword kw">defined?</span>(<span class="ruby-ivar">@_zone</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">remove_instance_variable</span>(<span class="ruby-value str">'@_zone'</span>)
+39:             <span class="ruby-identifier">ary</span> = <span class="ruby-identifier">to_a</span>
+40:             <span class="ruby-identifier">ary</span>[<span class="ruby-value">1</span>] = <span class="ruby-identifier">zone</span>
+41:             <span class="ruby-identifier">utc?</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">utc</span>(*<span class="ruby-identifier">ary</span>) <span class="ruby-operator">:</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>(*<span class="ruby-identifier">ary</span>)
+42:           <span class="ruby-keyword kw">else</span>
+43:             <span class="ruby-keyword kw">self</span>
+44:           <span class="ruby-keyword kw">end</span>
+45:         <span class="ruby-keyword kw">end</span>
+46:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-c-_load_without_zone">_load_without_zone</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="-load-method" class="method-detail ">
+				<a name="method-c-_load"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_load</span><span
+						class="method-args">(marshaled_time)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-load-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/marshal.rb, line 8</span>
+ 8:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_load</span>(<span class="ruby-identifier">marshaled_time</span>)
+ 9:         <span class="ruby-identifier">time</span> = <span class="ruby-identifier">_load_without_utc_flag</span>(<span class="ruby-identifier">marshaled_time</span>)
+10:         <span class="ruby-identifier">time</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword kw">do</span>
+11:           <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-ivar">@marshal_with_utc_coercion</span>)
+12:             <span class="ruby-identifier">val</span> = <span class="ruby-identifier">remove_instance_variable</span>(<span class="ruby-value str">&quot;@marshal_with_utc_coercion&quot;</span>)
+13:           <span class="ruby-keyword kw">end</span>
+14:           <span class="ruby-identifier">val</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">utc</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">self</span>
+15:         <span class="ruby-keyword kw">end</span>
+16:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-c-_load_without_utc_flag">_load_without_utc_flag</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="-load-without-utc-flag-method" class="method-detail method-alias">
+				<a name="method-c-_load_without_utc_flag"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_load_without_utc_flag</span><span
+						class="method-args">(marshaled_time)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-c-_load">_load</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="-load-without-zone-method" class="method-detail method-alias">
+				<a name="method-c-_load_without_zone"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_load_without_zone</span><span
+						class="method-args">(marshaled_time)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-c-_load">_load</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="current-method" class="method-detail ">
+				<a name="method-c-current"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">current</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns <tt>Time.zone.now</tt> when <tt>config.time_zone</tt> is set,
+otherwise just returns <tt>Time.now</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="current-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 45</span>
+45:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">current</span>
+46:       <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">zone_default</span> <span class="ruby-operator">?</span> <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">zone</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">:</span> <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+47:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="days-in-month-method" class="method-detail ">
+				<a name="method-c-days_in_month"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">days_in_month</span><span
+						class="method-args">(month, year = now.year)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Return the number of days in the given month. If no year is specified, it
+will use the current year.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="days-in-month-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 18</span>
+18:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">days_in_month</span>(<span class="ruby-identifier">month</span>, <span class="ruby-identifier">year</span> = <span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>)
+19:       <span class="ruby-keyword kw">return</span> <span class="ruby-value">29</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">month</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">::</span><span class="ruby-constant">Date</span>.<span class="ruby-identifier">gregorian_leap?</span>(<span class="ruby-identifier">year</span>)
+20:       <span class="ruby-constant">COMMON_YEAR_DAYS_IN_MONTH</span>[<span class="ruby-identifier">month</span>]
+21:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="local-time-method" class="method-detail ">
+				<a name="method-c-local_time"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">local_time</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Wraps class method <tt><a
+href="Time.html#method-c-time_with_datetime_fallback">time_with_datetime_fallback</a></tt>
+with <tt>utc_or_local</tt> set to <tt>:local</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="local-time-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 40</span>
+40:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">local_time</span>(*<span class="ruby-identifier">args</span>)
+41:       <span class="ruby-identifier">time_with_datetime_fallback</span>(<span class="ruby-value">:local</span>, *<span class="ruby-identifier">args</span>)
+42:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="time-with-datetime-fallback-method" class="method-detail ">
+				<a name="method-c-time_with_datetime_fallback"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">time_with_datetime_fallback</span><span
+						class="method-args">(utc_or_local, year, month=1, day=1, hour=0, min=0, sec=0, usec=0)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> if requested year can be
+accommodated by Ruby&#8217;s <a href="Time.html">Time</a> class (i.e., if
+year is within either 1970..2038 or 1902..2038, depending on system
+architecture); otherwise returns a <a href="DateTime.html">DateTime</a>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="time-with-datetime-fallback-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 26</span>
+26:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">time_with_datetime_fallback</span>(<span class="ruby-identifier">utc_or_local</span>, <span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>=<span class="ruby-value">1</span>, <span class="ruby-identifier">day</span>=<span class="ruby-value">1</span>, <span class="ruby-identifier">hour</span>=<span class="ruby-value">0</span>, <span class="ruby-identifier">min</span>=<span class="ruby-value">0</span>, <span class="ruby-identifier">sec</span>=<span class="ruby-value">0</span>, <span class="ruby-identifier">usec</span>=<span class="ruby-value">0</span>)
+27:       <span class="ruby-identifier">time</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">utc_or_local</span>, <span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span>, <span class="ruby-identifier">usec</span>)
+28:       <span class="ruby-comment cmt"># This check is needed because Time.utc(y) returns a time object in the 2000s for 0 &lt;= y &lt;= 138.</span>
+29:       <span class="ruby-identifier">time</span>.<span class="ruby-identifier">year</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">year</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">time</span> <span class="ruby-operator">:</span> <span class="ruby-operator">::</span><span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">civil_from_format</span>(<span class="ruby-identifier">utc_or_local</span>, <span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span>)
+30:     <span class="ruby-keyword kw">rescue</span>
+31:       <span class="ruby-operator">::</span><span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">civil_from_format</span>(<span class="ruby-identifier">utc_or_local</span>, <span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span>)
+32:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="use-zone-method" class="method-detail ">
+				<a name="method-c-use_zone"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">use_zone</span><span
+						class="method-args">(time_zone)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Allows override of <tt>Time.zone</tt> locally inside supplied block; resets
+<tt>Time.zone</tt> to existing value when done.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="use-zone-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/zones.rb, line 37</span>
+37:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">use_zone</span>(<span class="ruby-identifier">time_zone</span>)
+38:       <span class="ruby-identifier">old_zone</span>, <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">zone</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">zone</span>, <span class="ruby-identifier">get_zone</span>(<span class="ruby-identifier">time_zone</span>)
+39:       <span class="ruby-keyword kw">yield</span>
+40:     <span class="ruby-keyword kw">ensure</span>
+41:       <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">zone</span> = <span class="ruby-identifier">old_zone</span>
+42:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="utc-time-method" class="method-detail ">
+				<a name="method-c-utc_time"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">utc_time</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Wraps class method <tt><a
+href="Time.html#method-c-time_with_datetime_fallback">time_with_datetime_fallback</a></tt>
+with <tt>utc_or_local</tt> set to <tt>:utc</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="utc-time-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 35</span>
+35:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">utc_time</span>(*<span class="ruby-identifier">args</span>)
+36:       <span class="ruby-identifier">time_with_datetime_fallback</span>(<span class="ruby-value">:utc</span>, *<span class="ruby-identifier">args</span>)
+37:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="zone-method" class="method-detail ">
+				<a name="method-c-zone"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">zone</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the TimeZone for the current request, if this has been set (via
+Time.zone=). If <tt>Time.zone</tt> has not been set for the current
+request, returns the TimeZone specified in <tt>config.time_zone</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="zone-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/zones.rb, line 9</span>
+ 9:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">zone</span>
+10:       <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-value">:time_zone</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">zone_default</span>
+11:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="zone--method" class="method-detail ">
+				<a name="method-c-zone%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">zone=</span><span
+						class="method-args">(time_zone)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets <tt>Time.zone</tt> to a TimeZone object for the current
+request/thread.
+</p>
+<p>
+This method accepts any of the following:
+</p>
+<ul>
+<li><p>
+A Rails TimeZone object.
+</p>
+</li>
+<li><p>
+An identifier for a Rails TimeZone object (e.g., &#8220;Eastern <a
+href="Time.html">Time</a> (US &amp; Canada)&#8221;, <tt>-5.hours</tt>).
+</p>
+</li>
+<li><p>
+A TZInfo::Timezone object.
+</p>
+</li>
+<li><p>
+An identifier for a TZInfo::Timezone object (e.g.,
+&#8220;America/New_York&#8220;).
+</p>
+</li>
+</ul>
+<p>
+Here&#8217;s an example of how you might set <tt>Time.zone</tt> on a per
+request basis &#8212; <tt>current_user.time_zone</tt> just needs to return
+a string identifying the user&#8217;s preferred TimeZone:
+</p>
+<pre>
+  class ApplicationController &lt; ActionController::Base
+    before_filter :set_time_zone
+
+    def set_time_zone
+      Time.zone = current_user.time_zone
+    end
+  end</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="zone--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/zones.rb, line 32</span>
+32:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">zone=</span>(<span class="ruby-identifier">time_zone</span>)
+33:       <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-value">:time_zone</span>] = <span class="ruby-identifier">get_zone</span>(<span class="ruby-identifier">time_zone</span>)
+34:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-class-method-details" class="method-section section">
+			<h3 class="section-header">Private Class Methods</h3>
+
+		
+			<div id="get-zone-method" class="method-detail ">
+				<a name="method-c-get_zone"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_zone</span><span
+						class="method-args">(time_zone)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="get-zone-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/zones.rb, line 45</span>
+45:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_zone</span>(<span class="ruby-identifier">time_zone</span>)
+46:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">time_zone</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">time_zone</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">time_zone</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">TimeZone</span>)
+47:         <span class="ruby-comment cmt"># lookup timezone based on identifier (unless we've been passed a TZInfo::Timezone)</span>
+48:         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">time_zone</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:period_for_local</span>)
+49:           <span class="ruby-identifier">time_zone</span> = <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">TimeZone</span>[<span class="ruby-identifier">time_zone</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">TZInfo</span><span class="ruby-operator">::</span><span class="ruby-constant">Timezone</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">time_zone</span>) <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+50:         <span class="ruby-keyword kw">end</span>
+51:         <span class="ruby-comment cmt"># Return if a TimeZone instance, or wrap in a TimeZone instance if a TZInfo::Timezone</span>
+52:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">time_zone</span>
+53:           <span class="ruby-identifier">time_zone</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">TimeZone</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">time_zone</span> <span class="ruby-operator">:</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">TimeZone</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">time_zone</span>.<span class="ruby-identifier">name</span>, <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">time_zone</span>)
+54:         <span class="ruby-keyword kw">end</span>
+55:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail method-alias">
+				<a name="method-i--"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">-</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-minus_without_duration">minus_without_duration</a>, <a href="Time.html#method-i-minus_without_coercion">minus_without_coercion</a>
+				</div>
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-minus_with_coercion">minus_with_coercion</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail method-alias">
+				<a name="method-i-%3C%3D%3E"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">&lt;=&gt;</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-compare_without_coercion">compare_without_coercion</a>
+				</div>
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-compare_with_coercion">compare_with_coercion</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="-dump-method" class="method-detail ">
+				<a name="method-i-_dump"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_dump</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-dump-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/marshal.rb, line 50</span>
+50:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_dump</span>(*<span class="ruby-identifier">args</span>)
+51:       <span class="ruby-identifier">obj</span> = <span class="ruby-identifier">dup</span>
+52:       <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value str">'@_zone'</span>, <span class="ruby-identifier">zone</span>)
+53:       <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">_dump_without_zone</span>(*<span class="ruby-identifier">args</span>)
+54:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-dump-method" class="method-detail ">
+				<a name="method-i-_dump"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_dump</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-dump-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/marshal.rb, line 20</span>
+20:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_dump</span>(*<span class="ruby-identifier">args</span>)
+21:       <span class="ruby-identifier">obj</span> = <span class="ruby-identifier">dup</span>
+22:       <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value str">'@marshal_with_utc_coercion'</span>, <span class="ruby-identifier">utc?</span>)
+23:       <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">_dump_without_utc_flag</span>(*<span class="ruby-identifier">args</span>)
+24:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-_dump_without_utc_flag">_dump_without_utc_flag</a>, <a href="Time.html#method-i-_dump_without_zone">_dump_without_zone</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="-dump-without-utc-flag-method" class="method-detail method-alias">
+				<a name="method-i-_dump_without_utc_flag"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_dump_without_utc_flag</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-_dump">_dump</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="-dump-without-zone-method" class="method-detail method-alias">
+				<a name="method-i-_dump_without_zone"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_dump_without_zone</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-_dump">_dump</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="acts-like-time--method" class="method-detail ">
+				<a name="method-i-acts_like_time%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">acts_like_time?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Duck-types as a Time-like class. See <a
+href="Object.html#method-i-acts_like%3F">Object#acts_like?</a>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="acts-like-time--source">
+<pre>
+   <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/acts_like.rb, line 5</span>
+5:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">acts_like_time?</span>
+6:     <span class="ruby-keyword kw">true</span>
+7:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="advance-method" class="method-detail ">
+				<a name="method-i-advance"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">advance</span><span
+						class="method-args">(options)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Uses Date to provide precise <a href="Time.html">Time</a> calculations for
+years, months, and days. The <tt>options</tt> parameter takes a hash with
+any of these keys: <tt>:years</tt>, <tt>:months</tt>, <tt>:weeks</tt>,
+<tt>:days</tt>, <tt>:hours</tt>, <tt>:minutes</tt>, <tt>:seconds</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="advance-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 90</span>
+ 90:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">advance</span>(<span class="ruby-identifier">options</span>)
+ 91:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:weeks</span>].<span class="ruby-identifier">nil?</span>
+ 92:       <span class="ruby-identifier">options</span>[<span class="ruby-value">:weeks</span>], <span class="ruby-identifier">partial_weeks</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:weeks</span>].<span class="ruby-identifier">divmod</span>(<span class="ruby-value">1</span>)
+ 93:       <span class="ruby-identifier">options</span>[<span class="ruby-value">:days</span>] = (<span class="ruby-identifier">options</span>[<span class="ruby-value">:days</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>) <span class="ruby-operator">+</span> <span class="ruby-value">7</span> * <span class="ruby-identifier">partial_weeks</span>
+ 94:     <span class="ruby-keyword kw">end</span>
+ 95: 
+ 96:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:days</span>].<span class="ruby-identifier">nil?</span>
+ 97:       <span class="ruby-identifier">options</span>[<span class="ruby-value">:days</span>], <span class="ruby-identifier">partial_days</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:days</span>].<span class="ruby-identifier">divmod</span>(<span class="ruby-value">1</span>)
+ 98:       <span class="ruby-identifier">options</span>[<span class="ruby-value">:hours</span>] = (<span class="ruby-identifier">options</span>[<span class="ruby-value">:hours</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>) <span class="ruby-operator">+</span> <span class="ruby-value">24</span> * <span class="ruby-identifier">partial_days</span>
+ 99:     <span class="ruby-keyword kw">end</span>
+100: 
+101:     <span class="ruby-identifier">d</span> = <span class="ruby-identifier">to_date</span>.<span class="ruby-identifier">advance</span>(<span class="ruby-identifier">options</span>)
+102:     <span class="ruby-identifier">time_advanced_by_date</span> = <span class="ruby-identifier">change</span>(<span class="ruby-value">:year</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">year</span>, <span class="ruby-value">:month</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">month</span>, <span class="ruby-value">:day</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">day</span>)
+103:     <span class="ruby-identifier">seconds_to_advance</span> = (<span class="ruby-identifier">options</span>[<span class="ruby-value">:seconds</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>) <span class="ruby-operator">+</span> (<span class="ruby-identifier">options</span>[<span class="ruby-value">:minutes</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>) * <span class="ruby-value">60</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">options</span>[<span class="ruby-value">:hours</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>) * <span class="ruby-value">3600</span>
+104:     <span class="ruby-identifier">seconds_to_advance</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">time_advanced_by_date</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">time_advanced_by_date</span>.<span class="ruby-identifier">since</span>(<span class="ruby-identifier">seconds_to_advance</span>)
+105:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="ago-method" class="method-detail ">
+				<a name="method-i-ago"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">ago</span><span
+						class="method-args">(seconds)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the time a number
+of seconds ago, this is basically a wrapper around the Numeric extension
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="ago-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 108</span>
+108:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ago</span>(<span class="ruby-identifier">seconds</span>)
+109:     <span class="ruby-identifier">since</span>(<span class="ruby-operator">-</span><span class="ruby-identifier">seconds</span>)
+110:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="at-beginning-of-day-method" class="method-detail method-alias">
+				<a name="method-i-at_beginning_of_day"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">at_beginning_of_day</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-beginning_of_day">beginning_of_day</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="at-beginning-of-month-method" class="method-detail method-alias">
+				<a name="method-i-at_beginning_of_month"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">at_beginning_of_month</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-beginning_of_month">beginning_of_month</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="at-beginning-of-quarter-method" class="method-detail method-alias">
+				<a name="method-i-at_beginning_of_quarter"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">at_beginning_of_quarter</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-beginning_of_quarter">beginning_of_quarter</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="at-beginning-of-week-method" class="method-detail method-alias">
+				<a name="method-i-at_beginning_of_week"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">at_beginning_of_week</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-beginning_of_week">beginning_of_week</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="at-beginning-of-year-method" class="method-detail method-alias">
+				<a name="method-i-at_beginning_of_year"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">at_beginning_of_year</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-beginning_of_year">beginning_of_year</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="at-end-of-month-method" class="method-detail method-alias">
+				<a name="method-i-at_end_of_month"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">at_end_of_month</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-end_of_month">end_of_month</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="at-end-of-quarter-method" class="method-detail method-alias">
+				<a name="method-i-at_end_of_quarter"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">at_end_of_quarter</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-end_of_quarter">end_of_quarter</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="at-end-of-week-method" class="method-detail method-alias">
+				<a name="method-i-at_end_of_week"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">at_end_of_week</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-end_of_week">end_of_week</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="at-end-of-year-method" class="method-detail method-alias">
+				<a name="method-i-at_end_of_year"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">at_end_of_year</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-end_of_year">end_of_year</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="at-midnight-method" class="method-detail method-alias">
+				<a name="method-i-at_midnight"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">at_midnight</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-beginning_of_day">beginning_of_day</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="beginning-of-day-method" class="method-detail ">
+				<a name="method-i-beginning_of_day"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">beginning_of_day</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the start of the
+day (0:00)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="beginning-of-day-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 181</span>
+181:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">beginning_of_day</span>
+182:     <span class="ruby-comment cmt">#(self - seconds_since_midnight).change(:usec =&gt; 0)</span>
+183:     <span class="ruby-identifier">change</span>(<span class="ruby-value">:hour</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, <span class="ruby-value">:min</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, <span class="ruby-value">:sec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, <span class="ruby-value">:usec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+184:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-midnight">midnight</a>, <a href="Time.html#method-i-at_midnight">at_midnight</a>, <a href="Time.html#method-i-at_beginning_of_day">at_beginning_of_day</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="beginning-of-month-method" class="method-detail ">
+				<a name="method-i-beginning_of_month"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">beginning_of_month</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the start of the
+month (1st of the month, 0:00)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="beginning-of-month-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 195</span>
+195:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">beginning_of_month</span>
+196:     <span class="ruby-comment cmt">#self - ((self.mday-1).days + self.seconds_since_midnight)</span>
+197:     <span class="ruby-identifier">change</span>(<span class="ruby-value">:day</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,<span class="ruby-value">:hour</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, <span class="ruby-value">:min</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, <span class="ruby-value">:sec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, <span class="ruby-value">:usec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+198:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-at_beginning_of_month">at_beginning_of_month</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="beginning-of-quarter-method" class="method-detail ">
+				<a name="method-i-beginning_of_quarter"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">beginning_of_quarter</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns  a new <a href="Time.html">Time</a> representing the start of the
+quarter (1st of january, april, july, october, 0:00)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="beginning-of-quarter-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 210</span>
+210:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">beginning_of_quarter</span>
+211:     <span class="ruby-identifier">beginning_of_month</span>.<span class="ruby-identifier">change</span>(<span class="ruby-value">:month</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">10</span>, <span class="ruby-value">7</span>, <span class="ruby-value">4</span>, <span class="ruby-value">1</span>].<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">month</span> })
+212:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-at_beginning_of_quarter">at_beginning_of_quarter</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="beginning-of-week-method" class="method-detail ">
+				<a name="method-i-beginning_of_week"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">beginning_of_week</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the
+&#8220;start&#8221; of this week (Monday, 0:00)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="beginning-of-week-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 161</span>
+161:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">beginning_of_week</span>
+162:     <span class="ruby-identifier">days_to_monday</span> = <span class="ruby-identifier">wday!</span>=<span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">wday</span><span class="ruby-operator">-</span><span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">6</span>
+163:     (<span class="ruby-keyword kw">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">days_to_monday</span>.<span class="ruby-identifier">days</span>).<span class="ruby-identifier">midnight</span>
+164:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-monday">monday</a>, <a href="Time.html#method-i-at_beginning_of_week">at_beginning_of_week</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="beginning-of-year-method" class="method-detail ">
+				<a name="method-i-beginning_of_year"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">beginning_of_year</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns  a new <a href="Time.html">Time</a> representing the start of the
+year (1st of january, 0:00)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="beginning-of-year-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 222</span>
+222:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">beginning_of_year</span>
+223:     <span class="ruby-identifier">change</span>(<span class="ruby-value">:month</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, <span class="ruby-value">:day</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, <span class="ruby-value">:hour</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, <span class="ruby-value">:min</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, <span class="ruby-value">:sec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, <span class="ruby-value">:usec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+224:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-at_beginning_of_year">at_beginning_of_year</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="change-method" class="method-detail ">
+				<a name="method-i-change"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">change</span><span
+						class="method-args">(options)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> where one or more of the
+elements have been changed according to the <tt>options</tt> parameter. The
+time options (hour, minute, sec, usec) reset cascadingly, so if only the
+hour is passed, then minute, sec, and usec is set to 0. If the hour and
+minute is passed, then sec and usec is set to 0.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="change-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 73</span>
+73:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">change</span>(<span class="ruby-identifier">options</span>)
+74:     <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">send</span>(
+75:       <span class="ruby-identifier">utc?</span> <span class="ruby-operator">?</span> <span class="ruby-value">:utc_time</span> <span class="ruby-operator">:</span> <span class="ruby-value">:local_time</span>,
+76:       <span class="ruby-identifier">options</span>[<span class="ruby-value">:year</span>]  <span class="ruby-operator">||</span> <span class="ruby-identifier">year</span>,
+77:       <span class="ruby-identifier">options</span>[<span class="ruby-value">:month</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">month</span>,
+78:       <span class="ruby-identifier">options</span>[<span class="ruby-value">:day</span>]   <span class="ruby-operator">||</span> <span class="ruby-identifier">day</span>,
+79:       <span class="ruby-identifier">options</span>[<span class="ruby-value">:hour</span>]  <span class="ruby-operator">||</span> <span class="ruby-identifier">hour</span>,
+80:       <span class="ruby-identifier">options</span>[<span class="ruby-value">:min</span>]   <span class="ruby-operator">||</span> (<span class="ruby-identifier">options</span>[<span class="ruby-value">:hour</span>] <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">min</span>),
+81:       <span class="ruby-identifier">options</span>[<span class="ruby-value">:sec</span>]   <span class="ruby-operator">||</span> ((<span class="ruby-identifier">options</span>[<span class="ruby-value">:hour</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:min</span>]) <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">sec</span>),
+82:       <span class="ruby-identifier">options</span>[<span class="ruby-value">:usec</span>]  <span class="ruby-operator">||</span> ((<span class="ruby-identifier">options</span>[<span class="ruby-value">:hour</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:min</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:sec</span>]) <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">usec</span>)
+83:     )
+84:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="compare-with-coercion-method" class="method-detail ">
+				<a name="method-i-compare_with_coercion"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">compare_with_coercion</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Layers additional behavior on Time#<=> so that <a
+href="DateTime.html">DateTime</a> and <a
+href="ActiveSupport/TimeWithZone.html">ActiveSupport::TimeWithZone</a>
+instances can be chronologically compared with a <a
+href="Time.html">Time</a>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="compare-with-coercion-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 275</span>
+275:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compare_with_coercion</span>(<span class="ruby-identifier">other</span>)
+276:     <span class="ruby-comment cmt"># if other is an ActiveSupport::TimeWithZone, coerce a Time instance from it so we can do &lt;=&gt; comparison</span>
+277:     <span class="ruby-identifier">other</span> = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">comparable_time</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:comparable_time</span>)
+278:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">acts_like?</span>(<span class="ruby-value">:date</span>)
+279:       <span class="ruby-comment cmt"># other is a Date/DateTime, so coerce self #to_datetime and hand off to DateTime#&lt;=&gt;</span>
+280:       <span class="ruby-identifier">to_datetime</span>.<span class="ruby-identifier">compare_without_coercion</span>(<span class="ruby-identifier">other</span>)
+281:     <span class="ruby-keyword kw">else</span>
+282:       <span class="ruby-identifier">compare_without_coercion</span>(<span class="ruby-identifier">other</span>)
+283:     <span class="ruby-keyword kw">end</span>
+284:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-%3C%3D%3E">&lt;=&gt;</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="compare-without-coercion-method" class="method-detail method-alias">
+				<a name="method-i-compare_without_coercion"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">compare_without_coercion</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-%3C%3D%3E">&lt;=&gt;</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="end-of-day-method" class="method-detail ">
+				<a name="method-i-end_of_day"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">end_of_day</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the end of the day,
+23:59:59.999999 (.999999999 in ruby1.9)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="end-of-day-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 190</span>
+190:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_of_day</span>
+191:     <span class="ruby-identifier">change</span>(<span class="ruby-value">:hour</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">23</span>, <span class="ruby-value">:min</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">59</span>, <span class="ruby-value">:sec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">59</span>, <span class="ruby-value">:usec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">999999.999</span>)
+192:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="end-of-month-method" class="method-detail ">
+				<a name="method-i-end_of_month"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">end_of_month</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the end of the
+month (end of the last day of the month)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="end-of-month-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 202</span>
+202:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_of_month</span>
+203:     <span class="ruby-comment cmt">#self - ((self.mday-1).days + self.seconds_since_midnight)</span>
+204:     <span class="ruby-identifier">last_day</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">days_in_month</span>(<span class="ruby-identifier">month</span>, <span class="ruby-identifier">year</span>)
+205:     <span class="ruby-identifier">change</span>(<span class="ruby-value">:day</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">last_day</span>, <span class="ruby-value">:hour</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">23</span>, <span class="ruby-value">:min</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">59</span>, <span class="ruby-value">:sec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">59</span>, <span class="ruby-value">:usec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">999999.999</span>)
+206:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-at_end_of_month">at_end_of_month</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="end-of-quarter-method" class="method-detail ">
+				<a name="method-i-end_of_quarter"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">end_of_quarter</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the end of the
+quarter (end of the last day of march, june, september, december)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="end-of-quarter-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 216</span>
+216:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_of_quarter</span>
+217:     <span class="ruby-identifier">beginning_of_month</span>.<span class="ruby-identifier">change</span>(<span class="ruby-value">:month</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">3</span>, <span class="ruby-value">6</span>, <span class="ruby-value">9</span>, <span class="ruby-value">12</span>].<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">month</span> }).<span class="ruby-identifier">end_of_month</span>
+218:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-at_end_of_quarter">at_end_of_quarter</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="end-of-week-method" class="method-detail ">
+				<a name="method-i-end_of_week"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">end_of_week</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the end of this
+week, (end of Sunday)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="end-of-week-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 169</span>
+169:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_of_week</span>
+170:     <span class="ruby-identifier">days_to_sunday</span> = <span class="ruby-identifier">wday!</span>=<span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-value">7</span><span class="ruby-operator">-</span><span class="ruby-identifier">wday</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+171:     (<span class="ruby-keyword kw">self</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">days_to_sunday</span>.<span class="ruby-identifier">days</span>).<span class="ruby-identifier">end_of_day</span>
+172:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-at_end_of_week">at_end_of_week</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="end-of-year-method" class="method-detail ">
+				<a name="method-i-end_of_year"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">end_of_year</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the end of the year
+(end of the 31st of december)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="end-of-year-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 228</span>
+228:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_of_year</span>
+229:     <span class="ruby-identifier">change</span>(<span class="ruby-value">:month</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">12</span>, <span class="ruby-value">:day</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">31</span>, <span class="ruby-value">:hour</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">23</span>, <span class="ruby-value">:min</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">59</span>, <span class="ruby-value">:sec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">59</span>, <span class="ruby-value">:usec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">999999.999</span>)
+230:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-at_end_of_year">at_end_of_year</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="formatted-offset-method" class="method-detail ">
+				<a name="method-i-formatted_offset"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">formatted_offset</span><span
+						class="method-args">(colon = true, alternate_utc_string = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the UTC offset as an +HH:MM formatted string.
+</p>
+<pre>
+  Time.local(2000).formatted_offset         # =&gt; &quot;-06:00&quot;
+  Time.local(2000).formatted_offset(false)  # =&gt; &quot;-0600&quot;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="formatted-offset-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/conversions.rb, line 54</span>
+54:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">formatted_offset</span>(<span class="ruby-identifier">colon</span> = <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">alternate_utc_string</span> = <span class="ruby-keyword kw">nil</span>)
+55:     <span class="ruby-identifier">utc?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">alternate_utc_string</span> <span class="ruby-operator">||</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">TimeZone</span>.<span class="ruby-identifier">seconds_to_utc_offset</span>(<span class="ruby-identifier">utc_offset</span>, <span class="ruby-identifier">colon</span>)
+56:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="future--method" class="method-detail ">
+				<a name="method-i-future%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">future?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Tells whether the <a href="Time.html">Time</a> object&#8217;s time lies in
+the future
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="future--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 61</span>
+61:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">future?</span>
+62:     <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&gt;</span> <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">current</span>
+63:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="in-method" class="method-detail method-alias">
+				<a name="method-i-in"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">in</span><span
+						class="method-args">(seconds)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-since">since</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="in-time-zone-method" class="method-detail ">
+				<a name="method-i-in_time_zone"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">in_time_zone</span><span
+						class="method-args">(zone = ::Time.zone)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the simultaneous time in <tt>Time.zone</tt>.
+</p>
+<pre>
+  Time.zone = 'Hawaii'         # =&gt; 'Hawaii'
+  Time.utc(2000).in_time_zone  # =&gt; Fri, 31 Dec 1999 14:00:00 HST -10:00
+</pre>
+<p>
+This method is similar to Time#localtime, except that it uses
+<tt>Time.zone</tt> as the local zone instead of the operating
+system&#8217;s time zone.
+</p>
+<p>
+You can also pass in a TimeZone instance or string that identifies a
+TimeZone as an argument, and the conversion will be based on that zone
+instead of <tt>Time.zone</tt>.
+</p>
+<pre>
+  Time.utc(2000).in_time_zone('Alaska')  # =&gt; Fri, 31 Dec 1999 15:00:00 AKST -09:00</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="in-time-zone-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/zones.rb, line 70</span>
+70:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">in_time_zone</span>(<span class="ruby-identifier">zone</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">zone</span>)
+71:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">zone</span>
+72: 
+73:     <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">TimeWithZone</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">utc?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">getutc</span>, <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-value">:get_zone</span>, <span class="ruby-identifier">zone</span>))
+74:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="midnight-method" class="method-detail method-alias">
+				<a name="method-i-midnight"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">midnight</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-beginning_of_day">beginning_of_day</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="minus-with-coercion-method" class="method-detail ">
+				<a name="method-i-minus_with_coercion"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">minus_with_coercion</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Time#- can also be used to determine the number of seconds between two <a
+href="Time.html">Time</a> instances. We&#8217;re layering on additional
+behavior so that <a
+href="ActiveSupport/TimeWithZone.html">ActiveSupport::TimeWithZone</a>
+instances are coerced into values that Time#- will recognize
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="minus-with-coercion-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 266</span>
+266:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">minus_with_coercion</span>(<span class="ruby-identifier">other</span>)
+267:     <span class="ruby-identifier">other</span> = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">comparable_time</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:comparable_time</span>)
+268:     <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">DateTime</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">to_f</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">minus_without_coercion</span>(<span class="ruby-identifier">other</span>)
+269:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i--">-</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="minus-without-coercion-method" class="method-detail method-alias">
+				<a name="method-i-minus_without_coercion"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">minus_without_coercion</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i--">-</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="minus-without-duration-method" class="method-detail method-alias">
+				<a name="method-i-minus_without_duration"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">minus_without_duration</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i--">-</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="monday-method" class="method-detail method-alias">
+				<a name="method-i-monday"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">monday</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-beginning_of_week">beginning_of_week</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="months-ago-method" class="method-detail ">
+				<a name="method-i-months_ago"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">months_ago</span><span
+						class="method-args">(months)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the time a number
+of specified months ago
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="months-ago-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 121</span>
+121:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">months_ago</span>(<span class="ruby-identifier">months</span>)
+122:     <span class="ruby-identifier">advance</span>(<span class="ruby-value">:months</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-operator">-</span><span class="ruby-identifier">months</span>)
+123:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="months-since-method" class="method-detail ">
+				<a name="method-i-months_since"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">months_since</span><span
+						class="method-args">(months)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the time a number
+of specified months in the future
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="months-since-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 126</span>
+126:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">months_since</span>(<span class="ruby-identifier">months</span>)
+127:     <span class="ruby-identifier">advance</span>(<span class="ruby-value">:months</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">months</span>)
+128:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="next-month-method" class="method-detail ">
+				<a name="method-i-next_month"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">next_month</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Short-hand for <a
+href="Time.html#method-i-months_since">months_since</a>(1)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="next-month-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 156</span>
+156:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">next_month</span>
+157:     <span class="ruby-identifier">months_since</span>(<span class="ruby-value">1</span>)
+158:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="next-week-method" class="method-detail ">
+				<a name="method-i-next_week"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">next_week</span><span
+						class="method-args">(day = :monday)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the start of the
+given day in next week (default is Monday).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="next-week-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 176</span>
+176:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">next_week</span>(<span class="ruby-identifier">day</span> = <span class="ruby-value">:monday</span>)
+177:     <span class="ruby-identifier">since</span>(<span class="ruby-value">1</span>.<span class="ruby-identifier">week</span>).<span class="ruby-identifier">beginning_of_week</span>.<span class="ruby-identifier">since</span>(<span class="ruby-constant">DAYS_INTO_WEEK</span>[<span class="ruby-identifier">day</span>].<span class="ruby-identifier">day</span>).<span class="ruby-identifier">change</span>(<span class="ruby-value">:hour</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+178:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="next-year-method" class="method-detail ">
+				<a name="method-i-next_year"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">next_year</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Short-hand for <a href="Time.html#method-i-years_since">years_since</a>(1)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="next-year-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 146</span>
+146:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">next_year</span>
+147:     <span class="ruby-identifier">years_since</span>(<span class="ruby-value">1</span>)
+148:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="past--method" class="method-detail ">
+				<a name="method-i-past%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">past?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Tells whether the <a href="Time.html">Time</a> object&#8217;s time lies in
+the past
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="past--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 51</span>
+51:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">past?</span>
+52:     <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;</span> <span class="ruby-operator">::</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">current</span>
+53:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="prev-month-method" class="method-detail ">
+				<a name="method-i-prev_month"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">prev_month</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Short-hand for <a href="Time.html#method-i-months_ago">months_ago</a>(1)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="prev-month-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 151</span>
+151:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prev_month</span>
+152:     <span class="ruby-identifier">months_ago</span>(<span class="ruby-value">1</span>)
+153:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="prev-year-method" class="method-detail ">
+				<a name="method-i-prev_year"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">prev_year</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Short-hand for <a href="Time.html#method-i-years_ago">years_ago</a>(1)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="prev-year-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 141</span>
+141:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prev_year</span>
+142:     <span class="ruby-identifier">years_ago</span>(<span class="ruby-value">1</span>)
+143:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="seconds-since-midnight-method" class="method-detail ">
+				<a name="method-i-seconds_since_midnight"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">seconds_since_midnight</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Seconds since midnight: Time.now.<a
+href="Time.html#method-i-seconds_since_midnight">seconds_since_midnight</a>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="seconds-since-midnight-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 66</span>
+66:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">seconds_since_midnight</span>
+67:     <span class="ruby-identifier">to_i</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">change</span>(<span class="ruby-value">:hour</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>).<span class="ruby-identifier">to_i</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">usec</span> <span class="ruby-operator">/</span> <span class="ruby-value">1.0e+6</span>)
+68:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="since-method" class="method-detail ">
+				<a name="method-i-since"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">since</span><span
+						class="method-args">(seconds)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the time a number
+of seconds since the instance time
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="since-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 113</span>
+113:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">since</span>(<span class="ruby-identifier">seconds</span>)
+114:     <span class="ruby-keyword kw">self</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">seconds</span>
+115:   <span class="ruby-keyword kw">rescue</span>
+116:     <span class="ruby-identifier">to_datetime</span>.<span class="ruby-identifier">since</span>(<span class="ruby-identifier">seconds</span>)
+117:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-in">in</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="to-date-method" class="method-detail ">
+				<a name="method-i-to_date"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_date</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Converts a <a href="Time.html">Time</a> object to a Date, dropping hour,
+minute, and second precision.
+</p>
+<pre>
+  my_time = Time.now  # =&gt; Mon Nov 12 22:59:51 -0500 2007
+  my_time.to_date     # =&gt; Mon, 12 Nov 2007
+
+  your_time = Time.parse(&quot;1/13/2009 1:13:03 P.M.&quot;)  # =&gt; Tue Jan 13 13:13:03 -0500 2009
+  your_time.to_date                                 # =&gt; Tue, 13 Jan 2009</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="to-date-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/conversions.rb, line 65</span>
+65:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_date</span>
+66:     <span class="ruby-operator">::</span><span class="ruby-constant">Date</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+67:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="to-datetime-method" class="method-detail ">
+				<a name="method-i-to_datetime"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_datetime</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Converts a <a href="Time.html">Time</a> instance to a Ruby <a
+href="DateTime.html">DateTime</a> instance, preserving UTC offset.
+</p>
+<pre>
+  my_time = Time.now    # =&gt; Mon Nov 12 23:04:21 -0500 2007
+  my_time.to_datetime   # =&gt; Mon, 12 Nov 2007 23:04:21 -0500
+
+  your_time = Time.parse(&quot;1/13/2009 1:13:03 P.M.&quot;)  # =&gt; Tue Jan 13 13:13:03 -0500 2009
+  your_time.to_datetime                             # =&gt; Tue, 13 Jan 2009 13:13:03 -0500</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="to-datetime-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/conversions.rb, line 82</span>
+82:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_datetime</span>
+83:     <span class="ruby-operator">::</span><span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">civil</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span>, <span class="ruby-constant">Rational</span>(<span class="ruby-identifier">utc_offset</span>, <span class="ruby-value">86400</span>))
+84:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="to-default-s-method" class="method-detail method-alias">
+				<a name="method-i-to_default_s"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_default_s</span><span
+						class="method-args">(format = :default)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-to_s">to_s</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="to-formatted-s-method" class="method-detail ">
+				<a name="method-i-to_formatted_s"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_formatted_s</span><span
+						class="method-args">(format = :default)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Converts to a formatted string. See <a
+href="Time.html#DATE_FORMATS">DATE_FORMATS</a> for builtin formats.
+</p>
+<p>
+This method is aliased to <tt><a
+href="Time.html#method-i-to_s">to_s</a></tt>.
+</p>
+<pre>
+  time = Time.now                     # =&gt; Thu Jan 18 06:10:17 CST 2007
+
+  time.to_formatted_s(:time)          # =&gt; &quot;06:10:17&quot;
+  time.to_s(:time)                    # =&gt; &quot;06:10:17&quot;
+
+  time.to_formatted_s(:db)            # =&gt; &quot;2007-01-18 06:10:17&quot;
+  time.to_formatted_s(:number)        # =&gt; &quot;20070118061017&quot;
+  time.to_formatted_s(:short)         # =&gt; &quot;18 Jan 06:10&quot;
+  time.to_formatted_s(:long)          # =&gt; &quot;January 18, 2007 06:10&quot;
+  time.to_formatted_s(:long_ordinal)  # =&gt; &quot;January 18th, 2007 06:10&quot;
+  time.to_formatted_s(:rfc822)        # =&gt; &quot;Thu, 18 Jan 2007 06:10:17 -0600&quot;
+</pre>
+<h2>Adding your own time formats to <tt><a href="Time.html#method-i-to_formatted_s">to_formatted_s</a></tt></h2>
+<p>
+You can add your own formats to the Time::DATE_FORMATS hash. Use the format
+name as the hash key and either a strftime string or Proc instance that
+takes a time argument as the value.
+</p>
+<pre>
+  # config/initializers/time_formats.rb
+  Time::DATE_FORMATS[:month_and_year] = &quot;%B %Y&quot;
+  Time::DATE_FORMATS[:short_ordinal] = lambda { |time| time.strftime(&quot;%B #{time.day.ordinalize}&quot;) }</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="to-formatted-s-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/conversions.rb, line 40</span>
+40:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_formatted_s</span>(<span class="ruby-identifier">format</span> = <span class="ruby-value">:default</span>)
+41:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">formatter</span> = <span class="ruby-constant">DATE_FORMATS</span>[<span class="ruby-identifier">format</span>]
+42:       <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:call</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword kw">self</span>).<span class="ruby-identifier">to_s</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">strftime</span>(<span class="ruby-identifier">formatter</span>)
+43:     <span class="ruby-keyword kw">else</span>
+44:       <span class="ruby-identifier">to_default_s</span>
+45:     <span class="ruby-keyword kw">end</span>
+46:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-to_s">to_s</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="to-s-method" class="method-detail method-alias">
+				<a name="method-i-to_s"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_s</span><span
+						class="method-args">(format = :default)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Time.html#method-i-to_default_s">to_default_s</a>
+				</div>
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Time.html#method-i-to_formatted_s">to_formatted_s</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="to-time-method" class="method-detail ">
+				<a name="method-i-to_time"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_time</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+A method to keep <a href="Time.html">Time</a>, Date and <a
+href="DateTime.html">DateTime</a> instances interchangeable on conversions.
+In this case, it simply returns <tt>self</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="to-time-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/conversions.rb, line 71</span>
+71:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_time</span>
+72:     <span class="ruby-keyword kw">self</span>
+73:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="today--method" class="method-detail ">
+				<a name="method-i-today%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">today?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Tells whether the <a href="Time.html">Time</a> object&#8217;s time is today
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="today--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 56</span>
+56:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">today?</span>
+57:     <span class="ruby-identifier">to_date</span> <span class="ruby-operator">==</span> <span class="ruby-operator">::</span><span class="ruby-constant">Date</span>.<span class="ruby-identifier">current</span>
+58:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="tomorrow-method" class="method-detail ">
+				<a name="method-i-tomorrow"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">tomorrow</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Convenience method which returns a new <a href="Time.html">Time</a>
+representing the time 1 day since the instance time
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="tomorrow-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 239</span>
+239:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tomorrow</span>
+240:     <span class="ruby-identifier">advance</span>(<span class="ruby-value">:days</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>)
+241:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="years-ago-method" class="method-detail ">
+				<a name="method-i-years_ago"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">years_ago</span><span
+						class="method-args">(years)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the time a number
+of specified years ago
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="years-ago-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 131</span>
+131:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">years_ago</span>(<span class="ruby-identifier">years</span>)
+132:     <span class="ruby-identifier">advance</span>(<span class="ruby-value">:years</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-operator">-</span><span class="ruby-identifier">years</span>)
+133:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="years-since-method" class="method-detail ">
+				<a name="method-i-years_since"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">years_since</span><span
+						class="method-args">(years)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new <a href="Time.html">Time</a> representing the time a number
+of specified years in the future
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="years-since-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 136</span>
+136:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">years_since</span>(<span class="ruby-identifier">years</span>)
+137:     <span class="ruby-identifier">advance</span>(<span class="ruby-value">:years</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">years</span>)
+138:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="yesterday-method" class="method-detail ">
+				<a name="method-i-yesterday"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">yesterday</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Convenience method which returns a new <a href="Time.html">Time</a>
+representing the time 1 day ago
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="yesterday-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_support/core_ext/time/calculations.rb, line 234</span>
+234:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">yesterday</span>
+235:     <span class="ruby-identifier">advance</span>(<span class="ruby-value">:days</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>)
+236:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

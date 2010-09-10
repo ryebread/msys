@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: ActiveRecord::SessionStore</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/active_record/session_store_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_record/session_store.rb">lib/active_record/session_store.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">ActionDispatch::Session::AbstractStore</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">MODULE</span> <a href="SessionStore/ClassMethods.html">ActiveRecord::SessionStore::ClassMethods</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-destroy">#destroy</a></li>
+					
+					<li><a href="#method-i-find_session">#find_session</a></li>
+					
+					<li><a href="#method-i-get_session">#get_session</a></li>
+					
+					<li><a href="#method-i-get_session_model">#get_session_model</a></li>
+					
+					<li><a href="#method-i-set_session">#set_session</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+				
+					<li><a href="../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+				
+					<li><a href="../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+				
+					<li><a href="../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ClassMethods/o.html">ActiveRecord::Associations::ClassMethods::o</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+				
+					<li><a href="../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+				
+					<li><a href="../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+				
+					<li><a href="../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+				
+					<li><a href="../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+				
+					<li><a href="../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+				
+					<li><a href="../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+				
+					<li><a href="../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+				
+					<li><a href="../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Generators.html">ActiveRecord::Generators</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/MigrationGenerator.html">ActiveRecord::Generators::MigrationGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/ModelGenerator.html">ActiveRecord::Generators::ModelGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/ObserverGenerator.html">ActiveRecord::Generators::ObserverGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/SessionMigrationGenerator.html">ActiveRecord::Generators::SessionMigrationGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+				
+					<li><a href="../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+				
+					<li><a href="../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+				
+					<li><a href="../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+				
+					<li><a href="../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+				
+					<li><a href="../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+				
+					<li><a href="../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+				
+					<li><a href="../ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+				
+					<li><a href="../ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+				
+					<li><a href="../ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+				
+					<li><a href="../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+				
+					<li><a href="../ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+				
+					<li><a href="../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+				
+					<li><a href="../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+				
+					<li><a href="../ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+				
+					<li><a href="../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+				
+					<li><a href="../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+				
+					<li><a href="../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+				
+					<li><a href="../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+				
+					<li><a href="../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+				
+					<li><a href="../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+				
+					<li><a href="../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+				
+					<li><a href="../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+				
+					<li><a href="../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+				
+					<li><a href="../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+				
+					<li><a href="../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+				
+					<li><a href="../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+				
+					<li><a href="../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+				
+					<li><a href="../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+				
+					<li><a href="../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+				
+					<li><a href="../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+				
+					<li><a href="../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+				
+					<li><a href="../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+				
+					<li><a href="../Fixtures.html">Fixtures</a></li>
+				
+					<li><a href="../FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">ActiveRecord::SessionStore</h1>
+
+		<div id="description">
+			<h1>Active Record <a href="SessionStore/Session.html">Session</a> Store</h1>
+<p>
+A session store backed by an Active Record class.  A default class is
+provided, but any object duck-typing to an Active Record <a
+href="SessionStore/Session.html">Session</a> class with text
+<tt>session_id</tt> and <tt>data</tt> attributes is sufficient.
+</p>
+<p>
+The default assumes a <tt>sessions</tt> tables with columns:
+</p>
+<pre>
+  +id+ (numeric primary key),
+  +session_id+ (text, or longtext if your session data exceeds 65K), and
+  +data+ (text or longtext; careful if your session data exceeds 65KB).
+</pre>
+<p>
+The <tt>session_id</tt> column should always be indexed for speedy lookups.
+<a href="SessionStore/Session.html">Session</a> data is marshaled to the
+<tt>data</tt> column in Base64 format. If the data you write is larger than
+the column&#8217;s size limit, ActionController::SessionOverflowError will
+be raised.
+</p>
+<p>
+You may configure the table name, primary key, and data column. For
+example, at the end of <tt>config/application.rb</tt>:
+</p>
+<pre>
+  ActiveRecord::SessionStore::Session.table_name = 'legacy_session_table'
+  ActiveRecord::SessionStore::Session.primary_key = 'session_id'
+  ActiveRecord::SessionStore::Session.data_column_name = 'legacy_session_data'
+</pre>
+<p>
+Note that setting the primary key to the <tt>session_id</tt> frees you from
+having a separate <tt>id</tt> column if you don&#8217;t want it.  However,
+you must set <tt>session.model.id = session.session_id</tt> by hand!  A
+before filter on ApplicationController is a good place.
+</p>
+<p>
+Since the default class is a simple Active Record, you get timestamps for
+free if you add <tt>created_at</tt> and <tt>updated_at</tt> datetime
+columns to the <tt>sessions</tt> table, making periodic session expiration
+a snap.
+</p>
+<p>
+You may provide your own session class implementation, whether a
+feature-packed Active Record or a bare-metal high-performance SQL store, by
+setting
+</p>
+<pre>
+  ActiveRecord::SessionStore.session_class = MySessionClass
+</pre>
+<p>
+You must implement these methods:
+</p>
+<pre>
+  self.find_by_session_id(session_id)
+  initialize(hash_of_session_id_and_data)
+  attr_reader :session_id
+  attr_accessor :data
+  save
+  destroy
+</pre>
+<p>
+The example <a href="SessionStore/SqlBypass.html">SqlBypass</a> class is a
+generic SQL session store.  You may use it as a basis for high-performance
+database-specific stores.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="SESSION_RECORD_KEY">SESSION_RECORD_KEY</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="destroy-method" class="method-detail ">
+				<a name="method-i-destroy"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">destroy</span><span
+						class="method-args">(env)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="destroy-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/session_store.rb, line 319</span>
+319:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">destroy</span>(<span class="ruby-identifier">env</span>)
+320:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sid</span> = <span class="ruby-identifier">current_session_id</span>(<span class="ruby-identifier">env</span>)
+321:           <span class="ruby-constant">Base</span>.<span class="ruby-identifier">silence</span> <span class="ruby-keyword kw">do</span>
+322:             <span class="ruby-identifier">get_session_model</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">sid</span>).<span class="ruby-identifier">destroy</span>
+323:           <span class="ruby-keyword kw">end</span>
+324:         <span class="ruby-keyword kw">end</span>
+325:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="find-session-method" class="method-detail ">
+				<a name="method-i-find_session"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">find_session</span><span
+						class="method-args">(id)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="find-session-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/session_store.rb, line 335</span>
+335:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_session</span>(<span class="ruby-identifier">id</span>)
+336:         <span class="ruby-identifier">@@session_class</span>.<span class="ruby-identifier">find_by_session_id</span>(<span class="ruby-identifier">id</span>) <span class="ruby-operator">||</span>
+337:           <span class="ruby-identifier">@@session_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:session_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>, <span class="ruby-value">:data</span> =<span class="ruby-operator">&gt;</span> {})
+338:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-session-method" class="method-detail ">
+				<a name="method-i-get_session"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_session</span><span
+						class="method-args">(env, sid)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="get-session-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/session_store.rb, line 293</span>
+293:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_session</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">sid</span>)
+294:         <span class="ruby-constant">Base</span>.<span class="ruby-identifier">silence</span> <span class="ruby-keyword kw">do</span>
+295:           <span class="ruby-identifier">sid</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">generate_sid</span>
+296:           <span class="ruby-identifier">session</span> = <span class="ruby-identifier">find_session</span>(<span class="ruby-identifier">sid</span>)
+297:           <span class="ruby-identifier">env</span>[<span class="ruby-constant">SESSION_RECORD_KEY</span>] = <span class="ruby-identifier">session</span>
+298:           [<span class="ruby-identifier">sid</span>, <span class="ruby-identifier">session</span>.<span class="ruby-identifier">data</span>]
+299:         <span class="ruby-keyword kw">end</span>
+300:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-session-model-method" class="method-detail ">
+				<a name="method-i-get_session_model"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_session_model</span><span
+						class="method-args">(env, sid)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="get-session-model-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/session_store.rb, line 327</span>
+327:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_session_model</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">sid</span>)
+328:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">env</span>[<span class="ruby-constant">ENV_SESSION_OPTIONS_KEY</span>][<span class="ruby-value">:id</span>].<span class="ruby-identifier">nil?</span>
+329:           <span class="ruby-identifier">env</span>[<span class="ruby-constant">SESSION_RECORD_KEY</span>] = <span class="ruby-identifier">find_session</span>(<span class="ruby-identifier">sid</span>)
+330:         <span class="ruby-keyword kw">else</span>
+331:           <span class="ruby-identifier">env</span>[<span class="ruby-constant">SESSION_RECORD_KEY</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">find_session</span>(<span class="ruby-identifier">sid</span>)
+332:         <span class="ruby-keyword kw">end</span>
+333:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="set-session-method" class="method-detail ">
+				<a name="method-i-set_session"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">set_session</span><span
+						class="method-args">(env, sid, session_data)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="set-session-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/session_store.rb, line 302</span>
+302:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_session</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">sid</span>, <span class="ruby-identifier">session_data</span>)
+303:         <span class="ruby-constant">Base</span>.<span class="ruby-identifier">silence</span> <span class="ruby-keyword kw">do</span>
+304:           <span class="ruby-identifier">record</span> = <span class="ruby-identifier">get_session_model</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">sid</span>)
+305:           <span class="ruby-identifier">record</span>.<span class="ruby-identifier">data</span> = <span class="ruby-identifier">session_data</span>
+306:           <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">record</span>.<span class="ruby-identifier">save</span>
+307: 
+308:           <span class="ruby-identifier">session_data</span> = <span class="ruby-identifier">record</span>.<span class="ruby-identifier">data</span>
+309:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">session_data</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">session_data</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:each_value</span>)
+310:             <span class="ruby-identifier">session_data</span>.<span class="ruby-identifier">each_value</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">obj</span><span class="ruby-operator">|</span>
+311:               <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">clear_association_cache</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:clear_association_cache</span>)
+312:             <span class="ruby-keyword kw">end</span>
+313:           <span class="ruby-keyword kw">end</span>
+314:         <span class="ruby-keyword kw">end</span>
+315: 
+316:         <span class="ruby-identifier">sid</span>
+317:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

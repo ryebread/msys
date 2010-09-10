@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: ActiveResource::Errors</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/active_resource/validations_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_resource/validations.rb">lib/active_resource/validations.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">ActiveModel::Errors</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-from_array">#from_array</a></li>
+					
+					<li><a href="#method-i-from_json">#from_json</a></li>
+					
+					<li><a href="#method-i-from_xml">#from_xml</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../ActiveResource/BadRequest.html">ActiveResource::BadRequest</a></li>
+				
+					<li><a href="../ActiveResource/Base.html">ActiveResource::Base</a></li>
+				
+					<li><a href="../ActiveResource/ClientError.html">ActiveResource::ClientError</a></li>
+				
+					<li><a href="../ActiveResource/Connection.html">ActiveResource::Connection</a></li>
+				
+					<li><a href="../ActiveResource/CustomMethods.html">ActiveResource::CustomMethods</a></li>
+				
+					<li><a href="../ActiveResource/CustomMethods/ClassMethods.html">ActiveResource::CustomMethods::ClassMethods</a></li>
+				
+					<li><a href="../ActiveResource/CustomMethods/InstanceMethods.html">ActiveResource::CustomMethods::InstanceMethods</a></li>
+				
+					<li><a href="../ActiveResource/Errors.html">ActiveResource::Errors</a></li>
+				
+					<li><a href="../ActiveResource/ForbiddenAccess.html">ActiveResource::ForbiddenAccess</a></li>
+				
+					<li><a href="../ActiveResource/Formats.html">ActiveResource::Formats</a></li>
+				
+					<li><a href="../ActiveResource/Formats/JsonFormat.html">ActiveResource::Formats::JsonFormat</a></li>
+				
+					<li><a href="../ActiveResource/Formats/XmlFormat.html">ActiveResource::Formats::XmlFormat</a></li>
+				
+					<li><a href="../ActiveResource/HttpMock.html">ActiveResource::HttpMock</a></li>
+				
+					<li><a href="../ActiveResource/InvalidRequestError.html">ActiveResource::InvalidRequestError</a></li>
+				
+					<li><a href="../ActiveResource/LogSubscriber.html">ActiveResource::LogSubscriber</a></li>
+				
+					<li><a href="../ActiveResource/Observing.html">ActiveResource::Observing</a></li>
+				
+					<li><a href="../ActiveResource/Railtie.html">ActiveResource::Railtie</a></li>
+				
+					<li><a href="../ActiveResource/Request.html">ActiveResource::Request</a></li>
+				
+					<li><a href="../ActiveResource/ResourceConflict.html">ActiveResource::ResourceConflict</a></li>
+				
+					<li><a href="../ActiveResource/ResourceGone.html">ActiveResource::ResourceGone</a></li>
+				
+					<li><a href="../ActiveResource/ResourceNotFound.html">ActiveResource::ResourceNotFound</a></li>
+				
+					<li><a href="../ActiveResource/Response.html">ActiveResource::Response</a></li>
+				
+					<li><a href="../ActiveResource/SSLError.html">ActiveResource::SSLError</a></li>
+				
+					<li><a href="../ActiveResource/ServerError.html">ActiveResource::ServerError</a></li>
+				
+					<li><a href="../ActiveResource/TimeoutError.html">ActiveResource::TimeoutError</a></li>
+				
+					<li><a href="../ActiveResource/UnauthorizedAccess.html">ActiveResource::UnauthorizedAccess</a></li>
+				
+					<li><a href="../ActiveResource/Validations.html">ActiveResource::Validations</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">ActiveResource::Errors</h1>
+
+		<div id="description">
+			<p>
+Active Resource validation is reported to and from this object, which is
+used by <a href="Base.html#method-i-save">Base#save</a> to determine
+whether the object in a valid state to be saved. See usage example in <a
+href="Validations.html">Validations</a>.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="from-array-method" class="method-detail ">
+				<a name="method-i-from_array"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">from_array</span><span
+						class="method-args">(messages, save_cache = false)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Grabs errors from an array of messages (like ActiveRecord::Validations) The
+second parameter directs the errors cache to be cleared (default) or not
+(by passing true)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="from-array-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/validations.rb, line 14</span>
+14:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from_array</span>(<span class="ruby-identifier">messages</span>, <span class="ruby-identifier">save_cache</span> = <span class="ruby-keyword kw">false</span>)
+15:       <span class="ruby-identifier">clear</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">save_cache</span>
+16:       <span class="ruby-identifier">humanized_attributes</span> = <span class="ruby-ivar">@base</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">inject</span>({}) { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, <span class="ruby-identifier">attr_name</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">attr_name</span>.<span class="ruby-identifier">humanize</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">attr_name</span>) }
+17:       <span class="ruby-identifier">messages</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">message</span><span class="ruby-operator">|</span>
+18:         <span class="ruby-identifier">attr_message</span> = <span class="ruby-identifier">humanized_attributes</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">detect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">attr_name</span><span class="ruby-operator">|</span>
+19:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">message</span>[<span class="ruby-value">0</span>, <span class="ruby-identifier">attr_name</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-node">&quot;#{attr_name} &quot;</span>
+20:             <span class="ruby-identifier">add</span> <span class="ruby-identifier">humanized_attributes</span>[<span class="ruby-identifier">attr_name</span>], <span class="ruby-identifier">message</span>[(<span class="ruby-identifier">attr_name</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)<span class="ruby-operator">..</span><span class="ruby-value">1</span>]
+21:           <span class="ruby-keyword kw">end</span>
+22:         <span class="ruby-keyword kw">end</span>
+23: 
+24:         <span class="ruby-keyword kw">self</span>[<span class="ruby-value">:base</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">message</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">attr_message</span>.<span class="ruby-identifier">nil?</span>
+25:       <span class="ruby-keyword kw">end</span>
+26:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="from-json-method" class="method-detail ">
+				<a name="method-i-from_json"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">from_json</span><span
+						class="method-args">(json, save_cache = false)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Grabs errors from a json response.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="from-json-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/validations.rb, line 29</span>
+29:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from_json</span>(<span class="ruby-identifier">json</span>, <span class="ruby-identifier">save_cache</span> = <span class="ruby-keyword kw">false</span>)
+30:       <span class="ruby-identifier">array</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">JSON</span>.<span class="ruby-identifier">decode</span>(<span class="ruby-identifier">json</span>)[<span class="ruby-value str">'errors'</span>]) <span class="ruby-keyword kw">rescue</span> []
+31:       <span class="ruby-identifier">from_array</span> <span class="ruby-identifier">array</span>, <span class="ruby-identifier">save_cache</span>
+32:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="from-xml-method" class="method-detail ">
+				<a name="method-i-from_xml"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">from_xml</span><span
+						class="method-args">(xml, save_cache = false)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Grabs errors from an XML response.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="from-xml-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/validations.rb, line 35</span>
+35:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from_xml</span>(<span class="ruby-identifier">xml</span>, <span class="ruby-identifier">save_cache</span> = <span class="ruby-keyword kw">false</span>)
+36:       <span class="ruby-identifier">array</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-constant">Hash</span>.<span class="ruby-identifier">from_xml</span>(<span class="ruby-identifier">xml</span>)[<span class="ruby-value str">'errors'</span>][<span class="ruby-value str">'error'</span>]) <span class="ruby-keyword kw">rescue</span> []
+37:       <span class="ruby-identifier">from_array</span> <span class="ruby-identifier">array</span>, <span class="ruby-identifier">save_cache</span>
+38:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

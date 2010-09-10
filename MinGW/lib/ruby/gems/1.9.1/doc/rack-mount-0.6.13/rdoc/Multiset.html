@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Multiset</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./lib/rack/mount/vendor/multimap/multiset_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rack/mount/vendor/multimap/multiset.rb">lib/rack/mount/vendor/multimap/multiset.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Set</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-%26">#&</a></li>
+					
+					<li><a href="#method-i-%3C%3C">#<<</a></li>
+					
+					<li><a href="#method-i-%3D%3D">#==</a></li>
+					
+					<li><a href="#method-i-%5E">#^</a></li>
+					
+					<li><a href="#method-i-add">#add</a></li>
+					
+					<li><a href="#method-i-cardinality">#cardinality</a></li>
+					
+					<li><a href="#method-i-delete">#delete</a></li>
+					
+					<li><a href="#method-i-delete_if">#delete_if</a></li>
+					
+					<li><a href="#method-i-each">#each</a></li>
+					
+					<li><a href="#method-i-eql%3F">#eql?</a></li>
+					
+					<li><a href="#method-i-length">#length</a></li>
+					
+					<li><a href="#method-i-merge">#merge</a></li>
+					
+					<li><a href="#method-i-multiplicity">#multiplicity</a></li>
+					
+					<li><a href="#method-i-proper_subset%3F">#proper_subset?</a></li>
+					
+					<li><a href="#method-i-proper_superset%3F">#proper_superset?</a></li>
+					
+					<li><a href="#method-i-size">#size</a></li>
+					
+					<li><a href="#method-i-subset%3F">#subset?</a></li>
+					
+					<li><a href="#method-i-subtract">#subtract</a></li>
+					
+					<li><a href="#method-i-superset%3F">#superset?</a></li>
+					
+					<li><a href="#method-i-to_a">#to_a</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./Rack/Mount.html">Rack::Mount</a></li>
+				
+					<li><a href="./Rack/Mount/Analysis/Splitting.html">Rack::Mount::Analysis::Splitting</a></li>
+				
+					<li><a href="./Rack/Mount/Analysis/Splitting/Key.html">Rack::Mount::Analysis::Splitting::Key</a></li>
+				
+					<li><a href="./Rack/Mount/GeneratableRegexp/InstanceMethods.html">Rack::Mount::GeneratableRegexp::InstanceMethods</a></li>
+				
+					<li><a href="./Rack/Mount/RegexpWithNamedGroups.html">Rack::Mount::RegexpWithNamedGroups</a></li>
+				
+					<li><a href="./Rack/Mount/Route.html">Rack::Mount::Route</a></li>
+				
+					<li><a href="./Rack/Mount/RouteSet.html">Rack::Mount::RouteSet</a></li>
+				
+					<li><a href="./Rack/Mount/RoutingError.html">Rack::Mount::RoutingError</a></li>
+				
+					<li><a href="./Rack/Mount/Strexp.html">Rack::Mount::Strexp</a></li>
+				
+					<li><a href="./Rack/Mount/StrexpParser.html">Rack::Mount::StrexpParser</a></li>
+				
+					<li><a href="./Rack/Mount/StrexpParser/ScanError.html">Rack::Mount::StrexpParser::ScanError</a></li>
+				
+					<li><a href="./Rack/Mount/Utils.html">Rack::Mount::Utils</a></li>
+				
+					<li><a href="./Regin.html">Regin</a></li>
+				
+					<li><a href="./Regin/Alternation.html">Regin::Alternation</a></li>
+				
+					<li><a href="./Regin/Anchor.html">Regin::Anchor</a></li>
+				
+					<li><a href="./Regin/Atom.html">Regin::Atom</a></li>
+				
+					<li><a href="./Regin/Character.html">Regin::Character</a></li>
+				
+					<li><a href="./Regin/CharacterClass.html">Regin::CharacterClass</a></li>
+				
+					<li><a href="./Regin/Collection.html">Regin::Collection</a></li>
+				
+					<li><a href="./Regin/Expression.html">Regin::Expression</a></li>
+				
+					<li><a href="./Regin/Group.html">Regin::Group</a></li>
+				
+					<li><a href="./Regin/Options.html">Regin::Options</a></li>
+				
+					<li><a href="./Multimap.html">Multimap</a></li>
+				
+					<li><a href="./Multiset.html">Multiset</a></li>
+				
+					<li><a href="./NestedMultimap.html">NestedMultimap</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Multiset</h1>
+
+		<div id="description">
+			<p>
+<a href="Multiset.html">Multiset</a> implements a collection of unordered
+values and allows duplicates.
+</p>
+<h2>Example</h2>
+<pre>
+  require 'multiset'
+  s1 = Multiset.new [1, 2]              # -&gt; #&lt;Multiset: {1, 2}&gt;
+  s1.add(2)                             # -&gt; #&lt;Multiset: {1, 2, 2}&gt;
+  s1.merge([2, 6])                      # -&gt; #&lt;Multiset: {1, 2, 2, 2, 3}&gt;
+  s1.multiplicity(2)                    # -&gt; 3
+  s1.multiplicity(3)                    # -&gt; 1</pre>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%26"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">&amp;</span><span
+						class="method-args">(enum)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new set containing elements common to the set and the given
+enumerable object.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 129</span>
+129:   <span class="ruby-keyword kw">def</span> &amp;(<span class="ruby-identifier">enum</span>)
+130:     <span class="ruby-identifier">s</span> = <span class="ruby-identifier">dup</span>
+131:     <span class="ruby-identifier">n</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>
+132:     <span class="ruby-identifier">enum</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span>
+133:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">o</span>)
+134:         <span class="ruby-identifier">s</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">o</span>, <span class="ruby-value">1</span>)
+135:         <span class="ruby-identifier">n</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">o</span>)
+136:       <span class="ruby-keyword kw">end</span>
+137:     }
+138:     <span class="ruby-identifier">n</span>
+139:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail method-alias">
+				<a name="method-i-%3C%3C"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">&lt;&lt;</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Multiset.html#method-i-add">add</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail method-alias">
+				<a name="method-i-%3D%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">==</span><span
+						class="method-args">(set)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Multiset.html#method-i-eql%3F">eql?</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%5E"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">^</span><span
+						class="method-args">(enum)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a new set containing elements exclusive between the set and the
+given enumerable object.  (set ^ enum) is equivalent to ((set | enum) -
+(set &amp; enum)).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 145</span>
+145:   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">^</span>(<span class="ruby-identifier">enum</span>)
+146:     <span class="ruby-identifier">n</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">enum</span>)
+147:     <span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">o</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">o</span>, <span class="ruby-value">1</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">o</span>) }
+148:     <span class="ruby-identifier">n</span>
+149:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="add-method" class="method-detail ">
+				<a name="method-i-add"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Adds the given object to the set and returns self. Use <tt>merge</tt> to
+add many elements at once.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="add-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 80</span>
+80:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add</span>(<span class="ruby-identifier">o</span>)
+81:     <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">o</span>] <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
+82:     <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">o</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+83:     <span class="ruby-keyword kw">self</span>
+84:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Multiset.html#method-i-%3C%3C">&lt;&lt;</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="cardinality-method" class="method-detail ">
+				<a name="method-i-cardinality"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cardinality</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the total number of elements in a multiset, including repeated
+memberships
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="cardinality-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 27</span>
+27:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cardinality</span>
+28:     <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-value">0</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span>, (<span class="ruby-identifier">e</span>, <span class="ruby-identifier">m</span>)<span class="ruby-operator">|</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">m</span> }
+29:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Multiset.html#method-i-size">size</a>, <a href="Multiset.html#method-i-length">length</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="delete-method" class="method-detail ">
+				<a name="method-i-delete"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">delete</span><span
+						class="method-args">(o, n = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Deletes all the identical object from the set and returns self. If
+<tt>n</tt> is given, it will remove that amount of identical objects from
+the set. Use <tt>subtract</tt> to delete many different items at once.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="delete-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 93</span>
+ 93:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">o</span>, <span class="ruby-identifier">n</span> = <span class="ruby-keyword kw">nil</span>)
+ 94:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">n</span>
+ 95:       <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">o</span>] <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
+ 96:       <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">o</span>] <span class="ruby-operator">-=</span> <span class="ruby-identifier">n</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">o</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+ 97:       <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">o</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">o</span>] <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+ 98:     <span class="ruby-keyword kw">else</span>
+ 99:       <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">o</span>)
+100:     <span class="ruby-keyword kw">end</span>
+101:     <span class="ruby-keyword kw">self</span>
+102:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="delete-if-method" class="method-detail ">
+				<a name="method-i-delete_if"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">delete_if</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Deletes every element of the set for which block evaluates to true, and
+returns self.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="delete-if-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 108</span>
+108:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_if</span>
+109:     <span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">o</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">o</span>) }
+110:     <span class="ruby-keyword kw">self</span>
+111:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="each-method" class="method-detail ">
+				<a name="method-i-each"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">each</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Calls the given block once for each element in the set, passing the element
+as parameter. Returns an enumerator if no block is given.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="each-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 69</span>
+69:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">each</span>
+70:     <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">multiplicity</span><span class="ruby-operator">|</span>
+71:       <span class="ruby-identifier">multiplicity</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span>
+72:         <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">key</span>)
+73:       <span class="ruby-keyword kw">end</span>
+74:     <span class="ruby-keyword kw">end</span>
+75:     <span class="ruby-keyword kw">self</span>
+76:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="eql--method" class="method-detail ">
+				<a name="method-i-eql%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">eql?</span><span
+						class="method-args">(set)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if two sets are equal. Two multisets are equal if they have
+the same cardinalities and each element has the same multiplicity in both
+sets. The equality of each element inside the multiset is defined according
+to Object#eql?.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="eql--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 155</span>
+155:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">set</span>)
+156:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">equal?</span>(<span class="ruby-identifier">set</span>)
+157:     <span class="ruby-identifier">set</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">set</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">set</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>)
+158:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">cardinality</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">set</span>.<span class="ruby-identifier">cardinality</span>
+159:     <span class="ruby-identifier">superset?</span>(<span class="ruby-identifier">set</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">subset?</span>(<span class="ruby-identifier">set</span>)
+160:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Multiset.html#method-i-%3D%3D">==</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="length-method" class="method-detail method-alias">
+				<a name="method-i-length"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">length</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Multiset.html#method-i-cardinality">cardinality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="merge-method" class="method-detail ">
+				<a name="method-i-merge"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge</span><span
+						class="method-args">(enum)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Merges the elements of the given enumerable object to the set and returns
+self.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="merge-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 115</span>
+115:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge</span>(<span class="ruby-identifier">enum</span>)
+116:     <span class="ruby-identifier">enum</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">add</span>(<span class="ruby-identifier">o</span>) }
+117:     <span class="ruby-keyword kw">self</span>
+118:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="multiplicity-method" class="method-detail ">
+				<a name="method-i-multiplicity"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">multiplicity</span><span
+						class="method-args">(e)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the number of times an element belongs to the multiset.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="multiplicity-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 21</span>
+21:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">multiplicity</span>(<span class="ruby-identifier">e</span>)
+22:     <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">e</span>]
+23:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="proper-subset--method" class="method-detail ">
+				<a name="method-i-proper_subset%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">proper_subset?</span><span
+						class="method-args">(set)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if the set is a proper subset of the given set.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="proper-subset--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 60</span>
+60:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">proper_subset?</span>(<span class="ruby-identifier">set</span>)
+61:     <span class="ruby-identifier">set</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>) <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;value must be a set&quot;</span>
+62:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">set</span>.<span class="ruby-identifier">cardinality</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">cardinality</span>
+63:     <span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">multiplicity</span>(<span class="ruby-identifier">o</span>) <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">set</span>.<span class="ruby-identifier">multiplicity</span>(<span class="ruby-identifier">o</span>) }
+64:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="proper-superset--method" class="method-detail ">
+				<a name="method-i-proper_superset%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">proper_superset?</span><span
+						class="method-args">(set)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if the set is a proper superset of the given set.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="proper-superset--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 46</span>
+46:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">proper_superset?</span>(<span class="ruby-identifier">set</span>)
+47:     <span class="ruby-identifier">set</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>) <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;value must be a set&quot;</span>
+48:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cardinality</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">set</span>.<span class="ruby-identifier">cardinality</span>
+49:     <span class="ruby-identifier">set</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">set</span>.<span class="ruby-identifier">multiplicity</span>(<span class="ruby-identifier">o</span>) <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">multiplicity</span>(<span class="ruby-identifier">o</span>) }
+50:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="size-method" class="method-detail method-alias">
+				<a name="method-i-size"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">size</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Multiset.html#method-i-cardinality">cardinality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="subset--method" class="method-detail ">
+				<a name="method-i-subset%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">subset?</span><span
+						class="method-args">(set)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if the set is a subset of the given set.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="subset--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 53</span>
+53:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">subset?</span>(<span class="ruby-identifier">set</span>)
+54:     <span class="ruby-identifier">set</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>) <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;value must be a set&quot;</span>
+55:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">set</span>.<span class="ruby-identifier">cardinality</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">cardinality</span>
+56:     <span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">multiplicity</span>(<span class="ruby-identifier">o</span>) <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">set</span>.<span class="ruby-identifier">multiplicity</span>(<span class="ruby-identifier">o</span>) }
+57:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="subtract-method" class="method-detail ">
+				<a name="method-i-subtract"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">subtract</span><span
+						class="method-args">(enum)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Deletes every element that appears in the given enumerable object and
+returns self.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="subtract-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 122</span>
+122:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">subtract</span>(<span class="ruby-identifier">enum</span>)
+123:     <span class="ruby-identifier">enum</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">o</span>, <span class="ruby-value">1</span>) }
+124:     <span class="ruby-keyword kw">self</span>
+125:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="superset--method" class="method-detail ">
+				<a name="method-i-superset%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">superset?</span><span
+						class="method-args">(set)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if the set is a superset of the given set.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="superset--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 39</span>
+39:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">superset?</span>(<span class="ruby-identifier">set</span>)
+40:     <span class="ruby-identifier">set</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>) <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;value must be a set&quot;</span>
+41:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cardinality</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">set</span>.<span class="ruby-identifier">cardinality</span>
+42:     <span class="ruby-identifier">set</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">set</span>.<span class="ruby-identifier">multiplicity</span>(<span class="ruby-identifier">o</span>) <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">multiplicity</span>(<span class="ruby-identifier">o</span>) }
+43:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="to-a-method" class="method-detail ">
+				<a name="method-i-to_a"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_a</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Converts the set to an array. The order of elements is uncertain.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="to-a-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/vendor/multimap/multiset.rb, line 34</span>
+34:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_a</span>
+35:     <span class="ruby-identifier">inject</span>([]) { <span class="ruby-operator">|</span><span class="ruby-identifier">ary</span>, (<span class="ruby-identifier">key</span>, <span class="ruby-identifier">_</span>)<span class="ruby-operator">|</span> <span class="ruby-identifier">ary</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span> }
+36:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

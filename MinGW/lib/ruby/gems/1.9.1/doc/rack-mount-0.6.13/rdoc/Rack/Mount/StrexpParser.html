@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Rack::Mount::StrexpParser</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/rack/mount/strexp/parser_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rack/mount/strexp/parser.rb">lib/rack/mount/strexp/parser.rb</a></li>
+					
+						<li><a href="../../lib/rack/mount/strexp/tokenizer_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rack/mount/strexp/tokenizer.rb">lib/rack/mount/strexp/tokenizer.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Racc::Parser</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="StrexpParser/ScanError.html">Rack::Mount::StrexpParser::ScanError</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-_reduce_1">#_reduce_1</a></li>
+					
+					<li><a href="#method-i-_reduce_2">#_reduce_2</a></li>
+					
+					<li><a href="#method-i-_reduce_4">#_reduce_4</a></li>
+					
+					<li><a href="#method-i-_reduce_5">#_reduce_5</a></li>
+					
+					<li><a href="#method-i-_reduce_6">#_reduce_6</a></li>
+					
+					<li><a href="#method-i-_reduce_7">#_reduce_7</a></li>
+					
+					<li><a href="#method-i-_reduce_none">#_reduce_none</a></li>
+					
+					<li><a href="#method-i-action">#action</a></li>
+					
+					<li><a href="#method-i-load_file">#load_file</a></li>
+					
+					<li><a href="#method-i-next_token">#next_token</a></li>
+					
+					<li><a href="#method-i-scan">#scan</a></li>
+					
+					<li><a href="#method-i-scan_file">#scan_file</a></li>
+					
+					<li><a href="#method-i-scan_setup">#scan_setup</a></li>
+					
+					<li><a href="#method-i-scan_str">#scan_str</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Rack/Mount.html">Rack::Mount</a></li>
+				
+					<li><a href="../../Rack/Mount/Analysis/Splitting.html">Rack::Mount::Analysis::Splitting</a></li>
+				
+					<li><a href="../../Rack/Mount/Analysis/Splitting/Key.html">Rack::Mount::Analysis::Splitting::Key</a></li>
+				
+					<li><a href="../../Rack/Mount/GeneratableRegexp/InstanceMethods.html">Rack::Mount::GeneratableRegexp::InstanceMethods</a></li>
+				
+					<li><a href="../../Rack/Mount/RegexpWithNamedGroups.html">Rack::Mount::RegexpWithNamedGroups</a></li>
+				
+					<li><a href="../../Rack/Mount/Route.html">Rack::Mount::Route</a></li>
+				
+					<li><a href="../../Rack/Mount/RouteSet.html">Rack::Mount::RouteSet</a></li>
+				
+					<li><a href="../../Rack/Mount/RoutingError.html">Rack::Mount::RoutingError</a></li>
+				
+					<li><a href="../../Rack/Mount/Strexp.html">Rack::Mount::Strexp</a></li>
+				
+					<li><a href="../../Rack/Mount/StrexpParser.html">Rack::Mount::StrexpParser</a></li>
+				
+					<li><a href="../../Rack/Mount/StrexpParser/ScanError.html">Rack::Mount::StrexpParser::ScanError</a></li>
+				
+					<li><a href="../../Rack/Mount/Utils.html">Rack::Mount::Utils</a></li>
+				
+					<li><a href="../../Regin.html">Regin</a></li>
+				
+					<li><a href="../../Regin/Alternation.html">Regin::Alternation</a></li>
+				
+					<li><a href="../../Regin/Anchor.html">Regin::Anchor</a></li>
+				
+					<li><a href="../../Regin/Atom.html">Regin::Atom</a></li>
+				
+					<li><a href="../../Regin/Character.html">Regin::Character</a></li>
+				
+					<li><a href="../../Regin/CharacterClass.html">Regin::CharacterClass</a></li>
+				
+					<li><a href="../../Regin/Collection.html">Regin::Collection</a></li>
+				
+					<li><a href="../../Regin/Expression.html">Regin::Expression</a></li>
+				
+					<li><a href="../../Regin/Group.html">Regin::Group</a></li>
+				
+					<li><a href="../../Regin/Options.html">Regin::Options</a></li>
+				
+					<li><a href="../../Multimap.html">Multimap</a></li>
+				
+					<li><a href="../../Multiset.html">Multiset</a></li>
+				
+					<li><a href="../../NestedMultimap.html">NestedMultimap</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Rack::Mount::StrexpParser</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="REGEXP_NAMED_CAPTURE">REGEXP_NAMED_CAPTURE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="REGEXP_NAMED_CAPTURE">REGEXP_NAMED_CAPTURE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="Racc_arg">Racc_arg</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="Racc_token_to_s_table">Racc_token_to_s_table</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="Racc_debug_parser">Racc_debug_parser</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="anchor-attribute-method" class="method-detail">
+				<a name="anchor"></a>
+				
+				<a name="anchor="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">anchor</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="requirements-attribute-method" class="method-detail">
+				<a name="requirements"></a>
+				
+				<a name="requirements="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">requirements</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="lineno-attribute-method" class="method-detail">
+				<a name="lineno"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">lineno</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="filename-attribute-method" class="method-detail">
+				<a name="filename"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">filename</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="state-attribute-method" class="method-detail">
+				<a name="state"></a>
+				
+				<a name="state="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">state</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="-reduce--method" class="method-detail ">
+				<a name="method-i-_reduce_1"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_reduce_1</span><span
+						class="method-args">(val, _values, result)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+reduce 0 omitted
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="-reduce--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/strexp/parser.rb, line 116</span>
+116: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_reduce_1</span>(<span class="ruby-identifier">val</span>, <span class="ruby-identifier">_values</span>, <span class="ruby-identifier">result</span>)
+117:  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">anchor</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;\\A#{val.join}\\Z&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;\\A#{val.join}&quot;</span> 
+118:     <span class="ruby-identifier">result</span>
+119: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-reduce--method" class="method-detail ">
+				<a name="method-i-_reduce_2"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_reduce_2</span><span
+						class="method-args">(val, _values, result)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-reduce--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/strexp/parser.rb, line 121</span>
+121: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_reduce_2</span>(<span class="ruby-identifier">val</span>, <span class="ruby-identifier">_values</span>, <span class="ruby-identifier">result</span>)
+122:  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">val</span>.<span class="ruby-identifier">join</span> 
+123:     <span class="ruby-identifier">result</span>
+124: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-reduce--method" class="method-detail ">
+				<a name="method-i-_reduce_4"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_reduce_4</span><span
+						class="method-args">(val, _values, result)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+reduce 3 omitted
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="-reduce--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/strexp/parser.rb, line 128</span>
+128: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_reduce_4</span>(<span class="ruby-identifier">val</span>, <span class="ruby-identifier">_values</span>, <span class="ruby-identifier">result</span>)
+129:            <span class="ruby-identifier">name</span> = <span class="ruby-identifier">val</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_sym</span>
+130:            <span class="ruby-identifier">requirement</span> = <span class="ruby-identifier">requirements</span>[<span class="ruby-identifier">name</span>]
+131:            <span class="ruby-identifier">result</span> = <span class="ruby-constant">REGEXP_NAMED_CAPTURE</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">name</span>, <span class="ruby-identifier">requirement</span>]
+132: 
+133:     <span class="ruby-identifier">result</span>
+134: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-reduce--method" class="method-detail ">
+				<a name="method-i-_reduce_5"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_reduce_5</span><span
+						class="method-args">(val, _values, result)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-reduce--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/strexp/parser.rb, line 136</span>
+136: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_reduce_5</span>(<span class="ruby-identifier">val</span>, <span class="ruby-identifier">_values</span>, <span class="ruby-identifier">result</span>)
+137:            <span class="ruby-identifier">name</span> = <span class="ruby-identifier">val</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_sym</span>
+138:            <span class="ruby-identifier">requirement</span> = <span class="ruby-identifier">requirements</span>[<span class="ruby-identifier">name</span>]
+139:            <span class="ruby-identifier">result</span> = <span class="ruby-constant">REGEXP_NAMED_CAPTURE</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">name</span>, <span class="ruby-value str">'.+'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">requirement</span>]
+140: 
+141:     <span class="ruby-identifier">result</span>
+142: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-reduce--method" class="method-detail ">
+				<a name="method-i-_reduce_6"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_reduce_6</span><span
+						class="method-args">(val, _values, result)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-reduce--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/strexp/parser.rb, line 144</span>
+144: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_reduce_6</span>(<span class="ruby-identifier">val</span>, <span class="ruby-identifier">_values</span>, <span class="ruby-identifier">result</span>)
+145:  <span class="ruby-identifier">result</span> = <span class="ruby-node">&quot;(?:#{val[1]})?&quot;</span> 
+146:     <span class="ruby-identifier">result</span>
+147: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-reduce--method" class="method-detail ">
+				<a name="method-i-_reduce_7"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_reduce_7</span><span
+						class="method-args">(val, _values, result)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-reduce--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/strexp/parser.rb, line 149</span>
+149: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_reduce_7</span>(<span class="ruby-identifier">val</span>, <span class="ruby-identifier">_values</span>, <span class="ruby-identifier">result</span>)
+150:  <span class="ruby-identifier">result</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">val</span>[<span class="ruby-value">0</span>]) 
+151:     <span class="ruby-identifier">result</span>
+152: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="-reduce-none-method" class="method-detail ">
+				<a name="method-i-_reduce_none"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_reduce_none</span><span
+						class="method-args">(val, _values, result)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="-reduce-none-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/mount/strexp/parser.rb, line 154</span>
+154: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_reduce_none</span>(<span class="ruby-identifier">val</span>, <span class="ruby-identifier">_values</span>, <span class="ruby-identifier">result</span>)
+155:   <span class="ruby-identifier">val</span>[<span class="ruby-value">0</span>]
+156: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="action-method" class="method-detail ">
+				<a name="method-i-action"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">action</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="action-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/strexp/tokenizer.rb, line 23</span>
+23:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">action</span>
+24:     <span class="ruby-keyword kw">yield</span>
+25:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="load-file-method" class="method-detail ">
+				<a name="method-i-load_file"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_file</span><span
+						class="method-args">( filename )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="load-file-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/strexp/tokenizer.rb, line 33</span>
+33:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_file</span>( <span class="ruby-identifier">filename</span> )
+34:     <span class="ruby-ivar">@filename</span> = <span class="ruby-identifier">filename</span>
+35:     <span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-value str">&quot;r&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+36:       <span class="ruby-identifier">scan_setup</span>(<span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>)
+37:     <span class="ruby-keyword kw">end</span>
+38:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="next-token-method" class="method-detail ">
+				<a name="method-i-next_token"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">next_token</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="next-token-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/strexp/tokenizer.rb, line 46</span>
+46:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">next_token</span>
+47:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ss</span>.<span class="ruby-identifier">eos?</span>
+48: 
+49:     <span class="ruby-identifier">text</span> = <span class="ruby-ivar">@ss</span>.<span class="ruby-identifier">peek</span>(<span class="ruby-value">1</span>)
+50:     <span class="ruby-ivar">@lineno</span>  <span class="ruby-operator">+=</span>  <span class="ruby-value">1</span>  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">text</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;\n&quot;</span>
+51:     <span class="ruby-identifier">token</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@state</span>
+52:     <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">nil</span>
+53:       <span class="ruby-keyword kw">case</span>
+54:       <span class="ruby-keyword kw">when</span> (<span class="ruby-identifier">text</span> = <span class="ruby-ivar">@ss</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/\\(\(|\)|:|\*)/</span>))
+55:          <span class="ruby-identifier">action</span> { [<span class="ruby-value">:CHAR</span>,  <span class="ruby-ivar">@ss</span>[<span class="ruby-value">1</span>]] }
+56: 
+57:       <span class="ruby-keyword kw">when</span> (<span class="ruby-identifier">text</span> = <span class="ruby-ivar">@ss</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/\:([a-zA-Z_]\w*)/</span>))
+58:          <span class="ruby-identifier">action</span> { [<span class="ruby-value">:PARAM</span>, <span class="ruby-ivar">@ss</span>[<span class="ruby-value">1</span>]] }
+59: 
+60:       <span class="ruby-keyword kw">when</span> (<span class="ruby-identifier">text</span> = <span class="ruby-ivar">@ss</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/\*([a-zA-Z_]\w*)/</span>))
+61:          <span class="ruby-identifier">action</span> { [<span class="ruby-value">:GLOB</span>,  <span class="ruby-ivar">@ss</span>[<span class="ruby-value">1</span>]] }
+62: 
+63:       <span class="ruby-keyword kw">when</span> (<span class="ruby-identifier">text</span> = <span class="ruby-ivar">@ss</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/\(/</span>))
+64:          <span class="ruby-identifier">action</span> { [<span class="ruby-value">:LPAREN</span>, <span class="ruby-identifier">text</span>]  }
+65: 
+66:       <span class="ruby-keyword kw">when</span> (<span class="ruby-identifier">text</span> = <span class="ruby-ivar">@ss</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/\)/</span>))
+67:          <span class="ruby-identifier">action</span> { [<span class="ruby-value">:RPAREN</span>, <span class="ruby-identifier">text</span>]  }
+68: 
+69:       <span class="ruby-keyword kw">when</span> (<span class="ruby-identifier">text</span> = <span class="ruby-ivar">@ss</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/./</span>))
+70:          <span class="ruby-identifier">action</span> { [<span class="ruby-value">:CHAR</span>,   <span class="ruby-identifier">text</span>]  }
+71: 
+72:       <span class="ruby-keyword kw">else</span>
+73:         <span class="ruby-identifier">text</span> = <span class="ruby-ivar">@ss</span>.<span class="ruby-identifier">string</span>[<span class="ruby-ivar">@ss</span>.<span class="ruby-identifier">pos</span> <span class="ruby-operator">..</span> <span class="ruby-value">1</span>]
+74:         <span class="ruby-identifier">raise</span>  <span class="ruby-constant">ScanError</span>, <span class="ruby-value str">&quot;can not match: '&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;'&quot;</span>
+75:       <span class="ruby-keyword kw">end</span>  <span class="ruby-comment cmt"># if</span>
+76: 
+77:     <span class="ruby-keyword kw">else</span>
+78:       <span class="ruby-identifier">raise</span>  <span class="ruby-constant">ScanError</span>, <span class="ruby-value str">&quot;undefined state: '&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">state</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;'&quot;</span>
+79:     <span class="ruby-keyword kw">end</span>  <span class="ruby-comment cmt"># case state</span>
+80:     <span class="ruby-identifier">token</span>
+81:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="scan-method" class="method-detail method-alias">
+				<a name="method-i-scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">scan</span><span
+						class="method-args">(str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="StrexpParser.html#method-i-scan_str">scan_str</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="scan-file-method" class="method-detail ">
+				<a name="method-i-scan_file"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">scan_file</span><span
+						class="method-args">( filename )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="scan-file-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/strexp/tokenizer.rb, line 40</span>
+40:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scan_file</span>( <span class="ruby-identifier">filename</span> )
+41:     <span class="ruby-identifier">load_file</span>(<span class="ruby-identifier">filename</span>)
+42:     <span class="ruby-identifier">do_parse</span>
+43:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="scan-setup-method" class="method-detail ">
+				<a name="method-i-scan_setup"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">scan_setup</span><span
+						class="method-args">(str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="scan-setup-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/strexp/tokenizer.rb, line 17</span>
+17:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scan_setup</span>(<span class="ruby-identifier">str</span>)
+18:     <span class="ruby-ivar">@ss</span> = <span class="ruby-constant">StringScanner</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">str</span>)
+19:     <span class="ruby-ivar">@lineno</span> =  <span class="ruby-value">1</span>
+20:     <span class="ruby-ivar">@state</span>  = <span class="ruby-keyword kw">nil</span>
+21:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="scan-str-method" class="method-detail ">
+				<a name="method-i-scan_str"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">scan_str</span><span
+						class="method-args">(str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="scan-str-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rack/mount/strexp/tokenizer.rb, line 27</span>
+27:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scan_str</span>(<span class="ruby-identifier">str</span>)
+28:     <span class="ruby-identifier">scan_setup</span>(<span class="ruby-identifier">str</span>)
+29:     <span class="ruby-identifier">do_parse</span>
+30:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="StrexpParser.html#method-i-scan">scan</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

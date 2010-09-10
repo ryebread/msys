@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: ActiveRecord::ConnectionAdapters::PostgreSQLColumn</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/active_record/connection_adapters/postgresql_adapter_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_record/connection_adapters/postgresql_adapter.rb">lib/active_record/connection_adapters/postgresql_adapter.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="Column.html">ActiveRecord::ConnectionAdapters::Column</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-extract_value_from_default">::extract_value_from_default</a></li>
+					
+					<li><a href="#method-i-extract_limit">#extract_limit</a></li>
+					
+					<li><a href="#method-i-extract_precision">#extract_precision</a></li>
+					
+					<li><a href="#method-i-extract_scale">#extract_scale</a></li>
+					
+					<li><a href="#method-i-simplified_type">#simplified_type</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+				
+					<li><a href="../../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ClassMethods/o.html">ActiveRecord::Associations::ClassMethods::o</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+				
+					<li><a href="../../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+				
+					<li><a href="../../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators.html">ActiveRecord::Generators</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/MigrationGenerator.html">ActiveRecord::Generators::MigrationGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/ModelGenerator.html">ActiveRecord::Generators::ModelGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/ObserverGenerator.html">ActiveRecord::Generators::ObserverGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/SessionMigrationGenerator.html">ActiveRecord::Generators::SessionMigrationGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+				
+					<li><a href="../../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+				
+					<li><a href="../../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+				
+					<li><a href="../../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+				
+					<li><a href="../../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+				
+					<li><a href="../../ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+				
+					<li><a href="../../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+				
+					<li><a href="../../ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+				
+					<li><a href="../../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+				
+					<li><a href="../../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+				
+					<li><a href="../../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+				
+					<li><a href="../../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+				
+					<li><a href="../../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+				
+					<li><a href="../../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+				
+					<li><a href="../../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+				
+					<li><a href="../../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+				
+					<li><a href="../../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+				
+					<li><a href="../../Fixtures.html">Fixtures</a></li>
+				
+					<li><a href="../../FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</h1>
+
+		<div id="description">
+			<p>
+PostgreSQL-specific extensions to column definitions in a table.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="private-class-method-details" class="method-section section">
+			<h3 class="section-header">Private Class Methods</h3>
+
+		
+			<div id="extract-value-from-default-method" class="method-detail ">
+				<a name="method-c-extract_value_from_default"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">extract_value_from_default</span><span
+						class="method-args">(default)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Extracts the value from a PostgreSQL column default definition.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="extract-value-from-default-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/postgresql_adapter.rb, line 124</span>
+124:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">extract_value_from_default</span>(<span class="ruby-identifier">default</span>)
+125:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">default</span>
+126:             <span class="ruby-comment cmt"># Numeric types</span>
+127:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A\(?(-?\d+(\.\d*)?\)?)\z/</span>
+128:               <span class="ruby-node">$1</span>
+129:             <span class="ruby-comment cmt"># Character types</span>
+130:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A'(.*)'::(?:character varying|bpchar|text)\z/</span>
+131:               <span class="ruby-node">$1</span>
+132:             <span class="ruby-comment cmt"># Character types (8.1 formatting)</span>
+133:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\AE'(.*)'::(?:character varying|bpchar|text)\z/</span>
+134:               <span class="ruby-node">$1</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\\(\d\d\d)/</span>) { <span class="ruby-node">$1</span>.<span class="ruby-identifier">oct</span>.<span class="ruby-identifier">chr</span> }
+135:             <span class="ruby-comment cmt"># Binary data types</span>
+136:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A'(.*)'::bytea\z/</span>
+137:               <span class="ruby-node">$1</span>
+138:             <span class="ruby-comment cmt"># Date/time types</span>
+139:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A'(.+)'::(?:time(?:stamp)? with(?:out)? time zone|date)\z/</span>
+140:               <span class="ruby-node">$1</span>
+141:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A'(.*)'::interval\z/</span>
+142:               <span class="ruby-node">$1</span>
+143:             <span class="ruby-comment cmt"># Boolean type</span>
+144:             <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'true'</span>
+145:               <span class="ruby-keyword kw">true</span>
+146:             <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'false'</span>
+147:               <span class="ruby-keyword kw">false</span>
+148:             <span class="ruby-comment cmt"># Geometric types</span>
+149:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A'(.*)'::(?:point|line|lseg|box|&quot;?path&quot;?|polygon|circle)\z/</span>
+150:               <span class="ruby-node">$1</span>
+151:             <span class="ruby-comment cmt"># Network address types</span>
+152:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A'(.*)'::(?:cidr|inet|macaddr)\z/</span>
+153:               <span class="ruby-node">$1</span>
+154:             <span class="ruby-comment cmt"># Bit string types</span>
+155:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\AB'(.*)'::&quot;?bit(?: varying)?&quot;?\z/</span>
+156:               <span class="ruby-node">$1</span>
+157:             <span class="ruby-comment cmt"># XML type</span>
+158:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A'(.*)'::xml\z/</span>
+159:               <span class="ruby-node">$1</span>
+160:             <span class="ruby-comment cmt"># Arrays</span>
+161:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A'(.*)'::&quot;?\D+&quot;?\[\]\z/</span>
+162:               <span class="ruby-node">$1</span>
+163:             <span class="ruby-comment cmt"># Object identifier types</span>
+164:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A-?\d+\z/</span>
+165:               <span class="ruby-node">$1</span>
+166:             <span class="ruby-keyword kw">else</span>
+167:               <span class="ruby-comment cmt"># Anything else is blank, some user type, or some function</span>
+168:               <span class="ruby-comment cmt"># and we can't know the value of that, so return nil.</span>
+169:               <span class="ruby-keyword kw">nil</span>
+170:           <span class="ruby-keyword kw">end</span>
+171:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="extract-limit-method" class="method-detail ">
+				<a name="method-i-extract_limit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">extract_limit</span><span
+						class="method-args">(sql_type)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="extract-limit-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/postgresql_adapter.rb, line 50</span>
+50:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extract_limit</span>(<span class="ruby-identifier">sql_type</span>)
+51:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">sql_type</span>
+52:           <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^bigint/</span>;    <span class="ruby-value">8</span>
+53:           <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^smallint/</span>;  <span class="ruby-value">2</span>
+54:           <span class="ruby-keyword kw">else</span> <span class="ruby-keyword kw">super</span>
+55:           <span class="ruby-keyword kw">end</span>
+56:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="extract-precision-method" class="method-detail ">
+				<a name="method-i-extract_precision"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">extract_precision</span><span
+						class="method-args">(sql_type)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Extracts the precision from PostgreSQL-specific data types.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="extract-precision-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/postgresql_adapter.rb, line 65</span>
+65:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extract_precision</span>(<span class="ruby-identifier">sql_type</span>)
+66:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sql_type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'money'</span>
+67:             <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">money_precision</span>
+68:           <span class="ruby-keyword kw">else</span>
+69:             <span class="ruby-keyword kw">super</span>
+70:           <span class="ruby-keyword kw">end</span>
+71:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="extract-scale-method" class="method-detail ">
+				<a name="method-i-extract_scale"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">extract_scale</span><span
+						class="method-args">(sql_type)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Extracts the scale from PostgreSQL-specific data types.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="extract-scale-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/postgresql_adapter.rb, line 59</span>
+59:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extract_scale</span>(<span class="ruby-identifier">sql_type</span>)
+60:           <span class="ruby-comment cmt"># Money type has a fixed scale of 2.</span>
+61:           <span class="ruby-identifier">sql_type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^money/</span> <span class="ruby-operator">?</span> <span class="ruby-value">2</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">super</span>
+62:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="simplified-type-method" class="method-detail ">
+				<a name="method-i-simplified_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">simplified_type</span><span
+						class="method-args">(field_type)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Maps PostgreSQL-specific data types to logical Rails types.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="simplified-type-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/postgresql_adapter.rb, line 74</span>
+ 74:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">simplified_type</span>(<span class="ruby-identifier">field_type</span>)
+ 75:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">field_type</span>
+ 76:             <span class="ruby-comment cmt"># Numeric and monetary types</span>
+ 77:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^(?:real|double precision)$/</span>
+ 78:               <span class="ruby-value">:float</span>
+ 79:             <span class="ruby-comment cmt"># Monetary types</span>
+ 80:             <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'money'</span>
+ 81:               <span class="ruby-value">:decimal</span>
+ 82:             <span class="ruby-comment cmt"># Character types</span>
+ 83:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^(?:character varying|bpchar)(?:\(\d+\))?$/</span>
+ 84:               <span class="ruby-value">:string</span>
+ 85:             <span class="ruby-comment cmt"># Binary data types</span>
+ 86:             <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'bytea'</span>
+ 87:               <span class="ruby-value">:binary</span>
+ 88:             <span class="ruby-comment cmt"># Date/time types</span>
+ 89:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^timestamp with(?:out)? time zone$/</span>
+ 90:               <span class="ruby-value">:datetime</span>
+ 91:             <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'interval'</span>
+ 92:               <span class="ruby-value">:string</span>
+ 93:             <span class="ruby-comment cmt"># Geometric types</span>
+ 94:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^(?:point|line|lseg|box|&quot;?path&quot;?|polygon|circle)$/</span>
+ 95:               <span class="ruby-value">:string</span>
+ 96:             <span class="ruby-comment cmt"># Network address types</span>
+ 97:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^(?:cidr|inet|macaddr)$/</span>
+ 98:               <span class="ruby-value">:string</span>
+ 99:             <span class="ruby-comment cmt"># Bit strings</span>
+100:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^bit(?: varying)?(?:\(\d+\))?$/</span>
+101:               <span class="ruby-value">:string</span>
+102:             <span class="ruby-comment cmt"># XML type</span>
+103:             <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'xml'</span>
+104:               <span class="ruby-value">:xml</span>
+105:             <span class="ruby-comment cmt"># Arrays</span>
+106:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^\D+\[\]$/</span>
+107:               <span class="ruby-value">:string</span>
+108:             <span class="ruby-comment cmt"># Object identifier types</span>
+109:             <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'oid'</span>
+110:               <span class="ruby-value">:integer</span>
+111:             <span class="ruby-comment cmt"># UUID type</span>
+112:             <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'uuid'</span>
+113:               <span class="ruby-value">:string</span>
+114:             <span class="ruby-comment cmt"># Small and big integer types</span>
+115:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^(?:small|big)int$/</span>
+116:               <span class="ruby-value">:integer</span>
+117:             <span class="ruby-comment cmt"># Pass through all types that are not specific to PostgreSQL.</span>
+118:             <span class="ruby-keyword kw">else</span>
+119:               <span class="ruby-keyword kw">super</span>
+120:           <span class="ruby-keyword kw">end</span>
+121:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

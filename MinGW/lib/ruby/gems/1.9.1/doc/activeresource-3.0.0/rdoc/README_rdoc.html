@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: README.rdoc [activeresource-3.0.0 Documentation]</title>
+
+	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./ActiveResource/BadRequest.html">ActiveResource::BadRequest</a></li>
+				
+					<li><a href="./ActiveResource/Base.html">ActiveResource::Base</a></li>
+				
+					<li><a href="./ActiveResource/ClientError.html">ActiveResource::ClientError</a></li>
+				
+					<li><a href="./ActiveResource/Connection.html">ActiveResource::Connection</a></li>
+				
+					<li><a href="./ActiveResource/CustomMethods.html">ActiveResource::CustomMethods</a></li>
+				
+					<li><a href="./ActiveResource/CustomMethods/ClassMethods.html">ActiveResource::CustomMethods::ClassMethods</a></li>
+				
+					<li><a href="./ActiveResource/CustomMethods/InstanceMethods.html">ActiveResource::CustomMethods::InstanceMethods</a></li>
+				
+					<li><a href="./ActiveResource/Errors.html">ActiveResource::Errors</a></li>
+				
+					<li><a href="./ActiveResource/ForbiddenAccess.html">ActiveResource::ForbiddenAccess</a></li>
+				
+					<li><a href="./ActiveResource/Formats.html">ActiveResource::Formats</a></li>
+				
+					<li><a href="./ActiveResource/Formats/JsonFormat.html">ActiveResource::Formats::JsonFormat</a></li>
+				
+					<li><a href="./ActiveResource/Formats/XmlFormat.html">ActiveResource::Formats::XmlFormat</a></li>
+				
+					<li><a href="./ActiveResource/HttpMock.html">ActiveResource::HttpMock</a></li>
+				
+					<li><a href="./ActiveResource/InvalidRequestError.html">ActiveResource::InvalidRequestError</a></li>
+				
+					<li><a href="./ActiveResource/LogSubscriber.html">ActiveResource::LogSubscriber</a></li>
+				
+					<li><a href="./ActiveResource/Observing.html">ActiveResource::Observing</a></li>
+				
+					<li><a href="./ActiveResource/Railtie.html">ActiveResource::Railtie</a></li>
+				
+					<li><a href="./ActiveResource/Request.html">ActiveResource::Request</a></li>
+				
+					<li><a href="./ActiveResource/ResourceConflict.html">ActiveResource::ResourceConflict</a></li>
+				
+					<li><a href="./ActiveResource/ResourceGone.html">ActiveResource::ResourceGone</a></li>
+				
+					<li><a href="./ActiveResource/ResourceNotFound.html">ActiveResource::ResourceNotFound</a></li>
+				
+					<li><a href="./ActiveResource/Response.html">ActiveResource::Response</a></li>
+				
+					<li><a href="./ActiveResource/SSLError.html">ActiveResource::SSLError</a></li>
+				
+					<li><a href="./ActiveResource/ServerError.html">ActiveResource::ServerError</a></li>
+				
+					<li><a href="./ActiveResource/TimeoutError.html">ActiveResource::TimeoutError</a></li>
+				
+					<li><a href="./ActiveResource/UnauthorizedAccess.html">ActiveResource::UnauthorizedAccess</a></li>
+				
+					<li><a href="./ActiveResource/Validations.html">ActiveResource::Validations</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1>Active Resource</h1>
+<p>
+Active Resource (ARes) connects business objects and Representational State
+Transfer (REST) web services.  It implements object-relational mapping for
+REST web services to provide transparent proxying capabilities between a
+client (ActiveResource) and a RESTful service (which is provided by Simply
+RESTful routing in ActionController::Resources).
+</p>
+<h2>Philosophy</h2>
+<p>
+Active Resource attempts to provide a coherent wrapper object-relational
+mapping for REST web services. It follows the same philosophy as Active
+Record, in that one of its prime aims is to reduce the amount of code
+needed to map to these resources.  This is made possible by relying on a
+number of code- and protocol-based conventions that make it easy for Active
+Resource to infer complex relations and structures.  These conventions are
+outlined in detail in the documentation for <a
+href="ActiveResource/Base.html">ActiveResource::Base</a>.
+</p>
+<h2>Overview</h2>
+<p>
+Model classes are mapped to remote REST resources by Active Resource much
+the same way Active Record maps model classes to database tables.  When a
+request is made to a remote resource, a REST XML request is generated,
+transmitted, and the result received and serialized into a usable Ruby
+object.
+</p>
+<h3>Configuration and Usage</h3>
+<p>
+Putting Active Resource to use is very similar to Active Record. 
+It&#8217;s as simple as creating a model class that inherits from <a
+href="ActiveResource/Base.html">ActiveResource::Base</a> and providing a
+<tt>site</tt> class variable to it:
+</p>
+<pre>
+   class Person &lt; ActiveResource::Base
+     self.site = &quot;http://api.people.com:3000/&quot;
+   end
+</pre>
+<p>
+Now the Person class is REST enabled and can invoke REST services very
+similarly to how Active Record invokes life cycle methods that operate
+against a persistent store.
+</p>
+<pre>
+   # Find a person with id = 1
+   ryan = Person.find(1)
+   Person.exists?(1)  # =&gt; true
+</pre>
+<p>
+As you can see, the methods are quite similar to Active Record&#8217;s
+methods for dealing with database records.  But rather than dealing
+directly with a database record, you&#8217;re dealing with HTTP resources
+(which may or may not be database records).
+</p>
+<h4>Protocol</h4>
+<p>
+Active Resource is built on a standard XML format for requesting and
+submitting resources over HTTP.  It mirrors the RESTful routing built into
+Action Controller but will also work with any other REST service that
+properly implements the protocol. REST uses HTTP, but unlike
+&#8220;typical&#8221; web applications, it makes use of all the verbs
+available in the HTTP specification:
+</p>
+<ul>
+<li><p>
+GET requests are used for finding and retrieving resources.
+</p>
+</li>
+<li><p>
+POST requests are used to create new resources.
+</p>
+</li>
+<li><p>
+PUT requests are used to update existing resources.
+</p>
+</li>
+<li><p>
+DELETE requests are used to delete resources.
+</p>
+</li>
+</ul>
+<p>
+For more information on how this protocol works with Active Resource, see
+the <a href="ActiveResource/Base.html">ActiveResource::Base</a>
+documentation; for more general information on REST web services, see the
+article <a
+href="http://en.wikipedia.org/wiki/Representational_State_Transfer">here</a>.
+</p>
+<h4>Find</h4>
+<p>
+Find requests use the GET method and expect the XML form of whatever
+resource/resources is/are being requested.  So, for a request for a single
+element, the XML of that item is expected in response:
+</p>
+<pre>
+   # Expects a response of
+   #
+   # &lt;person&gt;&lt;id type=&quot;integer&quot;&gt;1&lt;/id&gt;&lt;attribute1&gt;value1&lt;/attribute1&gt;&lt;attribute2&gt;..&lt;/attribute2&gt;&lt;/person&gt;
+   #
+   # for GET http://api.people.com:3000/people/1.xml
+   #
+   ryan = Person.find(1)
+</pre>
+<p>
+The XML document that is received is used to build a new object of type
+Person, with each XML element becoming an attribute on the object.
+</p>
+<pre>
+   ryan.is_a? Person  # =&gt; true
+   ryan.attribute1  # =&gt; 'value1'
+</pre>
+<p>
+Any complex element (one that contains other elements) becomes its own
+object:
+</p>
+<pre>
+   # With this response:
+   #
+   # &lt;person&gt;&lt;id&gt;1&lt;/id&gt;&lt;attribute1&gt;value1&lt;/attribute1&gt;&lt;complex&gt;&lt;attribute2&gt;value2&lt;/attribute2&gt;&lt;/complex&gt;&lt;/person&gt;
+   #
+   # for GET http://api.people.com:3000/people/1.xml
+   #
+   ryan = Person.find(1)
+   ryan.complex  # =&gt; &lt;Person::Complex::xxxxx&gt;
+   ryan.complex.attribute2  # =&gt; 'value2'
+</pre>
+<p>
+Collections can also be requested in a similar fashion
+</p>
+<pre>
+   # Expects a response of
+   #
+   # &lt;people type=&quot;array&quot;&gt;
+   #  &lt;person&gt;&lt;id type=&quot;integer&quot;&gt;1&lt;/id&gt;&lt;first&gt;Ryan&lt;/first&gt;&lt;/person&gt;
+   #  &lt;person&gt;&lt;id type=&quot;integer&quot;&gt;2&lt;/id&gt;&lt;first&gt;Jim&lt;/first&gt;&lt;/person&gt;
+   # &lt;/people&gt;
+   #
+   # for GET http://api.people.com:3000/people.xml
+   #
+   people = Person.find(:all)
+   people.first  # =&gt; &lt;Person::xxx 'first' =&gt; 'Ryan' ...&gt;
+   people.last  # =&gt; &lt;Person::xxx 'first' =&gt; 'Jim' ...&gt;
+</pre>
+<h4>Create</h4>
+<p>
+Creating a new resource submits the XML form of the resource as the body of
+the request and expects a &#8216;Location&#8217; header in the response
+with the RESTful URL location of the newly created resource.  The id of the
+newly created resource is parsed out of the Location response header and
+automatically set as the id of the ARes object.
+</p>
+<pre>
+  # &lt;person&gt;&lt;first&gt;Ryan&lt;/first&gt;&lt;/person&gt;
+  #
+  # is submitted as the body on
+  #
+  # POST http://api.people.com:3000/people.xml
+  #
+  # when save is called on a new Person object.  An empty response is
+  # is expected with a 'Location' header value:
+  #
+  # Response (201): Location: http://api.people.com:3000/people/2
+  #
+  ryan = Person.new(:first =&gt; 'Ryan')
+  ryan.new?  # =&gt; true
+  ryan.save  # =&gt; true
+  ryan.new?  # =&gt; false
+  ryan.id    # =&gt; 2
+</pre>
+<h4>Update</h4>
+<p>
+&#8216;save&#8217; is also used to update an existing resource - and
+follows the same protocol as creating a resource with the exception that no
+response headers are needed - just an empty response when the update on the
+server side was successful.
+</p>
+<pre>
+  # &lt;person&gt;&lt;first&gt;Ryan&lt;/first&gt;&lt;/person&gt;
+  #
+  # is submitted as the body on
+  #
+  # PUT http://api.people.com:3000/people/1.xml
+  #
+  # when save is called on an existing Person object.  An empty response is
+  # is expected with code (204)
+  #
+  ryan = Person.find(1)
+  ryan.first # =&gt; 'Ryan'
+  ryan.first = 'Rizzle'
+  ryan.save  # =&gt; true
+</pre>
+<h4>Delete</h4>
+<p>
+Destruction of a resource can be invoked as a class and instance method of
+the resource.
+</p>
+<pre>
+  # A request is made to
+  #
+  # DELETE http://api.people.com:3000/people/1.xml
+  #
+  # for both of these forms.  An empty response with
+  # is expected with response code (200)
+  #
+  ryan = Person.find(1)
+  ryan.destroy  # =&gt; true
+  ryan.exists?  # =&gt; false
+  Person.delete(2)  # =&gt; true
+  Person.exists?(2) # =&gt; false
+</pre>
+<p>
+You can find more usage information in the <a
+href="ActiveResource/Base.html">ActiveResource::Base</a> documentation.
+</p>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

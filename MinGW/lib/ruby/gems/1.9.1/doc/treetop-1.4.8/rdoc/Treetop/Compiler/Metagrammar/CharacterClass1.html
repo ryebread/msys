@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: Treetop::Compiler::Metagrammar::CharacterClass1</title>
+
+	<link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../../lib/treetop/compiler/metagrammar_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/treetop/compiler/metagrammar.rb">lib/treetop/compiler/metagrammar.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../../Treetop/Compiler.html">Treetop::Compiler</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/AndPredicate.html">Treetop::Compiler::AndPredicate</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/AnythingSymbol.html">Treetop::Compiler::AnythingSymbol</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/AtomicExpression.html">Treetop::Compiler::AtomicExpression</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/CharacterClass.html">Treetop::Compiler::CharacterClass</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Choice.html">Treetop::Compiler::Choice</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/DeclarationSequence.html">Treetop::Compiler::DeclarationSequence</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Grammar.html">Treetop::Compiler::Grammar</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/GrammarCompiler.html">Treetop::Compiler::GrammarCompiler</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/InlineModule.html">Treetop::Compiler::InlineModule</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/InlineModuleMixin.html">Treetop::Compiler::InlineModuleMixin</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/LexicalAddressSpace.html">Treetop::Compiler::LexicalAddressSpace</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar.html">Treetop::Compiler::Metagrammar</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/CharacterClass0.html">Treetop::Compiler::Metagrammar::CharacterClass0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/CharacterClass1.html">Treetop::Compiler::Metagrammar::CharacterClass1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/CharacterClass2.html">Treetop::Compiler::Metagrammar::CharacterClass2</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/CharacterClass3.html">Treetop::Compiler::Metagrammar::CharacterClass3</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/CharacterClass4.html">Treetop::Compiler::Metagrammar::CharacterClass4</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Choice0.html">Treetop::Compiler::Metagrammar::Choice0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Choice1.html">Treetop::Compiler::Metagrammar::Choice1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Choice2.html">Treetop::Compiler::Metagrammar::Choice2</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/CommentToEol0.html">Treetop::Compiler::Metagrammar::CommentToEol0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/CommentToEol1.html">Treetop::Compiler::Metagrammar::CommentToEol1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/DeclarationSequence0.html">Treetop::Compiler::Metagrammar::DeclarationSequence0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/DeclarationSequence1.html">Treetop::Compiler::Metagrammar::DeclarationSequence1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/DeclarationSequence2.html">Treetop::Compiler::Metagrammar::DeclarationSequence2</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/DeclarationSequence3.html">Treetop::Compiler::Metagrammar::DeclarationSequence3</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/DoubleQuotedString0.html">Treetop::Compiler::Metagrammar::DoubleQuotedString0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/DoubleQuotedString1.html">Treetop::Compiler::Metagrammar::DoubleQuotedString1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Grammar0.html">Treetop::Compiler::Metagrammar::Grammar0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Grammar1.html">Treetop::Compiler::Metagrammar::Grammar1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/GrammarName0.html">Treetop::Compiler::Metagrammar::GrammarName0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/IncludeDeclaration0.html">Treetop::Compiler::Metagrammar::IncludeDeclaration0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/IncludeDeclaration1.html">Treetop::Compiler::Metagrammar::IncludeDeclaration1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/InlineModule0.html">Treetop::Compiler::Metagrammar::InlineModule0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/InlineModule1.html">Treetop::Compiler::Metagrammar::InlineModule1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/KeywordInsideGrammar0.html">Treetop::Compiler::Metagrammar::KeywordInsideGrammar0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Label0.html">Treetop::Compiler::Metagrammar::Label0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Label1.html">Treetop::Compiler::Metagrammar::Label1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Label2.html">Treetop::Compiler::Metagrammar::Label2</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Label3.html">Treetop::Compiler::Metagrammar::Label3</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/LabeledSequencePrimary0.html">Treetop::Compiler::Metagrammar::LabeledSequencePrimary0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/LabeledSequencePrimary1.html">Treetop::Compiler::Metagrammar::LabeledSequencePrimary1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/ModuleDeclaration0.html">Treetop::Compiler::Metagrammar::ModuleDeclaration0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/ModuleDeclaration1.html">Treetop::Compiler::Metagrammar::ModuleDeclaration1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/ModuleDeclaration2.html">Treetop::Compiler::Metagrammar::ModuleDeclaration2</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/ModuleDeclaration3.html">Treetop::Compiler::Metagrammar::ModuleDeclaration3</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/NodeClassDeclarations0.html">Treetop::Compiler::Metagrammar::NodeClassDeclarations0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/NodeClassDeclarations1.html">Treetop::Compiler::Metagrammar::NodeClassDeclarations1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/NodeClassExpression0.html">Treetop::Compiler::Metagrammar::NodeClassExpression0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/NodeClassExpression1.html">Treetop::Compiler::Metagrammar::NodeClassExpression1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/NodeClassExpression2.html">Treetop::Compiler::Metagrammar::NodeClassExpression2</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/NodeClassExpression3.html">Treetop::Compiler::Metagrammar::NodeClassExpression3</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/NonSpaceChar0.html">Treetop::Compiler::Metagrammar::NonSpaceChar0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Nonterminal0.html">Treetop::Compiler::Metagrammar::Nonterminal0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Nonterminal1.html">Treetop::Compiler::Metagrammar::Nonterminal1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/OccurrenceRange0.html">Treetop::Compiler::Metagrammar::OccurrenceRange0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/ParenthesizedExpression0.html">Treetop::Compiler::Metagrammar::ParenthesizedExpression0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/ParenthesizedExpression1.html">Treetop::Compiler::Metagrammar::ParenthesizedExpression1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/ParsingRule0.html">Treetop::Compiler::Metagrammar::ParsingRule0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/ParsingRule1.html">Treetop::Compiler::Metagrammar::ParsingRule1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/PredicateBlock0.html">Treetop::Compiler::Metagrammar::PredicateBlock0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Primary0.html">Treetop::Compiler::Metagrammar::Primary0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Primary1.html">Treetop::Compiler::Metagrammar::Primary1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Primary2.html">Treetop::Compiler::Metagrammar::Primary2</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Primary3.html">Treetop::Compiler::Metagrammar::Primary3</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Primary4.html">Treetop::Compiler::Metagrammar::Primary4</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Primary5.html">Treetop::Compiler::Metagrammar::Primary5</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Primary6.html">Treetop::Compiler::Metagrammar::Primary6</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Primary7.html">Treetop::Compiler::Metagrammar::Primary7</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/QuotedString0.html">Treetop::Compiler::Metagrammar::QuotedString0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/RequireStatement0.html">Treetop::Compiler::Metagrammar::RequireStatement0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Sequence0.html">Treetop::Compiler::Metagrammar::Sequence0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Sequence1.html">Treetop::Compiler::Metagrammar::Sequence1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/Sequence2.html">Treetop::Compiler::Metagrammar::Sequence2</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/SequencePrimary0.html">Treetop::Compiler::Metagrammar::SequencePrimary0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/SequencePrimary1.html">Treetop::Compiler::Metagrammar::SequencePrimary1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/SequencePrimary2.html">Treetop::Compiler::Metagrammar::SequencePrimary2</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/SequencePrimary3.html">Treetop::Compiler::Metagrammar::SequencePrimary3</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/SequencePrimary4.html">Treetop::Compiler::Metagrammar::SequencePrimary4</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/SequencePrimary5.html">Treetop::Compiler::Metagrammar::SequencePrimary5</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/SingleQuotedString0.html">Treetop::Compiler::Metagrammar::SingleQuotedString0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/SingleQuotedString1.html">Treetop::Compiler::Metagrammar::SingleQuotedString1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/TrailingInlineModule0.html">Treetop::Compiler::Metagrammar::TrailingInlineModule0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/TrailingInlineModule1.html">Treetop::Compiler::Metagrammar::TrailingInlineModule1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/TrailingInlineModule2.html">Treetop::Compiler::Metagrammar::TrailingInlineModule2</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/TreetopFile0.html">Treetop::Compiler::Metagrammar::TreetopFile0</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/TreetopFile1.html">Treetop::Compiler::Metagrammar::TreetopFile1</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Metagrammar/TreetopFile2.html">Treetop::Compiler::Metagrammar::TreetopFile2</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/MetagrammarParser.html">Treetop::Compiler::MetagrammarParser</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Nonterminal.html">Treetop::Compiler::Nonterminal</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/NotPredicate.html">Treetop::Compiler::NotPredicate</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/OccurrenceRange.html">Treetop::Compiler::OccurrenceRange</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/OneOrMore.html">Treetop::Compiler::OneOrMore</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Optional.html">Treetop::Compiler::Optional</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/ParenthesizedExpression.html">Treetop::Compiler::ParenthesizedExpression</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/ParsingExpression.html">Treetop::Compiler::ParsingExpression</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/ParsingRule.html">Treetop::Compiler::ParsingRule</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Predicate.html">Treetop::Compiler::Predicate</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/PredicateBlock.html">Treetop::Compiler::PredicateBlock</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Repetition.html">Treetop::Compiler::Repetition</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/RubyBuilder.html">Treetop::Compiler::RubyBuilder</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Sequence.html">Treetop::Compiler::Sequence</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/SequenceElementAccessorModule.html">Treetop::Compiler::SequenceElementAccessorModule</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/Terminal.html">Treetop::Compiler::Terminal</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/TransientPrefix.html">Treetop::Compiler::TransientPrefix</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/TreetopFile.html">Treetop::Compiler::TreetopFile</a></li>
+				
+					<li><a href="../../../Treetop/Compiler/ZeroOrMore.html">Treetop::Compiler::ZeroOrMore</a></li>
+				
+					<li><a href="../../../Treetop/Polyglot.html">Treetop::Polyglot</a></li>
+				
+					<li><a href="../../../Treetop/Runtime.html">Treetop::Runtime</a></li>
+				
+					<li><a href="../../../Treetop/Runtime/CompiledParser.html">Treetop::Runtime::CompiledParser</a></li>
+				
+					<li><a href="../../../Treetop/Runtime/SyntaxNode.html">Treetop::Runtime::SyntaxNode</a></li>
+				
+					<li><a href="../../../Treetop/Runtime/TerminalParseFailure.html">Treetop::Runtime::TerminalParseFailure</a></li>
+				
+					<li><a href="../../../Treetop/Runtime/TerminalSyntaxNode.html">Treetop::Runtime::TerminalSyntaxNode</a></li>
+				
+					<li><a href="../../../IntervalSkipList.html">IntervalSkipList</a></li>
+				
+					<li><a href="../../../IntervalSkipList/HeadNode.html">IntervalSkipList::HeadNode</a></li>
+				
+					<li><a href="../../../IntervalSkipList/Node.html">IntervalSkipList::Node</a></li>
+				
+					<li><a href="../../../String.html">String</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">Treetop::Compiler::Metagrammar::CharacterClass1</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

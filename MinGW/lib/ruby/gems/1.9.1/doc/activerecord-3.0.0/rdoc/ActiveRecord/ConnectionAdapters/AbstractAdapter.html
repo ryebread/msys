@@ -1,0 +1,1456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: ActiveRecord::ConnectionAdapters::AbstractAdapter</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/active_record/connection_adapters/abstract_adapter_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_record/connection_adapters/abstract_adapter.rb">lib/active_record/connection_adapters/abstract_adapter.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-active%3F">#active?</a></li>
+					
+					<li><a href="#method-i-adapter_name">#adapter_name</a></li>
+					
+					<li><a href="#method-i-create_savepoint">#create_savepoint</a></li>
+					
+					<li><a href="#method-i-current_savepoint_name">#current_savepoint_name</a></li>
+					
+					<li><a href="#method-i-decrement_open_transactions">#decrement_open_transactions</a></li>
+					
+					<li><a href="#method-i-disable_referential_integrity">#disable_referential_integrity</a></li>
+					
+					<li><a href="#method-i-disconnect%21">#disconnect!</a></li>
+					
+					<li><a href="#method-i-increment_open_transactions">#increment_open_transactions</a></li>
+					
+					<li><a href="#method-i-log">#log</a></li>
+					
+					<li><a href="#method-i-open_transactions">#open_transactions</a></li>
+					
+					<li><a href="#method-i-prefetch_primary_key%3F">#prefetch_primary_key?</a></li>
+					
+					<li><a href="#method-i-quote_table_name">#quote_table_name</a></li>
+					
+					<li><a href="#method-i-raw_connection">#raw_connection</a></li>
+					
+					<li><a href="#method-i-reconnect%21">#reconnect!</a></li>
+					
+					<li><a href="#method-i-release_savepoint">#release_savepoint</a></li>
+					
+					<li><a href="#method-i-requires_reloading%3F">#requires_reloading?</a></li>
+					
+					<li><a href="#method-i-reset%21">#reset!</a></li>
+					
+					<li><a href="#method-i-rollback_to_savepoint">#rollback_to_savepoint</a></li>
+					
+					<li><a href="#method-i-supports_count_distinct%3F">#supports_count_distinct?</a></li>
+					
+					<li><a href="#method-i-supports_ddl_transactions%3F">#supports_ddl_transactions?</a></li>
+					
+					<li><a href="#method-i-supports_migrations%3F">#supports_migrations?</a></li>
+					
+					<li><a href="#method-i-supports_primary_key%3F">#supports_primary_key?</a></li>
+					
+					<li><a href="#method-i-supports_savepoints%3F">#supports_savepoints?</a></li>
+					
+					<li><a href="#method-i-transaction_joinable%3D">#transaction_joinable=</a></li>
+					
+					<li><a href="#method-i-translate_exception">#translate_exception</a></li>
+					
+					<li><a href="#method-i-verify%21">#verify!</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><span class="include">Quoting</span></li>
+				
+				
+				
+					<li><span class="include">DatabaseStatements</span></li>
+				
+				
+				
+					<li><span class="include">SchemaStatements</span></li>
+				
+				
+				
+					<li><span class="include">DatabaseLimits</span></li>
+				
+				
+				
+					<li><span class="include">QueryCache</span></li>
+				
+				
+				
+					<li><span class="include">ActiveSupport::Callbacks</span></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+				
+					<li><a href="../../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ClassMethods/o.html">ActiveRecord::Associations::ClassMethods::o</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+				
+					<li><a href="../../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+				
+					<li><a href="../../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators.html">ActiveRecord::Generators</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/MigrationGenerator.html">ActiveRecord::Generators::MigrationGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/ModelGenerator.html">ActiveRecord::Generators::ModelGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/ObserverGenerator.html">ActiveRecord::Generators::ObserverGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/SessionMigrationGenerator.html">ActiveRecord::Generators::SessionMigrationGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+				
+					<li><a href="../../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+				
+					<li><a href="../../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+				
+					<li><a href="../../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+				
+					<li><a href="../../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+				
+					<li><a href="../../ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+				
+					<li><a href="../../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+				
+					<li><a href="../../ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+				
+					<li><a href="../../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+				
+					<li><a href="../../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+				
+					<li><a href="../../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+				
+					<li><a href="../../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+				
+					<li><a href="../../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+				
+					<li><a href="../../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+				
+					<li><a href="../../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+				
+					<li><a href="../../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+				
+					<li><a href="../../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+				
+					<li><a href="../../Fixtures.html">Fixtures</a></li>
+				
+					<li><a href="../../FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">ActiveRecord::ConnectionAdapters::AbstractAdapter</h1>
+
+		<div id="description">
+			<p>
+Active Record supports multiple database systems. <a
+href="AbstractAdapter.html">AbstractAdapter</a> and related classes form
+the abstraction layer which makes this possible. An <a
+href="AbstractAdapter.html">AbstractAdapter</a> represents a connection to
+a database, and provides an abstract interface for database-specific
+functionality such as establishing a connection, escaping values, building
+the right SQL fragments for &#8217;:offset&#8217; and &#8217;:limit&#8217;
+options, etc.
+</p>
+<p>
+All the concrete database adapters follow the interface laid down in this
+class. <a
+href="../Base.html#method-i-connection">ActiveRecord::Base.connection</a>
+returns an <a href="AbstractAdapter.html">AbstractAdapter</a> object, which
+you can use.
+</p>
+<p>
+Most of the methods in the adapter are useful during migrations. Most
+notably, the instance methods provided by SchemaStatement are very useful.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="active--method" class="method-detail ">
+				<a name="method-i-active%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">active?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Checks whether the connection to the database is still active. This
+includes checking whether the database is actually capable of responding,
+i.e. whether the connection isn&#8217;t stale.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="active--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 112</span>
+112:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">active?</span>
+113:         <span class="ruby-ivar">@active</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">false</span>
+114:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="adapter-name-method" class="method-detail ">
+				<a name="method-i-adapter_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">adapter_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the human-readable name of the adapter.  Use mixed case - one can
+always use downcase if needed.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="adapter-name-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 49</span>
+49:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">adapter_name</span>
+50:         <span class="ruby-value str">'Abstract'</span>
+51:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="create-savepoint-method" class="method-detail ">
+				<a name="method-i-create_savepoint"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">create_savepoint</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="create-savepoint-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 178</span>
+178:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_savepoint</span>
+179:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="current-savepoint-name-method" class="method-detail ">
+				<a name="method-i-current_savepoint_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">current_savepoint_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="current-savepoint-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 187</span>
+187:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">current_savepoint_name</span>
+188:         <span class="ruby-node">&quot;active_record_#{open_transactions}&quot;</span>
+189:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="decrement-open-transactions-method" class="method-detail ">
+				<a name="method-i-decrement_open_transactions"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decrement_open_transactions</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="decrement-open-transactions-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 170</span>
+170:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">decrement_open_transactions</span>
+171:         <span class="ruby-ivar">@open_transactions</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+172:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="disable-referential-integrity-method" class="method-detail ">
+				<a name="method-i-disable_referential_integrity"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">disable_referential_integrity</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Override to turn off referential integrity while executing
+<tt>&amp;block</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="disable-referential-integrity-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 103</span>
+103:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disable_referential_integrity</span>
+104:         <span class="ruby-keyword kw">yield</span>
+105:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="disconnect--method" class="method-detail ">
+				<a name="method-i-disconnect%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">disconnect!</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Disconnects from the database if already connected. Otherwise, this method
+does nothing.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="disconnect--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 124</span>
+124:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disconnect!</span>
+125:         <span class="ruby-ivar">@active</span> = <span class="ruby-keyword kw">false</span>
+126:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="increment-open-transactions-method" class="method-detail ">
+				<a name="method-i-increment_open_transactions"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">increment_open_transactions</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="increment-open-transactions-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 165</span>
+165:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">increment_open_transactions</span>
+166:         <span class="ruby-ivar">@open_transactions</span> <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
+167:         <span class="ruby-ivar">@open_transactions</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+168:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="open-transactions-method" class="method-detail ">
+				<a name="method-i-open_transactions"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">open_transactions</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="open-transactions-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 161</span>
+161:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">open_transactions</span>
+162:         <span class="ruby-ivar">@open_transactions</span> <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
+163:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="prefetch-primary-key--method" class="method-detail ">
+				<a name="method-i-prefetch_primary_key%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">prefetch_primary_key?</span><span
+						class="method-args">(table_name = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Should primary key values be selected from their corresponding sequence
+before the insert statement?  If true, next_sequence_value is called before
+each insert to set the record&#8217;s primary key. This is false for all
+adapters but Firebird.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="prefetch-primary-key--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 89</span>
+89:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prefetch_primary_key?</span>(<span class="ruby-identifier">table_name</span> = <span class="ruby-keyword kw">nil</span>)
+90:         <span class="ruby-keyword kw">false</span>
+91:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="quote-table-name-method" class="method-detail ">
+				<a name="method-i-quote_table_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">quote_table_name</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Override to return the quoted table name. Defaults to column quoting.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="quote-table-name-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 96</span>
+96:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">quote_table_name</span>(<span class="ruby-identifier">name</span>)
+97:         <span class="ruby-identifier">quote_column_name</span>(<span class="ruby-identifier">name</span>)
+98:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="raw-connection-method" class="method-detail ">
+				<a name="method-i-raw_connection"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">raw_connection</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Provides access to the underlying database driver for this adapter. For
+example, this method returns a Mysql object in case of <a
+href="MysqlAdapter.html">MysqlAdapter</a>, and a PGconn object in case of
+<a href="PostgreSQLAdapter.html">PostgreSQLAdapter</a>.
+</p>
+<p>
+This is useful for when you need to call a proprietary method such as
+PostgreSQL&#8217;s lo_* methods.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="raw-connection-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 157</span>
+157:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">raw_connection</span>
+158:         <span class="ruby-ivar">@connection</span>
+159:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="reconnect--method" class="method-detail ">
+				<a name="method-i-reconnect%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">reconnect!</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Disconnects from the database if already connected, and establishes a new
+connection with the database.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="reconnect--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 118</span>
+118:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reconnect!</span>
+119:         <span class="ruby-ivar">@active</span> = <span class="ruby-keyword kw">true</span>
+120:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="release-savepoint-method" class="method-detail ">
+				<a name="method-i-release_savepoint"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">release_savepoint</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="release-savepoint-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 184</span>
+184:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">release_savepoint</span>
+185:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="requires-reloading--method" class="method-detail ">
+				<a name="method-i-requires_reloading%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">requires_reloading?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if its required to reload the connection between requests for
+development mode. This is not the case for Ruby/MySQL and it&#8217;s not
+necessary for any adapters except SQLite.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="requires-reloading--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 140</span>
+140:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">requires_reloading?</span>
+141:         <span class="ruby-keyword kw">false</span>
+142:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="reset--method" class="method-detail ">
+				<a name="method-i-reset%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">reset!</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Reset the state of this connection, directing the DBMS to clear
+transactions and other connection-related server-side state. Usually a
+database-dependent operation.
+</p>
+<p>
+The default implementation does nothing; the implementation should be
+overridden by concrete adapters.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="reset--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 134</span>
+134:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset!</span>
+135:         <span class="ruby-comment cmt"># this should be overridden by concrete adapters</span>
+136:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="rollback-to-savepoint-method" class="method-detail ">
+				<a name="method-i-rollback_to_savepoint"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">rollback_to_savepoint</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="rollback-to-savepoint-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 181</span>
+181:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rollback_to_savepoint</span>
+182:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="supports-count-distinct--method" class="method-detail ">
+				<a name="method-i-supports_count_distinct%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">supports_count_distinct?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Does this adapter support using DISTINCT within COUNT?  This is
+<tt>true</tt> for all adapters except sqlite.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="supports-count-distinct--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 68</span>
+68:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">supports_count_distinct?</span>
+69:         <span class="ruby-keyword kw">true</span>
+70:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="supports-ddl-transactions--method" class="method-detail ">
+				<a name="method-i-supports_ddl_transactions%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">supports_ddl_transactions?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Does this adapter support DDL rollbacks in transactions?  That is, would
+CREATE TABLE or ALTER TABLE get rolled back by a transaction?  PostgreSQL,
+SQL Server, and others support this.  MySQL and others do not.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="supports-ddl-transactions--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 75</span>
+75:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">supports_ddl_transactions?</span>
+76:         <span class="ruby-keyword kw">false</span>
+77:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="supports-migrations--method" class="method-detail ">
+				<a name="method-i-supports_migrations%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">supports_migrations?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Does this adapter support migrations?  Backend specific, as the abstract
+adapter always returns <tt>false</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="supports-migrations--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 55</span>
+55:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">supports_migrations?</span>
+56:         <span class="ruby-keyword kw">false</span>
+57:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="supports-primary-key--method" class="method-detail ">
+				<a name="method-i-supports_primary_key%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">supports_primary_key?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Can this adapter determine the primary key for tables not attached to an
+Active Record class, such as join tables?  Backend specific, as the
+abstract adapter always returns <tt>false</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="supports-primary-key--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 62</span>
+62:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">supports_primary_key?</span>
+63:         <span class="ruby-keyword kw">false</span>
+64:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="supports-savepoints--method" class="method-detail ">
+				<a name="method-i-supports_savepoints%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">supports_savepoints?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Does this adapter support savepoints? PostgreSQL and MySQL do, SQLite does
+not.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="supports-savepoints--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 81</span>
+81:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">supports_savepoints?</span>
+82:         <span class="ruby-keyword kw">false</span>
+83:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="transaction-joinable--method" class="method-detail ">
+				<a name="method-i-transaction_joinable%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">transaction_joinable=</span><span
+						class="method-args">(joinable)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="transaction-joinable--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 174</span>
+174:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">transaction_joinable=</span>(<span class="ruby-identifier">joinable</span>)
+175:         <span class="ruby-ivar">@transaction_joinable</span> = <span class="ruby-identifier">joinable</span>
+176:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="verify--method" class="method-detail ">
+				<a name="method-i-verify%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">verify!</span><span
+						class="method-args">(*ignored)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Checks whether the connection to the database is still active (i.e. not
+stale). This is done under the hood by calling <tt>active?</tt>. If the
+connection is no longer active, then this method will reconnect to the
+database.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="verify--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 147</span>
+147:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">verify!</span>(*<span class="ruby-identifier">ignored</span>)
+148:         <span class="ruby-identifier">reconnect!</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">active?</span>
+149:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="protected-instance-method-details" class="method-section section">
+			<h3 class="section-header">Protected Instance Methods</h3>
+
+		
+			<div id="log-method" class="method-detail ">
+				<a name="method-i-log"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">log</span><span
+						class="method-args">(sql, name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="log-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 193</span>
+193:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">log</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>)
+194:           <span class="ruby-identifier">name</span> <span class="ruby-operator">||=</span> <span class="ruby-value str">&quot;SQL&quot;</span>
+195:           <span class="ruby-ivar">@instrumenter</span>.<span class="ruby-identifier">instrument</span>(<span class="ruby-value str">&quot;sql.active_record&quot;</span>,
+196:             <span class="ruby-value">:sql</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sql</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">:connection_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">object_id</span>) <span class="ruby-keyword kw">do</span>
+197:             <span class="ruby-keyword kw">yield</span>
+198:           <span class="ruby-keyword kw">end</span>
+199:         <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+200:           <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;#{e.class.name}: #{e.message}: #{sql}&quot;</span>
+201:           <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-identifier">message</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@logger</span>
+202:           <span class="ruby-identifier">raise</span> <span class="ruby-identifier">translate_exception</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">message</span>)
+203:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="translate-exception-method" class="method-detail ">
+				<a name="method-i-translate_exception"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">translate_exception</span><span
+						class="method-args">(e, message)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="translate-exception-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/abstract_adapter.rb, line 205</span>
+205:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">translate_exception</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">message</span>)
+206:           <span class="ruby-comment cmt"># override in derived class</span>
+207:           <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">StatementInvalid</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">message</span>)
+208:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

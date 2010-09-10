@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: README.rdoc [rack-mount-0.6.13 Documentation]</title>
+
+	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./Rack/Mount.html">Rack::Mount</a></li>
+				
+					<li><a href="./Rack/Mount/Analysis/Splitting.html">Rack::Mount::Analysis::Splitting</a></li>
+				
+					<li><a href="./Rack/Mount/Analysis/Splitting/Key.html">Rack::Mount::Analysis::Splitting::Key</a></li>
+				
+					<li><a href="./Rack/Mount/GeneratableRegexp/InstanceMethods.html">Rack::Mount::GeneratableRegexp::InstanceMethods</a></li>
+				
+					<li><a href="./Rack/Mount/RegexpWithNamedGroups.html">Rack::Mount::RegexpWithNamedGroups</a></li>
+				
+					<li><a href="./Rack/Mount/Route.html">Rack::Mount::Route</a></li>
+				
+					<li><a href="./Rack/Mount/RouteSet.html">Rack::Mount::RouteSet</a></li>
+				
+					<li><a href="./Rack/Mount/RoutingError.html">Rack::Mount::RoutingError</a></li>
+				
+					<li><a href="./Rack/Mount/Strexp.html">Rack::Mount::Strexp</a></li>
+				
+					<li><a href="./Rack/Mount/StrexpParser.html">Rack::Mount::StrexpParser</a></li>
+				
+					<li><a href="./Rack/Mount/StrexpParser/ScanError.html">Rack::Mount::StrexpParser::ScanError</a></li>
+				
+					<li><a href="./Rack/Mount/Utils.html">Rack::Mount::Utils</a></li>
+				
+					<li><a href="./Regin.html">Regin</a></li>
+				
+					<li><a href="./Regin/Alternation.html">Regin::Alternation</a></li>
+				
+					<li><a href="./Regin/Anchor.html">Regin::Anchor</a></li>
+				
+					<li><a href="./Regin/Atom.html">Regin::Atom</a></li>
+				
+					<li><a href="./Regin/Character.html">Regin::Character</a></li>
+				
+					<li><a href="./Regin/CharacterClass.html">Regin::CharacterClass</a></li>
+				
+					<li><a href="./Regin/Collection.html">Regin::Collection</a></li>
+				
+					<li><a href="./Regin/Expression.html">Regin::Expression</a></li>
+				
+					<li><a href="./Regin/Group.html">Regin::Group</a></li>
+				
+					<li><a href="./Regin/Options.html">Regin::Options</a></li>
+				
+					<li><a href="./Multimap.html">Multimap</a></li>
+				
+					<li><a href="./Multiset.html">Multiset</a></li>
+				
+					<li><a href="./NestedMultimap.html">NestedMultimap</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1><a href="Rack/Mount.html">Rack::Mount</a></h1>
+<p>
+A stackable dynamic tree based Rack router.
+</p>
+<p>
+<a href="Rack/Mount.html">Rack::Mount</a> supports Rack&#8217;s
+<tt>X-Cascade</tt> convention to continue trying routes if the response
+returns <tt>pass</tt>. This allows multiple routes to be nested or stacked
+on top of each other. Since the application endpoint can trigger the router
+to continue matching, middleware can be used to add arbitrary conditions to
+any route. This allows you to route based on other request attributes,
+session information, or even data dynamically pulled from a database.
+</p>
+<h3>Usage</h3>
+<p>
+<a href="Rack/Mount.html">Rack::Mount</a> provides a plugin API to build
+custom DSLs on top of.
+</p>
+<p>
+The API is extremely minimal and only 3 methods are exposed as the public
+API.
+</p>
+<table>
+<tr><td valign="top"><tt><a href="Rack/Mount/RouteSet.html#method-i-add_route">Rack::Mount::RouteSet#add_route</a></tt></td><td><p>
+builder method for adding routes to the set
+</p>
+</td></tr>
+<tr><td valign="top"><tt><a href="Rack/Mount/RouteSet.html#method-i-call">Rack::Mount::RouteSet#call</a></tt></td><td><p>
+Rack compatible recognition and dispatching method
+</p>
+</td></tr>
+<tr><td valign="top"><tt>Rack::Mount::RouteSet#generate</tt></td><td><p>
+generates a route condition from identifiers or significant keys
+</p>
+</td></tr>
+</table>
+<h3>Example</h3>
+<pre>
+  require 'rack/mount'
+
+  Routes = Rack::Mount::RouteSet.new do |set|
+    # add_route takes a rack application and conditions to match with
+    #
+    # valid conditions methods are any method on Rack::Request
+    # the values to match against may be strings or regexps
+    #
+    # See Rack::Mount::RouteSet#add_route for more options.
+    set.add_route FooApp, { :request_method =&gt; 'GET', :path_info =&gt; %r{^/foo$} }, {}, :foo
+  end
+
+  # The route set itself is a simple rack app you mount
+  run Routes
+
+  # generate path for route named &quot;foo&quot;
+  Routes.generate(:path_info, :foo) #=&gt; &quot;/foo&quot;</pre>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: ActiveRecord::SpawnMethods</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/active_record/relation/spawn_methods_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_record/relation/spawn_methods.rb">lib/active_record/relation/spawn_methods.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-%26">#&</a></li>
+					
+					<li><a href="#method-i-apply_finder_options">#apply_finder_options</a></li>
+					
+					<li><a href="#method-i-except">#except</a></li>
+					
+					<li><a href="#method-i-merge">#merge</a></li>
+					
+					<li><a href="#method-i-only">#only</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+				
+					<li><a href="../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+				
+					<li><a href="../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+				
+					<li><a href="../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ClassMethods/o.html">ActiveRecord::Associations::ClassMethods::o</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+				
+					<li><a href="../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+				
+					<li><a href="../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+				
+					<li><a href="../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+				
+					<li><a href="../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+				
+					<li><a href="../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+				
+					<li><a href="../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+				
+					<li><a href="../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+				
+					<li><a href="../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Generators.html">ActiveRecord::Generators</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/MigrationGenerator.html">ActiveRecord::Generators::MigrationGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/ModelGenerator.html">ActiveRecord::Generators::ModelGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/ObserverGenerator.html">ActiveRecord::Generators::ObserverGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/SessionMigrationGenerator.html">ActiveRecord::Generators::SessionMigrationGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+				
+					<li><a href="../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+				
+					<li><a href="../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+				
+					<li><a href="../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+				
+					<li><a href="../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+				
+					<li><a href="../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+				
+					<li><a href="../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+				
+					<li><a href="../ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+				
+					<li><a href="../ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+				
+					<li><a href="../ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+				
+					<li><a href="../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+				
+					<li><a href="../ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+				
+					<li><a href="../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+				
+					<li><a href="../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+				
+					<li><a href="../ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+				
+					<li><a href="../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+				
+					<li><a href="../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+				
+					<li><a href="../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+				
+					<li><a href="../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+				
+					<li><a href="../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+				
+					<li><a href="../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+				
+					<li><a href="../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+				
+					<li><a href="../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+				
+					<li><a href="../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+				
+					<li><a href="../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+				
+					<li><a href="../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+				
+					<li><a href="../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+				
+					<li><a href="../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+				
+					<li><a href="../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+				
+					<li><a href="../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+				
+					<li><a href="../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+				
+					<li><a href="../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+				
+					<li><a href="../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+				
+					<li><a href="../Fixtures.html">Fixtures</a></li>
+				
+					<li><a href="../FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">ActiveRecord::SpawnMethods</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="VALID_FIND_OPTIONS">VALID_FIND_OPTIONS</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail method-alias">
+				<a name="method-i-%26"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">&amp;</span><span
+						class="method-args">(r)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="SpawnMethods.html#method-i-merge">merge</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="apply-finder-options-method" class="method-detail ">
+				<a name="method-i-apply_finder_options"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">apply_finder_options</span><span
+						class="method-args">(options)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="apply-finder-options-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/relation/spawn_methods.rb, line 85</span>
+ 85:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">apply_finder_options</span>(<span class="ruby-identifier">options</span>)
+ 86:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+ 87:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">relation</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>
+ 88: 
+ 89:       <span class="ruby-identifier">options</span>.<span class="ruby-identifier">assert_valid_keys</span>(<span class="ruby-constant">VALID_FIND_OPTIONS</span>)
+ 90: 
+ 91:       [<span class="ruby-value">:joins</span>, <span class="ruby-value">:select</span>, <span class="ruby-value">:group</span>, <span class="ruby-value">:having</span>, <span class="ruby-value">:limit</span>, <span class="ruby-value">:offset</span>, <span class="ruby-value">:from</span>, <span class="ruby-value">:lock</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">finder</span><span class="ruby-operator">|</span>
+ 92:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">finder</span>]
+ 93:           <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">finder</span>, <span class="ruby-identifier">value</span>)
+ 94:         <span class="ruby-keyword kw">end</span>
+ 95:       <span class="ruby-keyword kw">end</span>
+ 96: 
+ 97:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">readonly</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:readonly</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">key?</span> <span class="ruby-value">:readonly</span>
+ 98: 
+ 99:       <span class="ruby-comment cmt"># Give precedence to newly-applied orders and groups to play nicely with with_scope</span>
+100:       [<span class="ruby-value">:group</span>, <span class="ruby-value">:order</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">finder</span><span class="ruby-operator">|</span>
+101:         <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{finder}_values=&quot;</span>, <span class="ruby-constant">Array</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">finder</span>]) <span class="ruby-operator">+</span> <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{finder}_values&quot;</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">finder</span>)
+102:       <span class="ruby-keyword kw">end</span>
+103: 
+104:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:conditions</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:conditions</span>)
+105:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:include</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:include</span>)
+106:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">extending</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:extend</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:extend</span>)
+107: 
+108:       <span class="ruby-identifier">relation</span>
+109:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="except-method" class="method-detail ">
+				<a name="method-i-except"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">except</span><span
+						class="method-args">(*skips)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="except-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/relation/spawn_methods.rb, line 52</span>
+52:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">except</span>(*<span class="ruby-identifier">skips</span>)
+53:       <span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@klass</span>, <span class="ruby-identifier">table</span>)
+54: 
+55:       (<span class="ruby-constant">Relation</span><span class="ruby-operator">::</span><span class="ruby-constant">ASSOCIATION_METHODS</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Relation</span><span class="ruby-operator">::</span><span class="ruby-constant">MULTI_VALUE_METHODS</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+56:         <span class="ruby-identifier">result</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{method}_values=&quot;</span>, <span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{method}_values&quot;</span>)) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">skips</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">method</span>)
+57:       <span class="ruby-keyword kw">end</span>
+58: 
+59:       <span class="ruby-constant">Relation</span><span class="ruby-operator">::</span><span class="ruby-constant">SINGLE_VALUE_METHODS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+60:         <span class="ruby-identifier">result</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{method}_value=&quot;</span>, <span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{method}_value&quot;</span>)) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">skips</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">method</span>)
+61:       <span class="ruby-keyword kw">end</span>
+62: 
+63:       <span class="ruby-identifier">result</span>
+64:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-method" class="method-detail ">
+				<a name="method-i-merge"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge</span><span
+						class="method-args">(r)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/relation/spawn_methods.rb, line 5</span>
+ 5:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge</span>(<span class="ruby-identifier">r</span>)
+ 6:       <span class="ruby-identifier">merged_relation</span> = <span class="ruby-identifier">clone</span>
+ 7:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">merged_relation</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">r</span>
+ 8: 
+ 9:       ((<span class="ruby-constant">Relation</span><span class="ruby-operator">::</span><span class="ruby-constant">ASSOCIATION_METHODS</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Relation</span><span class="ruby-operator">::</span><span class="ruby-constant">MULTI_VALUE_METHODS</span>) <span class="ruby-operator">-</span> [<span class="ruby-value">:joins</span>, <span class="ruby-value">:where</span>]).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+10:         <span class="ruby-identifier">value</span> = <span class="ruby-identifier">r</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{method}_values&quot;</span>)
+11:         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">empty?</span>
+12:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">==</span> <span class="ruby-value">:includes</span>
+13:             <span class="ruby-identifier">merged_relation</span> = <span class="ruby-identifier">merged_relation</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-identifier">value</span>)
+14:           <span class="ruby-keyword kw">else</span>
+15:             <span class="ruby-identifier">merged_relation</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{method}_values=&quot;</span>, <span class="ruby-identifier">value</span>)
+16:           <span class="ruby-keyword kw">end</span>
+17:         <span class="ruby-keyword kw">end</span>
+18:       <span class="ruby-keyword kw">end</span>
+19: 
+20:       <span class="ruby-identifier">merged_relation</span> = <span class="ruby-identifier">merged_relation</span>.<span class="ruby-identifier">joins</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">joins_values</span>)
+21: 
+22:       <span class="ruby-identifier">merged_wheres</span> = <span class="ruby-ivar">@where_values</span>
+23: 
+24:       <span class="ruby-identifier">r</span>.<span class="ruby-identifier">where_values</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">w</span><span class="ruby-operator">|</span>
+25:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">w</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:operator</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">w</span>.<span class="ruby-identifier">operator</span> <span class="ruby-operator">==</span> <span class="ruby-value">:==</span>
+26:           <span class="ruby-identifier">merged_wheres</span> = <span class="ruby-identifier">merged_wheres</span>.<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+27:             <span class="ruby-identifier">p</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:operator</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">operator</span> <span class="ruby-operator">==</span> <span class="ruby-value">:==</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">operand1</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">w</span>.<span class="ruby-identifier">operand1</span>.<span class="ruby-identifier">name</span>
+28:           }
+29:         <span class="ruby-keyword kw">end</span>
+30: 
+31:         <span class="ruby-identifier">merged_wheres</span> <span class="ruby-operator">+=</span> [<span class="ruby-identifier">w</span>]
+32:       <span class="ruby-keyword kw">end</span>
+33: 
+34:       <span class="ruby-identifier">merged_relation</span>.<span class="ruby-identifier">where_values</span> = <span class="ruby-identifier">merged_wheres</span>
+35: 
+36:       <span class="ruby-constant">Relation</span><span class="ruby-operator">::</span><span class="ruby-constant">SINGLE_VALUE_METHODS</span>.<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">==</span> <span class="ruby-value">:lock</span>}.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+37:         <span class="ruby-keyword kw">unless</span> (<span class="ruby-identifier">value</span> = <span class="ruby-identifier">r</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{method}_value&quot;</span>)).<span class="ruby-identifier">nil?</span>
+38:           <span class="ruby-identifier">merged_relation</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{method}_value=&quot;</span>, <span class="ruby-identifier">value</span>)
+39:         <span class="ruby-keyword kw">end</span>
+40:       <span class="ruby-keyword kw">end</span>
+41: 
+42:       <span class="ruby-identifier">merged_relation</span>.<span class="ruby-identifier">lock_value</span> = <span class="ruby-identifier">r</span>.<span class="ruby-identifier">lock_value</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">merged_relation</span>.<span class="ruby-identifier">lock_value</span>
+43: 
+44:       <span class="ruby-comment cmt"># Apply scope extension modules</span>
+45:       <span class="ruby-identifier">merged_relation</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:apply_modules</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">extensions</span>
+46: 
+47:       <span class="ruby-identifier">merged_relation</span>
+48:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="SpawnMethods.html#method-i-%26">&amp;</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="only-method" class="method-detail ">
+				<a name="method-i-only"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">only</span><span
+						class="method-args">(*onlies)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="only-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/relation/spawn_methods.rb, line 66</span>
+66:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">only</span>(*<span class="ruby-identifier">onlies</span>)
+67:       <span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@klass</span>, <span class="ruby-identifier">table</span>)
+68: 
+69:       <span class="ruby-identifier">onlies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">only</span><span class="ruby-operator">|</span>
+70:         <span class="ruby-keyword kw">if</span> (<span class="ruby-constant">Relation</span><span class="ruby-operator">::</span><span class="ruby-constant">ASSOCIATION_METHODS</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Relation</span><span class="ruby-operator">::</span><span class="ruby-constant">MULTI_VALUE_METHODS</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">only</span>)
+71:           <span class="ruby-identifier">result</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{only}_values=&quot;</span>, <span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{only}_values&quot;</span>))
+72:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">Relation</span><span class="ruby-operator">::</span><span class="ruby-constant">SINGLE_VALUE_METHODS</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">only</span>)
+73:           <span class="ruby-identifier">result</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{only}_value=&quot;</span>, <span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;#{only}_value&quot;</span>))
+74:         <span class="ruby-keyword kw">else</span>
+75:           <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Invalid argument : #{only}&quot;</span>
+76:         <span class="ruby-keyword kw">end</span>
+77:       <span class="ruby-keyword kw">end</span>
+78: 
+79:       <span class="ruby-identifier">result</span>
+80:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

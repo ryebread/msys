@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: ActionMailer::DeprecatedApi::ClassMethods</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/action_mailer/deprecated_api_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_mailer/deprecated_api.rb">lib/action_mailer/deprecated_api.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-deliver">#deliver</a></li>
+					
+					<li><a href="#method-i-matches_dynamic_method%3F">#matches_dynamic_method?</a></li>
+					
+					<li><a href="#method-i-method_missing">#method_missing</a></li>
+					
+					<li><a href="#method-i-respond_to%3F">#respond_to?</a></li>
+					
+					<li><a href="#method-i-template_root">#template_root</a></li>
+					
+					<li><a href="#method-i-template_root%3D">#template_root=</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../lib/rails/generators/mailer/USAGE.html">USAGE</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../ActionMailer/Base.html">ActionMailer::Base</a></li>
+				
+					<li><a href="../../ActionMailer/Base/DeprecatedHeaderProxy.html">ActionMailer::Base::DeprecatedHeaderProxy</a></li>
+				
+					<li><a href="../../ActionMailer/Base/DeprecatedUrlOptions.html">ActionMailer::Base::DeprecatedUrlOptions</a></li>
+				
+					<li><a href="../../ActionMailer/Collector.html">ActionMailer::Collector</a></li>
+				
+					<li><a href="../../ActionMailer/DeliveryMethods.html">ActionMailer::DeliveryMethods</a></li>
+				
+					<li><a href="../../ActionMailer/DeliveryMethods/ClassMethods.html">ActionMailer::DeliveryMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActionMailer/DeprecatedApi/ClassMethods.html">ActionMailer::DeprecatedApi::ClassMethods</a></li>
+				
+					<li><a href="../../ActionMailer/LogSubscriber.html">ActionMailer::LogSubscriber</a></li>
+				
+					<li><a href="../../ActionMailer/MailHelper.html">ActionMailer::MailHelper</a></li>
+				
+					<li><a href="../../ActionMailer/NonInferrableMailerError.html">ActionMailer::NonInferrableMailerError</a></li>
+				
+					<li><a href="../../ActionMailer/Railtie.html">ActionMailer::Railtie</a></li>
+				
+					<li><a href="../../ActionMailer/TestCase.html">ActionMailer::TestCase</a></li>
+				
+					<li><a href="../../ActionMailer/TestCase/Behavior.html">ActionMailer::TestCase::Behavior</a></li>
+				
+					<li><a href="../../ActionMailer/TestCase/Behavior/ClassMethods.html">ActionMailer::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../ActionMailer/TestCase/Behavior/InstanceMethods.html">ActionMailer::TestCase::Behavior::InstanceMethods</a></li>
+				
+					<li><a href="../../ActionMailer/TestHelper.html">ActionMailer::TestHelper</a></li>
+				
+					<li><a href="../../Rails.html">Rails</a></li>
+				
+					<li><a href="../../Rails/Generators.html">Rails::Generators</a></li>
+				
+					<li><a href="../../Rails/Generators/MailerGenerator.html">Rails::Generators::MailerGenerator</a></li>
+				
+					<li><a href="../../Mail.html">Mail</a></li>
+				
+					<li><a href="../../Mail/Message.html">Mail::Message</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">ActionMailer::DeprecatedApi::ClassMethods</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="deliver-method" class="method-detail ">
+				<a name="method-i-deliver"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">deliver</span><span
+						class="method-args">(mail, show_warning=true)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Deliver the given mail object directly. This can be used to deliver a
+preconstructed mail object, like:
+</p>
+<pre>
+  email = MyMailer.create_some_mail(parameters)
+  email.set_some_obscure_header &quot;frobnicate&quot;
+  MyMailer.deliver(email)</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="deliver-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_mailer/deprecated_api.rb, line 35</span>
+35:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deliver</span>(<span class="ruby-identifier">mail</span>, <span class="ruby-identifier">show_warning</span>=<span class="ruby-keyword kw">true</span>)
+36:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">show_warning</span>
+37:           <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;#{self}.deliver is deprecated, call &quot;</span> <span class="ruby-operator">&lt;&lt;</span>
+38:             <span class="ruby-value str">&quot;deliver in the mailer instance instead&quot;</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>]
+39:         <span class="ruby-keyword kw">end</span>
+40: 
+41:         <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;no mail object available for delivery!&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">mail</span>
+42:         <span class="ruby-identifier">wrap_delivery_behavior</span>(<span class="ruby-identifier">mail</span>)
+43:         <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">deliver</span>
+44:         <span class="ruby-identifier">mail</span>
+45:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="method-missing-method" class="method-detail ">
+				<a name="method-i-method_missing"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">method_missing</span><span
+						class="method-args">(method_symbol, *parameters)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="method-missing-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_mailer/deprecated_api.rb, line 60</span>
+60:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">method_symbol</span>, *<span class="ruby-identifier">parameters</span>)
+61:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">match</span> = <span class="ruby-identifier">matches_dynamic_method?</span>(<span class="ruby-identifier">method_symbol</span>)
+62:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">match</span>[<span class="ruby-value">1</span>]
+63:             <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'create'</span>
+64:               <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;#{self}.create_#{match[2]} is deprecated, &quot;</span> <span class="ruby-operator">&lt;&lt;</span>
+65:                 <span class="ruby-node">&quot;use #{self}.#{match[2]} instead&quot;</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>]
+66:               <span class="ruby-identifier">new</span>(<span class="ruby-identifier">match</span>[<span class="ruby-value">2</span>], *<span class="ruby-identifier">parameters</span>).<span class="ruby-identifier">message</span>
+67:             <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'deliver'</span>
+68:               <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;#{self}.deliver_#{match[2]} is deprecated, &quot;</span> <span class="ruby-operator">&lt;&lt;</span>
+69:                 <span class="ruby-node">&quot;use #{self}.#{match[2]}.deliver instead&quot;</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>]
+70:               <span class="ruby-identifier">new</span>(<span class="ruby-identifier">match</span>[<span class="ruby-value">2</span>], *<span class="ruby-identifier">parameters</span>).<span class="ruby-identifier">message</span>.<span class="ruby-identifier">deliver</span>
+71:             <span class="ruby-keyword kw">else</span> <span class="ruby-keyword kw">super</span>
+72:           <span class="ruby-keyword kw">end</span>
+73:         <span class="ruby-keyword kw">else</span>
+74:           <span class="ruby-keyword kw">super</span>
+75:         <span class="ruby-keyword kw">end</span>
+76:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="respond-to--method" class="method-detail ">
+				<a name="method-i-respond_to%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">respond_to?</span><span
+						class="method-args">(method_symbol, include_private = false)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="respond-to--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_mailer/deprecated_api.rb, line 56</span>
+56:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">method_symbol</span>, <span class="ruby-identifier">include_private</span> = <span class="ruby-keyword kw">false</span>)
+57:         <span class="ruby-identifier">matches_dynamic_method?</span>(<span class="ruby-identifier">method_symbol</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword kw">super</span>
+58:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="template-root-method" class="method-detail ">
+				<a name="method-i-template_root"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">template_root</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="template-root-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_mailer/deprecated_api.rb, line 47</span>
+47:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">template_root</span>
+48:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">view_paths</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">view_paths</span>.<span class="ruby-identifier">first</span>
+49:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="template-root--method" class="method-detail ">
+				<a name="method-i-template_root%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">template_root=</span><span
+						class="method-args">(root)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="template-root--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_mailer/deprecated_api.rb, line 51</span>
+51:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">template_root=</span>(<span class="ruby-identifier">root</span>)
+52:         <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span> <span class="ruby-value str">&quot;template_root= is deprecated, use prepend_view_path instead&quot;</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>]
+53:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">view_paths</span> = <span class="ruby-constant">ActionView</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">process_view_paths</span>(<span class="ruby-identifier">root</span>)
+54:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="matches-dynamic-method--method" class="method-detail ">
+				<a name="method-i-matches_dynamic_method%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">matches_dynamic_method?</span><span
+						class="method-args">(method_name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="matches-dynamic-method--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_mailer/deprecated_api.rb, line 80</span>
+80:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">matches_dynamic_method?</span>(<span class="ruby-identifier">method_name</span>)
+81:         <span class="ruby-identifier">method_name</span> = <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_s</span>
+82:         <span class="ruby-regexp re">/^(create|deliver)_([_a-z]\w*)/</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">method_name</span>) <span class="ruby-operator">||</span> <span class="ruby-regexp re">/^(new)$/</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">method_name</span>)
+83:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

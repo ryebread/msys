@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: ActionView::Template</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/action_view/template/error_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_view/template/error.rb">lib/action_view/template/error.rb</a></li>
+					
+						<li><a href="../lib/action_view/template/handler_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_view/template/handler.rb">lib/action_view/template/handler.rb</a></li>
+					
+						<li><a href="../lib/action_view/template/handlers/erb_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_view/template/handlers/erb.rb">lib/action_view/template/handlers/erb.rb</a></li>
+					
+						<li><a href="../lib/action_view/template/handlers_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_view/template/handlers.rb">lib/action_view/template/handlers.rb</a></li>
+					
+						<li><a href="../lib/action_view/template/text_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_view/template/text.rb">lib/action_view/template/text.rb</a></li>
+					
+						<li><a href="../lib/action_view/template_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_view/template.rb">lib/action_view/template.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">MODULE</span> <a href="Template/Handlers.html">ActionView::Template::Handlers</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Template/Error.html">ActionView::Template::Error</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Template/Handler.html">ActionView::Template::Handler</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Template/Text.html">ActionView::Template::Text</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-build_method_name">#build_method_name</a></li>
+					
+					<li><a href="#method-i-compile">#compile</a></li>
+					
+					<li><a href="#method-i-counter_name">#counter_name</a></li>
+					
+					<li><a href="#method-i-identifier_method_name">#identifier_method_name</a></li>
+					
+					<li><a href="#method-i-inspect">#inspect</a></li>
+					
+					<li><a href="#method-i-mime_type">#mime_type</a></li>
+					
+					<li><a href="#method-i-render">#render</a></li>
+					
+					<li><a href="#method-i-variable_name">#variable_name</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../ActionController/Base.html">ActionController::Base</a></li>
+				
+					<li><a href="../ActionController/Caching.html">ActionController::Caching</a></li>
+				
+					<li><a href="../ActionController/Caching/Actions.html">ActionController::Caching::Actions</a></li>
+				
+					<li><a href="../ActionController/Caching/Actions/ActionCachePath.html">ActionController::Caching::Actions::ActionCachePath</a></li>
+				
+					<li><a href="../ActionController/Caching/Actions/ClassMethods.html">ActionController::Caching::Actions::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/Caching/ConfigMethods.html">ActionController::Caching::ConfigMethods</a></li>
+				
+					<li><a href="../ActionController/Caching/Pages.html">ActionController::Caching::Pages</a></li>
+				
+					<li><a href="../ActionController/Caching/Pages/ClassMethods.html">ActionController::Caching::Pages::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/Caching/Sweeping.html">ActionController::Caching::Sweeping</a></li>
+				
+					<li><a href="../ActionController/Compatibility.html">ActionController::Compatibility</a></li>
+				
+					<li><a href="../ActionController/Compatibility/ClassMethods.html">ActionController::Compatibility::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/ConditionalGet.html">ActionController::ConditionalGet</a></li>
+				
+					<li><a href="../ActionController/Cookies.html">ActionController::Cookies</a></li>
+				
+					<li><a href="../ActionController/Dispatcher.html">ActionController::Dispatcher</a></li>
+				
+					<li><a href="../ActionController/Flash.html">ActionController::Flash</a></li>
+				
+					<li><a href="../ActionController/Head.html">ActionController::Head</a></li>
+				
+					<li><a href="../ActionController/Helpers.html">ActionController::Helpers</a></li>
+				
+					<li><a href="../ActionController/Helpers/ClassMethods.html">ActionController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/HideActions.html">ActionController::HideActions</a></li>
+				
+					<li><a href="../ActionController/HideActions/ClassMethods.html">ActionController::HideActions::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication.html">ActionController::HttpAuthentication</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication/Basic.html">ActionController::HttpAuthentication::Basic</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication/Basic/ControllerMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication/Digest.html">ActionController::HttpAuthentication::Digest</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication/Digest/ControllerMethods.html">ActionController::HttpAuthentication::Digest::ControllerMethods</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication/Token.html">ActionController::HttpAuthentication::Token</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication/Token/ControllerMethods.html">ActionController::HttpAuthentication::Token::ControllerMethods</a></li>
+				
+					<li><a href="../ActionController/ImplicitRender.html">ActionController::ImplicitRender</a></li>
+				
+					<li><a href="../ActionController/Instrumentation.html">ActionController::Instrumentation</a></li>
+				
+					<li><a href="../ActionController/Instrumentation/ClassMethods.html">ActionController::Instrumentation::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/LogSubscriber.html">ActionController::LogSubscriber</a></li>
+				
+					<li><a href="../ActionController/Metal.html">ActionController::Metal</a></li>
+				
+					<li><a href="../ActionController/Middleware.html">ActionController::Middleware</a></li>
+				
+					<li><a href="../ActionController/Middleware/ActionMiddleware.html">ActionController::Middleware::ActionMiddleware</a></li>
+				
+					<li><a href="../ActionController/MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/RackDelegation.html">ActionController::RackDelegation</a></li>
+				
+					<li><a href="../ActionController/Railtie.html">ActionController::Railtie</a></li>
+				
+					<li><a href="../ActionController/Redirecting.html">ActionController::Redirecting</a></li>
+				
+					<li><a href="../ActionController/Renderers.html">ActionController::Renderers</a></li>
+				
+					<li><a href="../ActionController/Renderers/All.html">ActionController::Renderers::All</a></li>
+				
+					<li><a href="../ActionController/Renderers/ClassMethods.html">ActionController::Renderers::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/Rendering.html">ActionController::Rendering</a></li>
+				
+					<li><a href="../ActionController/RequestForgeryProtection.html">ActionController::RequestForgeryProtection</a></li>
+				
+					<li><a href="../ActionController/RequestForgeryProtection/ClassMethods.html">ActionController::RequestForgeryProtection::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/Rescue.html">ActionController::Rescue</a></li>
+				
+					<li><a href="../ActionController/Responder.html">ActionController::Responder</a></li>
+				
+					<li><a href="../ActionController/SessionManagement/ClassMethods.html">ActionController::SessionManagement::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/Streaming.html">ActionController::Streaming</a></li>
+				
+					<li><a href="../ActionController/TemplateAssertions.html">ActionController::TemplateAssertions</a></li>
+				
+					<li><a href="../ActionController/TestCase.html">ActionController::TestCase</a></li>
+				
+					<li><a href="../ActionController/TestCase/Behavior.html">ActionController::TestCase::Behavior</a></li>
+				
+					<li><a href="../ActionController/TestCase/Behavior/ClassMethods.html">ActionController::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/TestCase/RaiseActionExceptions.html">ActionController::TestCase::RaiseActionExceptions</a></li>
+				
+					<li><a href="../ActionController/TestResponse.html">ActionController::TestResponse</a></li>
+				
+					<li><a href="../ActionController/Testing.html">ActionController::Testing</a></li>
+				
+					<li><a href="../ActionController/Testing/ClassMethods.html">ActionController::Testing::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/UrlFor.html">ActionController::UrlFor</a></li>
+				
+					<li><a href="../ActionController/UrlFor/ClassMethods.html">ActionController::UrlFor::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/UrlRewriter.html">ActionController::UrlRewriter</a></li>
+				
+					<li><a href="../ActionController/UrlWriter.html">ActionController::UrlWriter</a></li>
+				
+					<li><a href="../ActionDispatch/Assertions.html">ActionDispatch::Assertions</a></li>
+				
+					<li><a href="../ActionDispatch/Assertions/DomAssertions.html">ActionDispatch::Assertions::DomAssertions</a></li>
+				
+					<li><a href="../ActionDispatch/Assertions/ResponseAssertions.html">ActionDispatch::Assertions::ResponseAssertions</a></li>
+				
+					<li><a href="../ActionDispatch/Assertions/RoutingAssertions.html">ActionDispatch::Assertions::RoutingAssertions</a></li>
+				
+					<li><a href="../ActionDispatch/Assertions/SelectorAssertions.html">ActionDispatch::Assertions::SelectorAssertions</a></li>
+				
+					<li><a href="../ActionDispatch/Assertions/TagAssertions.html">ActionDispatch::Assertions::TagAssertions</a></li>
+				
+					<li><a href="../ActionDispatch/BestStandardsSupport.html">ActionDispatch::BestStandardsSupport</a></li>
+				
+					<li><a href="../ActionDispatch/Callbacks.html">ActionDispatch::Callbacks</a></li>
+				
+					<li><a href="../ActionDispatch/Cookies.html">ActionDispatch::Cookies</a></li>
+				
+					<li><a href="../ActionDispatch/Cookies/CookieOverflow.html">ActionDispatch::Cookies::CookieOverflow</a></li>
+				
+					<li><a href="../ActionDispatch/Flash.html">ActionDispatch::Flash</a></li>
+				
+					<li><a href="../ActionDispatch/Flash/FlashHash.html">ActionDispatch::Flash::FlashHash</a></li>
+				
+					<li><a href="../ActionDispatch/Head.html">ActionDispatch::Head</a></li>
+				
+					<li><a href="../ActionDispatch/Http.html">ActionDispatch::Http</a></li>
+				
+					<li><a href="../ActionDispatch/Http/Cache.html">ActionDispatch::Http::Cache</a></li>
+				
+					<li><a href="../ActionDispatch/Http/Cache/Request.html">ActionDispatch::Http::Cache::Request</a></li>
+				
+					<li><a href="../ActionDispatch/Http/Cache/Response.html">ActionDispatch::Http::Cache::Response</a></li>
+				
+					<li><a href="../ActionDispatch/Http/FilterParameters.html">ActionDispatch::Http::FilterParameters</a></li>
+				
+					<li><a href="../ActionDispatch/Http/Headers.html">ActionDispatch::Http::Headers</a></li>
+				
+					<li><a href="../ActionDispatch/Http/MimeNegotiation.html">ActionDispatch::Http::MimeNegotiation</a></li>
+				
+					<li><a href="../ActionDispatch/Http/ParameterFilter.html">ActionDispatch::Http::ParameterFilter</a></li>
+				
+					<li><a href="../ActionDispatch/Http/Parameters.html">ActionDispatch::Http::Parameters</a></li>
+				
+					<li><a href="../ActionDispatch/Http/URL.html">ActionDispatch::Http::URL</a></li>
+				
+					<li><a href="../ActionDispatch/Http/Upload.html">ActionDispatch::Http::Upload</a></li>
+				
+					<li><a href="../ActionDispatch/Http/UploadedFile.html">ActionDispatch::Http::UploadedFile</a></li>
+				
+					<li><a href="../ActionDispatch/Integration/RequestHelpers.html">ActionDispatch::Integration::RequestHelpers</a></li>
+				
+					<li><a href="../ActionDispatch/Integration/Runner.html">ActionDispatch::Integration::Runner</a></li>
+				
+					<li><a href="../ActionDispatch/Integration/Session.html">ActionDispatch::Integration::Session</a></li>
+				
+					<li><a href="../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a></li>
+				
+					<li><a href="../ActionDispatch/MiddlewareStack.html">ActionDispatch::MiddlewareStack</a></li>
+				
+					<li><a href="../ActionDispatch/MiddlewareStack/Middleware.html">ActionDispatch::MiddlewareStack::Middleware</a></li>
+				
+					<li><a href="../ActionDispatch/ParamsParser.html">ActionDispatch::ParamsParser</a></li>
+				
+					<li><a href="../ActionDispatch/PerformanceTest.html">ActionDispatch::PerformanceTest</a></li>
+				
+					<li><a href="../ActionDispatch/Railtie.html">ActionDispatch::Railtie</a></li>
+				
+					<li><a href="../ActionDispatch/RemoteIp.html">ActionDispatch::RemoteIp</a></li>
+				
+					<li><a href="../ActionDispatch/RemoteIp/IpSpoofAttackError.html">ActionDispatch::RemoteIp::IpSpoofAttackError</a></li>
+				
+					<li><a href="../ActionDispatch/RemoteIp/RemoteIpGetter.html">ActionDispatch::RemoteIp::RemoteIpGetter</a></li>
+				
+					<li><a href="../ActionDispatch/Request.html">ActionDispatch::Request</a></li>
+				
+					<li><a href="../ActionDispatch/Rescue.html">ActionDispatch::Rescue</a></li>
+				
+					<li><a href="../ActionDispatch/Response.html">ActionDispatch::Response</a></li>
+				
+					<li><a href="../ActionDispatch/Response/Setup.html">ActionDispatch::Response::Setup</a></li>
+				
+					<li><a href="../ActionDispatch/Routing.html">ActionDispatch::Routing</a></li>
+				
+					<li><a href="../ActionDispatch/Routing/Mapper.html">ActionDispatch::Routing::Mapper</a></li>
+				
+					<li><a href="../ActionDispatch/Routing/Mapper/Base.html">ActionDispatch::Routing::Mapper::Base</a></li>
+				
+					<li><a href="../ActionDispatch/Routing/Mapper/HttpHelpers.html">ActionDispatch::Routing::Mapper::HttpHelpers</a></li>
+				
+					<li><a href="../ActionDispatch/Routing/Mapper/Resources.html">ActionDispatch::Routing::Mapper::Resources</a></li>
+				
+					<li><a href="../ActionDispatch/Routing/Mapper/Scoping.html">ActionDispatch::Routing::Mapper::Scoping</a></li>
+				
+					<li><a href="../ActionDispatch/Routing/Mapper/Shorthand.html">ActionDispatch::Routing::Mapper::Shorthand</a></li>
+				
+					<li><a href="../ActionDispatch/Routing/PolymorphicRoutes.html">ActionDispatch::Routing::PolymorphicRoutes</a></li>
+				
+					<li><a href="../ActionDispatch/Routing/UrlFor.html">ActionDispatch::Routing::UrlFor</a></li>
+				
+					<li><a href="../ActionDispatch/Session.html">ActionDispatch::Session</a></li>
+				
+					<li><a href="../ActionDispatch/Session/AbstractStore.html">ActionDispatch::Session::AbstractStore</a></li>
+				
+					<li><a href="../ActionDispatch/Session/AbstractStore/OptionsHash.html">ActionDispatch::Session::AbstractStore::OptionsHash</a></li>
+				
+					<li><a href="../ActionDispatch/Session/AbstractStore/SessionHash.html">ActionDispatch::Session::AbstractStore::SessionHash</a></li>
+				
+					<li><a href="../ActionDispatch/Session/CookieStore.html">ActionDispatch::Session::CookieStore</a></li>
+				
+					<li><a href="../ActionDispatch/Session/MemCacheStore.html">ActionDispatch::Session::MemCacheStore</a></li>
+				
+					<li><a href="../ActionDispatch/ShowExceptions.html">ActionDispatch::ShowExceptions</a></li>
+				
+					<li><a href="../ActionDispatch/Static.html">ActionDispatch::Static</a></li>
+				
+					<li><a href="../ActionDispatch/TestProcess.html">ActionDispatch::TestProcess</a></li>
+				
+					<li><a href="../ActionDispatch/TestRequest.html">ActionDispatch::TestRequest</a></li>
+				
+					<li><a href="../ActionDispatch/TestResponse.html">ActionDispatch::TestResponse</a></li>
+				
+					<li><a href="../ActionDispatch/TestResponse/DeprecatedHelpers.html">ActionDispatch::TestResponse::DeprecatedHelpers</a></li>
+				
+					<li><a href="../ActionView/Base.html">ActionView::Base</a></li>
+				
+					<li><a href="../ActionView/Context.html">ActionView::Context</a></li>
+				
+					<li><a href="../ActionView/FileSystemResolver.html">ActionView::FileSystemResolver</a></li>
+				
+					<li><a href="../ActionView/FixtureResolver.html">ActionView::FixtureResolver</a></li>
+				
+					<li><a href="../ActionView/Helpers/ActiveModelFormBuilder.html">ActionView::Helpers::ActiveModelFormBuilder</a></li>
+				
+					<li><a href="../ActionView/Helpers/ActiveModelHelper.html">ActionView::Helpers::ActiveModelHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/ActiveModelInstanceTag.html">ActionView::Helpers::ActiveModelInstanceTag</a></li>
+				
+					<li><a href="../ActionView/Helpers/AssetTagHelper.html">ActionView::Helpers::AssetTagHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/AtomFeedHelper.html">ActionView::Helpers::AtomFeedHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/AtomFeedHelper/AtomBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomBuilder</a></li>
+				
+					<li><a href="../ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a></li>
+				
+					<li><a href="../ActionView/Helpers/CsrfHelper.html">ActionView::Helpers::CsrfHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/DateHelper.html">ActionView::Helpers::DateHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/DebugHelper.html">ActionView::Helpers::DebugHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/FormHelper.html">ActionView::Helpers::FormHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/FormOptionsHelper.html">ActionView::Helpers::FormOptionsHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/FormTagHelper.html">ActionView::Helpers::FormTagHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/InstanceTagMethods/ClassMethods.html">ActionView::Helpers::InstanceTagMethods::ClassMethods</a></li>
+				
+					<li><a href="../ActionView/Helpers/JavaScriptHelper.html">ActionView::Helpers::JavaScriptHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/NumberHelper.html">ActionView::Helpers::NumberHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/NumberHelper/InvalidNumberError.html">ActionView::Helpers::NumberHelper::InvalidNumberError</a></li>
+				
+					<li><a href="../ActionView/Helpers/PrototypeHelper.html">ActionView::Helpers::PrototypeHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.html">ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods</a></li>
+				
+					<li><a href="../ActionView/Helpers/RawOutputHelper.html">ActionView::Helpers::RawOutputHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/SanitizeHelper.html">ActionView::Helpers::SanitizeHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/TranslationHelper.html">ActionView::Helpers::TranslationHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/UrlHelper.html">ActionView::Helpers::UrlHelper</a></li>
+				
+					<li><a href="../ActionView/LogSubscriber.html">ActionView::LogSubscriber</a></li>
+				
+					<li><a href="../ActionView/LookupContext/Details.html">ActionView::LookupContext::Details</a></li>
+				
+					<li><a href="../ActionView/LookupContext/ViewPaths.html">ActionView::LookupContext::ViewPaths</a></li>
+				
+					<li><a href="../ActionView/NullResolver.html">ActionView::NullResolver</a></li>
+				
+					<li><a href="../ActionView/OutputBuffer.html">ActionView::OutputBuffer</a></li>
+				
+					<li><a href="../ActionView/PathResolver.html">ActionView::PathResolver</a></li>
+				
+					<li><a href="../ActionView/Railtie.html">ActionView::Railtie</a></li>
+				
+					<li><a href="../ActionView/Rendering.html">ActionView::Rendering</a></li>
+				
+					<li><a href="../ActionView/Resolver.html">ActionView::Resolver</a></li>
+				
+					<li><a href="../ActionView/Template.html">ActionView::Template</a></li>
+				
+					<li><a href="../ActionView/Template/Handler.html">ActionView::Template::Handler</a></li>
+				
+					<li><a href="../ActionView/Template/Handlers/Builder.html">ActionView::Template::Handlers::Builder</a></li>
+				
+					<li><a href="../ActionView/Template/Handlers/Compilable.html">ActionView::Template::Handlers::Compilable</a></li>
+				
+					<li><a href="../ActionView/Template/Handlers/Compilable/ClassMethods.html">ActionView::Template::Handlers::Compilable::ClassMethods</a></li>
+				
+					<li><a href="../ActionView/Template/Handlers/ERB.html">ActionView::Template::Handlers::ERB</a></li>
+				
+					<li><a href="../ActionView/Template/Handlers/Erubis.html">ActionView::Template::Handlers::Erubis</a></li>
+				
+					<li><a href="../ActionView/Template/Handlers/RJS.html">ActionView::Template::Handlers::RJS</a></li>
+				
+					<li><a href="../ActionView/TestCase.html">ActionView::TestCase</a></li>
+				
+					<li><a href="../ActionView/TestCase/Behavior.html">ActionView::TestCase::Behavior</a></li>
+				
+					<li><a href="../ActionView/TestCase/Behavior/ClassMethods.html">ActionView::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../ActionView/TestCase/Behavior/Locals.html">ActionView::TestCase::Behavior::Locals</a></li>
+				
+					<li><a href="../ActionView/TestCase/TestController.html">ActionView::TestCase::TestController</a></li>
+				
+					<li><a href="../AbstractController.html">AbstractController</a></li>
+				
+					<li><a href="../AbstractController/ActionNotFound.html">AbstractController::ActionNotFound</a></li>
+				
+					<li><a href="../AbstractController/ActionNotFound.html">AbstractController::ActionNotFound</a></li>
+				
+					<li><a href="../AbstractController/AssetPaths.html">AbstractController::AssetPaths</a></li>
+				
+					<li><a href="../AbstractController/Base.html">AbstractController::Base</a></li>
+				
+					<li><a href="../AbstractController/Callbacks.html">AbstractController::Callbacks</a></li>
+				
+					<li><a href="../AbstractController/Callbacks/ClassMethods.html">AbstractController::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../AbstractController/Collector.html">AbstractController::Collector</a></li>
+				
+					<li><a href="../AbstractController/DoubleRenderError.html">AbstractController::DoubleRenderError</a></li>
+				
+					<li><a href="../AbstractController/DoubleRenderError.html">AbstractController::DoubleRenderError</a></li>
+				
+					<li><a href="../AbstractController/Error.html">AbstractController::Error</a></li>
+				
+					<li><a href="../AbstractController/Helpers.html">AbstractController::Helpers</a></li>
+				
+					<li><a href="../AbstractController/Helpers/ClassMethods.html">AbstractController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../AbstractController/Logger.html">AbstractController::Logger</a></li>
+				
+					<li><a href="../AbstractController/Rendering.html">AbstractController::Rendering</a></li>
+				
+					<li><a href="../AbstractController/Rendering/ClassMethods.html">AbstractController::Rendering::ClassMethods</a></li>
+				
+					<li><a href="../AbstractController/Translation.html">AbstractController::Translation</a></li>
+				
+					<li><a href="../AbstractController/ViewPaths.html">AbstractController::ViewPaths</a></li>
+				
+					<li><a href="../AbstractController/ViewPaths/ClassMethods.html">AbstractController::ViewPaths::ClassMethods</a></li>
+				
+					<li><a href="../HTML/FullSanitizer.html">HTML::FullSanitizer</a></li>
+				
+					<li><a href="../HTML/LinkSanitizer.html">HTML::LinkSanitizer</a></li>
+				
+					<li><a href="../HTML/Sanitizer.html">HTML::Sanitizer</a></li>
+				
+					<li><a href="../HTML/Selector.html">HTML::Selector</a></li>
+				
+					<li><a href="../HTML/WhiteListSanitizer.html">HTML::WhiteListSanitizer</a></li>
+				
+					<li><a href="../Mime.html">Mime</a></li>
+				
+					<li><a href="../Mime/Mimes.html">Mime::Mimes</a></li>
+				
+					<li><a href="../Mime/Type.html">Mime::Type</a></li>
+				
+					<li><a href="../ActionPack.html">ActionPack</a></li>
+				
+					<li><a href="../Rack.html">Rack</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">ActionView::Template</h1>
+
+		<div id="description">
+			<h1>Action View <a href="Template.html">Template</a> Handlers</h1>
+<hr style="height: 1px"></hr><h1>Action View Text <a href="Template.html">Template</a></h1>
+<hr style="height: 1px"></hr><h1>Action View <a href="Template.html">Template</a></h1>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="Finalizer">Finalizer</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="source-attribute-method" class="method-detail">
+				<a name="source"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">source</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="identifier-attribute-method" class="method-detail">
+				<a name="identifier"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">identifier</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="handler-attribute-method" class="method-detail">
+				<a name="handler"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">handler</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="virtual-path-attribute-method" class="method-detail">
+				<a name="virtual_path"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">virtual_path</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="formats-attribute-method" class="method-detail">
+				<a name="formats"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">formats</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="original-encoding-attribute-method" class="method-detail">
+				<a name="original_encoding"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">original_encoding</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(source, identifier, handler, details)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/template.rb, line 112</span>
+112:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">handler</span>, <span class="ruby-identifier">details</span>)
+113:       <span class="ruby-ivar">@source</span>             = <span class="ruby-identifier">source</span>
+114:       <span class="ruby-ivar">@identifier</span>         = <span class="ruby-identifier">identifier</span>
+115:       <span class="ruby-ivar">@handler</span>            = <span class="ruby-identifier">handler</span>
+116:       <span class="ruby-ivar">@original_encoding</span>  = <span class="ruby-keyword kw">nil</span>
+117:       <span class="ruby-ivar">@method_names</span>       = {}
+118: 
+119:       <span class="ruby-identifier">format</span>   = <span class="ruby-identifier">details</span>[<span class="ruby-value">:format</span>] <span class="ruby-operator">||</span> <span class="ruby-value">:html</span>
+120:       <span class="ruby-ivar">@formats</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">format</span>).<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:to_sym</span>)
+121:       <span class="ruby-ivar">@virtual_path</span> = <span class="ruby-identifier">details</span>[<span class="ruby-value">:virtual_path</span>].<span class="ruby-identifier">try</span>(<span class="ruby-value">:sub</span>, <span class="ruby-node">&quot;.#{format}&quot;</span>, <span class="ruby-value str">&quot;&quot;</span>)
+122:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="counter-name-method" class="method-detail ">
+				<a name="method-i-counter_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">counter_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="counter-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/template.rb, line 154</span>
+154:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">counter_name</span>
+155:       <span class="ruby-ivar">@counter_name</span> <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;#{variable_name}_counter&quot;</span>.<span class="ruby-identifier">to_sym</span>
+156:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="inspect-method" class="method-detail ">
+				<a name="method-i-inspect"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">inspect</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="inspect-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/template.rb, line 158</span>
+158:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>
+159:       <span class="ruby-ivar">@inspect</span> <span class="ruby-operator">||=</span>
+160:         <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">Rails</span>.<span class="ruby-identifier">root</span>)
+161:           <span class="ruby-identifier">identifier</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-node">&quot;#{Rails.root}/&quot;</span>, <span class="ruby-value str">''</span>)
+162:         <span class="ruby-keyword kw">else</span>
+163:           <span class="ruby-identifier">identifier</span>
+164:         <span class="ruby-keyword kw">end</span>
+165:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="mime-type-method" class="method-detail ">
+				<a name="method-i-mime_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">mime_type</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="mime-type-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/template.rb, line 146</span>
+146:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mime_type</span>
+147:       <span class="ruby-ivar">@mime_type</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span>.<span class="ruby-identifier">lookup_by_extension</span>(<span class="ruby-ivar">@formats</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@formats</span>.<span class="ruby-identifier">first</span>
+148:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="render-method" class="method-detail ">
+				<a name="method-i-render"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">render</span><span
+						class="method-args">(view, locals, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="render-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/template.rb, line 124</span>
+124:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render</span>(<span class="ruby-identifier">view</span>, <span class="ruby-identifier">locals</span>, &amp;<span class="ruby-identifier">block</span>)
+125:       <span class="ruby-comment cmt"># Notice that we use a bang in this instrumentation because you don't want to</span>
+126:       <span class="ruby-comment cmt"># consume this in production. This is only slow if it's being listened to.</span>
+127:       <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Notifications</span>.<span class="ruby-identifier">instrument</span>(<span class="ruby-value str">&quot;!render_template.action_view&quot;</span>, <span class="ruby-value">:virtual_path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@virtual_path</span>) <span class="ruby-keyword kw">do</span>
+128:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ActionView</span><span class="ruby-operator">::</span><span class="ruby-constant">CompiledTemplates</span>)
+129:           <span class="ruby-identifier">mod</span> = <span class="ruby-constant">ActionView</span><span class="ruby-operator">::</span><span class="ruby-constant">CompiledTemplates</span>
+130:         <span class="ruby-keyword kw">else</span>
+131:           <span class="ruby-identifier">mod</span> = <span class="ruby-identifier">view</span>.<span class="ruby-identifier">singleton_class</span>
+132:         <span class="ruby-keyword kw">end</span>
+133: 
+134:         <span class="ruby-identifier">method_name</span> = <span class="ruby-identifier">compile</span>(<span class="ruby-identifier">locals</span>, <span class="ruby-identifier">view</span>, <span class="ruby-identifier">mod</span>)
+135:         <span class="ruby-identifier">view</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">locals</span>, &amp;<span class="ruby-identifier">block</span>)
+136:       <span class="ruby-keyword kw">end</span>
+137:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+138:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Template</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>)
+139:         <span class="ruby-identifier">e</span>.<span class="ruby-identifier">sub_template_of</span>(<span class="ruby-keyword kw">self</span>)
+140:         <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+141:       <span class="ruby-keyword kw">else</span>
+142:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Template</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">view</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:assigns</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">assigns</span> <span class="ruby-operator">:</span> {}, <span class="ruby-identifier">e</span>)
+143:       <span class="ruby-keyword kw">end</span>
+144:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="variable-name-method" class="method-detail ">
+				<a name="method-i-variable_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">variable_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="variable-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/template.rb, line 150</span>
+150:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">variable_name</span>
+151:       <span class="ruby-ivar">@variable_name</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@virtual_path</span>[<span class="ruby-regexp re">%_?(\w+)(\.\w+)*$'</span>, <span class="ruby-value">1</span>].<span class="ruby-identifier">to_sym</span>
+152:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="build-method-name-method" class="method-detail ">
+				<a name="method-i-build_method_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_method_name</span><span
+						class="method-args">(locals)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="build-method-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/template.rb, line 270</span>
+270:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_method_name</span>(<span class="ruby-identifier">locals</span>)
+271:         <span class="ruby-ivar">@method_names</span>[<span class="ruby-identifier">locals</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">hash</span>] <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;_#{identifier_method_name}__#{@identifier.hash}_#{__id__}_#{locals.keys.hash}&quot;</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'-'</span>, <span class="ruby-value str">&quot;_&quot;</span>)
+272:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="compile-method" class="method-detail ">
+				<a name="method-i-compile"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">compile</span><span
+						class="method-args">(locals, view, mod)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Among other things, this method is responsible for properly setting the
+encoding of the source. Until this point, we assume that the source is
+BINARY data. If no additional information is supplied, we assume the
+encoding is the same as Encoding.default_external.
+</p>
+<p>
+The user can also specify the encoding via a comment on the first line of
+the template (# encoding: NAME-OF-ENCODING). This will work with any
+template engine, as we process out the encoding comment before passing the
+source on to the template engine, leaving a blank line in its stead.
+</p>
+<p>
+If the template engine handles encodings, we send the encoded String to the
+engine without further processing. This allows the template engine to
+support additional mechanisms for specifying the encoding. For instance,
+ERB supports <%# encoding: %>
+</p>
+<p>
+Otherwise, after we figure out the correct encoding, we then encode the
+source into Encoding.default_internal. In general, this means that
+templates will be UTF-8 inside of Rails, regardless of the original source
+encoding.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="compile-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/template.rb, line 188</span>
+188:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compile</span>(<span class="ruby-identifier">locals</span>, <span class="ruby-identifier">view</span>, <span class="ruby-identifier">mod</span>)
+189:         <span class="ruby-identifier">method_name</span> = <span class="ruby-identifier">build_method_name</span>(<span class="ruby-identifier">locals</span>)
+190:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">method_name</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">method_name</span>)
+191: 
+192:         <span class="ruby-identifier">locals_code</span> = <span class="ruby-identifier">locals</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{key} = local_assigns[:#{key}];&quot;</span> }.<span class="ruby-identifier">join</span>
+193: 
+194:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">encoding_aware?</span>
+195:           <span class="ruby-comment cmt"># Look for # encoding: *. If we find one, we'll encode the</span>
+196:           <span class="ruby-comment cmt"># String in that encoding, otherwise, we'll use the</span>
+197:           <span class="ruby-comment cmt"># default external encoding.</span>
+198:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-node">/\A#{ENCODING_FLAG}/</span>, <span class="ruby-value str">''</span>)
+199:             <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">magic_encoding</span> = <span class="ruby-node">$1</span>
+200:           <span class="ruby-keyword kw">else</span>
+201:             <span class="ruby-identifier">encoding</span> = <span class="ruby-constant">Encoding</span>.<span class="ruby-identifier">default_external</span>
+202:           <span class="ruby-keyword kw">end</span>
+203: 
+204:           <span class="ruby-comment cmt"># Tag the source with the default external encoding</span>
+205:           <span class="ruby-comment cmt"># or the encoding specified in the file</span>
+206:           <span class="ruby-identifier">source</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-identifier">encoding</span>)
+207: 
+208:           <span class="ruby-comment cmt"># If the user didn't specify an encoding, and the handler</span>
+209:           <span class="ruby-comment cmt"># handles encodings, we simply pass the String as is to</span>
+210:           <span class="ruby-comment cmt"># the handler (with the default_external tag)</span>
+211:           <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">magic_encoding</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:handles_encoding?</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">handles_encoding?</span>
+212:             <span class="ruby-identifier">source</span>
+213:           <span class="ruby-comment cmt"># Otherwise, if the String is valid in the encoding,</span>
+214:           <span class="ruby-comment cmt"># encode immediately to default_internal. This means</span>
+215:           <span class="ruby-comment cmt"># that if a handler doesn't handle encodings, it will</span>
+216:           <span class="ruby-comment cmt"># always get Strings in the default_internal</span>
+217:           <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">valid_encoding?</span>
+218:             <span class="ruby-identifier">source</span>.<span class="ruby-identifier">encode!</span>
+219:           <span class="ruby-comment cmt"># Otherwise, since the String is invalid in the encoding</span>
+220:           <span class="ruby-comment cmt"># specified, raise an exception</span>
+221:           <span class="ruby-keyword kw">else</span>
+222:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">WrongEncodingError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">encoding</span>)
+223:           <span class="ruby-keyword kw">end</span>
+224:         <span class="ruby-keyword kw">end</span>
+225: 
+226:         <span class="ruby-identifier">code</span> = <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword kw">self</span>)
+227: 
+228:         <span class="ruby-comment cmt"># Make sure that the resulting String to be evalled is in the</span>
+229:         <span class="ruby-comment cmt"># encoding of the code</span>
+230:         <span class="ruby-identifier">source</span> = <span class="ruby-value str">          def #{method_name}(local_assigns)            _old_virtual_path, @_virtual_path = @_virtual_path, #{@virtual_path.inspect};_old_output_buffer = @output_buffer;#{locals_code};#{code}          ensure            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer          end</span>
+231: 
+232:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">encoding_aware?</span>
+233:           <span class="ruby-comment cmt"># Make sure the source is in the encoding of the returned code</span>
+234:           <span class="ruby-identifier">source</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-identifier">code</span>.<span class="ruby-identifier">encoding</span>)
+235: 
+236:           <span class="ruby-comment cmt"># In case we get back a String from a handler that is not in</span>
+237:           <span class="ruby-comment cmt"># BINARY or the default_internal, encode it to the default_internal</span>
+238:           <span class="ruby-identifier">source</span>.<span class="ruby-identifier">encode!</span>
+239: 
+240:           <span class="ruby-comment cmt"># Now, validate that the source we got back from the template</span>
+241:           <span class="ruby-comment cmt"># handler is valid in the default_internal. This is for handlers</span>
+242:           <span class="ruby-comment cmt"># that handle encoding but screw up</span>
+243:           <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">valid_encoding?</span>
+244:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">WrongEncodingError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@source</span>, <span class="ruby-constant">Encoding</span>.<span class="ruby-identifier">default_internal</span>)
+245:           <span class="ruby-keyword kw">end</span>
+246:         <span class="ruby-keyword kw">end</span>
+247: 
+248:         <span class="ruby-keyword kw">begin</span>
+249:           <span class="ruby-identifier">mod</span>.<span class="ruby-identifier">module_eval</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">identifier</span>, <span class="ruby-value">0</span>)
+250:           <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">define_finalizer</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-constant">Finalizer</span>[<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">mod</span>])
+251: 
+252:           <span class="ruby-identifier">method_name</span>
+253:         <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span> <span class="ruby-comment cmt"># errors from template code</span>
+254:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">logger</span> = (<span class="ruby-identifier">view</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">view</span>.<span class="ruby-identifier">logger</span>)
+255:             <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;ERROR: compiling #{method_name} RAISED #{e}&quot;</span>
+256:             <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Function body: #{source}&quot;</span>
+257:             <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Backtrace: #{e.backtrace.join(&quot;\n&quot;)}&quot;</span>
+258:           <span class="ruby-keyword kw">end</span>
+259: 
+260:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ActionView</span><span class="ruby-operator">::</span><span class="ruby-constant">Template</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, {}, <span class="ruby-identifier">e</span>)
+261:         <span class="ruby-keyword kw">end</span>
+262:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="identifier-method-name-method" class="method-detail ">
+				<a name="method-i-identifier_method_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">identifier_method_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="identifier-method-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/template.rb, line 274</span>
+274:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">identifier_method_name</span>
+275:         <span class="ruby-ivar">@identifier_method_name</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">inspect</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/[^a-z_]/</span>, <span class="ruby-value str">'_'</span>)
+276:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

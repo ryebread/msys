@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Mail::Message</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/action_mailer/tmail_compat_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_mailer/tmail_compat.rb">lib/action_mailer/tmail_compat.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-old_transfer_encoding">#old_transfer_encoding</a></li>
+					
+					<li><a href="#method-i-original_filename">#original_filename</a></li>
+					
+					<li><a href="#method-i-set_content_type">#set_content_type</a></li>
+					
+					<li><a href="#method-i-transfer_encoding">#transfer_encoding</a></li>
+					
+					<li><a href="#method-i-transfer_encoding%3D">#transfer_encoding=</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../lib/rails/generators/mailer/USAGE.html">USAGE</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../ActionMailer/Base.html">ActionMailer::Base</a></li>
+				
+					<li><a href="../ActionMailer/Base/DeprecatedHeaderProxy.html">ActionMailer::Base::DeprecatedHeaderProxy</a></li>
+				
+					<li><a href="../ActionMailer/Base/DeprecatedUrlOptions.html">ActionMailer::Base::DeprecatedUrlOptions</a></li>
+				
+					<li><a href="../ActionMailer/Collector.html">ActionMailer::Collector</a></li>
+				
+					<li><a href="../ActionMailer/DeliveryMethods.html">ActionMailer::DeliveryMethods</a></li>
+				
+					<li><a href="../ActionMailer/DeliveryMethods/ClassMethods.html">ActionMailer::DeliveryMethods::ClassMethods</a></li>
+				
+					<li><a href="../ActionMailer/DeprecatedApi/ClassMethods.html">ActionMailer::DeprecatedApi::ClassMethods</a></li>
+				
+					<li><a href="../ActionMailer/LogSubscriber.html">ActionMailer::LogSubscriber</a></li>
+				
+					<li><a href="../ActionMailer/MailHelper.html">ActionMailer::MailHelper</a></li>
+				
+					<li><a href="../ActionMailer/NonInferrableMailerError.html">ActionMailer::NonInferrableMailerError</a></li>
+				
+					<li><a href="../ActionMailer/Railtie.html">ActionMailer::Railtie</a></li>
+				
+					<li><a href="../ActionMailer/TestCase.html">ActionMailer::TestCase</a></li>
+				
+					<li><a href="../ActionMailer/TestCase/Behavior.html">ActionMailer::TestCase::Behavior</a></li>
+				
+					<li><a href="../ActionMailer/TestCase/Behavior/ClassMethods.html">ActionMailer::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../ActionMailer/TestCase/Behavior/InstanceMethods.html">ActionMailer::TestCase::Behavior::InstanceMethods</a></li>
+				
+					<li><a href="../ActionMailer/TestHelper.html">ActionMailer::TestHelper</a></li>
+				
+					<li><a href="../Rails.html">Rails</a></li>
+				
+					<li><a href="../Rails/Generators.html">Rails::Generators</a></li>
+				
+					<li><a href="../Rails/Generators/MailerGenerator.html">Rails::Generators::MailerGenerator</a></li>
+				
+					<li><a href="../Mail.html">Mail</a></li>
+				
+					<li><a href="../Mail/Message.html">Mail::Message</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Mail::Message</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="old-transfer-encoding-method" class="method-detail method-alias">
+				<a name="method-i-old_transfer_encoding"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">old_transfer_encoding</span><span
+						class="method-args">(value = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Message.html#method-i-transfer_encoding">transfer_encoding</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="original-filename-method" class="method-detail ">
+				<a name="method-i-original_filename"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">original_filename</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="original-filename-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_mailer/tmail_compat.rb, line 27</span>
+27:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">original_filename</span>
+28:       <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">'Message#original_filename is deprecated, '</span> <span class="ruby-operator">&lt;&lt;</span>
+29:                                       <span class="ruby-value str">'please call Message#filename'</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>])
+30:       <span class="ruby-identifier">filename</span>
+31:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="set-content-type-method" class="method-detail ">
+				<a name="method-i-set_content_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">set_content_type</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="set-content-type-source">
+<pre>
+   <span class="ruby-comment cmt"># File lib/action_mailer/tmail_compat.rb, line 4</span>
+4:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_content_type</span>(*<span class="ruby-identifier">args</span>)
+5:       <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">'Message#set_content_type is deprecated, please just call '</span> <span class="ruby-operator">&lt;&lt;</span>
+6:                                       <span class="ruby-value str">'Message#content_type with the same arguments'</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>])
+7:       <span class="ruby-identifier">content_type</span>(*<span class="ruby-identifier">args</span>)
+8:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="transfer-encoding-method" class="method-detail ">
+				<a name="method-i-transfer_encoding"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">transfer_encoding</span><span
+						class="method-args">(value = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="transfer-encoding-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_mailer/tmail_compat.rb, line 11</span>
+11:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">transfer_encoding</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">nil</span>)
+12:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>
+13:         <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">'Message#transfer_encoding is deprecated, please call '</span> <span class="ruby-operator">&lt;&lt;</span>
+14:                                         <span class="ruby-value str">'Message#content_transfer_encoding with the same arguments'</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>])
+15:         <span class="ruby-identifier">content_transfer_encoding</span>(<span class="ruby-identifier">value</span>)
+16:       <span class="ruby-keyword kw">else</span>
+17:         <span class="ruby-identifier">old_transfer_encoding</span>
+18:       <span class="ruby-keyword kw">end</span>
+19:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Message.html#method-i-old_transfer_encoding">old_transfer_encoding</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="transfer-encoding--method" class="method-detail ">
+				<a name="method-i-transfer_encoding%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">transfer_encoding=</span><span
+						class="method-args">(value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="transfer-encoding--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/action_mailer/tmail_compat.rb, line 21</span>
+21:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">transfer_encoding=</span>(<span class="ruby-identifier">value</span>)
+22:       <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">'Message#transfer_encoding= is deprecated, please call '</span> <span class="ruby-operator">&lt;&lt;</span>
+23:                                       <span class="ruby-value str">'Message#content_transfer_encoding= with the same arguments'</span>, <span class="ruby-identifier">caller</span>[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>])
+24:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">content_transfer_encoding</span> = <span class="ruby-identifier">value</span>
+25:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

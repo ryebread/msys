@@ -1,0 +1,17 @@
+Thu, 09 Sep 2010 09:35:46 +0800
+lib/active_resource/base.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/connection.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/custom_methods.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/exceptions.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/formats/json_format.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/formats/xml_format.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/formats.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/http_mock.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/log_subscriber.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/observing.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/railtie.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/schema.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/validations.rb	Thu, 09 Sep 2010 09:30:12 +0800
+lib/active_resource/version.rb	Thu, 09 Sep 2010 09:30:13 +0800
+lib/active_resource.rb	Thu, 09 Sep 2010 09:30:13 +0800
+README.rdoc	Thu, 09 Sep 2010 09:30:12 +0800

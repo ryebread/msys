@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: History.txt [polyglot-0.3.1 Documentation]</title>
+
+	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="./License_txt.html">License.txt</a></li>
+				
+					<li class="file"><a href="./Manifest_txt.html">Manifest.txt</a></li>
+				
+					<li class="file"><a href="./README_txt.html">README.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./Polyglot/NestedLoadError.html">Polyglot::NestedLoadError</a></li>
+				
+					<li><a href="./Polyglot/PolyglotLoadError.html">Polyglot::PolyglotLoadError</a></li>
+				
+					<li><a href="./Kernel.html">Kernel</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h2>0.2.9 2009-09-13</h2>
+<ul>
+<li><p>
+1 minor fix:
+</p>
+<ul>
+<li><p>
+Use to_s on Pathname to support Ruby 1.9
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>0.2.8 2009-08-18</h2>
+<ul>
+<li><p>
+1 minor fix:
+</p>
+<ul>
+<li><p>
+Previous fix for LoadErrors failed for cucumber.
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>0.2.7 2009-08-17</h2>
+<ul>
+<li><p>
+1 minor fix:
+</p>
+<ul>
+<li><p>
+Fix Polyglot catching LoadErrors not raised in Polyglot.find and re-raising
+the 
+</p>
+</li>
+</ul>
+<p>
+wrong message.
+</p>
+</li>
+</ul>
+<h2>0.2.6 2009-06-21</h2>
+<ul>
+<li><p>
+1 significant fix:
+</p>
+<ul>
+<li><p>
+Require using absolute pathname now works correctly on Ruby 1.8
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>0.2.5 2009-03-04</h2>
+<ul>
+<li><p>
+1 significant fix:
+</p>
+<ul>
+<li><p>
+Polyglot&#8217;s require may be called with a Pathname, or other object
+allowed by <a href="Kernel.html#method-i-require">Kernel#require</a> that
+doesn&#8217;t support [] (<a
+href="Kernel.html#method-i-require">Kernel#require</a> uses to_str
+apparently)
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>0.2.4 2008-05-29</h2>
+<ul>
+<li><p>
+1 significant fix:
+</p>
+<ul>
+<li><p>
+Previous LoadError change is checked in this time (oops!)
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>0.2.3 2008-05-29</h2>
+<ul>
+<li><p>
+2 minor enhancements:
+</p>
+<ul>
+<li><p>
+Raise MissingSourceFile exception instead of LoadError if ActiveSupport is
+loaded
+</p>
+</li>
+</ul>
+<ul>
+<li><p>
+Re-raise original exception new one on require load fail
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>0.2.2 2008-05-12</h2>
+<ul>
+<li><p>
+2 minor enhancements:
+</p>
+<ul>
+<li><p>
+Doesn&#8217;t search $: when asked to load an absolute path
+</p>
+</li>
+</ul>
+<ul>
+<li><p>
+Adds a helpful exception message on LoadError
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>0.2.1 2008-03-05</h2>
+<ul>
+<li><p>
+1 minor defect:
+</p>
+<ul>
+<li><p>
+code to raise LoadError itself raised an exception
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>0.2.0 2008-02-13</h2>
+<ul>
+<li><p>
+1 major enhancement:
+</p>
+<ul>
+<li><p>
+Doesn&#8217;t reload on every require
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>0.1.0 2007-10-22</h2>
+<ul>
+<li><p>
+1 major enhancement:
+</p>
+<ul>
+<li><p>
+Initial release
+</p>
+</li>
+</ul>
+</li>
+</ul>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

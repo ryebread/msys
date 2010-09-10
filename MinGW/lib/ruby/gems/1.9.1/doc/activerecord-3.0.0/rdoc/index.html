@@ -1,0 +1,2219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>activerecord-3.0.0 Documentation</title>
+
+	<link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+	
+	<h1>activerecord-3.0.0 Documentation</h1>
+
+	
+	<div id="main">
+		
+<p>
+Active Record connects classes to relational database tables to establish
+an almost zero-configuration persistence layer for applications. The
+library provides a base class that, when subclassed, sets up a mapping
+between the new class and an existing table in the database. In context of
+an application, these classes are commonly referred to as <b>models</b>.
+Models can also be connected to other models; this is done by defining
+<b>associations</b>.
+</p>
+<p>
+Active Record relies heavily on naming in that it uses class and
+association names to establish mappings between respective database tables
+and foreign key columns. Although these mappings can be defined explicitly,
+it&#8217;s recommended to follow naming conventions, especially when
+getting started with the library.
+</p>
+<p>
+A short rundown of some of the major features:
+</p>
+<ul>
+<li><p>
+Automated mapping between classes and tables, attributes and columns.
+</p>
+<pre>
+ class Product &lt; ActiveRecord::Base
+ end
+
+ The Product class is automatically mapped to the table named &quot;products&quot;,
+ which might look like this:
+
+ CREATE TABLE products (
+   id int(11) NOT NULL auto_increment,
+   name varchar(255),
+   PRIMARY KEY  (id)
+ );
+
+ This would also define the following accessors: `Product#name` and
+ `Product#name=(new_name)`
+</pre>
+<p>
+<a href="classes/ActiveRecord/Base.html">Learn more</a>
+</p>
+</li>
+<li><p>
+Associations between objects defined by simple class methods.
+</p>
+<pre>
+ class Firm &lt; ActiveRecord::Base
+   has_many   :clients
+   has_one    :account
+   belongs_to :conglomerate
+ end
+</pre>
+<p>
+<a href="classes/ActiveRecord/Associations/ClassMethods.html">Learn
+more</a>
+</p>
+</li>
+<li><p>
+Aggregations of value objects.
+</p>
+<pre>
+ class Account &lt; ActiveRecord::Base
+   composed_of :balance, :class_name =&gt; &quot;Money&quot;,
+               :mapping =&gt; %w(balance amount)
+   composed_of :address,
+               :mapping =&gt; [%w(address_street street), %w(address_city city)]
+ end
+</pre>
+<p>
+<a href="classes/ActiveRecord/Aggregations/ClassMethods.html">Learn
+more</a>
+</p>
+</li>
+<li><p>
+Validation rules that can differ for new or existing objects.
+</p>
+<pre>
+  class Account &lt; ActiveRecord::Base
+    validates_presence_of     :subdomain, :name, :email_address, :password
+    validates_uniqueness_of   :subdomain
+    validates_acceptance_of   :terms_of_service, :on =&gt; :create
+    validates_confirmation_of :password, :email_address, :on =&gt; :create
+  end
+</pre>
+<p>
+<a href="classes/ActiveRecord/Validations.html">Learn more</a>
+</p>
+</li>
+<li><p>
+Callbacks available for the entire life cycle (instantiation, saving,
+destroying, validating, etc.)
+</p>
+<pre>
+ class Person &lt; ActiveRecord::Base
+   before_destroy :invalidate_payment_plan
+   # the `invalidate_payment_plan` method gets called just before Person#destroy
+ end
+</pre>
+<p>
+<a href="classes/ActiveRecord/Callbacks.html">Learn more</a>
+</p>
+</li>
+<li><p>
+Observers that react to changes in a model
+</p>
+<pre>
+ class CommentObserver &lt; ActiveRecord::Observer
+   def after_create(comment) # is called just after Comment#save
+     Notifications.deliver_new_comment(&quot;david@loudthinking.com&quot;, comment)
+   end
+ end
+</pre>
+<p>
+<a href="classes/ActiveRecord/Observer.html">Learn more</a>
+</p>
+</li>
+<li><p>
+Inheritance hierarchies
+</p>
+<pre>
+ class Company &lt; ActiveRecord::Base; end
+ class Firm &lt; Company; end
+ class Client &lt; Company; end
+ class PriorityClient &lt; Client; end
+</pre>
+<p>
+<a href="classes/ActiveRecord/Base.html">Learn more</a>
+</p>
+</li>
+<li><p>
+Transactions
+</p>
+<pre>
+  # Database transaction
+  Account.transaction do
+    david.withdrawal(100)
+    mary.deposit(100)
+  end
+</pre>
+<p>
+<a href="classes/ActiveRecord/Transactions/ClassMethods.html">Learn
+more</a>
+</p>
+</li>
+<li><p>
+Reflections on columns, associations, and aggregations
+</p>
+<pre>
+  reflection = Firm.reflect_on_association(:clients)
+  reflection.klass # =&gt; Client (class)
+  Firm.columns # Returns an array of column descriptors for the firms table
+</pre>
+<p>
+<a href="classes/ActiveRecord/Reflection/ClassMethods.html">Learn more</a>
+</p>
+</li>
+<li><p>
+Database abstraction through simple adapters
+</p>
+<pre>
+  # connect to SQLite3
+  ActiveRecord::Base.establish_connection(:adapter =&gt; &quot;sqlite3&quot;, :database =&gt; &quot;dbfile.sqlite3&quot;)
+
+  # connect to MySQL with authentication
+  ActiveRecord::Base.establish_connection(
+    :adapter  =&gt; &quot;mysql&quot;,
+    :host     =&gt; &quot;localhost&quot;,
+    :username =&gt; &quot;me&quot;,
+    :password =&gt; &quot;secret&quot;,
+    :database =&gt; &quot;activerecord&quot;
+  )
+</pre>
+<p>
+<a href="classes/ActiveRecord/Base.html">Learn more</a> and read about the
+built-in support for <a
+href="classes/ActiveRecord/ConnectionAdapters/MysqlAdapter.html">MySQL</a>,
+<a
+href="classes/ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">PostgreSQL</a>,
+and <a
+href="classes/ActiveRecord/ConnectionAdapters/SQLite3Adapter.html">SQLite3</a>.
+</p>
+</li>
+<li><p>
+Logging support for <a href="http://log4r.sourceforge.net">Log4r</a> and <a
+href="http://www.ruby-doc.org/stdlib/libdoc/logger/rdoc">Logger</a>
+</p>
+<pre>
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+  ActiveRecord::Base.logger = Log4r::Logger.new(&quot;Application Log&quot;)
+</pre>
+</li>
+<li><p>
+Database agnostic schema management with Migrations
+</p>
+<pre>
+  class AddSystemSettings &lt; ActiveRecord::Migration
+    def self.up
+      create_table :system_settings do |t|
+        t.string  :name
+        t.string  :label
+        t.text    :value
+        t.string  :type
+        t.integer :position
+      end
+
+      SystemSetting.create :name =&gt; &quot;notice&quot;, :label =&gt; &quot;Use notice?&quot;, :value =&gt; 1
+    end
+
+    def self.down
+      drop_table :system_settings
+    end
+  end
+</pre>
+<p>
+<a href="classes/ActiveRecord/Migration.html">Learn more</a>
+</p>
+</li>
+</ul>
+<h2>Philosophy</h2>
+<p>
+Active Record is an implementation of the object-relational mapping (ORM)
+<a
+href="http://www.martinfowler.com/eaaCatalog/activeRecord.html">pattern</a>
+by the same name described by Martin Fowler:
+</p>
+<pre>
+  &quot;An object that wraps a row in a database table or view,
+  encapsulates the database access, and adds domain logic on that data.&quot;
+</pre>
+<p>
+Active Record attempts to provide a coherent wrapper as a solution for the
+inconvenience that is object-relational mapping. The prime directive for
+this mapping has been to minimize the amount of code needed to build a
+real-world domain model. This is made possible by relying on a number of
+conventions that make it easy for Active Record to infer complex relations
+and structures from a minimal amount of explicit direction.
+</p>
+<p>
+Convention over Configuration:
+</p>
+<ul>
+<li><p>
+No XML-files!
+</p>
+</li>
+<li><p>
+Lots of reflection and run-time extension
+</p>
+</li>
+<li><p>
+Magic is not inherently a bad word
+</p>
+</li>
+</ul>
+<p>
+Admit the Database:
+</p>
+<ul>
+<li><p>
+Lets you drop down to SQL for odd cases and performance
+</p>
+</li>
+<li><p>
+Doesn&#8217;t attempt to duplicate or replace data definitions
+</p>
+</li>
+</ul>
+<h2>Download and installation</h2>
+<p>
+The latest version of Active Record can be installed with Rubygems:
+</p>
+<pre>
+  % [sudo] gem install activerecord
+</pre>
+<p>
+Source code can be downloaded as part of the Rails project on GitHub
+</p>
+<ul>
+<li><p>
+<a
+href="http://github.com/rails/rails/tree/master/activerecord/">github.com/rails/rails/tree/master/activerecord/</a>
+</p>
+</li>
+</ul>
+<h2>License</h2>
+<p>
+Active Record is released under the MIT license.
+</p>
+<h2>Support</h2>
+<p>
+API documentation is at
+</p>
+<ul>
+<li><p>
+<a href="http://api.rubyonrails.com">api.rubyonrails.com</a>
+</p>
+</li>
+</ul>
+<p>
+Bug reports and feature requests can be filed with the rest for the Ruby on
+Rails project here:
+</p>
+<ul>
+<li><p>
+<a
+href="https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets">rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets</a>
+</p>
+</li>
+</ul>
+
+	</div>
+	
+
+	
+	
+	<h2>Files</h2>
+	<ul>
+		
+			<li class="file"><a href="README_rdoc.html">README.rdoc</a></li>
+		
+	</ul>
+	
+
+	<h2 id="classes">Classes/Modules</h2>
+	<ul>
+		
+		<li class="class"><a href="ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+		
+		<li class="class"><a href="ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+		
+		<li class="class"><a href="ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+		<li class="class"><a href="ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Associations/ClassMethods/o.html">ActiveRecord::Associations::ClassMethods::o</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+		<li class="class"><a href="ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+		
+		<li class="module"><a href="ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+		<li class="module"><a href="ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+		<li class="module"><a href="ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+		
+		<li class="module"><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+		
+		<li class="module"><a href="ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+		
+		<li class="module"><a href="ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+		
+		<li class="module"><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+		
+		<li class="module"><a href="ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+		
+		<li class="class"><a href="ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+		
+		<li class="class"><a href="ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+		
+		<li class="class"><a href="ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+		
+		<li class="module"><a href="ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Generators.html">ActiveRecord::Generators</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Generators/MigrationGenerator.html">ActiveRecord::Generators::MigrationGenerator</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Generators/ModelGenerator.html">ActiveRecord::Generators::ModelGenerator</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Generators/ObserverGenerator.html">ActiveRecord::Generators::ObserverGenerator</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Generators/SessionMigrationGenerator.html">ActiveRecord::Generators::SessionMigrationGenerator</a></li>
+		
+		<li class="class"><a href="ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+		
+		<li class="class"><a href="ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+		
+		<li class="class"><a href="ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+		
+		<li class="class"><a href="ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+		
+		<li class="class"><a href="ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+		
+		<li class="module"><a href="ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+		
+		<li class="module"><a href="ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+		
+		<li class="module"><a href="ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+		
+		<li class="class"><a href="ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+		
+		<li class="class"><a href="ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+		
+		<li class="class"><a href="ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+		
+		<li class="class"><a href="ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+		
+		<li class="module"><a href="ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+		
+		<li class="module"><a href="ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+		
+		<li class="class"><a href="ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+		
+		<li class="class"><a href="ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+		
+		<li class="class"><a href="ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+		
+		<li class="class"><a href="ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+		
+		<li class="class"><a href="ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+		
+		<li class="class"><a href="ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+		
+		<li class="class"><a href="ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+		
+		<li class="class"><a href="ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+		
+		<li class="module"><a href="ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+		
+		<li class="class"><a href="ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+		
+		<li class="class"><a href="ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+		
+		<li class="module"><a href="ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+		
+		<li class="module"><a href="ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+		
+		<li class="class"><a href="ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+		
+		<li class="class"><a href="ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+		
+		<li class="module"><a href="ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+		
+		<li class="class"><a href="ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+		
+		<li class="class"><a href="ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+		
+		<li class="class"><a href="Fixtures.html">Fixtures</a></li>
+		
+		<li class="class"><a href="FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+		
+	</ul>
+
+	<h2 id="methods">Methods</h2>
+	<ul>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-%3D%3D%3D">::=== &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-abstract_class%3F">::abstract_class? &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-aggregate_mapping">::aggregate_mapping &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-all_attributes_exists%3F">::all_attributes_exists? &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Migration.html#method-c-announce">::announce &mdash; ActiveRecord::Migration</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-arel_engine">::arel_engine &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-arel_table">::arel_table &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-attr_readonly">::attr_readonly &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-attribute_method%3F">::attribute_method? &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-attributes_protected_by_default">::attributes_protected_by_default &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-base_class">::base_class &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-binary_to_string">::binary_to_string &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="Fixtures.html#method-c-cache_fixtures">::cache_fixtures &mdash; Fixtures</a></li>
+		
+			<li><a href="Fixtures.html#method-c-cache_for_connection">::cache_for_connection &mdash; Fixtures</a></li>
+		
+			<li><a href="Fixtures.html#method-c-cached_fixtures">::cached_fixtures &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-class_of_active_record_descendant">::class_of_active_record_descendant &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-colorize_logging">::colorize_logging &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-column_names">::column_names &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-columns">::columns &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-columns_hash">::columns_hash &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-compute_table_name">::compute_table_name &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-compute_type">::compute_type &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-configurations">::configurations &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-connected%3F">::connected? &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Migration.html#method-c-connection">::connection &mdash; ActiveRecord::Migration</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/SqlBypass.html#method-c-connection">::connection &mdash; ActiveRecord::SessionStore::SqlBypass</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-connection">::connection &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/SqlBypass.html#method-c-connection">::connection &mdash; ActiveRecord::SessionStore::SqlBypass</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-connection_handler">::connection_handler &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-connection_pool">::connection_pool &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-construct_attributes_from_arguments">::construct_attributes_from_arguments &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-construct_finder_arel">::construct_finder_arel &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-content_columns">::content_columns &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-count_by_sql">::count_by_sql &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-create">::create &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="Fixtures.html#method-c-create_fixtures">::create_fixtures &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/SqlBypass.html#method-c-data_column">::data_column &mdash; ActiveRecord::SessionStore::SqlBypass</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/Session.html#method-c-data_column_name">::data_column_name &mdash; ActiveRecord::SessionStore::Session</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/Session.html#method-c-data_column_size_limit">::data_column_size_limit &mdash; ActiveRecord::SessionStore::Session</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-default_scope">::default_scope &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-default_timezone">::default_timezone &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Schema.html#method-c-define">::define &mdash; ActiveRecord::Schema</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-descends_from_active_record%3F">::descends_from_active_record? &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/QueryCache.html#method-c-dirties_query_cache">::dirties_query_cache &mdash; ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-c-emulate_booleans">::emulate_booleans &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-establish_connection">::establish_connection &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-expand_attribute_names_for_aggregates">::expand_attribute_names_for_aggregates &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-expand_hash_conditions_for_aggregates">::expand_hash_conditions_for_aggregates &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html#method-c-extract_value_from_default">::extract_value_from_default &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-fallback_string_to_date">::fallback_string_to_date &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-fallback_string_to_time">::fallback_string_to_time &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-fast_string_to_date">::fast_string_to_date &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-fast_string_to_time">::fast_string_to_time &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/Session.html#method-c-find_by_session_id">::find_by_session_id &mdash; ActiveRecord::SessionStore::Session</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/Session.html#method-c-find_by_session_id">::find_by_session_id &mdash; ActiveRecord::SessionStore::Session</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/Session.html#method-c-find_by_session_id">::find_by_session_id &mdash; ActiveRecord::SessionStore::Session</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/SqlBypass.html#method-c-find_by_session_id">::find_by_session_id &mdash; ActiveRecord::SessionStore::SqlBypass</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-find_by_sql">::find_by_sql &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-find_sti_class">::find_sti_class &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="Fixtures.html#method-c-fixture_is_cached%3F">::fixture_is_cached? &mdash; Fixtures</a></li>
+		
+			<li><a href="Fixtures.html#method-c-identify">::identify &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/QueryCache.html#method-c-included">::included &mdash; ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-inheritance_column">::inheritance_column &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-inspect">::inspect &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-instantiate">::instantiate &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="Fixtures.html#method-c-instantiate_all_loaded_fixtures">::instantiate_all_loaded_fixtures &mdash; Fixtures</a></li>
+		
+			<li><a href="Fixtures.html#method-c-instantiate_fixtures">::instantiate_fixtures &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-logger">::logger &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/DynamicFinderMatch.html#method-c-match">::match &mdash; ActiveRecord::DynamicFinderMatch</a></li>
+		
+			<li><a href="ActiveRecord/DynamicScopeMatch.html#method-c-match">::match &mdash; ActiveRecord::DynamicScopeMatch</a></li>
+		
+			<li><a href="ActiveRecord/Observer.html#method-c-method_added">::method_added &mdash; ActiveRecord::Observer</a></li>
+		
+			<li><a href="ActiveRecord/Migration.html#method-c-method_missing">::method_missing &mdash; ActiveRecord::Migration</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-method_missing">::method_missing &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-microseconds">::microseconds &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/Migration.html#method-c-migrate">::migrate &mdash; ActiveRecord::Migration</a></li>
+		
+			<li><a href="ActiveRecord/Schema.html#method-c-migrations_path">::migrations_path &mdash; ActiveRecord::Schema</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionManagement.html#method-c-new">::new &mdash; ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-c-new">::new &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/AttributeAssignmentError.html#method-c-new">::new &mdash; ActiveRecord::AttributeAssignmentError</a></li>
+		
+			<li><a href="ActiveRecord/WrappedDatabaseException.html#method-c-new">::new &mdash; ActiveRecord::WrappedDatabaseException</a></li>
+		
+			<li><a href="ActiveRecord/DynamicScopeMatch.html#method-c-new">::new &mdash; ActiveRecord::DynamicScopeMatch</a></li>
+		
+			<li><a href="Fixtures.html#method-c-new">::new &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html#method-c-new">::new &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/Session.html#method-c-new">::new &mdash; ActiveRecord::SessionStore::Session</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionHandler.html#method-c-new">::new &mdash; ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+		
+			<li><a href="ActiveRecord/LogSubscriber.html#method-c-new">::new &mdash; ActiveRecord::LogSubscriber</a></li>
+		
+			<li><a href="ActiveRecord/MultiparameterAssignmentErrors.html#method-c-new">::new &mdash; ActiveRecord::MultiparameterAssignmentErrors</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/SqlBypass.html#method-c-new">::new &mdash; ActiveRecord::SessionStore::SqlBypass</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-c-new">::new &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-new">::new &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-c-new">::new &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Observer.html#method-c-new">::new &mdash; ActiveRecord::Observer</a></li>
+		
+			<li><a href="ActiveRecord/DynamicFinderMatch.html#method-c-new">::new &mdash; ActiveRecord::DynamicFinderMatch</a></li>
+		
+			<li><a href="ActiveRecord/QueryCache.html#method-c-new">::new &mdash; ActiveRecord::QueryCache</a></li>
+		
+			<li><a href="ActiveRecord/Reflection/MacroReflection.html#method-c-new">::new &mdash; ActiveRecord::Reflection::MacroReflection</a></li>
+		
+			<li><a href="ActiveRecord/PredicateBuilder.html#method-c-new">::new &mdash; ActiveRecord::PredicateBuilder</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-c-new">::new &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-c-new">::new &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html#method-c-new">::new &mdash; ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-new">::new &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Validations/UniquenessValidator.html#method-c-new">::new &mdash; ActiveRecord::Validations::UniquenessValidator</a></li>
+		
+			<li><a href="ActiveRecord/RecordInvalid.html#method-c-new">::new &mdash; ActiveRecord::RecordInvalid</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-c-new">::new &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-new_date">::new_date &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-new_time">::new_time &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-pluralize_table_names">::pluralize_table_names &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-primary_key_prefix_type">::primary_key_prefix_type &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-quoted_table_name">::quoted_table_name &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-readonly_attributes">::readonly_attributes &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-remove_connection">::remove_connection &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="Fixtures.html#method-c-reset_cache">::reset_cache &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-reset_column_information">::reset_column_information &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/LogSubscriber.html#method-c-reset_runtime">::reset_runtime &mdash; ActiveRecord::LogSubscriber</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-respond_to%3F">::respond_to? &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-retrieve_connection">::retrieve_connection &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/LogSubscriber.html#method-c-runtime">::runtime &mdash; ActiveRecord::LogSubscriber</a></li>
+		
+			<li><a href="ActiveRecord/LogSubscriber.html#method-c-runtime%3D">::runtime= &mdash; ActiveRecord::LogSubscriber</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-sanitize_sql_array">::sanitize_sql_array &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-sanitize_sql_for_assignment">::sanitize_sql_for_assignment &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-sanitize_sql_for_conditions">::sanitize_sql_for_conditions &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-sanitize_sql_hash_for_assignment">::sanitize_sql_hash_for_assignment &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-sanitize_sql_hash_for_conditions">::sanitize_sql_hash_for_conditions &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Migration.html#method-c-say">::say &mdash; ActiveRecord::Migration</a></li>
+		
+			<li><a href="ActiveRecord/Migration.html#method-c-say_with_time">::say_with_time &mdash; ActiveRecord::Migration</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-schema_format">::schema_format &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-serialize">::serialize &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-serialized_attributes">::serialized_attributes &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/SqlBypass.html#method-c-session_id_column">::session_id_column &mdash; ActiveRecord::SessionStore::SqlBypass</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/Session.html#method-c-session_id_column">::session_id_column &mdash; ActiveRecord::SessionStore::Session</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-set_inheritance_column">::set_inheritance_column &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-set_sequence_name">::set_sequence_name &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-set_table_name">::set_table_name &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/Session.html#method-c-setup_sessid_compatibility%21">::setup_sessid_compatibility! &mdash; ActiveRecord::SessionStore::Session</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-sti_name">::sti_name &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-string_to_binary">::string_to_binary &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-string_to_date">::string_to_date &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-string_to_dummy_time">::string_to_dummy_time &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-string_to_time">::string_to_time &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-subclasses">::subclasses &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Migration.html#method-c-suppress_messages">::suppress_messages &mdash; ActiveRecord::Migration</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-table_exists%3F">::table_exists? &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-table_name">::table_name &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/SqlBypass.html#method-c-table_name">::table_name &mdash; ActiveRecord::SessionStore::SqlBypass</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-table_name_prefix">::table_name_prefix &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-table_name_suffix">::table_name_suffix &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-timestamped_migrations">::timestamped_migrations &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-type_condition">::type_condition &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-undecorated_table_name">::undecorated_table_name &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-value_to_boolean">::value_to_boolean &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-c-value_to_decimal">::value_to_decimal &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-with_exclusive_scope">::with_exclusive_scope &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-c-with_scope">::with_scope &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Migration.html#method-c-write">::write &mdash; ActiveRecord::Migration</a></li>
+		
+			<li><a href="ActiveRecord/SpawnMethods.html#method-i-%26">#& &mdash; ActiveRecord::SpawnMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html#method-i-%3C%3D%3E">#<=> &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-%3D%3D">#== &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Reflection/MacroReflection.html#method-i-%3D%3D">#== &mdash; ActiveRecord::Reflection::MacroReflection</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-%3D%3D">#== &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html#method-i-%5B%5D">#[] &mdash; ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-%5B%5D">#[] &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-%5B%5D%3D">#[]= &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/NestedAttributes/ClassMethods.html#method-i-accepts_nested_attributes_for">#accepts_nested_attributes_for &mdash; ActiveRecord::NestedAttributes::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-active%3F">#active? &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-active%3F">#active? &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-active%3F">#active? &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-adapter_name">#adapter_name &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-adapter_name">#adapter_name &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-add_association_callbacks">#add_association_callbacks &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation/ClassMethods.html#method-i-add_autosave_association_callbacks">#add_autosave_association_callbacks &mdash; ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-add_column">#add_column &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-add_column">#add_column &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-add_column">#add_column &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-add_column_position%21">#add_column_position! &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-add_counter_cache_callbacks">#add_counter_cache_callbacks &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-add_index">#add_index &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-add_limit_offset%21">#add_limit_offset! &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Observer.html#method-i-add_observer%21">#add_observer! &mdash; ActiveRecord::Observer</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-add_preloaded_record_to_collection">#add_preloaded_record_to_collection &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-add_preloaded_records_to_collection">#add_preloaded_records_to_collection &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-add_timestamps">#add_timestamps &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/Transactions.html#method-i-add_to_transaction">#add_to_transaction &mdash; ActiveRecord::Transactions</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-add_touch_callbacks">#add_touch_callbacks &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-add_transaction_record">#add_transaction_record &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Transactions/ClassMethods.html#method-i-after_commit">#after_commit &mdash; ActiveRecord::Transactions::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Transactions/ClassMethods.html#method-i-after_rollback">#after_rollback &mdash; ActiveRecord::Transactions::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-all">#all &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-any%3F">#any? &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-append_conditions">#append_conditions &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Railties/ControllerRuntime.html#method-i-append_info_to_payload">#append_info_to_payload &mdash; ActiveRecord::Railties::ControllerRuntime</a></li>
+		
+			<li><a href="ActiveRecord/SpawnMethods.html#method-i-apply_finder_options">#apply_finder_options &mdash; ActiveRecord::SpawnMethods</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-apply_join_dependency">#apply_join_dependency &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-apply_modules">#apply_modules &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-arel">#arel &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-arel_attributes_values">#arel_attributes_values &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-array_of_strings%3F">#array_of_strings? &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-as_json">#as_json &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-assign_multiparameter_attributes">#assign_multiparameter_attributes &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-associated_records_to_validate_or_save">#associated_records_to_validate_or_save &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-association_accessor_methods">#association_accessor_methods &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-association_constructor_method">#association_constructor_method &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-association_valid%3F">#association_valid? &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-assume_migrated_upto_version">#assume_migrated_upto_version &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Read.html#method-i-attribute">#attribute &mdash; ActiveRecord::AttributeMethods::Read</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Write.html#method-i-attribute%3D">#attribute= &mdash; ActiveRecord::AttributeMethods::Write</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Query.html#method-i-attribute%3F">#attribute? &mdash; ActiveRecord::AttributeMethods::Query</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/BeforeTypeCast.html#method-i-attribute_before_type_cast">#attribute_before_type_cast &mdash; ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-attribute_for_inspect">#attribute_for_inspect &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-attribute_names">#attribute_names &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-attribute_present%3F">#attribute_present? &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-attributes">#attributes &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-attributes%3D">#attributes= &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/BeforeTypeCast.html#method-i-attributes_before_type_cast">#attributes_before_type_cast &mdash; ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-attributes_from_column_definition">#attributes_from_column_definition &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Locking/Optimistic.html#method-i-attributes_from_column_definition">#attributes_from_column_definition &mdash; ActiveRecord::Locking::Optimistic</a></li>
+		
+			<li><a href="ActiveRecord/Calculations.html#method-i-average">#average &mdash; ActiveRecord::Calculations</a></li>
+		
+			<li><a href="ActiveRecord/DynamicFinderMatch.html#method-i-bang%3F">#bang? &mdash; ActiveRecord::DynamicFinderMatch</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-becomes">#becomes &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-before_save_collection_association">#before_save_collection_association &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-begin_db_transaction">#begin_db_transaction &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-begin_db_transaction">#begin_db_transaction &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html#method-i-belongs_to">#belongs_to &mdash; ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-belongs_to">#belongs_to &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-belongs_to">#belongs_to &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-build">#build &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-build_arel">#build_arel &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-build_conditions">#build_conditions &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/PredicateBuilder.html#method-i-build_from_hash">#build_from_hash &mdash; ActiveRecord::PredicateBuilder</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-build_joins">#build_joins &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-build_select">#build_select &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-build_sti_condition">#build_sti_condition &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-build_through_conditions">#build_through_conditions &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-build_where">#build_where &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/QueryCache.html#method-i-cache">#cache &mdash; ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+		
+			<li><a href="ActiveRecord/QueryCache/ClassMethods.html#method-i-cache">#cache &mdash; ActiveRecord::QueryCache::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Read/ClassMethods.html#method-i-cache_attribute%3F">#cache_attribute? &mdash; ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Read/ClassMethods.html#method-i-cache_attributes">#cache_attributes &mdash; ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-cache_key">#cache_key &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/QueryCache.html#method-i-cache_sql">#cache_sql &mdash; ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Read/ClassMethods.html#method-i-cached_attributes">#cached_attributes &mdash; ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Calculations.html#method-i-calculate">#calculate &mdash; ActiveRecord::Calculations</a></li>
+		
+			<li><a href="ActiveRecord/QueryCache.html#method-i-call">#call &mdash; ActiveRecord::QueryCache</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionManagement.html#method-i-call">#call &mdash; ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-case_sensitive_equality_operator">#case_sensitive_equality_operator &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-case_sensitive_equality_operator">#case_sensitive_equality_operator &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-change">#change &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-change_column">#change_column &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-change_column">#change_column &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-change_column_default">#change_column_default &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-change_column_default">#change_column_default &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-change_column_null">#change_column_null &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-change_column_null">#change_column_null &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-change_column_null">#change_column_null &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-change_default">#change_default &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-change_table">#change_table &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-changed_for_autosave%3F">#changed_for_autosave? &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-charset">#charset &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-checkin">#checkin &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-checkout">#checkout &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-checkout_and_verify">#checkout_and_verify &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-checkout_existing_connection">#checkout_existing_connection &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-checkout_new_connection">#checkout_new_connection &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/Reflection/MacroReflection.html#method-i-class_name">#class_name &mdash; ActiveRecord::Reflection::MacroReflection</a></li>
+		
+			<li><a href="ActiveRecord/Railties/ControllerRuntime.html#method-i-cleanup_view_runtime">#cleanup_view_runtime &mdash; ActiveRecord::Railties::ControllerRuntime</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionHandler.html#method-i-clear_active_connections%21">#clear_active_connections! &mdash; ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionHandler.html#method-i-clear_all_connections%21">#clear_all_connections! &mdash; ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/QueryCache.html#method-i-clear_query_cache">#clear_query_cache &mdash; ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-clear_reloadable_connections%21">#clear_reloadable_connections! &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionHandler.html#method-i-clear_reloadable_connections%21">#clear_reloadable_connections! &mdash; ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-clear_stale_cached_connections%21">#clear_stale_cached_connections! &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/Transactions.html#method-i-clear_transaction_record_state">#clear_transaction_record_state &mdash; ActiveRecord::Transactions</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-client_min_messages">#client_min_messages &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-client_min_messages%3D">#client_min_messages= &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-clone_attribute_value">#clone_attribute_value &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-clone_attributes">#clone_attributes &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Dirty.html#method-i-clone_with_time_zone_conversion_attribute%3F">#clone_with_time_zone_conversion_attribute? &mdash; ActiveRecord::AttributeMethods::Dirty</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-collation">#collation &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-collection_accessor_methods">#collection_accessor_methods &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-collection_reader_method">#collection_reader_method &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-column">#column &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html#method-i-column">#column &mdash; ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+			<li><a href="ActiveRecord/Calculations.html#method-i-column_alias_for">#column_alias_for &mdash; ActiveRecord::Calculations</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-column_aliases">#column_aliases &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-column_exists%3F">#column_exists? &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-column_exists%3F">#column_exists? &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/Calculations.html#method-i-column_for">#column_for &mdash; ActiveRecord::Calculations</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-column_for">#column_for &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-column_for_attribute">#column_for_attribute &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseLimits.html#method-i-column_name_length">#column_name_length &mdash; ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+		
+			<li><a href="Fixtures.html#method-i-column_names">#column_names &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-columns">#columns &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-columns">#columns &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseLimits.html#method-i-columns_per_multicolumn_index">#columns_per_multicolumn_index &mdash; ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseLimits.html#method-i-columns_per_table">#columns_per_table &mdash; ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-comma_pair_list">#comma_pair_list &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-commit_db_transaction">#commit_db_transaction &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-commit_db_transaction">#commit_db_transaction &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-commit_transaction_records">#commit_transaction_records &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Aggregations/ClassMethods.html#method-i-composed_of">#composed_of &mdash; ActiveRecord::Aggregations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-conditions">#conditions &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-configure_connection">#configure_connection &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-configure_connection">#configure_connection &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-configure_dependency_for_belongs_to">#configure_dependency_for_belongs_to &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-configure_dependency_for_has_many">#configure_dependency_for_has_many &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-configure_dependency_for_has_one">#configure_dependency_for_has_one &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-connect">#connect &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-connect">#connect &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-connected%3F">#connected? &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionHandler.html#method-i-connected%3F">#connected? &mdash; ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-connection">#connection &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-connection">#connection &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-construct_conditions">#construct_conditions &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-construct_from">#construct_from &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-construct_id_map">#construct_id_map &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-construct_join_attributes">#construct_join_attributes &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-construct_joins">#construct_joins &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-construct_limited_ids_condition">#construct_limited_ids_condition &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-construct_owner_attributes">#construct_owner_attributes &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-construct_quoted_owner_attributes">#construct_quoted_owner_attributes &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-construct_relation_for_association_calculations">#construct_relation_for_association_calculations &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-construct_relation_for_association_find">#construct_relation_for_association_find &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-construct_scope">#construct_scope &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-construct_select">#construct_select &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-convert_number_column_value">#convert_number_column_value &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Calculations.html#method-i-count">#count &mdash; ActiveRecord::Calculations</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-create">#create &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-create">#create &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-create">#create &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-create%21">#create! &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Validations/ClassMethods.html#method-i-create%21">#create! &mdash; ActiveRecord::Validations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-create_belongs_to_reflection">#create_belongs_to_reflection &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-create_database">#create_database &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-create_database">#create_database &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-create_extension_modules">#create_extension_modules &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-create_has_and_belongs_to_many_reflection">#create_has_and_belongs_to_many_reflection &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-create_has_many_reflection">#create_has_many_reflection &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-create_has_one_reflection">#create_has_one_reflection &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-create_has_one_through_reflection">#create_has_one_through_reflection &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Generators/SessionMigrationGenerator.html#method-i-create_migration_file">#create_migration_file &mdash; ActiveRecord::Generators::SessionMigrationGenerator</a></li>
+		
+			<li><a href="ActiveRecord/Generators/ModelGenerator.html#method-i-create_migration_file">#create_migration_file &mdash; ActiveRecord::Generators::ModelGenerator</a></li>
+		
+			<li><a href="ActiveRecord/Generators/MigrationGenerator.html#method-i-create_migration_file">#create_migration_file &mdash; ActiveRecord::Generators::MigrationGenerator</a></li>
+		
+			<li><a href="ActiveRecord/Generators/ModelGenerator.html#method-i-create_model_file">#create_model_file &mdash; ActiveRecord::Generators::ModelGenerator</a></li>
+		
+			<li><a href="ActiveRecord/Generators/ModelGenerator.html#method-i-create_module_file">#create_module_file &mdash; ActiveRecord::Generators::ModelGenerator</a></li>
+		
+			<li><a href="ActiveRecord/Generators/ObserverGenerator.html#method-i-create_observer_file">#create_observer_file &mdash; ActiveRecord::Generators::ObserverGenerator</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-create_or_update">#create_or_update &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Reflection/ClassMethods.html#method-i-create_reflection">#create_reflection &mdash; ActiveRecord::Reflection::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-create_savepoint">#create_savepoint &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-create_savepoint">#create_savepoint &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-create_savepoint">#create_savepoint &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-create_table">#create_table &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html#method-i-create_time_zone_conversion_attribute%3F">#create_time_zone_conversion_attribute? &mdash; ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-create_with">#create_with &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/DynamicFinderMatch.html#method-i-creator%3F">#creator? &mdash; ActiveRecord::DynamicFinderMatch</a></li>
+		
+			<li><a href="Fixtures.html#method-i-csv_file_path">#csv_file_path &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-current_database">#current_database &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-current_database">#current_database &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-current_savepoint_name">#current_savepoint_name &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-custom_join_sql">#custom_join_sql &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/Session.html#method-i-data">#data &mdash; ActiveRecord::SessionStore::Session</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/SqlBypass.html#method-i-data">#data &mdash; ActiveRecord::SessionStore::SqlBypass</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-decrement">#decrement &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-decrement%21">#decrement! &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/CounterCache.html#method-i-decrement_counter">#decrement_counter &mdash; ActiveRecord::CounterCache</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-decrement_open_transactions">#decrement_open_transactions &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-default_primary_key_type">#default_primary_key_type &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-default_sequence_name">#default_sequence_name &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/ClassMethods.html#method-i-define_attribute_methods">#define_attribute_methods &mdash; ActiveRecord::AttributeMethods::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Observer.html#method-i-define_callbacks">#define_callbacks &mdash; ActiveRecord::Observer</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html#method-i-define_method_attribute">#define_method_attribute &mdash; ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Read/ClassMethods.html#method-i-define_method_attribute">#define_method_attribute &mdash; ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html#method-i-define_method_attribute%3D">#define_method_attribute= &mdash; ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Write/ClassMethods.html#method-i-define_method_attribute%3D">#define_method_attribute= &mdash; ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Read/ClassMethods.html#method-i-define_read_method">#define_read_method &mdash; ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Read/ClassMethods.html#method-i-define_read_method_for_serialized_attribute">#define_read_method_for_serialized_attribute &mdash; ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/ClassMethods.html#method-i-defined_activerecord_methods">#defined_activerecord_methods &mdash; ActiveRecord::AttributeMethods::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-delete">#delete &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-delete">#delete &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-delete">#delete &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-delete_all">#delete_all &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-delete_all_has_many_dependencies">#delete_all_has_many_dependencies &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="Fixtures.html#method-i-delete_existing_fixtures">#delete_existing_fixtures &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-delete_sql">#delete_sql &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Reflection/MacroReflection.html#method-i-derive_class_name">#derive_class_name &mdash; ActiveRecord::Reflection::MacroReflection</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/SqlBypass.html#method-i-destroy">#destroy &mdash; ActiveRecord::SessionStore::SqlBypass</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-destroy">#destroy &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore.html#method-i-destroy">#destroy &mdash; ActiveRecord::SessionStore</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-destroy">#destroy &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-destroy_all">#destroy_all &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-destroyed%3F">#destroyed? &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-disable_referential_integrity">#disable_referential_integrity &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-disconnect%21">#disconnect! &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-disconnect%21">#disconnect! &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-disconnect%21">#disconnect! &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-disconnect%21">#disconnect! &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-disconnect%21">#disconnect! &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-distinct">#distinct &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-drop_table">#drop_table &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-drop_table">#drop_table &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-dup">#dup &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-eager_load">#eager_load &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-eager_loading%3F">#eager_loading? &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-empty%3F">#empty? &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-empty_insert_statement_value">#empty_insert_statement_value &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-empty_insert_statement_value">#empty_insert_statement_value &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-encoding">#encoding &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-ensure_proper_type">#ensure_proper_type &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-eql%3F">#eql? &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="Fixtures.html#method-i-erb_render">#erb_render &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-escape_bytea">#escape_bytea &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionHandler.html#method-i-establish_connection">#establish_connection &mdash; ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+		
+			<li><a href="ActiveRecord/SpawnMethods.html#method-i-except">#except &mdash; ActiveRecord::SpawnMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-execute">#execute &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-execute">#execute &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-execute_callstack_for_multiparameter_attributes">#execute_callstack_for_multiparameter_attributes &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-exists%3F">#exists? &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-extending">#extending &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-extract_callstack_for_multiparameter_attributes">#extract_callstack_for_multiparameter_attributes &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-i-extract_default">#extract_default &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html#method-i-extract_limit">#extract_limit &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-i-extract_limit">#extract_limit &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-extract_pg_identifier_from_name">#extract_pg_identifier_from_name &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-i-extract_precision">#extract_precision &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html#method-i-extract_precision">#extract_precision &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html#method-i-extract_scale">#extract_scale &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-i-extract_scale">#extract_scale &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Dirty.html#method-i-field_changed%3F">#field_changed? &mdash; ActiveRecord::AttributeMethods::Dirty</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-find">#find &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-find_associated_records">#find_associated_records &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-find_by_attributes">#find_by_attributes &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-find_first">#find_first &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-find_last">#find_last &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-find_one">#find_one &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-find_or_instantiator_by_attributes">#find_or_instantiator_by_attributes &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-find_parameter_position">#find_parameter_position &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore.html#method-i-find_session">#find_session &mdash; ActiveRecord::SessionStore</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-find_some">#find_some &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/HasOneThroughAssociation.html#method-i-find_target">#find_target &mdash; ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-find_with_associations">#find_with_associations &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-find_with_ids">#find_with_ids &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/DynamicFinderMatch.html#method-i-finder%3F">#finder? &mdash; ActiveRecord::DynamicFinderMatch</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-first">#first &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures/ClassMethods.html#method-i-fixtures">#fixtures &mdash; ActiveRecord::TestFixtures::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-freeze">#freeze &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-from">#from &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-frozen%3F">#frozen? &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore.html#method-i-get_session">#get_session &mdash; ActiveRecord::SessionStore</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore.html#method-i-get_session_model">#get_session_model &mdash; ActiveRecord::SessionStore</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-group">#group &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-has_and_belongs_to_many">#has_and_belongs_to_many &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-has_attribute%3F">#has_attribute? &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-i-has_default%3F">#has_default? &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-has_many">#has_many &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-has_one">#has_one &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="Fixtures.html#method-i-has_primary_key_column%3F">#has_primary_key_column? &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-hash">#hash &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-having">#having &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-i-human_name">#human_name &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseLimits.html#method-i-in_clause_length">#in_clause_length &mdash; ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-in_or_equals_for_ids">#in_or_equals_for_ids &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-includes">#includes &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-increment">#increment &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-increment%21">#increment! &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/CounterCache.html#method-i-increment_counter">#increment_counter &mdash; ActiveRecord::CounterCache</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-increment_open_transactions">#increment_open_transactions &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-index">#index &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-index_exists%3F">#index_exists? &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-index_exists%3F">#index_exists? &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-index_name_exists%3F">#index_name_exists? &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-index_name_length">#index_name_length &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseLimits.html#method-i-index_name_length">#index_name_length &mdash; ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-indexes">#indexes &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseLimits.html#method-i-indexes_per_table">#indexes_per_table &mdash; ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+		
+			<li><a href="Fixtures.html#method-i-inheritance_column_name">#inheritance_column_name &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-initialize_copy">#initialize_copy &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-initialize_copy">#initialize_copy &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-initialize_schema_migrations_table">#initialize_schema_migrations_table &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-insert">#insert &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-insert">#insert &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-insert_fixture">#insert_fixture &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="Fixtures.html#method-i-insert_fixtures">#insert_fixtures &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-insert_sql">#insert_sql &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-inspect">#inspect &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-inspect">#inspect &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/ClassMethods.html#method-i-instance_method_already_implemented%3F">#instance_method_already_implemented? &mdash; ActiveRecord::AttributeMethods::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures.html#method-i-instantiate_fixtures">#instantiate_fixtures &mdash; ActiveRecord::TestFixtures</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-instantiate_time_object">#instantiate_time_object &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/DynamicFinderMatch.html#method-i-instantiator%3F">#instantiator? &mdash; ActiveRecord::DynamicFinderMatch</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-interpolate_sql">#interpolate_sql &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-interpolate_sql_for_preload">#interpolate_sql_for_preload &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-join_table_name">#join_table_name &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-joins">#joins &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseLimits.html#method-i-joins_per_query">#joins_per_query &mdash; ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-i-klass">#klass &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/Reflection/MacroReflection.html#method-i-klass">#klass &mdash; ActiveRecord::Reflection::MacroReflection</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-last">#last &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-limit">#limit &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-limited_update_conditions">#limited_update_conditions &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-limited_update_conditions">#limited_update_conditions &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures.html#method-i-load_fixtures">#load_fixtures &mdash; ActiveRecord::TestFixtures</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures.html#method-i-load_instances%3F">#load_instances? &mdash; ActiveRecord::TestFixtures</a></li>
+		
+			<li><a href="ActiveRecord/MigrationProxy.html#method-i-load_migration">#load_migration &mdash; ActiveRecord::MigrationProxy</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/SqlBypass.html#method-i-loaded%3F">#loaded? &mdash; ActiveRecord::SessionStore::SqlBypass</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/Session.html#method-i-loaded%3F">#loaded? &mdash; ActiveRecord::SessionStore::Session</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-lock">#lock &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Locking/Pessimistic.html#method-i-lock%21">#lock! &mdash; ActiveRecord::Locking::Pessimistic</a></li>
+		
+			<li><a href="ActiveRecord/Locking/Optimistic/ClassMethods.html#method-i-locking_column">#locking_column &mdash; ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Locking/Optimistic/ClassMethods.html#method-i-locking_enabled%3F">#locking_enabled? &mdash; ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-log">#log &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Railties/ControllerRuntime/ClassMethods.html#method-i-log_process_action">#log_process_action &mdash; ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/LogSubscriber.html#method-i-logger">#logger &mdash; ActiveRecord::LogSubscriber</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-many%3F">#many? &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-mark_for_destruction">#mark_for_destruction &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-marked_for_destruction%3F">#marked_for_destruction? &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/Session.html#method-i-marshal_data%21">#marshal_data! &mdash; ActiveRecord::SessionStore::Session</a></li>
+		
+			<li><a href="ActiveRecord/Calculations.html#method-i-maximum">#maximum &mdash; ActiveRecord::Calculations</a></li>
+		
+			<li><a href="ActiveRecord/SpawnMethods.html#method-i-merge">#merge &mdash; ActiveRecord::SpawnMethods</a></li>
+		
+			<li><a href="ActiveRecord/Callbacks/ClassMethods.html#method-i-method_added">#method_added &mdash; ActiveRecord::Callbacks::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-method_missing">#method_missing &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html#method-i-method_missing">#method_missing &mdash; ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+			<li><a href="ActiveRecord/MigrationProxy.html#method-i-migration">#migration &mdash; ActiveRecord::MigrationProxy</a></li>
+		
+			<li><a href="ActiveRecord/Calculations.html#method-i-minimum">#minimum &mdash; ActiveRecord::Calculations</a></li>
+		
+			<li><a href="Fixtures.html#method-i-model_class">#model_class &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/NamedScope/ClassMethods.html#method-i-named_scope">#named_scope &mdash; ActiveRecord::NamedScope::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html#method-i-native">#native &mdash; ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-native">#native &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-native_database_types">#native_database_types &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-nested_records_changed_for_autosave%3F">#nested_records_changed_for_autosave? &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-new">#new &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-new_connection">#new_connection &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-new_record%3F">#new_record? &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ClassMethods.html#method-i-nullify_has_many_dependencies">#nullify_has_many_dependencies &mdash; ActiveRecord::Associations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-i-number%3F">#number? &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-object_from_yaml">#object_from_yaml &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Observer.html#method-i-observe_callbacks%3F">#observe_callbacks? &mdash; ActiveRecord::Observer</a></li>
+		
+			<li><a href="ActiveRecord/Observer.html#method-i-observed_descendants">#observed_descendants &mdash; ActiveRecord::Observer</a></li>
+		
+			<li><a href="ActiveRecord/LogSubscriber.html#method-i-odd%3F">#odd? &mdash; ActiveRecord::LogSubscriber</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-offset">#offset &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/SpawnMethods.html#method-i-only">#only &mdash; ActiveRecord::SpawnMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-open_transactions">#open_transactions &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-options_include_default%3F">#options_include_default? &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-order">#order &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-outside_transaction%3F">#outside_transaction? &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-outside_transaction%3F">#outside_transaction? &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Generators/ModelGenerator.html#method-i-parent_class_name">#parent_class_name &mdash; ActiveRecord::Generators::ModelGenerator</a></li>
+		
+			<li><a href="Fixtures.html#method-i-parse_yaml_string">#parse_yaml_string &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/Calculations.html#method-i-perform_calculation">#perform_calculation &mdash; ActiveRecord::Calculations</a></li>
+		
+			<li><a href="ActiveRecord/Validations.html#method-i-perform_validations">#perform_validations &mdash; ActiveRecord::Validations</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-persisted%3F">#persisted? &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-postgresql_version">#postgresql_version &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-prefetch_primary_key%3F">#prefetch_primary_key? &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-preload">#preload &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-preload_associations">#preload_associations &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-preload_belongs_to_association">#preload_belongs_to_association &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-preload_has_and_belongs_to_many_association">#preload_has_and_belongs_to_many_association &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-preload_has_many_association">#preload_has_many_association &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-preload_has_one_association">#preload_has_one_association &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-preload_one_association">#preload_one_association &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-preload_through_records">#preload_through_records &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-primary_key">#primary_key &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html#method-i-primary_key">#primary_key &mdash; ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-primary_key">#primary_key &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-primary_key">#primary_key &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html#method-i-primary_key">#primary_key &mdash; ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html#method-i-primary_key%3D">#primary_key= &mdash; ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+		
+			<li><a href="Fixtures.html#method-i-primary_key_name">#primary_key_name &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Query.html#method-i-query_attribute">#query_attribute &mdash; ActiveRecord::AttributeMethods::Query</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-quote">#quote &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Quoting.html#method-i-quote">#quote &mdash; ActiveRecord::ConnectionAdapters::Quoting</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Quoting.html#method-i-quote_column_name">#quote_column_name &mdash; ActiveRecord::ConnectionAdapters::Quoting</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-quote_columns">#quote_columns &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Quoting.html#method-i-quote_string">#quote_string &mdash; ActiveRecord::ConnectionAdapters::Quoting</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-quote_table_name">#quote_table_name &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-quote_table_name">#quote_table_name &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Quoting.html#method-i-quote_table_name">#quote_table_name &mdash; ActiveRecord::ConnectionAdapters::Quoting</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-quote_value">#quote_value &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-quoted_columns_for_index">#quoted_columns_for_index &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-quoted_columns_for_index">#quoted_columns_for_index &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-quoted_comma_pair_list">#quoted_comma_pair_list &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Quoting.html#method-i-quoted_date">#quoted_date &mdash; ActiveRecord::ConnectionAdapters::Quoting</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Quoting.html#method-i-quoted_false">#quoted_false &mdash; ActiveRecord::ConnectionAdapters::Quoting</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-quoted_false">#quoted_false &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Locking/Optimistic/ClassMethods.html#method-i-quoted_locking_column">#quoted_locking_column &mdash; ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-quoted_true">#quoted_true &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Quoting.html#method-i-quoted_true">#quoted_true &mdash; ActiveRecord::ConnectionAdapters::Quoting</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/Session.html#method-i-raise_on_session_data_overflow%21">#raise_on_session_data_overflow! &mdash; ActiveRecord::SessionStore::Session</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-raw_connection">#raw_connection &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Read.html#method-i-read_attribute">#read_attribute &mdash; ActiveRecord::AttributeMethods::Read</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/BeforeTypeCast.html#method-i-read_attribute_before_type_cast">#read_attribute_before_type_cast &mdash; ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+		
+			<li><a href="Fixtures.html#method-i-read_csv_fixture_files">#read_csv_fixture_files &mdash; Fixtures</a></li>
+		
+			<li><a href="Fixtures.html#method-i-read_fixture_files">#read_fixture_files &mdash; Fixtures</a></li>
+		
+			<li><a href="Fixtures.html#method-i-read_yaml_fixture_files">#read_yaml_fixture_files &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/Aggregations/ClassMethods.html#method-i-reader_method">#reader_method &mdash; ActiveRecord::Aggregations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-readonly">#readonly &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-readonly%21">#readonly! &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-readonly%3F">#readonly? &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-reconnect%21">#reconnect! &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-reconnect%21">#reconnect! &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-reconnect%21">#reconnect! &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html#method-i-references">#references &mdash; ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-references">#references &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-references_eager_loaded_tables%3F">#references_eager_loaded_tables? &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Reflection/ClassMethods.html#method-i-reflect_on_aggregation">#reflect_on_aggregation &mdash; ActiveRecord::Reflection::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Reflection/ClassMethods.html#method-i-reflect_on_all_aggregations">#reflect_on_all_aggregations &mdash; ActiveRecord::Reflection::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Reflection/ClassMethods.html#method-i-reflect_on_all_associations">#reflect_on_all_associations &mdash; ActiveRecord::Reflection::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Reflection/ClassMethods.html#method-i-reflect_on_all_autosave_associations">#reflect_on_all_autosave_associations &mdash; ActiveRecord::Reflection::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Reflection/ClassMethods.html#method-i-reflect_on_association">#reflect_on_association &mdash; ActiveRecord::Reflection::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Reflection/ClassMethods.html#method-i-reflections">#reflections &mdash; ActiveRecord::Reflection::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-release_connection">#release_connection &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-release_savepoint">#release_savepoint &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-release_savepoint">#release_savepoint &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-release_savepoint">#release_savepoint &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-reload">#reload &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-reload">#reload &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-reload">#reload &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Transactions.html#method-i-remember_transaction_record_state">#remember_transaction_record_state &mdash; ActiveRecord::Transactions</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-remove">#remove &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-remove_belongs_to">#remove_belongs_to &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-remove_column">#remove_column &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-remove_columns">#remove_columns &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionHandler.html#method-i-remove_connection">#remove_connection &mdash; ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-remove_index">#remove_index &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-remove_index">#remove_index &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-remove_references">#remove_references &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-remove_timestamps">#remove_timestamps &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-remove_timestamps">#remove_timestamps &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-rename">#rename &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-rename_column">#rename_column &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-rename_column">#rename_column &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-rename_index">#rename_index &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-rename_table">#rename_table &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-rename_table">#rename_table &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-rename_table">#rename_table &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-rename_table">#rename_table &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-reorder">#reorder &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Associations/HasOneThroughAssociation.html#method-i-replace">#replace &mdash; ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures/ClassMethods.html#method-i-require_fixture_classes">#require_fixture_classes &mdash; ActiveRecord::TestFixtures::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-requires_reloading%3F">#requires_reloading? &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-requires_reloading%3F">#requires_reloading? &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-reset">#reset &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-reset%21">#reset! &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-reset%21">#reset! &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/CounterCache.html#method-i-reset_counters">#reset_counters &mdash; ActiveRecord::CounterCache</a></li>
+		
+			<li><a href="ActiveRecord/Locking/Optimistic/ClassMethods.html#method-i-reset_locking_column">#reset_locking_column &mdash; ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-reset_sequence%21">#reset_sequence! &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-respond_to%3F">#respond_to? &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Transactions.html#method-i-restore_transaction_record_state">#restore_transaction_record_state &mdash; ActiveRecord::Transactions</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionHandler.html#method-i-retrieve_connection_pool">#retrieve_connection_pool &mdash; ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-reverse_order">#reverse_order &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-reverse_sql_order">#reverse_sql_order &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Transactions.html#method-i-rollback_active_record_state%21">#rollback_active_record_state! &mdash; ActiveRecord::Transactions</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-rollback_db_transaction">#rollback_db_transaction &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-rollback_db_transaction">#rollback_db_transaction &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-rollback_to_savepoint">#rollback_to_savepoint &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-rollback_to_savepoint">#rollback_to_savepoint &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-rollback_to_savepoint">#rollback_to_savepoint &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-rollback_transaction_records">#rollback_transaction_records &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures.html#method-i-run_in_transaction%3F">#run_in_transaction? &mdash; ActiveRecord::TestFixtures</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-sanitize_limit">#sanitize_limit &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore/SqlBypass.html#method-i-save">#save &mdash; ActiveRecord::SessionStore::SqlBypass</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-save">#save &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Validations.html#method-i-save">#save &mdash; ActiveRecord::Validations</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-save%21">#save! &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Validations.html#method-i-save%21">#save! &mdash; ActiveRecord::Validations</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-save_belongs_to_association">#save_belongs_to_association &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-save_collection_association">#save_collection_association &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-save_has_one_association">#save_has_one_association &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-schema_search_path">#schema_search_path &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-schema_search_path%3D">#schema_search_path= &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/NamedScope/ClassMethods.html#method-i-scope">#scope &mdash; ActiveRecord::NamedScope::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/DynamicScopeMatch.html#method-i-scope%3F">#scope? &mdash; ActiveRecord::DynamicScopeMatch</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-scope_for_create">#scope_for_create &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/NamedScope/ClassMethods.html#method-i-scoped">#scoped &mdash; ActiveRecord::NamedScope::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/NamedScope/ClassMethods.html#method-i-scopes">#scopes &mdash; ActiveRecord::NamedScope::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-scoping">#scoping &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-select">#select &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-select">#select &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-select">#select &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-select">#select &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/QueryCache.html#method-i-select_all">#select_all &mdash; ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-select_all">#select_all &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Calculations.html#method-i-select_for_count">#select_for_count &mdash; ActiveRecord::Calculations</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-select_one">#select_one &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-select_raw">#select_raw &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-select_rows">#select_rows &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-select_rows">#select_rows &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-select_rows">#select_rows &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-select_rows">#select_rows &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-select_value">#select_value &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-select_values">#select_values &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Serialization.html#method-i-serializable_add_includes">#serializable_add_includes &mdash; ActiveRecord::Serialization</a></li>
+		
+			<li><a href="ActiveRecord/Serialization.html#method-i-serializable_hash">#serializable_hash &mdash; ActiveRecord::Serialization</a></li>
+		
+			<li><a href="ActiveRecord/Generators/SessionMigrationGenerator.html#method-i-session_table_name">#session_table_name &mdash; ActiveRecord::Generators::SessionMigrationGenerator</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-set_association_collection_records">#set_association_collection_records &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AssociationPreload/ClassMethods.html#method-i-set_association_single_records">#set_association_single_records &mdash; ActiveRecord::AssociationPreload::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures/ClassMethods.html#method-i-set_fixture_class">#set_fixture_class &mdash; ActiveRecord::TestFixtures::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Generators/MigrationGenerator.html#method-i-set_local_assigns%21">#set_local_assigns! &mdash; ActiveRecord::Generators::MigrationGenerator</a></li>
+		
+			<li><a href="ActiveRecord/Locking/Optimistic/ClassMethods.html#method-i-set_locking_column">#set_locking_column &mdash; ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html#method-i-set_primary_key">#set_primary_key &mdash; ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/SessionStore.html#method-i-set_session">#set_session &mdash; ActiveRecord::SessionStore</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-set_standard_conforming_strings">#set_standard_conforming_strings &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Validations/UniquenessValidator.html#method-i-setup">#setup &mdash; ActiveRecord::Validations::UniquenessValidator</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures/ClassMethods.html#method-i-setup_fixture_accessors">#setup_fixture_accessors &mdash; ActiveRecord::TestFixtures::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures.html#method-i-setup_fixtures">#setup_fixtures &mdash; ActiveRecord::TestFixtures</a></li>
+		
+			<li><a href="ActiveRecord/Timestamp.html#method-i-should_record_timestamps%3F">#should_record_timestamps? &mdash; ActiveRecord::Timestamp</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-show_variable">#show_variable &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-i-simplified_type">#simplified_type &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html#method-i-simplified_type">#simplified_type &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-size">#size &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/LogSubscriber.html#method-i-sql">#sql &mdash; ActiveRecord::LogSubscriber</a></li>
+		
+			<li><a href="ActiveRecord/Associations/ThroughAssociationScope.html#method-i-sql_conditions">#sql_conditions &mdash; ActiveRecord::Associations::ThroughAssociationScope</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseLimits.html#method-i-sql_query_length">#sql_query_length &mdash; ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-sqlite_version">#sqlite_version &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-structure_dump">#structure_dump &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/Calculations.html#method-i-sum">#sum &mdash; ActiveRecord::Calculations</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-supports_add_column%3F">#supports_add_column? &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-supports_count_distinct%3F">#supports_count_distinct? &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-supports_ddl_transactions%3F">#supports_ddl_transactions? &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-supports_ddl_transactions%3F">#supports_ddl_transactions? &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-supports_ddl_transactions%3F">#supports_ddl_transactions? &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-supports_insert_with_returning%3F">#supports_insert_with_returning? &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-supports_migrations%3F">#supports_migrations? &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-supports_migrations%3F">#supports_migrations? &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-supports_primary_key%3F">#supports_primary_key? &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-supports_savepoints%3F">#supports_savepoints? &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-supports_savepoints%3F">#supports_savepoints? &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-supports_views%3F">#supports_views? &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-table_alias_for">#table_alias_for &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-table_alias_length">#table_alias_length &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseLimits.html#method-i-table_alias_length">#table_alias_length &mdash; ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-table_exists%3F">#table_exists? &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-table_exists%3F">#table_exists? &mdash; ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseLimits.html#method-i-table_name_length">#table_name_length &mdash; ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-table_structure">#table_structure &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-tables">#tables &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-tables_in_string">#tables_in_string &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures.html#method-i-teardown_fixtures">#teardown_fixtures &mdash; ActiveRecord::TestFixtures</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-i-text%3F">#text? &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/Timestamp.html#method-i-timestamp_attributes_for_update_in_model">#timestamp_attributes_for_update_in_model &mdash; ActiveRecord::Timestamp</a></li>
+		
+			<li><a href="Fixtures.html#method-i-timestamp_column_names">#timestamp_column_names &mdash; Fixtures</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Table.html#method-i-timestamps">#timestamps &mdash; ActiveRecord::ConnectionAdapters::Table</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html#method-i-timestamps">#timestamps &mdash; ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-to_a">#to_a &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/PrimaryKey.html#method-i-to_key">#to_key &mdash; ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-to_param">#to_param &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html#method-i-to_sql">#to_sql &mdash; ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-to_sql">#to_sql &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Serialization.html#method-i-to_xml">#to_xml &mdash; ActiveRecord::Serialization</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-toggle">#toggle &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-toggle%21">#toggle! &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-touch">#touch &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Transactions/ClassMethods.html#method-i-transaction">#transaction &mdash; ActiveRecord::Transactions::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Transactions.html#method-i-transaction">#transaction &mdash; ActiveRecord::Transactions</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-transaction">#transaction &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Transactions.html#method-i-transaction_include_action%3F">#transaction_include_action? &mdash; ActiveRecord::Transactions</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-transaction_joinable%3D">#transaction_joinable= &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/Transactions.html#method-i-transaction_record_state">#transaction_record_state &mdash; ActiveRecord::Transactions</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-translate_exception">#translate_exception &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-translate_exception">#translate_exception &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-translate_exception">#translate_exception &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-translate_exception">#translate_exception &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures/ClassMethods.html#method-i-try_to_load_dependency">#try_to_load_dependency &mdash; ActiveRecord::TestFixtures::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-i-type_cast">#type_cast &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/Base.html#method-i-type_cast_attribute_value">#type_cast_attribute_value &mdash; ActiveRecord::Base</a></li>
+		
+			<li><a href="ActiveRecord/Calculations.html#method-i-type_cast_calculated_value">#type_cast_calculated_value &mdash; ActiveRecord::Calculations</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/Column.html#method-i-type_cast_code">#type_cast_code &mdash; ActiveRecord::ConnectionAdapters::Column</a></li>
+		
+			<li><a href="ActiveRecord/Calculations.html#method-i-type_cast_using_column">#type_cast_using_column &mdash; ActiveRecord::Calculations</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-type_to_sql">#type_to_sql &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-type_to_sql">#type_to_sql &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/QueryCache.html#method-i-uncached">#uncached &mdash; ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+		
+			<li><a href="ActiveRecord/QueryCache/ClassMethods.html#method-i-uncached">#uncached &mdash; ActiveRecord::QueryCache::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-unescape_bytea">#unescape_bytea &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Read.html#method-i-unserializable_attribute%3F">#unserializable_attribute? &mdash; ActiveRecord::AttributeMethods::Read</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Read.html#method-i-unserialize_attribute">#unserialize_attribute &mdash; ActiveRecord::AttributeMethods::Read</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-update">#update &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Dirty.html#method-i-update">#update &mdash; ActiveRecord::AttributeMethods::Dirty</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-update">#update &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-update">#update &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-update_all">#update_all &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-update_attribute">#update_attribute &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-update_attributes">#update_attributes &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/Persistence.html#method-i-update_attributes%21">#update_attributes! &mdash; ActiveRecord::Persistence</a></li>
+		
+			<li><a href="ActiveRecord/CounterCache.html#method-i-update_counters">#update_counters &mdash; ActiveRecord::CounterCache</a></li>
+		
+			<li><a href="ActiveRecord/Locking/Optimistic/ClassMethods.html#method-i-update_counters">#update_counters &mdash; ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/DatabaseStatements.html#method-i-update_sql">#update_sql &mdash; ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html#method-i-update_sql">#update_sql &mdash; ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures/ClassMethods.html#method-i-uses_transaction">#uses_transaction &mdash; ActiveRecord::TestFixtures::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/TestFixtures/ClassMethods.html#method-i-uses_transaction%3F">#uses_transaction? &mdash; ActiveRecord::TestFixtures::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/FinderMethods.html#method-i-using_limitable_reflections%3F">#using_limitable_reflections? &mdash; ActiveRecord::FinderMethods</a></li>
+		
+			<li><a href="ActiveRecord/Validations.html#method-i-valid%3F">#valid? &mdash; ActiveRecord::Validations</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/SQLiteAdapter.html#method-i-valid_alter_table_options">#valid_alter_table_options &mdash; ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+		
+			<li><a href="ActiveRecord/NamedScope/ClassMethods.html#method-i-valid_scope_name%3F">#valid_scope_name? &mdash; ActiveRecord::NamedScope::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-validate_collection_association">#validate_collection_association &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/Validations/UniquenessValidator.html#method-i-validate_each">#validate_each &mdash; ActiveRecord::Validations::UniquenessValidator</a></li>
+		
+			<li><a href="ActiveRecord/Validations/AssociatedValidator.html#method-i-validate_each">#validate_each &mdash; ActiveRecord::Validations::AssociatedValidator</a></li>
+		
+			<li><a href="ActiveRecord/AutosaveAssociation.html#method-i-validate_single_association">#validate_single_association &mdash; ActiveRecord::AutosaveAssociation</a></li>
+		
+			<li><a href="ActiveRecord/Validations/ClassMethods.html#method-i-validates_associated">#validates_associated &mdash; ActiveRecord::Validations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/Validations/ClassMethods.html#method-i-validates_uniqueness_of">#validates_uniqueness_of &mdash; ActiveRecord::Validations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/AbstractAdapter.html#method-i-verify%21">#verify! &mdash; ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/MysqlAdapter.html#method-i-version">#version &mdash; ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+		
+			<li><a href="ActiveRecord/QueryMethods.html#method-i-where">#where &mdash; ActiveRecord::QueryMethods</a></li>
+		
+			<li><a href="ActiveRecord/Relation.html#method-i-where_values_hash">#where_values_hash &mdash; ActiveRecord::Relation</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/ConnectionPool.html#method-i-with_connection">#with_connection &mdash; ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+		
+			<li><a href="ActiveRecord/Transactions.html#method-i-with_transaction_returning_status">#with_transaction_returning_status &mdash; ActiveRecord::Transactions</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Dirty.html#method-i-write_attribute">#write_attribute &mdash; ActiveRecord::AttributeMethods::Dirty</a></li>
+		
+			<li><a href="ActiveRecord/AttributeMethods/Write.html#method-i-write_attribute">#write_attribute &mdash; ActiveRecord::AttributeMethods::Write</a></li>
+		
+			<li><a href="ActiveRecord/Aggregations/ClassMethods.html#method-i-writer_method">#writer_method &mdash; ActiveRecord::Aggregations::ClassMethods</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html#method-i-xml">#xml &mdash; ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+			<li><a href="ActiveRecord/ConnectionAdapters/TableDefinition.html#method-i-xml_column_fallback">#xml_column_fallback &mdash; ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+		
+			<li><a href="Fixtures.html#method-i-yaml_file_path">#yaml_file_path &mdash; Fixtures</a></li>
+		
+			<li><a href="Fixtures.html#method-i-yaml_fixtures_key">#yaml_fixtures_key &mdash; Fixtures</a></li>
+		
+	</ul>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>

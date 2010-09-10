@@ -1,0 +1,25 @@
+Thu, 09 Sep 2010 09:31:06 +0800
+lib/tzinfo/country.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/country_index_definition.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/country_info.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/country_timezone.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/data_timezone.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/data_timezone_info.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/info_timezone.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/linked_timezone.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/linked_timezone_info.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/offset_rationals.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/ruby_core_support.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/timezone.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/timezone_definition.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/timezone_index_definition.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/timezone_info.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/timezone_offset_info.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/timezone_period.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/timezone_proxy.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/timezone_transition_info.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/time_or_datetime.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo/tzdataparser.rb	Thu, 09 Sep 2010 09:29:56 +0800
+lib/tzinfo.rb	Thu, 09 Sep 2010 09:29:56 +0800
+README	Thu, 09 Sep 2010 09:29:54 +0800
+CHANGES	Thu, 09 Sep 2010 09:29:54 +0800

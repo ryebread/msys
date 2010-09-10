@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: references_field.rb [mail-2.2.5 Documentation]</title>
+
+	<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet" />
+
+	<script src="../../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+	<div id="metadata">
+		<dl>
+			<dt class="modified-date">Last Modified</dt>
+			<dd class="modified-date">2010-09-09 09:30:16 +0800</dd>
+
+			
+			<dt class="requires">Requires</dt>
+			<dd class="requires">
+				<ul>
+				
+					<li>mail/fields/common/common_message_id</li>
+				
+				</ul>
+			</dd>
+			
+
+			
+		</dl>
+	</div>
+
+	<div id="documentation">
+		
+		<div class="description">
+			<h2>Description</h2>
+			<p>
+encoding: utf-8
+</p>
+<h1>References Field</h1>
+<p>
+The References field inherits references StructuredField and handles the
+References: header field in the email.
+</p>
+<p>
+Sending references to a mail message will instantiate a <a
+href="../../../Mail/Field.html">Mail::Field</a> object that has a
+ReferencesField as it&#8217;s field type.  This includes all
+Mail::CommonAddress module instance metods.
+</p>
+<p>
+Note that, the # method will return an array of message IDs without the
+enclosing angle brackets which per RFC are not syntactically part of the
+message id.
+</p>
+<p>
+Only one References field can appear in a header, though it can have
+multiple Message IDs.
+</p>
+<h2>Examples:</h2>
+<pre>
+ mail = Mail.new
+ mail.references = '&lt;F6E2D0B4-CC35-4A91-BA4C-C7C712B10C13@test.me.dom&gt;'
+ mail.references    #=&gt; '&lt;F6E2D0B4-CC35-4A91-BA4C-C7C712B10C13@test.me.dom&gt;'
+ mail[:references]  #=&gt; '#&lt;Mail::Field:0x180e5e8 @field=#&lt;Mail::ReferencesField:0x180e1c4
+ mail['references'] #=&gt; '#&lt;Mail::Field:0x180e5e8 @field=#&lt;Mail::ReferencesField:0x180e1c4
+ mail['References'] #=&gt; '#&lt;Mail::Field:0x180e5e8 @field=#&lt;Mail::ReferencesField:0x180e1c4
+
+ mail[:references].message_ids #=&gt; ['F6E2D0B4-CC35-4A91-BA4C-C7C712B10C13@test.me.dom']</pre>
+
+		</div>
+		
+	</div>
+</body>
+</html>
+

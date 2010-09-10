@@ -1,0 +1,1671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: ActiveResource::Connection</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/active_resource/connection_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_resource/connection.rb">lib/active_resource/connection.rb</a></li>
+					
+						<li><a href="../lib/active_resource/http_mock_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_resource/http_mock.rb">lib/active_resource/http_mock.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-c-requests">::requests</a></li>
+					
+					<li><a href="#method-i-apply_ssl_options">#apply_ssl_options</a></li>
+					
+					<li><a href="#method-i-auth_attributes_for">#auth_attributes_for</a></li>
+					
+					<li><a href="#method-i-auth_type%3D">#auth_type=</a></li>
+					
+					<li><a href="#method-i-authorization_header">#authorization_header</a></li>
+					
+					<li><a href="#method-i-build_request_headers">#build_request_headers</a></li>
+					
+					<li><a href="#method-i-client_nonce">#client_nonce</a></li>
+					
+					<li><a href="#method-i-configure_http">#configure_http</a></li>
+					
+					<li><a href="#method-i-default_header">#default_header</a></li>
+					
+					<li><a href="#method-i-delete">#delete</a></li>
+					
+					<li><a href="#method-i-digest_auth_header">#digest_auth_header</a></li>
+					
+					<li><a href="#method-i-extract_params_from_response">#extract_params_from_response</a></li>
+					
+					<li><a href="#method-i-get">#get</a></li>
+					
+					<li><a href="#method-i-handle_response">#handle_response</a></li>
+					
+					<li><a href="#method-i-head">#head</a></li>
+					
+					<li><a href="#method-i-http">#http</a></li>
+					
+					<li><a href="#method-i-http">#http</a></li>
+					
+					<li><a href="#method-i-http_format_header">#http_format_header</a></li>
+					
+					<li><a href="#method-i-legitimize_auth_type">#legitimize_auth_type</a></li>
+					
+					<li><a href="#method-i-new_http">#new_http</a></li>
+					
+					<li><a href="#method-i-password%3D">#password=</a></li>
+					
+					<li><a href="#method-i-post">#post</a></li>
+					
+					<li><a href="#method-i-proxy%3D">#proxy=</a></li>
+					
+					<li><a href="#method-i-put">#put</a></li>
+					
+					<li><a href="#method-i-request">#request</a></li>
+					
+					<li><a href="#method-i-response_auth_header">#response_auth_header</a></li>
+					
+					<li><a href="#method-i-site%3D">#site=</a></li>
+					
+					<li><a href="#method-i-ssl_options%3D">#ssl_options=</a></li>
+					
+					<li><a href="#method-i-timeout%3D">#timeout=</a></li>
+					
+					<li><a href="#method-i-user%3D">#user=</a></li>
+					
+					<li><a href="#method-i-with_auth">#with_auth</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../ActiveResource/BadRequest.html">ActiveResource::BadRequest</a></li>
+				
+					<li><a href="../ActiveResource/Base.html">ActiveResource::Base</a></li>
+				
+					<li><a href="../ActiveResource/ClientError.html">ActiveResource::ClientError</a></li>
+				
+					<li><a href="../ActiveResource/Connection.html">ActiveResource::Connection</a></li>
+				
+					<li><a href="../ActiveResource/CustomMethods.html">ActiveResource::CustomMethods</a></li>
+				
+					<li><a href="../ActiveResource/CustomMethods/ClassMethods.html">ActiveResource::CustomMethods::ClassMethods</a></li>
+				
+					<li><a href="../ActiveResource/CustomMethods/InstanceMethods.html">ActiveResource::CustomMethods::InstanceMethods</a></li>
+				
+					<li><a href="../ActiveResource/Errors.html">ActiveResource::Errors</a></li>
+				
+					<li><a href="../ActiveResource/ForbiddenAccess.html">ActiveResource::ForbiddenAccess</a></li>
+				
+					<li><a href="../ActiveResource/Formats.html">ActiveResource::Formats</a></li>
+				
+					<li><a href="../ActiveResource/Formats/JsonFormat.html">ActiveResource::Formats::JsonFormat</a></li>
+				
+					<li><a href="../ActiveResource/Formats/XmlFormat.html">ActiveResource::Formats::XmlFormat</a></li>
+				
+					<li><a href="../ActiveResource/HttpMock.html">ActiveResource::HttpMock</a></li>
+				
+					<li><a href="../ActiveResource/InvalidRequestError.html">ActiveResource::InvalidRequestError</a></li>
+				
+					<li><a href="../ActiveResource/LogSubscriber.html">ActiveResource::LogSubscriber</a></li>
+				
+					<li><a href="../ActiveResource/Observing.html">ActiveResource::Observing</a></li>
+				
+					<li><a href="../ActiveResource/Railtie.html">ActiveResource::Railtie</a></li>
+				
+					<li><a href="../ActiveResource/Request.html">ActiveResource::Request</a></li>
+				
+					<li><a href="../ActiveResource/ResourceConflict.html">ActiveResource::ResourceConflict</a></li>
+				
+					<li><a href="../ActiveResource/ResourceGone.html">ActiveResource::ResourceGone</a></li>
+				
+					<li><a href="../ActiveResource/ResourceNotFound.html">ActiveResource::ResourceNotFound</a></li>
+				
+					<li><a href="../ActiveResource/Response.html">ActiveResource::Response</a></li>
+				
+					<li><a href="../ActiveResource/SSLError.html">ActiveResource::SSLError</a></li>
+				
+					<li><a href="../ActiveResource/ServerError.html">ActiveResource::ServerError</a></li>
+				
+					<li><a href="../ActiveResource/TimeoutError.html">ActiveResource::TimeoutError</a></li>
+				
+					<li><a href="../ActiveResource/UnauthorizedAccess.html">ActiveResource::UnauthorizedAccess</a></li>
+				
+					<li><a href="../ActiveResource/Validations.html">ActiveResource::Validations</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">ActiveResource::Connection</h1>
+
+		<div id="description">
+			<p>
+Class to handle connections to remote web services. This class is used by
+<a href="Base.html">ActiveResource::Base</a> to interface with REST
+services.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="HTTP_FORMAT_HEADER_NAMES">HTTP_FORMAT_HEADER_NAMES</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="site-attribute-method" class="method-detail">
+				<a name="site"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">site</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="user-attribute-method" class="method-detail">
+				<a name="user"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">user</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="password-attribute-method" class="method-detail">
+				<a name="password"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">password</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="auth-type-attribute-method" class="method-detail">
+				<a name="auth_type"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">auth_type</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="timeout-attribute-method" class="method-detail">
+				<a name="timeout"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">timeout</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="proxy-attribute-method" class="method-detail">
+				<a name="proxy"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">proxy</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="ssl-options-attribute-method" class="method-detail">
+				<a name="ssl_options"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">ssl_options</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="format-attribute-method" class="method-detail">
+				<a name="format"></a>
+				
+				<a name="format="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">format</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(site, format = ActiveResource::Formats::XmlFormat)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The <tt>site</tt> parameter is required and will set the <tt>site</tt>
+attribute to the URI for the remote resource service.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 31</span>
+31:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">site</span>, <span class="ruby-identifier">format</span> = <span class="ruby-constant">ActiveResource</span><span class="ruby-operator">::</span><span class="ruby-constant">Formats</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlFormat</span>)
+32:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'Missing site URI'</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">site</span>
+33:       <span class="ruby-ivar">@user</span> = <span class="ruby-ivar">@password</span> = <span class="ruby-keyword kw">nil</span>
+34:       <span class="ruby-ivar">@uri_parser</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:Parser</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span> <span class="ruby-operator">:</span> <span class="ruby-constant">URI</span>
+35:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">site</span> = <span class="ruby-identifier">site</span>
+36:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">format</span> = <span class="ruby-identifier">format</span>
+37:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="requests-method" class="method-detail ">
+				<a name="method-c-requests"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">requests</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="requests-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 24</span>
+24:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">requests</span>
+25:         <span class="ruby-identifier">@@requests</span> <span class="ruby-operator">||=</span> []
+26:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="auth-type--method" class="method-detail ">
+				<a name="method-i-auth_type%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">auth_type=</span><span
+						class="method-args">(auth_type)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the auth type for remote service.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="auth-type--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 62</span>
+62:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">auth_type=</span>(<span class="ruby-identifier">auth_type</span>)
+63:       <span class="ruby-ivar">@auth_type</span> = <span class="ruby-identifier">legitimize_auth_type</span>(<span class="ruby-identifier">auth_type</span>)
+64:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="delete-method" class="method-detail ">
+				<a name="method-i-delete"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">delete</span><span
+						class="method-args">(path, headers = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Executes a DELETE request (see HTTP protocol documentation if unfamiliar).
+Used to delete resources.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="delete-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 84</span>
+84:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">headers</span> = {})
+85:       <span class="ruby-identifier">with_auth</span> { <span class="ruby-identifier">request</span>(<span class="ruby-value">:delete</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">build_request_headers</span>(<span class="ruby-identifier">headers</span>, <span class="ruby-value">:delete</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">site</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">path</span>))) }
+86:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-method" class="method-detail ">
+				<a name="method-i-get"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get</span><span
+						class="method-args">(path, headers = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Executes a GET request. Used to get (find) resources.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="get-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 78</span>
+78:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">headers</span> = {})
+79:       <span class="ruby-identifier">with_auth</span> { <span class="ruby-identifier">format</span>.<span class="ruby-identifier">decode</span>(<span class="ruby-identifier">request</span>(<span class="ruby-value">:get</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">build_request_headers</span>(<span class="ruby-identifier">headers</span>, <span class="ruby-value">:get</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">site</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">path</span>))).<span class="ruby-identifier">body</span>) }
+80:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="head-method" class="method-detail ">
+				<a name="method-i-head"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">head</span><span
+						class="method-args">(path, headers = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Executes a HEAD request. Used to obtain meta-information about resources,
+such as whether they exist and their size (via response headers).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="head-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 102</span>
+102:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">head</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">headers</span> = {})
+103:       <span class="ruby-identifier">with_auth</span> { <span class="ruby-identifier">request</span>(<span class="ruby-value">:head</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">build_request_headers</span>(<span class="ruby-identifier">headers</span>, <span class="ruby-value">:head</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">site</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">path</span>))) }
+104:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="password--method" class="method-detail ">
+				<a name="method-i-password%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">password=</span><span
+						class="method-args">(password)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the password for remote service.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="password--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 57</span>
+57:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">password=</span>(<span class="ruby-identifier">password</span>)
+58:       <span class="ruby-ivar">@password</span> = <span class="ruby-identifier">password</span>
+59:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="post-method" class="method-detail ">
+				<a name="method-i-post"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">post</span><span
+						class="method-args">(path, body = '', headers = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Executes a POST request. Used to create new resources.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="post-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 96</span>
+96:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">post</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">body</span> = <span class="ruby-value str">''</span>, <span class="ruby-identifier">headers</span> = {})
+97:       <span class="ruby-identifier">with_auth</span> { <span class="ruby-identifier">request</span>(<span class="ruby-value">:post</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">body</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">build_request_headers</span>(<span class="ruby-identifier">headers</span>, <span class="ruby-value">:post</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">site</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">path</span>))) }
+98:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="proxy--method" class="method-detail ">
+				<a name="method-i-proxy%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">proxy=</span><span
+						class="method-args">(proxy)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Set the proxy for remote service.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="proxy--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 47</span>
+47:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">proxy=</span>(<span class="ruby-identifier">proxy</span>)
+48:       <span class="ruby-ivar">@proxy</span> = <span class="ruby-identifier">proxy</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">URI</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">proxy</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@uri_parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">proxy</span>)
+49:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="put-method" class="method-detail ">
+				<a name="method-i-put"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">put</span><span
+						class="method-args">(path, body = '', headers = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Executes a PUT request (see HTTP protocol documentation if unfamiliar).
+Used to update resources.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="put-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 90</span>
+90:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">put</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">body</span> = <span class="ruby-value str">''</span>, <span class="ruby-identifier">headers</span> = {})
+91:       <span class="ruby-identifier">with_auth</span> { <span class="ruby-identifier">request</span>(<span class="ruby-value">:put</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">body</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">build_request_headers</span>(<span class="ruby-identifier">headers</span>, <span class="ruby-value">:put</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">site</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">path</span>))) }
+92:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="site--method" class="method-detail ">
+				<a name="method-i-site%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">site=</span><span
+						class="method-args">(site)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Set URI for remote service.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="site--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 40</span>
+40:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">site=</span>(<span class="ruby-identifier">site</span>)
+41:       <span class="ruby-ivar">@site</span> = <span class="ruby-identifier">site</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">URI</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">site</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@uri_parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">site</span>)
+42:       <span class="ruby-ivar">@user</span> = <span class="ruby-ivar">@uri_parser</span>.<span class="ruby-identifier">unescape</span>(<span class="ruby-ivar">@site</span>.<span class="ruby-identifier">user</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@site</span>.<span class="ruby-identifier">user</span>
+43:       <span class="ruby-ivar">@password</span> = <span class="ruby-ivar">@uri_parser</span>.<span class="ruby-identifier">unescape</span>(<span class="ruby-ivar">@site</span>.<span class="ruby-identifier">password</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@site</span>.<span class="ruby-identifier">password</span>
+44:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="ssl-options--method" class="method-detail ">
+				<a name="method-i-ssl_options%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">ssl_options=</span><span
+						class="method-args">(opts={})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Hash of options applied to Net::HTTP instance when <tt>site</tt> protocol
+is &#8216;https&#8217;.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="ssl-options--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 72</span>
+72:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ssl_options=</span>(<span class="ruby-identifier">opts</span>={})
+73:       <span class="ruby-ivar">@ssl_options</span> = <span class="ruby-identifier">opts</span>
+74:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="timeout--method" class="method-detail ">
+				<a name="method-i-timeout%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">timeout=</span><span
+						class="method-args">(timeout)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the number of seconds after which HTTP requests to the remote service
+should time out.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="timeout--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 67</span>
+67:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">timeout=</span>(<span class="ruby-identifier">timeout</span>)
+68:       <span class="ruby-ivar">@timeout</span> = <span class="ruby-identifier">timeout</span>
+69:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="user--method" class="method-detail ">
+				<a name="method-i-user%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">user=</span><span
+						class="method-args">(user)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the user for remote service.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="user--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 52</span>
+52:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user=</span>(<span class="ruby-identifier">user</span>)
+53:       <span class="ruby-ivar">@user</span> = <span class="ruby-identifier">user</span>
+54:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="apply-ssl-options-method" class="method-detail ">
+				<a name="method-i-apply_ssl_options"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">apply_ssl_options</span><span
+						class="method-args">(http)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="apply-ssl-options-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 179</span>
+179:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">apply_ssl_options</span>(<span class="ruby-identifier">http</span>)
+180:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">http</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@site</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPS</span>)
+181: 
+182:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">use_ssl</span>     = <span class="ruby-keyword kw">true</span>
+183:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">verify_mode</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERIFY_NONE</span>
+184:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">http</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-ivar">@ssl_options</span>)
+185: 
+186:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">ca_path</span>     = <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:ca_path</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:ca_path</span>]
+187:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">ca_file</span>     = <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:ca_file</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:ca_file</span>]
+188: 
+189:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">cert</span>        = <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:cert</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:cert</span>]
+190:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">key</span>         = <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:key</span>]  <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:key</span>]
+191: 
+192:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">cert_store</span>  = <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:cert_store</span>]  <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:cert_store</span>]
+193:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">ssl_timeout</span> = <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:ssl_timeout</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:ssl_timeout</span>]
+194: 
+195:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">verify_mode</span>     = <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:verify_mode</span>]     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:verify_mode</span>]
+196:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">verify_callback</span> = <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:verify_callback</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:verify_callback</span>]
+197:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">verify_depth</span>    = <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:verify_depth</span>]    <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ssl_options</span>[<span class="ruby-value">:verify_depth</span>]
+198: 
+199:         <span class="ruby-identifier">http</span>
+200:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="auth-attributes-for-method" class="method-detail ">
+				<a name="method-i-auth_attributes_for"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">auth_attributes_for</span><span
+						class="method-args">(uri, request_digest, params)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="auth-attributes-for-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 260</span>
+260:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">auth_attributes_for</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">request_digest</span>, <span class="ruby-identifier">params</span>)
+261:         [
+262:           <span class="ruby-node">%(username=&quot;#{@user}&quot;)</span>,
+263:           <span class="ruby-node">%(realm=&quot;#{params['realm']}&quot;)</span>,
+264:           <span class="ruby-node">%(qop=&quot;#{params['qop']}&quot;)</span>,
+265:           <span class="ruby-node">%(uri=&quot;#{uri.path}&quot;)</span>,
+266:           <span class="ruby-node">%(nonce=&quot;#{params['nonce']}&quot;)</span>,
+267:           <span class="ruby-value str">%(nc=&quot;0&quot;)</span>,
+268:           <span class="ruby-node">%(cnonce=&quot;#{params['cnonce']}&quot;)</span>,
+269:           <span class="ruby-node">%(opaque=&quot;#{params['opaque']}&quot;)</span>,
+270:           <span class="ruby-node">%(response=&quot;#{request_digest}&quot;)</span>].<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;, &quot;</span>)
+271:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="authorization-header-method" class="method-detail ">
+				<a name="method-i-authorization_header"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">authorization_header</span><span
+						class="method-args">(http_method, uri)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="authorization-header-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 225</span>
+225:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">authorization_header</span>(<span class="ruby-identifier">http_method</span>, <span class="ruby-identifier">uri</span>)
+226:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@user</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@password</span>
+227:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">auth_type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:digest</span>
+228:             { <span class="ruby-value str">'Authorization'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">digest_auth_header</span>(<span class="ruby-identifier">http_method</span>, <span class="ruby-identifier">uri</span>) }
+229:           <span class="ruby-keyword kw">else</span>
+230:             { <span class="ruby-value str">'Authorization'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'Basic '</span> <span class="ruby-operator">+</span> [<span class="ruby-node">&quot;#{@user}:#{@password}&quot;</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-value str">'m'</span>).<span class="ruby-identifier">delete</span>(<span class="ruby-value str">&quot;\r\n&quot;</span>) }
+231:           <span class="ruby-keyword kw">end</span>
+232:         <span class="ruby-keyword kw">else</span>
+233:           {}
+234:         <span class="ruby-keyword kw">end</span>
+235:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-request-headers-method" class="method-detail ">
+				<a name="method-i-build_request_headers"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_request_headers</span><span
+						class="method-args">(headers, http_method, uri)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Builds headers for request to remote service.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="build-request-headers-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 207</span>
+207:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_request_headers</span>(<span class="ruby-identifier">headers</span>, <span class="ruby-identifier">http_method</span>, <span class="ruby-identifier">uri</span>)
+208:         <span class="ruby-identifier">authorization_header</span>(<span class="ruby-identifier">http_method</span>, <span class="ruby-identifier">uri</span>).<span class="ruby-identifier">update</span>(<span class="ruby-identifier">default_header</span>).<span class="ruby-identifier">update</span>(<span class="ruby-identifier">http_format_header</span>(<span class="ruby-identifier">http_method</span>)).<span class="ruby-identifier">update</span>(<span class="ruby-identifier">headers</span>)
+209:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="client-nonce-method" class="method-detail ">
+				<a name="method-i-client_nonce"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">client_nonce</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="client-nonce-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 248</span>
+248:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">client_nonce</span>
+249:         <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-value str">&quot;%x&quot;</span> <span class="ruby-operator">%</span> (<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rand</span>(<span class="ruby-value">65535</span>)))
+250:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="configure-http-method" class="method-detail ">
+				<a name="method-i-configure_http"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">configure_http</span><span
+						class="method-args">(http)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="configure-http-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 167</span>
+167:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure_http</span>(<span class="ruby-identifier">http</span>)
+168:         <span class="ruby-identifier">http</span> = <span class="ruby-identifier">apply_ssl_options</span>(<span class="ruby-identifier">http</span>)
+169: 
+170:         <span class="ruby-comment cmt"># Net::HTTP timeouts default to 60 seconds.</span>
+171:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@timeout</span>
+172:           <span class="ruby-identifier">http</span>.<span class="ruby-identifier">open_timeout</span> = <span class="ruby-ivar">@timeout</span>
+173:           <span class="ruby-identifier">http</span>.<span class="ruby-identifier">read_timeout</span> = <span class="ruby-ivar">@timeout</span>
+174:         <span class="ruby-keyword kw">end</span>
+175: 
+176:         <span class="ruby-identifier">http</span>
+177:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-header-method" class="method-detail ">
+				<a name="method-i-default_header"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_header</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="default-header-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 202</span>
+202:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_header</span>
+203:         <span class="ruby-ivar">@default_header</span> <span class="ruby-operator">||=</span> {}
+204:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="digest-auth-header-method" class="method-detail ">
+				<a name="method-i-digest_auth_header"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">digest_auth_header</span><span
+						class="method-args">(http_method, uri)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="digest-auth-header-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 237</span>
+237:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">digest_auth_header</span>(<span class="ruby-identifier">http_method</span>, <span class="ruby-identifier">uri</span>)
+238:         <span class="ruby-identifier">params</span> = <span class="ruby-identifier">extract_params_from_response</span>
+239: 
+240:         <span class="ruby-identifier">ha1</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-node">&quot;#{@user}:#{params['realm']}:#{@password}&quot;</span>)
+241:         <span class="ruby-identifier">ha2</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-node">&quot;#{http_method.to_s.upcase}:#{uri.path}&quot;</span>)
+242: 
+243:         <span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-value str">'cnonce'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">client_nonce</span>)
+244:         <span class="ruby-identifier">request_digest</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>([<span class="ruby-identifier">ha1</span>, <span class="ruby-identifier">params</span>[<span class="ruby-value str">'nonce'</span>], <span class="ruby-value str">&quot;0&quot;</span>, <span class="ruby-identifier">params</span>[<span class="ruby-value str">'cnonce'</span>], <span class="ruby-identifier">params</span>[<span class="ruby-value str">'qop'</span>], <span class="ruby-identifier">ha2</span>].<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;:&quot;</span>))
+245:         <span class="ruby-node">&quot;Digest #{auth_attributes_for(uri, request_digest, params)}&quot;</span>
+246:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="extract-params-from-response-method" class="method-detail ">
+				<a name="method-i-extract_params_from_response"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">extract_params_from_response</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="extract-params-from-response-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 252</span>
+252:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extract_params_from_response</span>
+253:         <span class="ruby-identifier">params</span> = {}
+254:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">response_auth_header</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^(\w+) (.*)/</span>
+255:           <span class="ruby-node">$2</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/(\w+)=&quot;(.*?)&quot;/</span>) { <span class="ruby-identifier">params</span>[<span class="ruby-node">$1</span>] = <span class="ruby-node">$2</span> }
+256:         <span class="ruby-keyword kw">end</span>
+257:         <span class="ruby-identifier">params</span>
+258:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-response-method" class="method-detail ">
+				<a name="method-i-handle_response"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handle_response</span><span
+						class="method-args">(response)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Handles response and error codes from the remote service.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="handle-response-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 122</span>
+122:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handle_response</span>(<span class="ruby-identifier">response</span>)
+123:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>.<span class="ruby-identifier">to_i</span>
+124:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">301</span>,<span class="ruby-value">302</span>
+125:             <span class="ruby-identifier">raise</span>(<span class="ruby-constant">Redirection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>))
+126:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">200</span><span class="ruby-operator">...</span><span class="ruby-value">400</span>
+127:             <span class="ruby-identifier">response</span>
+128:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">400</span>
+129:             <span class="ruby-identifier">raise</span>(<span class="ruby-constant">BadRequest</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>))
+130:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">401</span>
+131:             <span class="ruby-identifier">raise</span>(<span class="ruby-constant">UnauthorizedAccess</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>))
+132:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">403</span>
+133:             <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ForbiddenAccess</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>))
+134:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">404</span>
+135:             <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ResourceNotFound</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>))
+136:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">405</span>
+137:             <span class="ruby-identifier">raise</span>(<span class="ruby-constant">MethodNotAllowed</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>))
+138:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">409</span>
+139:             <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ResourceConflict</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>))
+140:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">410</span>
+141:             <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ResourceGone</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>))
+142:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">422</span>
+143:             <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ResourceInvalid</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>))
+144:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">401</span><span class="ruby-operator">...</span><span class="ruby-value">500</span>
+145:             <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ClientError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>))
+146:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">500</span><span class="ruby-operator">...</span><span class="ruby-value">600</span>
+147:             <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ServerError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>))
+148:           <span class="ruby-keyword kw">else</span>
+149:             <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ConnectionError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>, <span class="ruby-node">&quot;Unknown response code: #{response.code}&quot;</span>))
+150:         <span class="ruby-keyword kw">end</span>
+151:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="http-method" class="method-detail ">
+				<a name="method-i-http"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">http</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Creates new Net::HTTP instance for communication with the remote service
+and resources.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="http-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 155</span>
+155:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">http</span>
+156:         <span class="ruby-identifier">configure_http</span>(<span class="ruby-identifier">new_http</span>)
+157:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="http-method" class="method-detail ">
+				<a name="method-i-http"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">http</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="http-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/http_mock.rb, line 226</span>
+226:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">http</span>
+227:           <span class="ruby-ivar">@http</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">HttpMock</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@site</span>)
+228:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="http-format-header-method" class="method-detail ">
+				<a name="method-i-http_format_header"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">http_format_header</span><span
+						class="method-args">(http_method)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="http-format-header-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 273</span>
+273:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">http_format_header</span>(<span class="ruby-identifier">http_method</span>)
+274:         {<span class="ruby-constant">HTTP_FORMAT_HEADER_NAMES</span>[<span class="ruby-identifier">http_method</span>] =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">format</span>.<span class="ruby-identifier">mime_type</span>}
+275:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="legitimize-auth-type-method" class="method-detail ">
+				<a name="method-i-legitimize_auth_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">legitimize_auth_type</span><span
+						class="method-args">(auth_type)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="legitimize-auth-type-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 277</span>
+277:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">legitimize_auth_type</span>(<span class="ruby-identifier">auth_type</span>)
+278:         <span class="ruby-keyword kw">return</span> <span class="ruby-value">:basic</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">auth_type</span>.<span class="ruby-identifier">nil?</span>
+279:         <span class="ruby-identifier">auth_type</span> = <span class="ruby-identifier">auth_type</span>.<span class="ruby-identifier">to_sym</span>
+280:         [<span class="ruby-value">:basic</span>, <span class="ruby-value">:digest</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">auth_type</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">auth_type</span> <span class="ruby-operator">:</span> <span class="ruby-value">:basic</span>
+281:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-http-method" class="method-detail ">
+				<a name="method-i-new_http"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new_http</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-http-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 159</span>
+159:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_http</span>
+160:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@proxy</span>
+161:           <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@site</span>.<span class="ruby-identifier">host</span>, <span class="ruby-ivar">@site</span>.<span class="ruby-identifier">port</span>, <span class="ruby-ivar">@proxy</span>.<span class="ruby-identifier">host</span>, <span class="ruby-ivar">@proxy</span>.<span class="ruby-identifier">port</span>, <span class="ruby-ivar">@proxy</span>.<span class="ruby-identifier">user</span>, <span class="ruby-ivar">@proxy</span>.<span class="ruby-identifier">password</span>)
+162:         <span class="ruby-keyword kw">else</span>
+163:           <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@site</span>.<span class="ruby-identifier">host</span>, <span class="ruby-ivar">@site</span>.<span class="ruby-identifier">port</span>)
+164:         <span class="ruby-keyword kw">end</span>
+165:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="request-method" class="method-detail ">
+				<a name="method-i-request"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">request</span><span
+						class="method-args">(method, path, *arguments)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Makes a request to the remote service.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="request-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 108</span>
+108:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">path</span>, *<span class="ruby-identifier">arguments</span>)
+109:         <span class="ruby-identifier">result</span> = <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Notifications</span>.<span class="ruby-identifier">instrument</span>(<span class="ruby-value str">&quot;request.active_resource&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">payload</span><span class="ruby-operator">|</span>
+110:           <span class="ruby-identifier">payload</span>[<span class="ruby-value">:method</span>]      = <span class="ruby-identifier">method</span>
+111:           <span class="ruby-identifier">payload</span>[<span class="ruby-value">:request_uri</span>] = <span class="ruby-node">&quot;#{site.scheme}://#{site.host}:#{site.port}#{path}&quot;</span>
+112:           <span class="ruby-identifier">payload</span>[<span class="ruby-value">:result</span>]      = <span class="ruby-identifier">http</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">path</span>, *<span class="ruby-identifier">arguments</span>)
+113:         <span class="ruby-keyword kw">end</span>
+114:         <span class="ruby-identifier">handle_response</span>(<span class="ruby-identifier">result</span>)
+115:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+116:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">TimeoutError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>)
+117:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSLError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+118:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">SSLError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>)
+119:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="response-auth-header-method" class="method-detail ">
+				<a name="method-i-response_auth_header"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">response_auth_header</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="response-auth-header-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 211</span>
+211:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">response_auth_header</span>
+212:         <span class="ruby-ivar">@response_auth_header</span> <span class="ruby-operator">||=</span> <span class="ruby-value str">&quot;&quot;</span>
+213:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="with-auth-method" class="method-detail ">
+				<a name="method-i-with_auth"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">with_auth</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="with-auth-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_resource/connection.rb, line 215</span>
+215:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_auth</span>
+216:         <span class="ruby-identifier">retried</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">false</span>
+217:         <span class="ruby-keyword kw">yield</span>
+218:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">UnauthorizedAccess</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+219:         <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">retried</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">auth_type</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:digest</span>
+220:         <span class="ruby-ivar">@response_auth_header</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>[<span class="ruby-value str">'WWW-Authenticate'</span>]
+221:         <span class="ruby-identifier">retried</span> = <span class="ruby-keyword kw">true</span>
+222:         <span class="ruby-keyword kw">retry</span>
+223:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

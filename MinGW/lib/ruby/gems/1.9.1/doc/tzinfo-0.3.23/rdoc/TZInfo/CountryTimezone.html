@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: TZInfo::CountryTimezone</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/tzinfo/country_timezone_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/tzinfo/country_timezone.rb">lib/tzinfo/country_timezone.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-%3D%3D">#==</a></li>
+					
+					<li><a href="#method-i-description_or_friendly_identifier">#description_or_friendly_identifier</a></li>
+					
+					<li><a href="#method-i-eql%3F">#eql?</a></li>
+					
+					<li><a href="#method-i-hash">#hash</a></li>
+					
+					<li><a href="#method-i-inspect">#inspect</a></li>
+					
+					<li><a href="#method-i-latitude">#latitude</a></li>
+					
+					<li><a href="#method-i-longitude">#longitude</a></li>
+					
+					<li><a href="#method-i-timezone">#timezone</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../CHANGES.html">CHANGES</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../TZInfo.html">TZInfo</a></li>
+				
+					<li><a href="../TZInfo/AmbiguousTime.html">TZInfo::AmbiguousTime</a></li>
+				
+					<li><a href="../TZInfo/Country.html">TZInfo::Country</a></li>
+				
+					<li><a href="../TZInfo/CountryTimezone.html">TZInfo::CountryTimezone</a></li>
+				
+					<li><a href="../TZInfo/InvalidCountryCode.html">TZInfo::InvalidCountryCode</a></li>
+				
+					<li><a href="../TZInfo/InvalidTimezoneIdentifier.html">TZInfo::InvalidTimezoneIdentifier</a></li>
+				
+					<li><a href="../TZInfo/NoOffsetsDefined.html">TZInfo::NoOffsetsDefined</a></li>
+				
+					<li><a href="../TZInfo/PeriodNotFound.html">TZInfo::PeriodNotFound</a></li>
+				
+					<li><a href="../TZInfo/TZDataParser.html">TZInfo::TZDataParser</a></li>
+				
+					<li><a href="../TZInfo/Timezone.html">TZInfo::Timezone</a></li>
+				
+					<li><a href="../TZInfo/TimezonePeriod.html">TZInfo::TimezonePeriod</a></li>
+				
+					<li><a href="../TZInfo/TimezoneProxy.html">TZInfo::TimezoneProxy</a></li>
+				
+					<li><a href="../TZInfo/UnknownTimezone.html">TZInfo::UnknownTimezone</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">TZInfo::CountryTimezone</h1>
+
+		<div id="description">
+			<p>
+A <a href="Timezone.html">Timezone</a> within a <a
+href="Country.html">Country</a>. This contains extra information about the
+<a href="Timezone.html">Timezone</a> that is specific to the <a
+href="Country.html">Country</a> (a <a href="Timezone.html">Timezone</a>
+could be used by multiple countries).
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="identifier-attribute-method" class="method-detail">
+				<a name="identifier"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">identifier</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The zone identifier.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="description-attribute-method" class="method-detail">
+				<a name="description"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">description</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+A description of this timezone in relation to the country, e.g. 
+&#8220;Eastern Time&#8221;. This is usually nil for countries having only a
+single <a href="Timezone.html">Timezone</a>.
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%3D%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">==</span><span
+						class="method-args">(ct)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if and only if the given <a
+href="CountryTimezone.html">CountryTimezone</a> is equal to the current <a
+href="CountryTimezone.html">CountryTimezone</a> (has the same identifer,
+latitude, longitude and description).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/tzinfo/country_timezone.rb, line 76</span>
+76:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">ct</span>)
+77:       <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:identifier</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:latitude</span>) <span class="ruby-operator">&amp;&amp;</span>
+78:       <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:longitude</span>)  <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:description</span>) <span class="ruby-operator">&amp;&amp;</span>
+79:       <span class="ruby-identifier">identifier</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">identifier</span>  <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">latitude</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">latitude</span> <span class="ruby-operator">&amp;&amp;</span>
+80:       <span class="ruby-identifier">longitude</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">longitude</span>   <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">description</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">description</span>         
+81:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="description-or-friendly-identifier-method" class="method-detail ">
+				<a name="method-i-description_or_friendly_identifier"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">description_or_friendly_identifier</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+if description is not nil, this method returns description; otherwise it
+returns timezone.friendly_identifier(true).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="description-or-friendly-identifier-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/tzinfo/country_timezone.rb, line 59</span>
+59:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">description_or_friendly_identifier</span>
+60:       <span class="ruby-identifier">description</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">timezone</span>.<span class="ruby-identifier">friendly_identifier</span>(<span class="ruby-keyword kw">true</span>)
+61:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="eql--method" class="method-detail ">
+				<a name="method-i-eql%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">eql?</span><span
+						class="method-args">(ct)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if and only if the given <a
+href="CountryTimezone.html">CountryTimezone</a> is equal to the current <a
+href="CountryTimezone.html">CountryTimezone</a> (has the same identifer,
+latitude, longitude and description).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="eql--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/tzinfo/country_timezone.rb, line 86</span>
+86:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">ct</span>)
+87:       <span class="ruby-keyword kw">self</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">ct</span>
+88:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="hash-method" class="method-detail ">
+				<a name="method-i-hash"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">hash</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a hash of this <a href="CountryTimezone.html">CountryTimezone</a>. 
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="hash-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/tzinfo/country_timezone.rb, line 91</span>
+91:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hash</span>
+92:       <span class="ruby-ivar">@identifier</span>.<span class="ruby-identifier">hash</span> <span class="ruby-operator">^</span> <span class="ruby-ivar">@latitude_numerator</span>.<span class="ruby-identifier">hash</span> <span class="ruby-operator">^</span> <span class="ruby-ivar">@latitude_denominator</span>.<span class="ruby-identifier">hash</span> <span class="ruby-operator">^</span> 
+93:         <span class="ruby-ivar">@longitude_numerator</span>.<span class="ruby-identifier">hash</span> <span class="ruby-operator">^</span> <span class="ruby-ivar">@longitude_denominator</span>.<span class="ruby-identifier">hash</span> <span class="ruby-operator">^</span> <span class="ruby-ivar">@description</span>.<span class="ruby-identifier">hash</span>
+94:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="inspect-method" class="method-detail ">
+				<a name="method-i-inspect"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">inspect</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns internal object state as a programmer-readable string.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="inspect-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/tzinfo/country_timezone.rb, line 97</span>
+97:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>
+98:       <span class="ruby-node">&quot;#&lt;#{self.class}: #@identifier&gt;&quot;</span>
+99:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="latitude-method" class="method-detail ">
+				<a name="method-i-latitude"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">latitude</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The latitude of this timezone in degrees as a Rational.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="latitude-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/tzinfo/country_timezone.rb, line 64</span>
+64:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">latitude</span>
+65:       <span class="ruby-ivar">@latitude</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">RubyCoreSupport</span>.<span class="ruby-identifier">rational_new!</span>(<span class="ruby-ivar">@latitude_numerator</span>, <span class="ruby-ivar">@latitude_denominator</span>)
+66:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="longitude-method" class="method-detail ">
+				<a name="method-i-longitude"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">longitude</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The longitude of this timezone in degrees as a Rational.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="longitude-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/tzinfo/country_timezone.rb, line 69</span>
+69:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">longitude</span>
+70:       <span class="ruby-ivar">@longitude</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">RubyCoreSupport</span>.<span class="ruby-identifier">rational_new!</span>(<span class="ruby-ivar">@longitude_numerator</span>, <span class="ruby-ivar">@longitude_denominator</span>)
+71:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="timezone-method" class="method-detail ">
+				<a name="method-i-timezone"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">timezone</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The <a href="Timezone.html">Timezone</a> (actually a <a
+href="TimezoneProxy.html">TimezoneProxy</a> for performance reasons).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="timezone-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/tzinfo/country_timezone.rb, line 53</span>
+53:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">timezone</span>
+54:       <span class="ruby-constant">Timezone</span>.<span class="ruby-identifier">get_proxy</span>(<span class="ruby-ivar">@identifier</span>)
+55:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

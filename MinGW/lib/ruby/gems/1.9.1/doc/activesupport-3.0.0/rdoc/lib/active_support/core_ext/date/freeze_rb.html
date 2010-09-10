@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: freeze.rb [activesupport-3.0.0 Documentation]</title>
+
+	<link type="text/css" media="screen" href="../../../../rdoc.css" rel="stylesheet" />
+
+	<script src="../../../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+	<div id="metadata">
+		<dl>
+			<dt class="modified-date">Last Modified</dt>
+			<dd class="modified-date">2010-09-09 09:29:46 +0800</dd>
+
+			
+			<dt class="requires">Requires</dt>
+			<dd class="requires">
+				<ul>
+				
+					<li>date</li>
+				
+				</ul>
+			</dd>
+			
+
+			
+		</dl>
+	</div>
+
+	<div id="documentation">
+		
+		<div class="description">
+			<h2>Description</h2>
+			<p>
+Date memoizes some instance methods using metaprogramming to wrap the
+methods with one that caches the result in an instance variable.
+</p>
+<p>
+If a Date is frozen but the memoized method hasn&#8217;t been called, the
+first call will result in a frozen object error since the memo instance
+variable is uninitialized.
+</p>
+<p>
+Work around by eagerly memoizing before freezing.
+</p>
+<p>
+Ruby 1.9 uses a preinitialized instance variable so it&#8217;s unaffected.
+This hack is as close as we can get to feature detection:
+</p>
+
+		</div>
+		
+	</div>
+</body>
+</html>
+

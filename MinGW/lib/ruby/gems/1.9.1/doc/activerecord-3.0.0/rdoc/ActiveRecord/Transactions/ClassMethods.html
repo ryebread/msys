@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: ActiveRecord::Transactions::ClassMethods</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/active_record/transactions_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_record/transactions.rb">lib/active_record/transactions.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-after_commit">#after_commit</a></li>
+					
+					<li><a href="#method-i-after_rollback">#after_rollback</a></li>
+					
+					<li><a href="#method-i-transaction">#transaction</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+				
+					<li><a href="../../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ClassMethods/o.html">ActiveRecord::Associations::ClassMethods::o</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+				
+					<li><a href="../../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+				
+					<li><a href="../../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators.html">ActiveRecord::Generators</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/MigrationGenerator.html">ActiveRecord::Generators::MigrationGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/ModelGenerator.html">ActiveRecord::Generators::ModelGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/ObserverGenerator.html">ActiveRecord::Generators::ObserverGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/Generators/SessionMigrationGenerator.html">ActiveRecord::Generators::SessionMigrationGenerator</a></li>
+				
+					<li><a href="../../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+				
+					<li><a href="../../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+				
+					<li><a href="../../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+				
+					<li><a href="../../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+				
+					<li><a href="../../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+				
+					<li><a href="../../ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+				
+					<li><a href="../../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+				
+					<li><a href="../../ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+				
+					<li><a href="../../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+				
+					<li><a href="../../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+				
+					<li><a href="../../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+				
+					<li><a href="../../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+				
+					<li><a href="../../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+				
+					<li><a href="../../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+				
+					<li><a href="../../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+				
+					<li><a href="../../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+				
+					<li><a href="../../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+				
+					<li><a href="../../Fixtures.html">Fixtures</a></li>
+				
+					<li><a href="../../FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">ActiveRecord::Transactions::ClassMethods</h1>
+
+		<div id="description">
+			<h1>Active Record <a href="../Transactions.html">Transactions</a></h1>
+<p>
+<a href="../Transactions.html">Transactions</a> are protective blocks where
+SQL statements are only permanent if they can all succeed as one atomic
+action. The classic example is a transfer between two accounts where you
+can only have a deposit if the withdrawal succeeded and vice versa. <a
+href="../Transactions.html">Transactions</a> enforce the integrity of the
+database and guard the data against program errors or database break-downs.
+So basically you should use transaction blocks whenever you have a number
+of statements that must be executed together or not at all.
+</p>
+<p>
+For example:
+</p>
+<pre>
+  ActiveRecord::Base.transaction do
+    david.withdrawal(100)
+    mary.deposit(100)
+  end
+</pre>
+<p>
+This example will only take money from David and give it to Mary if neither
+<tt>withdrawal</tt> nor <tt>deposit</tt> raise an exception. Exceptions
+will force a ROLLBACK that returns the database to the state before the
+transaction began. Be aware, though, that the objects will <em>not</em>
+have their instance data returned to their pre-transactional state.
+</p>
+<h2>Different Active Record classes in a single transaction</h2>
+<p>
+Though the transaction class method is called on some Active Record class,
+the objects within the transaction block need not all be instances of that
+class. This is because transactions are per-database connection, not
+per-model.
+</p>
+<p>
+In this example a <tt>balance</tt> record is transactionally saved even
+though <tt>transaction</tt> is called on the <tt>Account</tt> class:
+</p>
+<pre>
+  Account.transaction do
+    balance.save!
+    account.save!
+  end
+</pre>
+<p>
+The <tt>transaction</tt> method is also available as a model instance
+method. For example, you can also do this:
+</p>
+<pre>
+  balance.transaction do
+    balance.save!
+    account.save!
+  end
+</pre>
+<h2><a href="../Transactions.html">Transactions</a> are not distributed across database connections</h2>
+<p>
+A transaction acts on a single database connection. If you have multiple
+class-specific databases, the transaction will not protect interaction
+among them. One workaround is to begin a transaction on each class whose
+models you alter:
+</p>
+<pre>
+  Student.transaction do
+    Course.transaction do
+      course.enroll(student)
+      student.units += course.units
+    end
+  end
+</pre>
+<p>
+This is a poor solution, but fully distributed transactions are beyond the
+scope of Active Record.
+</p>
+<h2><tt>save</tt> and <tt>destroy</tt> are automatically wrapped in a transaction</h2>
+<p>
+Both <tt>save</tt> and <tt>destroy</tt> come wrapped in a transaction that
+ensures that whatever you do in validations or callbacks will happen under
+its protected cover. So you can use validations to check for values that
+the transaction depends on or you can raise exceptions in the callbacks to
+rollback, including <tt>after_*</tt> callbacks.
+</p>
+<p>
+As a consequence changes to the database are not seen outside your
+connection until the operation is complete. For example, if you try to
+update the index of a search engine in <tt>after_save</tt> the indexer
+won&#8217;t see the updated record. The <tt><a
+href="ClassMethods.html#method-i-after_commit">after_commit</a></tt>
+callback is the only one that is triggered once the update is committed.
+See below.
+</p>
+<h2>Exception handling and rolling back</h2>
+<p>
+Also have in mind that exceptions thrown within a transaction block will be
+propagated (after triggering the ROLLBACK), so you should be ready to catch
+those in your application code.
+</p>
+<p>
+One exception is the <tt>ActiveRecord::Rollback</tt> exception, which will
+trigger a ROLLBACK when raised, but not be re-raised by the transaction
+block.
+</p>
+<p>
+<b>Warning</b>: one should not catch
+<tt>ActiveRecord::StatementInvalid</tt> exceptions inside a transaction
+block. <tt>ActiveRecord::StatementInvalid</tt> exceptions indicate that an
+error occurred at the database level, for example when a unique constraint
+is violated. On some database systems, such as PostgreSQL, database errors
+inside a transaction cause the entire transaction to become unusable until
+it&#8217;s restarted from the beginning. Here is an example which
+demonstrates the problem:
+</p>
+<pre>
+  # Suppose that we have a Number model with a unique column called 'i'.
+  Number.transaction do
+    Number.create(:i =&gt; 0)
+    begin
+      # This will raise a unique constraint error...
+      Number.create(:i =&gt; 0)
+    rescue ActiveRecord::StatementInvalid
+      # ...which we ignore.
+    end
+
+    # On PostgreSQL, the transaction is now unusable. The following
+    # statement will cause a PostgreSQL error, even though the unique
+    # constraint is no longer violated:
+    Number.create(:i =&gt; 1)
+    # =&gt; &quot;PGError: ERROR:  current transaction is aborted, commands
+    #     ignored until end of transaction block&quot;
+  end
+</pre>
+<p>
+One should restart the entire transaction if an
+<tt>ActiveRecord::StatementInvalid</tt> occurred.
+</p>
+<h2>Nested transactions</h2>
+<p>
+<tt>transaction</tt> calls can be nested. By default, this makes all
+database statements in the nested transaction block become part of the
+parent transaction. For example:
+</p>
+<pre>
+  User.transaction do
+    User.create(:username =&gt; 'Kotori')
+    User.transaction do
+      User.create(:username =&gt; 'Nemu')
+      raise ActiveRecord::Rollback
+    end
+  end
+
+  User.find(:all)  # =&gt; empty
+</pre>
+<p>
+It is also possible to requires a sub-transaction by passing
+<tt>:requires_new =&gt; true</tt>. If anything goes wrong, the database
+rolls back to the beginning of the sub-transaction without rolling back the
+parent transaction. For example:
+</p>
+<pre>
+  User.transaction do
+    User.create(:username =&gt; 'Kotori')
+    User.transaction(:requires_new =&gt; true) do
+      User.create(:username =&gt; 'Nemu')
+      raise ActiveRecord::Rollback
+    end
+  end
+
+  User.find(:all)  # =&gt; Returns only Kotori
+</pre>
+<p>
+Most databases don&#8217;t support true nested transactions. At the time of
+writing, the only database that we&#8217;re aware of that supports true
+nested transactions, is MS-SQL. Because of this, Active Record emulates
+nested transactions by using savepoints. See <a
+href="http://dev.mysql.com/doc/refman/5.0/en/savepoints.html">dev.mysql.com/doc/refman/5.0/en/savepoints.html</a>
+for more information about savepoints.
+</p>
+<h3><a href="../Callbacks.html">Callbacks</a></h3>
+<p>
+There are two types of callbacks associated with committing and rolling
+back transactions: <tt><a
+href="ClassMethods.html#method-i-after_commit">after_commit</a></tt> and
+<tt><a
+href="ClassMethods.html#method-i-after_rollback">after_rollback</a></tt>.
+</p>
+<p>
+<tt><a href="ClassMethods.html#method-i-after_commit">after_commit</a></tt>
+callbacks are called on every record saved or destroyed within a
+transaction immediately after the transaction is committed. <tt><a
+href="ClassMethods.html#method-i-after_rollback">after_rollback</a></tt>
+callbacks are called on every record saved or destroyed within a
+transaction immediately after the transaction or savepoint is rolled back.
+</p>
+<p>
+These callbacks are useful for interacting with other systems since you
+will be guaranteed that the callback is only executed when the database is
+in a permanent state. For example, <tt><a
+href="ClassMethods.html#method-i-after_commit">after_commit</a></tt> is a
+good spot to put in a hook to clearing a cache since clearing it from
+within a transaction could trigger the cache to be regenerated before the
+database is updated.
+</p>
+<h3>Caveats</h3>
+<p>
+If you&#8217;re on MySQL, then do not use DDL operations in nested
+transactions blocks that are emulated with savepoints. That is, do not
+execute statements like &#8216;CREATE TABLE&#8217; inside such blocks. This
+is because MySQL automatically releases all savepoints upon executing a DDL
+operation. When <tt>transaction</tt> is finished and tries to release the
+savepoint it created earlier, a database error will occur because the
+savepoint has already been automatically released. The following example
+demonstrates the problem:
+</p>
+<pre>
+  Model.connection.transaction do                           # BEGIN
+    Model.connection.transaction(:requires_new =&gt; true) do  # CREATE SAVEPOINT active_record_1
+      Model.connection.create_table(...)                    # active_record_1 now automatically released
+    end                                                     # RELEASE savepoint active_record_1
+                                                            # ^^^^ BOOM! database error!
+  end
+</pre>
+<p>
+Note that &#8220;TRUNCATE&#8221; is also a MySQL DDL statement!
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="after-commit-method" class="method-detail ">
+				<a name="method-i-after_commit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">after_commit</span><span
+						class="method-args">(*args, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="after-commit-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/transactions.rb, line 207</span>
+207:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">after_commit</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+208:         <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>
+209:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:on</span>]
+210:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:if</span>] = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:if</span>])
+211:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:if</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;transaction_include_action?(:#{options[:on]})&quot;</span>
+212:         <span class="ruby-keyword kw">end</span>
+213:         <span class="ruby-identifier">set_callback</span>(<span class="ruby-value">:commit</span>, <span class="ruby-value">:after</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+214:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="after-rollback-method" class="method-detail ">
+				<a name="method-i-after_rollback"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">after_rollback</span><span
+						class="method-args">(*args, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="after-rollback-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/transactions.rb, line 216</span>
+216:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">after_rollback</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+217:         <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>
+218:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:on</span>]
+219:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:if</span>] = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:if</span>])
+220:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:if</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;transaction_include_action?(:#{options[:on]})&quot;</span>
+221:         <span class="ruby-keyword kw">end</span>
+222:         <span class="ruby-identifier">set_callback</span>(<span class="ruby-value">:rollback</span>, <span class="ruby-value">:after</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+223:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="transaction-method" class="method-detail ">
+				<a name="method-i-transaction"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">transaction</span><span
+						class="method-args">(options = {}, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+See <a
+href="ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a> for
+detailed documentation.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="transaction-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/transactions.rb, line 202</span>
+202:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">transaction</span>(<span class="ruby-identifier">options</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+203:         <span class="ruby-comment cmt"># See the ConnectionAdapters::DatabaseStatements#transaction API docs.</span>
+204:         <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">transaction</span>(<span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+205:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

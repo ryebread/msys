@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Rack::Utils::HeaderHash</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/rack/utils_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rack/utils.rb">lib/rack/utils.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Hash</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-%5B%5D">#[]</a></li>
+					
+					<li><a href="#method-i-%5B%5D%3D">#[]=</a></li>
+					
+					<li><a href="#method-i-delete">#delete</a></li>
+					
+					<li><a href="#method-i-each">#each</a></li>
+					
+					<li><a href="#method-i-has_key%3F">#has_key?</a></li>
+					
+					<li><a href="#method-i-include%3F">#include?</a></li>
+					
+					<li><a href="#method-i-key%3F">#key?</a></li>
+					
+					<li><a href="#method-i-member%3F">#member?</a></li>
+					
+					<li><a href="#method-i-merge">#merge</a></li>
+					
+					<li><a href="#method-i-merge%21">#merge!</a></li>
+					
+					<li><a href="#method-i-replace">#replace</a></li>
+					
+					<li><a href="#method-i-to_hash">#to_hash</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../KNOWN-ISSUES.html">KNOWN-ISSUES</a></li>
+				
+					<li class="file"><a href="../../README.html">README</a></li>
+				
+					<li class="file"><a href="../../SPEC.html">SPEC</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Rack.html">Rack</a></li>
+				
+					<li><a href="../../Rack/Auth.html">Rack::Auth</a></li>
+				
+					<li><a href="../../Rack/Auth/AbstractHandler.html">Rack::Auth::AbstractHandler</a></li>
+				
+					<li><a href="../../Rack/Auth/AbstractRequest.html">Rack::Auth::AbstractRequest</a></li>
+				
+					<li><a href="../../Rack/Auth/Basic.html">Rack::Auth::Basic</a></li>
+				
+					<li><a href="../../Rack/Auth/Basic/Request.html">Rack::Auth::Basic::Request</a></li>
+				
+					<li><a href="../../Rack/Auth/Digest.html">Rack::Auth::Digest</a></li>
+				
+					<li><a href="../../Rack/Auth/Digest/MD5.html">Rack::Auth::Digest::MD5</a></li>
+				
+					<li><a href="../../Rack/Auth/Digest/Nonce.html">Rack::Auth::Digest::Nonce</a></li>
+				
+					<li><a href="../../Rack/Auth/Digest/Params.html">Rack::Auth::Digest::Params</a></li>
+				
+					<li><a href="../../Rack/Auth/Digest/Request.html">Rack::Auth::Digest::Request</a></li>
+				
+					<li><a href="../../Rack/Builder.html">Rack::Builder</a></li>
+				
+					<li><a href="../../Rack/Cascade.html">Rack::Cascade</a></li>
+				
+					<li><a href="../../Rack/Chunked.html">Rack::Chunked</a></li>
+				
+					<li><a href="../../Rack/CommonLogger.html">Rack::CommonLogger</a></li>
+				
+					<li><a href="../../Rack/ConditionalGet.html">Rack::ConditionalGet</a></li>
+				
+					<li><a href="../../Rack/Config.html">Rack::Config</a></li>
+				
+					<li><a href="../../Rack/ContentLength.html">Rack::ContentLength</a></li>
+				
+					<li><a href="../../Rack/ContentType.html">Rack::ContentType</a></li>
+				
+					<li><a href="../../Rack/Deflater.html">Rack::Deflater</a></li>
+				
+					<li><a href="../../Rack/Deflater/DeflateStream.html">Rack::Deflater::DeflateStream</a></li>
+				
+					<li><a href="../../Rack/Deflater/GzipStream.html">Rack::Deflater::GzipStream</a></li>
+				
+					<li><a href="../../Rack/Directory.html">Rack::Directory</a></li>
+				
+					<li><a href="../../Rack/ETag.html">Rack::ETag</a></li>
+				
+					<li><a href="../../Rack/ForwardRequest.html">Rack::ForwardRequest</a></li>
+				
+					<li><a href="../../Rack/Handler.html">Rack::Handler</a></li>
+				
+					<li><a href="../../Rack/Handler/CGI.html">Rack::Handler::CGI</a></li>
+				
+					<li><a href="../../Rack/Handler/EventedMongrel.html">Rack::Handler::EventedMongrel</a></li>
+				
+					<li><a href="../../Rack/Handler/FastCGI.html">Rack::Handler::FastCGI</a></li>
+				
+					<li><a href="../../Rack/Handler/LSWS.html">Rack::Handler::LSWS</a></li>
+				
+					<li><a href="../../Rack/Handler/Mongrel.html">Rack::Handler::Mongrel</a></li>
+				
+					<li><a href="../../Rack/Handler/SCGI.html">Rack::Handler::SCGI</a></li>
+				
+					<li><a href="../../Rack/Handler/SwiftipliedMongrel.html">Rack::Handler::SwiftipliedMongrel</a></li>
+				
+					<li><a href="../../Rack/Handler/Thin.html">Rack::Handler::Thin</a></li>
+				
+					<li><a href="../../Rack/Handler/WEBrick.html">Rack::Handler::WEBrick</a></li>
+				
+					<li><a href="../../Rack/Head.html">Rack::Head</a></li>
+				
+					<li><a href="../../Rack/Lint.html">Rack::Lint</a></li>
+				
+					<li><a href="../../Rack/Lobster.html">Rack::Lobster</a></li>
+				
+					<li><a href="../../Rack/Lock.html">Rack::Lock</a></li>
+				
+					<li><a href="../../Rack/Logger.html">Rack::Logger</a></li>
+				
+					<li><a href="../../Rack/MethodOverride.html">Rack::MethodOverride</a></li>
+				
+					<li><a href="../../Rack/Mime.html">Rack::Mime</a></li>
+				
+					<li><a href="../../Rack/MockRequest.html">Rack::MockRequest</a></li>
+				
+					<li><a href="../../Rack/MockRequest/FatalWarner.html">Rack::MockRequest::FatalWarner</a></li>
+				
+					<li><a href="../../Rack/MockRequest/FatalWarning.html">Rack::MockRequest::FatalWarning</a></li>
+				
+					<li><a href="../../Rack/MockResponse.html">Rack::MockResponse</a></li>
+				
+					<li><a href="../../Rack/NullLogger.html">Rack::NullLogger</a></li>
+				
+					<li><a href="../../Rack/Recursive.html">Rack::Recursive</a></li>
+				
+					<li><a href="../../Rack/Reloader.html">Rack::Reloader</a></li>
+				
+					<li><a href="../../Rack/Reloader/Stat.html">Rack::Reloader::Stat</a></li>
+				
+					<li><a href="../../Rack/Request.html">Rack::Request</a></li>
+				
+					<li><a href="../../Rack/Response.html">Rack::Response</a></li>
+				
+					<li><a href="../../Rack/Response/Helpers.html">Rack::Response::Helpers</a></li>
+				
+					<li><a href="../../Rack/RewindableInput.html">Rack::RewindableInput</a></li>
+				
+					<li><a href="../../Rack/RewindableInput/Tempfile.html">Rack::RewindableInput::Tempfile</a></li>
+				
+					<li><a href="../../Rack/Runtime.html">Rack::Runtime</a></li>
+				
+					<li><a href="../../Rack/Sendfile.html">Rack::Sendfile</a></li>
+				
+					<li><a href="../../Rack/Server.html">Rack::Server</a></li>
+				
+					<li><a href="../../Rack/Server/Options.html">Rack::Server::Options</a></li>
+				
+					<li><a href="../../Rack/Session.html">Rack::Session</a></li>
+				
+					<li><a href="../../Rack/Session/Abstract.html">Rack::Session::Abstract</a></li>
+				
+					<li><a href="../../Rack/Session/Abstract/ID.html">Rack::Session::Abstract::ID</a></li>
+				
+					<li><a href="../../Rack/Session/Cookie.html">Rack::Session::Cookie</a></li>
+				
+					<li><a href="../../Rack/Session/Memcache.html">Rack::Session::Memcache</a></li>
+				
+					<li><a href="../../Rack/Session/Pool.html">Rack::Session::Pool</a></li>
+				
+					<li><a href="../../Rack/ShowExceptions.html">Rack::ShowExceptions</a></li>
+				
+					<li><a href="../../Rack/ShowStatus.html">Rack::ShowStatus</a></li>
+				
+					<li><a href="../../Rack/Static.html">Rack::Static</a></li>
+				
+					<li><a href="../../Rack/URLMap.html">Rack::URLMap</a></li>
+				
+					<li><a href="../../Rack/Utils.html">Rack::Utils</a></li>
+				
+					<li><a href="../../Rack/Utils/Context.html">Rack::Utils::Context</a></li>
+				
+					<li><a href="../../Rack/Utils/HeaderHash.html">Rack::Utils::HeaderHash</a></li>
+				
+					<li><a href="../../Rack/Utils/Multipart.html">Rack::Utils::Multipart</a></li>
+				
+					<li><a href="../../Rack/Utils/Multipart/UploadedFile.html">Rack::Utils::Multipart::UploadedFile</a></li>
+				
+					<li><a href="../../FCGI.html">FCGI</a></li>
+				
+					<li><a href="../../FCGI/Stream.html">FCGI::Stream</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Rack::Utils::HeaderHash</h1>
+
+		<div id="description">
+			<p>
+A case-insensitive Hash that preserves the original case of a header when
+set.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(hash={})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/utils.rb, line 293</span>
+293:       <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">hash</span>={})
+294:         <span class="ruby-constant">HeaderHash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">hash</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">hash</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">hash</span>)
+295:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(hash={})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/utils.rb, line 297</span>
+297:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">hash</span>={})
+298:         <span class="ruby-keyword kw">super</span>()
+299:         <span class="ruby-ivar">@names</span> = {}
+300:         <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span> }
+301:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%5B%5D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">[]</span><span
+						class="method-args">(k)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/utils.rb, line 320</span>
+320:       <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">k</span>)
+321:         <span class="ruby-keyword kw">super</span>(<span class="ruby-ivar">@names</span>[<span class="ruby-identifier">k</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@names</span>[<span class="ruby-identifier">k</span>]
+322:         <span class="ruby-keyword kw">super</span>(<span class="ruby-ivar">@names</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">downcase</span>])
+323:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%5B%5D%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">[]=</span><span
+						class="method-args">(k, v)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/utils.rb, line 325</span>
+325:       <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>)
+326:         <span class="ruby-identifier">delete</span> <span class="ruby-identifier">k</span>
+327:         <span class="ruby-ivar">@names</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-ivar">@names</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">downcase</span>] = <span class="ruby-identifier">k</span>
+328:         <span class="ruby-keyword kw">super</span> <span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>
+329:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="delete-method" class="method-detail ">
+				<a name="method-i-delete"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">delete</span><span
+						class="method-args">(k)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="delete-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/utils.rb, line 331</span>
+331:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">k</span>)
+332:         <span class="ruby-identifier">canonical</span> = <span class="ruby-identifier">k</span>.<span class="ruby-identifier">downcase</span>
+333:         <span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">super</span> <span class="ruby-ivar">@names</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">canonical</span>)
+334:         <span class="ruby-ivar">@names</span>.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">canonical</span> }
+335:         <span class="ruby-identifier">result</span>
+336:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="each-method" class="method-detail ">
+				<a name="method-i-each"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">each</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="each-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/utils.rb, line 303</span>
+303:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">each</span>
+304:         <span class="ruby-keyword kw">super</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+305:           <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_ary</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_ary</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">v</span>)
+306:         <span class="ruby-keyword kw">end</span>
+307:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="has-key--method" class="method-detail method-alias">
+				<a name="method-i-has_key%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">has_key?</span><span
+						class="method-args">(k)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="HeaderHash.html#method-i-include%3F">include?</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="include--method" class="method-detail ">
+				<a name="method-i-include%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">include?</span><span
+						class="method-args">(k)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="include--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/utils.rb, line 338</span>
+338:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">include?</span>(<span class="ruby-identifier">k</span>)
+339:         <span class="ruby-ivar">@names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">k</span>) <span class="ruby-operator">||</span> <span class="ruby-ivar">@names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">k</span>.<span class="ruby-identifier">downcase</span>)
+340:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="HeaderHash.html#method-i-has_key%3F">has_key?</a>, <a href="HeaderHash.html#method-i-member%3F">member?</a>, <a href="HeaderHash.html#method-i-key%3F">key?</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="key--method" class="method-detail method-alias">
+				<a name="method-i-key%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">key?</span><span
+						class="method-args">(k)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="HeaderHash.html#method-i-include%3F">include?</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="member--method" class="method-detail method-alias">
+				<a name="method-i-member%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">member?</span><span
+						class="method-args">(k)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="HeaderHash.html#method-i-include%3F">include?</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="merge-method" class="method-detail ">
+				<a name="method-i-merge"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/utils.rb, line 351</span>
+351:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge</span>(<span class="ruby-identifier">other</span>)
+352:         <span class="ruby-identifier">hash</span> = <span class="ruby-identifier">dup</span>
+353:         <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">other</span>
+354:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge--method" class="method-detail ">
+				<a name="method-i-merge%21"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge!</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/utils.rb, line 346</span>
+346:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">other</span>)
+347:         <span class="ruby-identifier">other</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span> }
+348:         <span class="ruby-keyword kw">self</span>
+349:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="replace-method" class="method-detail ">
+				<a name="method-i-replace"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">replace</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="replace-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/utils.rb, line 356</span>
+356:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">other</span>)
+357:         <span class="ruby-identifier">clear</span>
+358:         <span class="ruby-identifier">other</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span> }
+359:         <span class="ruby-keyword kw">self</span>
+360:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="to-hash-method" class="method-detail ">
+				<a name="method-i-to_hash"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_hash</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="to-hash-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rack/utils.rb, line 309</span>
+309:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>
+310:         <span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, (<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>)<span class="ruby-operator">|</span>
+311:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:to_ary</span>
+312:             <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_ary</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+313:           <span class="ruby-keyword kw">else</span>
+314:             <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+315:           <span class="ruby-keyword kw">end</span>
+316:           <span class="ruby-identifier">hash</span>
+317:         <span class="ruby-keyword kw">end</span>
+318:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: ActiveRecord::Migration</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/active_record/migration_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_record/migration.rb">lib/active_record/migration.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-announce">::announce</a></li>
+					
+					<li><a href="#method-c-connection">::connection</a></li>
+					
+					<li><a href="#method-c-method_missing">::method_missing</a></li>
+					
+					<li><a href="#method-c-migrate">::migrate</a></li>
+					
+					<li><a href="#method-c-say">::say</a></li>
+					
+					<li><a href="#method-c-say_with_time">::say_with_time</a></li>
+					
+					<li><a href="#method-c-suppress_messages">::suppress_messages</a></li>
+					
+					<li><a href="#method-c-write">::write</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+				
+					<li><a href="../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+				
+					<li><a href="../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+				
+					<li><a href="../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ClassMethods/o.html">ActiveRecord::Associations::ClassMethods::o</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+				
+					<li><a href="../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+				
+					<li><a href="../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+				
+					<li><a href="../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+				
+					<li><a href="../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+				
+					<li><a href="../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+				
+					<li><a href="../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+				
+					<li><a href="../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+				
+					<li><a href="../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Generators.html">ActiveRecord::Generators</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/MigrationGenerator.html">ActiveRecord::Generators::MigrationGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/ModelGenerator.html">ActiveRecord::Generators::ModelGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/ObserverGenerator.html">ActiveRecord::Generators::ObserverGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/Generators/SessionMigrationGenerator.html">ActiveRecord::Generators::SessionMigrationGenerator</a></li>
+				
+					<li><a href="../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+				
+					<li><a href="../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+				
+					<li><a href="../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+				
+					<li><a href="../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+				
+					<li><a href="../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+				
+					<li><a href="../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+				
+					<li><a href="../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+				
+					<li><a href="../ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+				
+					<li><a href="../ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+				
+					<li><a href="../ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+				
+					<li><a href="../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+				
+					<li><a href="../ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+				
+					<li><a href="../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+				
+					<li><a href="../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+				
+					<li><a href="../ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+				
+					<li><a href="../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+				
+					<li><a href="../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+				
+					<li><a href="../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+				
+					<li><a href="../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+				
+					<li><a href="../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+				
+					<li><a href="../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+				
+					<li><a href="../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+				
+					<li><a href="../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+				
+					<li><a href="../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+				
+					<li><a href="../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+				
+					<li><a href="../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+				
+					<li><a href="../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+				
+					<li><a href="../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+				
+					<li><a href="../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+				
+					<li><a href="../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+				
+					<li><a href="../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+				
+					<li><a href="../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+				
+					<li><a href="../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+				
+					<li><a href="../Fixtures.html">Fixtures</a></li>
+				
+					<li><a href="../FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">ActiveRecord::Migration</h1>
+
+		<div id="description">
+			<h1>Active Record Migrations</h1>
+<p>
+Migrations can manage the evolution of a schema used by several physical
+databases. It&#8217;s a solution to the common problem of adding a field to
+make a new feature work in your local database, but being unsure of how to
+push that change to other developers and to the production server. With
+migrations, you can describe the transformations in self-contained classes
+that can be checked into version control systems and executed against
+another database that might be one, two, or five versions behind.
+</p>
+<p>
+Example of a simple migration:
+</p>
+<pre>
+  class AddSsl &lt; ActiveRecord::Migration
+    def self.up
+      add_column :accounts, :ssl_enabled, :boolean, :default =&gt; 1
+    end
+
+    def self.down
+      remove_column :accounts, :ssl_enabled
+    end
+  end
+</pre>
+<p>
+This migration will add a boolean flag to the accounts table and remove it
+if you&#8217;re backing out of the migration. It shows how all migrations
+have two class methods <tt>up</tt> and <tt>down</tt> that describes the
+transformations required to implement or remove the migration. These
+methods can consist of both the migration specific methods like add_column
+and remove_column, but may also contain regular Ruby code for generating
+data needed for the transformations.
+</p>
+<p>
+Example of a more complex migration that also needs to initialize data:
+</p>
+<pre>
+  class AddSystemSettings &lt; ActiveRecord::Migration
+    def self.up
+      create_table :system_settings do |t|
+        t.string  :name
+        t.string  :label
+        t.text  :value
+        t.string  :type
+        t.integer  :position
+      end
+
+      SystemSetting.create  :name =&gt; &quot;notice&quot;,
+                            :label =&gt; &quot;Use notice?&quot;,
+                            :value =&gt; 1
+    end
+
+    def self.down
+      drop_table :system_settings
+    end
+  end
+</pre>
+<p>
+This migration first adds the system_settings table, then creates the very
+first row in it using the Active Record model that relies on the table. It
+also uses the more advanced create_table syntax where you can specify a
+complete table schema in one block call.
+</p>
+<h2>Available transformations</h2>
+<ul>
+<li><p>
+<tt>create_table(name, options)</tt> Creates a table called <tt>name</tt>
+and makes the table object available to a block that can then add columns
+to it, following the same format as add_column. See example above. The
+options hash is for fragments like &#8220;DEFAULT CHARSET=UTF-8&#8221; that
+are appended to the create table definition.
+</p>
+</li>
+<li><p>
+<tt>drop_table(name)</tt>: Drops the table called <tt>name</tt>.
+</p>
+</li>
+<li><p>
+<tt>rename_table(old_name, new_name)</tt>: Renames the table called
+<tt>old_name</tt> to <tt>new_name</tt>.
+</p>
+</li>
+<li><p>
+<tt>add_column(table_name, column_name, type, options)</tt>: Adds a new
+column to the table called <tt>table_name</tt> named <tt>column_name</tt>
+specified to be one of the following types: <tt>:string</tt>,
+<tt>:text</tt>, <tt>:integer</tt>, <tt>:float</tt>, <tt>:decimal</tt>,
+<tt>:datetime</tt>, <tt>:timestamp</tt>, <tt>:time</tt>, <tt>:date</tt>,
+<tt>:binary</tt>, <tt>:boolean</tt>. A default value can be specified by
+passing an <tt>options</tt> hash like <tt>{ :default =&gt; 11 }</tt>. Other
+options include <tt>:limit</tt> and <tt>:null</tt> (e.g. <tt>{ :limit =&gt;
+50, :null =&gt; false }</tt>) &#8212; see <a
+href="ConnectionAdapters/TableDefinition.html#method-i-column">ActiveRecord::ConnectionAdapters::TableDefinition#column</a>
+for details.
+</p>
+</li>
+<li><p>
+<tt>rename_column(table_name, column_name, new_column_name)</tt>: Renames a
+column but keeps the type and content.
+</p>
+</li>
+<li><p>
+<tt>change_column(table_name, column_name, type, options)</tt>:  Changes
+the column to a different type using the same parameters as add_column.
+</p>
+</li>
+<li><p>
+<tt>remove_column(table_name, column_name)</tt>: Removes the column named
+<tt>column_name</tt> from the table called <tt>table_name</tt>.
+</p>
+</li>
+<li><p>
+<tt>add_index(table_name, column_names, options)</tt>: Adds a new index
+with the name of the column. Other options include <tt>:name</tt> and
+<tt>:unique</tt> (e.g. <tt>{ :name =&gt; &quot;users_name_index&quot;,
+:unique =&gt; true }</tt>).
+</p>
+</li>
+<li><p>
+<tt>remove_index(table_name, index_name)</tt>: Removes the index specified
+by <tt>index_name</tt>.
+</p>
+</li>
+</ul>
+<h2>Irreversible transformations</h2>
+<p>
+Some transformations are destructive in a manner that cannot be reversed.
+Migrations of that kind should raise an
+<tt>ActiveRecord::IrreversibleMigration</tt> exception in their
+<tt>down</tt> method.
+</p>
+<h2>Running migrations from within Rails</h2>
+<p>
+The Rails package has several tools to help create and apply migrations.
+</p>
+<p>
+To generate a new migration, you can use
+</p>
+<pre>
+  rails generate migration MyNewMigration
+</pre>
+<p>
+where MyNewMigration is the name of your migration. The generator will
+create an empty migration file <tt>timestamp_my_new_migration.rb</tt> in
+the <tt>db/migrate/</tt> directory where <tt>timestamp</tt> is the UTC
+formatted date and time that the migration was generated.
+</p>
+<p>
+You may then edit the <tt>self.up</tt> and <tt>self.down</tt> methods of
+MyNewMigration.
+</p>
+<p>
+There is a special syntactic shortcut to generate migrations that add
+fields to a table.
+</p>
+<pre>
+  rails generate migration add_fieldname_to_tablename fieldname:string
+</pre>
+<p>
+This will generate the file <tt>timestamp_add_fieldname_to_tablename</tt>,
+which will look like this:
+</p>
+<pre>
+  class AddFieldnameToTablename &lt; ActiveRecord::Migration
+    def self.up
+      add_column :tablenames, :fieldname, :string
+    end
+
+    def self.down
+      remove_column :tablenames, :fieldname
+    end
+  end
+</pre>
+<p>
+To run migrations against the currently configured database, use <tt>rake
+db:migrate</tt>. This will update the database by running all of the
+pending migrations, creating the <tt>schema_migrations</tt> table (see
+&#8220;About the schema_migrations table&#8221; section below) if missing.
+It will also invoke the db:schema:dump task, which will update your
+db/schema.rb file to match the structure of your database.
+</p>
+<p>
+To roll the database back to a previous migration version, use <tt>rake
+db:migrate VERSION=X</tt> where <tt>X</tt> is the version to which you wish
+to downgrade. If any of the migrations throw an
+<tt>ActiveRecord::IrreversibleMigration</tt> exception, that step will fail
+and you&#8217;ll have some manual work to do.
+</p>
+<h2>Database support</h2>
+<p>
+Migrations are currently supported in MySQL, PostgreSQL, SQLite, SQL
+Server, Sybase, and Oracle (all supported databases except DB2).
+</p>
+<h2>More examples</h2>
+<p>
+Not all migrations change the schema. Some just fix the data:
+</p>
+<pre>
+  class RemoveEmptyTags &lt; ActiveRecord::Migration
+    def self.up
+      Tag.find(:all).each { |tag| tag.destroy if tag.pages.empty? }
+    end
+
+    def self.down
+      # not much we can do to restore deleted data
+      raise ActiveRecord::IrreversibleMigration, &quot;Can't recover the deleted tags&quot;
+    end
+  end
+</pre>
+<p>
+Others remove columns when they migrate up instead of down:
+</p>
+<pre>
+  class RemoveUnnecessaryItemAttributes &lt; ActiveRecord::Migration
+    def self.up
+      remove_column :items, :incomplete_items_count
+      remove_column :items, :completed_items_count
+    end
+
+    def self.down
+      add_column :items, :incomplete_items_count
+      add_column :items, :completed_items_count
+    end
+  end
+</pre>
+<p>
+And sometimes you need to do something in SQL not abstracted directly by
+migrations:
+</p>
+<pre>
+  class MakeJoinUnique &lt; ActiveRecord::Migration
+    def self.up
+      execute &quot;ALTER TABLE `pages_linked_pages` ADD UNIQUE `page_id_linked_page_id` (`page_id`,`linked_page_id`)&quot;
+    end
+
+    def self.down
+      execute &quot;ALTER TABLE `pages_linked_pages` DROP INDEX `page_id_linked_page_id`&quot;
+    end
+  end
+</pre>
+<h2>Using a model after changing its table</h2>
+<p>
+Sometimes you&#8217;ll want to add a column in a migration and populate it
+immediately after. In that case, you&#8217;ll need to make a call to
+<tt>Base#reset_column_information</tt> in order to ensure that the model
+has the latest column data from after the new column was added. Example:
+</p>
+<pre>
+  class AddPeopleSalary &lt; ActiveRecord::Migration
+    def self.up
+      add_column :people, :salary, :integer
+      Person.reset_column_information
+      Person.find(:all).each do |p|
+        p.update_attribute :salary, SalaryCalculator.compute(p)
+      end
+    end
+  end
+</pre>
+<h2>Controlling verbosity</h2>
+<p>
+By default, migrations will describe the actions they are taking, writing
+them to the console as they happen, along with benchmarks describing how
+long each step took.
+</p>
+<p>
+You can quiet them down by setting ActiveRecord::Migration.verbose = false.
+</p>
+<p>
+You can also insert your own messages and benchmarks by using the <tt><a
+href="Migration.html#method-c-say_with_time">say_with_time</a></tt> method:
+</p>
+<pre>
+  def self.up
+    ...
+    say_with_time &quot;Updating salaries...&quot; do
+      Person.find(:all).each do |p|
+        p.update_attribute :salary, SalaryCalculator.compute(p)
+      end
+    end
+    ...
+  end
+</pre>
+<p>
+The phrase &#8220;Updating salaries...&#8220; would then be printed, along
+with the benchmark for the block when the block completes.
+</p>
+<h2>About the schema_migrations table</h2>
+<p>
+Rails versions 2.0 and prior used to create a table called
+<tt>schema_info</tt> when using migrations. This table contained the
+version of the schema as of the last applied migration.
+</p>
+<p>
+Starting with Rails 2.1, the <tt>schema_info</tt> table is (automatically)
+replaced by the <tt>schema_migrations</tt> table, which contains the
+version numbers of all the migrations applied.
+</p>
+<p>
+As a result, it is now possible to add migration files that are numbered
+lower than the current schema version: when migrating up, those
+never-applied &#8220;interleaved&#8221; migrations will be automatically
+applied, and when migrating down, never-applied &#8220;interleaved&#8221;
+migrations will be skipped.
+</p>
+<h2>Timestamped Migrations</h2>
+<p>
+By default, Rails generates migrations that look like:
+</p>
+<pre>
+   20080717013526_your_migration_name.rb
+</pre>
+<p>
+The prefix is a generation timestamp (in UTC).
+</p>
+<p>
+If you&#8217;d prefer to use numeric prefixes, you can turn timestamped
+migrations off by setting:
+</p>
+<pre>
+   config.active_record.timestamped_migrations = false
+</pre>
+<p>
+In application.rb.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="announce-method" class="method-detail ">
+				<a name="method-c-announce"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">announce</span><span
+						class="method-args">(message)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="announce-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/migration.rb, line 344</span>
+344:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">announce</span>(<span class="ruby-identifier">message</span>)
+345:         <span class="ruby-identifier">version</span> = <span class="ruby-keyword kw">defined?</span>(<span class="ruby-ivar">@version</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@version</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
+346: 
+347:         <span class="ruby-identifier">text</span> = <span class="ruby-node">&quot;#{version} #{name}: #{message}&quot;</span>
+348:         <span class="ruby-identifier">length</span> = [<span class="ruby-value">0</span>, <span class="ruby-value">75</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">length</span>].<span class="ruby-identifier">max</span>
+349:         <span class="ruby-identifier">write</span> <span class="ruby-value str">&quot;== %s %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">text</span>, <span class="ruby-value str">&quot;=&quot;</span> * <span class="ruby-identifier">length</span>]
+350:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="connection-method" class="method-detail ">
+				<a name="method-c-connection"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">connection</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="connection-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/migration.rb, line 372</span>
+372:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">connection</span>
+373:         <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>
+374:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="method-missing-method" class="method-detail ">
+				<a name="method-c-method_missing"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">method_missing</span><span
+						class="method-args">(method, *arguments, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="method-missing-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/migration.rb, line 376</span>
+376:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">method</span>, *<span class="ruby-identifier">arguments</span>, &amp;<span class="ruby-identifier">block</span>)
+377:         <span class="ruby-identifier">arg_list</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">inspect</span> } * <span class="ruby-value str">', '</span>
+378: 
+379:         <span class="ruby-identifier">say_with_time</span> <span class="ruby-node">&quot;#{method}(#{arg_list})&quot;</span> <span class="ruby-keyword kw">do</span>
+380:           <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">==</span> <span class="ruby-value">:execute</span>
+381:             <span class="ruby-identifier">arguments</span>[<span class="ruby-value">0</span>] = <span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">proper_table_name</span>(<span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">first</span>)
+382:           <span class="ruby-keyword kw">end</span>
+383:           <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>, *<span class="ruby-identifier">arguments</span>, &amp;<span class="ruby-identifier">block</span>)
+384:         <span class="ruby-keyword kw">end</span>
+385:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="migrate-method" class="method-detail ">
+				<a name="method-c-migrate"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">migrate</span><span
+						class="method-args">(direction)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Execute this migration in the named direction
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="migrate-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/migration.rb, line 303</span>
+303:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">migrate</span>(<span class="ruby-identifier">direction</span>)
+304:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">direction</span>)
+305: 
+306:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">direction</span>
+307:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:up</span>   <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">announce</span> <span class="ruby-value str">&quot;migrating&quot;</span>
+308:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:down</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">announce</span> <span class="ruby-value str">&quot;reverting&quot;</span>
+309:         <span class="ruby-keyword kw">end</span>
+310: 
+311:         <span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">nil</span>
+312:         <span class="ruby-identifier">time</span> = <span class="ruby-constant">Benchmark</span>.<span class="ruby-identifier">measure</span> { <span class="ruby-identifier">result</span> = <span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{direction}_without_benchmarks&quot;</span>) }
+313: 
+314:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">direction</span>
+315:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:up</span>   <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">announce</span> <span class="ruby-value str">&quot;migrated (%.4fs)&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">time</span>.<span class="ruby-identifier">real</span>; <span class="ruby-identifier">write</span>
+316:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:down</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">announce</span> <span class="ruby-value str">&quot;reverted (%.4fs)&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">time</span>.<span class="ruby-identifier">real</span>; <span class="ruby-identifier">write</span>
+317:         <span class="ruby-keyword kw">end</span>
+318: 
+319:         <span class="ruby-identifier">result</span>
+320:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="say-method" class="method-detail ">
+				<a name="method-c-say"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">say</span><span
+						class="method-args">(message, subitem=false)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="say-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/migration.rb, line 352</span>
+352:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">say</span>(<span class="ruby-identifier">message</span>, <span class="ruby-identifier">subitem</span>=<span class="ruby-keyword kw">false</span>)
+353:         <span class="ruby-identifier">write</span> <span class="ruby-node">&quot;#{subitem ? &quot;   -&gt;&quot; : &quot;--&quot;} #{message}&quot;</span>
+354:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="say-with-time-method" class="method-detail ">
+				<a name="method-c-say_with_time"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">say_with_time</span><span
+						class="method-args">(message)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="say-with-time-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/migration.rb, line 356</span>
+356:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">say_with_time</span>(<span class="ruby-identifier">message</span>)
+357:         <span class="ruby-identifier">say</span>(<span class="ruby-identifier">message</span>)
+358:         <span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">nil</span>
+359:         <span class="ruby-identifier">time</span> = <span class="ruby-constant">Benchmark</span>.<span class="ruby-identifier">measure</span> { <span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">yield</span> }
+360:         <span class="ruby-identifier">say</span> <span class="ruby-value str">&quot;%.4fs&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">time</span>.<span class="ruby-identifier">real</span>, <span class="ruby-value">:subitem</span>
+361:         <span class="ruby-identifier">say</span>(<span class="ruby-node">&quot;#{result} rows&quot;</span>, <span class="ruby-value">:subitem</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Integer</span>)
+362:         <span class="ruby-identifier">result</span>
+363:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="suppress-messages-method" class="method-detail ">
+				<a name="method-c-suppress_messages"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">suppress_messages</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="suppress-messages-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/migration.rb, line 365</span>
+365:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">suppress_messages</span>
+366:         <span class="ruby-identifier">save</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">verbose</span> = <span class="ruby-identifier">verbose</span>, <span class="ruby-keyword kw">false</span>
+367:         <span class="ruby-keyword kw">yield</span>
+368:       <span class="ruby-keyword kw">ensure</span>
+369:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">verbose</span> = <span class="ruby-identifier">save</span>
+370:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="write-method" class="method-detail ">
+				<a name="method-c-write"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">write</span><span
+						class="method-args">(text="")</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="write-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/migration.rb, line 340</span>
+340:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">write</span>(<span class="ruby-identifier">text</span>=<span class="ruby-value str">&quot;&quot;</span>)
+341:         <span class="ruby-identifier">puts</span>(<span class="ruby-identifier">text</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verbose</span>
+342:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
