@@ -59,5 +59,6 @@ $ '
 alias clear=clsb
 alias e="runemacs.exe"
 alias ls="ls --color=tty --show-control-chars"  
+alias vim="TERM=pcterm; vim"
 cd "$HOME"
 
